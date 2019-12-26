@@ -13,7 +13,7 @@ COMMENT=	Open source, cross-platform, free C/C++ IDE
 BUILD_DEPENDS=	zip:arch/zip
 
 LIB_DEPENDS+=	libwx_baseu.so:xapp/libwxWidget
-LIB_DEPENDS+=	libboost_system.so:devel/libboost
+LIB_DEPENDS+=	libboost_system.so:devel/libboost64
 LIB_DEPENDS+=	libgtk-x11.so:gnome/libgtk2
 LIB_DEPENDS+=	libfreetype.so:graph/libfreetype2
 LIB_DEPENDS+=	libhunspell.so:text/hunspell

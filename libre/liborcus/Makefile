@@ -11,7 +11,7 @@ COMMENT=	Standalone file import filter library for spreadsheet documents
 
 BUILD_DEPENDS=	${LOCALBASE}/include/mdds/global.hpp:libre/libmdds
 #LIB_DEPENDS+=	libzip.so:arch/libzip
-LIB_DEPENDS+=	libboost_system.so:devel/libboost
+LIB_DEPENDS+=	libboost_system.so:devel/libboost64
 
 BOOST_PREFIX=   ${LOCALBASE}/boost64
 CPPFLAGS+=	-I${BOOST_PREFIX}/include

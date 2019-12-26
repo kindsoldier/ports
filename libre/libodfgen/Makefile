@@ -25,7 +25,7 @@ INSTALL_TARGET=	install-strip
 USES+=		gmake
 
 #CONFIGURE_ARGS+=	--with-sharedptr=c++11
-BUILD_DEPENDS+=	${LOCALBASE}/boost64/include/boost/shared_ptr.hpp:devel/libboost
+BUILD_DEPENDS+=	${LOCALBASE}/boost64/include/boost/shared_ptr.hpp:devel/libboost64
 CONFIGURE_ARGS+=	--with-sharedptr=boost
 
 LDFLAGS+=       -L${LOCALBASE}/lib -L${LOCALBASE}/boost64/lib

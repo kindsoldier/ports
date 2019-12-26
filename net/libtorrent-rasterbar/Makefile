@@ -9,7 +9,7 @@ MASTER_SITES=	https://github.com/arvidn/libtorrent/releases/download/libtorrent-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	C++ library implementing a BitTorrent client
 
-LIB_DEPENDS+=	libboost_date_time.so:devel/libboost
+LIB_DEPENDS+=	libboost_date_time.so:devel/libboost64
 LIB_DEPENDS+=	libGeoIP.so:net/libGeoIP
 
 CXX=		clang++

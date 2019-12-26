@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	#
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Library to build a filter for old StarOffice's documents
 
-BUILD_DEPENDS=	${LOCALBASE}/boost64/include/boost/shared_ptr.hpp:devel/libboost
+BUILD_DEPENDS=	${LOCALBASE}/boost64/include/boost/shared_ptr.hpp:devel/libboost64
 LIB_DEPENDS=	librevenge.so:libre/librevenge
 
 GNU_CONFIGURE=	yes

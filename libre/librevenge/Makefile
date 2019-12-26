@@ -10,7 +10,7 @@ MAINTAINER=	office@FreeBSD.org
 COMMENT=	Base library for writing document import filters
 
 
-LIB_DEPENDS+=	libboost_context.so:devel/libboost
+LIB_DEPENDS+=	libboost_context.so:devel/libboost64
 
 USES+=		tar:xz
 USE_LDCONFIG=	yes

@@ -9,7 +9,7 @@ MAINTAINER=	office@FreeBSD.org
 COMMENT=	Library and tools for parsing the visio file format structure
 
 
-BUILD_DEPENDS=	${LOCALBASE}/boost64/include/boost/spirit/include/classic_core.hpp:devel/libboost
+BUILD_DEPENDS=	${LOCALBASE}/boost64/include/boost/spirit/include/classic_core.hpp:devel/libboost64
 LIB_DEPENDS+=	librevenge.so:libre/librevenge
 LIB_DEPENDS+=	libicui18n.so:devel/libicu
 LIB_DEPENDS+=	libxml2.so:text/libxml2

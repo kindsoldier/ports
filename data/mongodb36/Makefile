@@ -19,7 +19,7 @@ ONLY_FOR_ARCHS_REASON=	"Only supported on amd64 (i386 deprecated in v3)"
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cheetah>=2.4.4:python/py-cheetah \
 		${PYTHON_PKGNAMEPREFIX}typing>=3.6.2:python/py-typing \
 		${PYTHON_PKGNAMEPREFIX}yaml>=3.11:python/py-yaml
-LIB_DEPENDS+=	libboost_system.so:devel/libboost
+LIB_DEPENDS+=	libboost_system.so:devel/libboost64
 LIB_DEPENDS+=	libpcre.so:text/libpcre
 LIB_DEPENDS+=	libsnappy.so:arch/libsnappy
 

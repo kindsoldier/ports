@@ -9,7 +9,7 @@ MAINTAINER=	office@FreeBSD.org
 COMMENT=	C++ Library for rendering OpenGL models stored in glTF format
 
 
-BUILD_DEPENDS=	${LOCALBASE}/boost64/include/boost/ptr_container/ptr_map.hpp:devel/libboost \
+BUILD_DEPENDS=	${LOCALBASE}/boost64/include/boost/ptr_container/ptr_map.hpp:devel/libboost64 \
 		${LOCALBASE}/include/glm/glm.hpp:libre/libglm
 
 USES=		compiler:c++0x pathfix pkgconfig tar:bzip2

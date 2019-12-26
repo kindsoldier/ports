@@ -8,7 +8,7 @@ MASTER_SITES=	http://dev-www.libreoffice.org/src/${PORTNAME}/
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Library and tools for parsing Microsoft Publisher file format
 
-BUILD_DEPENDS=	${LOCALBASE}/boost64/include/boost/ptr_container/ptr_map.hpp:devel/libboost
+BUILD_DEPENDS=	${LOCALBASE}/boost64/include/boost/ptr_container/ptr_map.hpp:devel/libboost64
 LIB_DEPENDS=	libicui18n.so:devel/libicu
 LIB_DEPENDS+=	librevenge.so:libre/librevenge
 

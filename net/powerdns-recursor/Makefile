@@ -15,9 +15,9 @@ BUILD_DEPENDS+= lua:lang/lua53
 RUN_DEPENDS+=   lua:lang/lua53
 
 LIB_DEPENDS+= libprotobuf.so:devel/libprotobuf
-LIB_DEPENDS+= libboost_thread.so:devel/libboost
-LIB_DEPENDS+= libboost_system.so:devel/libboost
-BUILD_DEPENDS+=	${LOCALBASE}/include/boost/shared_ptr.hpp:devel/libboost
+LIB_DEPENDS+= libboost_thread.so:devel/libboost64
+LIB_DEPENDS+= libboost_system.so:devel/libboost64
+BUILD_DEPENDS+=	${LOCALBASE}/include/boost/shared_ptr.hpp:devel/libboost64
 
 
 

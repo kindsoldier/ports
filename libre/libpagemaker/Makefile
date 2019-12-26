@@ -8,7 +8,7 @@ MASTER_SITES=	LIBREOFFICE_DEV
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Library and tools for parsing Aldus/Adobe PageMaker documents
 
-BUILD_DEPENDS=	${LOCALBASE}/boost64/include/boost/format.hpp:devel/libboost
+BUILD_DEPENDS=	${LOCALBASE}/boost64/include/boost/format.hpp:devel/libboost64
 LIB_DEPENDS=	librevenge.so:libre/librevenge
 
 GNU_CONFIGURE=	yes

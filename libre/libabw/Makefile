@@ -9,7 +9,7 @@ MASTER_SITES=	http://dev-www.libreoffice.org/src/${PORTNAME}/
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Library providing ability to interpret Abiword documents
 
-BUILD_DEPENDS=	${LOCALBASE}/boost64/include/boost/algorithm/string.hpp:devel/libboost
+BUILD_DEPENDS=	${LOCALBASE}/boost64/include/boost/algorithm/string.hpp:devel/libboost64
 LIB_DEPENDS+=	librevenge.so:libre/librevenge
 LIB_DEPENDS+=	libxml2.so:text/libxml2
 

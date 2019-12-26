@@ -10,7 +10,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Bittorrent client using Qt4 and libtorrent-rasterbar
 
 LIB_DEPENDS+=	libtorrent-rasterbar.so:net/libtorrent-rasterbar
-LIB_DEPENDS+=	libboost_system.so:devel/libboost
+LIB_DEPENDS+=	libboost_system.so:devel/libboost64
 
 
 LIB_DEPENDS+=	libGeoIP.so:net/libGeoIP

@@ -11,7 +11,7 @@ MAINTAINER=	office@FreeBSD.org
 COMMENT=	Client library for the CMIS interface
 
 LIB_DEPENDS+=	libcppunit.so:libre/libcppunit
-LIB_DEPENDS+=	libboost_regex.so:devel/libboost
+LIB_DEPENDS+=	libboost_regex.so:devel/libboost64
 
 LIB_DEPENDS+=	libcurl.so:net/libcurl
 LIB_DEPENDS+=	libxml2.so:text/libxml2

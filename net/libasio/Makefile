@@ -10,7 +10,7 @@ PKGNAMEPREFIX=  lib
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Cross-platform C++ library for network and low-level I/O programming
 
-#RUN_DEPENDS=	libboost>=0:devel/libboost
+#RUN_DEPENDS=	libboost>=0:devel/libboost64
 
 USES=		tar:bz2
 GNU_CONFIGURE=	yes

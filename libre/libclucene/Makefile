@@ -11,7 +11,7 @@ PKGNAMEPREFIX=  lib
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	CLucene is a C++ port of Lucene
 
-BUILD_DEPENDS=	${LOCALBASE}/boost64/lib/libboost_regex.a:devel/libboost
+BUILD_DEPENDS=	${LOCALBASE}/boost64/lib/libboost_regex.a:devel/libboost64
 
 USES=		cmake gmake
 USE_LDCONFIG=	yes

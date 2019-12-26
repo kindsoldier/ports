@@ -9,7 +9,7 @@ MASTER_SITES=	https://inkscape.org/en/gallery/item/12187/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Full featured open source SVG editor
 
-BUILD_DEPENDS=	libboost>=0:devel/libboost
+BUILD_DEPENDS=	libboost>=0:devel/libboost64
 
 LIB_DEPENDS+=   libcdr.so:libre/libcdr
 LIB_DEPENDS+=   librevenge.so:libre/librevenge

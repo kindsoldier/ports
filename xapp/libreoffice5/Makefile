@@ -27,10 +27,10 @@ LIB_DEPENDS+=	libssl3.so:crypto/libnss
 
 LIB_DEPENDS+=	libintl.so:devel/gettext
 
-LIB_DEPENDS+=	libboost_date_time.so:devel/libboost
-LIB_DEPENDS+=	libboost_filesystem.so:devel/libboost
-LIB_DEPENDS+=	libboost_iostreams.so:devel/libboost
-LIB_DEPENDS+=	libboost_system.so:devel/libboost
+LIB_DEPENDS+=	libboost_date_time.so:devel/libboost64
+LIB_DEPENDS+=	libboost_filesystem.so:devel/libboost64
+LIB_DEPENDS+=	libboost_iostreams.so:devel/libboost64
+LIB_DEPENDS+=	libboost_system.so:devel/libboost64
 LIB_DEPENDS+=	libffi.so:devel/libffi
 LIB_DEPENDS+=	libgio.so:devel/libglib
 LIB_DEPENDS+=	libglib.so:devel/libglib

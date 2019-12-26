@@ -9,9 +9,9 @@ MASTER_SITES=	https://github.com/arvidn/libtorrent/releases/download/libtorrent-
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ library implementing a BitTorrent client
 
-LIB_DEPENDS=	libboost_chrono.so:devel/libboost \
-		libboost_random.so:devel/libboost \
-		libboost_system.so:devel/libboost
+LIB_DEPENDS=	libboost_chrono.so:devel/libboost64 \
+		libboost_random.so:devel/libboost64 \
+		libboost_system.so:devel/libboost64
 
 USES=		compiler:c++14-lang iconv:wchar_t pkgconfig ssl
 USE_LDCONFIG=	yes

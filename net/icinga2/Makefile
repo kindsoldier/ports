@@ -8,7 +8,7 @@ CATEGORIES=	net-mgmt
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Monitoring and management system for hosts, services and networks
 
-LIB_DEPENDS=	libboost_system.so:devel/libboost
+LIB_DEPENDS=	libboost_system.so:devel/libboost64
 RUN_DEPENDS=	bash>=0:lang/bash
 
 LIB_DEPENDS+=	libmysqlclient.so:data/mariadb

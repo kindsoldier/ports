@@ -10,7 +10,7 @@ MAINTAINER=	office@FreeBSD.org
 COMMENT=	Library to interpret and import Apple Keynote presentations
 
 
-LIB_DEPENDS+=	libboost_filesystem.so:devel/libboost
+LIB_DEPENDS+=	libboost_filesystem.so:devel/libboost64
 LIB_DEPENDS+=	librevenge.so:libre/librevenge
 LIB_DEPENDS+=	libxml2.so:text/libxml2
 LIB_DEPENDS+=	liblangtag.so:libre/liblangtag

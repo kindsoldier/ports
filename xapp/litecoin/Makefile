@@ -9,7 +9,7 @@ CATEGORIES=	net-p2p finance
 MAINTAINER=	robbak@robbak.com
 COMMENT?=	Virtual Peer-to-Peer Currency Client (QT)
 
-LIB_DEPENDS=	libboost_date_time.so:devel/libboost
+LIB_DEPENDS=	libboost_date_time.so:devel/libboost64
 LIB_DEPENDS=	libqrencode.so:graph/libqrencode
 BUILD_DEPENDS+=	protoc:devel/libprotobuf
 LIB_DEPENDS+=	libprotobuf.so:devel/libprotobuf

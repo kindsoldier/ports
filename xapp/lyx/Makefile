@@ -15,7 +15,7 @@ MAINTAINER=	rakuco@FreeBSD.org
 COMMENT=	Document processor interfaced with LaTeX (nearly WYSIWYG)
 
 
-#LIB_DEPENDS+=	libboost_regex.so:devel/libboost
+#LIB_DEPENDS+=	libboost_regex.so:devel/libboost64
 LIB_DEPENDS+=	libaspell.so:text/aspell
 LIB_DEPENDS+=	libenchant.so:text/libenchant
 LIB_DEPENDS+=	libhunspell.so:text/hunspell

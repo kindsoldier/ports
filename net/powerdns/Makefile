@@ -10,7 +10,7 @@ DISTNAME=	pdns-${PORTVERSION}
 MAINTAINER=	tremere@cainites.net
 COMMENT=	Advanced DNS server with multiple backends including SQL
 
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libboost_serialization.a:devel/libboost
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libboost_serialization.a:devel/libboost64
 USES+=	pgsql
 LIB_DEPENDS+=	libsqlite3.so:data/sqlite3
 LIB_DEPENDS+=	libiconv.so:text/libiconv

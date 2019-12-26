@@ -8,7 +8,7 @@ MASTER_SITES=	LODEV
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Library and tools for parsing Corel Draw file format
 
-BUILD_DEPENDS=	${LOCALBASE}/boost64/include/boost/optional.hpp:devel/libboost
+BUILD_DEPENDS=	${LOCALBASE}/boost64/include/boost/optional.hpp:devel/libboost64
 LIB_DEPENDS+=	libicui18n.so:devel/libicu 
 LIB_DEPENDS+=	librevenge.so:libre/librevenge
 LIB_DEPENDS+=	liblcms2.so:graph/liblcms2

@@ -12,7 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MySQL database connector for C++
 
 LIB_DEPENDS+=	libmysqlclient.so:data/mariadb
-LIB_DEPENDS=	libboost_regex.so:devel/libboost
+LIB_DEPENDS=	libboost_regex.so:devel/libboost64
 
 #USE_MYSQL=	51+
 USES=		cmake:outsource

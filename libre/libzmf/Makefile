@@ -8,7 +8,7 @@ MASTER_SITES=	LODEV
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Library that parses the file format of Zoner Callisto/Draw documents
 
-BUILD_DEPENDS=	${LOCALBASE}/boost64/include/boost/cstdint.hpp:devel/libboost
+BUILD_DEPENDS=	${LOCALBASE}/boost64/include/boost/cstdint.hpp:devel/libboost64
 LIB_DEPENDS+=	libicui18n.so:devel/libicu
 LIB_DEPENDS+=		libpng.so:graph/libpng
 LIB_DEPENDS+=		librevenge.so:libre/librevenge
