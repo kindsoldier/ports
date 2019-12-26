@@ -1,0 +1,2 @@
+share/uefi-firmware/BHYVE_UEFI_CSM.fd
+@dirrm share/uefi-firmware

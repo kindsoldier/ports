@@ -1,0 +1,11 @@
+--- ./CMakeLists.txt.orig	2013-10-08 18:50:01.000000000 +0300
++++ ./CMakeLists.txt	2015-11-20 20:45:43.514131000 +0200
+@@ -50,7 +50,7 @@
+ set(TAGLIB_LIB_MINOR_VERSION "9")
+ set(TAGLIB_LIB_PATCH_VERSION "1")
+ 
+-set(TAGLIB_LIB_VERSION_STRING "${TAGLIB_LIB_MAJOR_VERSION}.${TAGLIB_LIB_MINOR_VERSION}.${TAGLIB_LIB_PATCH_VERSION}")
++set(TAGLIB_LIB_VERSION_STRING "${TAGLIB_LIB_MAJOR_VERSION}")
+ 
+ # 1. If the library source code has changed at all since the last update, then increment revision.
+ # 2. If any interfaces have been added, removed, or changed since the last update, increment current, and set revision to 0.

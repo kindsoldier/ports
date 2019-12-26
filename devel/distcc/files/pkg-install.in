@@ -1,0 +1,43 @@
+#!/bin/sh
+
+set -x
+
+case $2 in 
+    PRE-INSTALL)
+
+	GROUP="%%GROUP%%"
+	OWNER="%%OWNER%%"
+	GROUP_ID="%%GROUP_ID%%"
+	OWNER_ID="%%OWNER_ID%%"
+
+	PKG_PREFIX="%%PREFIX%%"
+#	LOCALSTATEDIR="%%LOCALSTATEDIR%%"
+	
+#	PROXYDIR="%%LOCALSTATEDIR%%/cache/apache"
+#	RUNDIR="%%LOCALSTATEDIR%%/run/apache"
+#	LOGDIR="%%LOCALSTATEDIR%%/log/apache"
+#	DATADIR="%%LOCALSTATEDIR%%/www/apache"
+
+	NAME="distcc"
+	SHELL="/usr/sbin/nologin"
+
+	pw group add ${GROUP}  -g ${GROUP_ID}
+	pw group show ${GROUP}
+	pw user add ${OWNER} -u ${OWNER_ID} \
+	    -g ${GROUP}  \
+	    -d ${PKG_PREFIX} \
+	    -s "${SHELL}" -u ${OWNER_ID} \
+	    -c "${NAME}"
+	pw group mod ${GROUP} -M ${OWNER}
+	pw user show ${OWNER}
+	pw group show ${GROUP}
+#	for dir in ${LOGDIR} ${PROXYDIR} ${RUNDIR}; do
+#	    install -d -o ${OWNER} -g ${GROUP} -m 0750 ${dir}
+#	done
+#	install -d -o root -g wheel -m 0755 ${DATADIR}
+	;;
+    POST-INSTALL)
+	;;
+esac
+exit 0
+#EOF

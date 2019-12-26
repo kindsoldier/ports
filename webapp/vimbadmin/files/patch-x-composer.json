@@ -1,0 +1,50 @@
+--- ./composer.json.orig	2016-04-11 19:28:04.000000000 +0200
++++ ./composer.json	2016-07-19 15:37:04.967581000 +0200
+@@ -23,6 +23,22 @@
+         {
+             "type": "vcs",
+             "url": "https://github.com/opensolutions/Bootstrap-Zend-Framework"
++        },
++        {
++            "type": "package",
++            "package": {
++                "name": "smarty/smarty",
++                "version": "3.1.18",
++                "dist": {
++                    "url": "http://www.smarty.net/files/Smarty-3.1.18.zip",
++                    "type": "zip"
++                },
++                "source": {
++                    "url": "http://smarty-php.googlecode.com/svn/",
++                    "type": "svn",
++                    "reference": "tags/v3.1.18/distribution/"
++                }
++            }
+         }
+     ],
+     "require": {
+@@ -30,13 +46,21 @@
+         "doctrine/orm": "2.4.*",
+         "opensolutions/oss-framework": "dev-master",
+         "zendframework/zendframework1": "~1.12",
++        "smarty/smarty": "3.1.18",
+         "opensolutions/minify": "1.*",
+-        "komola/bootstrap-zend-framework": "dev-master",
+-        "smarty/smarty": "~3.1"
++        "komola/bootstrap-zend-framework": "dev-master"
+     },
+     "support": {
+         "issues": "https://github.com/opensolutions/ViMbAdmin/issues",
+         "wiki": "https://github.com/opensolutions/ViMbAdmin/wiki",
+         "source": "https://github.com/opensolutions/ViMbAdmin"
+-    }
++    },
++    "autoload": {
++        "classmap": [
++            "vendor/smarty/smarty/libs/Smarty.class.php",
++            "vendor/smarty/smarty/libs/SmartyBC.class.php",
++            "vendor/smarty/smarty/libs/sysplugins/smarty_security.php"
++        ]
++    },
++    "minimum-stability": "dev"
+ }

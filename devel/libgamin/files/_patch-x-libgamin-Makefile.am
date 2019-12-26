@@ -1,0 +1,45 @@
+--- ./libgamin/Makefile.am.orig	2009-09-28 21:12:27.737377783 +0300
++++ ./libgamin/Makefile.am	2009-09-28 21:15:56.908278447 +0300
+@@ -13,13 +13,13 @@
+ EXTRA_DIST = 						\
+ 	gamin_sym.version
+ 
+-lib_LTLIBRARIES = libgamin-1.la libfam.la
++lib_LTLIBRARIES = libgamin.la libfam.la
+ 
+ gaminincludedir = $(includedir)/
+ gamininclude_HEADERS =	\
+ 	fam.h
+ 
+-libgamin_1_la_SOURCES =					\
++libgamin_la_SOURCES =					\
+ 	gam_api.c					\
+ 	gam_data.c					\
+ 	gam_data.h					\
+@@ -37,13 +37,13 @@
+ 
+ CLEANFILES=gam_error.c gam_event.c
+ 
+-libgamin_1_la_LIBADD =
++libgamin_la_LIBADD =
+ 
+-libgamin_1_la_LDFLAGS = -Wl,--version-script=$(srcdir)/gamin_sym.version \
++libgamin_la_LDFLAGS = -Wl,--version-script=$(srcdir)/gamin_sym.version \
+                         -version-info @GAMIN_VERSION_INFO@ @THREAD_LIBS@
+ 
+-libfam_la_SOURCES = $(libgamin_1_la_SOURCES)
+-libfam_la_LIBADD = $(libgamin_1_la_LIBADD)
++libfam_la_SOURCES = $(libgamin_la_SOURCES)
++libfam_la_LIBADD = $(libgamin_la_LIBADD)
+ libfam_la_LDFLAGS = -Wl,--version-script=$(srcdir)/gamin_sym.version	\
+                     -version-info @FAM_VERSION_INFO@ @THREAD_LIBS@
+ 
+@@ -54,6 +54,6 @@
+ 
+ gamin_SOURCES = gamin.c
+ gamin_LDFLAGS =
+-gamin_DEPENDENCIES = $(DEPS) libgamin-1.la
+-gamin_LDADD= $(LDADDS) libgamin-1.la
++gamin_DEPENDENCIES = $(DEPS) libgamin.la
++gamin_LDADD= $(LDADDS) libgamin.la
+ 

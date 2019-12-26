@@ -1,0 +1,20 @@
+--- ./libstdc++-v3/python/Makefile.in.orig	2012-11-06 02:42:32.000000000 +0300
++++ ./libstdc++-v3/python/Makefile.in	2014-01-16 00:58:45.000000000 +0300
+@@ -384,7 +384,7 @@
+ 	for dir in "$(DESTDIR)$(pythondir)"; do \
+ 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
+ 	done
+-install: install-am
++install:
+ install-exec: install-exec-am
+ install-data: install-data-am
+ uninstall: uninstall-am
+@@ -429,7 +429,7 @@
+ 
+ info-am:
+ 
+-install-data-am: install-data-local install-nobase_pythonDATA
++install-data-am:
+ 
+ install-dvi: install-dvi-am
+ 

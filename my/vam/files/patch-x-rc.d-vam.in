@@ -1,0 +1,11 @@
+--- ./rc.d/vam.in.orig	2017-12-23 20:22:31.000000000 +0200
++++ ./rc.d/vam.in	2019-10-29 17:40:06.964472000 +0200
+@@ -18,7 +18,7 @@
+ 
+ load_rc_config ${name}
+ 
+-: ${pgagent_enable:="NO"}
++: ${vam_enable:="NO"}
+ 
+ run_rc_command "$1"
+ #EOF

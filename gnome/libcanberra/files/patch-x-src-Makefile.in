@@ -1,0 +1,20 @@
+--- ./src/Makefile.in.orig	2012-05-15 13:38:54.000000000 +0300
++++ ./src/Makefile.in	2014-12-27 13:57:16.000000000 +0200
+@@ -647,7 +647,7 @@
+ top_srcdir = @top_srcdir@
+ gtkmoduledir = @GTK_MODULES_DIR@
+ gtk3moduledir = @GTK3_MODULES_DIR@
+-plugindir = $(libdir)/libcanberra-@PACKAGE_VERSION@
++plugindir = $(libdir)/libcanberra
+ gnomeshutdowndir = $(datadir)/gnome/shutdown
+ gnomeautostartdir = $(datadir)/gnome/autostart
+ gdmautostartdir = $(datadir)/gdm/autostart/LoginWindow
+@@ -1709,7 +1709,7 @@
+ 
+ info-am:
+ 
+-install-data-am: install-dist_gsdgtkmodulesDATA \
++install-data-am:  \
+ 	install-gdmautostartDATA install-gnomeautostartDATA \
+ 	install-gnomeshutdownSCRIPTS install-gtk3moduleLTLIBRARIES \
+ 	install-gtkmoduleLTLIBRARIES install-includeHEADERS \

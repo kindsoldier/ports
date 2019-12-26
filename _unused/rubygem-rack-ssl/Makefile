@@ -1,0 +1,19 @@
+# Created by: Steve Wills <swills@FreeBSD.org>
+# $FreeBSD: head/www/rubygem-rack-ssl/Makefile 427864 2016-12-05 07:20:24Z sunpoet $
+
+PORTNAME=	rack-ssl
+PORTVERSION=	1.4.1
+CATEGORIES=	www rubygems
+MASTER_SITES=	RG
+
+MAINTAINER=	ruby@FreeBSD.org
+COMMENT=	Rack middleware to force SSL/TLS
+
+
+RUN_DEPENDS=	rubygem-rack>=0:ruby/rubygem-rack
+
+NO_ARCH=	yes
+USE_RUBY=	yes
+USES=		gem
+
+.include <bsd.port.mk>

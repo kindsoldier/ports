@@ -1,0 +1,11 @@
+--- ./configure.orig	2014-12-29 18:50:35.000000000 +0200
++++ ./configure	2014-12-29 18:55:58.000000000 +0200
+@@ -8343,7 +8343,7 @@
+ # pinentry really is better (more feature-complete and more secure).
+ 
+ if test "$pinentry_gtk_2" = "yes"; then
+-  PINENTRY_DEFAULT=pinentry-gtk-2
++  PINENTRY_DEFAULT=pinentry-gtk2
+ else
+   if test "$pinentry_qt4" = "yes"; then
+     PINENTRY_DEFAULT=pinentry-qt4

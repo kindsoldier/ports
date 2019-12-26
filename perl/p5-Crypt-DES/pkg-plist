@@ -1,0 +1,6 @@
+%%SITE_ARCH%%/Crypt/DES.pm
+%%SITE_ARCH%%/auto/Crypt/DES/DES.so
+%%PERL5_MAN3%%/Crypt::DES.3.gz
+@dir %%SITE_ARCH%%/Crypt
+@dir %%SITE_ARCH%%/auto/Crypt/DES
+@dir %%SITE_ARCH%%/auto/Crypt

@@ -1,0 +1,10 @@
+--- ./doc/Makefile.in.orig	2011-11-09 17:28:22.000000000 +0300
++++ ./doc/Makefile.in	2011-11-09 17:32:14.000000000 +0300
+@@ -258,7 +258,6 @@
+ vapigen_decl = @vapigen_decl@
+ NULL = 
+ SUBDIRS = \
+-	vala \
+ 	$(NULL)
+ 
+ @ENABLE_VAPIGEN_TRUE@VAPIGEN_MANS = \

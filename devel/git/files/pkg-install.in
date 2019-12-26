@@ -1,0 +1,32 @@
+#!/bin/sh
+
+set -x
+
+
+case $2 in 
+    PRE-INSTALL)
+
+	GIT_GROUP="%%GIT_GROUP%%"
+	GIT_OWNER="%%GIT_OWNER%%"
+	GIT_GROUPID="%%GIT_GROUPID%%"
+	GIT_OWNERID="%%GIT_OWNERID%%"
+
+	GIT_NAME="git_daemon"
+	GIT_SHELL="/usr/sbin/nologin"
+
+
+	pw group add ${GIT_GROUP}  -g ${GIT_GROUPID}
+	pw group show ${GIT_GROUP}
+	pw user add ${GIT_OWNER} -u ${GIT_OWNERID} \
+	    -g ${GIT_GROUP}  -d ${PKG_PREFIX} \
+	    -s "${GIT_SHELL}" -u ${GIT_OWNERID} \
+	    -c "${GIT_NAME}"
+	pw group mod ${GIT_GROUP} -M ${GIT_OWNER}
+	pw user show ${GIT_OWNER}
+	pw group show ${GIT_GROUP}
+	;;
+    POST-INSTALL)
+	;;
+esac
+exit 0
+#EOF

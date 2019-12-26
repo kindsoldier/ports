@@ -1,0 +1,60 @@
+--- ./scripts/startxfce4.in.orig	2014-08-28 18:51:53.000000000 +0300
++++ ./scripts/startxfce4.in	2015-08-18 15:07:32.394751000 +0200
+@@ -64,30 +64,37 @@
+   BASEDIR="$XDG_CONFIG_HOME/xfce4"
+ fi
+ 
+-if test "x$XDG_DATA_DIRS" = "x"
+-then
+-  if test "x@_datadir_@" = "x/usr/local/share" -o "x@_datadir_@" = "x/usr/share"; then
+-    XDG_DATA_DIRS="/usr/local/share:/usr/share"
+-  else
+-    XDG_DATA_DIRS="@_datadir_@:/usr/local/share:/usr/share"
+-  fi
+-else
+-  XDG_DATA_DIRS="$XDG_DATA_DIRS:@_datadir_@"
+-fi
++#if test "x$XDG_DATA_DIRS" = "x"
++#then
++#  if test "x@_datadir_@" = "x/usr/local/share" -o "x@_datadir_@" = "x/usr/share"; then
++#    XDG_DATA_DIRS="/usr/local/share:/usr/share"
++#  else
++#    XDG_DATA_DIRS="@_datadir_@:/usr/local/share:/usr/share"
++#  fi
++#else
++#  XDG_DATA_DIRS="$XDG_DATA_DIRS:@_datadir_@"
++#fi
++#export XDG_DATA_DIRS
++
++#if test "x$XDG_CONFIG_DIRS" = "x"
++#then
++#  if test "x@_sysconfdir_@" = "x/etc"; then
++#    XDG_CONFIG_DIRS="/etc/xdg"
++#  else
++#    XDG_CONFIG_DIRS="/etc/xdg:@_sysconfdir_@/xdg"
++#  fi
++#else
++#  XDG_CONFIG_DIRS="$XDG_CONFIG_DIRS:@_sysconfdir_@/xdg"
++#fi
++#export XDG_CONFIG_DIRS
++
++XDG_DATA_DIRS="$XDG_DATA_DIRS:/usr/local/share"
+ export XDG_DATA_DIRS
+ 
+-if test "x$XDG_CONFIG_DIRS" = "x"
+-then
+-  if test "x@_sysconfdir_@" = "x/etc"; then
+-    XDG_CONFIG_DIRS="/etc/xdg"
+-  else
+-    XDG_CONFIG_DIRS="/etc/xdg:@_sysconfdir_@/xdg"
+-  fi
+-else
+-  XDG_CONFIG_DIRS="$XDG_CONFIG_DIRS:@_sysconfdir_@/xdg"
+-fi
++XDG_CONFIG_DIRS="$XDG_CONFIG_DIRS:/usr/local/etc/xdg"
+ export XDG_CONFIG_DIRS
+ 
++
+ if test "x$DISPLAY" = "x"
+ then
+   echo "$0: Starting X server"

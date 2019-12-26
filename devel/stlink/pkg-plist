@@ -1,0 +1,27 @@
+bin/st-flash
+bin/st-info
+bin/st-util
+include/stlink.h
+include/stlink/backend.h
+include/stlink/chipid.h
+include/stlink/commands.h
+include/stlink/flash_loader.h
+include/stlink/logging.h
+include/stlink/mmap.h
+include/stlink/reg.h
+include/stlink/sg.h
+include/stlink/usb.h
+include/stlink/version.h
+lib/libstlink-shared.so
+lib/libstlink-shared.so.1
+lib/libstlink.a
+lib/pkgconfig/stlink.pc
+man/man1/st-flash.1.gz
+man/man1/st-info.1.gz
+man/man1/st-util.1.gz
+share/doc/stlink/README.md
+share/doc/stlink/tested-boards.md
+share/doc/stlink/tutorial.md
+@dir include/stlink
+@dir lib/pkgconfig
+@dir share/doc/stlink

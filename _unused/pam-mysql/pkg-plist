@@ -1,0 +1,4 @@
+lib/pam_mysql.la
+lib/pam_mysql.so
+share/doc/pam-mysql/README
+@dir share/doc/pam-mysql

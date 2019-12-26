@@ -1,0 +1,64 @@
+!
+URxvt.saveLines:        8192
+URxvt.mapAlert:         true
+URxvt.visualBell:       true
+URxvt.insecure:         true
+URxvt.geometry:         108x32
+URxvt.loginShell:       false
+URxvt.meta:             ignore
+URxvt.utmpInhibit:      false
+!
+URxvt.transparent: 	false
+URxvt.shading:		70
+!
+URxvt.fadeColor:	green
+!
+!URxvt.background:	gray85
+!URxvt.foreground:	black
+URxvt.background:      black
+URxvt.foreground:      gray88
+
+URxvt.cursorColor:	green3
+URxvt.cursorColor2:	green2
+URxvt.cursorBlink:	false
+!
+URxvt.pointerBlank: 	false
+URxvt.pointerBlankDelay: 3
+!
+URxvt.colorUL:		red3
+URxvt.colorBD:  	blue3
+URxvt.colorIT:  	green3
+!
+URxvt.scrollBar:	false
+URxvt.scrollstyle:      plain
+URxvt.secondaryScroll:  true
+URxvt.skipScroll:	true
+URxvt.scrollBar_right:	true
+URxvt.scrollBar_floating:		true
+!
+URxvt.internalBorder:   5
+URxvt.externalBorder:	3
+!
+URxvt.color0:          gray3
+URxvt.color1:          red3
+URxvt.color2:          green4
+URxvt.color3:          yellow4
+URxvt.color4:          blue4
+URxvt.color5:          magenta4
+URxvt.color6:          cyan4
+URxvt.color7:          gray85
+!
+URxvt.color8:                  gray3
+URxvt.color9:                  red2
+URxvt.color10:                 green2
+URxvt.color11:                 yellow2
+URxvt.color12:                 blue2
+URxvt.color13:                 magenta2
+URxvt.color14:                 cyan2
+URxvt.color15:                 white
+!
+URxvt.font:             9x15,9x15bold 
+!
+!URxvt.boldFont:         9x15bold
+!URxvt.italicFont:
+!URxvt.boldItalicFont:

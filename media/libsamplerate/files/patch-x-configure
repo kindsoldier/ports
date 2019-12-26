@@ -1,0 +1,37 @@
+--- ./configure.orig	2016-09-18 23:53:37.000000000 +0200
++++ ./configure	2017-03-15 17:39:50.874047000 +0200
+@@ -11641,15 +11641,9 @@
+   fi
+   version_type=freebsd-$objformat
+   case $version_type in
+-    freebsd-elf*)
+-      library_names_spec='$libname$release$shared_ext$versuffix $libname$release$shared_ext$major $libname$shared_ext'
+-      soname_spec='$libname$release$shared_ext$major'
+-      need_version=no
+-      need_lib_prefix=no
+-      ;;
+     freebsd-*)
+-      library_names_spec='$libname$release$shared_ext$versuffix $libname$shared_ext$versuffix'
+-      need_version=yes
++      library_names_spec='$libname$shared_ext$major $libname$shared_ext'
++      need_version=no
+       ;;
+   esac
+   shlibpath_var=LD_LIBRARY_PATH
+@@ -15618,14 +15612,8 @@
+   fi
+   version_type=freebsd-$objformat
+   case $version_type in
+-    freebsd-elf*)
+-      library_names_spec='$libname$release$shared_ext$versuffix $libname$release$shared_ext$major $libname$shared_ext'
+-      soname_spec='$libname$release$shared_ext$major'
+-      need_version=no
+-      need_lib_prefix=no
+-      ;;
+-    freebsd-*)
+-      library_names_spec='$libname$release$shared_ext$versuffix $libname$shared_ext$versuffix'
++    freebsd*)
++      library_names_spec='$libname$shared_ext$major $libname$shared_ext'
+       need_version=yes
+       ;;
+   esac

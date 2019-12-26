@@ -1,0 +1,155 @@
+--- ./srfi/Makefile.in.orig	2010-12-13 21:29:39.000000000 +0200
++++ ./srfi/Makefile.in	2014-01-06 21:26:21.000000000 +0300
+@@ -72,45 +72,45 @@
+ am__installdirs = "$(DESTDIR)$(libdir)" "$(DESTDIR)$(srfidir)" \
+ 	"$(DESTDIR)$(srfiincludedir)"
+ LTLIBRARIES = $(lib_LTLIBRARIES)
+-libguile_srfi_srfi_1_v_@LIBGUILE_SRFI_SRFI_1_MAJOR@_la_DEPENDENCIES =  \
++libguile_srfi_srfi_1_la_DEPENDENCIES =  \
+ 	../libguile/libguile.la
+-am_libguile_srfi_srfi_1_v_@LIBGUILE_SRFI_SRFI_1_MAJOR@_la_OBJECTS =  \
++am_libguile_srfi_srfi_1_la_OBJECTS =  \
+ 	srfi-1.lo
+-libguile_srfi_srfi_1_v_@LIBGUILE_SRFI_SRFI_1_MAJOR@_la_OBJECTS = $(am_libguile_srfi_srfi_1_v_@LIBGUILE_SRFI_SRFI_1_MAJOR@_la_OBJECTS)
+-libguile_srfi_srfi_1_v_@LIBGUILE_SRFI_SRFI_1_MAJOR@_la_LINK =  \
++libguile_srfi_srfi_1_la_OBJECTS = $(am_libguile_srfi_srfi_1_la_OBJECTS)
++libguile_srfi_srfi_1_la_LINK =  \
+ 	$(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) \
+ 	--mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+-	$(libguile_srfi_srfi_1_v_@LIBGUILE_SRFI_SRFI_1_MAJOR@_la_LDFLAGS) \
++	$(libguile_srfi_srfi_1_la_LDFLAGS) \
+ 	$(LDFLAGS) -o $@
+-libguile_srfi_srfi_13_14_v_@LIBGUILE_SRFI_SRFI_13_14_MAJOR@_la_DEPENDENCIES =  \
++libguile_srfi_srfi_13_14_la_DEPENDENCIES =  \
+ 	../libguile/libguile.la
+-am_libguile_srfi_srfi_13_14_v_@LIBGUILE_SRFI_SRFI_13_14_MAJOR@_la_OBJECTS =  \
++am_libguile_srfi_srfi_13_14_la_OBJECTS =  \
+ 	srfi-13.lo srfi-14.lo
+-libguile_srfi_srfi_13_14_v_@LIBGUILE_SRFI_SRFI_13_14_MAJOR@_la_OBJECTS = $(am_libguile_srfi_srfi_13_14_v_@LIBGUILE_SRFI_SRFI_13_14_MAJOR@_la_OBJECTS)
+-libguile_srfi_srfi_13_14_v_@LIBGUILE_SRFI_SRFI_13_14_MAJOR@_la_LINK =  \
++libguile_srfi_srfi_13_14_la_OBJECTS = $(am_libguile_srfi_srfi_13_14_la_OBJECTS)
++libguile_srfi_srfi_13_14_la_LINK =  \
+ 	$(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) \
+ 	--mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+-	$(libguile_srfi_srfi_13_14_v_@LIBGUILE_SRFI_SRFI_13_14_MAJOR@_la_LDFLAGS) \
++	$(libguile_srfi_srfi_13_14_la_LDFLAGS) \
+ 	$(LDFLAGS) -o $@
+-libguile_srfi_srfi_4_v_@LIBGUILE_SRFI_SRFI_4_MAJOR@_la_DEPENDENCIES =  \
++libguile_srfi_srfi_4_la_DEPENDENCIES =  \
+ 	../libguile/libguile.la
+-am_libguile_srfi_srfi_4_v_@LIBGUILE_SRFI_SRFI_4_MAJOR@_la_OBJECTS =  \
++am_libguile_srfi_srfi_4_la_OBJECTS =  \
+ 	srfi-4.lo
+-libguile_srfi_srfi_4_v_@LIBGUILE_SRFI_SRFI_4_MAJOR@_la_OBJECTS = $(am_libguile_srfi_srfi_4_v_@LIBGUILE_SRFI_SRFI_4_MAJOR@_la_OBJECTS)
+-libguile_srfi_srfi_4_v_@LIBGUILE_SRFI_SRFI_4_MAJOR@_la_LINK =  \
++libguile_srfi_srfi_4_la_OBJECTS = $(am_libguile_srfi_srfi_4_la_OBJECTS)
++libguile_srfi_srfi_4_la_LINK =  \
+ 	$(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) \
+ 	--mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+-	$(libguile_srfi_srfi_4_v_@LIBGUILE_SRFI_SRFI_4_MAJOR@_la_LDFLAGS) \
++	$(libguile_srfi_srfi_4_la_LDFLAGS) \
+ 	$(LDFLAGS) -o $@
+-libguile_srfi_srfi_60_v_@LIBGUILE_SRFI_SRFI_60_MAJOR@_la_DEPENDENCIES =  \
++libguile_srfi_srfi_60_la_DEPENDENCIES =  \
+ 	../libguile/libguile.la
+-am_libguile_srfi_srfi_60_v_@LIBGUILE_SRFI_SRFI_60_MAJOR@_la_OBJECTS =  \
++am_libguile_srfi_srfi_60_la_OBJECTS =  \
+ 	srfi-60.lo
+-libguile_srfi_srfi_60_v_@LIBGUILE_SRFI_SRFI_60_MAJOR@_la_OBJECTS = $(am_libguile_srfi_srfi_60_v_@LIBGUILE_SRFI_SRFI_60_MAJOR@_la_OBJECTS)
+-libguile_srfi_srfi_60_v_@LIBGUILE_SRFI_SRFI_60_MAJOR@_la_LINK =  \
++libguile_srfi_srfi_60_la_OBJECTS = $(am_libguile_srfi_srfi_60_la_OBJECTS)
++libguile_srfi_srfi_60_la_LINK =  \
+ 	$(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) \
+ 	--mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+-	$(libguile_srfi_srfi_60_v_@LIBGUILE_SRFI_SRFI_60_MAJOR@_la_LDFLAGS) \
++	$(libguile_srfi_srfi_60_la_LDFLAGS) \
+ 	$(LDFLAGS) -o $@
+ DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
+ depcomp = $(SHELL) $(top_srcdir)/build-aux/depcomp
+@@ -125,14 +125,14 @@
+ LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) \
+ 	--mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
+ 	$(LDFLAGS) -o $@
+-SOURCES = $(libguile_srfi_srfi_1_v_@LIBGUILE_SRFI_SRFI_1_MAJOR@_la_SOURCES) \
+-	$(libguile_srfi_srfi_13_14_v_@LIBGUILE_SRFI_SRFI_13_14_MAJOR@_la_SOURCES) \
+-	$(libguile_srfi_srfi_4_v_@LIBGUILE_SRFI_SRFI_4_MAJOR@_la_SOURCES) \
+-	$(libguile_srfi_srfi_60_v_@LIBGUILE_SRFI_SRFI_60_MAJOR@_la_SOURCES)
+-DIST_SOURCES = $(libguile_srfi_srfi_1_v_@LIBGUILE_SRFI_SRFI_1_MAJOR@_la_SOURCES) \
+-	$(libguile_srfi_srfi_13_14_v_@LIBGUILE_SRFI_SRFI_13_14_MAJOR@_la_SOURCES) \
+-	$(libguile_srfi_srfi_4_v_@LIBGUILE_SRFI_SRFI_4_MAJOR@_la_SOURCES) \
+-	$(libguile_srfi_srfi_60_v_@LIBGUILE_SRFI_SRFI_60_MAJOR@_la_SOURCES)
++SOURCES = $(libguile_srfi_srfi_1_la_SOURCES) \
++	$(libguile_srfi_srfi_13_14_la_SOURCES) \
++	$(libguile_srfi_srfi_4_la_SOURCES) \
++	$(libguile_srfi_srfi_60_la_SOURCES)
++DIST_SOURCES = $(libguile_srfi_srfi_1_la_SOURCES) \
++	$(libguile_srfi_srfi_13_14_la_SOURCES) \
++	$(libguile_srfi_srfi_4_la_SOURCES) \
++	$(libguile_srfi_srfi_60_la_SOURCES)
+ DATA = $(srfi_DATA)
+ HEADERS = $(srfiinclude_HEADERS)
+ ETAGS = etags
+@@ -354,24 +354,24 @@
+ # These headers are visible as <guile/srfi/mumble.h>
+ srfiinclude_HEADERS = srfi-1.h srfi-4.h srfi-13.h srfi-14.h srfi-60.h
+ lib_LTLIBRARIES = \
+-  libguile-srfi-srfi-1-v-@LIBGUILE_SRFI_SRFI_1_MAJOR@.la \
+-  libguile-srfi-srfi-4-v-@LIBGUILE_SRFI_SRFI_4_MAJOR@.la \
+-  libguile-srfi-srfi-13-14-v-@LIBGUILE_SRFI_SRFI_13_14_MAJOR@.la \
+-  libguile-srfi-srfi-60-v-@LIBGUILE_SRFI_SRFI_60_MAJOR@.la
++  libguile-srfi-srfi-1.la \
++  libguile-srfi-srfi-4.la \
++  libguile-srfi-srfi-13-14.la \
++  libguile-srfi-srfi-60.la
+ 
+ BUILT_SOURCES = srfi-1.x srfi-4.x srfi-13.x srfi-14.x srfi-60.x
+-libguile_srfi_srfi_1_v_@LIBGUILE_SRFI_SRFI_1_MAJOR@_la_SOURCES = srfi-1.x srfi-1.c
+-libguile_srfi_srfi_1_v_@LIBGUILE_SRFI_SRFI_1_MAJOR@_la_LIBADD = ../libguile/libguile.la
+-libguile_srfi_srfi_1_v_@LIBGUILE_SRFI_SRFI_1_MAJOR@_la_LDFLAGS = -no-undefined -export-dynamic -version-info @LIBGUILE_SRFI_SRFI_1_INTERFACE@
+-libguile_srfi_srfi_4_v_@LIBGUILE_SRFI_SRFI_4_MAJOR@_la_SOURCES = srfi-4.x srfi-4.c
+-libguile_srfi_srfi_4_v_@LIBGUILE_SRFI_SRFI_4_MAJOR@_la_LIBADD = ../libguile/libguile.la
+-libguile_srfi_srfi_4_v_@LIBGUILE_SRFI_SRFI_4_MAJOR@_la_LDFLAGS = -no-undefined -export-dynamic -version-info @LIBGUILE_SRFI_SRFI_4_INTERFACE@
+-libguile_srfi_srfi_13_14_v_@LIBGUILE_SRFI_SRFI_13_14_MAJOR@_la_SOURCES = srfi-13.x srfi-13.c srfi-14.x srfi-14.c
+-libguile_srfi_srfi_13_14_v_@LIBGUILE_SRFI_SRFI_13_14_MAJOR@_la_LIBADD = ../libguile/libguile.la
+-libguile_srfi_srfi_13_14_v_@LIBGUILE_SRFI_SRFI_13_14_MAJOR@_la_LDFLAGS = -no-undefined -export-dynamic -version-info @LIBGUILE_SRFI_SRFI_13_14_INTERFACE@
+-libguile_srfi_srfi_60_v_@LIBGUILE_SRFI_SRFI_60_MAJOR@_la_SOURCES = srfi-60.x srfi-60.c
+-libguile_srfi_srfi_60_v_@LIBGUILE_SRFI_SRFI_60_MAJOR@_la_LIBADD = ../libguile/libguile.la
+-libguile_srfi_srfi_60_v_@LIBGUILE_SRFI_SRFI_60_MAJOR@_la_LDFLAGS = -no-undefined -export-dynamic -version-info @LIBGUILE_SRFI_SRFI_60_INTERFACE@
++libguile_srfi_srfi_1_la_SOURCES = srfi-1.x srfi-1.c
++libguile_srfi_srfi_1_la_LIBADD = ../libguile/libguile.la
++libguile_srfi_srfi_1_la_LDFLAGS = -no-undefined -export-dynamic -version-info @LIBGUILE_SRFI_SRFI_1_INTERFACE@
++libguile_srfi_srfi_4_la_SOURCES = srfi-4.x srfi-4.c
++libguile_srfi_srfi_4_la_LIBADD = ../libguile/libguile.la
++libguile_srfi_srfi_4_la_LDFLAGS = -no-undefined -export-dynamic -version-info @LIBGUILE_SRFI_SRFI_4_INTERFACE@
++libguile_srfi_srfi_13_14_la_SOURCES = srfi-13.x srfi-13.c srfi-14.x srfi-14.c
++libguile_srfi_srfi_13_14_la_LIBADD = ../libguile/libguile.la
++libguile_srfi_srfi_13_14_la_LDFLAGS = -no-undefined -export-dynamic -version-info @LIBGUILE_SRFI_SRFI_13_14_INTERFACE@
++libguile_srfi_srfi_60_la_SOURCES = srfi-60.x srfi-60.c
++libguile_srfi_srfi_60_la_LIBADD = ../libguile/libguile.la
++libguile_srfi_srfi_60_la_LDFLAGS = -no-undefined -export-dynamic -version-info @LIBGUILE_SRFI_SRFI_60_INTERFACE@
+ srfidir = $(datadir)/guile/$(GUILE_EFFECTIVE_VERSION)/srfi
+ srfi_DATA = srfi-1.scm \
+             srfi-2.scm \
+@@ -469,14 +469,14 @@
+ 	  echo "rm -f \"$${dir}/so_locations\""; \
+ 	  rm -f "$${dir}/so_locations"; \
+ 	done
+-libguile-srfi-srfi-1-v-@LIBGUILE_SRFI_SRFI_1_MAJOR@.la: $(libguile_srfi_srfi_1_v_@LIBGUILE_SRFI_SRFI_1_MAJOR@_la_OBJECTS) $(libguile_srfi_srfi_1_v_@LIBGUILE_SRFI_SRFI_1_MAJOR@_la_DEPENDENCIES) 
+-	$(libguile_srfi_srfi_1_v_@LIBGUILE_SRFI_SRFI_1_MAJOR@_la_LINK) -rpath $(libdir) $(libguile_srfi_srfi_1_v_@LIBGUILE_SRFI_SRFI_1_MAJOR@_la_OBJECTS) $(libguile_srfi_srfi_1_v_@LIBGUILE_SRFI_SRFI_1_MAJOR@_la_LIBADD) $(LIBS)
+-libguile-srfi-srfi-13-14-v-@LIBGUILE_SRFI_SRFI_13_14_MAJOR@.la: $(libguile_srfi_srfi_13_14_v_@LIBGUILE_SRFI_SRFI_13_14_MAJOR@_la_OBJECTS) $(libguile_srfi_srfi_13_14_v_@LIBGUILE_SRFI_SRFI_13_14_MAJOR@_la_DEPENDENCIES) 
+-	$(libguile_srfi_srfi_13_14_v_@LIBGUILE_SRFI_SRFI_13_14_MAJOR@_la_LINK) -rpath $(libdir) $(libguile_srfi_srfi_13_14_v_@LIBGUILE_SRFI_SRFI_13_14_MAJOR@_la_OBJECTS) $(libguile_srfi_srfi_13_14_v_@LIBGUILE_SRFI_SRFI_13_14_MAJOR@_la_LIBADD) $(LIBS)
+-libguile-srfi-srfi-4-v-@LIBGUILE_SRFI_SRFI_4_MAJOR@.la: $(libguile_srfi_srfi_4_v_@LIBGUILE_SRFI_SRFI_4_MAJOR@_la_OBJECTS) $(libguile_srfi_srfi_4_v_@LIBGUILE_SRFI_SRFI_4_MAJOR@_la_DEPENDENCIES) 
+-	$(libguile_srfi_srfi_4_v_@LIBGUILE_SRFI_SRFI_4_MAJOR@_la_LINK) -rpath $(libdir) $(libguile_srfi_srfi_4_v_@LIBGUILE_SRFI_SRFI_4_MAJOR@_la_OBJECTS) $(libguile_srfi_srfi_4_v_@LIBGUILE_SRFI_SRFI_4_MAJOR@_la_LIBADD) $(LIBS)
+-libguile-srfi-srfi-60-v-@LIBGUILE_SRFI_SRFI_60_MAJOR@.la: $(libguile_srfi_srfi_60_v_@LIBGUILE_SRFI_SRFI_60_MAJOR@_la_OBJECTS) $(libguile_srfi_srfi_60_v_@LIBGUILE_SRFI_SRFI_60_MAJOR@_la_DEPENDENCIES) 
+-	$(libguile_srfi_srfi_60_v_@LIBGUILE_SRFI_SRFI_60_MAJOR@_la_LINK) -rpath $(libdir) $(libguile_srfi_srfi_60_v_@LIBGUILE_SRFI_SRFI_60_MAJOR@_la_OBJECTS) $(libguile_srfi_srfi_60_v_@LIBGUILE_SRFI_SRFI_60_MAJOR@_la_LIBADD) $(LIBS)
++libguile-srfi-srfi-1.la: $(libguile_srfi_srfi_1_la_OBJECTS) $(libguile_srfi_srfi_1_la_DEPENDENCIES) 
++	$(libguile_srfi_srfi_1_la_LINK) -rpath $(libdir) $(libguile_srfi_srfi_1_la_OBJECTS) $(libguile_srfi_srfi_1_la_LIBADD) $(LIBS)
++libguile-srfi-srfi-13-14.la: $(libguile_srfi_srfi_13_14_la_OBJECTS) $(libguile_srfi_srfi_13_14_la_DEPENDENCIES) 
++	$(libguile_srfi_srfi_13_14_la_LINK) -rpath $(libdir) $(libguile_srfi_srfi_13_14_la_OBJECTS) $(libguile_srfi_srfi_13_14_la_LIBADD) $(LIBS)
++libguile-srfi-srfi-4.la: $(libguile_srfi_srfi_4_la_OBJECTS) $(libguile_srfi_srfi_4_la_DEPENDENCIES) 
++	$(libguile_srfi_srfi_4_la_LINK) -rpath $(libdir) $(libguile_srfi_srfi_4_la_OBJECTS) $(libguile_srfi_srfi_4_la_LIBADD) $(LIBS)
++libguile-srfi-srfi-60.la: $(libguile_srfi_srfi_60_la_OBJECTS) $(libguile_srfi_srfi_60_la_DEPENDENCIES) 
++	$(libguile_srfi_srfi_60_la_LINK) -rpath $(libdir) $(libguile_srfi_srfi_60_la_OBJECTS) $(libguile_srfi_srfi_60_la_LIBADD) $(LIBS)
+ 
+ mostlyclean-compile:
+ 	-rm -f *.$(OBJEXT)

@@ -1,0 +1,25 @@
+--- ./fc-list/Makefile.am.orig	2016-07-11 04:41:06.000000000 +0200
++++ ./fc-list/Makefile.am	2019-03-31 10:15:39.494565000 +0200
+@@ -27,11 +27,11 @@
+ 
+ SGML = ${FC_LIST_SRC}/fc-list.sgml
+ 
+-bin_PROGRAMS=fc-list
++bin_PROGRAMS=qt-fc-list
+ 
+ AM_CPPFLAGS=-I${top_srcdir} $(WARN_CFLAGS)
+ 
+-BUILT_MANS=fc-list.1
++BUILT_MANS=qt-fc-list.1
+ 
+ if ENABLE_DOCS
+ man_MANS=${BUILT_MANS}
+@@ -41,7 +41,7 @@
+ 
+ CLEANFILES =
+ 
+-fc_list_LDADD = ${top_builddir}/src/libfontconfig.la
++qt_fc_list_LDADD = ${top_builddir}/src/libqtfontconfig.la
+ 
+ if USEDOCBOOK
+ 

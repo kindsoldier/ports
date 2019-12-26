@@ -1,0 +1,41 @@
+--- ./libdocument/Makefile.in.orig	2010-09-27 22:02:29.000000000 +0300
++++ ./libdocument/Makefile.in	2011-11-07 19:49:00.000000000 +0300
+@@ -429,7 +429,7 @@
+ 	$(INST_H_SRC_FILES)			\
+ 	ev-document-type-builtins.h
+ 
+-headerdir = $(includedir)/evince/$(EV_API_VERSION)/libdocument
++headerdir = $(includedir)/evince/libdocument
+ header_DATA = $(INST_H_FILES)
+ libevdocument_la_SOURCES = \
+ 	ev-annotation.c				\
+@@ -507,9 +507,9 @@
+ EXTRA_DIST = ev-document-type-builtins.c.template \
+ 	ev-document-type-builtins.h.template $(am__append_1)
+ @ENABLE_INTROSPECTION_TRUE@girdir = $(GIRDIR)
+-@ENABLE_INTROSPECTION_TRUE@gir_DATA = EvinceDocument-$(EV_API_VERSION).gir
++@ENABLE_INTROSPECTION_TRUE@gir_DATA = EvinceDocument.gir
+ @ENABLE_INTROSPECTION_TRUE@typelibsdir = $(GIRTYPELIBDIR)
+-@ENABLE_INTROSPECTION_TRUE@typelibs_DATA = EvinceDocument-$(EV_API_VERSION).typelib
++@ENABLE_INTROSPECTION_TRUE@typelibs_DATA = EvinceDocument.typelib
+ all: $(BUILT_SOURCES)
+ 	$(MAKE) $(AM_MAKEFLAGS) all-am
+ 
+@@ -1239,7 +1239,7 @@
+ 
+ # GObject Introspection
+ 
+-@ENABLE_INTROSPECTION_TRUE@EvinceDocument-$(EV_API_VERSION).gir: libevdocument.la Makefile $(INST_H_FILES) $(filter %.c,$(libevdocument_la_SOURCES))
++@ENABLE_INTROSPECTION_TRUE@EvinceDocument.gir: libevdocument.la Makefile $(INST_H_FILES) $(filter %.c,$(libevdocument_la_SOURCES))
+ @ENABLE_INTROSPECTION_TRUE@	$(AM_V_GEN) PKG_CONFIG_PATH=$(top_builddir):$$PKG_CONFIG_PATH \
+ @ENABLE_INTROSPECTION_TRUE@	$(G_IR_SCANNER) -v --namespace EvinceDocument \
+ @ENABLE_INTROSPECTION_TRUE@	--strip-prefix=Ev \
+@@ -1252,7 +1252,7 @@
+ @ENABLE_INTROSPECTION_TRUE@	--library=evdocument \
+ @ENABLE_INTROSPECTION_TRUE@	--libtool="$(SAVED_LIBTOOL)" \
+ @ENABLE_INTROSPECTION_TRUE@	--output $@ \
+-@ENABLE_INTROSPECTION_TRUE@	--pkg evince-document-$(EV_API_VERSION) \
++@ENABLE_INTROSPECTION_TRUE@	--pkg evince-document \
+ @ENABLE_INTROSPECTION_TRUE@	-I$(top_srcdir) \
+ @ENABLE_INTROSPECTION_TRUE@	-I$(top_builddir) \
+ @ENABLE_INTROSPECTION_TRUE@	-I$(srcdir) \

@@ -1,0 +1,15 @@
+#!/bin/sh
+
+set -x
+
+PREFIX=${PKG_PREFIX}
+LOCALBASE=${PKG_PREFIX}
+
+case $2 in 
+    PRE-INSTALL)
+	;;
+    POST-INSTALL)
+	${LOCALBASE}/bin/gtk-update-icon-cache -q ${PREFIX}/share/icons/Adwaita
+	;;
+esac
+#EOF

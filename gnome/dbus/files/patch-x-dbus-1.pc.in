@@ -1,0 +1,22 @@
+--- ./dbus-1.pc.in.orig	2015-05-14 14:23:25.000000000 +0200
++++ ./dbus-1.pc.in	2015-10-15 11:34:51.874116000 +0200
+@@ -4,14 +4,13 @@
+ includedir=@includedir@
+ system_bus_default_address=@DBUS_SYSTEM_BUS_DEFAULT_ADDRESS@
+ sysconfdir=@EXPANDED_SYSCONFDIR@
+-session_bus_services_dir=@EXPANDED_DATADIR@/dbus-1/services
+-system_bus_services_dir=@EXPANDED_DATADIR@/dbus-1/system-services
+-interfaces_dir=@EXPANDED_DATADIR@/dbus-1/interfaces
++session_bus_services_dir=@EXPANDED_DATADIR@/dbus/services
++system_bus_services_dir=@EXPANDED_DATADIR@/dbus/system-services
++interfaces_dir=@EXPANDED_DATADIR@/dbus/interfaces
+ daemondir=@DBUS_DAEMONDIR@
+ 
+ Name: dbus
+ Description: Free desktop message bus
+ Version: @VERSION@
+-Libs: -L${libdir} -ldbus-1
+-Libs.private: @LIBDBUS_LIBS@
+-Cflags: -I${includedir}/dbus-1.0 -I${libdir}/dbus-1.0/include @DBUS_STATIC_BUILD_CPPFLAGS@
++Libs: -L${libdir} -ldbus
++Cflags: -I${includedir}/dbus -I${libdir}/dbus/include @DBUS_STATIC_BUILD_CPPFLAGS@

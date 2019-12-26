@@ -1,0 +1,11 @@
+--- ./support-files/CMakeLists.txt.orig	2018-05-16 23:31:14.000000000 +0200
++++ ./support-files/CMakeLists.txt	2018-06-21 21:03:28.164244000 +0200
+@@ -81,7 +81,7 @@
+   ENDIF()
+ 
+   CONFIGURE_FILE(mariadb.pc.in ${CMAKE_CURRENT_BINARY_DIR}/mariadb.pc @ONLY)
+-  INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/mariadb.pc DESTINATION ${INSTALL_SHAREDIR}/pkgconfig COMPONENT Development)
++  INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/mariadb.pc DESTINATION ${CMAKE_INSTALL_PREFIX}/lib/pkgconfig COMPONENT Development)
+ 
+   INSTALL(FILES mysql.m4 DESTINATION ${INSTALL_SHAREDIR}/aclocal COMPONENT Development)
+   

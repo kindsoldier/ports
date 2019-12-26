@@ -1,0 +1,5 @@
+lib/liblbxutil.a
+lib/liblbxutil.la
+lib/liblbxutil.so
+lib/liblbxutil.so.1
+lib/pkgconfig/lbxutil.pc

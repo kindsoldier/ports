@@ -1,0 +1,12 @@
+bin/shrpx
+bin/spdycat
+bin/spdycli
+bin/spdyd
+include/spdylay/spdylay.h
+include/spdylay/spdylayver.h
+lib/libspdylay.a
+lib/libspdylay.la
+lib/libspdylay.so
+lib/libspdylay.so.9
+lib/pkgconfig/libspdylay.pc
+@dir include/spdylay

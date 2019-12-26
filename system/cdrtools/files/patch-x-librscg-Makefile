@@ -1,0 +1,11 @@
+--- ./librscg/Makefile.orig	2006-09-15 23:20:21.000000000 +0300
++++ ./librscg/Makefile	2018-06-10 14:33:47.193849000 +0200
+@@ -5,7 +5,7 @@
+ include		$(SRCROOT)/$(RULESDIR)/rules.top
+ ###########################################################################
+ 
+-MK_FILES= librscg.mk librscg_p.mk $(NO_SHL)shlrscg.mk 
++MK_FILES= librscg.mk $(NO_SHL)shlrscg.mk 
+ 
+ ###########################################################################
+ include		$(SRCROOT)/$(RULESDIR)/rules.mks

@@ -1,0 +1,546 @@
+--- ./configure.orig	2012-12-27 15:50:36.000000000 +0300
++++ ./configure	2015-01-19 16:50:53.000000000 +0200
+@@ -633,6 +633,9 @@
+ #endif
+ #ifdef HAVE_UNISTD_H
+ # include <unistd.h>
++#endif
++#ifdef __FreeBSD__
++# include <sys/param.h>
+ #endif"
+ 
+ ac_header_list=
+@@ -13747,7 +13750,7 @@
+ 
+ 
+ 
+-    GETTEXT_PACKAGE=exo-1
++    GETTEXT_PACKAGE=exo
+ 
+ cat >>confdefs.h <<_ACEOF
+ #define GETTEXT_PACKAGE "$GETTEXT_PACKAGE"
+@@ -13802,7 +13805,7 @@
+ 
+     fi
+   fi
+-     USE_NLS=yes
++#     USE_NLS=yes
+ 
+ 
+     gt_cv_have_gettext=no
+@@ -14643,22 +14646,22 @@
+ 
+ 
+ 
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for glib-2.0 >= 2.30.0" >&5
+-$as_echo_n "checking for glib-2.0 >= 2.30.0... " >&6; }
+-  if $PKG_CONFIG "--atleast-version=2.30.0" "glib-2.0" >/dev/null 2>&1; then
+-    GLIB_VERSION=`$PKG_CONFIG --modversion "glib-2.0"`
++  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for glib >= 2.30.0" >&5
++$as_echo_n "checking for glib >= 2.30.0... " >&6; }
++  if $PKG_CONFIG "--atleast-version=2.30.0" "glib" >/dev/null 2>&1; then
++    GLIB_VERSION=`$PKG_CONFIG --modversion "glib"`
+     { $as_echo "$as_me:${as_lineno-$LINENO}: result: $GLIB_VERSION" >&5
+ $as_echo "$GLIB_VERSION" >&6; }
+ 
+     { $as_echo "$as_me:${as_lineno-$LINENO}: checking GLIB_CFLAGS" >&5
+ $as_echo_n "checking GLIB_CFLAGS... " >&6; }
+-    GLIB_CFLAGS=`$PKG_CONFIG --cflags "glib-2.0"`
++    GLIB_CFLAGS=`$PKG_CONFIG --cflags "glib"`
+     { $as_echo "$as_me:${as_lineno-$LINENO}: result: $GLIB_CFLAGS" >&5
+ $as_echo "$GLIB_CFLAGS" >&6; }
+ 
+     { $as_echo "$as_me:${as_lineno-$LINENO}: checking GLIB_LIBS" >&5
+ $as_echo_n "checking GLIB_LIBS... " >&6; }
+-    GLIB_LIBS=`$PKG_CONFIG --libs "glib-2.0"`
++    GLIB_LIBS=`$PKG_CONFIG --libs "glib"`
+     { $as_echo "$as_me:${as_lineno-$LINENO}: result: $GLIB_LIBS" >&5
+ $as_echo "$GLIB_LIBS" >&6; }
+ 
+@@ -14670,15 +14673,15 @@
+ 
+ 
+ 
+-  elif $PKG_CONFIG --exists "glib-2.0" >/dev/null 2>&1; then
+-    xdt_cv_version=`$PKG_CONFIG --modversion "glib-2.0"`
++  elif $PKG_CONFIG --exists "glib" >/dev/null 2>&1; then
++    xdt_cv_version=`$PKG_CONFIG --modversion "glib"`
+     { $as_echo "$as_me:${as_lineno-$LINENO}: result: found, but $xdt_cv_version" >&5
+ $as_echo "found, but $xdt_cv_version" >&6; }
+ 
+ 
+-      echo "*** The required package glib-2.0 was found on your system,"
++      echo "*** The required package glib was found on your system,"
+       echo "*** but the installed version ($xdt_cv_version) is too old."
+-      echo "*** Please upgrade glib-2.0 to atleast version 2.30.0, or adjust"
++      echo "*** Please upgrade glib to atleast version 2.30.0, or adjust"
+       echo "*** the PKG_CONFIG_PATH environment variable if you installed"
+       echo "*** the new version of the package in a nonstandard prefix so"
+       echo "*** pkg-config is able to find it."
+@@ -14689,8 +14692,8 @@
+ $as_echo "not found" >&6; }
+ 
+ 
+-      echo "*** The required package glib-2.0 was not found on your system."
+-      echo "*** Please install glib-2.0 (atleast version 2.30.0) or adjust"
++      echo "*** The required package glib was not found on your system."
++      echo "*** Please install glib (atleast version 2.30.0) or adjust"
+       echo "*** the PKG_CONFIG_PATH environment variable if you"
+       echo "*** installed the package in a nonstandard prefix so that"
+       echo "*** pkg-config is able to find it."
+@@ -14838,22 +14841,22 @@
+ 
+ 
+ 
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for gio-2.0 >= 2.30.0" >&5
+-$as_echo_n "checking for gio-2.0 >= 2.30.0... " >&6; }
+-  if $PKG_CONFIG "--atleast-version=2.30.0" "gio-2.0" >/dev/null 2>&1; then
+-    GIO_VERSION=`$PKG_CONFIG --modversion "gio-2.0"`
++  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for gio >= 2.30.0" >&5
++$as_echo_n "checking for gio >= 2.30.0... " >&6; }
++  if $PKG_CONFIG "--atleast-version=2.30.0" "gio" >/dev/null 2>&1; then
++    GIO_VERSION=`$PKG_CONFIG --modversion "gio"`
+     { $as_echo "$as_me:${as_lineno-$LINENO}: result: $GIO_VERSION" >&5
+ $as_echo "$GIO_VERSION" >&6; }
+ 
+     { $as_echo "$as_me:${as_lineno-$LINENO}: checking GIO_CFLAGS" >&5
+ $as_echo_n "checking GIO_CFLAGS... " >&6; }
+-    GIO_CFLAGS=`$PKG_CONFIG --cflags "gio-2.0"`
++    GIO_CFLAGS=`$PKG_CONFIG --cflags "gio"`
+     { $as_echo "$as_me:${as_lineno-$LINENO}: result: $GIO_CFLAGS" >&5
+ $as_echo "$GIO_CFLAGS" >&6; }
+ 
+     { $as_echo "$as_me:${as_lineno-$LINENO}: checking GIO_LIBS" >&5
+ $as_echo_n "checking GIO_LIBS... " >&6; }
+-    GIO_LIBS=`$PKG_CONFIG --libs "gio-2.0"`
++    GIO_LIBS=`$PKG_CONFIG --libs "gio"`
+     { $as_echo "$as_me:${as_lineno-$LINENO}: result: $GIO_LIBS" >&5
+ $as_echo "$GIO_LIBS" >&6; }
+ 
+@@ -14865,15 +14868,15 @@
+ 
+ 
+ 
+-  elif $PKG_CONFIG --exists "gio-2.0" >/dev/null 2>&1; then
+-    xdt_cv_version=`$PKG_CONFIG --modversion "gio-2.0"`
++  elif $PKG_CONFIG --exists "gio" >/dev/null 2>&1; then
++    xdt_cv_version=`$PKG_CONFIG --modversion "gio"`
+     { $as_echo "$as_me:${as_lineno-$LINENO}: result: found, but $xdt_cv_version" >&5
+ $as_echo "found, but $xdt_cv_version" >&6; }
+ 
+ 
+-      echo "*** The required package gio-2.0 was found on your system,"
++      echo "*** The required package gio was found on your system,"
+       echo "*** but the installed version ($xdt_cv_version) is too old."
+-      echo "*** Please upgrade gio-2.0 to atleast version 2.30.0, or adjust"
++      echo "*** Please upgrade gio to atleast version 2.30.0, or adjust"
+       echo "*** the PKG_CONFIG_PATH environment variable if you installed"
+       echo "*** the new version of the package in a nonstandard prefix so"
+       echo "*** pkg-config is able to find it."
+@@ -14884,8 +14887,8 @@
+ $as_echo "not found" >&6; }
+ 
+ 
+-      echo "*** The required package gio-2.0 was not found on your system."
+-      echo "*** Please install gio-2.0 (atleast version 2.30.0) or adjust"
++      echo "*** The required package gio was not found on your system."
++      echo "*** Please install gio (atleast version 2.30.0) or adjust"
+       echo "*** the PKG_CONFIG_PATH environment variable if you"
+       echo "*** installed the package in a nonstandard prefix so that"
+       echo "*** pkg-config is able to find it."
+@@ -15033,22 +15036,22 @@
+ 
+ 
+ 
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for gtk+-2.0 >= 2.24.0" >&5
+-$as_echo_n "checking for gtk+-2.0 >= 2.24.0... " >&6; }
+-  if $PKG_CONFIG "--atleast-version=2.24.0" "gtk+-2.0" >/dev/null 2>&1; then
+-    GTK_VERSION=`$PKG_CONFIG --modversion "gtk+-2.0"`
++  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for gtk+ >= 2.24.0" >&5
++$as_echo_n "checking for gtk+ >= 2.24.0... " >&6; }
++  if $PKG_CONFIG "--atleast-version=2.24.0" "gtk+" >/dev/null 2>&1; then
++    GTK_VERSION=`$PKG_CONFIG --modversion "gtk+"`
+     { $as_echo "$as_me:${as_lineno-$LINENO}: result: $GTK_VERSION" >&5
+ $as_echo "$GTK_VERSION" >&6; }
+ 
+     { $as_echo "$as_me:${as_lineno-$LINENO}: checking GTK_CFLAGS" >&5
+ $as_echo_n "checking GTK_CFLAGS... " >&6; }
+-    GTK_CFLAGS=`$PKG_CONFIG --cflags "gtk+-2.0"`
++    GTK_CFLAGS=`$PKG_CONFIG --cflags "gtk+"`
+     { $as_echo "$as_me:${as_lineno-$LINENO}: result: $GTK_CFLAGS" >&5
+ $as_echo "$GTK_CFLAGS" >&6; }
+ 
+     { $as_echo "$as_me:${as_lineno-$LINENO}: checking GTK_LIBS" >&5
+ $as_echo_n "checking GTK_LIBS... " >&6; }
+-    GTK_LIBS=`$PKG_CONFIG --libs "gtk+-2.0"`
++    GTK_LIBS=`$PKG_CONFIG --libs "gtk+"`
+     { $as_echo "$as_me:${as_lineno-$LINENO}: result: $GTK_LIBS" >&5
+ $as_echo "$GTK_LIBS" >&6; }
+ 
+@@ -15060,15 +15063,15 @@
+ 
+ 
+ 
+-  elif $PKG_CONFIG --exists "gtk+-2.0" >/dev/null 2>&1; then
+-    xdt_cv_version=`$PKG_CONFIG --modversion "gtk+-2.0"`
++  elif $PKG_CONFIG --exists "gtk+" >/dev/null 2>&1; then
++    xdt_cv_version=`$PKG_CONFIG --modversion "gtk+"`
+     { $as_echo "$as_me:${as_lineno-$LINENO}: result: found, but $xdt_cv_version" >&5
+ $as_echo "found, but $xdt_cv_version" >&6; }
+ 
+ 
+-      echo "*** The required package gtk+-2.0 was found on your system,"
++      echo "*** The required package gtk+ was found on your system,"
+       echo "*** but the installed version ($xdt_cv_version) is too old."
+-      echo "*** Please upgrade gtk+-2.0 to atleast version 2.24.0, or adjust"
++      echo "*** Please upgrade gtk+ to atleast version 2.24.0, or adjust"
+       echo "*** the PKG_CONFIG_PATH environment variable if you installed"
+       echo "*** the new version of the package in a nonstandard prefix so"
+       echo "*** pkg-config is able to find it."
+@@ -15079,8 +15082,8 @@
+ $as_echo "not found" >&6; }
+ 
+ 
+-      echo "*** The required package gtk+-2.0 was not found on your system."
+-      echo "*** Please install gtk+-2.0 (atleast version 2.24.0) or adjust"
++      echo "*** The required package gtk+ was not found on your system."
++      echo "*** Please install gtk+ (atleast version 2.24.0) or adjust"
+       echo "*** the PKG_CONFIG_PATH environment variable if you"
+       echo "*** installed the package in a nonstandard prefix so that"
+       echo "*** pkg-config is able to find it."
+@@ -15228,22 +15231,22 @@
+ 
+ 
+ 
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for gthread-2.0 >= 2.30.0" >&5
+-$as_echo_n "checking for gthread-2.0 >= 2.30.0... " >&6; }
+-  if $PKG_CONFIG "--atleast-version=2.30.0" "gthread-2.0" >/dev/null 2>&1; then
+-    GTHREAD_VERSION=`$PKG_CONFIG --modversion "gthread-2.0"`
++  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for gthread >= 2.30.0" >&5
++$as_echo_n "checking for gthread >= 2.30.0... " >&6; }
++  if $PKG_CONFIG "--atleast-version=2.30.0" "gthread" >/dev/null 2>&1; then
++    GTHREAD_VERSION=`$PKG_CONFIG --modversion "gthread"`
+     { $as_echo "$as_me:${as_lineno-$LINENO}: result: $GTHREAD_VERSION" >&5
+ $as_echo "$GTHREAD_VERSION" >&6; }
+ 
+     { $as_echo "$as_me:${as_lineno-$LINENO}: checking GTHREAD_CFLAGS" >&5
+ $as_echo_n "checking GTHREAD_CFLAGS... " >&6; }
+-    GTHREAD_CFLAGS=`$PKG_CONFIG --cflags "gthread-2.0"`
++    GTHREAD_CFLAGS=`$PKG_CONFIG --cflags "gthread"`
+     { $as_echo "$as_me:${as_lineno-$LINENO}: result: $GTHREAD_CFLAGS" >&5
+ $as_echo "$GTHREAD_CFLAGS" >&6; }
+ 
+     { $as_echo "$as_me:${as_lineno-$LINENO}: checking GTHREAD_LIBS" >&5
+ $as_echo_n "checking GTHREAD_LIBS... " >&6; }
+-    GTHREAD_LIBS=`$PKG_CONFIG --libs "gthread-2.0"`
++    GTHREAD_LIBS=`$PKG_CONFIG --libs "gthread"`
+     { $as_echo "$as_me:${as_lineno-$LINENO}: result: $GTHREAD_LIBS" >&5
+ $as_echo "$GTHREAD_LIBS" >&6; }
+ 
+@@ -15255,15 +15258,15 @@
+ 
+ 
+ 
+-  elif $PKG_CONFIG --exists "gthread-2.0" >/dev/null 2>&1; then
+-    xdt_cv_version=`$PKG_CONFIG --modversion "gthread-2.0"`
++  elif $PKG_CONFIG --exists "gthread" >/dev/null 2>&1; then
++    xdt_cv_version=`$PKG_CONFIG --modversion "gthread"`
+     { $as_echo "$as_me:${as_lineno-$LINENO}: result: found, but $xdt_cv_version" >&5
+ $as_echo "found, but $xdt_cv_version" >&6; }
+ 
+ 
+-      echo "*** The required package gthread-2.0 was found on your system,"
++      echo "*** The required package gthread was found on your system,"
+       echo "*** but the installed version ($xdt_cv_version) is too old."
+-      echo "*** Please upgrade gthread-2.0 to atleast version 2.30.0, or adjust"
++      echo "*** Please upgrade gthread to atleast version 2.30.0, or adjust"
+       echo "*** the PKG_CONFIG_PATH environment variable if you installed"
+       echo "*** the new version of the package in a nonstandard prefix so"
+       echo "*** pkg-config is able to find it."
+@@ -15274,8 +15277,8 @@
+ $as_echo "not found" >&6; }
+ 
+ 
+-      echo "*** The required package gthread-2.0 was not found on your system."
+-      echo "*** Please install gthread-2.0 (atleast version 2.30.0) or adjust"
++      echo "*** The required package gthread was not found on your system."
++      echo "*** Please install gthread (atleast version 2.30.0) or adjust"
+       echo "*** the PKG_CONFIG_PATH environment variable if you"
+       echo "*** installed the package in a nonstandard prefix so that"
+       echo "*** pkg-config is able to find it."
+@@ -15423,22 +15426,22 @@
+ 
+ 
+ 
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for libxfce4util-1.0 >= 4.10.0" >&5
+-$as_echo_n "checking for libxfce4util-1.0 >= 4.10.0... " >&6; }
+-  if $PKG_CONFIG "--atleast-version=4.10.0" "libxfce4util-1.0" >/dev/null 2>&1; then
+-    LIBXFCE4UTIL_VERSION=`$PKG_CONFIG --modversion "libxfce4util-1.0"`
++  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for libxfce4util >= 4.10.0" >&5
++$as_echo_n "checking for libxfce4util >= 4.10.0... " >&6; }
++  if $PKG_CONFIG "--atleast-version=4.10.0" "libxfce4util" >/dev/null 2>&1; then
++    LIBXFCE4UTIL_VERSION=`$PKG_CONFIG --modversion "libxfce4util"`
+     { $as_echo "$as_me:${as_lineno-$LINENO}: result: $LIBXFCE4UTIL_VERSION" >&5
+ $as_echo "$LIBXFCE4UTIL_VERSION" >&6; }
+ 
+     { $as_echo "$as_me:${as_lineno-$LINENO}: checking LIBXFCE4UTIL_CFLAGS" >&5
+ $as_echo_n "checking LIBXFCE4UTIL_CFLAGS... " >&6; }
+-    LIBXFCE4UTIL_CFLAGS=`$PKG_CONFIG --cflags "libxfce4util-1.0"`
++    LIBXFCE4UTIL_CFLAGS=`$PKG_CONFIG --cflags "libxfce4util"`
+     { $as_echo "$as_me:${as_lineno-$LINENO}: result: $LIBXFCE4UTIL_CFLAGS" >&5
+ $as_echo "$LIBXFCE4UTIL_CFLAGS" >&6; }
+ 
+     { $as_echo "$as_me:${as_lineno-$LINENO}: checking LIBXFCE4UTIL_LIBS" >&5
+ $as_echo_n "checking LIBXFCE4UTIL_LIBS... " >&6; }
+-    LIBXFCE4UTIL_LIBS=`$PKG_CONFIG --libs "libxfce4util-1.0"`
++    LIBXFCE4UTIL_LIBS=`$PKG_CONFIG --libs "libxfce4util"`
+     { $as_echo "$as_me:${as_lineno-$LINENO}: result: $LIBXFCE4UTIL_LIBS" >&5
+ $as_echo "$LIBXFCE4UTIL_LIBS" >&6; }
+ 
+@@ -15450,15 +15453,15 @@
+ 
+ 
+ 
+-  elif $PKG_CONFIG --exists "libxfce4util-1.0" >/dev/null 2>&1; then
+-    xdt_cv_version=`$PKG_CONFIG --modversion "libxfce4util-1.0"`
++  elif $PKG_CONFIG --exists "libxfce4util" >/dev/null 2>&1; then
++    xdt_cv_version=`$PKG_CONFIG --modversion "libxfce4util"`
+     { $as_echo "$as_me:${as_lineno-$LINENO}: result: found, but $xdt_cv_version" >&5
+ $as_echo "found, but $xdt_cv_version" >&6; }
+ 
+ 
+-      echo "*** The required package libxfce4util-1.0 was found on your system,"
++      echo "*** The required package libxfce4util was found on your system,"
+       echo "*** but the installed version ($xdt_cv_version) is too old."
+-      echo "*** Please upgrade libxfce4util-1.0 to atleast version 4.10.0, or adjust"
++      echo "*** Please upgrade libxfce4util to atleast version 4.10.0, or adjust"
+       echo "*** the PKG_CONFIG_PATH environment variable if you installed"
+       echo "*** the new version of the package in a nonstandard prefix so"
+       echo "*** pkg-config is able to find it."
+@@ -15469,8 +15472,8 @@
+ $as_echo "not found" >&6; }
+ 
+ 
+-      echo "*** The required package libxfce4util-1.0 was not found on your system."
+-      echo "*** Please install libxfce4util-1.0 (atleast version 4.10.0) or adjust"
++      echo "*** The required package libxfce4util was not found on your system."
++      echo "*** Please install libxfce4util (atleast version 4.10.0) or adjust"
+       echo "*** the PKG_CONFIG_PATH environment variable if you"
+       echo "*** installed the package in a nonstandard prefix so that"
+       echo "*** pkg-config is able to find it."
+@@ -15618,22 +15621,22 @@
+ 
+ 
+ 
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for libxfce4ui-1 >= 4.10.0" >&5
+-$as_echo_n "checking for libxfce4ui-1 >= 4.10.0... " >&6; }
+-  if $PKG_CONFIG "--atleast-version=4.10.0" "libxfce4ui-1" >/dev/null 2>&1; then
+-    LIBXFCE4UI_VERSION=`$PKG_CONFIG --modversion "libxfce4ui-1"`
++  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for libxfce4ui >= 4.10.0" >&5
++$as_echo_n "checking for libxfce4ui >= 4.10.0... " >&6; }
++  if $PKG_CONFIG "--atleast-version=4.10.0" "libxfce4ui" >/dev/null 2>&1; then
++    LIBXFCE4UI_VERSION=`$PKG_CONFIG --modversion "libxfce4ui"`
+     { $as_echo "$as_me:${as_lineno-$LINENO}: result: $LIBXFCE4UI_VERSION" >&5
+ $as_echo "$LIBXFCE4UI_VERSION" >&6; }
+ 
+     { $as_echo "$as_me:${as_lineno-$LINENO}: checking LIBXFCE4UI_CFLAGS" >&5
+ $as_echo_n "checking LIBXFCE4UI_CFLAGS... " >&6; }
+-    LIBXFCE4UI_CFLAGS=`$PKG_CONFIG --cflags "libxfce4ui-1"`
++    LIBXFCE4UI_CFLAGS=`$PKG_CONFIG --cflags "libxfce4ui"`
+     { $as_echo "$as_me:${as_lineno-$LINENO}: result: $LIBXFCE4UI_CFLAGS" >&5
+ $as_echo "$LIBXFCE4UI_CFLAGS" >&6; }
+ 
+     { $as_echo "$as_me:${as_lineno-$LINENO}: checking LIBXFCE4UI_LIBS" >&5
+ $as_echo_n "checking LIBXFCE4UI_LIBS... " >&6; }
+-    LIBXFCE4UI_LIBS=`$PKG_CONFIG --libs "libxfce4ui-1"`
++    LIBXFCE4UI_LIBS=`$PKG_CONFIG --libs "libxfce4ui"`
+     { $as_echo "$as_me:${as_lineno-$LINENO}: result: $LIBXFCE4UI_LIBS" >&5
+ $as_echo "$LIBXFCE4UI_LIBS" >&6; }
+ 
+@@ -15645,15 +15648,15 @@
+ 
+ 
+ 
+-  elif $PKG_CONFIG --exists "libxfce4ui-1" >/dev/null 2>&1; then
+-    xdt_cv_version=`$PKG_CONFIG --modversion "libxfce4ui-1"`
++  elif $PKG_CONFIG --exists "libxfce4ui" >/dev/null 2>&1; then
++    xdt_cv_version=`$PKG_CONFIG --modversion "libxfce4ui"`
+     { $as_echo "$as_me:${as_lineno-$LINENO}: result: found, but $xdt_cv_version" >&5
+ $as_echo "found, but $xdt_cv_version" >&6; }
+ 
+ 
+-      echo "*** The required package libxfce4ui-1 was found on your system,"
++      echo "*** The required package libxfce4ui was found on your system,"
+       echo "*** but the installed version ($xdt_cv_version) is too old."
+-      echo "*** Please upgrade libxfce4ui-1 to atleast version 4.10.0, or adjust"
++      echo "*** Please upgrade libxfce4ui to atleast version 4.10.0, or adjust"
+       echo "*** the PKG_CONFIG_PATH environment variable if you installed"
+       echo "*** the new version of the package in a nonstandard prefix so"
+       echo "*** pkg-config is able to find it."
+@@ -15664,8 +15667,8 @@
+ $as_echo "not found" >&6; }
+ 
+ 
+-      echo "*** The required package libxfce4ui-1 was not found on your system."
+-      echo "*** Please install libxfce4ui-1 (atleast version 4.10.0) or adjust"
++      echo "*** The required package libxfce4ui was not found on your system."
++      echo "*** Please install libxfce4ui (atleast version 4.10.0) or adjust"
+       echo "*** the PKG_CONFIG_PATH environment variable if you"
+       echo "*** installed the package in a nonstandard prefix so that"
+       echo "*** pkg-config is able to find it."
+@@ -15685,7 +15688,7 @@
+ 
+ 
+   if test x"$xdt_cv_GIO_UNIX_check" = x"yes"; then
+-    if $PKG_CONFIG --exists "gio-unix-2.0 >= 2.30.0" >/dev/null 2>&1; then
++    if $PKG_CONFIG --exists "gio-unix >= 2.30.0" >/dev/null 2>&1; then
+ 
+ 
+   # minimum supported version of pkg-config
+@@ -15826,22 +15829,22 @@
+ 
+ 
+ 
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for gio-unix-2.0 >= 2.30.0" >&5
+-$as_echo_n "checking for gio-unix-2.0 >= 2.30.0... " >&6; }
+-  if $PKG_CONFIG "--atleast-version=2.30.0" "gio-unix-2.0" >/dev/null 2>&1; then
+-    GIO_UNIX_VERSION=`$PKG_CONFIG --modversion "gio-unix-2.0"`
++  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for gio-unix >= 2.30.0" >&5
++$as_echo_n "checking for gio-unix >= 2.30.0... " >&6; }
++  if $PKG_CONFIG "--atleast-version=2.30.0" "gio-unix" >/dev/null 2>&1; then
++    GIO_UNIX_VERSION=`$PKG_CONFIG --modversion "gio-unix"`
+     { $as_echo "$as_me:${as_lineno-$LINENO}: result: $GIO_UNIX_VERSION" >&5
+ $as_echo "$GIO_UNIX_VERSION" >&6; }
+ 
+     { $as_echo "$as_me:${as_lineno-$LINENO}: checking GIO_UNIX_CFLAGS" >&5
+ $as_echo_n "checking GIO_UNIX_CFLAGS... " >&6; }
+-    GIO_UNIX_CFLAGS=`$PKG_CONFIG --cflags "gio-unix-2.0"`
++    GIO_UNIX_CFLAGS=`$PKG_CONFIG --cflags "gio-unix"`
+     { $as_echo "$as_me:${as_lineno-$LINENO}: result: $GIO_UNIX_CFLAGS" >&5
+ $as_echo "$GIO_UNIX_CFLAGS" >&6; }
+ 
+     { $as_echo "$as_me:${as_lineno-$LINENO}: checking GIO_UNIX_LIBS" >&5
+ $as_echo_n "checking GIO_UNIX_LIBS... " >&6; }
+-    GIO_UNIX_LIBS=`$PKG_CONFIG --libs "gio-unix-2.0"`
++    GIO_UNIX_LIBS=`$PKG_CONFIG --libs "gio-unix"`
+     { $as_echo "$as_me:${as_lineno-$LINENO}: result: $GIO_UNIX_LIBS" >&5
+ $as_echo "$GIO_UNIX_LIBS" >&6; }
+ 
+@@ -15858,15 +15861,15 @@
+ 
+         GIO_UNIX_FOUND="yes"
+ 
+-  elif $PKG_CONFIG --exists "gio-unix-2.0" >/dev/null 2>&1; then
+-    xdt_cv_version=`$PKG_CONFIG --modversion "gio-unix-2.0"`
++  elif $PKG_CONFIG --exists "gio-unix" >/dev/null 2>&1; then
++    xdt_cv_version=`$PKG_CONFIG --modversion "gio-unix"`
+     { $as_echo "$as_me:${as_lineno-$LINENO}: result: found, but $xdt_cv_version" >&5
+ $as_echo "found, but $xdt_cv_version" >&6; }
+ 
+ 
+-      echo "*** The required package gio-unix-2.0 was found on your system,"
++      echo "*** The required package gio-unix was found on your system,"
+       echo "*** but the installed version ($xdt_cv_version) is too old."
+-      echo "*** Please upgrade gio-unix-2.0 to atleast version 2.30.0, or adjust"
++      echo "*** Please upgrade gio-unix to atleast version 2.30.0, or adjust"
+       echo "*** the PKG_CONFIG_PATH environment variable if you installed"
+       echo "*** the new version of the package in a nonstandard prefix so"
+       echo "*** pkg-config is able to find it."
+@@ -15877,8 +15880,8 @@
+ $as_echo "not found" >&6; }
+ 
+ 
+-      echo "*** The required package gio-unix-2.0 was not found on your system."
+-      echo "*** Please install gio-unix-2.0 (atleast version 2.30.0) or adjust"
++      echo "*** The required package gio-unix was not found on your system."
++      echo "*** Please install gio-unix (atleast version 2.30.0) or adjust"
+       echo "*** the PKG_CONFIG_PATH environment variable if you"
+       echo "*** installed the package in a nonstandard prefix so that"
+       echo "*** pkg-config is able to find it."
+@@ -15887,14 +15890,14 @@
+   fi
+ 
+     else
+-      { $as_echo "$as_me:${as_lineno-$LINENO}: checking for optional package gio-unix-2.0 >= 2.30.0" >&5
+-$as_echo_n "checking for optional package gio-unix-2.0 >= 2.30.0... " >&6; }
++      { $as_echo "$as_me:${as_lineno-$LINENO}: checking for optional package gio-unix >= 2.30.0" >&5
++$as_echo_n "checking for optional package gio-unix >= 2.30.0... " >&6; }
+       { $as_echo "$as_me:${as_lineno-$LINENO}: result: not found" >&5
+ $as_echo "not found" >&6; }
+     fi
+   else
+-    { $as_echo "$as_me:${as_lineno-$LINENO}: checking for optional package gio-unix-2.0" >&5
+-$as_echo_n "checking for optional package gio-unix-2.0... " >&6; }
++    { $as_echo "$as_me:${as_lineno-$LINENO}: checking for optional package gio-unix" >&5
++$as_echo_n "checking for optional package gio-unix... " >&6; }
+     { $as_echo "$as_me:${as_lineno-$LINENO}: result: disabled" >&5
+ $as_echo "disabled" >&6; }
+   fi
+@@ -16835,12 +16838,12 @@
+     pkg_cv_GTKDOC_DEPS_CFLAGS="$GTKDOC_DEPS_CFLAGS"
+  elif test -n "$PKG_CONFIG"; then
+     if test -n "$PKG_CONFIG" && \
+-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"glib-2.0 >= 2.10.0 gobject-2.0  >= 2.10.0\""; } >&5
+-  ($PKG_CONFIG --exists --print-errors "glib-2.0 >= 2.10.0 gobject-2.0  >= 2.10.0") 2>&5
++    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"glib >= 2.10.0 gobject  >= 2.10.0\""; } >&5
++  ($PKG_CONFIG --exists --print-errors "glib >= 2.10.0 gobject  >= 2.10.0") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   test $ac_status = 0; }; then
+-  pkg_cv_GTKDOC_DEPS_CFLAGS=`$PKG_CONFIG --cflags "glib-2.0 >= 2.10.0 gobject-2.0  >= 2.10.0" 2>/dev/null`
++  pkg_cv_GTKDOC_DEPS_CFLAGS=`$PKG_CONFIG --cflags "glib >= 2.10.0 gobject  >= 2.10.0" 2>/dev/null`
+ 		      test "x$?" != "x0" && pkg_failed=yes
+ else
+   pkg_failed=yes
+@@ -16852,12 +16855,12 @@
+     pkg_cv_GTKDOC_DEPS_LIBS="$GTKDOC_DEPS_LIBS"
+  elif test -n "$PKG_CONFIG"; then
+     if test -n "$PKG_CONFIG" && \
+-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"glib-2.0 >= 2.10.0 gobject-2.0  >= 2.10.0\""; } >&5
+-  ($PKG_CONFIG --exists --print-errors "glib-2.0 >= 2.10.0 gobject-2.0  >= 2.10.0") 2>&5
++    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"glib >= 2.10.0 gobject  >= 2.10.0\""; } >&5
++  ($PKG_CONFIG --exists --print-errors "glib >= 2.10.0 gobject  >= 2.10.0") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   test $ac_status = 0; }; then
+-  pkg_cv_GTKDOC_DEPS_LIBS=`$PKG_CONFIG --libs "glib-2.0 >= 2.10.0 gobject-2.0  >= 2.10.0" 2>/dev/null`
++  pkg_cv_GTKDOC_DEPS_LIBS=`$PKG_CONFIG --libs "glib >= 2.10.0 gobject  >= 2.10.0" 2>/dev/null`
+ 		      test "x$?" != "x0" && pkg_failed=yes
+ else
+   pkg_failed=yes
+@@ -16878,14 +16881,14 @@
+         _pkg_short_errors_supported=no
+ fi
+         if test $_pkg_short_errors_supported = yes; then
+-	        GTKDOC_DEPS_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "glib-2.0 >= 2.10.0 gobject-2.0  >= 2.10.0" 2>&1`
++	        GTKDOC_DEPS_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "glib >= 2.10.0 gobject  >= 2.10.0" 2>&1`
+         else
+-	        GTKDOC_DEPS_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "glib-2.0 >= 2.10.0 gobject-2.0  >= 2.10.0" 2>&1`
++	        GTKDOC_DEPS_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "glib >= 2.10.0 gobject  >= 2.10.0" 2>&1`
+         fi
+ 	# Put the nasty error message in config.log where it belongs
+ 	echo "$GTKDOC_DEPS_PKG_ERRORS" >&5
+ 
+-	as_fn_error $? "Package requirements (glib-2.0 >= 2.10.0 gobject-2.0  >= 2.10.0) were not met:
++	as_fn_error $? "Package requirements (glib >= 2.10.0 gobject  >= 2.10.0) were not met:
+ 
+ $GTKDOC_DEPS_PKG_ERRORS
+ 
+@@ -17203,7 +17206,7 @@
+ 
+ 
+ 
+-ac_config_files="$ac_config_files Makefile docs/Makefile docs/reference/Makefile docs/reference/version.xml exo/Makefile exo/exo-1.pc exo/exo-config.h exo-csource/Makefile exo-desktop-item-edit/Makefile exo-helper/Makefile exo-helper/helpers/Makefile exo-open/Makefile icons/Makefile icons/24x24/Makefile icons/48x48/Makefile pixmaps/Makefile po/Makefile.in tests/Makefile tests/data/Makefile"
++ac_config_files="$ac_config_files Makefile docs/Makefile docs/reference/Makefile docs/reference/version.xml exo/Makefile exo/exo.pc exo/exo-config.h exo-csource/Makefile exo-desktop-item-edit/Makefile exo-helper/Makefile exo-helper/helpers/Makefile exo-open/Makefile icons/Makefile icons/24x24/Makefile icons/48x48/Makefile pixmaps/Makefile po/Makefile.in tests/Makefile tests/data/Makefile"
+ 
+ cat >confcache <<\_ACEOF
+ # This file is a shell script that caches the results of configure
+@@ -18265,7 +18268,7 @@
+     "docs/reference/Makefile") CONFIG_FILES="$CONFIG_FILES docs/reference/Makefile" ;;
+     "docs/reference/version.xml") CONFIG_FILES="$CONFIG_FILES docs/reference/version.xml" ;;
+     "exo/Makefile") CONFIG_FILES="$CONFIG_FILES exo/Makefile" ;;
+-    "exo/exo-1.pc") CONFIG_FILES="$CONFIG_FILES exo/exo-1.pc" ;;
++    "exo/exo.pc") CONFIG_FILES="$CONFIG_FILES exo/exo.pc" ;;
+     "exo/exo-config.h") CONFIG_FILES="$CONFIG_FILES exo/exo-config.h" ;;
+     "exo-csource/Makefile") CONFIG_FILES="$CONFIG_FILES exo-csource/Makefile" ;;
+     "exo-desktop-item-edit/Makefile") CONFIG_FILES="$CONFIG_FILES exo-desktop-item-edit/Makefile" ;;

@@ -1,0 +1,85 @@
+etc/rc.d/dbmaster
+sbin/dbmaster
+share/dbmaster/public/css/app.css
+share/dbmaster/public/css/datatables.css
+share/dbmaster/public/css/datatables.min.css
+share/dbmaster/public/css/foundation-float.css
+share/dbmaster/public/css/foundation-float.min.css
+share/dbmaster/public/css/foundation.css
+share/dbmaster/public/css/foundation.min.css
+share/dbmaster/public/favicon.ico
+share/dbmaster/public/favicon.png
+share/dbmaster/public/icons/foundation-icons.css
+share/dbmaster/public/icons/foundation-icons.eot
+share/dbmaster/public/icons/foundation-icons.svg
+share/dbmaster/public/icons/foundation-icons.ttf
+share/dbmaster/public/icons/foundation-icons.woff
+share/dbmaster/public/icons/preview.html
+share/dbmaster/public/images/sort_asc_disabled.png
+share/dbmaster/public/images/sort_asc.png
+share/dbmaster/public/images/sort_both.png
+share/dbmaster/public/images/sort_desc_disabled.png
+share/dbmaster/public/images/sort_desc.png
+share/dbmaster/public/js/app.js
+share/dbmaster/public/js/datatables.js
+share/dbmaster/public/js/datatables.min.js
+share/dbmaster/public/js/foundation.js
+share/dbmaster/public/js/foundation.min.js
+share/dbmaster/public/js/jquery.js
+share/dbmaster/public/js/jquery.min.js
+share/dbmaster/public/js/what-input.js
+share/dbmaster/schema.sql
+share/dbmaster/templs/agent-add-form.html.ep
+share/dbmaster/templs/agent-add-handler.html.ep
+share/dbmaster/templs/agent-delete-form.html.ep
+share/dbmaster/templs/agent-delete-handler.html.ep
+share/dbmaster/templs/agent-list.html.ep
+share/dbmaster/templs/agent-rename-form.html.ep
+share/dbmaster/templs/agent-rename-handler.html.ep
+share/dbmaster/templs/agent-update-form.html.ep
+share/dbmaster/templs/agent-update-handler.html.ep
+share/dbmaster/templs/data-delete-form.html.ep
+share/dbmaster/templs/data-delete-handler.html.ep
+share/dbmaster/templs/data-list.html.ep
+share/dbmaster/templs/db-create-form.html.ep
+share/dbmaster/templs/db-create-handler.html.ep
+share/dbmaster/templs/db-drop-form.html.ep
+share/dbmaster/templs/db-drop-handler.html.ep
+share/dbmaster/templs/db-dump-form.html.ep
+share/dbmaster/templs/db-dump-handler.html.ep
+share/dbmaster/templs/db-list.html.ep
+share/dbmaster/templs/db-rename-form.html.ep
+share/dbmaster/templs/db-rename-handler.html.ep
+share/dbmaster/templs/db-restore-form.html.ep
+share/dbmaster/templs/db-restore-handler.html.ep
+share/dbmaster/templs/exception.development.html.ep
+share/dbmaster/templs/exception.production.html.ep
+share/dbmaster/templs/hello.html.ep
+share/dbmaster/templs/layouts/default.html.ep
+share/dbmaster/templs/login.html.ep
+share/dbmaster/templs/not_found.development.html.ep
+share/dbmaster/templs/not_found.production.html.ep
+share/dbmaster/templs/schedule-add-form.html.ep
+share/dbmaster/templs/schedule-add-handler.html.ep
+share/dbmaster/templs/schedule-delete-form.html.ep
+share/dbmaster/templs/schedule-delete-handler.html.ep
+share/dbmaster/templs/schedule-list.html.ep
+share/dbmaster/templs/schedule-update-form.html.ep
+share/dbmaster/templs/schedule-update-handler.html.ep
+share/dbmaster/templs/store-add-form.html.ep
+share/dbmaster/templs/store-add-handler.html.ep
+share/dbmaster/templs/store-delete-form.html.ep
+share/dbmaster/templs/store-delete-handler.html.ep
+share/dbmaster/templs/store-list.html.ep
+share/dbmaster/templs/store-rename-form.html.ep
+share/dbmaster/templs/store-rename-handler.html.ep
+share/dbmaster/templs/store-update-form.html.ep
+share/dbmaster/templs/store-update-handler.html.ep
+@dir share/dbmaster/public/css
+@dir share/dbmaster/public/icons
+@dir share/dbmaster/public/images
+@dir share/dbmaster/public/js
+@dir share/dbmaster/public
+@dir share/dbmaster/templs/layouts
+@dir share/dbmaster/templs
+@dir share/dbmaster

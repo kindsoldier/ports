@@ -1,0 +1,12 @@
+#!/bin/sh
+
+set -x 
+
+case $2 in
+    DEINSTALL)
+	/bin/rm -f ${PKG_PREFIX}/share/icons/Tango/icon-theme.cache
+	;;
+    POST-DEINSTALL)
+	;;
+esac
+#EOF

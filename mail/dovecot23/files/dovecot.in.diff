@@ -1,0 +1,79 @@
+--- dovecot.in.orig	2017-09-11 12:12:06.799761000 +0200
++++ dovecot.in	2018-11-17 06:32:26.243126000 +0200
+@@ -1,13 +1,22 @@
+ #!/bin/sh
+ #
+-# $FreeBSD: head/mail/dovecot2/files/dovecot.in 378311 2015-02-02 17:16:12Z adamw $
++# $FreeBSD: head/mail/dovecot/files/dovecot.in 483490 2018-10-30 14:04:21Z ler $
+ #
+ 
+ # PROVIDE: dovecot
+-# REQUIRE: LOGIN 
+-# AFTER: DAEMON NETWORKING NETWORK
++# REQUIRE: %%REQUIRE%%
++# BEFORE:  mail
+ # KEYWORD: shutdown
+ 
++# dovecot_enable (bool):	Set it to YES to enable dovecot
++#				Default: NO
++# dovecot_config (str):		Path to dovecot.conf
++#				Default: %%ETCDIR%%/dovecot.conf
++#				Set it to a space-separated list to start
++#				multiple dovecot instances
++# dovecot_flags (str):		Extra flags to pass to dovecot
++#				Default: empty
++
+ # Define dovecot_* variables in one of these files:
+ #	/etc/rc.conf
+ #	/etc/rc.conf.local
+@@ -30,16 +39,13 @@
+ extra_commands="reload"
+ 
+ start_precmd()
+-{	# Ensure runtime directories exist with correct permissions
+-	local login_user login_gid
+-	login_user=$(${command} ${command_args} -a | /usr/bin/awk -F '= ' '/^default_login_user =/ { print $2 }')
+-	login_gid=$(/usr/sbin/pw usershow -n "${login_user}" 2>/dev/null | /usr/bin/cut -d: -f4)
++{	# Ensure runtime directory exists with correct permissions
+ 	/usr/bin/install -o root -g wheel -m 0755 -d ${base_dir}
+ }
+ 
+ stop_postcmd()
+-{	# Cleanup runtime directories
+-	rm -rf ${base_dir} 2>/dev/null
++{	# Cleanup runtime directory. The dovecot.conf link has to stay.
++	/usr/bin/find ${base_dir} ! -type l -delete
+ }
+ 
+ restart_cmd()
+@@ -49,13 +55,26 @@
+ }
+ 
+ # To start multiple instances of dovecot set dovecot_config to
+-# a space seperated list of configuration files.
++# a space separated list of configuration files.
+ for config in ${dovecot_config}; do
+ 	required_files="${config}"
+ 	command_args="-c ${config}"
+-	if [ -f ${config} ]; then
+-		base_dir=$(${command} ${command_args} -a | /usr/bin/awk -F '= ' '/^base_dir =/ { print $2 }')
++	if [ -s ${config} ]; then
++               ${command} ${command_args} -a 2>&1 >/dev/null
++                if [ $? -ne 0 ]; then
++                       echo "==Error=="
++                       echo "Configuration file check failed."
++                       # Use dovecot to print the config error.
++                       ${command} ${command_args} -a
++                       exit $?
++                fi
++		base_dir=$(${command} ${command_args} -a 2>/dev/null | /usr/bin/awk -F '= ' '/^base_dir =/ { print $2 }')
+ 		pidfile="${base_dir}/master.pid"
+-		run_rc_command "$1"
++	else
++		echo "==Error=="
++		echo "Config file ${config} does not exist. If this is"
++		echo "a new installation, please create the config files as outlined in"
++		echo "	# pkg info -D dovecot"
+ 	fi
++	run_rc_command "$1"
+ done

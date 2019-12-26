@@ -1,0 +1,83 @@
+--- ./configure.orig	2014-10-16 10:35:12.000000000 +0300
++++ ./configure	2014-11-29 17:00:51.000000000 +0200
+@@ -12161,7 +12161,7 @@
+ if test "${with_html_subdir+set}" = set; then :
+   withval=$with_html_subdir; test "x$withval" != "x" && HTML_DIR="$HTML_DIR/$withval"
+ else
+-  HTML_DIR="$HTML_DIR/\$(PACKAGE)-\$(VERSION)/html"
++  HTML_DIR="$HTML_DIR/\$(PACKAGE)"
+ fi
+ 
+ 
+@@ -14493,23 +14493,23 @@
+     fi
+     if test "$PYTHON_VERSION" != "" -a "$PYTHON_INCLUDES" = ""
+     then
+-	if test -r $with_python/include/python$PYTHON_VERSION/Python.h
++	if test -r $with_python/include/python/Python.h
+ 	then
+-	    PYTHON_INCLUDES=$with_python/include/python$PYTHON_VERSION
++	    PYTHON_INCLUDES=$with_python/include/python
+ 	else
+-	    if test -r $prefix/include/python$PYTHON_VERSION/Python.h
++	    if test -r $prefix/include/python/Python.h
+ 	    then
+-	        PYTHON_INCLUDES=$prefix/include/python$PYTHON_VERSION
++	        PYTHON_INCLUDES=$prefix/include/python
+ 	    else
+-		if test -r /usr/include/python$PYTHON_VERSION/Python.h
++		if test -r /usr/include/python/Python.h
+ 		then
+-		    PYTHON_INCLUDES=/usr/include/python$PYTHON_VERSION
++		    PYTHON_INCLUDES=/usr/include/python
+ 		else
+ 	            if test -r $with_python/include/Python.h
+ 	            then
+ 	                PYTHON_INCLUDES=$with_python/include
+ 	            else
+-		        echo could not find python$PYTHON_VERSION/Python.h or $with_python/include/Python.h
++		        echo could not find python/Python.h or $with_python/include/Python.h
+ 		    fi
+ 		fi
+ 	    fi
+@@ -14521,9 +14521,9 @@
+     fi
+     if test "$PYTHON_VERSION" != "" -a "$PYTHON_SITE_PACKAGES" = ""
+     then
+-	if test -d $libdir/python$PYTHON_VERSION/site-packages
++	if test -d $libdir/python/$PYTHON_VERSION/site-packages
+ 	then
+-	    PYTHON_SITE_PACKAGES=$libdir/python$PYTHON_VERSION/site-packages
++	    PYTHON_SITE_PACKAGES=$libdir/python/$PYTHON_VERSION/site-packages
+ 	else
+ 	    if test -d $with_python/lib/site-packages
+ 	    then
+@@ -14534,7 +14534,7 @@
+ 	fi
+     fi
+     pythondir='$(PYTHON_SITE_PACKAGES)'
+-    PYTHON_LIBS=`python$PYTHON_VERSION-config --ldflags`
++    PYTHON_LIBS=`python-config --ldflags`
+ else
+     PYTHON=
+ fi
+@@ -15677,7 +15677,7 @@
+ ln -s $srcdir/Copyright COPYING
+ 
+ # keep on one line for cygwin c.f. #130896
+-ac_config_files="$ac_config_files libxml2.spec:libxml.spec.in Makefile include/Makefile include/libxml/Makefile doc/Makefile doc/examples/Makefile doc/devhelp/Makefile example/Makefile python/Makefile python/tests/Makefile xstc/Makefile include/libxml/xmlversion.h libxml-2.0.pc libxml-2.0-uninstalled.pc libxml2-config.cmake"
++ac_config_files="$ac_config_files libxml2.spec:libxml.spec.in Makefile include/Makefile include/libxml/Makefile doc/Makefile doc/examples/Makefile doc/devhelp/Makefile example/Makefile python/Makefile python/tests/Makefile xstc/Makefile include/libxml/xmlversion.h libxml2.pc libxml2-uninstalled.pc libxml2-config.cmake"
+ 
+ ac_config_files="$ac_config_files python/setup.py"
+ 
+@@ -16724,8 +16724,8 @@
+     "python/tests/Makefile") CONFIG_FILES="$CONFIG_FILES python/tests/Makefile" ;;
+     "xstc/Makefile") CONFIG_FILES="$CONFIG_FILES xstc/Makefile" ;;
+     "include/libxml/xmlversion.h") CONFIG_FILES="$CONFIG_FILES include/libxml/xmlversion.h" ;;
+-    "libxml-2.0.pc") CONFIG_FILES="$CONFIG_FILES libxml-2.0.pc" ;;
+-    "libxml-2.0-uninstalled.pc") CONFIG_FILES="$CONFIG_FILES libxml-2.0-uninstalled.pc" ;;
++    "libxml2.pc") CONFIG_FILES="$CONFIG_FILES libxml2.pc" ;;
++    "libxml2-uninstalled.pc") CONFIG_FILES="$CONFIG_FILES libxml2-uninstalled.pc" ;;
+     "libxml2-config.cmake") CONFIG_FILES="$CONFIG_FILES libxml2-config.cmake" ;;
+     "python/setup.py") CONFIG_FILES="$CONFIG_FILES python/setup.py" ;;
+     "xml2-config") CONFIG_FILES="$CONFIG_FILES xml2-config" ;;

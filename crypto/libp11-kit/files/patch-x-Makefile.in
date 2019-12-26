@@ -1,0 +1,71 @@
+--- ./Makefile.in.orig	2015-12-07 15:51:02.000000000 +0200
++++ ./Makefile.in	2016-03-28 20:03:30.391553000 +0200
+@@ -166,7 +166,7 @@
+  configure.lineno config.status.lineno
+ mkinstalldirs = $(install_sh) -d
+ CONFIG_HEADER = config.h
+-CONFIG_CLEAN_FILES = p11-kit/p11-kit-1.pc p11-kit/pkcs11.conf.example \
++CONFIG_CLEAN_FILES = p11-kit/p11-kit.pc p11-kit/pkcs11.conf.example \
+ 	trust/trust-extract-compat trust/test-extract
+ CONFIG_CLEAN_VPATH_FILES =
+ am__vpath_adj_setup = srcdirstrip=`echo "$(srcdir)" | sed 's|.|.|g'`;
+@@ -979,7 +979,7 @@
+ 	$(top_srcdir)/build/litter/install-sh \
+ 	$(top_srcdir)/build/litter/ltmain.sh \
+ 	$(top_srcdir)/build/litter/missing \
+-	$(top_srcdir)/p11-kit/p11-kit-1.pc.in \
++	$(top_srcdir)/p11-kit/p11-kit.pc.in \
+ 	$(top_srcdir)/p11-kit/pkcs11.conf.example.in \
+ 	$(top_srcdir)/trust/test-extract.in \
+ 	$(top_srcdir)/trust/trust-extract-compat.in ABOUT-NLS AUTHORS \
+@@ -1211,10 +1211,10 @@
+ 	test-conf test-uri test-pin test-init test-modules \
+ 	test-deprecated test-proxy test-iter test-rpc $(NULL) \
+ 	$(am__append_1) $(am__append_5)
+-EXTRA_DIST = HACKING p11-kit/p11-kit-1.pc.in \
++EXTRA_DIST = HACKING p11-kit/p11-kit.pc.in \
+ 	p11-kit/pkcs11.conf.example.in p11-kit/docs.h $(NULL) \
+ 	p11-kit/fixtures p11-kit/test-mock.c $(NULL) $(am__append_4)
+-incdir = $(includedir)/p11-kit-1/p11-kit
++incdir = $(includedir)/p11-kit/p11-kit
+ inc_HEADERS = common/pkcs11.h common/pkcs11x.h $(NULL) \
+ 	p11-kit/deprecated.h p11-kit/iter.h p11-kit/p11-kit.h \
+ 	p11-kit/pin.h p11-kit/remote.h p11-kit/uri.h $(NULL)
+@@ -1354,8 +1354,8 @@
+ @OS_WIN32_TRUE@	$(NULL)
+ 
+ pkgconfigdir = $(libdir)/pkgconfig
+-pkgconfig_DATA = p11-kit/p11-kit-1.pc
+-exampledir = $(p11_system_config)
++pkgconfig_DATA = p11-kit/p11-kit.pc
++exampledir = /usr/local/share/examples/p11-kit
+ example_DATA = p11-kit/pkcs11.conf.example
+ p11_kit_p11_kit_SOURCES = \
+ 	p11-kit/lists.c \
+@@ -1642,7 +1642,7 @@
+ @WITH_TRUST_MODULE_TRUE@frob_token_SOURCES = trust/frob-token.c
+ @WITH_TRUST_MODULE_TRUE@frob_token_LDADD = $(trust_LIBS)
+ @WITH_TRUST_MODULE_TRUE@frob_token_CFLAGS = $(trust_CFLAGS)
+-SUBDIRS = . doc po
++SUBDIRS = . po
+ ACLOCAL_AMFLAGS = -I build/m4
+ DISTCHECK_CONFIGURE_FLAGS = \
+ 	--enable-doc \
+@@ -1707,7 +1707,7 @@
+ 
+ distclean-hdr:
+ 	-rm -f config.h stamp-h1
+-p11-kit/p11-kit-1.pc: $(top_builddir)/config.status $(top_srcdir)/p11-kit/p11-kit-1.pc.in
++p11-kit/p11-kit.pc: $(top_builddir)/config.status $(top_srcdir)/p11-kit/p11-kit.pc.in
+ 	cd $(top_builddir) && $(SHELL) ./config.status $@
+ p11-kit/pkcs11.conf.example: $(top_builddir)/config.status $(top_srcdir)/p11-kit/pkcs11.conf.example.in
+ 	cd $(top_builddir) && $(SHELL) ./config.status $@
+@@ -4134,7 +4134,7 @@
+ 
+ info-am:
+ 
+-install-data-am: install-configDATA install-exampleDATA \
++install-data-am: install-configDATA  \
+ 	install-externalSCRIPTS install-incHEADERS \
+ 	install-moduleLTLIBRARIES install-pkgconfigDATA \
+ 	install-privatePROGRAMS

@@ -1,0 +1,7 @@
+bin/qrencode
+include/qrencode.h
+lib/libqrencode.la
+lib/libqrencode.so
+lib/libqrencode.so.3
+lib/pkgconfig/libqrencode.pc
+man/man1/qrencode.1.gz

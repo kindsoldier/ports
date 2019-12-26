@@ -1,0 +1,47 @@
+--- ./configure.orig	2017-10-18 16:50:19.000000000 +0200
++++ ./configure	2018-07-09 11:44:39.364714000 +0200
+@@ -10358,7 +10358,7 @@
+ 
+ 
+ 
+-APR_LIBNAME="apr${libsuffix}"
++APR_LIBNAME="apr"
+ 
+ 
+ echo "performing libtool configuration..."
+@@ -18298,7 +18298,7 @@
+ if test "${with_installbuilddir+set}" = set; then :
+   withval=$with_installbuilddir;  installbuilddir=$withval
+ else
+-   installbuilddir="${datadir}/build-${APR_MAJOR_VERSION}"
++   installbuilddir="${datadir}/libdata/apr/build"
+ fi
+ 
+ 
+@@ -29387,7 +29387,7 @@
+ 
+ 
+ 
+-ac_config_files="$ac_config_files Makefile include/apr.h build/apr_rules.mk build/pkg/pkginfo apr-$APR_MAJOR_VERSION-config:apr-config.in apr.pc"
++ac_config_files="$ac_config_files Makefile include/apr.h build/apr_rules.mk build/pkg/pkginfo apr-config:apr-config.in apr.pc"
+ 
+ 
+ if test -d $srcdir/test; then
+@@ -30403,7 +30403,7 @@
+     "include/apr.h") CONFIG_FILES="$CONFIG_FILES include/apr.h" ;;
+     "build/apr_rules.mk") CONFIG_FILES="$CONFIG_FILES build/apr_rules.mk" ;;
+     "build/pkg/pkginfo") CONFIG_FILES="$CONFIG_FILES build/pkg/pkginfo" ;;
+-    "apr-$APR_MAJOR_VERSION-config") CONFIG_FILES="$CONFIG_FILES apr-$APR_MAJOR_VERSION-config:apr-config.in" ;;
++    "apr-config") CONFIG_FILES="$CONFIG_FILES apr-config:apr-config.in" ;;
+     "apr.pc") CONFIG_FILES="$CONFIG_FILES apr.pc" ;;
+     "test/Makefile") CONFIG_FILES="$CONFIG_FILES test/Makefile" ;;
+     "test/internal/Makefile") CONFIG_FILES="$CONFIG_FILES test/internal/Makefile" ;;
+@@ -31519,7 +31519,7 @@
+   fi
+   rm -f $i.save
+ done
+-chmod +x apr-$APR_MAJOR_VERSION-config
++chmod +x apr-config
+  ;;
+ 
+   esac

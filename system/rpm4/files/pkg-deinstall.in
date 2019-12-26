@@ -1,0 +1,27 @@
+#!/bin/sh
+
+set -x
+
+LOCALSTATEDIR="%%LOCALSTATEDIR%%"
+
+case $2 in 
+    DEINSTALL)
+	;;
+    POST-DEINSTALL)
+	rmdir  ${LOCALSTATEDIR}/rpm/BUILD
+	rmdir  ${LOCALSTATEDIR}/rpm/RPMS/i386
+	rmdir  ${LOCALSTATEDIR}/rpm/RPMS/i486
+	rmdir  ${LOCALSTATEDIR}/rpm/RPMS/i586
+	rmdir  ${LOCALSTATEDIR}/rpm/RPMS/i686
+	rmdir  ${LOCALSTATEDIR}/rpm/RPMS/athlon
+	rmdir  ${LOCALSTATEDIR}/rpm/RPMS/pentium3
+	rmdir  ${LOCALSTATEDIR}/rpm/RPMS/pentium4
+	rmdir  ${LOCALSTATEDIR}/rpm/RPMS/noarch
+	rmdir  ${LOCALSTATEDIR}/rpm/RPMS
+	rmdir  ${LOCALSTATEDIR}/rpm/SOURCES
+	rmdir  ${LOCALSTATEDIR}/rpm/SPECS
+	rmdir  ${LOCALSTATEDIR}/rpm/SRPMS
+	;;
+esac
+exit 0
+#EOF

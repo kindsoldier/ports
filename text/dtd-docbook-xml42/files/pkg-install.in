@@ -1,0 +1,24 @@
+#!/bin/sh
+
+set -x
+
+XMLCATMGR="%%XMLCATMGR%%";
+MASTER_CATALOG_XML="%%MASTER_CATALOG_XML%%";
+DTD_DIR="%%DTD_DIR%%"
+DTD_BASE_URI="%%DTD_BASE_URI%%"
+
+case $2 in 
+    PRE-INSTALL)
+	;;
+    POST-INSTALL)
+if [ ! -f "${MASTER_CATALOG_XML}" ]; then
+	${XMLCATMGR} -c "${MASTER_CATALOG_XML}" create || true
+fi
+
+${XMLCATMGR} -c ${MASTER_CATALOG_XML} add nextCatalog "file://${DTD_DIR}/catalog.xml"
+${XMLCATMGR} -c ${MASTER_CATALOG_XML} add rewriteSystem ${DTD_BASE_URI} "file://${DTD_DIR}"
+${XMLCATMGR} -c ${MASTER_CATALOG_XML} add rewriteURI ${DTD_BASE_URI} "file://${DTD_DIR}"
+	;;
+esac
+exit 0
+#EOF

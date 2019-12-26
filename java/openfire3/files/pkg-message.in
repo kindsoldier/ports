@@ -1,0 +1,12 @@
+-----------------------------------------------------------
+To enable the openfire startup script please add
+openfire_enable="YES" to your /etc/rc.conf file.
+
+The following sample configuration files have been
+placed in %%EXAMPLESDIR%%:
+
+openfire.xml.sample
+security.xml.sample
+keystore.sample
+truststore.sample
+-----------------------------------------------------------

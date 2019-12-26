@@ -1,0 +1,29 @@
+--- ./configure.orig	2018-03-11 23:21:08.000000000 +0200
++++ ./configure	2019-09-16 16:22:38.638482000 +0200
+@@ -2687,13 +2687,13 @@
+ APIVERSION=1.16
+ 
+ 
+-pkgvdatadir="\${datadir}/$PACKAGE-$APIVERSION"
++pkgvdatadir="\${datadir}/$PACKAGE"
+ 
+ scriptdir="\${pkgvdatadir}"
+ 
+ amdir="\${pkgvdatadir}/am"
+ 
+-automake_acdir="\${datadir}/aclocal-$APIVERSION"
++automake_acdir="\${datadir}/aclocal"
+ 
+ system_acdir="\${datadir}/aclocal"
+ 
+@@ -2702,8 +2702,8 @@
+ # aclocal and automake, hence the remake rules must use those versions
+ # as well.  The extra quoting is to cater to cases when the build
+ # directory contains whitespace or shell metacharacters.
+-ACLOCAL="\"`pwd`/pre-inst-env\" aclocal-$APIVERSION"
+-AUTOMAKE="\"`pwd`/pre-inst-env\" automake-$APIVERSION"
++ACLOCAL="\"`pwd`/pre-inst-env\" aclocal"
++AUTOMAKE="\"`pwd`/pre-inst-env\" automake"
+ 
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether ln -s works" >&5
+ $as_echo_n "checking whether ln -s works... " >&6; }

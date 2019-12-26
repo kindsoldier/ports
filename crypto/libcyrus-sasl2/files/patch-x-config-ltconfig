@@ -1,0 +1,19 @@
+--- ./config/ltconfig.orig	2012-10-12 17:05:48.000000000 +0300
++++ ./config/ltconfig	2015-12-01 22:33:45.285187000 +0200
+@@ -1907,14 +1907,14 @@
+   ;;
+   
+ freebsd*)
+-  objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
++  objformat=elf
+   version_type=freebsd-$objformat
+   case "$version_type" in
+     freebsd-elf*)
+       deplibs_check_method='file_magic ELF [0-9][0-9]*-bit [LM]SB shared object'
+       file_magic_cmd=/usr/bin/file
+       file_magic_test_file=`echo /usr/lib/libc.so*`
+-      library_names_spec='${libname}${release}.so$versuffix ${libname}${release}.so $libname.so'
++      library_names_spec='${libname}.so$versuffix ${libname}.so'
+       need_version=no
+       need_lib_prefix=no
+       ;;

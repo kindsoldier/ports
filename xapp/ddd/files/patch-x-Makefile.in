@@ -1,0 +1,11 @@
+--- ./Makefile.in.orig	2009-02-11 19:25:55.000000000 +0200
++++ ./Makefile.in	2018-03-08 17:36:53.328802000 +0200
+@@ -307,7 +307,7 @@
+ 
+ 
+ # Shared data installation
+-dddrootdir = $(pkgdatadir)-$(VERSION)
++dddrootdir = $(pkgdatadir)/$(VERSION)
+ 
+ # -----------------------------------------------------------------------------
+ # Data.

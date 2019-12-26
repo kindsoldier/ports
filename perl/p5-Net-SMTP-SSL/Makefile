@@ -1,0 +1,21 @@
+#
+# $Id$
+#
+PORTNAME=	Net-SMTP-SSL
+PORTVERSION=	1.03
+CATEGORIES=	mail perl5
+MASTER_SITES=	CPAN
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	SSL support for Net::SMTP
+
+BUILD_DEPENDS=	p5-IO-Socket-SSL>=0:perl/p5-IO-Socket-SSL
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+NO_ARCH=	yes
+USE_PERL5=	configure
+USES=		perl5
+
+.include <bsd.port.mk>
+#EOF

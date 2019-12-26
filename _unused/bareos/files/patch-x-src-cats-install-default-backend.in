@@ -1,0 +1,43 @@
+--- ./src/cats/install-default-backend.in.orig	2016-09-09 15:11:35.000000000 +0200
++++ ./src/cats/install-default-backend.in	2016-10-31 13:27:35.618143000 +0200
+@@ -2,14 +2,13 @@
+ 
+ LIBTOOL="@BUILD_DIR@/libtool"
+ 
+-if [ $# -lt 3 ]; then
+-   echo "Usage: $0 <default_backend> <library_version> <install_dir>"
++if [ $# -lt 2 ]; then
++   echo "Usage: $0 <default_backend> <install_dir>"
+    exit 1
+ fi
+ 
+ default_backend=$1
+-library_version=$2
+-install_dir=$3
++install_dir=$2
+ 
+ #
+ # Find out what the shared lib extension is for this platform.
+@@ -22,11 +21,11 @@
+    exit 1
+ fi
+ 
+-if [ -f ${install_dir}/libbareoscats-${default_backend}-${library_version}${SHLIB_EXT} ]; then
++if [ -f ${install_dir}/libbareoscats-${default_backend}${SHLIB_EXT} ]; then
+    #
+    # Create a default catalog library pointing to one of the shared libs.
+    #
+-   rm -f ${install_dir}/libbareoscats-${library_version}${SHLIB_EXT}
++   rm -f ${install_dir}/libbareoscats${SHLIB_EXT}
+ 
+    #
+    # Create a relative symlink to the default backend
+@@ -34,7 +33,7 @@
+    # always work.
+    #
+    ln -s libbareoscats-${default_backend}${SHLIB_EXT} \
+-         ${install_dir}/libbareoscats-${library_version}${SHLIB_EXT}
++         ${install_dir}/libbareoscats${SHLIB_EXT}
+ fi
+ 
+ exit 0

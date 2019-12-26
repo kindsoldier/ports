@@ -1,0 +1,41 @@
+--- ./builds/unix/unix-def.in.orig	2018-04-22 11:41:36.000000000 +0200
++++ ./builds/unix/unix-def.in	2019-03-30 22:49:46.418181000 +0200
+@@ -34,8 +34,8 @@
+ INSTALL_SCRIPT  := @INSTALL_SCRIPT@
+ MKINSTALLDIRS   := @MKDIR_P@
+ 
+-CLEAN += $(OBJ_BUILD)/freetype-config \
+-         $(OBJ_BUILD)/freetype2.pc
++CLEAN += $(OBJ_BUILD)/qtfreetype-config \
++         $(OBJ_BUILD)/qtfreetype2.pc
+ 
+ DISTCLEAN += $(OBJ_BUILD)/config.cache  \
+              $(OBJ_BUILD)/config.log    \
+@@ -101,7 +101,7 @@
+ # we generate `freetype-config' and `freetype.pc' at compile time so that
+ # those variables are properly expanded.
+ 
+-$(OBJ_BUILD)/freetype-config: $(TOP_DIR)/builds/unix/freetype-config.in
++$(OBJ_BUILD)/qtfreetype-config: $(TOP_DIR)/builds/unix/qtfreetype-config.in
+ 	rm -f $@ $@.tmp
+ 	sed -e 's|%LIBSSTATIC_CONFIG%|$(LIBSSTATIC_CONFIG)|'   \
+ 	    -e 's|%PKG_CONFIG%|$(PKG_CONFIG)|'                 \
+@@ -130,7 +130,7 @@
+ libdir_x      := $(subst $(space),\\$(space),$(libdir))
+ prefix_x      := $(subst $(space),\\$(space),$(prefix))
+ 
+-$(OBJ_BUILD)/freetype2.pc: $(TOP_DIR)/builds/unix/freetype2.in
++$(OBJ_BUILD)/qtfreetype2.pc: $(TOP_DIR)/builds/unix/qtfreetype2.in
+ 	rm -f $@ $@.tmp
+ 	sed -e 's|%REQUIRES_PRIVATE%|$(REQUIRES_PRIVATE)|'     \
+ 	    -e 's|%LIBS_PRIVATE%|$(LIBS_PRIVATE)|'             \
+@@ -148,7 +148,7 @@
+ # defines whether we should install `freetype-config' or not
+ INSTALL_FT2_CONFIG = @INSTALL_FT2_CONFIG@
+ 
+-all install: $(OBJ_BUILD)/freetype-config \
+-     $(OBJ_BUILD)/freetype2.pc
++all install: $(OBJ_BUILD)/qtfreetype-config \
++     $(OBJ_BUILD)/qtfreetype2.pc
+ 
+ # EOF

@@ -1,0 +1,25 @@
+libexec/opensmtpd/filter-dkim-signer
+libexec/opensmtpd/filter-dnsbl
+libexec/opensmtpd/filter-pause
+libexec/opensmtpd/filter-regex
+libexec/opensmtpd/filter-stub
+libexec/opensmtpd/filter-trace
+libexec/opensmtpd/filter-void
+libexec/opensmtpd/queue-null
+libexec/opensmtpd/queue-ram
+libexec/opensmtpd/queue-stub
+libexec/opensmtpd/scheduler-ram
+libexec/opensmtpd/scheduler-stub
+libexec/opensmtpd/table-passwd
+libexec/opensmtpd/table-sqlite
+man/man5/filter-regex.conf.5.gz
+man/man5/table-passwd.5.gz
+man/man5/table-sqlite.5.gz
+man/man8/filter-dkim-signer.8.gz
+man/man8/filter-dnsbl.8.gz
+man/man8/filter-pause.8.gz
+man/man8/filter-regex.8.gz
+man/man8/filter-stub.8.gz
+man/man8/filter-trace.8.gz
+man/man8/filter-void.8.gz
+@dir libexec/opensmtpd

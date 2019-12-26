@@ -1,0 +1,56 @@
+bin/%%TARGET%%-addr2line
+bin/%%TARGET%%-ar
+bin/%%TARGET%%-as
+bin/%%TARGET%%-c++filt
+bin/%%TARGET%%-elfedit
+bin/%%TARGET%%-gprof
+bin/%%TARGET%%-ld
+bin/%%TARGET%%-nm
+bin/%%TARGET%%-objcopy
+bin/%%TARGET%%-objdump
+bin/%%TARGET%%-ranlib
+bin/%%TARGET%%-readelf
+bin/%%TARGET%%-size
+bin/%%TARGET%%-strings
+bin/%%TARGET%%-strip
+
+%%TARGET%%/bin/nm
+%%TARGET%%/bin/strip
+%%TARGET%%/bin/ar
+%%TARGET%%/bin/ranlib
+%%TARGET%%/bin/objdump
+%%TARGET%%/bin/objcopy
+%%TARGET%%/bin/as
+%%TARGET%%/bin/ld
+
+%%TARGET%%/lib/ldscripts/armelf.x
+%%TARGET%%/lib/ldscripts/armelf.xbn
+%%TARGET%%/lib/ldscripts/armelf.xc
+%%TARGET%%/lib/ldscripts/armelf.xn
+%%TARGET%%/lib/ldscripts/armelf.xr
+%%TARGET%%/lib/ldscripts/armelf.xs
+%%TARGET%%/lib/ldscripts/armelf.xsc
+%%TARGET%%/lib/ldscripts/armelf.xsw
+%%TARGET%%/lib/ldscripts/armelf.xu
+%%TARGET%%/lib/ldscripts/armelf.xw
+
+man/man1/%%TARGET%%-addr2line.1.gz
+man/man1/%%TARGET%%-ar.1.gz
+man/man1/%%TARGET%%-as.1.gz
+man/man1/%%TARGET%%-c++filt.1.gz
+man/man1/%%TARGET%%-elfedit.1.gz
+man/man1/%%TARGET%%-gprof.1.gz
+man/man1/%%TARGET%%-ld.1.gz
+man/man1/%%TARGET%%-nm.1.gz
+man/man1/%%TARGET%%-objcopy.1.gz
+man/man1/%%TARGET%%-objdump.1.gz
+man/man1/%%TARGET%%-ranlib.1.gz
+man/man1/%%TARGET%%-readelf.1.gz
+man/man1/%%TARGET%%-size.1.gz
+man/man1/%%TARGET%%-strings.1.gz
+man/man1/%%TARGET%%-strip.1.gz
+
+@dir %%TARGET%%/bin
+@dir %%TARGET%%/lib/ldscripts
+@dir %%TARGET%%/lib
+@dir %%TARGET%%

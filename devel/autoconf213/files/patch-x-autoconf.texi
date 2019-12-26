@@ -1,0 +1,24 @@
+--- ./autoconf.texi.orig	1999-01-05 15:28:37.000000000 +0200
++++ ./autoconf.texi	2014-01-10 18:39:12.000000000 +0300
+@@ -1,9 +1,10 @@
+ \input texinfo @c -*-texinfo-*-
+ @c %**start of header
+-@setfilename autoconf.info
+-@settitle Autoconf
++@setfilename autoconf213.info
++@settitle Autoconf213
+ @c For double-sided printing, uncomment:
+ @c @setchapternewpage odd
++@dircategory Programming & development tools
+ @c %**end of header
+ 
+ @set EDITION 2.13
+@@ -17,7 +18,7 @@
+ @ifinfo
+ @format
+ START-INFO-DIR-ENTRY
+-* Autoconf: (autoconf).         Create source code configuration scripts.
++* Autoconf213: (autoconf213).   Create source code configuration scripts.
+ END-INFO-DIR-ENTRY
+ @end format
+ 

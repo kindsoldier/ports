@@ -1,0 +1,23 @@
+#!/bin/sh
+#
+# PROVIDE: zebra
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+. /etc/rc.subr
+
+name="zebra"
+rcvar="zebra_enable"
+command="%%PREFIX%%/sbin/${name}"
+pidfile="%%RUN_DIR%%/${name}.pid"
+procname="${command}"
+required_dirs="%%RUN_DIR%% %%LOG_DIR%%"
+required_files="%%CONF_DIR%%/${name}.conf"
+command_args=" -d"
+
+load_rc_config $name
+
+: ${zebra_enable="NO"}
+
+run_rc_command "$1"
+#EOF

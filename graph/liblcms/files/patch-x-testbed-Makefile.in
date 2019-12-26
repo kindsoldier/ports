@@ -1,0 +1,11 @@
+--- ./testbed/Makefile.in.orig	Fri Jul 27 13:10:45 2007
++++ ./testbed/Makefile.in	Wed Aug 29 10:16:54 2007
+@@ -221,7 +221,7 @@
+ AUTOMAKE_OPTIONS = 1.7 foreign
+ INCLUDES = -I$(top_builddir)/include -I$(top_srcdir)/include
+ testcms_LDADD = $(top_builddir)/src/liblcms.la 
+-testcms_LDFLAGS = @LDFLAGS@
++testcms_LDFLAGS = @LDFLAGS@ -static
+ testcms_SOURCES = testcms.c
+ EXTRA_DIST = sRGBSpac.icm
+ all: all-am

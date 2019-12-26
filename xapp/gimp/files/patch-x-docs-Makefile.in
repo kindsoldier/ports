@@ -1,0 +1,52 @@
+--- ./docs/Makefile.in.orig	2013-02-05 22:06:33.000000000 +0300
++++ ./docs/Makefile.in	2015-10-23 20:52:02.023354000 +0200
+@@ -760,29 +760,29 @@
+ @ENABLE_GIMP_CONSOLE_TRUE@	cd $(DESTDIR)$(mandir)/man1; \
+ @ENABLE_GIMP_CONSOLE_TRUE@	rm -f gimp-console-$(GIMP_APP_VERSION).1; \
+ @ENABLE_GIMP_CONSOLE_TRUE@	ln -s gimp-$(GIMP_APP_VERSION).1 gimp-console-$(GIMP_APP_VERSION).1
+-@DEFAULT_BINARY_TRUE@	@list='$(default_binary_mans)'; \
+-@DEFAULT_BINARY_TRUE@	for i in $$list; do \
+-@DEFAULT_BINARY_TRUE@	  s=`echo $$i | sed -e 's/.*\\(.\\)$$/\1/'`; \
+-@DEFAULT_BINARY_TRUE@	  n=`echo $$i | sed -e 's/-[^-]*$$//'`; \
+-@DEFAULT_BINARY_TRUE@	  f="$$n.$$s"; \
+-@DEFAULT_BINARY_TRUE@	  echo "cd $(DESTDIR)$(mandir)/man$$s"; \
+-@DEFAULT_BINARY_TRUE@	  cd $(DESTDIR)$(mandir)/man$$s; \
+-@DEFAULT_BINARY_TRUE@	  echo "rm -f $$f"; \
+-@DEFAULT_BINARY_TRUE@	  rm -f $$f; \
+-@DEFAULT_BINARY_TRUE@	  echo "ln -s $$i $$f"; \
+-@DEFAULT_BINARY_TRUE@	  ln -s $$i $$f; \
+-@DEFAULT_BINARY_TRUE@	done
++#@DEFAULT_BINARY_TRUE@	@list='$(default_binary_mans)'; \
++#@DEFAULT_BINARY_TRUE@	for i in $$list; do \
++#@DEFAULT_BINARY_TRUE@	  s=`echo $$i | sed -e 's/.*\\(.\\)$$/\1/'`; \
++#@DEFAULT_BINARY_TRUE@	  n=`echo $$i | sed -e 's/-[^-]*$$//'`; \
++#@DEFAULT_BINARY_TRUE@	  f="$$n.$$s"; \
++#@DEFAULT_BINARY_TRUE@	  echo "cd $(DESTDIR)$(mandir)/man$$s"; \
++#@DEFAULT_BINARY_TRUE@	  cd $(DESTDIR)$(mandir)/man$$s; \
++#@DEFAULT_BINARY_TRUE@	  echo "rm -f $$f"; \
++#@DEFAULT_BINARY_TRUE@	  rm -f $$f; \
++#@DEFAULT_BINARY_TRUE@	  echo "ln -s $$i $$f"; \
++#@DEFAULT_BINARY_TRUE@	  ln -s $$i $$f; \
++#@DEFAULT_BINARY_TRUE@	done
+ 
+ uninstall-local:
+ @ENABLE_GIMP_CONSOLE_TRUE@	rm -f $(DESTDIR)$(mandir)/man1/gimp-console-$(GIMP_APP_VERSION).1
+-@DEFAULT_BINARY_TRUE@	@list='$(default_binary_mans)'; \
+-@DEFAULT_BINARY_TRUE@	for i in $$list; do \
+-@DEFAULT_BINARY_TRUE@	  s=`echo $$i | sed -e 's/.*\\(.\\)$$/\1/'`; \
+-@DEFAULT_BINARY_TRUE@	  n=`echo $$i | sed -e 's/-[^-]*$$//'`; \
+-@DEFAULT_BINARY_TRUE@	  f="$$n.$$s"; \
+-@DEFAULT_BINARY_TRUE@	  echo " rm -f $(DESTDIR)$(mandir)/man$$s/$$f"; \
+-@DEFAULT_BINARY_TRUE@	  rm -f $(DESTDIR)$(mandir)/man$$s/$$f; \
+-@DEFAULT_BINARY_TRUE@	done
++#@DEFAULT_BINARY_TRUE@	@list='$(default_binary_mans)'; \
++#@DEFAULT_BINARY_TRUE@	for i in $$list; do \
++#@DEFAULT_BINARY_TRUE@	  s=`echo $$i | sed -e 's/.*\\(.\\)$$/\1/'`; \
++#@DEFAULT_BINARY_TRUE@	  n=`echo $$i | sed -e 's/-[^-]*$$//'`; \
++#@DEFAULT_BINARY_TRUE@	  f="$$n.$$s"; \
++#@DEFAULT_BINARY_TRUE@	  echo " rm -f $(DESTDIR)$(mandir)/man$$s/$$f"; \
++#@DEFAULT_BINARY_TRUE@	  rm -f $(DESTDIR)$(mandir)/man$$s/$$f; \
++#@DEFAULT_BINARY_TRUE@	done
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

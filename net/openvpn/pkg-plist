@@ -1,0 +1,25 @@
+sbin/openvpn
+include/openvpn-plugin.h
+
+lib/openvpn/plugins/openvpn-plugin-auth-pam.la
+lib/openvpn/plugins/openvpn-plugin-auth-pam.so
+lib/openvpn/plugins/openvpn-plugin-down-root.la
+lib/openvpn/plugins/openvpn-plugin-down-root.so
+
+share/doc/openvpn/README.auth-pam
+share/doc/openvpn/README.down-root
+share/doc/openvpn/management-notes.txt
+
+@dir lib/openvpn/plugins
+@dir lib/openvpn
+@dir share/doc/openvpn
+@dir share/doc
+
+%%EXAMPLESDIR%%/client.conf
+%%EXAMPLESDIR%%/server.conf
+%%EXAMPLESDIR%%/static-home.conf
+%%EXAMPLESDIR%%/static-office.conf
+%%EXAMPLESDIR%%/tls-home.conf
+%%EXAMPLESDIR%%/tls-office.conf
+@dir %%EXAMPLESDIR%%
+

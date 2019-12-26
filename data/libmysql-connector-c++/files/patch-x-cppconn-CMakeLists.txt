@@ -1,0 +1,15 @@
+--- ./cppconn/CMakeLists.txt.orig	2014-11-19 15:37:11.000000000 +0200
++++ ./cppconn/CMakeLists.txt	2015-02-08 02:35:44.000000000 +0200
+@@ -58,7 +58,6 @@
+ 
+ SET(MYSQLCPPCONN_INSTALL_HEADERS
+ 		build_config.h
+-		config.h
+ 		connection.h
+ 		datatype.h
+ 		driver.h
+@@ -75,3 +74,4 @@
+ 		variant.h)
+ 
+ INSTALL(FILES ${MYSQLCPPCONN_INSTALL_HEADERS} DESTINATION include/cppconn)
++INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/config.h DESTINATION include/cppconn)

@@ -1,0 +1,68 @@
+--- ./libgnomevfs/Makefile.in.orig	2010-09-28 12:35:22.000000000 +0300
++++ ./libgnomevfs/Makefile.in	2015-01-05 21:39:52.000000000 +0200
+@@ -153,7 +153,7 @@
+ 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+ 	$(libgnomevfs_2_la_LDFLAGS) $(LDFLAGS) -o $@
+ libgnomevfsdaemon_2_la_DEPENDENCIES = $(am__DEPENDENCIES_1) \
+-	$(am__DEPENDENCIES_1) libgnomevfs-2.la $(am__DEPENDENCIES_1)
++	$(am__DEPENDENCIES_1) libgnomevfs.la $(am__DEPENDENCIES_1)
+ am_libgnomevfsdaemon_2_la_OBJECTS = gnome-vfs-filesystem-type.lo \
+ 	gnome-vfs-cdrom.lo gnome-vfs-hal-mounts.lo \
+ 	gnome-vfs-volume-monitor-daemon.lo gnome-vfs-volume-monitor.lo \
+@@ -430,7 +430,7 @@
+ 	-D_LARGEFILE64_SOURCE                   \
+ 	-D_POSIX_PTHREAD_SEMANTICS		\
+ 	-D_REENTRANT				\
+-	-DG_DISABLE_DEPRECATED			\
++				\
+ 	-DGNOME_VFS_PREFIX=\"$(prefix)\"	\
+ 	-DGNOME_VFS_BINDIR=\"$(bindir)\"	\
+ 	-DGNOME_VFS_DATADIR=\"$(datadir)\"	\
+@@ -487,9 +487,9 @@
+ # This is based on the same Makefile.am stuff in pango:
+ libgnomevfs_built_headers = gnome-vfs-enum-types.h
+ libgnomevfs_built_cfiles = gnome-vfs-enum-types.c
+-lib_LTLIBRARIES = libgnomevfs-2.la
++lib_LTLIBRARIES = libgnomevfs.la
+ @OS_WIN32_TRUE@SOCKET_LIBS = -lws2_32
+-@OS_WIN32_FALSE@noinst_LTLIBRARIES = libgnomevfsdaemon-2.la
++@OS_WIN32_FALSE@noinst_LTLIBRARIES = libgnomevfsdaemon.la
+ libgnomevfs_2_la_LIBADD = \
+ 	$(LIBGNOMEVFS_LIBS)			\
+ 	$(FNMATCH_LIBS)				\
+@@ -507,11 +507,11 @@
+ libgnomevfsdaemon_2_la_LIBADD = \
+ 	$(LIBGNOMEVFS_LIBS)			\
+ 	$(LIBGNOMEVFSDAEMON_LIBS)		\
+-	libgnomevfs-2.la			\
++	libgnomevfs.la			\
+ 	$(NULL)
+ 
+-libgnomevfsincludedir = $(includedir)/gnome-vfs-2.0/libgnomevfs
+-libgnomevfsmoduleincludedir = $(includedir)/gnome-vfs-module-2.0/libgnomevfs
++libgnomevfsincludedir = $(includedir)/gnome-vfs/libgnomevfs
++libgnomevfsmoduleincludedir = $(includedir)/gnome-vfs-module/libgnomevfs
+ 
+ # mime-sniff-buffers and cancellabe-ops are used by modules
+ noinst_HEADERS = \
+@@ -703,7 +703,7 @@
+ 
+ 
+ # Platform specific includes
+-libgnomevfsplatformincludedir = $(libdir)/gnome-vfs-2.0/include
++libgnomevfsplatformincludedir = $(includedir)/gnome-vfs/include
+ libgnomevfsplatforminclude_HEADERS = \
+ 	gnome-vfs-file-size.h
+ 
+@@ -796,9 +796,9 @@
+ 	  echo "rm -f \"$${dir}/so_locations\""; \
+ 	  rm -f "$${dir}/so_locations"; \
+ 	done
+-libgnomevfs-2.la: $(libgnomevfs_2_la_OBJECTS) $(libgnomevfs_2_la_DEPENDENCIES) 
++libgnomevfs.la: $(libgnomevfs_2_la_OBJECTS) $(libgnomevfs_2_la_DEPENDENCIES) 
+ 	$(libgnomevfs_2_la_LINK) -rpath $(libdir) $(libgnomevfs_2_la_OBJECTS) $(libgnomevfs_2_la_LIBADD) $(LIBS)
+-libgnomevfsdaemon-2.la: $(libgnomevfsdaemon_2_la_OBJECTS) $(libgnomevfsdaemon_2_la_DEPENDENCIES) 
++libgnomevfsdaemon.la: $(libgnomevfsdaemon_2_la_OBJECTS) $(libgnomevfsdaemon_2_la_DEPENDENCIES) 
+ 	$(LINK) $(am_libgnomevfsdaemon_2_la_rpath) $(libgnomevfsdaemon_2_la_OBJECTS) $(libgnomevfsdaemon_2_la_LIBADD) $(LIBS)
+ 
+ mostlyclean-compile:

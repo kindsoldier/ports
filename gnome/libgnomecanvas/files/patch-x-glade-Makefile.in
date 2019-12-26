@@ -1,0 +1,11 @@
+--- ./glade/Makefile.in.orig	2006-03-13 13:13:17.000000000 +0200
++++ ./glade/Makefile.in	2010-10-11 11:00:44.000000000 +0300
+@@ -56,7 +56,7 @@
+ LTLIBRARIES = $(glademodule_LTLIBRARIES)
+ am__DEPENDENCIES_1 =
+ libcanvas_la_DEPENDENCIES =  \
+-	$(top_builddir)/libgnomecanvas/libgnomecanvas-2.la \
++	$(top_builddir)/libgnomecanvas/libgnomecanvas.la \
+ 	$(am__DEPENDENCIES_1)
+ am_libcanvas_la_OBJECTS = glade-canvas.lo
+ libcanvas_la_OBJECTS = $(am_libcanvas_la_OBJECTS)

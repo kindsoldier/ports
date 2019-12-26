@@ -1,0 +1,19 @@
+# Created by: Eric Freeman <freebsdports@chillibear.com>
+# $FreeBSD: head/www/rubygem-rack-cache/Makefile 449423 2017-09-07 20:13:01Z sunpoet $
+
+PORTNAME=	rack-cache
+PORTVERSION=	1.7.1
+CATEGORIES=	www rubygems
+MASTER_SITES=	RG
+
+MAINTAINER=	ruby@FreeBSD.org
+COMMENT=	Rack middleware to enable HTTP caching
+
+
+RUN_DEPENDS=	rubygem-rack>=0.4:ruby/rubygem-rack
+
+NO_ARCH=	yes
+USE_RUBY=	yes
+USES=		gem
+
+.include <bsd.port.mk>

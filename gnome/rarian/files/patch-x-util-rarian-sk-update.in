@@ -1,0 +1,11 @@
+--- ./util/rarian-sk-update.in.orig	2008-09-01 21:40:21.000000000 +0300
++++ ./util/rarian-sk-update.in	2010-09-28 02:32:30.000000000 +0300
+@@ -264,7 +264,7 @@
+ # They are inherited from scrollkeeper :(
+ 
+ # We use TEMP as set -- seems to nuke the return value of getopt
+-TEMP=`getopt -u -n$(basename $0) -o "o:r:p:vqnhV" \
++TEMP=`/usr/local/bin/getopt -u -n$(basename $0) -o "o:r:p:vqnhV" \
+     	     -- "$@"` \
+     || print_usage
+ 

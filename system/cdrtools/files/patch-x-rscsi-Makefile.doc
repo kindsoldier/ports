@@ -1,0 +1,13 @@
+--- ./rscsi/Makefile.doc.orig	2007-06-14 00:46:11.000000000 +0300
++++ ./rscsi/Makefile.doc	2018-06-10 14:33:47.218365000 +0200
+@@ -7,8 +7,8 @@
+ include		$(SRCROOT)/$(RULESDIR)/rules.top
+ ###########################################################################
+ 
+-INSDIR=		share/doc/rscsi
+-TARGET=		default-rscsi.sample
++#INSDIR=		share/doc/rscsi
++#TARGET=		default-rscsi.sample
+ #XMK_FILE=	Makefile.man
+ 
+ ###########################################################################

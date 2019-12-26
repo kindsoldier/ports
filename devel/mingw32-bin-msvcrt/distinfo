@@ -1,0 +1,6 @@
+SHA256 (mingw/mingwrt-5.2.1-mingw32-dev.tar.xz) = b76462e61f387c1b18c9c86f571d22d7bd8d312ab95d316f70c592694d203617
+SIZE (mingw/mingwrt-5.2.1-mingw32-dev.tar.xz) = 353724
+SHA256 (mingw/mingwrt-5.2.1-mingw32-dll.tar.xz) = e1d373a835f8877d1d2a859f7590efbee7c69f24ad24b5ec5c2293195b644ade
+SIZE (mingw/mingwrt-5.2.1-mingw32-dll.tar.xz) = 3532
+SHA256 (mingw/w32api-5.2.1-mingw32-dev.tar.xz) = e27f1e13a4336e4551e72c3526c447af2918d01d5bbcce6af3e192073c78a10e
+SIZE (mingw/w32api-5.2.1-mingw32-dev.tar.xz) = 1157792

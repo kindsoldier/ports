@@ -1,0 +1,49 @@
+--- ./lib/Makefile.orig	2018-05-07 23:38:45.000000000 +0200
++++ ./lib/Makefile	2018-06-21 23:37:16.449382000 +0200
+@@ -46,7 +46,7 @@
+ BUILD_STATIC:=yes
+ 
+ CPPFLAGS+= -DXXH_NAMESPACE=LZ4_
+-CFLAGS  ?= -O3
++CFLAGS  ?= -O2
+ DEBUGFLAGS:= -Wall -Wextra -Wcast-qual -Wcast-align -Wshadow \
+              -Wswitch-enum -Wdeclaration-after-statement -Wstrict-prototypes \
+              -Wundef -Wpointer-arith -Wstrict-aliasing=1
+@@ -70,7 +70,7 @@
+ 	SHARED_EXT_VER = $(SHARED_EXT).$(LIBVER)
+ endif
+ 
+-LIBLZ4 = liblz4.$(SHARED_EXT_VER)
++LIBLZ4 = liblz4.$(SHARED_EXT_MAJOR)
+ 
+ .PHONY: default
+ default: lib-release
+@@ -107,7 +107,6 @@
+ else
+ 	$(Q)$(CC) $(FLAGS) -shared $^ -fPIC -fvisibility=hidden $(SONAME_FLAGS) -o $@
+ 	@echo creating versioned links
+-	$(Q)ln -sf $@ liblz4.$(SHARED_EXT_MAJOR)
+ 	$(Q)ln -sf $@ liblz4.$(SHARED_EXT)
+ endif
+ endif
+@@ -143,7 +142,7 @@
+ includedir  ?= $(INCLUDEDIR)
+ 
+ ifneq (,$(filter $(shell uname),OpenBSD FreeBSD NetBSD DragonFly))
+-PKGCONFIGDIR ?= $(prefix)/libdata/pkgconfig
++PKGCONFIGDIR ?= $(prefix)/lib/pkgconfig
+ else
+ PKGCONFIGDIR ?= $(libdir)/pkgconfig
+ endif
+@@ -175,9 +174,8 @@
+ 	$(Q)$(INSTALL_DATA) lz4frame_static.h $(DESTDIR)$(includedir)/lz4frame_static.h
+ endif
+ ifeq ($(BUILD_SHARED),yes)
+-	$(Q)$(INSTALL_PROGRAM) liblz4.$(SHARED_EXT_VER) $(DESTDIR)$(libdir)
+-	$(Q)ln -sf liblz4.$(SHARED_EXT_VER) $(DESTDIR)$(libdir)/liblz4.$(SHARED_EXT_MAJOR)
+-	$(Q)ln -sf liblz4.$(SHARED_EXT_VER) $(DESTDIR)$(libdir)/liblz4.$(SHARED_EXT)
++	$(Q)$(INSTALL_PROGRAM) liblz4.$(SHARED_EXT_MAJOR) $(DESTDIR)$(libdir)
++	$(Q)ln -sf liblz4.$(SHARED_EXT_MAJOR) $(DESTDIR)$(libdir)/liblz4.$(SHARED_EXT)
+ endif
+ 	@echo Installing headers in $(includedir)
+ 	$(Q)$(INSTALL_DATA) lz4.h $(DESTDIR)$(includedir)/lz4.h

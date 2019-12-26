@@ -1,0 +1,19 @@
+# Created by: Steve Wills <swills@freebsd.org>
+# $FreeBSD: head/www/rubygem-puma/Makefile 448249 2017-08-18 15:57:53Z sunpoet $
+
+PORTNAME=	puma
+PORTVERSION=	3.11.4
+CATEGORIES=	www rubygems
+MASTER_SITES=	RG
+
+MAINTAINER=	ruby@FreeBSD.org
+COMMENT=	Fast, multithreaded and highly concurrent ruby web server
+
+USE_RUBY=	yes
+USES=		gem shebangfix
+
+PLIST_FILES=	bin/puma bin/pumactl
+
+SHEBANG_FILES=	tools/jungle/init.d/run-puma
+
+.include <bsd.port.mk>

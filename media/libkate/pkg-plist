@@ -1,0 +1,17 @@
+bin/katalyzer
+bin/katedec
+bin/kateenc
+include/kate/kate.h
+include/kate/kate_config.h
+include/kate/oggkate.h
+lib/libkate.a
+lib/libkate.la
+lib/libkate.so
+lib/libkate.so.4
+lib/liboggkate.a
+lib/liboggkate.la
+lib/liboggkate.so
+lib/liboggkate.so.3
+lib/pkgconfig/kate.pc
+lib/pkgconfig/oggkate.pc
+@dir include/kate

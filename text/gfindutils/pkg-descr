@@ -1,0 +1,7 @@
+This package contains programs to help you locate files on your
+system.  The find program can search through a hierarchy of
+directories looking for files matching a certain set of criteria
+(such as a filename pattern).  The locate program searches a
+database (create by updatedb) to quickly find a file matching
+a given pattern.
+

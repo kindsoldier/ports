@@ -1,0 +1,11 @@
+--- ./libstdc++-v3/Makefile.in.orig	2012-11-06 02:42:32.000000000 +0300
++++ ./libstdc++-v3/Makefile.in	2014-01-16 00:58:45.000000000 +0300
+@@ -93,7 +93,7 @@
+ 	$(RECURSIVE_CLEAN_TARGETS:-recursive=) tags TAGS ctags CTAGS
+ ETAGS = etags
+ CTAGS = ctags
+-DIST_SUBDIRS = include libsupc++ src doc po testsuite python
++DIST_SUBDIRS = include libsupc++ src doc po testsuite
+ ABI_TWEAKS_SRCDIR = @ABI_TWEAKS_SRCDIR@
+ ACLOCAL = @ACLOCAL@
+ ALLOCATOR_H = @ALLOCATOR_H@

@@ -1,0 +1,100 @@
+--- ./util/grub.d/20_linux_xen.in.orig	2012-06-03 22:57:42.000000000 +0300
++++ ./util/grub.d/20_linux_xen.in	2015-10-14 20:46:13.940952000 +0200
+@@ -39,7 +39,7 @@
+ # the initrds that Linux uses don't like that.
+ case ${GRUB_DEVICE} in
+   /dev/loop/*|/dev/loop[0-9])
+-    GRUB_DEVICE=`losetup ${GRUB_DEVICE} | sed -e "s/^[^(]*(\([^)]\+\)).*/\1/"`
++    GRUB_DEVICE=`losetup ${GRUB_DEVICE} | gsed -e "s/^[^(]*(\([^)]\+\)).*/\1/"`
+   ;;
+ esac
+ 
+@@ -74,7 +74,7 @@
+ 	fi;;
+     xzfs)
+ 	rpool=`${grub_probe} --device ${GRUB_DEVICE} --target=fs_label 2>/dev/null || true`
+-	bootfs="`make_system_path_relative_to_its_root / | sed -e "s,@$,,"`"
++	bootfs="`make_system_path_relative_to_its_root / | gsed -e "s,@$,,"`"
+ 	LINUX_ROOT_DEVICE="ZFS=${rpool}${bootfs}"
+ 	;;
+ esac
+@@ -98,28 +98,28 @@
+       else
+ 	  title="$(gettext_printf "%s, with Xen %s and Linux %s" "${os}" "${xen_version}" "${version}")"
+       fi
+-      replacement_title="$(echo "Advanced options for ${OS}" | sed 's,>,>>,g')>$(echo "$title" | sed 's,>,>>,g')"
++      replacement_title="$(echo "Advanced options for ${OS}" | gsed 's,>,>>,g')>$(echo "$title" | gsed 's,>,>>,g')"
+       if [ x"Xen ${xen_version}>$title" = x"$GRUB_ACTUAL_DEFAULT" ]; then
+          quoted="$(echo "$GRUB_ACTUAL_DEFAULT" | grub_quote)"
+          title_correction_code="${title_correction_code}if [ \"x\$default\" = '$quoted' ]; then default='$(echo "$replacement_title" | grub_quote)'; fi;"
+          grub_warn "$(gettext_printf "Please don't use old title \`%s' for GRUB_DEFAULT, use \`%s' (for versions before 2.00) or \`%s' (for 2.00 or later)" "$GRUB_ACTUAL_DEFAULT" "$replacement_title" "gnulinux-advanced-$boot_device_id>gnulinux-$version-$type-$boot_device_id")"
+       fi
+-      echo "menuentry '$(echo "$title" | grub_quote)' ${CLASS} \$menuentry_id_option 'xen-gnulinux-$version-$type-$boot_device_id' {" | sed "s/^/$submenu_indentation/"
++      echo "menuentry '$(echo "$title" | grub_quote)' ${CLASS} \$menuentry_id_option 'xen-gnulinux-$version-$type-$boot_device_id' {" | gsed "s/^/$submenu_indentation/"
+   else
+       title="$(gettext_printf "%s, with Xen hypervisor" "${os}")"
+-      echo "menuentry '$(echo "$title" | grub_quote)' ${CLASS} \$menuentry_id_option 'xen-gnulinux-simple-$boot_device_id' {" | sed "s/^/$submenu_indentation/"
++      echo "menuentry '$(echo "$title" | grub_quote)' ${CLASS} \$menuentry_id_option 'xen-gnulinux-simple-$boot_device_id' {" | gsed "s/^/$submenu_indentation/"
+   fi
+   if [ x$type != xrecovery ] ; then
+-      save_default_entry | sed -e "s/^/\t/" | sed "s/^/$submenu_indentation/"
++      save_default_entry | gsed -e "s/^/\t/" | gsed "s/^/$submenu_indentation/"
+   fi
+ 
+   if [ -z "${prepare_boot_cache}" ]; then
+-    prepare_boot_cache="$(prepare_grub_to_access_device ${GRUB_DEVICE_BOOT} | sed -e "s/^/\t/")"
++    prepare_boot_cache="$(prepare_grub_to_access_device ${GRUB_DEVICE_BOOT} | gsed -e "s/^/\t/")"
+   fi
+-  printf '%s\n' "${prepare_boot_cache}" | sed "s/^/$submenu_indentation/"
++  printf '%s\n' "${prepare_boot_cache}" | gsed "s/^/$submenu_indentation/"
+   xmessage="$(gettext_printf "Loading Xen %s ..." ${xen_version})"
+   lmessage="$(gettext_printf "Loading Linux %s ..." ${version})"
+-  sed "s/^/$submenu_indentation/" << EOF
++  gsed "s/^/$submenu_indentation/" << EOF
+ 	echo	'$xmessage'
+ 	multiboot	${rel_xen_dirname}/${xen_basename} placeholder ${xen_args}
+ 	echo	'$lmessage'
+@@ -128,12 +128,12 @@
+   if test -n "${initrd}" ; then
+     # TRANSLATORS: ramdisk isn't identifier. Should be translated.
+     message="$(gettext_printf "Loading initial ramdisk ...")"
+-    sed "s/^/$submenu_indentation/" << EOF
++    gsed "s/^/$submenu_indentation/" << EOF
+ 	echo	'$message'
+ 	module	${rel_dirname}/${initrd}
+ EOF
+   fi
+-  sed "s/^/$submenu_indentation/" << EOF
++  gsed "s/^/$submenu_indentation/" << EOF
+ }
+ EOF
+ }
+@@ -141,7 +141,7 @@
+ linux_list=`for i in /boot/vmlinu[xz]-* /vmlinu[xz]-* /boot/kernel-*; do
+     if grub_file_is_not_garbage "$i"; then
+     	basename=$(basename $i)
+-	version=$(echo $basename | sed -e "s,^[^0-9]*-,,g")
++	version=$(echo $basename | gsed -e "s,^[^0-9]*-,,g")
+ 	dirname=$(dirname $i)
+ 	config=
+ 	for j in "${dirname}/config-${version}" "${dirname}/config-${alt_version}" "/etc/kernels/kernel-config-${version}" ; do
+@@ -194,7 +194,7 @@
+     xen_basename=`basename ${current_xen}`
+     xen_dirname=`dirname ${current_xen}`
+     rel_xen_dirname=`make_system_path_relative_to_its_root $xen_dirname`
+-    xen_version=`echo $xen_basename | sed -e "s,.gz$,,g;s,^xen-,,g"`
++    xen_version=`echo $xen_basename | gsed -e "s,.gz$,,g;s,^xen-,,g"`
+     if [ -z "$boot_device_id" ]; then
+ 	boot_device_id="$(grub_get_device_id "${GRUB_DEVICE}")"
+     fi
+@@ -207,8 +207,8 @@
+ 	basename=`basename $linux`
+ 	dirname=`dirname $linux`
+ 	rel_dirname=`make_system_path_relative_to_its_root $dirname`
+-	version=`echo $basename | sed -e "s,^[^0-9]*-,,g"`
+-	alt_version=`echo $version | sed -e "s,\.old$,,g"`
++	version=`echo $basename | gsed -e "s,^[^0-9]*-,,g"`
++	alt_version=`echo $version | gsed -e "s,\.old$,,g"`
+ 	linux_root_device_thisversion="${LINUX_ROOT_DEVICE}"
+ 
+ 	initrd=

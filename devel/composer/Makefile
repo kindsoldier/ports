@@ -1,0 +1,33 @@
+# Created by: Gea-Suan Lin <gslin@gslin.org>
+# $FreeBSD: head/devel/php-composer/Makefile 472094 2018-06-09 21:25:42Z swills $
+
+PORTNAME=	composer
+DISTVERSION=	1.6.5
+CATEGORIES=	devel
+MASTER_SITES=	http://getcomposer.org/download/${DISTVERSION}/
+PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
+DISTNAME=	composer
+EXTRACT_SUFX=	.phar
+DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
+
+MAINTAINER=	cyberbotx@cyberbotx.com
+COMMENT=	Dependency Manager for PHP
+
+NO_ARCH=	yes
+NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
+
+#USES=		php:flavors
+#USE_PHP=	intl openssl phar json ctype filter mbstring
+
+PLIST_FILES=	bin/composer
+
+do-extract:
+	${MKDIR} ${WRKSRC}/
+	${CP} ${_DISTDIR}/composer.phar ${WRKSRC}/
+
+do-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/composer.phar ${STAGEDIR}${PREFIX}/bin/composer
+
+.include <bsd.port.mk>
+#EOF

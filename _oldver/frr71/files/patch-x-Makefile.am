@@ -1,0 +1,11 @@
+--- ./Makefile.am.orig	2019-06-18 08:10:14.000000000 +0200
++++ ./Makefile.am	2019-09-28 17:04:41.424055000 +0200
+@@ -122,7 +122,7 @@
+ include qpb/subdir.am
+ include fpm/subdir.am
+ include grpc/subdir.am
+-include tools/subdir.am
++##include tools/subdir.am
+ include solaris/subdir.am
+ 
+ include bgpd/subdir.am

@@ -1,0 +1,29 @@
+--- ./Makefile.orig	2013-03-10 20:38:22.000000000 +0300
++++ ./Makefile	2015-01-06 14:41:47.000000000 +0200
+@@ -1,5 +1,4 @@
+-CC=cc
+-CFLAGS=-O3 -Wall -Wextra
++all: dev
+ 
+ 
+ pigz: pigz.o yarn.o zopfli/deflate.o zopfli/blocksplitter.o zopfli/tree.o zopfli/lz77.o zopfli/cache.o zopfli/hash.o zopfli/util.o zopfli/squeeze.o zopfli/katajainen.o
+@@ -34,16 +33,16 @@
+ 	$(CC) $(LDFLAGS) -o pigzt $^ -lpthread -lz -lm
+ 
+ pigzt.o: pigz.c yarn.h
+-	$(CC) $(CFLAGS) -DDEBUG -g -c -o pigzt.o pigz.c
++	$(CC) $(CFLAGS) -DDEBUG  -c -o pigzt.o pigz.c
+ 
+ yarnt.o: yarn.c yarn.h
+-	$(CC) $(CFLAGS) -DDEBUG -g -c -o yarnt.o yarn.c
++	$(CC) $(CFLAGS) -DDEBUG  -c -o yarnt.o yarn.c
+ 
+ pigzn: pigzn.o zopfli/deflate.o zopfli/blocksplitter.o zopfli/tree.o zopfli/lz77.o zopfli/cache.o zopfli/hash.o zopfli/util.o zopfli/squeeze.o zopfli/katajainen.o
+ 	$(CC) $(LDFLAGS) -o pigzn $^ -lz -lm
+ 
+ pigzn.o: pigz.c
+-	$(CC) $(CFLAGS) -DDEBUG -DNOTHREAD -g -c -o pigzn.o pigz.c
++	$(CC) $(CFLAGS) -DDEBUG -DNOTHREAD  -c -o pigzn.o pigz.c
+ 
+ test: pigz
+ 	./pigz -kf pigz.c ; ./pigz -t pigz.c.gz

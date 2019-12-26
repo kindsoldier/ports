@@ -1,0 +1,16 @@
+#!/bin/sh
+
+set -x
+
+case $2 in
+    DEINSTALL)
+	XMLCATMGR=%%XMLCATMGR%%
+	CATALOG_XML=%%CATALOG_XML%%
+        ${XMLCATMGR} -c "${CATALOG_XML}" remove delegateSystem \
+	    "http://docbook.sourceforge.net/release/xsl/"
+	${XMLCATMGR} -c "${CATALOG_XML}" remove delegateURI \
+	    "http://docbook.sourceforge.net/release/xsl/"
+    ;;
+esac
+exit 0
+#EOF

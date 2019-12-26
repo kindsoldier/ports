@@ -1,0 +1,19 @@
+--- ./rscsi/Makefile.man.orig	2006-02-09 00:50:41.000000000 +0200
++++ ./rscsi/Makefile.man	2018-06-10 14:33:47.220933000 +0200
+@@ -7,11 +7,11 @@
+ include		$(SRCROOT)/$(RULESDIR)/rules.top
+ ###########################################################################
+ 
+-MANDIR=		man
+-TARGETMAN=	rscsi
+-MANSECT=	$(MANSECT_CMD)
+-MANSUFFIX=	$(MANSUFF_CMD)
+-MANFILE=	rscsi.1
++#MANDIR=		man
++#TARGETMAN=	rscsi
++#MANSECT=	$(MANSECT_CMD)
++#MANSUFFIX=	$(MANSUFF_CMD)
++#MANFILE=	rscsi.1
+ 
+ ###########################################################################
+ include		$(SRCROOT)/$(RULESDIR)/rules.man

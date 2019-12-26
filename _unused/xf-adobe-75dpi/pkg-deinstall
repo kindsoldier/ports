@@ -1,0 +1,18 @@
+#!/bin/sh
+
+set -x
+
+PREFIX=${PKG_PREFIX}
+LOCALBASE=${PKG_PREFIX}
+
+case $2 in 
+    DEINSTALL)
+	;;
+    POST-DEINSTALL)
+	${LOCALBASE}/bin/fc-cache -f -v ${PREFIX}/share/fonts/X11/75dpi
+	${LOCALBASE}/bin/mkfontdir ${PREFIX}/share/fonts/X11/75dpi
+	${LOCALBASE}/bin/mkfontscale ${PREFIX}/share/fonts/X11/75dpi
+	;;
+esac
+exit 0
+#EOF

@@ -1,0 +1,37 @@
+#!/bin/sh
+
+GRAFANA_GROUP="%%GRAFANA_GROUP%%"
+GRAFANA_OWNER="%%GRAFANA_OWNER%%"
+GRAFANA_GROUP_ID="%%GRAFANA_GROUP_ID%%"
+GRAFANA_OWNER_ID="%%GRAFANA_OWNER_ID%%"
+
+PKG_PREFIX="/notexist"
+
+set -x
+
+case $2 in 
+    PRE-INSTALL)
+	pw group add ${GRAFANA_GROUP}  -g ${GRAFANA_GROUP_ID}
+	pw user add ${GRAFANA_OWNER} -g ${GRAFANA_GROUP}  \
+	    -d ${PKG_PREFIX} -s /usr/sbin/nologin -u ${GRAFANA_OWNER_ID} \
+	    -c "grafana"
+	pw group mod ${GRAFANA_GROUP} -M ${GRAFANA_OWNER}
+	pw group show ${GRAFANA_GROUP}
+	pw user show ${GRAFANA_OWNER}
+
+	install -d -o ${GRAFANA_OWNER} -g ${GRAFANA_GROUP} -m 0750 %%GRAFANA_PIDDIR%%
+	install -d -o ${GRAFANA_OWNER} -g ${GRAFANA_GROUP} -m 0750 %%GRAFANA_LOGDIR%%
+	install -d -o ${GRAFANA_OWNER} -g ${GRAFANA_GROUP} -m 0750 %%GRAFANA_HOMEDIR%%
+	install -d -o ${GRAFANA_OWNER} -g ${GRAFANA_GROUP} -m 0750 %%GRAFANA_DATADIR%%
+	install -d -o ${GRAFANA_OWNER} -g ${GRAFANA_GROUP} -m 0750 %%GRAFANA_PLUGINDIR%%
+	install -d -o ${GRAFANA_OWNER} -g ${GRAFANA_GROUP} -m 0750 %%GRAFANA_PROVISIONINGDIR%%
+	install -d -o ${GRAFANA_OWNER} -g ${GRAFANA_GROUP} -m 0750 %%GRAFANA_HOMEDIR%%/conf
+	install -d -o ${GRAFANA_OWNER} -g ${GRAFANA_GROUP} -m 0750 %%GRAFANA_HOMEDIR%%/data
+	install -d -o ${GRAFANA_OWNER} -g ${GRAFANA_GROUP} -m 0750 %%GRAFANA_HOMEDIR%%/data/log
+
+	;;
+    POST-INSTALL)
+	;;
+esac
+exit 0
+#EOF

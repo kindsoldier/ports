@@ -1,0 +1,13 @@
+--- ./backend_qt4/CMakeLists.txt.orig	2011-05-16 22:12:46.000000000 +0300
++++ ./backend_qt4/CMakeLists.txt	2013-03-15 07:41:50.000000000 +0300
+@@ -8,8 +8,8 @@
+ 
+ add_library(QZint SHARED ${QZint_SRCS})
+ 
+-set_target_properties(QZint PROPERTIES	SOVERSION "${ZINT_VERSION_MAJOR}.${ZINT_VERSION_MINOR}"
+-                                        VERSION ${ZINT_VERSION})
++set_target_properties(QZint PROPERTIES	SOVERSION "${ZINT_VERSION_MAJOR}"
++                                        VERSION ${ZINT_VERSION_MAJOR})
+ 
+ add_dependencies(QZint zint)
+ 

@@ -1,0 +1,9 @@
+#!/bin/sh
+
+set -x
+
+AUTHDIR="/var/run/xdm/authdir"
+install -d -o root -g wheel -m 0700 ${AUTHDIR}
+
+#EOF
+

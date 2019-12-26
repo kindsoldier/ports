@@ -1,0 +1,3 @@
+etc/X11/fs/config
+bin/xfs
+@dir etc/X11/fs

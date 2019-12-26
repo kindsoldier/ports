@@ -1,0 +1,9 @@
+TIMESTAMP = 1577197921
+SHA256 (llvm-8.0.1.src.tar.xz) = 44787a6d02f7140f145e2250d56c9f849334e11f9ae379827510ed72f12b75e7
+SIZE (llvm-8.0.1.src.tar.xz) = 30477608
+SHA256 (cfe-8.0.1.src.tar.xz) = 70effd69f7a8ab249f66b0a68aba8b08af52aa2ab710dfb8a0fba102685b1646
+SIZE (cfe-8.0.1.src.tar.xz) = 12810056
+SHA256 (clang-tools-extra-8.0.1.src.tar.xz) = 187179b617e4f07bb605cc215da0527e64990b4a7dd5cbcc452a16b64e02c3e1
+SIZE (clang-tools-extra-8.0.1.src.tar.xz) = 1994068
+SHA256 (lld-8.0.1.src.tar.xz) = 9fba1e94249bd7913e8a6c3aadcb308b76c8c3d83c5ce36c99c3f34d73873d88
+SIZE (lld-8.0.1.src.tar.xz) = 996440

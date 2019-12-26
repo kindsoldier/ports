@@ -1,0 +1,11 @@
+--- ./configure.orig	2019-06-18 08:10:14.000000000 +0200
++++ ./configure	2019-09-27 21:00:58.976939000 +0200
+@@ -19879,7 +19879,7 @@
+ if test "${with_vtysh_pager+set}" = set; then :
+   withval=$with_vtysh_pager; VTYSH_PAGER=$withval
+ else
+-  VTYSH_PAGER="more"
++  VTYSH_PAGER="cat"
+ fi
+ 
+ # Check whether --enable-vtysh was given.

@@ -1,0 +1,9 @@
+bin/openal-config
+include/AL/al.h
+include/AL/alc.h
+include/AL/alext.h
+lib/libopenal.a
+lib/libopenal.la
+lib/libopenal.so.0
+lib/pkgconfig/openal.pc
+@dir include/AL

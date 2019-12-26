@@ -1,0 +1,361 @@
+bin/autopoint
+bin/envsubst
+bin/gettext
+bin/gettextize
+bin/msgattrib
+bin/msgcat
+bin/msgcmp
+bin/msgcomm
+bin/msgconv
+bin/msgen
+bin/msgexec
+bin/msgfilter
+bin/msgfmt
+bin/msggrep
+bin/msginit
+bin/msgmerge
+bin/msgunfmt
+bin/msguniq
+bin/ngettext
+bin/recode-sr-latin
+bin/xgettext
+include/autosprintf.h
+include/gettext-po.h
+include/libintl.h
+lib/charset.alias
+lib/gettext/hostname
+lib/gettext/project-id
+lib/gettext/urlget
+lib/gettext/user-email
+lib/libasprintf.a
+lib/libasprintf.la
+lib/libasprintf.so
+lib/libasprintf.so.0
+lib/libgettextlib.la
+lib/libgettextlib.so
+lib/libgettextlib.so.18
+lib/libgettextpo.a
+lib/libgettextpo.la
+lib/libgettextpo.so
+lib/libgettextpo.so.5
+lib/libgettextsrc.la
+lib/libgettextsrc.so
+lib/libgettextsrc.so.18
+lib/libintl.a
+lib/libintl.la
+lib/libintl.so
+lib/libintl.so.9
+share/aclocal/codeset.m4
+share/aclocal/extern-inline.m4
+share/aclocal/fcntl-o.m4
+share/aclocal/gettext.m4
+share/aclocal/glibc2.m4
+share/aclocal/glibc21.m4
+share/aclocal/iconv.m4
+share/aclocal/intdiv0.m4
+share/aclocal/intl.m4
+share/aclocal/intldir.m4
+share/aclocal/intlmacosx.m4
+share/aclocal/intmax.m4
+share/aclocal/inttypes-pri.m4
+share/aclocal/inttypes_h.m4
+share/aclocal/lcmessage.m4
+share/aclocal/lib-ld.m4
+share/aclocal/lib-link.m4
+share/aclocal/lib-prefix.m4
+share/aclocal/lock.m4
+share/aclocal/longlong.m4
+share/aclocal/nls.m4
+share/aclocal/po.m4
+share/aclocal/printf-posix.m4
+share/aclocal/progtest.m4
+share/aclocal/size_max.m4
+share/aclocal/stdint_h.m4
+share/aclocal/threadlib.m4
+share/aclocal/uintmax_t.m4
+share/aclocal/visibility.m4
+share/aclocal/wchar_t.m4
+share/aclocal/wint_t.m4
+share/aclocal/xsize.m4
+share/gettext/ABOUT-NLS
+share/gettext/archive.dir.tar.xz
+share/gettext/gettext.h
+share/gettext/intl/COPYING.LIB
+share/gettext/intl/Makefile.in
+share/gettext/intl/VERSION
+share/gettext/intl/bindtextdom.c
+share/gettext/intl/config.charset
+share/gettext/intl/dcgettext.c
+share/gettext/intl/dcigettext.c
+share/gettext/intl/dcngettext.c
+share/gettext/intl/dgettext.c
+share/gettext/intl/dngettext.c
+share/gettext/intl/eval-plural.h
+share/gettext/intl/explodename.c
+share/gettext/intl/export.h
+share/gettext/intl/finddomain.c
+share/gettext/intl/gettext.c
+share/gettext/intl/gettextP.h
+share/gettext/intl/gmo.h
+share/gettext/intl/hash-string.c
+share/gettext/intl/hash-string.h
+share/gettext/intl/intl-compat.c
+share/gettext/intl/intl-exports.c
+share/gettext/intl/l10nflist.c
+share/gettext/intl/langprefs.c
+share/gettext/intl/libgnuintl.in.h
+share/gettext/intl/libintl.rc
+share/gettext/intl/loadinfo.h
+share/gettext/intl/loadmsgcat.c
+share/gettext/intl/localcharset.c
+share/gettext/intl/localcharset.h
+share/gettext/intl/locale.alias
+share/gettext/intl/localealias.c
+share/gettext/intl/localename.c
+share/gettext/intl/lock.c
+share/gettext/intl/lock.h
+share/gettext/intl/log.c
+share/gettext/intl/ngettext.c
+share/gettext/intl/os2compat.c
+share/gettext/intl/os2compat.h
+share/gettext/intl/osdep.c
+share/gettext/intl/plural-exp.c
+share/gettext/intl/plural-exp.h
+share/gettext/intl/plural.c
+share/gettext/intl/plural.y
+share/gettext/intl/printf-args.c
+share/gettext/intl/printf-args.h
+share/gettext/intl/printf-parse.c
+share/gettext/intl/printf-parse.h
+share/gettext/intl/printf.c
+share/gettext/intl/ref-add.sin
+share/gettext/intl/ref-del.sin
+share/gettext/intl/relocatable.c
+share/gettext/intl/relocatable.h
+share/gettext/intl/setlocale.c
+share/gettext/intl/textdomain.c
+share/gettext/intl/threadlib.c
+share/gettext/intl/tsearch.c
+share/gettext/intl/tsearch.h
+share/gettext/intl/vasnprintf.c
+share/gettext/intl/vasnprintf.h
+share/gettext/intl/vasnwprintf.h
+share/gettext/intl/verify.h
+share/gettext/intl/version.c
+share/gettext/intl/wprintf-parse.h
+share/gettext/intl/xsize.c
+share/gettext/intl/xsize.h
+share/gettext/po/Makefile.in.in
+share/gettext/po/Makevars.template
+share/gettext/po/Rules-quot
+share/gettext/po/boldquot.sed
+share/gettext/po/en@boldquot.header
+share/gettext/po/en@quot.header
+share/gettext/po/insert-header.sin
+share/gettext/po/quot.sed
+share/gettext/po/remove-potcdate.sin
+share/gettext/styles/po-default.css
+share/gettext/styles/po-emacs-x.css
+share/gettext/styles/po-emacs-xterm.css
+share/gettext/styles/po-emacs-xterm16.css
+share/gettext/styles/po-emacs-xterm256.css
+share/gettext/styles/po-vim.css
+share/locale/be/LC_MESSAGES/gettext-runtime.mo
+share/locale/be/LC_MESSAGES/gettext-tools.mo
+share/locale/bg/LC_MESSAGES/gettext-runtime.mo
+share/locale/bg/LC_MESSAGES/gettext-tools.mo
+share/locale/ca/LC_MESSAGES/gettext-runtime.mo
+share/locale/ca/LC_MESSAGES/gettext-tools.mo
+share/locale/cs/LC_MESSAGES/gettext-runtime.mo
+share/locale/cs/LC_MESSAGES/gettext-tools.mo
+share/locale/da/LC_MESSAGES/gettext-runtime.mo
+share/locale/da/LC_MESSAGES/gettext-tools.mo
+share/locale/de/LC_MESSAGES/gettext-runtime.mo
+share/locale/de/LC_MESSAGES/gettext-tools.mo
+share/locale/el/LC_MESSAGES/gettext-runtime.mo
+share/locale/el/LC_MESSAGES/gettext-tools.mo
+share/locale/en@boldquot/LC_MESSAGES/gettext-runtime.mo
+share/locale/en@boldquot/LC_MESSAGES/gettext-tools.mo
+share/locale/en@quot/LC_MESSAGES/gettext-runtime.mo
+share/locale/en@quot/LC_MESSAGES/gettext-tools.mo
+share/locale/eo/LC_MESSAGES/gettext-runtime.mo
+share/locale/es/LC_MESSAGES/gettext-runtime.mo
+share/locale/es/LC_MESSAGES/gettext-tools.mo
+share/locale/et/LC_MESSAGES/gettext-runtime.mo
+share/locale/et/LC_MESSAGES/gettext-tools.mo
+share/locale/eu/LC_MESSAGES/gettext-tools.mo
+share/locale/fi/LC_MESSAGES/gettext-runtime.mo
+share/locale/fi/LC_MESSAGES/gettext-tools.mo
+share/locale/fr/LC_MESSAGES/gettext-runtime.mo
+share/locale/fr/LC_MESSAGES/gettext-tools.mo
+share/locale/ga/LC_MESSAGES/gettext-runtime.mo
+share/locale/gl/LC_MESSAGES/gettext-runtime.mo
+share/locale/gl/LC_MESSAGES/gettext-tools.mo
+share/locale/hr/LC_MESSAGES/gettext-runtime.mo
+share/locale/hu/LC_MESSAGES/gettext-runtime.mo
+share/locale/id/LC_MESSAGES/gettext-runtime.mo
+share/locale/id/LC_MESSAGES/gettext-tools.mo
+share/locale/it/LC_MESSAGES/gettext-runtime.mo
+share/locale/it/LC_MESSAGES/gettext-tools.mo
+share/locale/ja/LC_MESSAGES/gettext-runtime.mo
+share/locale/ja/LC_MESSAGES/gettext-tools.mo
+share/locale/ko/LC_MESSAGES/gettext-runtime.mo
+share/locale/ko/LC_MESSAGES/gettext-tools.mo
+share/locale/locale.alias
+share/locale/nb/LC_MESSAGES/gettext-runtime.mo
+share/locale/nb/LC_MESSAGES/gettext-tools.mo
+share/locale/nl/LC_MESSAGES/gettext-runtime.mo
+share/locale/nl/LC_MESSAGES/gettext-tools.mo
+share/locale/nn/LC_MESSAGES/gettext-runtime.mo
+share/locale/nn/LC_MESSAGES/gettext-tools.mo
+share/locale/pa/LC_MESSAGES/gettext-tools.mo
+share/locale/pl/LC_MESSAGES/gettext-runtime.mo
+share/locale/pl/LC_MESSAGES/gettext-tools.mo
+share/locale/pt/LC_MESSAGES/gettext-runtime.mo
+share/locale/pt/LC_MESSAGES/gettext-tools.mo
+share/locale/pt_BR/LC_MESSAGES/gettext-runtime.mo
+share/locale/pt_BR/LC_MESSAGES/gettext-tools.mo
+share/locale/ro/LC_MESSAGES/gettext-runtime.mo
+share/locale/ro/LC_MESSAGES/gettext-tools.mo
+share/locale/ru/LC_MESSAGES/gettext-runtime.mo
+share/locale/ru/LC_MESSAGES/gettext-tools.mo
+share/locale/sk/LC_MESSAGES/gettext-runtime.mo
+share/locale/sk/LC_MESSAGES/gettext-tools.mo
+share/locale/sl/LC_MESSAGES/gettext-runtime.mo
+share/locale/sl/LC_MESSAGES/gettext-tools.mo
+share/locale/sr/LC_MESSAGES/gettext-runtime.mo
+share/locale/sr/LC_MESSAGES/gettext-tools.mo
+share/locale/sv/LC_MESSAGES/gettext-runtime.mo
+share/locale/sv/LC_MESSAGES/gettext-tools.mo
+share/locale/tr/LC_MESSAGES/gettext-runtime.mo
+share/locale/tr/LC_MESSAGES/gettext-tools.mo
+share/locale/uk/LC_MESSAGES/gettext-runtime.mo
+share/locale/uk/LC_MESSAGES/gettext-tools.mo
+share/locale/vi/LC_MESSAGES/gettext-runtime.mo
+share/locale/vi/LC_MESSAGES/gettext-tools.mo
+share/locale/zh_CN/LC_MESSAGES/gettext-runtime.mo
+share/locale/zh_CN/LC_MESSAGES/gettext-tools.mo
+share/locale/zh_HK/LC_MESSAGES/gettext-runtime.mo
+share/locale/zh_TW/LC_MESSAGES/gettext-runtime.mo
+share/locale/zh_TW/LC_MESSAGES/gettext-tools.mo
+man/man1/autopoint.1.gz
+man/man1/envsubst.1.gz
+man/man1/gettext.1.gz
+man/man1/gettextize.1.gz
+man/man1/msgattrib.1.gz
+man/man1/msgcat.1.gz
+man/man1/msgcmp.1.gz
+man/man1/msgcomm.1.gz
+man/man1/msgconv.1.gz
+man/man1/msgen.1.gz
+man/man1/msgexec.1.gz
+man/man1/msgfilter.1.gz
+man/man1/msgfmt.1.gz
+man/man1/msggrep.1.gz
+man/man1/msginit.1.gz
+man/man1/msgmerge.1.gz
+man/man1/msgunfmt.1.gz
+man/man1/msguniq.1.gz
+man/man1/ngettext.1.gz
+man/man1/recode-sr-latin.1.gz
+man/man1/xgettext.1.gz
+man/man3/bind_textdomain_codeset.3.gz
+man/man3/bindtextdomain.3.gz
+man/man3/dcgettext.3.gz
+man/man3/dcngettext.3.gz
+man/man3/dgettext.3.gz
+man/man3/dngettext.3.gz
+man/man3/gettext.3.gz
+man/man3/ngettext.3.gz
+man/man3/textdomain.3.gz
+@dir lib/gettext
+@dir share/aclocal
+@dir share/gettext/intl
+@dir share/gettext/po
+@dir share/gettext/styles
+@dir share/gettext
+@dir share/locale/be/LC_MESSAGES
+@dir share/locale/be
+@dir share/locale/bg/LC_MESSAGES
+@dir share/locale/bg
+@dir share/locale/ca/LC_MESSAGES
+@dir share/locale/ca
+@dir share/locale/cs/LC_MESSAGES
+@dir share/locale/cs
+@dir share/locale/da/LC_MESSAGES
+@dir share/locale/da
+@dir share/locale/de/LC_MESSAGES
+@dir share/locale/de
+@dir share/locale/el/LC_MESSAGES
+@dir share/locale/el
+@dir share/locale/en@boldquot/LC_MESSAGES
+@dir share/locale/en@boldquot
+@dir share/locale/en@quot/LC_MESSAGES
+@dir share/locale/en@quot
+@dir share/locale/eo/LC_MESSAGES
+@dir share/locale/eo
+@dir share/locale/es/LC_MESSAGES
+@dir share/locale/es
+@dir share/locale/et/LC_MESSAGES
+@dir share/locale/et
+@dir share/locale/eu/LC_MESSAGES
+@dir share/locale/eu
+@dir share/locale/fi/LC_MESSAGES
+@dir share/locale/fi
+@dir share/locale/fr/LC_MESSAGES
+@dir share/locale/fr
+@dir share/locale/ga/LC_MESSAGES
+@dir share/locale/ga
+@dir share/locale/gl/LC_MESSAGES
+@dir share/locale/gl
+@dir share/locale/hr/LC_MESSAGES
+@dir share/locale/hr
+@dir share/locale/hu/LC_MESSAGES
+@dir share/locale/hu
+@dir share/locale/id/LC_MESSAGES
+@dir share/locale/id
+@dir share/locale/it/LC_MESSAGES
+@dir share/locale/it
+@dir share/locale/ja/LC_MESSAGES
+@dir share/locale/ja
+@dir share/locale/ko/LC_MESSAGES
+@dir share/locale/ko
+@dir share/locale/nb/LC_MESSAGES
+@dir share/locale/nb
+@dir share/locale/nl/LC_MESSAGES
+@dir share/locale/nl
+@dir share/locale/nn/LC_MESSAGES
+@dir share/locale/nn
+@dir share/locale/pa/LC_MESSAGES
+@dir share/locale/pa
+@dir share/locale/pl/LC_MESSAGES
+@dir share/locale/pl
+@dir share/locale/pt/LC_MESSAGES
+@dir share/locale/pt
+@dir share/locale/pt_BR/LC_MESSAGES
+@dir share/locale/pt_BR
+@dir share/locale/ro/LC_MESSAGES
+@dir share/locale/ro
+@dir share/locale/ru/LC_MESSAGES
+@dir share/locale/ru
+@dir share/locale/sk/LC_MESSAGES
+@dir share/locale/sk
+@dir share/locale/sl/LC_MESSAGES
+@dir share/locale/sl
+@dir share/locale/sr/LC_MESSAGES
+@dir share/locale/sr
+@dir share/locale/sv/LC_MESSAGES
+@dir share/locale/sv
+@dir share/locale/tr/LC_MESSAGES
+@dir share/locale/tr
+@dir share/locale/uk/LC_MESSAGES
+@dir share/locale/uk
+@dir share/locale/vi/LC_MESSAGES
+@dir share/locale/vi
+@dir share/locale/zh_CN/LC_MESSAGES
+@dir share/locale/zh_CN
+@dir share/locale/zh_HK/LC_MESSAGES
+@dir share/locale/zh_HK
+@dir share/locale/zh_TW/LC_MESSAGES
+@dir share/locale/zh_TW
+@dir share/locale

@@ -1,0 +1,20 @@
+# $FreeBSD: head/print/indexinfo/Makefile 453561 2017-11-05 20:41:19Z bapt $
+
+PORTNAME=	indexinfo
+PORTVERSION=	0.3.1
+CATEGORIES=	print ports-mgmt
+
+MAINTAINER=	bapt@FreeBSD.org
+COMMENT=	Utility to regenerate the GNU info page index
+
+USE_CSTD=	gnu99
+USE_GITHUB=	yes
+GH_ACCOUNT=	bapt
+INSTALL_TARGET=	install-strip
+PLIST_FILES=	bin/indexinfo
+
+#.if exists(/usr/include/sys/capsicum.h)
+#CFLAGS+=	-DHAVE_CAPSICUM
+#.endif
+
+.include <bsd.port.mk>

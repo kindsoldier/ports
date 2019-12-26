@@ -1,0 +1,64 @@
+--- ./Makefile.in.orig	2010-09-28 12:35:23.000000000 +0300
++++ ./Makefile.in	2015-01-05 21:19:11.000000000 +0200
+@@ -37,8 +37,8 @@
+ subdir = .
+ DIST_COMMON = README $(am__configure_deps) $(srcdir)/Makefile.am \
+ 	$(srcdir)/Makefile.in $(srcdir)/config.h.in \
+-	$(srcdir)/gnome-vfs-2.0.pc.in \
+-	$(srcdir)/gnome-vfs-module-2.0.pc.in \
++	$(srcdir)/gnome-vfs.pc.in \
++	$(srcdir)/gnome-vfs-module.pc.in \
+ 	$(srcdir)/gnome-vfs-zip.in $(srcdir)/gnome-vfs.spec.in \
+ 	$(top_srcdir)/configure AUTHORS COPYING COPYING.LIB ChangeLog \
+ 	INSTALL NEWS TODO config.guess config.sub depcomp install-sh \
+@@ -52,8 +52,8 @@
+  configure.lineno config.status.lineno
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = config.h
+-CONFIG_CLEAN_FILES = gnome-vfs.spec gnome-vfs-zip gnome-vfs-2.0.pc \
+-	gnome-vfs-module-2.0.pc
++CONFIG_CLEAN_FILES = gnome-vfs.spec gnome-vfs-zip gnome-vfs.pc \
++	gnome-vfs-module.pc
+ CONFIG_CLEAN_VPATH_FILES =
+ SOURCES =
+ DIST_SOURCES =
+@@ -371,7 +371,6 @@
+ 	devel-docs				\
+ 	doc					\
+ 	programs				\
+-	test					\
+ 	po
+ 
+ EXTRA_DIST = \
+@@ -381,8 +380,8 @@
+ 	autogen.sh				\
+ 	gnome-vfs.spec				\
+ 	gnome-vfs-zip.in			\
+-	gnome-vfs-2.0.pc.in			\
+-	gnome-vfs-module-2.0.pc.in		\
++	gnome-vfs.pc.in			\
++	gnome-vfs-module.pc.in		\
+ 	gtk-doc.make				\
+ 	intltool-extract.in			\
+ 	intltool-merge.in			\
+@@ -390,7 +389,7 @@
+ 	xdgmime.win32.diff
+ 
+ pkgconfigdir = $(libdir)/pkgconfig
+-pkgconfig_DATA = gnome-vfs-2.0.pc gnome-vfs-module-2.0.pc
++pkgconfig_DATA = gnome-vfs.pc gnome-vfs-module.pc
+ DISTCHECK_CONFIGURE_FLAGS = --enable-gtk-doc
+ DISTCLEANFILES = intltool-extract intltool-merge intltool-update
+ all: config.h
+@@ -452,9 +451,9 @@
+ 	cd $(top_builddir) && $(SHELL) ./config.status $@
+ gnome-vfs-zip: $(top_builddir)/config.status $(srcdir)/gnome-vfs-zip.in
+ 	cd $(top_builddir) && $(SHELL) ./config.status $@
+-gnome-vfs-2.0.pc: $(top_builddir)/config.status $(srcdir)/gnome-vfs-2.0.pc.in
++gnome-vfs.pc: $(top_builddir)/config.status $(srcdir)/gnome-vfs.pc.in
+ 	cd $(top_builddir) && $(SHELL) ./config.status $@
+-gnome-vfs-module-2.0.pc: $(top_builddir)/config.status $(srcdir)/gnome-vfs-module-2.0.pc.in
++gnome-vfs-module.pc: $(top_builddir)/config.status $(srcdir)/gnome-vfs-module.pc.in
+ 	cd $(top_builddir) && $(SHELL) ./config.status $@
+ 
+ mostlyclean-libtool:

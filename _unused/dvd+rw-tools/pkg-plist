@@ -1,0 +1,6 @@
+bin/dvd+rw-booktype
+bin/dvd+rw-format
+bin/dvd+rw-mediainfo
+bin/dvd-ram-control
+bin/growisofs
+man/man1/growisofs.1.gz

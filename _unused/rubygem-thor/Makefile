@@ -1,0 +1,18 @@
+# $FreeBSD: head/devel/rubygem-thor/Makefile 448124 2017-08-17 15:05:08Z sunpoet $
+
+PORTNAME=	thor
+PORTVERSION=	0.20.0
+CATEGORIES=	devel rubygems
+MASTER_SITES=	RG
+
+MAINTAINER=	ruby@FreeBSD.org
+COMMENT=	Scripting framework that replaces rake, sake, and rubigen
+
+
+NO_ARCH=	yes
+USE_RUBY=	yes
+USES=		gem
+
+PLIST_FILES=	bin/thor
+
+.include <bsd.port.mk>

@@ -1,0 +1,11 @@
+--- ./xmltools/Makefile.in.orig	2011-03-06 19:43:17.000000000 +0200
++++ ./xmltools/Makefile.in	2011-11-07 13:11:55.000000000 +0300
+@@ -51,7 +51,7 @@
+ 
+ INCS = -I${top_builddir} -I${top_srcdir}/libdjvu -I${srcdir}
+ FLAGS = ${DEFS} ${INCS} ${OPTS} ${JPEG_CFLAGS} ${THREAD_CFLAGS}
+-LIBS= @LDFLAGS@ @LIBS@
++LIBS= @LDFLAGS@ @LIBS@ ${THREAD_LIBS}
+ CFLAGS = ${FLAGS} @CPPFLAGS@ @CFLAGS@ 
+ CXXFLAGS = ${FLAGS} ${CXXRPOFLAGS} @CPPFLAGS@ @CXXFLAGS@ 
+ 

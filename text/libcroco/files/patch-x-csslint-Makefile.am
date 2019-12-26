@@ -1,0 +1,21 @@
+--- ./csslint/Makefile.am.orig	2009-02-04 11:33:44.000000000 +0200
++++ ./csslint/Makefile.am	2009-09-14 22:58:18.000000000 +0300
+@@ -1,7 +1,7 @@
+-bin_PROGRAMS = csslint-0.6
++bin_PROGRAMS = csslint
+ #man_MANS = csslint.1
+ 
+-csslint_0_6_SOURCES = csslint.c
++csslint_SOURCES = csslint.c
+ 
+ croco_lib=$(top_builddir)/src/@CROCO_LIB@
+ LDADD=$(croco_lib)
+@@ -12,7 +12,7 @@
+ 	@GLIB2_CFLAGS@ \
+ 	@LIBXML2_CFLAGS@
+ 
+-csslint_0_6_LDFLAGS=@GLIB2_LIBS@ @LIBXML2_LIBS@
++csslint_LDFLAGS=@GLIB2_LIBS@ @LIBXML2_LIBS@
+ AM_CFLAGS=$(INCLUDES)
+ 
+ #EXTRA_DIST = $(man_MANS)

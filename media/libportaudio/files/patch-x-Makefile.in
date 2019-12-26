@@ -1,0 +1,28 @@
+--- ./Makefile.in.orig	2019-07-09 21:07:12.155061000 +0200
++++ ./Makefile.in	2019-07-09 21:09:36.642163000 +0200
+@@ -146,6 +146,7 @@
+ 	src/hostapi/dsound \
+ 	src/hostapi/jack \
+ 	src/hostapi/oss \
++	src/hostapi/sndio \
+ 	src/hostapi/wasapi \
+ 	src/hostapi/wdmks \
+ 	src/hostapi/wmme \
+@@ -186,7 +187,7 @@
+ 	@WITH_ASIO_FALSE@ $(LIBTOOL) --mode=link $(CC) -o $@ $(CFLAGS) $(LOOPBACK_OBJS) lib/$(PALIB) $(LIBS)
+ 	@WITH_ASIO_TRUE@ $(LIBTOOL) --mode=link --tag=CXX $(CXX) -o $@ $(CXXFLAGS)  $(LOOPBACK_OBJS) lib/$(PALIB) $(LIBS)
+ 
+-install: lib/$(PALIB) portaudio-2.0.pc
++install: lib/$(PALIB) portaudio.pc
+ 	$(INSTALL) -d $(DESTDIR)$(libdir)
+ 	$(LIBTOOL) --mode=install $(INSTALL) lib/$(PALIB) $(DESTDIR)$(libdir)
+ 	$(INSTALL) -d $(DESTDIR)$(includedir)
+@@ -194,7 +195,7 @@
+ 		$(INSTALL_DATA) -m 644 $(top_srcdir)/include/$$include $(DESTDIR)$(includedir)/$$include; \
+ 	done
+ 	$(INSTALL) -d $(DESTDIR)$(prefix)/lib/pkgconfig
+-	$(INSTALL) -m 644 portaudio-2.0.pc $(DESTDIR)$(prefix)/lib/pkgconfig/portaudio-2.0.pc
++	$(INSTALL) -m 644 portaudio.pc $(DESTDIR)$(prefix)/lib/pkgconfig/portaudio.pc
+ 	@echo ""
+ 	@echo "------------------------------------------------------------"
+ 	@echo "PortAudio was successfully installed."

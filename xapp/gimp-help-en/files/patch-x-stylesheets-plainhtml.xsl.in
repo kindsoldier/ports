@@ -1,0 +1,10 @@
+--- ./stylesheets/plainhtml.xsl.in.orig	2013-11-26 08:51:31.000000000 +0300
++++ ./stylesheets/plainhtml.xsl.in	2015-10-24 06:38:38.214041000 +0200
+@@ -95,6 +95,7 @@
+ 
+     <!--XXX: workaround for a weird runtime error ("unregistered variable")-->
+     <xsl:variable name="direction.align.start">left</xsl:variable>
++    <xsl:variable name="direction.align.end">left</xsl:variable>
+ 
+     <xsl:variable name="row1" select="$navig.showtitles != 0"/>
+     <xsl:variable name="row2" select="count($prev) &gt; 0

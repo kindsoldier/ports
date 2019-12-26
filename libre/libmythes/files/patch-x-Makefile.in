@@ -1,0 +1,11 @@
+--- ./Makefile.in.orig	2015-02-02 01:04:27.000000000 +0200
++++ ./Makefile.in	2015-02-02 01:05:25.000000000 +0200
+@@ -265,7 +265,7 @@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ ACLOCAL_AMFLAGS = -I m4
+-dist_bin_SCRIPTS = th_gen_idx.pl
++#dist_bin_SCRIPTS = th_gen_idx.pl
+ INCLUDES = @HUNSPELL_CFLAGS@
+ example_SOURCES = example.cxx
+ lib_LTLIBRARIES = libmythes.la

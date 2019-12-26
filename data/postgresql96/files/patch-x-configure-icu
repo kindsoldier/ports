@@ -1,0 +1,2123 @@
+--- ./configure.orig	2016-10-23 22:46:16.091999000 +0200
++++ ./configure	2016-10-23 22:46:34.573788000 +0200
+@@ -709,6 +709,7 @@
+ XML2_CONFIG
+ UUID_EXTRA_OBJS
+ with_uuid
++with_icu
+ with_systemd
+ with_selinux
+ with_openssl
+@@ -833,6 +834,7 @@
+ with_openssl
+ with_selinux
+ with_systemd
++with_icu
+ with_readline
+ with_libedit_preferred
+ with_uuid
+@@ -1523,6 +1525,7 @@
+   --with-openssl          build with OpenSSL support
+   --with-selinux          build with SELinux support
+   --with-systemd          build with systemd support
++  --with-icu              --with-icu build with ICU support
+   --without-readline      do not use GNU Readline nor BSD Libedit for editing
+   --with-libedit-preferred
+                           prefer BSD Libedit over GNU Readline
+@@ -5781,6 +5784,42 @@
+ $as_echo "$with_systemd" >&6; }
+ 
+ #
++# ICU
++#
++{ $as_echo "$as_me:${as_lineno-$LINENO}: checking whether to build with ICU support" >&5
++$as_echo_n "checking whether to build with ICU support... " >&6; }
++
++
++
++# Check whether --with-icu was given.
++if test "${with_icu+set}" = set; then :
++  withval=$with_icu;
++  case $withval in
++    yes)
++
++$as_echo "#define USE_ICU 1" >>confdefs.h
++
++      ;;
++    no)
++      :
++      ;;
++    *)
++      as_fn_error $? "no argument expected for --with-icu option" "$LINENO" 5
++      ;;
++  esac
++
++else
++  with_icu=no
++
++fi
++
++
++{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $with_icu" >&5
++$as_echo "$with_icu" >&6; }
++
++
++
++#
+ # Readline
+ #
+ 
+@@ -9747,14 +9786,14 @@
+ 
+ fi
+ 
+-if test "$with_pam" = yes ; then
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for pam_start in -lpam" >&5
+-$as_echo_n "checking for pam_start in -lpam... " >&6; }
+-if ${ac_cv_lib_pam_pam_start+:} false; then :
++if test "$with_icu" = yes ; then
++ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for ucol_open_57 in -licui18n" >&5
++$as_echo_n "checking for ucol_open_57 in -licui18n... " >&6; }
++if ${ac_cv_lib_icui18n_ucol_open_57+:} false; then :
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lpam  $LIBS"
++LIBS="-licui18n  $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -9764,47 +9803,42 @@
+ #ifdef __cplusplus
+ extern "C"
+ #endif
+-char pam_start ();
++char ucol_open_57 ();
+ int
+ main ()
+ {
+-return pam_start ();
++return ucol_open_57 ();
+   ;
+   return 0;
+ }
+ _ACEOF
+ if ac_fn_c_try_link "$LINENO"; then :
+-  ac_cv_lib_pam_pam_start=yes
++  ac_cv_lib_icui18n_ucol_open_57=yes
+ else
+-  ac_cv_lib_pam_pam_start=no
++  ac_cv_lib_icui18n_ucol_open_57=no
+ fi
+ rm -f core conftest.err conftest.$ac_objext \
+     conftest$ac_exeext conftest.$ac_ext
+ LIBS=$ac_check_lib_save_LIBS
+ fi
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_pam_pam_start" >&5
+-$as_echo "$ac_cv_lib_pam_pam_start" >&6; }
+-if test "x$ac_cv_lib_pam_pam_start" = xyes; then :
++{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_icui18n_ucol_open_57" >&5
++$as_echo "$ac_cv_lib_icui18n_ucol_open_57" >&6; }
++if test "x$ac_cv_lib_icui18n_ucol_open_57" = xyes; then :
+   cat >>confdefs.h <<_ACEOF
+-#define HAVE_LIBPAM 1
++#define HAVE_LIBICUI18N 1
+ _ACEOF
+ 
+-  LIBS="-lpam $LIBS"
++  LIBS="-licui18n $LIBS"
+ 
+ else
+-  as_fn_error $? "library 'pam' is required for PAM" "$LINENO" 5
+-fi
+-
+-fi
+ 
+-if test "$with_libxml" = yes ; then
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for xmlSaveToBuffer in -lxml2" >&5
+-$as_echo_n "checking for xmlSaveToBuffer in -lxml2... " >&6; }
+-if ${ac_cv_lib_xml2_xmlSaveToBuffer+:} false; then :
++ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for ucol_open_56 in -licui18n" >&5
++$as_echo_n "checking for ucol_open_56 in -licui18n... " >&6; }
++if ${ac_cv_lib_icui18n_ucol_open_56+:} false; then :
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lxml2  $LIBS"
++LIBS="-licui18n  $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -9814,47 +9848,42 @@
+ #ifdef __cplusplus
+ extern "C"
+ #endif
+-char xmlSaveToBuffer ();
++char ucol_open_56 ();
+ int
+ main ()
+ {
+-return xmlSaveToBuffer ();
++return ucol_open_56 ();
+   ;
+   return 0;
+ }
+ _ACEOF
+ if ac_fn_c_try_link "$LINENO"; then :
+-  ac_cv_lib_xml2_xmlSaveToBuffer=yes
++  ac_cv_lib_icui18n_ucol_open_56=yes
+ else
+-  ac_cv_lib_xml2_xmlSaveToBuffer=no
++  ac_cv_lib_icui18n_ucol_open_56=no
+ fi
+ rm -f core conftest.err conftest.$ac_objext \
+     conftest$ac_exeext conftest.$ac_ext
+ LIBS=$ac_check_lib_save_LIBS
+ fi
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_xml2_xmlSaveToBuffer" >&5
+-$as_echo "$ac_cv_lib_xml2_xmlSaveToBuffer" >&6; }
+-if test "x$ac_cv_lib_xml2_xmlSaveToBuffer" = xyes; then :
++{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_icui18n_ucol_open_56" >&5
++$as_echo "$ac_cv_lib_icui18n_ucol_open_56" >&6; }
++if test "x$ac_cv_lib_icui18n_ucol_open_56" = xyes; then :
+   cat >>confdefs.h <<_ACEOF
+-#define HAVE_LIBXML2 1
++#define HAVE_LIBICUI18N 1
+ _ACEOF
+ 
+-  LIBS="-lxml2 $LIBS"
++  LIBS="-licui18n $LIBS"
+ 
+ else
+-  as_fn_error $? "library 'xml2' (version >= 2.6.23) is required for XML support" "$LINENO" 5
+-fi
+-
+-fi
+ 
+-if test "$with_libxslt" = yes ; then
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for xsltCleanupGlobals in -lxslt" >&5
+-$as_echo_n "checking for xsltCleanupGlobals in -lxslt... " >&6; }
+-if ${ac_cv_lib_xslt_xsltCleanupGlobals+:} false; then :
++ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for ucol_open_55 in -licui18n" >&5
++$as_echo_n "checking for ucol_open_55 in -licui18n... " >&6; }
++if ${ac_cv_lib_icui18n_ucol_open_55+:} false; then :
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lxslt  $LIBS"
++LIBS="-licui18n  $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -9864,50 +9893,42 @@
+ #ifdef __cplusplus
+ extern "C"
+ #endif
+-char xsltCleanupGlobals ();
++char ucol_open_55 ();
+ int
+ main ()
+ {
+-return xsltCleanupGlobals ();
++return ucol_open_55 ();
+   ;
+   return 0;
+ }
+ _ACEOF
+ if ac_fn_c_try_link "$LINENO"; then :
+-  ac_cv_lib_xslt_xsltCleanupGlobals=yes
++  ac_cv_lib_icui18n_ucol_open_55=yes
+ else
+-  ac_cv_lib_xslt_xsltCleanupGlobals=no
++  ac_cv_lib_icui18n_ucol_open_55=no
+ fi
+ rm -f core conftest.err conftest.$ac_objext \
+     conftest$ac_exeext conftest.$ac_ext
+ LIBS=$ac_check_lib_save_LIBS
+ fi
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_xslt_xsltCleanupGlobals" >&5
+-$as_echo "$ac_cv_lib_xslt_xsltCleanupGlobals" >&6; }
+-if test "x$ac_cv_lib_xslt_xsltCleanupGlobals" = xyes; then :
++{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_icui18n_ucol_open_55" >&5
++$as_echo "$ac_cv_lib_icui18n_ucol_open_55" >&6; }
++if test "x$ac_cv_lib_icui18n_ucol_open_55" = xyes; then :
+   cat >>confdefs.h <<_ACEOF
+-#define HAVE_LIBXSLT 1
++#define HAVE_LIBICUI18N 1
+ _ACEOF
+ 
+-  LIBS="-lxslt $LIBS"
++  LIBS="-licui18n $LIBS"
+ 
+ else
+-  as_fn_error $? "library 'xslt' is required for XSLT support" "$LINENO" 5
+-fi
+-
+-fi
+ 
+-# Note: We can test for libldap_r only after we know PTHREAD_LIBS
+-if test "$with_ldap" = yes ; then
+-  _LIBS="$LIBS"
+-  if test "$PORTNAME" != "win32"; then
+-    { $as_echo "$as_me:${as_lineno-$LINENO}: checking for ldap_bind in -lldap" >&5
+-$as_echo_n "checking for ldap_bind in -lldap... " >&6; }
+-if ${ac_cv_lib_ldap_ldap_bind+:} false; then :
++ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for ucol_open_54 in -licui18n" >&5
++$as_echo_n "checking for ucol_open_54 in -licui18n... " >&6; }
++if ${ac_cv_lib_icui18n_ucol_open_54+:} false; then :
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lldap $EXTRA_LDAP_LIBS $LIBS"
++LIBS="-licui18n  $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -9917,47 +9938,42 @@
+ #ifdef __cplusplus
+ extern "C"
+ #endif
+-char ldap_bind ();
++char ucol_open_54 ();
+ int
+ main ()
+ {
+-return ldap_bind ();
++return ucol_open_54 ();
+   ;
+   return 0;
+ }
+ _ACEOF
+ if ac_fn_c_try_link "$LINENO"; then :
+-  ac_cv_lib_ldap_ldap_bind=yes
++  ac_cv_lib_icui18n_ucol_open_54=yes
+ else
+-  ac_cv_lib_ldap_ldap_bind=no
++  ac_cv_lib_icui18n_ucol_open_54=no
+ fi
+ rm -f core conftest.err conftest.$ac_objext \
+     conftest$ac_exeext conftest.$ac_ext
+ LIBS=$ac_check_lib_save_LIBS
+ fi
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_ldap_ldap_bind" >&5
+-$as_echo "$ac_cv_lib_ldap_ldap_bind" >&6; }
+-if test "x$ac_cv_lib_ldap_ldap_bind" = xyes; then :
++{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_icui18n_ucol_open_54" >&5
++$as_echo "$ac_cv_lib_icui18n_ucol_open_54" >&6; }
++if test "x$ac_cv_lib_icui18n_ucol_open_54" = xyes; then :
+   cat >>confdefs.h <<_ACEOF
+-#define HAVE_LIBLDAP 1
++#define HAVE_LIBICUI18N 1
+ _ACEOF
+ 
+-  LIBS="-lldap $LIBS"
++  LIBS="-licui18n $LIBS"
+ 
+ else
+-  as_fn_error $? "library 'ldap' is required for LDAP" "$LINENO" 5
+-fi
+ 
+-    LDAP_LIBS_BE="-lldap $EXTRA_LDAP_LIBS"
+-    if test "$enable_thread_safety" = yes; then
+-      # on some platforms ldap_r fails to link without PTHREAD_LIBS
+-      { $as_echo "$as_me:${as_lineno-$LINENO}: checking for ldap_simple_bind in -lldap_r" >&5
+-$as_echo_n "checking for ldap_simple_bind in -lldap_r... " >&6; }
+-if ${ac_cv_lib_ldap_r_ldap_simple_bind+:} false; then :
++ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for ucol_open_53 in -licui18n" >&5
++$as_echo_n "checking for ucol_open_53 in -licui18n... " >&6; }
++if ${ac_cv_lib_icui18n_ucol_open_53+:} false; then :
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lldap_r $PTHREAD_CFLAGS $PTHREAD_LIBS $EXTRA_LDAP_LIBS $LIBS"
++LIBS="-licui18n  $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -9967,49 +9983,42 @@
+ #ifdef __cplusplus
+ extern "C"
+ #endif
+-char ldap_simple_bind ();
++char ucol_open_53 ();
+ int
+ main ()
+ {
+-return ldap_simple_bind ();
++return ucol_open_53 ();
+   ;
+   return 0;
+ }
+ _ACEOF
+ if ac_fn_c_try_link "$LINENO"; then :
+-  ac_cv_lib_ldap_r_ldap_simple_bind=yes
++  ac_cv_lib_icui18n_ucol_open_53=yes
+ else
+-  ac_cv_lib_ldap_r_ldap_simple_bind=no
++  ac_cv_lib_icui18n_ucol_open_53=no
+ fi
+ rm -f core conftest.err conftest.$ac_objext \
+     conftest$ac_exeext conftest.$ac_ext
+ LIBS=$ac_check_lib_save_LIBS
+ fi
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_ldap_r_ldap_simple_bind" >&5
+-$as_echo "$ac_cv_lib_ldap_r_ldap_simple_bind" >&6; }
+-if test "x$ac_cv_lib_ldap_r_ldap_simple_bind" = xyes; then :
++{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_icui18n_ucol_open_53" >&5
++$as_echo "$ac_cv_lib_icui18n_ucol_open_53" >&6; }
++if test "x$ac_cv_lib_icui18n_ucol_open_53" = xyes; then :
+   cat >>confdefs.h <<_ACEOF
+-#define HAVE_LIBLDAP_R 1
++#define HAVE_LIBICUI18N 1
+ _ACEOF
+ 
+-  LIBS="-lldap_r $LIBS"
++  LIBS="-licui18n $LIBS"
+ 
+ else
+-  as_fn_error $? "library 'ldap_r' is required for LDAP" "$LINENO" 5
+-fi
+ 
+-      LDAP_LIBS_FE="-lldap_r $EXTRA_LDAP_LIBS"
+-    else
+-      LDAP_LIBS_FE="-lldap $EXTRA_LDAP_LIBS"
+-    fi
+-  else
+-    { $as_echo "$as_me:${as_lineno-$LINENO}: checking for ldap_bind in -lwldap32" >&5
+-$as_echo_n "checking for ldap_bind in -lwldap32... " >&6; }
+-if ${ac_cv_lib_wldap32_ldap_bind+:} false; then :
++ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for ucol_open_52 in -licui18n" >&5
++$as_echo_n "checking for ucol_open_52 in -licui18n... " >&6; }
++if ${ac_cv_lib_icui18n_ucol_open_52+:} false; then :
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lwldap32  $LIBS"
++LIBS="-licui18n  $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -10019,54 +10028,42 @@
+ #ifdef __cplusplus
+ extern "C"
+ #endif
+-char ldap_bind ();
++char ucol_open_52 ();
+ int
+ main ()
+ {
+-return ldap_bind ();
++return ucol_open_52 ();
+   ;
+   return 0;
+ }
+ _ACEOF
+ if ac_fn_c_try_link "$LINENO"; then :
+-  ac_cv_lib_wldap32_ldap_bind=yes
++  ac_cv_lib_icui18n_ucol_open_52=yes
+ else
+-  ac_cv_lib_wldap32_ldap_bind=no
++  ac_cv_lib_icui18n_ucol_open_52=no
+ fi
+ rm -f core conftest.err conftest.$ac_objext \
+     conftest$ac_exeext conftest.$ac_ext
+ LIBS=$ac_check_lib_save_LIBS
+ fi
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_wldap32_ldap_bind" >&5
+-$as_echo "$ac_cv_lib_wldap32_ldap_bind" >&6; }
+-if test "x$ac_cv_lib_wldap32_ldap_bind" = xyes; then :
++{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_icui18n_ucol_open_52" >&5
++$as_echo "$ac_cv_lib_icui18n_ucol_open_52" >&6; }
++if test "x$ac_cv_lib_icui18n_ucol_open_52" = xyes; then :
+   cat >>confdefs.h <<_ACEOF
+-#define HAVE_LIBWLDAP32 1
++#define HAVE_LIBICUI18N 1
+ _ACEOF
+ 
+-  LIBS="-lwldap32 $LIBS"
++  LIBS="-licui18n $LIBS"
+ 
+ else
+-  as_fn_error $? "library 'wldap32' is required for LDAP" "$LINENO" 5
+-fi
+-
+-    LDAP_LIBS_FE="-lwldap32"
+-    LDAP_LIBS_BE="-lwldap32"
+-  fi
+-  LIBS="$_LIBS"
+-fi
+-
+-
+ 
+-# for contrib/sepgsql
+-if test "$with_selinux" = yes; then
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for security_compute_create_name in -lselinux" >&5
+-$as_echo_n "checking for security_compute_create_name in -lselinux... " >&6; }
+-if ${ac_cv_lib_selinux_security_compute_create_name+:} false; then :
++  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for ucol_open_50 in -licui18n" >&5
++$as_echo_n "checking for ucol_open_50 in -licui18n... " >&6; }
++if ${ac_cv_lib_icui18n_ucol_open_50+:} false; then :
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lselinux  $LIBS"
++LIBS="-licui18n  $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -10076,62 +10073,87 @@
+ #ifdef __cplusplus
+ extern "C"
+ #endif
+-char security_compute_create_name ();
++char ucol_open_50 ();
+ int
+ main ()
+ {
+-return security_compute_create_name ();
++return ucol_open_50 ();
+   ;
+   return 0;
+ }
+ _ACEOF
+ if ac_fn_c_try_link "$LINENO"; then :
+-  ac_cv_lib_selinux_security_compute_create_name=yes
++  ac_cv_lib_icui18n_ucol_open_50=yes
+ else
+-  ac_cv_lib_selinux_security_compute_create_name=no
++  ac_cv_lib_icui18n_ucol_open_50=no
+ fi
+ rm -f core conftest.err conftest.$ac_objext \
+     conftest$ac_exeext conftest.$ac_ext
+ LIBS=$ac_check_lib_save_LIBS
+ fi
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_selinux_security_compute_create_name" >&5
+-$as_echo "$ac_cv_lib_selinux_security_compute_create_name" >&6; }
+-if test "x$ac_cv_lib_selinux_security_compute_create_name" = xyes; then :
++{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_icui18n_ucol_open_50" >&5
++$as_echo "$ac_cv_lib_icui18n_ucol_open_50" >&6; }
++if test "x$ac_cv_lib_icui18n_ucol_open_50" = xyes; then :
+   cat >>confdefs.h <<_ACEOF
+-#define HAVE_LIBSELINUX 1
++#define HAVE_LIBICUI18N 1
+ _ACEOF
+ 
+-  LIBS="-lselinux $LIBS"
++  LIBS="-licui18n $LIBS"
+ 
+ else
+-  as_fn_error $? "library 'libselinux', version 2.1.10 or newer, is required for SELinux support" "$LINENO" 5
+-fi
+ 
+-fi
++   { $as_echo "$as_me:${as_lineno-$LINENO}: checking for ucol_open_48 in -licui18n" >&5
++$as_echo_n "checking for ucol_open_48 in -licui18n... " >&6; }
++if ${ac_cv_lib_icui18n_ucol_open_48+:} false; then :
++  $as_echo_n "(cached) " >&6
++else
++  ac_check_lib_save_LIBS=$LIBS
++LIBS="-licui18n  $LIBS"
++cat confdefs.h - <<_ACEOF >conftest.$ac_ext
++/* end confdefs.h.  */
+ 
+-# for contrib/uuid-ossp
+-if test "$with_uuid" = bsd ; then
+-  # On BSD, the UUID functions are in libc
+-  ac_fn_c_check_func "$LINENO" "uuid_to_string" "ac_cv_func_uuid_to_string"
+-if test "x$ac_cv_func_uuid_to_string" = xyes; then :
+-  UUID_LIBS=""
++/* Override any GCC internal prototype to avoid an error.
++   Use char because int might match the return type of a GCC
++   builtin and then its argument prototype would still apply.  */
++#ifdef __cplusplus
++extern "C"
++#endif
++char ucol_open_48 ();
++int
++main ()
++{
++return ucol_open_48 ();
++  ;
++  return 0;
++}
++_ACEOF
++if ac_fn_c_try_link "$LINENO"; then :
++  ac_cv_lib_icui18n_ucol_open_48=yes
+ else
+-  as_fn_error $? "BSD UUID functions are not present" "$LINENO" 5
++  ac_cv_lib_icui18n_ucol_open_48=no
++fi
++rm -f core conftest.err conftest.$ac_objext \
++    conftest$ac_exeext conftest.$ac_ext
++LIBS=$ac_check_lib_save_LIBS
+ fi
++{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_icui18n_ucol_open_48" >&5
++$as_echo "$ac_cv_lib_icui18n_ucol_open_48" >&6; }
++if test "x$ac_cv_lib_icui18n_ucol_open_48" = xyes; then :
++  cat >>confdefs.h <<_ACEOF
++#define HAVE_LIBICUI18N 1
++_ACEOF
++
++  LIBS="-licui18n $LIBS"
+ 
+-elif test "$with_uuid" = e2fs ; then
+-  # On OS X, the UUID functions are in libc
+-  ac_fn_c_check_func "$LINENO" "uuid_generate" "ac_cv_func_uuid_generate"
+-if test "x$ac_cv_func_uuid_generate" = xyes; then :
+-  UUID_LIBS=""
+ else
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for uuid_generate in -luuid" >&5
+-$as_echo_n "checking for uuid_generate in -luuid... " >&6; }
+-if ${ac_cv_lib_uuid_uuid_generate+:} false; then :
++
++    { $as_echo "$as_me:${as_lineno-$LINENO}: checking for ucol_open_46 in -licui18n" >&5
++$as_echo_n "checking for ucol_open_46 in -licui18n... " >&6; }
++if ${ac_cv_lib_icui18n_ucol_open_46+:} false; then :
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-luuid  $LIBS"
++LIBS="-licui18n  $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -10141,42 +10163,42 @@
+ #ifdef __cplusplus
+ extern "C"
+ #endif
+-char uuid_generate ();
++char ucol_open_46 ();
+ int
+ main ()
+ {
+-return uuid_generate ();
++return ucol_open_46 ();
+   ;
+   return 0;
+ }
+ _ACEOF
+ if ac_fn_c_try_link "$LINENO"; then :
+-  ac_cv_lib_uuid_uuid_generate=yes
++  ac_cv_lib_icui18n_ucol_open_46=yes
+ else
+-  ac_cv_lib_uuid_uuid_generate=no
++  ac_cv_lib_icui18n_ucol_open_46=no
+ fi
+ rm -f core conftest.err conftest.$ac_objext \
+     conftest$ac_exeext conftest.$ac_ext
+ LIBS=$ac_check_lib_save_LIBS
+ fi
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_uuid_uuid_generate" >&5
+-$as_echo "$ac_cv_lib_uuid_uuid_generate" >&6; }
+-if test "x$ac_cv_lib_uuid_uuid_generate" = xyes; then :
+-  UUID_LIBS="-luuid"
+-else
+-  as_fn_error $? "library 'uuid' is required for E2FS UUID" "$LINENO" 5
+-fi
++{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_icui18n_ucol_open_46" >&5
++$as_echo "$ac_cv_lib_icui18n_ucol_open_46" >&6; }
++if test "x$ac_cv_lib_icui18n_ucol_open_46" = xyes; then :
++  cat >>confdefs.h <<_ACEOF
++#define HAVE_LIBICUI18N 1
++_ACEOF
+ 
+-fi
++  LIBS="-licui18n $LIBS"
+ 
+-elif test "$with_uuid" = ossp ; then
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for uuid_export in -lossp-uuid" >&5
+-$as_echo_n "checking for uuid_export in -lossp-uuid... " >&6; }
+-if ${ac_cv_lib_ossp_uuid_uuid_export+:} false; then :
++else
++
++      { $as_echo "$as_me:${as_lineno-$LINENO}: checking for ucol_open_44 in -licui18n" >&5
++$as_echo_n "checking for ucol_open_44 in -licui18n... " >&6; }
++if ${ac_cv_lib_icui18n_ucol_open_44+:} false; then :
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lossp-uuid  $LIBS"
++LIBS="-licui18n  $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -10186,36 +10208,42 @@
+ #ifdef __cplusplus
+ extern "C"
+ #endif
+-char uuid_export ();
++char ucol_open_44 ();
+ int
+ main ()
+ {
+-return uuid_export ();
++return ucol_open_44 ();
+   ;
+   return 0;
+ }
+ _ACEOF
+ if ac_fn_c_try_link "$LINENO"; then :
+-  ac_cv_lib_ossp_uuid_uuid_export=yes
++  ac_cv_lib_icui18n_ucol_open_44=yes
+ else
+-  ac_cv_lib_ossp_uuid_uuid_export=no
++  ac_cv_lib_icui18n_ucol_open_44=no
+ fi
+ rm -f core conftest.err conftest.$ac_objext \
+     conftest$ac_exeext conftest.$ac_ext
+ LIBS=$ac_check_lib_save_LIBS
+ fi
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_ossp_uuid_uuid_export" >&5
+-$as_echo "$ac_cv_lib_ossp_uuid_uuid_export" >&6; }
+-if test "x$ac_cv_lib_ossp_uuid_uuid_export" = xyes; then :
+-  UUID_LIBS="-lossp-uuid"
++{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_icui18n_ucol_open_44" >&5
++$as_echo "$ac_cv_lib_icui18n_ucol_open_44" >&6; }
++if test "x$ac_cv_lib_icui18n_ucol_open_44" = xyes; then :
++  cat >>confdefs.h <<_ACEOF
++#define HAVE_LIBICUI18N 1
++_ACEOF
++
++  LIBS="-licui18n $LIBS"
++
+ else
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for uuid_export in -luuid" >&5
+-$as_echo_n "checking for uuid_export in -luuid... " >&6; }
+-if ${ac_cv_lib_uuid_uuid_export+:} false; then :
++
++        { $as_echo "$as_me:${as_lineno-$LINENO}: checking for ucol_open_43 in -licui18n" >&5
++$as_echo_n "checking for ucol_open_43 in -licui18n... " >&6; }
++if ${ac_cv_lib_icui18n_ucol_open_43+:} false; then :
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-luuid  $LIBS"
++LIBS="-licui18n  $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -10225,31 +10253,1387 @@
+ #ifdef __cplusplus
+ extern "C"
+ #endif
+-char uuid_export ();
++char ucol_open_43 ();
+ int
+ main ()
+ {
+-return uuid_export ();
++return ucol_open_43 ();
+   ;
+   return 0;
+ }
+ _ACEOF
+ if ac_fn_c_try_link "$LINENO"; then :
+-  ac_cv_lib_uuid_uuid_export=yes
++  ac_cv_lib_icui18n_ucol_open_43=yes
+ else
+-  ac_cv_lib_uuid_uuid_export=no
++  ac_cv_lib_icui18n_ucol_open_43=no
+ fi
+ rm -f core conftest.err conftest.$ac_objext \
+     conftest$ac_exeext conftest.$ac_ext
+ LIBS=$ac_check_lib_save_LIBS
+ fi
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_uuid_uuid_export" >&5
+-$as_echo "$ac_cv_lib_uuid_uuid_export" >&6; }
+-if test "x$ac_cv_lib_uuid_uuid_export" = xyes; then :
+-  UUID_LIBS="-luuid"
+-else
+-  as_fn_error $? "library 'ossp-uuid' or 'uuid' is required for OSSP UUID" "$LINENO" 5
+-fi
++{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_icui18n_ucol_open_43" >&5
++$as_echo "$ac_cv_lib_icui18n_ucol_open_43" >&6; }
++if test "x$ac_cv_lib_icui18n_ucol_open_43" = xyes; then :
++  cat >>confdefs.h <<_ACEOF
++#define HAVE_LIBICUI18N 1
++_ACEOF
++
++  LIBS="-licui18n $LIBS"
++
++else
++
++          { $as_echo "$as_me:${as_lineno-$LINENO}: checking for ucol_open_3_8 in -licui18n" >&5
++$as_echo_n "checking for ucol_open_3_8 in -licui18n... " >&6; }
++if ${ac_cv_lib_icui18n_ucol_open_3_8+:} false; then :
++  $as_echo_n "(cached) " >&6
++else
++  ac_check_lib_save_LIBS=$LIBS
++LIBS="-licui18n  $LIBS"
++cat confdefs.h - <<_ACEOF >conftest.$ac_ext
++/* end confdefs.h.  */
++
++/* Override any GCC internal prototype to avoid an error.
++   Use char because int might match the return type of a GCC
++   builtin and then its argument prototype would still apply.  */
++#ifdef __cplusplus
++extern "C"
++#endif
++char ucol_open_3_8 ();
++int
++main ()
++{
++return ucol_open_3_8 ();
++  ;
++  return 0;
++}
++_ACEOF
++if ac_fn_c_try_link "$LINENO"; then :
++  ac_cv_lib_icui18n_ucol_open_3_8=yes
++else
++  ac_cv_lib_icui18n_ucol_open_3_8=no
++fi
++rm -f core conftest.err conftest.$ac_objext \
++    conftest$ac_exeext conftest.$ac_ext
++LIBS=$ac_check_lib_save_LIBS
++fi
++{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_icui18n_ucol_open_3_8" >&5
++$as_echo "$ac_cv_lib_icui18n_ucol_open_3_8" >&6; }
++if test "x$ac_cv_lib_icui18n_ucol_open_3_8" = xyes; then :
++  cat >>confdefs.h <<_ACEOF
++#define HAVE_LIBICUI18N 1
++_ACEOF
++
++  LIBS="-licui18n $LIBS"
++
++else
++
++            { $as_echo "$as_me:${as_lineno-$LINENO}: checking for ucol_open_3_6 in -licui18n" >&5
++$as_echo_n "checking for ucol_open_3_6 in -licui18n... " >&6; }
++if ${ac_cv_lib_icui18n_ucol_open_3_6+:} false; then :
++  $as_echo_n "(cached) " >&6
++else
++  ac_check_lib_save_LIBS=$LIBS
++LIBS="-licui18n  $LIBS"
++cat confdefs.h - <<_ACEOF >conftest.$ac_ext
++/* end confdefs.h.  */
++
++/* Override any GCC internal prototype to avoid an error.
++   Use char because int might match the return type of a GCC
++   builtin and then its argument prototype would still apply.  */
++#ifdef __cplusplus
++extern "C"
++#endif
++char ucol_open_3_6 ();
++int
++main ()
++{
++return ucol_open_3_6 ();
++  ;
++  return 0;
++}
++_ACEOF
++if ac_fn_c_try_link "$LINENO"; then :
++  ac_cv_lib_icui18n_ucol_open_3_6=yes
++else
++  ac_cv_lib_icui18n_ucol_open_3_6=no
++fi
++rm -f core conftest.err conftest.$ac_objext \
++    conftest$ac_exeext conftest.$ac_ext
++LIBS=$ac_check_lib_save_LIBS
++fi
++{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_icui18n_ucol_open_3_6" >&5
++$as_echo "$ac_cv_lib_icui18n_ucol_open_3_6" >&6; }
++if test "x$ac_cv_lib_icui18n_ucol_open_3_6" = xyes; then :
++  cat >>confdefs.h <<_ACEOF
++#define HAVE_LIBICUI18N 1
++_ACEOF
++
++  LIBS="-licui18n $LIBS"
++
++else
++
++              { $as_echo "$as_me:${as_lineno-$LINENO}: checking for ucol_open in -licui18n" >&5
++$as_echo_n "checking for ucol_open in -licui18n... " >&6; }
++if ${ac_cv_lib_icui18n_ucol_open+:} false; then :
++  $as_echo_n "(cached) " >&6
++else
++  ac_check_lib_save_LIBS=$LIBS
++LIBS="-licui18n  $LIBS"
++cat confdefs.h - <<_ACEOF >conftest.$ac_ext
++/* end confdefs.h.  */
++
++/* Override any GCC internal prototype to avoid an error.
++   Use char because int might match the return type of a GCC
++   builtin and then its argument prototype would still apply.  */
++#ifdef __cplusplus
++extern "C"
++#endif
++char ucol_open ();
++int
++main ()
++{
++return ucol_open ();
++  ;
++  return 0;
++}
++_ACEOF
++if ac_fn_c_try_link "$LINENO"; then :
++  ac_cv_lib_icui18n_ucol_open=yes
++else
++  ac_cv_lib_icui18n_ucol_open=no
++fi
++rm -f core conftest.err conftest.$ac_objext \
++    conftest$ac_exeext conftest.$ac_ext
++LIBS=$ac_check_lib_save_LIBS
++fi
++{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_icui18n_ucol_open" >&5
++$as_echo "$ac_cv_lib_icui18n_ucol_open" >&6; }
++if test "x$ac_cv_lib_icui18n_ucol_open" = xyes; then :
++  cat >>confdefs.h <<_ACEOF
++#define HAVE_LIBICUI18N 1
++_ACEOF
++
++  LIBS="-licui18n $LIBS"
++
++else
++  as_fn_error $? "library 'icui18n' is required for ICU" "$LINENO" 5
++fi
++
++
++fi
++
++
++fi
++
++
++fi
++
++
++fi
++
++
++fi
++
++
++fi
++
++
++fi
++
++
++fi
++
++
++fi
++
++
++fi
++
++
++fi
++
++
++fi
++
++
++fi
++
++ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for ucnv_fromUChars_57 in -licuuc" >&5
++$as_echo_n "checking for ucnv_fromUChars_57 in -licuuc... " >&6; }
++if ${ac_cv_lib_icuuc_ucnv_fromUChars_57+:} false; then :
++  $as_echo_n "(cached) " >&6
++else
++  ac_check_lib_save_LIBS=$LIBS
++LIBS="-licuuc  $LIBS"
++cat confdefs.h - <<_ACEOF >conftest.$ac_ext
++/* end confdefs.h.  */
++
++/* Override any GCC internal prototype to avoid an error.
++   Use char because int might match the return type of a GCC
++   builtin and then its argument prototype would still apply.  */
++#ifdef __cplusplus
++extern "C"
++#endif
++char ucnv_fromUChars_57 ();
++int
++main ()
++{
++return ucnv_fromUChars_57 ();
++  ;
++  return 0;
++}
++_ACEOF
++if ac_fn_c_try_link "$LINENO"; then :
++  ac_cv_lib_icuuc_ucnv_fromUChars_57=yes
++else
++  ac_cv_lib_icuuc_ucnv_fromUChars_57=no
++fi
++rm -f core conftest.err conftest.$ac_objext \
++    conftest$ac_exeext conftest.$ac_ext
++LIBS=$ac_check_lib_save_LIBS
++fi
++{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_icuuc_ucnv_fromUChars_57" >&5
++$as_echo "$ac_cv_lib_icuuc_ucnv_fromUChars_57" >&6; }
++if test "x$ac_cv_lib_icuuc_ucnv_fromUChars_57" = xyes; then :
++  cat >>confdefs.h <<_ACEOF
++#define HAVE_LIBICUUC 1
++_ACEOF
++
++  LIBS="-licuuc $LIBS"
++
++else
++
++ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for ucnv_fromUChars_56 in -licuuc" >&5
++$as_echo_n "checking for ucnv_fromUChars_56 in -licuuc... " >&6; }
++if ${ac_cv_lib_icuuc_ucnv_fromUChars_56+:} false; then :
++  $as_echo_n "(cached) " >&6
++else
++  ac_check_lib_save_LIBS=$LIBS
++LIBS="-licuuc  $LIBS"
++cat confdefs.h - <<_ACEOF >conftest.$ac_ext
++/* end confdefs.h.  */
++
++/* Override any GCC internal prototype to avoid an error.
++   Use char because int might match the return type of a GCC
++   builtin and then its argument prototype would still apply.  */
++#ifdef __cplusplus
++extern "C"
++#endif
++char ucnv_fromUChars_56 ();
++int
++main ()
++{
++return ucnv_fromUChars_56 ();
++  ;
++  return 0;
++}
++_ACEOF
++if ac_fn_c_try_link "$LINENO"; then :
++  ac_cv_lib_icuuc_ucnv_fromUChars_56=yes
++else
++  ac_cv_lib_icuuc_ucnv_fromUChars_56=no
++fi
++rm -f core conftest.err conftest.$ac_objext \
++    conftest$ac_exeext conftest.$ac_ext
++LIBS=$ac_check_lib_save_LIBS
++fi
++{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_icuuc_ucnv_fromUChars_56" >&5
++$as_echo "$ac_cv_lib_icuuc_ucnv_fromUChars_56" >&6; }
++if test "x$ac_cv_lib_icuuc_ucnv_fromUChars_56" = xyes; then :
++  cat >>confdefs.h <<_ACEOF
++#define HAVE_LIBICUUC 1
++_ACEOF
++
++  LIBS="-licuuc $LIBS"
++
++else
++
++ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for ucnv_fromUChars_55 in -licuuc" >&5
++$as_echo_n "checking for ucnv_fromUChars_55 in -licuuc... " >&6; }
++if ${ac_cv_lib_icuuc_ucnv_fromUChars_55+:} false; then :
++  $as_echo_n "(cached) " >&6
++else
++  ac_check_lib_save_LIBS=$LIBS
++LIBS="-licuuc  $LIBS"
++cat confdefs.h - <<_ACEOF >conftest.$ac_ext
++/* end confdefs.h.  */
++
++/* Override any GCC internal prototype to avoid an error.
++   Use char because int might match the return type of a GCC
++   builtin and then its argument prototype would still apply.  */
++#ifdef __cplusplus
++extern "C"
++#endif
++char ucnv_fromUChars_55 ();
++int
++main ()
++{
++return ucnv_fromUChars_55 ();
++  ;
++  return 0;
++}
++_ACEOF
++if ac_fn_c_try_link "$LINENO"; then :
++  ac_cv_lib_icuuc_ucnv_fromUChars_55=yes
++else
++  ac_cv_lib_icuuc_ucnv_fromUChars_55=no
++fi
++rm -f core conftest.err conftest.$ac_objext \
++    conftest$ac_exeext conftest.$ac_ext
++LIBS=$ac_check_lib_save_LIBS
++fi
++{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_icuuc_ucnv_fromUChars_55" >&5
++$as_echo "$ac_cv_lib_icuuc_ucnv_fromUChars_55" >&6; }
++if test "x$ac_cv_lib_icuuc_ucnv_fromUChars_55" = xyes; then :
++  cat >>confdefs.h <<_ACEOF
++#define HAVE_LIBICUUC 1
++_ACEOF
++
++  LIBS="-licuuc $LIBS"
++
++else
++
++ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for ucnv_fromUChars_54 in -licuuc" >&5
++$as_echo_n "checking for ucnv_fromUChars_54 in -licuuc... " >&6; }
++if ${ac_cv_lib_icuuc_ucnv_fromUChars_54+:} false; then :
++  $as_echo_n "(cached) " >&6
++else
++  ac_check_lib_save_LIBS=$LIBS
++LIBS="-licuuc  $LIBS"
++cat confdefs.h - <<_ACEOF >conftest.$ac_ext
++/* end confdefs.h.  */
++
++/* Override any GCC internal prototype to avoid an error.
++   Use char because int might match the return type of a GCC
++   builtin and then its argument prototype would still apply.  */
++#ifdef __cplusplus
++extern "C"
++#endif
++char ucnv_fromUChars_54 ();
++int
++main ()
++{
++return ucnv_fromUChars_54 ();
++  ;
++  return 0;
++}
++_ACEOF
++if ac_fn_c_try_link "$LINENO"; then :
++  ac_cv_lib_icuuc_ucnv_fromUChars_54=yes
++else
++  ac_cv_lib_icuuc_ucnv_fromUChars_54=no
++fi
++rm -f core conftest.err conftest.$ac_objext \
++    conftest$ac_exeext conftest.$ac_ext
++LIBS=$ac_check_lib_save_LIBS
++fi
++{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_icuuc_ucnv_fromUChars_54" >&5
++$as_echo "$ac_cv_lib_icuuc_ucnv_fromUChars_54" >&6; }
++if test "x$ac_cv_lib_icuuc_ucnv_fromUChars_54" = xyes; then :
++  cat >>confdefs.h <<_ACEOF
++#define HAVE_LIBICUUC 1
++_ACEOF
++
++  LIBS="-licuuc $LIBS"
++
++else
++
++ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for ucnv_fromUChars_53 in -licuuc" >&5
++$as_echo_n "checking for ucnv_fromUChars_53 in -licuuc... " >&6; }
++if ${ac_cv_lib_icuuc_ucnv_fromUChars_53+:} false; then :
++  $as_echo_n "(cached) " >&6
++else
++  ac_check_lib_save_LIBS=$LIBS
++LIBS="-licuuc  $LIBS"
++cat confdefs.h - <<_ACEOF >conftest.$ac_ext
++/* end confdefs.h.  */
++
++/* Override any GCC internal prototype to avoid an error.
++   Use char because int might match the return type of a GCC
++   builtin and then its argument prototype would still apply.  */
++#ifdef __cplusplus
++extern "C"
++#endif
++char ucnv_fromUChars_53 ();
++int
++main ()
++{
++return ucnv_fromUChars_53 ();
++  ;
++  return 0;
++}
++_ACEOF
++if ac_fn_c_try_link "$LINENO"; then :
++  ac_cv_lib_icuuc_ucnv_fromUChars_53=yes
++else
++  ac_cv_lib_icuuc_ucnv_fromUChars_53=no
++fi
++rm -f core conftest.err conftest.$ac_objext \
++    conftest$ac_exeext conftest.$ac_ext
++LIBS=$ac_check_lib_save_LIBS
++fi
++{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_icuuc_ucnv_fromUChars_53" >&5
++$as_echo "$ac_cv_lib_icuuc_ucnv_fromUChars_53" >&6; }
++if test "x$ac_cv_lib_icuuc_ucnv_fromUChars_53" = xyes; then :
++  cat >>confdefs.h <<_ACEOF
++#define HAVE_LIBICUUC 1
++_ACEOF
++
++  LIBS="-licuuc $LIBS"
++
++else
++
++ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for ucnv_fromUChars_52 in -licuuc" >&5
++$as_echo_n "checking for ucnv_fromUChars_52 in -licuuc... " >&6; }
++if ${ac_cv_lib_icuuc_ucnv_fromUChars_52+:} false; then :
++  $as_echo_n "(cached) " >&6
++else
++  ac_check_lib_save_LIBS=$LIBS
++LIBS="-licuuc  $LIBS"
++cat confdefs.h - <<_ACEOF >conftest.$ac_ext
++/* end confdefs.h.  */
++
++/* Override any GCC internal prototype to avoid an error.
++   Use char because int might match the return type of a GCC
++   builtin and then its argument prototype would still apply.  */
++#ifdef __cplusplus
++extern "C"
++#endif
++char ucnv_fromUChars_52 ();
++int
++main ()
++{
++return ucnv_fromUChars_52 ();
++  ;
++  return 0;
++}
++_ACEOF
++if ac_fn_c_try_link "$LINENO"; then :
++  ac_cv_lib_icuuc_ucnv_fromUChars_52=yes
++else
++  ac_cv_lib_icuuc_ucnv_fromUChars_52=no
++fi
++rm -f core conftest.err conftest.$ac_objext \
++    conftest$ac_exeext conftest.$ac_ext
++LIBS=$ac_check_lib_save_LIBS
++fi
++{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_icuuc_ucnv_fromUChars_52" >&5
++$as_echo "$ac_cv_lib_icuuc_ucnv_fromUChars_52" >&6; }
++if test "x$ac_cv_lib_icuuc_ucnv_fromUChars_52" = xyes; then :
++  cat >>confdefs.h <<_ACEOF
++#define HAVE_LIBICUUC 1
++_ACEOF
++
++  LIBS="-licuuc $LIBS"
++
++else
++
++  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for ucnv_fromUChars_50 in -licuuc" >&5
++$as_echo_n "checking for ucnv_fromUChars_50 in -licuuc... " >&6; }
++if ${ac_cv_lib_icuuc_ucnv_fromUChars_50+:} false; then :
++  $as_echo_n "(cached) " >&6
++else
++  ac_check_lib_save_LIBS=$LIBS
++LIBS="-licuuc  $LIBS"
++cat confdefs.h - <<_ACEOF >conftest.$ac_ext
++/* end confdefs.h.  */
++
++/* Override any GCC internal prototype to avoid an error.
++   Use char because int might match the return type of a GCC
++   builtin and then its argument prototype would still apply.  */
++#ifdef __cplusplus
++extern "C"
++#endif
++char ucnv_fromUChars_50 ();
++int
++main ()
++{
++return ucnv_fromUChars_50 ();
++  ;
++  return 0;
++}
++_ACEOF
++if ac_fn_c_try_link "$LINENO"; then :
++  ac_cv_lib_icuuc_ucnv_fromUChars_50=yes
++else
++  ac_cv_lib_icuuc_ucnv_fromUChars_50=no
++fi
++rm -f core conftest.err conftest.$ac_objext \
++    conftest$ac_exeext conftest.$ac_ext
++LIBS=$ac_check_lib_save_LIBS
++fi
++{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_icuuc_ucnv_fromUChars_50" >&5
++$as_echo "$ac_cv_lib_icuuc_ucnv_fromUChars_50" >&6; }
++if test "x$ac_cv_lib_icuuc_ucnv_fromUChars_50" = xyes; then :
++  cat >>confdefs.h <<_ACEOF
++#define HAVE_LIBICUUC 1
++_ACEOF
++
++  LIBS="-licuuc $LIBS"
++
++else
++
++   { $as_echo "$as_me:${as_lineno-$LINENO}: checking for ucnv_fromUChars_48 in -licuuc" >&5
++$as_echo_n "checking for ucnv_fromUChars_48 in -licuuc... " >&6; }
++if ${ac_cv_lib_icuuc_ucnv_fromUChars_48+:} false; then :
++  $as_echo_n "(cached) " >&6
++else
++  ac_check_lib_save_LIBS=$LIBS
++LIBS="-licuuc  $LIBS"
++cat confdefs.h - <<_ACEOF >conftest.$ac_ext
++/* end confdefs.h.  */
++
++/* Override any GCC internal prototype to avoid an error.
++   Use char because int might match the return type of a GCC
++   builtin and then its argument prototype would still apply.  */
++#ifdef __cplusplus
++extern "C"
++#endif
++char ucnv_fromUChars_48 ();
++int
++main ()
++{
++return ucnv_fromUChars_48 ();
++  ;
++  return 0;
++}
++_ACEOF
++if ac_fn_c_try_link "$LINENO"; then :
++  ac_cv_lib_icuuc_ucnv_fromUChars_48=yes
++else
++  ac_cv_lib_icuuc_ucnv_fromUChars_48=no
++fi
++rm -f core conftest.err conftest.$ac_objext \
++    conftest$ac_exeext conftest.$ac_ext
++LIBS=$ac_check_lib_save_LIBS
++fi
++{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_icuuc_ucnv_fromUChars_48" >&5
++$as_echo "$ac_cv_lib_icuuc_ucnv_fromUChars_48" >&6; }
++if test "x$ac_cv_lib_icuuc_ucnv_fromUChars_48" = xyes; then :
++  cat >>confdefs.h <<_ACEOF
++#define HAVE_LIBICUUC 1
++_ACEOF
++
++  LIBS="-licuuc $LIBS"
++
++else
++
++    { $as_echo "$as_me:${as_lineno-$LINENO}: checking for ucnv_fromUChars_46 in -licuuc" >&5
++$as_echo_n "checking for ucnv_fromUChars_46 in -licuuc... " >&6; }
++if ${ac_cv_lib_icuuc_ucnv_fromUChars_46+:} false; then :
++  $as_echo_n "(cached) " >&6
++else
++  ac_check_lib_save_LIBS=$LIBS
++LIBS="-licuuc  $LIBS"
++cat confdefs.h - <<_ACEOF >conftest.$ac_ext
++/* end confdefs.h.  */
++
++/* Override any GCC internal prototype to avoid an error.
++   Use char because int might match the return type of a GCC
++   builtin and then its argument prototype would still apply.  */
++#ifdef __cplusplus
++extern "C"
++#endif
++char ucnv_fromUChars_46 ();
++int
++main ()
++{
++return ucnv_fromUChars_46 ();
++  ;
++  return 0;
++}
++_ACEOF
++if ac_fn_c_try_link "$LINENO"; then :
++  ac_cv_lib_icuuc_ucnv_fromUChars_46=yes
++else
++  ac_cv_lib_icuuc_ucnv_fromUChars_46=no
++fi
++rm -f core conftest.err conftest.$ac_objext \
++    conftest$ac_exeext conftest.$ac_ext
++LIBS=$ac_check_lib_save_LIBS
++fi
++{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_icuuc_ucnv_fromUChars_46" >&5
++$as_echo "$ac_cv_lib_icuuc_ucnv_fromUChars_46" >&6; }
++if test "x$ac_cv_lib_icuuc_ucnv_fromUChars_46" = xyes; then :
++  cat >>confdefs.h <<_ACEOF
++#define HAVE_LIBICUUC 1
++_ACEOF
++
++  LIBS="-licuuc $LIBS"
++
++else
++
++      { $as_echo "$as_me:${as_lineno-$LINENO}: checking for ucnv_fromUChars_44 in -licuuc" >&5
++$as_echo_n "checking for ucnv_fromUChars_44 in -licuuc... " >&6; }
++if ${ac_cv_lib_icuuc_ucnv_fromUChars_44+:} false; then :
++  $as_echo_n "(cached) " >&6
++else
++  ac_check_lib_save_LIBS=$LIBS
++LIBS="-licuuc  $LIBS"
++cat confdefs.h - <<_ACEOF >conftest.$ac_ext
++/* end confdefs.h.  */
++
++/* Override any GCC internal prototype to avoid an error.
++   Use char because int might match the return type of a GCC
++   builtin and then its argument prototype would still apply.  */
++#ifdef __cplusplus
++extern "C"
++#endif
++char ucnv_fromUChars_44 ();
++int
++main ()
++{
++return ucnv_fromUChars_44 ();
++  ;
++  return 0;
++}
++_ACEOF
++if ac_fn_c_try_link "$LINENO"; then :
++  ac_cv_lib_icuuc_ucnv_fromUChars_44=yes
++else
++  ac_cv_lib_icuuc_ucnv_fromUChars_44=no
++fi
++rm -f core conftest.err conftest.$ac_objext \
++    conftest$ac_exeext conftest.$ac_ext
++LIBS=$ac_check_lib_save_LIBS
++fi
++{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_icuuc_ucnv_fromUChars_44" >&5
++$as_echo "$ac_cv_lib_icuuc_ucnv_fromUChars_44" >&6; }
++if test "x$ac_cv_lib_icuuc_ucnv_fromUChars_44" = xyes; then :
++  cat >>confdefs.h <<_ACEOF
++#define HAVE_LIBICUUC 1
++_ACEOF
++
++  LIBS="-licuuc $LIBS"
++
++else
++
++        { $as_echo "$as_me:${as_lineno-$LINENO}: checking for ucnv_fromUChars_43 in -licuuc" >&5
++$as_echo_n "checking for ucnv_fromUChars_43 in -licuuc... " >&6; }
++if ${ac_cv_lib_icuuc_ucnv_fromUChars_43+:} false; then :
++  $as_echo_n "(cached) " >&6
++else
++  ac_check_lib_save_LIBS=$LIBS
++LIBS="-licuuc  $LIBS"
++cat confdefs.h - <<_ACEOF >conftest.$ac_ext
++/* end confdefs.h.  */
++
++/* Override any GCC internal prototype to avoid an error.
++   Use char because int might match the return type of a GCC
++   builtin and then its argument prototype would still apply.  */
++#ifdef __cplusplus
++extern "C"
++#endif
++char ucnv_fromUChars_43 ();
++int
++main ()
++{
++return ucnv_fromUChars_43 ();
++  ;
++  return 0;
++}
++_ACEOF
++if ac_fn_c_try_link "$LINENO"; then :
++  ac_cv_lib_icuuc_ucnv_fromUChars_43=yes
++else
++  ac_cv_lib_icuuc_ucnv_fromUChars_43=no
++fi
++rm -f core conftest.err conftest.$ac_objext \
++    conftest$ac_exeext conftest.$ac_ext
++LIBS=$ac_check_lib_save_LIBS
++fi
++{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_icuuc_ucnv_fromUChars_43" >&5
++$as_echo "$ac_cv_lib_icuuc_ucnv_fromUChars_43" >&6; }
++if test "x$ac_cv_lib_icuuc_ucnv_fromUChars_43" = xyes; then :
++  cat >>confdefs.h <<_ACEOF
++#define HAVE_LIBICUUC 1
++_ACEOF
++
++  LIBS="-licuuc $LIBS"
++
++else
++
++          { $as_echo "$as_me:${as_lineno-$LINENO}: checking for ucnv_fromUChars_3_8 in -licuuc" >&5
++$as_echo_n "checking for ucnv_fromUChars_3_8 in -licuuc... " >&6; }
++if ${ac_cv_lib_icuuc_ucnv_fromUChars_3_8+:} false; then :
++  $as_echo_n "(cached) " >&6
++else
++  ac_check_lib_save_LIBS=$LIBS
++LIBS="-licuuc  $LIBS"
++cat confdefs.h - <<_ACEOF >conftest.$ac_ext
++/* end confdefs.h.  */
++
++/* Override any GCC internal prototype to avoid an error.
++   Use char because int might match the return type of a GCC
++   builtin and then its argument prototype would still apply.  */
++#ifdef __cplusplus
++extern "C"
++#endif
++char ucnv_fromUChars_3_8 ();
++int
++main ()
++{
++return ucnv_fromUChars_3_8 ();
++  ;
++  return 0;
++}
++_ACEOF
++if ac_fn_c_try_link "$LINENO"; then :
++  ac_cv_lib_icuuc_ucnv_fromUChars_3_8=yes
++else
++  ac_cv_lib_icuuc_ucnv_fromUChars_3_8=no
++fi
++rm -f core conftest.err conftest.$ac_objext \
++    conftest$ac_exeext conftest.$ac_ext
++LIBS=$ac_check_lib_save_LIBS
++fi
++{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_icuuc_ucnv_fromUChars_3_8" >&5
++$as_echo "$ac_cv_lib_icuuc_ucnv_fromUChars_3_8" >&6; }
++if test "x$ac_cv_lib_icuuc_ucnv_fromUChars_3_8" = xyes; then :
++  cat >>confdefs.h <<_ACEOF
++#define HAVE_LIBICUUC 1
++_ACEOF
++
++  LIBS="-licuuc $LIBS"
++
++else
++
++            { $as_echo "$as_me:${as_lineno-$LINENO}: checking for ucnv_fromUChars_3_6 in -licuuc" >&5
++$as_echo_n "checking for ucnv_fromUChars_3_6 in -licuuc... " >&6; }
++if ${ac_cv_lib_icuuc_ucnv_fromUChars_3_6+:} false; then :
++  $as_echo_n "(cached) " >&6
++else
++  ac_check_lib_save_LIBS=$LIBS
++LIBS="-licuuc  $LIBS"
++cat confdefs.h - <<_ACEOF >conftest.$ac_ext
++/* end confdefs.h.  */
++
++/* Override any GCC internal prototype to avoid an error.
++   Use char because int might match the return type of a GCC
++   builtin and then its argument prototype would still apply.  */
++#ifdef __cplusplus
++extern "C"
++#endif
++char ucnv_fromUChars_3_6 ();
++int
++main ()
++{
++return ucnv_fromUChars_3_6 ();
++  ;
++  return 0;
++}
++_ACEOF
++if ac_fn_c_try_link "$LINENO"; then :
++  ac_cv_lib_icuuc_ucnv_fromUChars_3_6=yes
++else
++  ac_cv_lib_icuuc_ucnv_fromUChars_3_6=no
++fi
++rm -f core conftest.err conftest.$ac_objext \
++    conftest$ac_exeext conftest.$ac_ext
++LIBS=$ac_check_lib_save_LIBS
++fi
++{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_icuuc_ucnv_fromUChars_3_6" >&5
++$as_echo "$ac_cv_lib_icuuc_ucnv_fromUChars_3_6" >&6; }
++if test "x$ac_cv_lib_icuuc_ucnv_fromUChars_3_6" = xyes; then :
++  cat >>confdefs.h <<_ACEOF
++#define HAVE_LIBICUUC 1
++_ACEOF
++
++  LIBS="-licuuc $LIBS"
++
++else
++
++              { $as_echo "$as_me:${as_lineno-$LINENO}: checking for ucnv_fromUChars in -licuuc" >&5
++$as_echo_n "checking for ucnv_fromUChars in -licuuc... " >&6; }
++if ${ac_cv_lib_icuuc_ucnv_fromUChars+:} false; then :
++  $as_echo_n "(cached) " >&6
++else
++  ac_check_lib_save_LIBS=$LIBS
++LIBS="-licuuc  $LIBS"
++cat confdefs.h - <<_ACEOF >conftest.$ac_ext
++/* end confdefs.h.  */
++
++/* Override any GCC internal prototype to avoid an error.
++   Use char because int might match the return type of a GCC
++   builtin and then its argument prototype would still apply.  */
++#ifdef __cplusplus
++extern "C"
++#endif
++char ucnv_fromUChars ();
++int
++main ()
++{
++return ucnv_fromUChars ();
++  ;
++  return 0;
++}
++_ACEOF
++if ac_fn_c_try_link "$LINENO"; then :
++  ac_cv_lib_icuuc_ucnv_fromUChars=yes
++else
++  ac_cv_lib_icuuc_ucnv_fromUChars=no
++fi
++rm -f core conftest.err conftest.$ac_objext \
++    conftest$ac_exeext conftest.$ac_ext
++LIBS=$ac_check_lib_save_LIBS
++fi
++{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_icuuc_ucnv_fromUChars" >&5
++$as_echo "$ac_cv_lib_icuuc_ucnv_fromUChars" >&6; }
++if test "x$ac_cv_lib_icuuc_ucnv_fromUChars" = xyes; then :
++  cat >>confdefs.h <<_ACEOF
++#define HAVE_LIBICUUC 1
++_ACEOF
++
++  LIBS="-licuuc $LIBS"
++
++else
++  as_fn_error $? "library 'icuuc' is required for ICU" "$LINENO" 5
++fi
++
++
++fi
++
++
++fi
++
++
++fi
++
++
++fi
++
++
++fi
++
++
++fi
++
++
++fi
++
++
++fi
++
++
++fi
++
++
++fi
++
++
++fi
++
++
++fi
++
++
++fi
++
++fi
++
++if test "$with_pam" = yes ; then
++  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for pam_start in -lpam" >&5
++$as_echo_n "checking for pam_start in -lpam... " >&6; }
++if ${ac_cv_lib_pam_pam_start+:} false; then :
++  $as_echo_n "(cached) " >&6
++else
++  ac_check_lib_save_LIBS=$LIBS
++LIBS="-lpam  $LIBS"
++cat confdefs.h - <<_ACEOF >conftest.$ac_ext
++/* end confdefs.h.  */
++
++/* Override any GCC internal prototype to avoid an error.
++   Use char because int might match the return type of a GCC
++   builtin and then its argument prototype would still apply.  */
++#ifdef __cplusplus
++extern "C"
++#endif
++char pam_start ();
++int
++main ()
++{
++return pam_start ();
++  ;
++  return 0;
++}
++_ACEOF
++if ac_fn_c_try_link "$LINENO"; then :
++  ac_cv_lib_pam_pam_start=yes
++else
++  ac_cv_lib_pam_pam_start=no
++fi
++rm -f core conftest.err conftest.$ac_objext \
++    conftest$ac_exeext conftest.$ac_ext
++LIBS=$ac_check_lib_save_LIBS
++fi
++{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_pam_pam_start" >&5
++$as_echo "$ac_cv_lib_pam_pam_start" >&6; }
++if test "x$ac_cv_lib_pam_pam_start" = xyes; then :
++  cat >>confdefs.h <<_ACEOF
++#define HAVE_LIBPAM 1
++_ACEOF
++
++  LIBS="-lpam $LIBS"
++
++else
++  as_fn_error $? "library 'pam' is required for PAM" "$LINENO" 5
++fi
++
++fi
++
++if test "$with_libxml" = yes ; then
++  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for xmlSaveToBuffer in -lxml2" >&5
++$as_echo_n "checking for xmlSaveToBuffer in -lxml2... " >&6; }
++if ${ac_cv_lib_xml2_xmlSaveToBuffer+:} false; then :
++  $as_echo_n "(cached) " >&6
++else
++  ac_check_lib_save_LIBS=$LIBS
++LIBS="-lxml2  $LIBS"
++cat confdefs.h - <<_ACEOF >conftest.$ac_ext
++/* end confdefs.h.  */
++
++/* Override any GCC internal prototype to avoid an error.
++   Use char because int might match the return type of a GCC
++   builtin and then its argument prototype would still apply.  */
++#ifdef __cplusplus
++extern "C"
++#endif
++char xmlSaveToBuffer ();
++int
++main ()
++{
++return xmlSaveToBuffer ();
++  ;
++  return 0;
++}
++_ACEOF
++if ac_fn_c_try_link "$LINENO"; then :
++  ac_cv_lib_xml2_xmlSaveToBuffer=yes
++else
++  ac_cv_lib_xml2_xmlSaveToBuffer=no
++fi
++rm -f core conftest.err conftest.$ac_objext \
++    conftest$ac_exeext conftest.$ac_ext
++LIBS=$ac_check_lib_save_LIBS
++fi
++{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_xml2_xmlSaveToBuffer" >&5
++$as_echo "$ac_cv_lib_xml2_xmlSaveToBuffer" >&6; }
++if test "x$ac_cv_lib_xml2_xmlSaveToBuffer" = xyes; then :
++  cat >>confdefs.h <<_ACEOF
++#define HAVE_LIBXML2 1
++_ACEOF
++
++  LIBS="-lxml2 $LIBS"
++
++else
++  as_fn_error $? "library 'xml2' (version >= 2.6.23) is required for XML support" "$LINENO" 5
++fi
++
++fi
++
++if test "$with_libxslt" = yes ; then
++  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for xsltCleanupGlobals in -lxslt" >&5
++$as_echo_n "checking for xsltCleanupGlobals in -lxslt... " >&6; }
++if ${ac_cv_lib_xslt_xsltCleanupGlobals+:} false; then :
++  $as_echo_n "(cached) " >&6
++else
++  ac_check_lib_save_LIBS=$LIBS
++LIBS="-lxslt  $LIBS"
++cat confdefs.h - <<_ACEOF >conftest.$ac_ext
++/* end confdefs.h.  */
++
++/* Override any GCC internal prototype to avoid an error.
++   Use char because int might match the return type of a GCC
++   builtin and then its argument prototype would still apply.  */
++#ifdef __cplusplus
++extern "C"
++#endif
++char xsltCleanupGlobals ();
++int
++main ()
++{
++return xsltCleanupGlobals ();
++  ;
++  return 0;
++}
++_ACEOF
++if ac_fn_c_try_link "$LINENO"; then :
++  ac_cv_lib_xslt_xsltCleanupGlobals=yes
++else
++  ac_cv_lib_xslt_xsltCleanupGlobals=no
++fi
++rm -f core conftest.err conftest.$ac_objext \
++    conftest$ac_exeext conftest.$ac_ext
++LIBS=$ac_check_lib_save_LIBS
++fi
++{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_xslt_xsltCleanupGlobals" >&5
++$as_echo "$ac_cv_lib_xslt_xsltCleanupGlobals" >&6; }
++if test "x$ac_cv_lib_xslt_xsltCleanupGlobals" = xyes; then :
++  cat >>confdefs.h <<_ACEOF
++#define HAVE_LIBXSLT 1
++_ACEOF
++
++  LIBS="-lxslt $LIBS"
++
++else
++  as_fn_error $? "library 'xslt' is required for XSLT support" "$LINENO" 5
++fi
++
++fi
++
++# Note: We can test for libldap_r only after we know PTHREAD_LIBS
++if test "$with_ldap" = yes ; then
++  _LIBS="$LIBS"
++  if test "$PORTNAME" != "win32"; then
++    { $as_echo "$as_me:${as_lineno-$LINENO}: checking for ldap_bind in -lldap" >&5
++$as_echo_n "checking for ldap_bind in -lldap... " >&6; }
++if ${ac_cv_lib_ldap_ldap_bind+:} false; then :
++  $as_echo_n "(cached) " >&6
++else
++  ac_check_lib_save_LIBS=$LIBS
++LIBS="-lldap $EXTRA_LDAP_LIBS $LIBS"
++cat confdefs.h - <<_ACEOF >conftest.$ac_ext
++/* end confdefs.h.  */
++
++/* Override any GCC internal prototype to avoid an error.
++   Use char because int might match the return type of a GCC
++   builtin and then its argument prototype would still apply.  */
++#ifdef __cplusplus
++extern "C"
++#endif
++char ldap_bind ();
++int
++main ()
++{
++return ldap_bind ();
++  ;
++  return 0;
++}
++_ACEOF
++if ac_fn_c_try_link "$LINENO"; then :
++  ac_cv_lib_ldap_ldap_bind=yes
++else
++  ac_cv_lib_ldap_ldap_bind=no
++fi
++rm -f core conftest.err conftest.$ac_objext \
++    conftest$ac_exeext conftest.$ac_ext
++LIBS=$ac_check_lib_save_LIBS
++fi
++{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_ldap_ldap_bind" >&5
++$as_echo "$ac_cv_lib_ldap_ldap_bind" >&6; }
++if test "x$ac_cv_lib_ldap_ldap_bind" = xyes; then :
++  cat >>confdefs.h <<_ACEOF
++#define HAVE_LIBLDAP 1
++_ACEOF
++
++  LIBS="-lldap $LIBS"
++
++else
++  as_fn_error $? "library 'ldap' is required for LDAP" "$LINENO" 5
++fi
++
++    LDAP_LIBS_BE="-lldap $EXTRA_LDAP_LIBS"
++    if test "$enable_thread_safety" = yes; then
++      # on some platforms ldap_r fails to link without PTHREAD_LIBS
++      { $as_echo "$as_me:${as_lineno-$LINENO}: checking for ldap_simple_bind in -lldap_r" >&5
++$as_echo_n "checking for ldap_simple_bind in -lldap_r... " >&6; }
++if ${ac_cv_lib_ldap_r_ldap_simple_bind+:} false; then :
++  $as_echo_n "(cached) " >&6
++else
++  ac_check_lib_save_LIBS=$LIBS
++LIBS="-lldap_r $PTHREAD_CFLAGS $PTHREAD_LIBS $EXTRA_LDAP_LIBS $LIBS"
++cat confdefs.h - <<_ACEOF >conftest.$ac_ext
++/* end confdefs.h.  */
++
++/* Override any GCC internal prototype to avoid an error.
++   Use char because int might match the return type of a GCC
++   builtin and then its argument prototype would still apply.  */
++#ifdef __cplusplus
++extern "C"
++#endif
++char ldap_simple_bind ();
++int
++main ()
++{
++return ldap_simple_bind ();
++  ;
++  return 0;
++}
++_ACEOF
++if ac_fn_c_try_link "$LINENO"; then :
++  ac_cv_lib_ldap_r_ldap_simple_bind=yes
++else
++  ac_cv_lib_ldap_r_ldap_simple_bind=no
++fi
++rm -f core conftest.err conftest.$ac_objext \
++    conftest$ac_exeext conftest.$ac_ext
++LIBS=$ac_check_lib_save_LIBS
++fi
++{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_ldap_r_ldap_simple_bind" >&5
++$as_echo "$ac_cv_lib_ldap_r_ldap_simple_bind" >&6; }
++if test "x$ac_cv_lib_ldap_r_ldap_simple_bind" = xyes; then :
++  cat >>confdefs.h <<_ACEOF
++#define HAVE_LIBLDAP_R 1
++_ACEOF
++
++  LIBS="-lldap_r $LIBS"
++
++else
++  as_fn_error $? "library 'ldap_r' is required for LDAP" "$LINENO" 5
++fi
++
++      LDAP_LIBS_FE="-lldap_r $EXTRA_LDAP_LIBS"
++    else
++      LDAP_LIBS_FE="-lldap $EXTRA_LDAP_LIBS"
++    fi
++  else
++    { $as_echo "$as_me:${as_lineno-$LINENO}: checking for ldap_bind in -lwldap32" >&5
++$as_echo_n "checking for ldap_bind in -lwldap32... " >&6; }
++if ${ac_cv_lib_wldap32_ldap_bind+:} false; then :
++  $as_echo_n "(cached) " >&6
++else
++  ac_check_lib_save_LIBS=$LIBS
++LIBS="-lwldap32  $LIBS"
++cat confdefs.h - <<_ACEOF >conftest.$ac_ext
++/* end confdefs.h.  */
++
++/* Override any GCC internal prototype to avoid an error.
++   Use char because int might match the return type of a GCC
++   builtin and then its argument prototype would still apply.  */
++#ifdef __cplusplus
++extern "C"
++#endif
++char ldap_bind ();
++int
++main ()
++{
++return ldap_bind ();
++  ;
++  return 0;
++}
++_ACEOF
++if ac_fn_c_try_link "$LINENO"; then :
++  ac_cv_lib_wldap32_ldap_bind=yes
++else
++  ac_cv_lib_wldap32_ldap_bind=no
++fi
++rm -f core conftest.err conftest.$ac_objext \
++    conftest$ac_exeext conftest.$ac_ext
++LIBS=$ac_check_lib_save_LIBS
++fi
++{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_wldap32_ldap_bind" >&5
++$as_echo "$ac_cv_lib_wldap32_ldap_bind" >&6; }
++if test "x$ac_cv_lib_wldap32_ldap_bind" = xyes; then :
++  cat >>confdefs.h <<_ACEOF
++#define HAVE_LIBWLDAP32 1
++_ACEOF
++
++  LIBS="-lwldap32 $LIBS"
++
++else
++  as_fn_error $? "library 'wldap32' is required for LDAP" "$LINENO" 5
++fi
++
++    LDAP_LIBS_FE="-lwldap32"
++    LDAP_LIBS_BE="-lwldap32"
++  fi
++  LIBS="$_LIBS"
++fi
++
++
++
++# for contrib/sepgsql
++if test "$with_selinux" = yes; then
++  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for security_compute_create_name in -lselinux" >&5
++$as_echo_n "checking for security_compute_create_name in -lselinux... " >&6; }
++if ${ac_cv_lib_selinux_security_compute_create_name+:} false; then :
++  $as_echo_n "(cached) " >&6
++else
++  ac_check_lib_save_LIBS=$LIBS
++LIBS="-lselinux  $LIBS"
++cat confdefs.h - <<_ACEOF >conftest.$ac_ext
++/* end confdefs.h.  */
++
++/* Override any GCC internal prototype to avoid an error.
++   Use char because int might match the return type of a GCC
++   builtin and then its argument prototype would still apply.  */
++#ifdef __cplusplus
++extern "C"
++#endif
++char security_compute_create_name ();
++int
++main ()
++{
++return security_compute_create_name ();
++  ;
++  return 0;
++}
++_ACEOF
++if ac_fn_c_try_link "$LINENO"; then :
++  ac_cv_lib_selinux_security_compute_create_name=yes
++else
++  ac_cv_lib_selinux_security_compute_create_name=no
++fi
++rm -f core conftest.err conftest.$ac_objext \
++    conftest$ac_exeext conftest.$ac_ext
++LIBS=$ac_check_lib_save_LIBS
++fi
++{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_selinux_security_compute_create_name" >&5
++$as_echo "$ac_cv_lib_selinux_security_compute_create_name" >&6; }
++if test "x$ac_cv_lib_selinux_security_compute_create_name" = xyes; then :
++  cat >>confdefs.h <<_ACEOF
++#define HAVE_LIBSELINUX 1
++_ACEOF
++
++  LIBS="-lselinux $LIBS"
++
++else
++  as_fn_error $? "library 'libselinux', version 2.1.10 or newer, is required for SELinux support" "$LINENO" 5
++fi
++
++fi
++
++# for contrib/uuid-ossp
++if test "$with_uuid" = bsd ; then
++  # On BSD, the UUID functions are in libc
++  ac_fn_c_check_func "$LINENO" "uuid_to_string" "ac_cv_func_uuid_to_string"
++if test "x$ac_cv_func_uuid_to_string" = xyes; then :
++  UUID_LIBS=""
++else
++  as_fn_error $? "BSD UUID functions are not present" "$LINENO" 5
++fi
++
++elif test "$with_uuid" = e2fs ; then
++  # On OS X, the UUID functions are in libc
++  ac_fn_c_check_func "$LINENO" "uuid_generate" "ac_cv_func_uuid_generate"
++if test "x$ac_cv_func_uuid_generate" = xyes; then :
++  UUID_LIBS=""
++else
++  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for uuid_generate in -luuid" >&5
++$as_echo_n "checking for uuid_generate in -luuid... " >&6; }
++if ${ac_cv_lib_uuid_uuid_generate+:} false; then :
++  $as_echo_n "(cached) " >&6
++else
++  ac_check_lib_save_LIBS=$LIBS
++LIBS="-luuid  $LIBS"
++cat confdefs.h - <<_ACEOF >conftest.$ac_ext
++/* end confdefs.h.  */
++
++/* Override any GCC internal prototype to avoid an error.
++   Use char because int might match the return type of a GCC
++   builtin and then its argument prototype would still apply.  */
++#ifdef __cplusplus
++extern "C"
++#endif
++char uuid_generate ();
++int
++main ()
++{
++return uuid_generate ();
++  ;
++  return 0;
++}
++_ACEOF
++if ac_fn_c_try_link "$LINENO"; then :
++  ac_cv_lib_uuid_uuid_generate=yes
++else
++  ac_cv_lib_uuid_uuid_generate=no
++fi
++rm -f core conftest.err conftest.$ac_objext \
++    conftest$ac_exeext conftest.$ac_ext
++LIBS=$ac_check_lib_save_LIBS
++fi
++{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_uuid_uuid_generate" >&5
++$as_echo "$ac_cv_lib_uuid_uuid_generate" >&6; }
++if test "x$ac_cv_lib_uuid_uuid_generate" = xyes; then :
++  UUID_LIBS="-luuid"
++else
++  as_fn_error $? "library 'uuid' is required for E2FS UUID" "$LINENO" 5
++fi
++
++fi
++
++elif test "$with_uuid" = ossp ; then
++  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for uuid_export in -lossp-uuid" >&5
++$as_echo_n "checking for uuid_export in -lossp-uuid... " >&6; }
++if ${ac_cv_lib_ossp_uuid_uuid_export+:} false; then :
++  $as_echo_n "(cached) " >&6
++else
++  ac_check_lib_save_LIBS=$LIBS
++LIBS="-lossp-uuid  $LIBS"
++cat confdefs.h - <<_ACEOF >conftest.$ac_ext
++/* end confdefs.h.  */
++
++/* Override any GCC internal prototype to avoid an error.
++   Use char because int might match the return type of a GCC
++   builtin and then its argument prototype would still apply.  */
++#ifdef __cplusplus
++extern "C"
++#endif
++char uuid_export ();
++int
++main ()
++{
++return uuid_export ();
++  ;
++  return 0;
++}
++_ACEOF
++if ac_fn_c_try_link "$LINENO"; then :
++  ac_cv_lib_ossp_uuid_uuid_export=yes
++else
++  ac_cv_lib_ossp_uuid_uuid_export=no
++fi
++rm -f core conftest.err conftest.$ac_objext \
++    conftest$ac_exeext conftest.$ac_ext
++LIBS=$ac_check_lib_save_LIBS
++fi
++{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_ossp_uuid_uuid_export" >&5
++$as_echo "$ac_cv_lib_ossp_uuid_uuid_export" >&6; }
++if test "x$ac_cv_lib_ossp_uuid_uuid_export" = xyes; then :
++  UUID_LIBS="-lossp-uuid"
++else
++  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for uuid_export in -luuid" >&5
++$as_echo_n "checking for uuid_export in -luuid... " >&6; }
++if ${ac_cv_lib_uuid_uuid_export+:} false; then :
++  $as_echo_n "(cached) " >&6
++else
++  ac_check_lib_save_LIBS=$LIBS
++LIBS="-luuid  $LIBS"
++cat confdefs.h - <<_ACEOF >conftest.$ac_ext
++/* end confdefs.h.  */
++
++/* Override any GCC internal prototype to avoid an error.
++   Use char because int might match the return type of a GCC
++   builtin and then its argument prototype would still apply.  */
++#ifdef __cplusplus
++extern "C"
++#endif
++char uuid_export ();
++int
++main ()
++{
++return uuid_export ();
++  ;
++  return 0;
++}
++_ACEOF
++if ac_fn_c_try_link "$LINENO"; then :
++  ac_cv_lib_uuid_uuid_export=yes
++else
++  ac_cv_lib_uuid_uuid_export=no
++fi
++rm -f core conftest.err conftest.$ac_objext \
++    conftest$ac_exeext conftest.$ac_ext
++LIBS=$ac_check_lib_save_LIBS
++fi
++{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_uuid_uuid_export" >&5
++$as_echo "$ac_cv_lib_uuid_uuid_export" >&6; }
++if test "x$ac_cv_lib_uuid_uuid_export" = xyes; then :
++  UUID_LIBS="-luuid"
++else
++  as_fn_error $? "library 'ossp-uuid' or 'uuid' is required for OSSP UUID" "$LINENO" 5
++fi
+ 
+ fi
+ 
+@@ -10562,6 +11946,17 @@
+ 
+ fi
+ 
++if test "$with_icu" = yes ; then
++  ac_fn_c_check_header_mongrel "$LINENO" "unicode/utypes.h" "ac_cv_header_unicode_utypes_h" "$ac_includes_default"
++if test "x$ac_cv_header_unicode_utypes_h" = xyes; then :
++
++else
++  as_fn_error $? "header file <unicode/utypes.h> is required for ICU" "$LINENO" 5
++fi
++
++
++fi
++
+ if test "$with_pam" = yes ; then
+   for ac_header in security/pam_appl.h
+ do :
+@@ -15395,7 +16790,6 @@
+       for pgac_postfix in \
+         sgml/stylesheets/nwalsh-modular \
+         sgml/stylesheets/docbook \
+-        sgml/dsssl/docbook/modular/1.79/ \
+         sgml/stylesheets/dsssl/docbook \
+         sgml/docbook-dsssl \
+         sgml/docbook/dsssl/modular \

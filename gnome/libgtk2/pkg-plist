@@ -1,0 +1,1464 @@
+bin/gtk-builder-convert
+bin/gtk-demo
+bin/gtk-query-immodules
+bin/gtk-update-icon-cache
+etc/gtk/im-multipress.conf
+include/gail/gail/gailwidget.h
+include/gail/libgail-util/gail-util.h
+include/gail/libgail-util/gailmisc.h
+include/gail/libgail-util/gailtextutil.h
+include/gtk-unix-print/gtk/gtkpagesetupunixdialog.h
+include/gtk-unix-print/gtk/gtkprinter.h
+include/gtk-unix-print/gtk/gtkprintjob.h
+include/gtk-unix-print/gtk/gtkprintunixdialog.h
+include/gtk-unix-print/gtk/gtkunixprint.h
+include/gtk/gdk/gdk.h
+include/gtk/gdk/gdkapplaunchcontext.h
+include/gtk/gdk/gdkcairo.h
+include/gtk/gdk/gdkcolor.h
+include/gtk/gdk/gdkcursor.h
+include/gtk/gdk/gdkdisplay.h
+include/gtk/gdk/gdkdisplaymanager.h
+include/gtk/gdk/gdkdnd.h
+include/gtk/gdk/gdkdrawable.h
+include/gtk/gdk/gdkenumtypes.h
+include/gtk/gdk/gdkevents.h
+include/gtk/gdk/gdkfont.h
+include/gtk/gdk/gdkgc.h
+include/gtk/gdk/gdki18n.h
+include/gtk/gdk/gdkimage.h
+include/gtk/gdk/gdkinput.h
+include/gtk/gdk/gdkkeys.h
+include/gtk/gdk/gdkkeysyms-compat.h
+include/gtk/gdk/gdkkeysyms.h
+include/gtk/gdk/gdkpango.h
+include/gtk/gdk/gdkpixbuf.h
+include/gtk/gdk/gdkpixmap.h
+include/gtk/gdk/gdkprivate.h
+include/gtk/gdk/gdkproperty.h
+include/gtk/gdk/gdkregion.h
+include/gtk/gdk/gdkrgb.h
+include/gtk/gdk/gdkscreen.h
+include/gtk/gdk/gdkselection.h
+include/gtk/gdk/gdkspawn.h
+include/gtk/gdk/gdktestutils.h
+include/gtk/gdk/gdktypes.h
+include/gtk/gdk/gdkvisual.h
+include/gtk/gdk/gdkwindow.h
+include/gtk/gdk/gdkx.h
+include/gtk/gdkconfig.h
+include/gtk/gtk/gtk.h
+include/gtk/gtk/gtkaboutdialog.h
+include/gtk/gtk/gtkaccelgroup.h
+include/gtk/gtk/gtkaccellabel.h
+include/gtk/gtk/gtkaccelmap.h
+include/gtk/gtk/gtkaccessible.h
+include/gtk/gtk/gtkaction.h
+include/gtk/gtk/gtkactiongroup.h
+include/gtk/gtk/gtkactivatable.h
+include/gtk/gtk/gtkadjustment.h
+include/gtk/gtk/gtkalignment.h
+include/gtk/gtk/gtkarrow.h
+include/gtk/gtk/gtkaspectframe.h
+include/gtk/gtk/gtkassistant.h
+include/gtk/gtk/gtkbbox.h
+include/gtk/gtk/gtkbin.h
+include/gtk/gtk/gtkbindings.h
+include/gtk/gtk/gtkbox.h
+include/gtk/gtk/gtkbuildable.h
+include/gtk/gtk/gtkbuilder.h
+include/gtk/gtk/gtkbutton.h
+include/gtk/gtk/gtkcalendar.h
+include/gtk/gtk/gtkcelleditable.h
+include/gtk/gtk/gtkcelllayout.h
+include/gtk/gtk/gtkcellrenderer.h
+include/gtk/gtk/gtkcellrendereraccel.h
+include/gtk/gtk/gtkcellrenderercombo.h
+include/gtk/gtk/gtkcellrendererpixbuf.h
+include/gtk/gtk/gtkcellrendererprogress.h
+include/gtk/gtk/gtkcellrendererspin.h
+include/gtk/gtk/gtkcellrendererspinner.h
+include/gtk/gtk/gtkcellrenderertext.h
+include/gtk/gtk/gtkcellrenderertoggle.h
+include/gtk/gtk/gtkcellview.h
+include/gtk/gtk/gtkcheckbutton.h
+include/gtk/gtk/gtkcheckmenuitem.h
+include/gtk/gtk/gtkclipboard.h
+include/gtk/gtk/gtkclist.h
+include/gtk/gtk/gtkcolorbutton.h
+include/gtk/gtk/gtkcolorsel.h
+include/gtk/gtk/gtkcolorseldialog.h
+include/gtk/gtk/gtkcombo.h
+include/gtk/gtk/gtkcombobox.h
+include/gtk/gtk/gtkcomboboxentry.h
+include/gtk/gtk/gtkcomboboxtext.h
+include/gtk/gtk/gtkcontainer.h
+include/gtk/gtk/gtkctree.h
+include/gtk/gtk/gtkcurve.h
+include/gtk/gtk/gtkdebug.h
+include/gtk/gtk/gtkdialog.h
+include/gtk/gtk/gtkdnd.h
+include/gtk/gtk/gtkdrawingarea.h
+include/gtk/gtk/gtkeditable.h
+include/gtk/gtk/gtkentry.h
+include/gtk/gtk/gtkentrybuffer.h
+include/gtk/gtk/gtkentrycompletion.h
+include/gtk/gtk/gtkenums.h
+include/gtk/gtk/gtkeventbox.h
+include/gtk/gtk/gtkexpander.h
+include/gtk/gtk/gtkfilechooser.h
+include/gtk/gtk/gtkfilechooserbutton.h
+include/gtk/gtk/gtkfilechooserdialog.h
+include/gtk/gtk/gtkfilechooserwidget.h
+include/gtk/gtk/gtkfilefilter.h
+include/gtk/gtk/gtkfilesel.h
+include/gtk/gtk/gtkfixed.h
+include/gtk/gtk/gtkfontbutton.h
+include/gtk/gtk/gtkfontsel.h
+include/gtk/gtk/gtkframe.h
+include/gtk/gtk/gtkgamma.h
+include/gtk/gtk/gtkgc.h
+include/gtk/gtk/gtkhandlebox.h
+include/gtk/gtk/gtkhbbox.h
+include/gtk/gtk/gtkhbox.h
+include/gtk/gtk/gtkhpaned.h
+include/gtk/gtk/gtkhruler.h
+include/gtk/gtk/gtkhscale.h
+include/gtk/gtk/gtkhscrollbar.h
+include/gtk/gtk/gtkhseparator.h
+include/gtk/gtk/gtkhsv.h
+include/gtk/gtk/gtkiconfactory.h
+include/gtk/gtk/gtkicontheme.h
+include/gtk/gtk/gtkiconview.h
+include/gtk/gtk/gtkimage.h
+include/gtk/gtk/gtkimagemenuitem.h
+include/gtk/gtk/gtkimcontext.h
+include/gtk/gtk/gtkimcontextsimple.h
+include/gtk/gtk/gtkimmodule.h
+include/gtk/gtk/gtkimmulticontext.h
+include/gtk/gtk/gtkinfobar.h
+include/gtk/gtk/gtkinputdialog.h
+include/gtk/gtk/gtkinvisible.h
+include/gtk/gtk/gtkitem.h
+include/gtk/gtk/gtkitemfactory.h
+include/gtk/gtk/gtklabel.h
+include/gtk/gtk/gtklayout.h
+include/gtk/gtk/gtklinkbutton.h
+include/gtk/gtk/gtklist.h
+include/gtk/gtk/gtklistitem.h
+include/gtk/gtk/gtkliststore.h
+include/gtk/gtk/gtkmain.h
+include/gtk/gtk/gtkmarshal.h
+include/gtk/gtk/gtkmenu.h
+include/gtk/gtk/gtkmenubar.h
+include/gtk/gtk/gtkmenuitem.h
+include/gtk/gtk/gtkmenushell.h
+include/gtk/gtk/gtkmenutoolbutton.h
+include/gtk/gtk/gtkmessagedialog.h
+include/gtk/gtk/gtkmisc.h
+include/gtk/gtk/gtkmodules.h
+include/gtk/gtk/gtkmountoperation.h
+include/gtk/gtk/gtknotebook.h
+include/gtk/gtk/gtkobject.h
+include/gtk/gtk/gtkoffscreenwindow.h
+include/gtk/gtk/gtkoldeditable.h
+include/gtk/gtk/gtkoptionmenu.h
+include/gtk/gtk/gtkorientable.h
+include/gtk/gtk/gtkpagesetup.h
+include/gtk/gtk/gtkpaned.h
+include/gtk/gtk/gtkpapersize.h
+include/gtk/gtk/gtkpixmap.h
+include/gtk/gtk/gtkplug.h
+include/gtk/gtk/gtkpreview.h
+include/gtk/gtk/gtkprintcontext.h
+include/gtk/gtk/gtkprintoperation.h
+include/gtk/gtk/gtkprintoperationpreview.h
+include/gtk/gtk/gtkprintsettings.h
+include/gtk/gtk/gtkprivate.h
+include/gtk/gtk/gtkprogress.h
+include/gtk/gtk/gtkprogressbar.h
+include/gtk/gtk/gtkradioaction.h
+include/gtk/gtk/gtkradiobutton.h
+include/gtk/gtk/gtkradiomenuitem.h
+include/gtk/gtk/gtkradiotoolbutton.h
+include/gtk/gtk/gtkrange.h
+include/gtk/gtk/gtkrc.h
+include/gtk/gtk/gtkrecentaction.h
+include/gtk/gtk/gtkrecentchooser.h
+include/gtk/gtk/gtkrecentchooserdialog.h
+include/gtk/gtk/gtkrecentchoosermenu.h
+include/gtk/gtk/gtkrecentchooserwidget.h
+include/gtk/gtk/gtkrecentfilter.h
+include/gtk/gtk/gtkrecentmanager.h
+include/gtk/gtk/gtkruler.h
+include/gtk/gtk/gtkscale.h
+include/gtk/gtk/gtkscalebutton.h
+include/gtk/gtk/gtkscrollbar.h
+include/gtk/gtk/gtkscrolledwindow.h
+include/gtk/gtk/gtkselection.h
+include/gtk/gtk/gtkseparator.h
+include/gtk/gtk/gtkseparatormenuitem.h
+include/gtk/gtk/gtkseparatortoolitem.h
+include/gtk/gtk/gtksettings.h
+include/gtk/gtk/gtkshow.h
+include/gtk/gtk/gtksignal.h
+include/gtk/gtk/gtksizegroup.h
+include/gtk/gtk/gtksocket.h
+include/gtk/gtk/gtkspinbutton.h
+include/gtk/gtk/gtkspinner.h
+include/gtk/gtk/gtkstatusbar.h
+include/gtk/gtk/gtkstatusicon.h
+include/gtk/gtk/gtkstock.h
+include/gtk/gtk/gtkstyle.h
+include/gtk/gtk/gtktable.h
+include/gtk/gtk/gtktearoffmenuitem.h
+include/gtk/gtk/gtktestutils.h
+include/gtk/gtk/gtktext.h
+include/gtk/gtk/gtktextbuffer.h
+include/gtk/gtk/gtktextbufferrichtext.h
+include/gtk/gtk/gtktextchild.h
+include/gtk/gtk/gtktextdisplay.h
+include/gtk/gtk/gtktextiter.h
+include/gtk/gtk/gtktextlayout.h
+include/gtk/gtk/gtktextmark.h
+include/gtk/gtk/gtktexttag.h
+include/gtk/gtk/gtktexttagtable.h
+include/gtk/gtk/gtktextview.h
+include/gtk/gtk/gtktipsquery.h
+include/gtk/gtk/gtktoggleaction.h
+include/gtk/gtk/gtktogglebutton.h
+include/gtk/gtk/gtktoggletoolbutton.h
+include/gtk/gtk/gtktoolbar.h
+include/gtk/gtk/gtktoolbutton.h
+include/gtk/gtk/gtktoolitem.h
+include/gtk/gtk/gtktoolitemgroup.h
+include/gtk/gtk/gtktoolpalette.h
+include/gtk/gtk/gtktoolshell.h
+include/gtk/gtk/gtktooltip.h
+include/gtk/gtk/gtktooltips.h
+include/gtk/gtk/gtktree.h
+include/gtk/gtk/gtktreednd.h
+include/gtk/gtk/gtktreeitem.h
+include/gtk/gtk/gtktreemodel.h
+include/gtk/gtk/gtktreemodelfilter.h
+include/gtk/gtk/gtktreemodelsort.h
+include/gtk/gtk/gtktreeselection.h
+include/gtk/gtk/gtktreesortable.h
+include/gtk/gtk/gtktreestore.h
+include/gtk/gtk/gtktreeview.h
+include/gtk/gtk/gtktreeviewcolumn.h
+include/gtk/gtk/gtktypebuiltins.h
+include/gtk/gtk/gtktypeutils.h
+include/gtk/gtk/gtkuimanager.h
+include/gtk/gtk/gtkvbbox.h
+include/gtk/gtk/gtkvbox.h
+include/gtk/gtk/gtkversion.h
+include/gtk/gtk/gtkviewport.h
+include/gtk/gtk/gtkvolumebutton.h
+include/gtk/gtk/gtkvpaned.h
+include/gtk/gtk/gtkvruler.h
+include/gtk/gtk/gtkvscale.h
+include/gtk/gtk/gtkvscrollbar.h
+include/gtk/gtk/gtkvseparator.h
+include/gtk/gtk/gtkwidget.h
+include/gtk/gtk/gtkwindow.h
+lib/gtk/engines/libpixmap.a
+lib/gtk/engines/libpixmap.la
+lib/gtk/engines/libpixmap.so
+lib/gtk/immodules/im-am-et.a
+lib/gtk/immodules/im-am-et.la
+lib/gtk/immodules/im-am-et.so
+lib/gtk/immodules/im-cedilla.a
+lib/gtk/immodules/im-cedilla.la
+lib/gtk/immodules/im-cedilla.so
+lib/gtk/immodules/im-cyrillic-translit.a
+lib/gtk/immodules/im-cyrillic-translit.la
+lib/gtk/immodules/im-cyrillic-translit.so
+lib/gtk/immodules/im-inuktitut.a
+lib/gtk/immodules/im-inuktitut.la
+lib/gtk/immodules/im-inuktitut.so
+lib/gtk/immodules/im-ipa.a
+lib/gtk/immodules/im-ipa.la
+lib/gtk/immodules/im-ipa.so
+lib/gtk/immodules/im-multipress.a
+lib/gtk/immodules/im-multipress.la
+lib/gtk/immodules/im-multipress.so
+lib/gtk/immodules/im-thai.a
+lib/gtk/immodules/im-thai.la
+lib/gtk/immodules/im-thai.so
+lib/gtk/immodules/im-ti-er.a
+lib/gtk/immodules/im-ti-er.la
+lib/gtk/immodules/im-ti-er.so
+lib/gtk/immodules/im-ti-et.a
+lib/gtk/immodules/im-ti-et.la
+lib/gtk/immodules/im-ti-et.so
+lib/gtk/immodules/im-viqr.a
+lib/gtk/immodules/im-viqr.la
+lib/gtk/immodules/im-viqr.so
+lib/gtk/immodules/im-xim.a
+lib/gtk/immodules/im-xim.la
+lib/gtk/immodules/im-xim.so
+lib/gtk/modules/libferret.a
+lib/gtk/modules/libferret.la
+lib/gtk/modules/libferret.so
+lib/gtk/modules/libgail.a
+lib/gtk/modules/libgail.la
+lib/gtk/modules/libgail.so
+lib/gtk/printbackends/libprintbackend-cups.a
+lib/gtk/printbackends/libprintbackend-cups.la
+lib/gtk/printbackends/libprintbackend-cups.so
+lib/gtk/printbackends/libprintbackend-file.a
+lib/gtk/printbackends/libprintbackend-file.la
+lib/gtk/printbackends/libprintbackend-file.so
+lib/gtk/printbackends/libprintbackend-lpr.a
+lib/gtk/printbackends/libprintbackend-lpr.la
+lib/gtk/printbackends/libprintbackend-lpr.so
+lib/libgailutil.a
+lib/libgailutil.la
+lib/libgailutil.so
+lib/libgailutil.so.18
+lib/libgdk-x11.a
+lib/libgdk-x11.la
+lib/libgdk-x11.so
+lib/libgdk-x11.so.2
+lib/libgtk-x11.a
+lib/libgtk-x11.la
+lib/libgtk-x11.so
+lib/libgtk-x11.so.2
+lib/pkgconfig/gail.pc
+lib/pkgconfig/gdk-x11.pc
+lib/pkgconfig/gdk.pc
+lib/pkgconfig/gtk+-unix-print.pc
+lib/pkgconfig/gtk+-x11.pc
+lib/pkgconfig/gtk+.pc
+share/aclocal/gtk.m4
+share/doc/gtk2/gail-libgail-util/gail-libgail-util-GailMisc.html
+share/doc/gtk2/gail-libgail-util/gail-libgail-util-GailTextUtil.html
+share/doc/gtk2/gail-libgail-util/gail-libgail-util.devhelp2
+share/doc/gtk2/gail-libgail-util/home.png
+share/doc/gtk2/gail-libgail-util/index.html
+share/doc/gtk2/gail-libgail-util/left-insensitive.png
+share/doc/gtk2/gail-libgail-util/left.png
+share/doc/gtk2/gail-libgail-util/libgail-util-main.html
+share/doc/gtk2/gail-libgail-util/right-insensitive.png
+share/doc/gtk2/gail-libgail-util/right.png
+share/doc/gtk2/gail-libgail-util/style.css
+share/doc/gtk2/gail-libgail-util/up-insensitive.png
+share/doc/gtk2/gail-libgail-util/up.png
+share/doc/gtk2/gdk2/annotation-glossary.html
+share/doc/gtk2/gdk2/api-index-2-10.html
+share/doc/gtk2/gdk2/api-index-2-12.html
+share/doc/gtk2/gdk2/api-index-2-14.html
+share/doc/gtk2/gdk2/api-index-2-16.html
+share/doc/gtk2/gdk2/api-index-2-18.html
+share/doc/gtk2/gdk2/api-index-2-2.html
+share/doc/gtk2/gdk2/api-index-2-20.html
+share/doc/gtk2/gdk2/api-index-2-22.html
+share/doc/gtk2/gdk2/api-index-2-4.html
+share/doc/gtk2/gdk2/api-index-2-6.html
+share/doc/gtk2/gdk2/api-index-2-8.html
+share/doc/gtk2/gdk2/api-index-deprecated.html
+share/doc/gtk2/gdk2/api-index-full.html
+share/doc/gtk2/gdk2/arrow.png
+share/doc/gtk2/gdk2/based_arrow_down.png
+share/doc/gtk2/gdk2/based_arrow_up.png
+share/doc/gtk2/gdk2/boat.png
+share/doc/gtk2/gdk2/bogosity.png
+share/doc/gtk2/gdk2/bottom_left_corner.png
+share/doc/gtk2/gdk2/bottom_right_corner.png
+share/doc/gtk2/gdk2/bottom_side.png
+share/doc/gtk2/gdk2/bottom_tee.png
+share/doc/gtk2/gdk2/box_spiral.png
+share/doc/gtk2/gdk2/center_ptr.png
+share/doc/gtk2/gdk2/circle.png
+share/doc/gtk2/gdk2/clock.png
+share/doc/gtk2/gdk2/coffee_mug.png
+share/doc/gtk2/gdk2/cross_reverse.png
+share/doc/gtk2/gdk2/cross.png
+share/doc/gtk2/gdk2/crosshair.png
+share/doc/gtk2/gdk2/diamond_cross.png
+share/doc/gtk2/gdk2/dot.png
+share/doc/gtk2/gdk2/dotbox.png
+share/doc/gtk2/gdk2/double_arrow.png
+share/doc/gtk2/gdk2/draft_large.png
+share/doc/gtk2/gdk2/draft_small.png
+share/doc/gtk2/gdk2/draped_box.png
+share/doc/gtk2/gdk2/exchange.png
+share/doc/gtk2/gdk2/fleur.png
+share/doc/gtk2/gdk2/gdk2-Application-launching.html
+share/doc/gtk2/gdk2/gdk2-Bitmaps-and-Pixmaps.html
+share/doc/gtk2/gdk2/gdk2-Cairo-Interaction.html
+share/doc/gtk2/gdk2/gdk2-Colormaps-and-Colors.html
+share/doc/gtk2/gdk2/gdk2-Cursors.html
+share/doc/gtk2/gdk2/gdk2-Drag-and-Drop.html
+share/doc/gtk2/gdk2/gdk2-Drawing-Primitives.html
+share/doc/gtk2/gdk2/gdk2-Event-Structures.html
+share/doc/gtk2/gdk2/gdk2-Events.html
+share/doc/gtk2/gdk2/gdk2-Fonts.html
+share/doc/gtk2/gdk2/gdk2-GdkRGB.html
+share/doc/gtk2/gdk2/gdk2-General.html
+share/doc/gtk2/gdk2/gdk2-Graphics-Contexts.html
+share/doc/gtk2/gdk2/gdk2-Images.html
+share/doc/gtk2/gdk2/gdk2-Input-Devices.html
+share/doc/gtk2/gdk2/gdk2-Input.html
+share/doc/gtk2/gdk2/gdk2-Keyboard-Handling.html
+share/doc/gtk2/gdk2/gdk2-Pango-Interaction.html
+share/doc/gtk2/gdk2/gdk2-Pixbufs.html
+share/doc/gtk2/gdk2/gdk2-Points-Rectangles-and-Regions.html
+share/doc/gtk2/gdk2/gdk2-Properties-and-Atoms.html
+share/doc/gtk2/gdk2/gdk2-Selections.html
+share/doc/gtk2/gdk2/gdk2-Testing.html
+share/doc/gtk2/gdk2/gdk2-Threads.html
+share/doc/gtk2/gdk2/gdk2-Visuals.html
+share/doc/gtk2/gdk2/gdk2-Windows.html
+share/doc/gtk2/gdk2/gdk2-X-Window-System-Interaction.html
+share/doc/gtk2/gdk2/gdk2.devhelp2
+share/doc/gtk2/gdk2/GdkDisplay.html
+share/doc/gtk2/gdk2/GdkDisplayManager.html
+share/doc/gtk2/gdk2/GdkScreen.html
+share/doc/gtk2/gdk2/gobbler.png
+share/doc/gtk2/gdk2/gumby.png
+share/doc/gtk2/gdk2/hand1.png
+share/doc/gtk2/gdk2/hand2.png
+share/doc/gtk2/gdk2/heart.png
+share/doc/gtk2/gdk2/home.png
+share/doc/gtk2/gdk2/icon.png
+share/doc/gtk2/gdk2/index.html
+share/doc/gtk2/gdk2/iron_cross.png
+share/doc/gtk2/gdk2/left_ptr.png
+share/doc/gtk2/gdk2/left_side.png
+share/doc/gtk2/gdk2/left_tee.png
+share/doc/gtk2/gdk2/left-insensitive.png
+share/doc/gtk2/gdk2/left.png
+share/doc/gtk2/gdk2/leftbutton.png
+share/doc/gtk2/gdk2/ll_angle.png
+share/doc/gtk2/gdk2/lr_angle.png
+share/doc/gtk2/gdk2/man.png
+share/doc/gtk2/gdk2/middlebutton.png
+share/doc/gtk2/gdk2/mouse.png
+share/doc/gtk2/gdk2/multihead.html
+share/doc/gtk2/gdk2/pencil.png
+share/doc/gtk2/gdk2/pirate.png
+share/doc/gtk2/gdk2/plus.png
+share/doc/gtk2/gdk2/question_arrow.png
+share/doc/gtk2/gdk2/reference.html
+share/doc/gtk2/gdk2/right_ptr.png
+share/doc/gtk2/gdk2/right_side.png
+share/doc/gtk2/gdk2/right_tee.png
+share/doc/gtk2/gdk2/right-insensitive.png
+share/doc/gtk2/gdk2/right.png
+share/doc/gtk2/gdk2/rightbutton.png
+share/doc/gtk2/gdk2/rotated-text.png
+share/doc/gtk2/gdk2/rtl_logo.png
+share/doc/gtk2/gdk2/sailboat.png
+share/doc/gtk2/gdk2/sb_down_arrow.png
+share/doc/gtk2/gdk2/sb_h_double_arrow.png
+share/doc/gtk2/gdk2/sb_left_arrow.png
+share/doc/gtk2/gdk2/sb_right_arrow.png
+share/doc/gtk2/gdk2/sb_up_arrow.png
+share/doc/gtk2/gdk2/sb_v_double_arrow.png
+share/doc/gtk2/gdk2/shuttle.png
+share/doc/gtk2/gdk2/sizing.png
+share/doc/gtk2/gdk2/spider.png
+share/doc/gtk2/gdk2/spraycan.png
+share/doc/gtk2/gdk2/star.png
+share/doc/gtk2/gdk2/style.css
+share/doc/gtk2/gdk2/target.png
+share/doc/gtk2/gdk2/tcross.png
+share/doc/gtk2/gdk2/top_left_arrow.png
+share/doc/gtk2/gdk2/top_left_corner.png
+share/doc/gtk2/gdk2/top_right_corner.png
+share/doc/gtk2/gdk2/top_side.png
+share/doc/gtk2/gdk2/top_tee.png
+share/doc/gtk2/gdk2/trek.png
+share/doc/gtk2/gdk2/ul_angle.png
+share/doc/gtk2/gdk2/umbrella.png
+share/doc/gtk2/gdk2/up-insensitive.png
+share/doc/gtk2/gdk2/up.png
+share/doc/gtk2/gdk2/ur_angle.png
+share/doc/gtk2/gdk2/watch.png
+share/doc/gtk2/gdk2/X_cursor.png
+share/doc/gtk2/gdk2/xterm.png
+share/doc/gtk2/gtk2/aboutdialog.png
+share/doc/gtk2/gtk2/AbstractObjects.html
+share/doc/gtk2/gtk2/accel-label.png
+share/doc/gtk2/gtk2/Actions.html
+share/doc/gtk2/gtk2/annotation-glossary.html
+share/doc/gtk2/gtk2/api-index-2-10.html
+share/doc/gtk2/gtk2/api-index-2-12.html
+share/doc/gtk2/gtk2/api-index-2-14.html
+share/doc/gtk2/gtk2/api-index-2-16.html
+share/doc/gtk2/gtk2/api-index-2-18.html
+share/doc/gtk2/gtk2/api-index-2-2.html
+share/doc/gtk2/gtk2/api-index-2-20.html
+share/doc/gtk2/gtk2/api-index-2-22.html
+share/doc/gtk2/gtk2/api-index-2-24.html
+share/doc/gtk2/gtk2/api-index-2-4.html
+share/doc/gtk2/gtk2/api-index-2-6.html
+share/doc/gtk2/gtk2/api-index-2-8.html
+share/doc/gtk2/gtk2/api-index-deprecated.html
+share/doc/gtk2/gtk2/api-index-full.html
+share/doc/gtk2/gtk2/application-exit.png
+share/doc/gtk2/gtk2/assistant.png
+share/doc/gtk2/gtk2/Builder.html
+share/doc/gtk2/gtk2/button.png
+share/doc/gtk2/gtk2/ButtonWidgets.html
+share/doc/gtk2/gtk2/ch01.html
+share/doc/gtk2/gtk2/ch02.html
+share/doc/gtk2/gtk2/chap-drawing-model.html
+share/doc/gtk2/gtk2/check-button.png
+share/doc/gtk2/gtk2/checklist-gdkeventexpose-region.html
+share/doc/gtk2/gtk2/checklist-modifiers.html
+share/doc/gtk2/gtk2/checklist-named-icons.html
+share/doc/gtk2/gtk2/color-button.png
+share/doc/gtk2/gtk2/colorsel.png
+share/doc/gtk2/gtk2/combo-box-entry.png
+share/doc/gtk2/gtk2/combo-box.png
+share/doc/gtk2/gtk2/decorating-the-assistant-pages.html
+share/doc/gtk2/gtk2/DeprecatedObjects.html
+share/doc/gtk2/gtk2/dialog-error.png
+share/doc/gtk2/gtk2/dialog-information.png
+share/doc/gtk2/gtk2/dialog-password.png
+share/doc/gtk2/gtk2/dialog-question.png
+share/doc/gtk2/gtk2/dialog-warning.png
+share/doc/gtk2/gtk2/DisplayWidgets.html
+share/doc/gtk2/gtk2/document-new.png
+share/doc/gtk2/gtk2/document-open.png
+share/doc/gtk2/gtk2/document-print-preview.png
+share/doc/gtk2/gtk2/document-print.png
+share/doc/gtk2/gtk2/document-properties.png
+share/doc/gtk2/gtk2/document-revert-ltr.png
+share/doc/gtk2/gtk2/document-revert-rtl.png
+share/doc/gtk2/gtk2/document-save-as.png
+share/doc/gtk2/gtk2/document-save.png
+share/doc/gtk2/gtk2/drive-harddisk.png
+share/doc/gtk2/gtk2/edit-clear.png
+share/doc/gtk2/gtk2/edit-copy.png
+share/doc/gtk2/gtk2/edit-cut.png
+share/doc/gtk2/gtk2/edit-delete.png
+share/doc/gtk2/gtk2/edit-find-replace.png
+share/doc/gtk2/gtk2/edit-find.png
+share/doc/gtk2/gtk2/edit-paste.png
+share/doc/gtk2/gtk2/edit-redo-ltr.png
+share/doc/gtk2/gtk2/edit-redo-rtl.png
+share/doc/gtk2/gtk2/edit-select-all.png
+share/doc/gtk2/gtk2/edit-undo-ltr.png
+share/doc/gtk2/gtk2/edit-undo-rtl.png
+share/doc/gtk2/gtk2/entry.png
+share/doc/gtk2/gtk2/figure-hierarchical-drawing.png
+share/doc/gtk2/gtk2/figure-windowed-label.png
+share/doc/gtk2/gtk2/file-button.png
+share/doc/gtk2/gtk2/filechooser.png
+share/doc/gtk2/gtk2/folder.png
+share/doc/gtk2/gtk2/font-button.png
+share/doc/gtk2/gtk2/fontsel.png
+share/doc/gtk2/gtk2/format-indent-less-ltr.png
+share/doc/gtk2/gtk2/format-indent-less-rtl.png
+share/doc/gtk2/gtk2/format-indent-more-ltr.png
+share/doc/gtk2/gtk2/format-indent-more-rtl.png
+share/doc/gtk2/gtk2/format-justify-center.png
+share/doc/gtk2/gtk2/format-justify-fill.png
+share/doc/gtk2/gtk2/format-justify-left.png
+share/doc/gtk2/gtk2/format-justify-right.png
+share/doc/gtk2/gtk2/format-text-bold.png
+share/doc/gtk2/gtk2/format-text-italic.png
+share/doc/gtk2/gtk2/format-text-strikethrough.png
+share/doc/gtk2/gtk2/format-text-underline.png
+share/doc/gtk2/gtk2/frame.png
+share/doc/gtk2/gtk2/glossary.html
+share/doc/gtk2/gtk2/go-bottom.png
+share/doc/gtk2/gtk2/go-down.png
+share/doc/gtk2/gtk2/go-first-ltr.png
+share/doc/gtk2/gtk2/go-first-rtl.png
+share/doc/gtk2/gtk2/go-home.png
+share/doc/gtk2/gtk2/go-jump-ltr.png
+share/doc/gtk2/gtk2/go-jump-rtl.png
+share/doc/gtk2/gtk2/go-last-ltr.png
+share/doc/gtk2/gtk2/go-last-rtl.png
+share/doc/gtk2/gtk2/go-next-ltr.png
+share/doc/gtk2/gtk2/go-next-rtl.png
+share/doc/gtk2/gtk2/go-previous-ltr.png
+share/doc/gtk2/gtk2/go-previous-rtl.png
+share/doc/gtk2/gtk2/go-top.png
+share/doc/gtk2/gtk2/go-up.png
+share/doc/gtk2/gtk2/gtk-apply.png
+share/doc/gtk2/gtk2/gtk-builder-convert.html
+share/doc/gtk2/gtk2/gtk-building.html
+share/doc/gtk2/gtk2/gtk-cancel.png
+share/doc/gtk2/gtk2/gtk-caps-lock-warning.png
+share/doc/gtk2/gtk2/gtk-changes-1-2.html
+share/doc/gtk2/gtk2/gtk-changes-2-0.html
+share/doc/gtk2/gtk2/gtk-color-picker.png
+share/doc/gtk2/gtk2/gtk-compiling.html
+share/doc/gtk2/gtk2/gtk-connect.png
+share/doc/gtk2/gtk2/gtk-convert.png
+share/doc/gtk2/gtk2/gtk-directfb.html
+share/doc/gtk2/gtk2/gtk-disconnect.png
+share/doc/gtk2/gtk2/gtk-dnd-multiple.png
+share/doc/gtk2/gtk2/gtk-dnd.png
+share/doc/gtk2/gtk2/gtk-edit.png
+share/doc/gtk2/gtk2/gtk-font.png
+share/doc/gtk2/gtk2/gtk-index.png
+share/doc/gtk2/gtk2/gtk-migrating-checklist.html
+share/doc/gtk2/gtk2/gtk-migrating-ClientSideWindows.html
+share/doc/gtk2/gtk2/gtk-migrating-entry-icons.html
+share/doc/gtk2/gtk2/gtk-migrating-GtkAboutDialog.html
+share/doc/gtk2/gtk2/gtk-migrating-GtkAction.html
+share/doc/gtk2/gtk2/gtk-migrating-GtkAssistant.html
+share/doc/gtk2/gtk2/gtk-migrating-GtkBuilder.html
+share/doc/gtk2/gtk2/gtk-migrating-GtkColorButton.html
+share/doc/gtk2/gtk2/gtk-migrating-GtkComboBox.html
+share/doc/gtk2/gtk2/gtk-migrating-GtkFileChooser.html
+share/doc/gtk2/gtk2/gtk-migrating-GtkIconView.html
+share/doc/gtk2/gtk2/gtk-migrating-GtkLinkButton.html
+share/doc/gtk2/gtk2/gtk-migrating-GtkRecentChooser.html
+share/doc/gtk2/gtk2/gtk-migrating-label-links.html
+share/doc/gtk2/gtk2/gtk-migrating-tooltips.html
+share/doc/gtk2/gtk2/gtk-no.png
+share/doc/gtk2/gtk2/gtk-ok.png
+share/doc/gtk2/gtk2/gtk-orientation-landscape.png
+share/doc/gtk2/gtk2/gtk-orientation-portrait.png
+share/doc/gtk2/gtk2/gtk-orientation-reverse-landscape.png
+share/doc/gtk2/gtk2/gtk-orientation-reverse-portrait.png
+share/doc/gtk2/gtk2/gtk-osx.html
+share/doc/gtk2/gtk2/gtk-page-setup.png
+share/doc/gtk2/gtk2/gtk-preferences.png
+share/doc/gtk2/gtk2/gtk-query-immodules-2.0.html
+share/doc/gtk2/gtk2/gtk-question-index.html
+share/doc/gtk2/gtk2/gtk-resources.html
+share/doc/gtk2/gtk2/gtk-running.html
+share/doc/gtk2/gtk2/gtk-select-color.png
+share/doc/gtk2/gtk2/gtk-undelete-ltr.png
+share/doc/gtk2/gtk2/gtk-undelete-rtl.png
+share/doc/gtk2/gtk2/gtk-update-icon-cache.html
+share/doc/gtk2/gtk2/gtk-windows.html
+share/doc/gtk2/gtk2/gtk-x11.html
+share/doc/gtk2/gtk2/gtk-yes.png
+share/doc/gtk2/gtk2/gtk.html
+share/doc/gtk2/gtk2/gtk2-Accelerator-Maps.html
+share/doc/gtk2/gtk2/gtk2-Bindings.html
+share/doc/gtk2/gtk2/gtk2-Clipboards.html
+share/doc/gtk2/gtk2/gtk2-Drag-and-Drop.html
+share/doc/gtk2/gtk2/gtk2-Feature-Test-Macros.html
+share/doc/gtk2/gtk2/gtk2-Filesystem-utilities.html
+share/doc/gtk2/gtk2/gtk2-General.html
+share/doc/gtk2/gtk2/gtk2-Graphics-Contexts.html
+share/doc/gtk2/gtk2/gtk2-gtkcheckmenuitem.html
+share/doc/gtk2/gtk2/gtk2-gtkfilefilter.html
+share/doc/gtk2/gtk2/gtk2-GtkTreeView-drag-and-drop.html
+share/doc/gtk2/gtk2/gtk2-High-level-Printing-API.html
+share/doc/gtk2/gtk2/gtk2-Keyboard-Accelerators.html
+share/doc/gtk2/gtk2/gtk2-Orientable.html
+share/doc/gtk2/gtk2/gtk2-Resource-Files.html
+share/doc/gtk2/gtk2/gtk2-Selections.html
+share/doc/gtk2/gtk2/gtk2-Signals.html
+share/doc/gtk2/gtk2/gtk2-Standard-Enumerations.html
+share/doc/gtk2/gtk2/gtk2-Stock-Items.html
+share/doc/gtk2/gtk2/gtk2-Testing.html
+share/doc/gtk2/gtk2/gtk2-Themeable-Stock-Images.html
+share/doc/gtk2/gtk2/gtk2-Types.html
+share/doc/gtk2/gtk2/gtk2.devhelp2
+share/doc/gtk2/gtk2/GtkAboutDialog.html
+share/doc/gtk2/gtk2/GtkAccelLabel.html
+share/doc/gtk2/gtk2/GtkAccessible.html
+share/doc/gtk2/gtk2/GtkAction.html
+share/doc/gtk2/gtk2/GtkActionGroup.html
+share/doc/gtk2/gtk2/GtkActivatable.html
+share/doc/gtk2/gtk2/GtkAdjustment.html
+share/doc/gtk2/gtk2/GtkAlignment.html
+share/doc/gtk2/gtk2/GtkArrow.html
+share/doc/gtk2/gtk2/GtkAspectFrame.html
+share/doc/gtk2/gtk2/GtkAssistant.html
+share/doc/gtk2/gtk2/gtkbase.html
+share/doc/gtk2/gtk2/GtkBin.html
+share/doc/gtk2/gtk2/GtkBox.html
+share/doc/gtk2/gtk2/GtkBuildable.html
+share/doc/gtk2/gtk2/GtkBuilder.html
+share/doc/gtk2/gtk2/GtkButton.html
+share/doc/gtk2/gtk2/GtkButtonBox.html
+share/doc/gtk2/gtk2/GtkCalendar.html
+share/doc/gtk2/gtk2/GtkCellEditable.html
+share/doc/gtk2/gtk2/GtkCellLayout.html
+share/doc/gtk2/gtk2/GtkCellRenderer.html
+share/doc/gtk2/gtk2/GtkCellRendererAccel.html
+share/doc/gtk2/gtk2/GtkCellRendererCombo.html
+share/doc/gtk2/gtk2/GtkCellRendererPixbuf.html
+share/doc/gtk2/gtk2/GtkCellRendererProgress.html
+share/doc/gtk2/gtk2/GtkCellRendererSpin.html
+share/doc/gtk2/gtk2/GtkCellRendererSpinner.html
+share/doc/gtk2/gtk2/GtkCellRendererText.html
+share/doc/gtk2/gtk2/GtkCellRendererToggle.html
+share/doc/gtk2/gtk2/GtkCellView.html
+share/doc/gtk2/gtk2/GtkCheckButton.html
+share/doc/gtk2/gtk2/GtkCList.html
+share/doc/gtk2/gtk2/GtkColorButton.html
+share/doc/gtk2/gtk2/GtkColorSelection.html
+share/doc/gtk2/gtk2/GtkColorSelectionDialog.html
+share/doc/gtk2/gtk2/GtkCombo.html
+share/doc/gtk2/gtk2/GtkComboBox.html
+share/doc/gtk2/gtk2/GtkComboBoxEntry.html
+share/doc/gtk2/gtk2/GtkComboBoxText.html
+share/doc/gtk2/gtk2/GtkContainer.html
+share/doc/gtk2/gtk2/GtkCTree.html
+share/doc/gtk2/gtk2/GtkCurve.html
+share/doc/gtk2/gtk2/GtkDialog.html
+share/doc/gtk2/gtk2/GtkDrawingArea.html
+share/doc/gtk2/gtk2/GtkEditable.html
+share/doc/gtk2/gtk2/GtkEntry.html
+share/doc/gtk2/gtk2/GtkEntryBuffer.html
+share/doc/gtk2/gtk2/GtkEntryCompletion.html
+share/doc/gtk2/gtk2/GtkEventBox.html
+share/doc/gtk2/gtk2/GtkExpander.html
+share/doc/gtk2/gtk2/gtkfilechooser-installing-extra-widgets.html
+share/doc/gtk2/gtk2/gtkfilechooser-installing-preview.html
+share/doc/gtk2/gtk2/gtkfilechooser-new-features.html
+share/doc/gtk2/gtk2/gtkfilechooser-selection-modes.html
+share/doc/gtk2/gtk2/GtkFileChooser.html
+share/doc/gtk2/gtk2/GtkFileChooserButton.html
+share/doc/gtk2/gtk2/GtkFileChooserDialog.html
+share/doc/gtk2/gtk2/GtkFileChooserWidget.html
+share/doc/gtk2/gtk2/GtkFileSelection.html
+share/doc/gtk2/gtk2/GtkFixed.html
+share/doc/gtk2/gtk2/GtkFontButton.html
+share/doc/gtk2/gtk2/GtkFontSelection.html
+share/doc/gtk2/gtk2/GtkFontSelectionDialog.html
+share/doc/gtk2/gtk2/GtkFrame.html
+share/doc/gtk2/gtk2/GtkGammaCurve.html
+share/doc/gtk2/gtk2/GtkHandleBox.html
+share/doc/gtk2/gtk2/GtkHBox.html
+share/doc/gtk2/gtk2/GtkHButtonBox.html
+share/doc/gtk2/gtk2/GtkHPaned.html
+share/doc/gtk2/gtk2/GtkHRuler.html
+share/doc/gtk2/gtk2/GtkHScale.html
+share/doc/gtk2/gtk2/GtkHScrollbar.html
+share/doc/gtk2/gtk2/GtkHSeparator.html
+share/doc/gtk2/gtk2/GtkHSV.html
+share/doc/gtk2/gtk2/GtkIconTheme.html
+share/doc/gtk2/gtk2/GtkIconView.html
+share/doc/gtk2/gtk2/GtkImage.html
+share/doc/gtk2/gtk2/GtkImageMenuItem.html
+share/doc/gtk2/gtk2/GtkIMContext.html
+share/doc/gtk2/gtk2/GtkIMContextSimple.html
+share/doc/gtk2/gtk2/GtkIMMulticontext.html
+share/doc/gtk2/gtk2/GtkInfoBar.html
+share/doc/gtk2/gtk2/GtkInputDialog.html
+share/doc/gtk2/gtk2/GtkInvisible.html
+share/doc/gtk2/gtk2/GtkItem.html
+share/doc/gtk2/gtk2/GtkItemFactory.html
+share/doc/gtk2/gtk2/GtkLabel.html
+share/doc/gtk2/gtk2/GtkLayout.html
+share/doc/gtk2/gtk2/GtkLinkButton.html
+share/doc/gtk2/gtk2/GtkList.html
+share/doc/gtk2/gtk2/GtkListItem.html
+share/doc/gtk2/gtk2/GtkListStore.html
+share/doc/gtk2/gtk2/GtkMenu.html
+share/doc/gtk2/gtk2/GtkMenuBar.html
+share/doc/gtk2/gtk2/GtkMenuItem.html
+share/doc/gtk2/gtk2/GtkMenuShell.html
+share/doc/gtk2/gtk2/GtkMenuToolButton.html
+share/doc/gtk2/gtk2/GtkMessageDialog.html
+share/doc/gtk2/gtk2/GtkMisc.html
+share/doc/gtk2/gtk2/GtkNotebook.html
+share/doc/gtk2/gtk2/GtkObject.html
+share/doc/gtk2/gtk2/gtkobjects.html
+share/doc/gtk2/gtk2/GtkOffscreenWindow.html
+share/doc/gtk2/gtk2/GtkOldEditable.html
+share/doc/gtk2/gtk2/GtkOptionMenu.html
+share/doc/gtk2/gtk2/GtkPageSetup.html
+share/doc/gtk2/gtk2/GtkPageSetupUnixDialog.html
+share/doc/gtk2/gtk2/GtkPaned.html
+share/doc/gtk2/gtk2/GtkPaperSize.html
+share/doc/gtk2/gtk2/GtkPixmap.html
+share/doc/gtk2/gtk2/GtkPlug.html
+share/doc/gtk2/gtk2/GtkPreview.html
+share/doc/gtk2/gtk2/GtkPrintContext.html
+share/doc/gtk2/gtk2/GtkPrinter.html
+share/doc/gtk2/gtk2/GtkPrintJob.html
+share/doc/gtk2/gtk2/GtkPrintSettings.html
+share/doc/gtk2/gtk2/GtkPrintUnixDialog.html
+share/doc/gtk2/gtk2/GtkProgress.html
+share/doc/gtk2/gtk2/GtkProgressBar.html
+share/doc/gtk2/gtk2/GtkRadioAction.html
+share/doc/gtk2/gtk2/GtkRadioButton.html
+share/doc/gtk2/gtk2/GtkRadioMenuItem.html
+share/doc/gtk2/gtk2/GtkRadioToolButton.html
+share/doc/gtk2/gtk2/GtkRange.html
+share/doc/gtk2/gtk2/gtkrecent-advanced.html
+share/doc/gtk2/gtk2/gtkrecent-chooser.html
+share/doc/gtk2/gtk2/GtkRecentAction.html
+share/doc/gtk2/gtk2/GtkRecentChooser.html
+share/doc/gtk2/gtk2/GtkRecentChooserDialog.html
+share/doc/gtk2/gtk2/GtkRecentChooserMenu.html
+share/doc/gtk2/gtk2/GtkRecentChooserWidget.html
+share/doc/gtk2/gtk2/GtkRecentFilter.html
+share/doc/gtk2/gtk2/GtkRecentManager.html
+share/doc/gtk2/gtk2/GtkRuler.html
+share/doc/gtk2/gtk2/GtkScale.html
+share/doc/gtk2/gtk2/GtkScaleButton.html
+share/doc/gtk2/gtk2/GtkScrollbar.html
+share/doc/gtk2/gtk2/GtkScrolledWindow.html
+share/doc/gtk2/gtk2/GtkSeparator.html
+share/doc/gtk2/gtk2/GtkSeparatorMenuItem.html
+share/doc/gtk2/gtk2/GtkSeparatorToolItem.html
+share/doc/gtk2/gtk2/GtkSettings.html
+share/doc/gtk2/gtk2/GtkSizeGroup.html
+share/doc/gtk2/gtk2/GtkSocket.html
+share/doc/gtk2/gtk2/GtkSpinButton.html
+share/doc/gtk2/gtk2/GtkSpinner.html
+share/doc/gtk2/gtk2/GtkStatusbar.html
+share/doc/gtk2/gtk2/GtkStatusIcon.html
+share/doc/gtk2/gtk2/GtkStyle.html
+share/doc/gtk2/gtk2/GtkTable.html
+share/doc/gtk2/gtk2/GtkTearoffMenuItem.html
+share/doc/gtk2/gtk2/GtkText.html
+share/doc/gtk2/gtk2/GtkTextBuffer.html
+share/doc/gtk2/gtk2/GtkTextIter.html
+share/doc/gtk2/gtk2/GtkTextMark.html
+share/doc/gtk2/gtk2/GtkTextTag.html
+share/doc/gtk2/gtk2/GtkTextTagTable.html
+share/doc/gtk2/gtk2/GtkTextView.html
+share/doc/gtk2/gtk2/GtkTipsQuery.html
+share/doc/gtk2/gtk2/GtkToggleAction.html
+share/doc/gtk2/gtk2/GtkToggleButton.html
+share/doc/gtk2/gtk2/GtkToggleToolButton.html
+share/doc/gtk2/gtk2/GtkToolbar.html
+share/doc/gtk2/gtk2/GtkToolButton.html
+share/doc/gtk2/gtk2/GtkToolItem.html
+share/doc/gtk2/gtk2/GtkToolItemGroup.html
+share/doc/gtk2/gtk2/GtkToolPalette.html
+share/doc/gtk2/gtk2/GtkToolShell.html
+share/doc/gtk2/gtk2/GtkTooltip.html
+share/doc/gtk2/gtk2/GtkTooltips.html
+share/doc/gtk2/gtk2/GtkTree.html
+share/doc/gtk2/gtk2/GtkTreeItem.html
+share/doc/gtk2/gtk2/GtkTreeModel.html
+share/doc/gtk2/gtk2/GtkTreeModelFilter.html
+share/doc/gtk2/gtk2/GtkTreeModelSort.html
+share/doc/gtk2/gtk2/GtkTreeSelection.html
+share/doc/gtk2/gtk2/GtkTreeSortable.html
+share/doc/gtk2/gtk2/GtkTreeStore.html
+share/doc/gtk2/gtk2/GtkTreeView.html
+share/doc/gtk2/gtk2/GtkTreeViewColumn.html
+share/doc/gtk2/gtk2/GtkUIManager.html
+share/doc/gtk2/gtk2/GtkVBox.html
+share/doc/gtk2/gtk2/GtkVButtonBox.html
+share/doc/gtk2/gtk2/GtkViewport.html
+share/doc/gtk2/gtk2/GtkVolumeButton.html
+share/doc/gtk2/gtk2/GtkVPaned.html
+share/doc/gtk2/gtk2/GtkVRuler.html
+share/doc/gtk2/gtk2/GtkVScale.html
+share/doc/gtk2/gtk2/GtkVScrollbar.html
+share/doc/gtk2/gtk2/GtkVSeparator.html
+share/doc/gtk2/gtk2/GtkWidget.html
+share/doc/gtk2/gtk2/GtkWindow.html
+share/doc/gtk2/gtk2/GtkWindowGroup.html
+share/doc/gtk2/gtk2/help-about.png
+share/doc/gtk2/gtk2/help-contents.png
+share/doc/gtk2/gtk2/home.png
+share/doc/gtk2/gtk2/icon-view.png
+share/doc/gtk2/gtk2/image-missing.png
+share/doc/gtk2/gtk2/image.png
+share/doc/gtk2/gtk2/index.html
+share/doc/gtk2/gtk2/label.png
+share/doc/gtk2/gtk2/layout-btlr.png
+share/doc/gtk2/gtk2/layout-btrl.png
+share/doc/gtk2/gtk2/layout-lrbt.png
+share/doc/gtk2/gtk2/layout-lrtb.png
+share/doc/gtk2/gtk2/layout-rlbt.png
+share/doc/gtk2/gtk2/layout-rltb.png
+share/doc/gtk2/gtk2/layout-tblr.png
+share/doc/gtk2/gtk2/layout-tbrl.png
+share/doc/gtk2/gtk2/LayoutContainers.html
+share/doc/gtk2/gtk2/left-insensitive.png
+share/doc/gtk2/gtk2/left.png
+share/doc/gtk2/gtk2/link-button.png
+share/doc/gtk2/gtk2/list-add.png
+share/doc/gtk2/gtk2/list-and-tree.png
+share/doc/gtk2/gtk2/list-remove.png
+share/doc/gtk2/gtk2/media-floppy.png
+share/doc/gtk2/gtk2/media-optical.png
+share/doc/gtk2/gtk2/media-playback-pause.png
+share/doc/gtk2/gtk2/media-playback-start-ltr.png
+share/doc/gtk2/gtk2/media-playback-start-rtl.png
+share/doc/gtk2/gtk2/media-playback-stop.png
+share/doc/gtk2/gtk2/media-record.png
+share/doc/gtk2/gtk2/media-seek-backward-ltr.png
+share/doc/gtk2/gtk2/media-seek-backward-rtl.png
+share/doc/gtk2/gtk2/media-seek-forward-ltr.png
+share/doc/gtk2/gtk2/media-seek-forward-rtl.png
+share/doc/gtk2/gtk2/media-skip-backward-ltr.png
+share/doc/gtk2/gtk2/media-skip-backward-rtl.png
+share/doc/gtk2/gtk2/media-skip-forward-ltr.png
+share/doc/gtk2/gtk2/media-skip-forward-rtl.png
+share/doc/gtk2/gtk2/menubar.png
+share/doc/gtk2/gtk2/MenusAndCombos.html
+share/doc/gtk2/gtk2/messagedialog.png
+share/doc/gtk2/gtk2/migrating-gnomeuiinfo.html
+share/doc/gtk2/gtk2/migrating-GtkCombo.html
+share/doc/gtk2/gtk2/migrating.html
+share/doc/gtk2/gtk2/MiscObjects.html
+share/doc/gtk2/gtk2/multiline-text.png
+share/doc/gtk2/gtk2/network-idle.png
+share/doc/gtk2/gtk2/new-features-GtkComboBox.html
+share/doc/gtk2/gtk2/notebook.png
+share/doc/gtk2/gtk2/NumericEntry.html
+share/doc/gtk2/gtk2/Ornaments.html
+share/doc/gtk2/gtk2/pagesetupdialog.png
+share/doc/gtk2/gtk2/panes.png
+share/doc/gtk2/gtk2/PlugSocket.html
+share/doc/gtk2/gtk2/printdialog.png
+share/doc/gtk2/gtk2/printer-error.png
+share/doc/gtk2/gtk2/printer-info.png
+share/doc/gtk2/gtk2/printer-paused.png
+share/doc/gtk2/gtk2/printer-warning.png
+share/doc/gtk2/gtk2/Printing.html
+share/doc/gtk2/gtk2/process-stop.png
+share/doc/gtk2/gtk2/progressbar.png
+share/doc/gtk2/gtk2/pt05.html
+share/doc/gtk2/gtk2/radio-group.png
+share/doc/gtk2/gtk2/recentchooserdialog.png
+share/doc/gtk2/gtk2/RecentDocuments.html
+share/doc/gtk2/gtk2/right-insensitive.png
+share/doc/gtk2/gtk2/right.png
+share/doc/gtk2/gtk2/scales.png
+share/doc/gtk2/gtk2/scrolledwindow.png
+share/doc/gtk2/gtk2/ScrollingWidgets.html
+share/doc/gtk2/gtk2/SelectorWidgets.html
+share/doc/gtk2/gtk2/separator.png
+share/doc/gtk2/gtk2/setting-the-page-flow.html
+share/doc/gtk2/gtk2/SpecialObjects.html
+share/doc/gtk2/gtk2/spinbutton.png
+share/doc/gtk2/gtk2/spinner.png
+share/doc/gtk2/gtk2/statusbar.png
+share/doc/gtk2/gtk2/style.css
+share/doc/gtk2/gtk2/system-run.png
+share/doc/gtk2/gtk2/text-x-generic.png
+share/doc/gtk2/gtk2/TextWidget.html
+share/doc/gtk2/gtk2/TextWidgetObjects.html
+share/doc/gtk2/gtk2/toggle-button.png
+share/doc/gtk2/gtk2/toolbar.png
+share/doc/gtk2/gtk2/toolpalette.png
+share/doc/gtk2/gtk2/tools-check-spelling.png
+share/doc/gtk2/gtk2/tree-view-coordinates.png
+share/doc/gtk2/gtk2/TreeWidget.html
+share/doc/gtk2/gtk2/TreeWidgetObjects.html
+share/doc/gtk2/gtk2/ui-manager.html
+share/doc/gtk2/gtk2/up-insensitive.png
+share/doc/gtk2/gtk2/up.png
+share/doc/gtk2/gtk2/view-fullscreen.png
+share/doc/gtk2/gtk2/view-refresh.png
+share/doc/gtk2/gtk2/view-restore.png
+share/doc/gtk2/gtk2/view-sort-ascending.png
+share/doc/gtk2/gtk2/view-sort-descending.png
+share/doc/gtk2/gtk2/volumebutton.png
+share/doc/gtk2/gtk2/window-close.png
+share/doc/gtk2/gtk2/window.png
+share/doc/gtk2/gtk2/WindowWidgets.html
+share/doc/gtk2/gtk2/zoom-fit-best.png
+share/doc/gtk2/gtk2/zoom-in.png
+share/doc/gtk2/gtk2/zoom-original.png
+share/doc/gtk2/gtk2/zoom-out.png
+share/gtk/demo/alphatest.png
+share/gtk/demo/apple-red.png
+share/gtk/demo/appwindow.c
+share/gtk/demo/assistant.c
+share/gtk/demo/background.jpg
+share/gtk/demo/builder.c
+share/gtk/demo/button_box.c
+share/gtk/demo/changedisplay.c
+share/gtk/demo/clipboard.c
+share/gtk/demo/colorsel.c
+share/gtk/demo/combobox.c
+share/gtk/demo/demo.ui
+share/gtk/demo/dialog.c
+share/gtk/demo/drawingarea.c
+share/gtk/demo/editable_cells.c
+share/gtk/demo/entry_buffer.c
+share/gtk/demo/entry_completion.c
+share/gtk/demo/expander.c
+share/gtk/demo/floppybuddy.gif
+share/gtk/demo/gnome-applets.png
+share/gtk/demo/gnome-calendar.png
+share/gtk/demo/gnome-foot.png
+share/gtk/demo/gnome-fs-directory.png
+share/gtk/demo/gnome-fs-regular.png
+share/gtk/demo/gnome-gimp.png
+share/gtk/demo/gnome-gmush.png
+share/gtk/demo/gnome-gsame.png
+share/gtk/demo/gnu-keys.png
+share/gtk/demo/gtk-logo-rgb.gif
+share/gtk/demo/hypertext.c
+share/gtk/demo/iconview_edit.c
+share/gtk/demo/iconview.c
+share/gtk/demo/images.c
+share/gtk/demo/infobar.c
+share/gtk/demo/links.c
+share/gtk/demo/list_store.c
+share/gtk/demo/menus.c
+share/gtk/demo/offscreen_window.c
+share/gtk/demo/offscreen_window2.c
+share/gtk/demo/panes.c
+share/gtk/demo/pickers.c
+share/gtk/demo/pixbufs.c
+share/gtk/demo/printing.c
+share/gtk/demo/rotated_text.c
+share/gtk/demo/search_entry.c
+share/gtk/demo/sizegroup.c
+share/gtk/demo/spinner.c
+share/gtk/demo/stock_browser.c
+share/gtk/demo/textscroll.c
+share/gtk/demo/textview.c
+share/gtk/demo/toolpalette.c
+share/gtk/demo/tree_store.c
+share/gtk/demo/ui_manager.c
+share/locale/af/LC_MESSAGES/gtk20-properties.mo
+share/locale/af/LC_MESSAGES/gtk20.mo
+share/locale/am/LC_MESSAGES/gtk20-properties.mo
+share/locale/am/LC_MESSAGES/gtk20.mo
+share/locale/ang/LC_MESSAGES/gtk20-properties.mo
+share/locale/ang/LC_MESSAGES/gtk20.mo
+share/locale/ar/LC_MESSAGES/gtk20-properties.mo
+share/locale/ar/LC_MESSAGES/gtk20.mo
+share/locale/as/LC_MESSAGES/gtk20-properties.mo
+share/locale/as/LC_MESSAGES/gtk20.mo
+share/locale/ast/LC_MESSAGES/gtk20-properties.mo
+share/locale/ast/LC_MESSAGES/gtk20.mo
+share/locale/az_IR/LC_MESSAGES/gtk20-properties.mo
+share/locale/az_IR/LC_MESSAGES/gtk20.mo
+share/locale/az/LC_MESSAGES/gtk20-properties.mo
+share/locale/az/LC_MESSAGES/gtk20.mo
+share/locale/be@latin/LC_MESSAGES/gtk20-properties.mo
+share/locale/be@latin/LC_MESSAGES/gtk20.mo
+share/locale/be/LC_MESSAGES/gtk20-properties.mo
+share/locale/be/LC_MESSAGES/gtk20.mo
+share/locale/bg/LC_MESSAGES/gtk20-properties.mo
+share/locale/bg/LC_MESSAGES/gtk20.mo
+share/locale/bn_IN/LC_MESSAGES/gtk20-properties.mo
+share/locale/bn_IN/LC_MESSAGES/gtk20.mo
+share/locale/bn/LC_MESSAGES/gtk20-properties.mo
+share/locale/bn/LC_MESSAGES/gtk20.mo
+share/locale/br/LC_MESSAGES/gtk20-properties.mo
+share/locale/br/LC_MESSAGES/gtk20.mo
+share/locale/bs/LC_MESSAGES/gtk20-properties.mo
+share/locale/bs/LC_MESSAGES/gtk20.mo
+share/locale/ca@valencia/LC_MESSAGES/gtk20-properties.mo
+share/locale/ca@valencia/LC_MESSAGES/gtk20.mo
+share/locale/ca/LC_MESSAGES/gtk20-properties.mo
+share/locale/ca/LC_MESSAGES/gtk20.mo
+share/locale/crh/LC_MESSAGES/gtk20-properties.mo
+share/locale/crh/LC_MESSAGES/gtk20.mo
+share/locale/cs/LC_MESSAGES/gtk20-properties.mo
+share/locale/cs/LC_MESSAGES/gtk20.mo
+share/locale/cy/LC_MESSAGES/gtk20-properties.mo
+share/locale/cy/LC_MESSAGES/gtk20.mo
+share/locale/da/LC_MESSAGES/gtk20-properties.mo
+share/locale/da/LC_MESSAGES/gtk20.mo
+share/locale/de/LC_MESSAGES/gtk20-properties.mo
+share/locale/de/LC_MESSAGES/gtk20.mo
+share/locale/dz/LC_MESSAGES/gtk20-properties.mo
+share/locale/dz/LC_MESSAGES/gtk20.mo
+share/locale/el/LC_MESSAGES/gtk20-properties.mo
+share/locale/el/LC_MESSAGES/gtk20.mo
+share/locale/en_CA/LC_MESSAGES/gtk20-properties.mo
+share/locale/en_CA/LC_MESSAGES/gtk20.mo
+share/locale/en_GB/LC_MESSAGES/gtk20-properties.mo
+share/locale/en_GB/LC_MESSAGES/gtk20.mo
+share/locale/eo/LC_MESSAGES/gtk20-properties.mo
+share/locale/eo/LC_MESSAGES/gtk20.mo
+share/locale/es/LC_MESSAGES/gtk20-properties.mo
+share/locale/es/LC_MESSAGES/gtk20.mo
+share/locale/et/LC_MESSAGES/gtk20-properties.mo
+share/locale/et/LC_MESSAGES/gtk20.mo
+share/locale/eu/LC_MESSAGES/gtk20-properties.mo
+share/locale/eu/LC_MESSAGES/gtk20.mo
+share/locale/fa/LC_MESSAGES/gtk20-properties.mo
+share/locale/fa/LC_MESSAGES/gtk20.mo
+share/locale/fi/LC_MESSAGES/gtk20-properties.mo
+share/locale/fi/LC_MESSAGES/gtk20.mo
+share/locale/fr/LC_MESSAGES/gtk20-properties.mo
+share/locale/fr/LC_MESSAGES/gtk20.mo
+share/locale/ga/LC_MESSAGES/gtk20-properties.mo
+share/locale/ga/LC_MESSAGES/gtk20.mo
+share/locale/gl/LC_MESSAGES/gtk20-properties.mo
+share/locale/gl/LC_MESSAGES/gtk20.mo
+share/locale/gu/LC_MESSAGES/gtk20-properties.mo
+share/locale/gu/LC_MESSAGES/gtk20.mo
+share/locale/he/LC_MESSAGES/gtk20-properties.mo
+share/locale/he/LC_MESSAGES/gtk20.mo
+share/locale/hi/LC_MESSAGES/gtk20-properties.mo
+share/locale/hi/LC_MESSAGES/gtk20.mo
+share/locale/hr/LC_MESSAGES/gtk20-properties.mo
+share/locale/hr/LC_MESSAGES/gtk20.mo
+share/locale/hu/LC_MESSAGES/gtk20-properties.mo
+share/locale/hu/LC_MESSAGES/gtk20.mo
+share/locale/hy/LC_MESSAGES/gtk20-properties.mo
+share/locale/hy/LC_MESSAGES/gtk20.mo
+share/locale/ia/LC_MESSAGES/gtk20-properties.mo
+share/locale/ia/LC_MESSAGES/gtk20.mo
+share/locale/id/LC_MESSAGES/gtk20-properties.mo
+share/locale/id/LC_MESSAGES/gtk20.mo
+share/locale/io/LC_MESSAGES/gtk20-properties.mo
+share/locale/io/LC_MESSAGES/gtk20.mo
+share/locale/is/LC_MESSAGES/gtk20-properties.mo
+share/locale/is/LC_MESSAGES/gtk20.mo
+share/locale/it/LC_MESSAGES/gtk20-properties.mo
+share/locale/it/LC_MESSAGES/gtk20.mo
+share/locale/ja/LC_MESSAGES/gtk20-properties.mo
+share/locale/ja/LC_MESSAGES/gtk20.mo
+share/locale/ka/LC_MESSAGES/gtk20-properties.mo
+share/locale/ka/LC_MESSAGES/gtk20.mo
+share/locale/kk/LC_MESSAGES/gtk20-properties.mo
+share/locale/kk/LC_MESSAGES/gtk20.mo
+share/locale/kn/LC_MESSAGES/gtk20-properties.mo
+share/locale/kn/LC_MESSAGES/gtk20.mo
+share/locale/ko/LC_MESSAGES/gtk20-properties.mo
+share/locale/ko/LC_MESSAGES/gtk20.mo
+share/locale/ku/LC_MESSAGES/gtk20-properties.mo
+share/locale/ku/LC_MESSAGES/gtk20.mo
+share/locale/li/LC_MESSAGES/gtk20-properties.mo
+share/locale/li/LC_MESSAGES/gtk20.mo
+share/locale/lt/LC_MESSAGES/gtk20-properties.mo
+share/locale/lt/LC_MESSAGES/gtk20.mo
+share/locale/lv/LC_MESSAGES/gtk20-properties.mo
+share/locale/lv/LC_MESSAGES/gtk20.mo
+share/locale/mai/LC_MESSAGES/gtk20-properties.mo
+share/locale/mai/LC_MESSAGES/gtk20.mo
+share/locale/mi/LC_MESSAGES/gtk20-properties.mo
+share/locale/mi/LC_MESSAGES/gtk20.mo
+share/locale/mk/LC_MESSAGES/gtk20-properties.mo
+share/locale/mk/LC_MESSAGES/gtk20.mo
+share/locale/ml/LC_MESSAGES/gtk20-properties.mo
+share/locale/ml/LC_MESSAGES/gtk20.mo
+share/locale/mn/LC_MESSAGES/gtk20-properties.mo
+share/locale/mn/LC_MESSAGES/gtk20.mo
+share/locale/mr/LC_MESSAGES/gtk20-properties.mo
+share/locale/mr/LC_MESSAGES/gtk20.mo
+share/locale/ms/LC_MESSAGES/gtk20-properties.mo
+share/locale/ms/LC_MESSAGES/gtk20.mo
+share/locale/my/LC_MESSAGES/gtk20-properties.mo
+share/locale/my/LC_MESSAGES/gtk20.mo
+share/locale/nb/LC_MESSAGES/gtk20-properties.mo
+share/locale/nb/LC_MESSAGES/gtk20.mo
+share/locale/nds/LC_MESSAGES/gtk20-properties.mo
+share/locale/nds/LC_MESSAGES/gtk20.mo
+share/locale/ne/LC_MESSAGES/gtk20-properties.mo
+share/locale/ne/LC_MESSAGES/gtk20.mo
+share/locale/nl/LC_MESSAGES/gtk20-properties.mo
+share/locale/nl/LC_MESSAGES/gtk20.mo
+share/locale/nn/LC_MESSAGES/gtk20-properties.mo
+share/locale/nn/LC_MESSAGES/gtk20.mo
+share/locale/nso/LC_MESSAGES/gtk20-properties.mo
+share/locale/nso/LC_MESSAGES/gtk20.mo
+share/locale/oc/LC_MESSAGES/gtk20-properties.mo
+share/locale/oc/LC_MESSAGES/gtk20.mo
+share/locale/or/LC_MESSAGES/gtk20-properties.mo
+share/locale/or/LC_MESSAGES/gtk20.mo
+share/locale/pa/LC_MESSAGES/gtk20-properties.mo
+share/locale/pa/LC_MESSAGES/gtk20.mo
+share/locale/pl/LC_MESSAGES/gtk20-properties.mo
+share/locale/pl/LC_MESSAGES/gtk20.mo
+share/locale/ps/LC_MESSAGES/gtk20-properties.mo
+share/locale/ps/LC_MESSAGES/gtk20.mo
+share/locale/pt_BR/LC_MESSAGES/gtk20-properties.mo
+share/locale/pt_BR/LC_MESSAGES/gtk20.mo
+share/locale/pt/LC_MESSAGES/gtk20-properties.mo
+share/locale/pt/LC_MESSAGES/gtk20.mo
+share/locale/ro/LC_MESSAGES/gtk20-properties.mo
+share/locale/ro/LC_MESSAGES/gtk20.mo
+share/locale/ru/LC_MESSAGES/gtk20-properties.mo
+share/locale/ru/LC_MESSAGES/gtk20.mo
+share/locale/rw/LC_MESSAGES/gtk20-properties.mo
+share/locale/rw/LC_MESSAGES/gtk20.mo
+share/locale/si/LC_MESSAGES/gtk20-properties.mo
+share/locale/si/LC_MESSAGES/gtk20.mo
+share/locale/sk/LC_MESSAGES/gtk20-properties.mo
+share/locale/sk/LC_MESSAGES/gtk20.mo
+share/locale/sl/LC_MESSAGES/gtk20-properties.mo
+share/locale/sl/LC_MESSAGES/gtk20.mo
+share/locale/sq/LC_MESSAGES/gtk20-properties.mo
+share/locale/sq/LC_MESSAGES/gtk20.mo
+share/locale/sr@ije/LC_MESSAGES/gtk20-properties.mo
+share/locale/sr@ije/LC_MESSAGES/gtk20.mo
+share/locale/sr@latin/LC_MESSAGES/gtk20-properties.mo
+share/locale/sr@latin/LC_MESSAGES/gtk20.mo
+share/locale/sr/LC_MESSAGES/gtk20-properties.mo
+share/locale/sr/LC_MESSAGES/gtk20.mo
+share/locale/sv/LC_MESSAGES/gtk20-properties.mo
+share/locale/sv/LC_MESSAGES/gtk20.mo
+share/locale/ta/LC_MESSAGES/gtk20-properties.mo
+share/locale/ta/LC_MESSAGES/gtk20.mo
+share/locale/te/LC_MESSAGES/gtk20-properties.mo
+share/locale/te/LC_MESSAGES/gtk20.mo
+share/locale/th/LC_MESSAGES/gtk20-properties.mo
+share/locale/th/LC_MESSAGES/gtk20.mo
+share/locale/tk/LC_MESSAGES/gtk20-properties.mo
+share/locale/tk/LC_MESSAGES/gtk20.mo
+share/locale/tr/LC_MESSAGES/gtk20-properties.mo
+share/locale/tr/LC_MESSAGES/gtk20.mo
+share/locale/tt/LC_MESSAGES/gtk20-properties.mo
+share/locale/tt/LC_MESSAGES/gtk20.mo
+share/locale/ug/LC_MESSAGES/gtk20-properties.mo
+share/locale/ug/LC_MESSAGES/gtk20.mo
+share/locale/uk/LC_MESSAGES/gtk20-properties.mo
+share/locale/uk/LC_MESSAGES/gtk20.mo
+share/locale/ur/LC_MESSAGES/gtk20-properties.mo
+share/locale/ur/LC_MESSAGES/gtk20.mo
+share/locale/uz@cyrillic/LC_MESSAGES/gtk20-properties.mo
+share/locale/uz@cyrillic/LC_MESSAGES/gtk20.mo
+share/locale/uz/LC_MESSAGES/gtk20-properties.mo
+share/locale/uz/LC_MESSAGES/gtk20.mo
+share/locale/vi/LC_MESSAGES/gtk20-properties.mo
+share/locale/vi/LC_MESSAGES/gtk20.mo
+share/locale/wa/LC_MESSAGES/gtk20-properties.mo
+share/locale/wa/LC_MESSAGES/gtk20.mo
+share/locale/xh/LC_MESSAGES/gtk20-properties.mo
+share/locale/xh/LC_MESSAGES/gtk20.mo
+share/locale/yi/LC_MESSAGES/gtk20-properties.mo
+share/locale/yi/LC_MESSAGES/gtk20.mo
+share/locale/zh_CN/LC_MESSAGES/gtk20-properties.mo
+share/locale/zh_CN/LC_MESSAGES/gtk20.mo
+share/locale/zh_HK/LC_MESSAGES/gtk20-properties.mo
+share/locale/zh_HK/LC_MESSAGES/gtk20.mo
+share/locale/zh_TW/LC_MESSAGES/gtk20-properties.mo
+share/locale/zh_TW/LC_MESSAGES/gtk20.mo
+share/themes/Default/gtk-key/gtkrc
+share/themes/Emacs/gtk-key/gtkrc
+share/themes/Raleigh/gtk/gtkrc
+@dir include/gail/gail
+@dir include/gail/libgail-util
+@dir include/gail
+@dir include/gtk/gdk
+@dir include/gtk/gtk
+@dir include/gtk
+@dir include/gtk-unix-print/gtk
+@dir include/gtk-unix-print
+@dir lib/gtk/engines
+@dir lib/gtk/immodules
+@dir lib/gtk/modules
+@dir lib/gtk/printbackends
+@dir lib/gtk
+@dir share/aclocal
+@dir share/doc/gtk2/gail-libgail-util
+@dir share/doc/gtk2/gdk2
+@dir share/doc/gtk2/gtk2
+@dir share/doc/gtk2
+@dir share/gtk/demo
+@dir share/gtk
+@dir share/locale/af/LC_MESSAGES
+@dir share/locale/af
+@dir share/locale/am/LC_MESSAGES
+@dir share/locale/am
+@dir share/locale/ang/LC_MESSAGES
+@dir share/locale/ang
+@dir share/locale/ar/LC_MESSAGES
+@dir share/locale/ar
+@dir share/locale/as/LC_MESSAGES
+@dir share/locale/as
+@dir share/locale/ast/LC_MESSAGES
+@dir share/locale/ast
+@dir share/locale/az/LC_MESSAGES
+@dir share/locale/az
+@dir share/locale/az_IR/LC_MESSAGES
+@dir share/locale/az_IR
+@dir share/locale/be/LC_MESSAGES
+@dir share/locale/be
+@dir share/locale/be@latin/LC_MESSAGES
+@dir share/locale/be@latin
+@dir share/locale/bg/LC_MESSAGES
+@dir share/locale/bg
+@dir share/locale/bn/LC_MESSAGES
+@dir share/locale/bn
+@dir share/locale/bn_IN/LC_MESSAGES
+@dir share/locale/bn_IN
+@dir share/locale/br/LC_MESSAGES
+@dir share/locale/br
+@dir share/locale/bs/LC_MESSAGES
+@dir share/locale/bs
+@dir share/locale/ca/LC_MESSAGES
+@dir share/locale/ca
+@dir share/locale/ca@valencia/LC_MESSAGES
+@dir share/locale/ca@valencia
+@dir share/locale/crh/LC_MESSAGES
+@dir share/locale/crh
+@dir share/locale/cs/LC_MESSAGES
+@dir share/locale/cs
+@dir share/locale/cy/LC_MESSAGES
+@dir share/locale/cy
+@dir share/locale/da/LC_MESSAGES
+@dir share/locale/da
+@dir share/locale/de/LC_MESSAGES
+@dir share/locale/de
+@dir share/locale/dz/LC_MESSAGES
+@dir share/locale/dz
+@dir share/locale/el/LC_MESSAGES
+@dir share/locale/el
+@dir share/locale/en_CA/LC_MESSAGES
+@dir share/locale/en_CA
+@dir share/locale/en_GB/LC_MESSAGES
+@dir share/locale/en_GB
+@dir share/locale/eo/LC_MESSAGES
+@dir share/locale/eo
+@dir share/locale/es/LC_MESSAGES
+@dir share/locale/es
+@dir share/locale/et/LC_MESSAGES
+@dir share/locale/et
+@dir share/locale/eu/LC_MESSAGES
+@dir share/locale/eu
+@dir share/locale/fa/LC_MESSAGES
+@dir share/locale/fa
+@dir share/locale/fi/LC_MESSAGES
+@dir share/locale/fi
+@dir share/locale/fr/LC_MESSAGES
+@dir share/locale/fr
+@dir share/locale/ga/LC_MESSAGES
+@dir share/locale/ga
+@dir share/locale/gl/LC_MESSAGES
+@dir share/locale/gl
+@dir share/locale/gu/LC_MESSAGES
+@dir share/locale/gu
+@dir share/locale/he/LC_MESSAGES
+@dir share/locale/he
+@dir share/locale/hi/LC_MESSAGES
+@dir share/locale/hi
+@dir share/locale/hr/LC_MESSAGES
+@dir share/locale/hr
+@dir share/locale/hu/LC_MESSAGES
+@dir share/locale/hu
+@dir share/locale/hy/LC_MESSAGES
+@dir share/locale/hy
+@dir share/locale/ia/LC_MESSAGES
+@dir share/locale/ia
+@dir share/locale/id/LC_MESSAGES
+@dir share/locale/id
+@dir share/locale/io/LC_MESSAGES
+@dir share/locale/io
+@dir share/locale/is/LC_MESSAGES
+@dir share/locale/is
+@dir share/locale/it/LC_MESSAGES
+@dir share/locale/it
+@dir share/locale/ja/LC_MESSAGES
+@dir share/locale/ja
+@dir share/locale/ka/LC_MESSAGES
+@dir share/locale/ka
+@dir share/locale/kk/LC_MESSAGES
+@dir share/locale/kk
+@dir share/locale/kn/LC_MESSAGES
+@dir share/locale/kn
+@dir share/locale/ko/LC_MESSAGES
+@dir share/locale/ko
+@dir share/locale/ku/LC_MESSAGES
+@dir share/locale/ku
+@dir share/locale/li/LC_MESSAGES
+@dir share/locale/li
+@dir share/locale/lt/LC_MESSAGES
+@dir share/locale/lt
+@dir share/locale/lv/LC_MESSAGES
+@dir share/locale/lv
+@dir share/locale/mai/LC_MESSAGES
+@dir share/locale/mai
+@dir share/locale/mi/LC_MESSAGES
+@dir share/locale/mi
+@dir share/locale/mk/LC_MESSAGES
+@dir share/locale/mk
+@dir share/locale/ml/LC_MESSAGES
+@dir share/locale/ml
+@dir share/locale/mn/LC_MESSAGES
+@dir share/locale/mn
+@dir share/locale/mr/LC_MESSAGES
+@dir share/locale/mr
+@dir share/locale/ms/LC_MESSAGES
+@dir share/locale/ms
+@dir share/locale/my/LC_MESSAGES
+@dir share/locale/my
+@dir share/locale/nb/LC_MESSAGES
+@dir share/locale/nb
+@dir share/locale/nds/LC_MESSAGES
+@dir share/locale/nds
+@dir share/locale/ne/LC_MESSAGES
+@dir share/locale/ne
+@dir share/locale/nl/LC_MESSAGES
+@dir share/locale/nl
+@dir share/locale/nn/LC_MESSAGES
+@dir share/locale/nn
+@dir share/locale/nso/LC_MESSAGES
+@dir share/locale/nso
+@dir share/locale/oc/LC_MESSAGES
+@dir share/locale/oc
+@dir share/locale/or/LC_MESSAGES
+@dir share/locale/or
+@dir share/locale/pa/LC_MESSAGES
+@dir share/locale/pa
+@dir share/locale/pl/LC_MESSAGES
+@dir share/locale/pl
+@dir share/locale/ps/LC_MESSAGES
+@dir share/locale/ps
+@dir share/locale/pt/LC_MESSAGES
+@dir share/locale/pt
+@dir share/locale/pt_BR/LC_MESSAGES
+@dir share/locale/pt_BR
+@dir share/locale/ro/LC_MESSAGES
+@dir share/locale/ro
+@dir share/locale/ru/LC_MESSAGES
+@dir share/locale/ru
+@dir share/locale/rw/LC_MESSAGES
+@dir share/locale/rw
+@dir share/locale/si/LC_MESSAGES
+@dir share/locale/si
+@dir share/locale/sk/LC_MESSAGES
+@dir share/locale/sk
+@dir share/locale/sl/LC_MESSAGES
+@dir share/locale/sl
+@dir share/locale/sq/LC_MESSAGES
+@dir share/locale/sq
+@dir share/locale/sr/LC_MESSAGES
+@dir share/locale/sr
+@dir share/locale/sr@ije/LC_MESSAGES
+@dir share/locale/sr@ije
+@dir share/locale/sr@latin/LC_MESSAGES
+@dir share/locale/sr@latin
+@dir share/locale/sv/LC_MESSAGES
+@dir share/locale/sv
+@dir share/locale/ta/LC_MESSAGES
+@dir share/locale/ta
+@dir share/locale/te/LC_MESSAGES
+@dir share/locale/te
+@dir share/locale/th/LC_MESSAGES
+@dir share/locale/th
+@dir share/locale/tk/LC_MESSAGES
+@dir share/locale/tk
+@dir share/locale/tr/LC_MESSAGES
+@dir share/locale/tr
+@dir share/locale/tt/LC_MESSAGES
+@dir share/locale/tt
+@dir share/locale/ug/LC_MESSAGES
+@dir share/locale/ug
+@dir share/locale/uk/LC_MESSAGES
+@dir share/locale/uk
+@dir share/locale/ur/LC_MESSAGES
+@dir share/locale/ur
+@dir share/locale/uz/LC_MESSAGES
+@dir share/locale/uz
+@dir share/locale/uz@cyrillic/LC_MESSAGES
+@dir share/locale/uz@cyrillic
+@dir share/locale/vi/LC_MESSAGES
+@dir share/locale/vi
+@dir share/locale/wa/LC_MESSAGES
+@dir share/locale/wa
+@dir share/locale/xh/LC_MESSAGES
+@dir share/locale/xh
+@dir share/locale/yi/LC_MESSAGES
+@dir share/locale/yi
+@dir share/locale/zh_CN/LC_MESSAGES
+@dir share/locale/zh_CN
+@dir share/locale/zh_HK/LC_MESSAGES
+@dir share/locale/zh_HK
+@dir share/locale/zh_TW/LC_MESSAGES
+@dir share/locale/zh_TW
+@dir share/locale
+@dir share/themes/Default/gtk-key
+@dir share/themes/Default
+@dir share/themes/Emacs/gtk-key
+@dir share/themes/Emacs
+@dir share/themes/Raleigh/gtk
+@dir share/themes/Raleigh
+@dir share/themes

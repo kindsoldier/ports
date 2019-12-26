@@ -1,0 +1,67 @@
+--- ./Makefile.orig	2014-10-02 22:17:21.000000000 +0300
++++ ./Makefile	2014-10-02 22:32:58.000000000 +0300
+@@ -15,7 +15,7 @@
+ endif
+ 
+ SUBDIRS_UTILS_ALL:= ppp
+-SUBDIRS_UTILS := xpp
++#SUBDIRS_UTILS := xpp
+ 
+ OPTFLAGS=-O2
+ CFLAGS+=-I. $(OPTFLAGS) -g -fPIC -Wall -DBUILDING_TONEZONE #-DTONEZONE_DRIVER
+@@ -163,7 +163,7 @@
+ 	ranlib $@
+ 
+ $(LTZ_SO): $(LTZ_SO_OBJS)
+-	$(CC) $(CFLAGS) -shared -Wl,-soname,$(LTZ_SO).$(LTZ_SO_MAJOR_VER).$(LTZ_SO_MINOR_VER) -o $@ $^ -lm
++	$(CC) $(CFLAGS) -shared -Wl,-soname,$(LTZ_SO).$(LTZ_SO_MAJOR_VER) -o $@ $^ -lm
+ 
+ dahdi_cfg: $(LTZ_A)
+ dahdi_cfg: LIBS+=-lm
+@@ -223,34 +223,34 @@
+ 	install -d $(DESTDIR)$(MAN_DIR)
+ 	install -m 644 $(MAN_PAGES) $(DESTDIR)$(MAN_DIR)/
+ endif
+-ifeq (,$(wildcard $(DESTDIR)$(CONFIG_FILE)))
+-	$(INSTALL) -d $(DESTDIR)$(CONFIG_DIR)
+-	$(INSTALL) -m 644 system.conf.sample $(DESTDIR)$(CONFIG_FILE)
+-endif
++#ifeq (,$(wildcard $(DESTDIR)$(CONFIG_FILE)))
++#	$(INSTALL) -d $(DESTDIR)$(CONFIG_DIR)
++#	$(INSTALL) -m 644 system.conf.sample $(DESTDIR)$(CONFIG_FILE)
++#endif
+ 
+ install-libs: libs
+ 	$(INSTALL) -d -m 755 $(DESTDIR)/$(LIB_DIR)
+ 	$(INSTALL) -m 755 $(LTZ_A) $(DESTDIR)$(LIB_DIR)/
+-	$(INSTALL) -m 755 $(LTZ_SO) $(DESTDIR)$(LIB_DIR)/$(LTZ_SO).$(LTZ_SO_MAJOR_VER).$(LTZ_SO_MINOR_VER)
++	$(INSTALL) -m 755 $(LTZ_SO) $(DESTDIR)$(LIB_DIR)/$(LTZ_SO).$(LTZ_SO_MAJOR_VER)
+ ifeq (,$(DESTDIR))
+ 	if [ `id -u` = 0 ]; then \
+ 		/sbin/ldconfig || : ;\
+ 	fi
+ endif
+ 	rm -f $(DESTDIR)$(LIB_DIR)/$(LTZ_SO)
+-	$(LN) -sf $(LTZ_SO).$(LTZ_SO_MAJOR_VER).$(LTZ_SO_MINOR_VER) \
+-		$(DESTDIR)$(LIB_DIR)/$(LTZ_SO).$(LTZ_SO_MAJOR_VER)
+-	$(LN) -sf $(LTZ_SO).$(LTZ_SO_MAJOR_VER).$(LTZ_SO_MINOR_VER) \
++#	$(LN) -sf $(LTZ_SO).$(LTZ_SO_MAJOR_VER).$(LTZ_SO_MINOR_VER) \
++#		$(DESTDIR)$(LIB_DIR)/$(LTZ_SO).$(LTZ_SO_MAJOR_VER)
++	$(LN) -sf $(LTZ_SO).$(LTZ_SO_MAJOR_VER) \
+ 		$(DESTDIR)$(LIB_DIR)/$(LTZ_SO)
+ 	# Overwrite the 1.0 links out there.  dahdi-tools 2.0.0 installed
+ 	# 1.0 links but dahdi-tools changed them to 2.0 in order to explicitly
+ 	# break applications linked with zaptel.  But, this also meant that
+ 	# applications linked with libtonezone.so.1.0 broke when dahdi-tools
+ 	# 2.1.0 was installed.
+-	$(LN) -sf $(LTZ_SO).$(LTZ_SO_MAJOR_VER).$(LTZ_SO_MINOR_VER) \
+-		$(DESTDIR)$(LIB_DIR)/$(LTZ_SO).1.0
+-	$(LN) -sf $(LTZ_SO).$(LTZ_SO_MAJOR_VER).$(LTZ_SO_MINOR_VER) \
+-		$(DESTDIR)$(LIB_DIR)/$(LTZ_SO).1
++#	$(LN) -sf $(LTZ_SO).$(LTZ_SO_MAJOR_VER).$(LTZ_SO_MINOR_VER) \
++#		$(DESTDIR)$(LIB_DIR)/$(LTZ_SO).1.0
++#	$(LN) -sf $(LTZ_SO).$(LTZ_SO_MAJOR_VER).$(LTZ_SO_MINOR_VER) \
++#		$(DESTDIR)$(LIB_DIR)/$(LTZ_SO).1
+ ifneq (no,$(USE_SELINUX))
+   ifeq (,$(DESTDIR))
+ 	/sbin/restorecon -v $(DESTDIR)$(LIB_DIR)/$(LTZ_SO)

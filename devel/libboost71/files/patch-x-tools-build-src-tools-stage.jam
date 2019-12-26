@@ -1,0 +1,22 @@
+--- ./tools/build/src/tools/stage.jam.orig	2019-04-09 21:36:57.000000000 +0200
++++ ./tools/build/src/tools/stage.jam	2019-04-27 16:48:44.668159000 +0200
+@@ -482,6 +482,19 @@
+                 }
+             }
+ 
++            local m = [ MATCH
++                "(.*)\\.([0123456789]+)$" :
++                [ $(copied).name ] ] ;
++            if $(m)
++            {
++                # Symlink without version at all is used to make
++                # -lsome_library work.
++                result += [ stage.symlink $(m[1]) : $(project) : $(copied) :
++                    $(property-set) ] ;
++
++            }
++
++
+             return $(result) ;
+         }
+     }

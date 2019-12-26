@@ -1,0 +1,594 @@
+--- ./configure.in.orig	2016-02-08 23:12:28.000000000 +0200
++++ ./configure.in	2016-02-12 06:55:17.294916000 +0200
+@@ -700,6 +700,16 @@
+ AC_MSG_RESULT([$with_selinux])
+ 
+ #
++# ICU
++#
++AC_MSG_CHECKING([whether to build with ICU support])
++PGAC_ARG_BOOL(with, icu, no, [  --with-icu              build with ICU support],
++              [AC_DEFINE([USE_ICU], 1, [Define to build with ICU support. (--with-icu)])])
++AC_MSG_RESULT([$with_icu])
++AC_SUBST(with_icu)
++
++
++#
+ # Readline
+ #
+ PGAC_ARG_BOOL(with, readline, yes,
+@@ -1036,6 +1046,63 @@
+   AC_CHECK_FUNCS([SSL_get_current_compression])
+ fi
+ 
++if test "$with_icu" = yes ; then
++ AC_CHECK_LIB(icui18n, ucol_open_57, [], [
++ AC_CHECK_LIB(icui18n, ucol_open_56, [], [
++ AC_CHECK_LIB(icui18n, ucol_open_55, [], [
++ AC_CHECK_LIB(icui18n, ucol_open_54, [], [
++ AC_CHECK_LIB(icui18n, ucol_open_53, [], [
++ AC_CHECK_LIB(icui18n, ucol_open_52, [], [
++  AC_CHECK_LIB(icui18n, ucol_open_50, [], [
++   AC_CHECK_LIB(icui18n, ucol_open_48, [], [
++    AC_CHECK_LIB(icui18n, ucol_open_46, [], [
++      AC_CHECK_LIB(icui18n, ucol_open_44, [], [
++        AC_CHECK_LIB(icui18n, ucol_open_43, [], [
++          AC_CHECK_LIB(icui18n, ucol_open_3_8, [], [
++            AC_CHECK_LIB(icui18n, ucol_open_3_6, [], [
++              AC_CHECK_LIB(icui18n, ucol_open_3_4, [], [AC_MSG_ERROR([library 'icui18n' is required for ICU])])
++            ])
++          ])
++        ])
++      ])
++    ])
++   ])
++  ])
++ ])
++ ])
++ ])
++ ])
++ ])
++ ])
++ AC_CHECK_LIB(icuuc, ucnv_fromUChars_57, [], [
++ AC_CHECK_LIB(icuuc, ucnv_fromUChars_56, [], [
++ AC_CHECK_LIB(icuuc, ucnv_fromUChars_55, [], [
++ AC_CHECK_LIB(icuuc, ucnv_fromUChars_54, [], [
++ AC_CHECK_LIB(icuuc, ucnv_fromUChars_53, [], [
++ AC_CHECK_LIB(icuuc, ucnv_fromUChars_52, [], [
++  AC_CHECK_LIB(icuuc, ucnv_fromUChars_50, [], [
++   AC_CHECK_LIB(icuuc, ucnv_fromUChars_48, [], [
++    AC_CHECK_LIB(icuuc, ucnv_fromUChars_46, [], [
++      AC_CHECK_LIB(icuuc, ucnv_fromUChars_44, [], [
++        AC_CHECK_LIB(icuuc, ucnv_fromUChars_43, [], [
++          AC_CHECK_LIB(icuuc, ucnv_fromUChars_3_8, [], [
++            AC_CHECK_LIB(icuuc, ucnv_fromUChars_3_6, [], [
++              AC_CHECK_LIB(icuuc, ucnv_fromUChars_3_4, [], [AC_MSG_ERROR([library 'icuuc' is required for ICU])])
++            ])
++          ])
++        ])
++      ])
++    ])
++   ])
++  ])
++ ])
++ ])
++ ])
++ ])
++ ])
++ ])
++fi
++
+ if test "$with_pam" = yes ; then
+   AC_CHECK_LIB(pam,    pam_start, [], [AC_MSG_ERROR([library 'pam' is required for PAM])])
+ fi
+@@ -1162,6 +1229,10 @@
+   AC_CHECK_HEADER(openssl/err.h, [], [AC_MSG_ERROR([header file <openssl/err.h> is required for OpenSSL])])
+ fi
+ 
++if test "$with_icu" = yes ; then
++  AC_CHECK_HEADER(unicode/utypes.h, [], [AC_MSG_ERROR([header file <unicode/utypes.h> is required for ICU])])
++fi
++
+ if test "$with_pam" = yes ; then
+   AC_CHECK_HEADERS(security/pam_appl.h, [],
+                    [AC_CHECK_HEADERS(pam/pam_appl.h, [],
+--- ./src/backend/utils/adt/formatting.c.orig	2016-02-08 23:12:28.000000000 +0200
++++ ./src/backend/utils/adt/formatting.c	2016-02-12 06:55:47.876047000 +0200
+@@ -92,6 +92,12 @@
+ #include "utils/numeric.h"
+ #include "utils/pg_locale.h"
+ 
++#ifdef USE_ICU
++#include <unicode/utypes.h>   /* Basic ICU data types */
++#include <unicode/ucnv.h>     /* C   Converter API    */
++#include <unicode/ustring.h>
++#endif /* USE_ICU */
++
+ /* ----------
+  * Routines type
+  * ----------
+@@ -940,6 +946,12 @@
+ } NUMProc;
+ 
+ 
++#ifdef USE_ICU
++static UConverter *conv = NULL;
++#define STACKBUFLEN		1024 / sizeof(UChar)
++#endif   /* USE_ICU */
++
++
+ /* ----------
+  * Functions
+  * ----------
+@@ -1492,6 +1504,82 @@
+ 	{
+ 		result = asc_tolower(buff, nbytes);
+ 	}
++#ifdef USE_ICU
++	/* use ICU only when max encoding length > one */
++	if (pg_database_encoding_max_length() > 1)
++	{
++		UChar       sourcebuf[STACKBUFLEN], destbuf[STACKBUFLEN];
++		UChar      *source, *dest;
++		int			buflen;
++		size_t		result_size, usize;
++		UErrorCode  status = U_ZERO_ERROR;
++
++		if (conv == NULL)
++		{
++			conv = ucnv_open(NULL, &status);
++			if (U_FAILURE(status))
++			{
++				ereport(ERROR,
++						(errcode(status),
++						 errmsg("ICU error: oracle_compat.c, could not get converter for \"%s\"", ucnv_getDefaultName())));
++			}
++		}
++
++		if (nbytes >= STACKBUFLEN / sizeof(UChar))
++		{
++			buflen = (nbytes + 1) * sizeof(UChar);
++ 			source = palloc(buflen);
++			dest = palloc(buflen);
++		}
++		else
++		{
++			buflen = STACKBUFLEN;
++			source = sourcebuf;
++			dest = destbuf;
++		}
++		// convert to UTF-16
++		ucnv_toUChars(conv, source, buflen, buff, nbytes, &status);
++		if (U_FAILURE(status))
++		{
++			ereport(ERROR,
++						(errcode(status),
++						 errmsg("ICU error: Could not convert string")));
++		}
++		
++		// run desired function
++		buflen = u_strToLower(dest, buflen, source, -1, NULL, &status);
++		if (U_FAILURE(status))
++		{
++			ereport(ERROR,
++						(errcode(status),
++						 errmsg("ICU error: Could not modify case")));
++		}
++
++		// and convert modified utf-16 string back to text
++		result_size = UCNV_GET_MAX_BYTES_FOR_STRING(buflen, ucnv_getMaxCharSize(conv));
++		result = palloc(result_size);
++
++		usize = ucnv_fromUChars(conv, result, result_size,
++								 dest, buflen, &status);
++
++		if (U_FAILURE(status))
++		{
++			/* Invalid multibyte character encountered ... shouldn't happen */
++			ereport(ERROR,
++					(errcode(ERRCODE_CHARACTER_NOT_IN_REPERTOIRE),
++					 errmsg("ICU: invalid multibyte character for locale")));
++		}
++
++		Assert(usize <= (size_t) (buflen * sizeof(UChar)));
++
++		if (nbytes >= STACKBUFLEN / sizeof(UChar))
++		{
++			pfree(source);
++			pfree(dest);
++		}
++		return result;
++	}
++#else
+ #ifdef USE_WIDE_UPPER_LOWER
+ 	else if (pg_database_encoding_max_length() > 1)
+ 	{
+@@ -1545,6 +1633,7 @@
+ 		pfree(workspace);
+ 	}
+ #endif   /* USE_WIDE_UPPER_LOWER */
++#endif   /* USE_ICU */
+ 	else
+ 	{
+ #ifdef HAVE_LOCALE_T
+@@ -1612,6 +1701,82 @@
+ 	{
+ 		result = asc_toupper(buff, nbytes);
+ 	}
++#ifdef USE_ICU
++	/* use ICU only when max encoding length > one */
++	if (pg_database_encoding_max_length() > 1)
++	{
++		UChar       sourcebuf[STACKBUFLEN], destbuf[STACKBUFLEN];
++		UChar      *source, *dest;
++		int			buflen;
++		size_t		result_size, usize;
++		UErrorCode  status = U_ZERO_ERROR;
++
++		if (conv == NULL)
++		{
++			conv = ucnv_open(NULL, &status);
++			if (U_FAILURE(status))
++			{
++				ereport(ERROR,
++						(errcode(status),
++						 errmsg("ICU error: oracle_compat.c, could not get converter for \"%s\"", ucnv_getDefaultName())));
++			}
++		}
++
++		if (nbytes >= STACKBUFLEN / sizeof(UChar))
++		{
++			buflen = (nbytes + 1) * sizeof(UChar);
++ 			source = palloc(buflen);
++			dest = palloc(buflen);
++		}
++		else
++		{
++			buflen = STACKBUFLEN;
++			source = sourcebuf;
++			dest = destbuf;
++		}
++		// convert to UTF-16
++		ucnv_toUChars(conv, source, buflen, buff, nbytes, &status);
++		if (U_FAILURE(status))
++		{
++			ereport(ERROR,
++						(errcode(status),
++						 errmsg("ICU error: Could not convert string")));
++		}
++		
++		// run desired function
++		buflen = u_strToUpper(dest, buflen, source, -1, NULL, &status);
++		if (U_FAILURE(status))
++		{
++			ereport(ERROR,
++						(errcode(status),
++						 errmsg("ICU error: Could not modify case")));
++		}
++
++		// and convert modified utf-16 string back to text
++		result_size = UCNV_GET_MAX_BYTES_FOR_STRING(buflen, ucnv_getMaxCharSize(conv));
++		result = palloc(result_size);
++
++		usize = ucnv_fromUChars(conv, result, result_size,
++								 dest, buflen, &status);
++
++		if (U_FAILURE(status))
++		{
++			/* Invalid multibyte character encountered ... shouldn't happen */
++			ereport(ERROR,
++					(errcode(ERRCODE_CHARACTER_NOT_IN_REPERTOIRE),
++					 errmsg("ICU: invalid multibyte character for locale")));
++		}
++
++		Assert(usize <= (size_t) (buflen * sizeof(UChar)));
++
++		if (nbytes >= STACKBUFLEN / sizeof(UChar))
++		{
++			pfree(source);
++			pfree(dest);
++		}
++		return result;
++	}
++#else
+ #ifdef USE_WIDE_UPPER_LOWER
+ 	else if (pg_database_encoding_max_length() > 1)
+ 	{
+@@ -1665,6 +1830,7 @@
+ 		pfree(workspace);
+ 	}
+ #endif   /* USE_WIDE_UPPER_LOWER */
++#endif   /* USE_ICU */
+ 	else
+ 	{
+ #ifdef HAVE_LOCALE_T
+@@ -1733,6 +1899,82 @@
+ 	{
+ 		result = asc_initcap(buff, nbytes);
+ 	}
++#ifdef USE_ICU
++	/* use ICU only when max encoding length > one */
++	if (pg_database_encoding_max_length() > 1)
++	{
++		UChar       sourcebuf[STACKBUFLEN], destbuf[STACKBUFLEN];
++		UChar      *source, *dest;
++		int			buflen;
++		size_t		result_size, usize;
++		UErrorCode  status = U_ZERO_ERROR;
++
++		if (conv == NULL)
++		{
++			conv = ucnv_open(NULL, &status);
++			if (U_FAILURE(status))
++			{
++				ereport(ERROR,
++						(errcode(status),
++						 errmsg("ICU error: oracle_compat.c, could not get converter for \"%s\"", ucnv_getDefaultName())));
++			}
++		}
++
++		if (nbytes >= STACKBUFLEN / sizeof(UChar))
++		{
++			buflen = (nbytes + 1) * sizeof(UChar);
++			source = palloc(buflen);
++			dest = palloc(buflen);
++		}
++		else
++		{
++			buflen = STACKBUFLEN;
++			source = sourcebuf;
++			dest = destbuf;
++		}
++		// convert to UTF-16
++		ucnv_toUChars(conv, source, buflen, buff, nbytes, &status);
++		if (U_FAILURE(status))
++		{
++			ereport(ERROR,
++						(errcode(status),
++						 errmsg("ICU error: Could not convert string")));
++		}
++		
++		// run desired function
++		buflen = u_strToTitle(dest, buflen, source, -1, NULL, NULL, &status);
++		if (U_FAILURE(status))
++		{
++			ereport(ERROR,
++						(errcode(status),
++						 errmsg("ICU error: Could not modify case")));
++		}
++
++		// and convert modified utf-16 string back to text
++		result_size = UCNV_GET_MAX_BYTES_FOR_STRING(buflen, ucnv_getMaxCharSize(conv));
++		result = palloc(result_size);
++
++		usize = ucnv_fromUChars(conv, result, result_size,
++								 dest, buflen, &status);
++
++		if (U_FAILURE(status))
++		{
++			/* Invalid multibyte character encountered ... shouldn't happen */
++			ereport(ERROR,
++					(errcode(ERRCODE_CHARACTER_NOT_IN_REPERTOIRE),
++					 errmsg("ICU: invalid multibyte character for locale")));
++		}
++
++		Assert(usize <= (size_t) (buflen * sizeof(UChar)));
++
++		if (nbytes >= STACKBUFLEN / sizeof(UChar))
++		{
++			pfree(source);
++			pfree(dest);
++		}
++		return result;
++	}
++#else
+ #ifdef USE_WIDE_UPPER_LOWER
+ 	else if (pg_database_encoding_max_length() > 1)
+ 	{
+@@ -1798,6 +2040,7 @@
+ 		pfree(workspace);
+ 	}
+ #endif   /* USE_WIDE_UPPER_LOWER */
++#endif   /* USE_ICU */
+ 	else
+ 	{
+ #ifdef HAVE_LOCALE_T
+--- ./src/backend/utils/adt/varlena.c.orig	2016-02-08 23:12:28.000000000 +0200
++++ ./src/backend/utils/adt/varlena.c	2016-02-12 06:55:47.942897000 +0200
+@@ -34,6 +34,15 @@
+ #include "utils/pg_locale.h"
+ #include "utils/sortsupport.h"
+ 
++#ifdef USE_ICU
++#include <unicode/utypes.h>   /* Basic ICU data types */
++#include <unicode/ucnv.h>     /* C   Converter API    */
++#include <unicode/ucol.h>
++#include <unicode/uloc.h>
++#include "unicode/uiter.h"
++#define USTACKBUFLEN		STACKBUFLEN / sizeof(UChar)
++#endif /* USE_ICU */
++
+ 
+ /* GUC variable */
+ int			bytea_output = BYTEA_OUTPUT_HEX;
+--- ./src/backend/utils/mb/encnames.c.orig	2016-02-08 23:12:28.000000000 +0200
++++ ./src/backend/utils/mb/encnames.c	2016-02-12 06:55:47.954758000 +0200
+@@ -403,6 +403,118 @@
+ };
+ 
+ 
++#ifdef USE_ICU
++/*
++ * Try to map most internal character encodings to the proper and
++ * preferred IANA string. Use this in mbutils.c to feed ICU info about
++ * the database's character encoding.
++ *
++ * Palle Girgensohn, 2005
++ */
++
++pg_enc2name pg_enc2iananame_tbl[] =
++{
++	{
++		"US-ASCII", PG_SQL_ASCII
++	},
++	{
++		"EUC-JP", PG_EUC_JP
++	},
++	{
++		"GB2312", PG_EUC_CN
++	},
++	{
++		"EUC-KR", PG_EUC_KR
++	},
++	{
++		"ISO-2022-CN", PG_EUC_TW
++	},
++	{
++		"KS_C_5601-1987", PG_JOHAB  /* either KS_C_5601-1987 or ISO-2022-KR ??? */
++	},
++	{
++		"UTF-8", PG_UTF8
++	},
++	{
++		"MULE_INTERNAL", PG_MULE_INTERNAL  /* is not for real */
++	},
++	{
++		"ISO-8859-1", PG_LATIN1
++	},
++	{
++		"ISO-8859-2", PG_LATIN2
++	},
++	{
++		"ISO-8859-3", PG_LATIN3
++	},
++	{
++		"ISO-8859-4", PG_LATIN4
++	},
++	{
++		"ISO-8859-9", PG_LATIN5
++	},
++	{
++		"ISO-8859-10", PG_LATIN6
++	},
++	{
++		"ISO-8859-13", PG_LATIN7
++	},
++	{
++		"ISO-8859-14", PG_LATIN8
++	},
++	{
++		"ISO-8859-15", PG_LATIN9
++	},
++	{
++		"ISO-8859-16", PG_LATIN10
++	},
++	{
++		"windows-1256", PG_WIN1256
++	},
++	{
++		"windows-874", PG_WIN874
++	},
++	{
++		"KOI8-R", PG_KOI8R
++	},
++	{
++		"windows-1251", PG_WIN1251
++	},
++	{
++		"ISO-8859-5", PG_ISO_8859_5
++	},
++	{
++		"ISO-8859-6", PG_ISO_8859_6
++	},
++	{
++		"ISO-8859-7", PG_ISO_8859_7
++	},
++	{
++		"ISO-8859-8", PG_ISO_8859_8
++	},
++	{
++		"windows-1250", PG_WIN1250
++	},
++	{
++		"Shift_JIS", PG_SJIS
++	},
++	{
++		"Big5", PG_BIG5
++	},
++	{
++		"GBK", PG_GBK
++	},
++	{
++		"cp949", PG_UHC
++	},
++	{
++		"GB18030", PG_GB18030
++	}
++};
++#endif /* USE_ICU */
++
++
++
+ /* ----------
+  * Encoding checks, for error returns -1 else encoding id
+  * ----------
+--- ./src/backend/utils/mb/mbutils.c.orig	2016-02-08 23:12:28.000000000 +0200
++++ ./src/backend/utils/mb/mbutils.c	2016-02-12 06:55:47.966062000 +0200
+@@ -40,6 +40,9 @@
+ #include "utils/builtins.h"
+ #include "utils/memutils.h"
+ #include "utils/syscache.h"
++#ifdef USE_ICU
++#include <unicode/ucnv.h>
++#endif /* USE_ICU */
+ 
+ /*
+  * When converting strings between different encodings, we assume that space
+@@ -913,6 +916,9 @@
+ 
+ 	DatabaseEncoding = &pg_enc2name_tbl[encoding];
+ 	Assert(DatabaseEncoding->encoding == encoding);
++#ifdef USE_ICU
++	ucnv_setDefaultName((&pg_enc2iananame_tbl[encoding])->name);
++#endif
+ }
+ 
+ void
+--- ./src/include/mb/pg_wchar.h.orig	2016-02-08 23:12:28.000000000 +0200
++++ ./src/include/mb/pg_wchar.h	2016-02-12 06:55:47.988716000 +0200
+@@ -321,6 +321,10 @@
+ 
+ extern const pg_enc2name pg_enc2name_tbl[];
+ 
++#ifdef USE_ICU
++extern pg_enc2name pg_enc2iananame_tbl[];
++#endif
++
+ /*
+  * Encoding names for gettext
+  */
+--- ./src/include/pg_config.h.in.orig	2016-02-08 23:12:28.000000000 +0200
++++ ./src/include/pg_config.h.in	2016-02-12 06:55:47.978316000 +0200
+@@ -288,6 +288,12 @@
+ /* Define to 1 if you have the `crypto' library (-lcrypto). */
+ #undef HAVE_LIBCRYPTO
+ 
++/* Define to 1 if you have the `icui18n' library (-licui18n). */
++#undef HAVE_LIBICUI18N
++
++/* Define to 1 if you have the `icuuc' library (-licuuc). */
++#undef HAVE_LIBICUUC
++
+ /* Define to 1 if you have the `ldap' library (-lldap). */
+ #undef HAVE_LIBLDAP
+ 
+@@ -793,6 +799,9 @@
+ /* Define to 1 to build with Bonjour support. (--with-bonjour) */
+ #undef USE_BONJOUR
+ 
++/* Define to build with ICU support. (--with-icu) */
++#undef USE_ICU
++
+ /* Define to 1 if you want float4 values to be passed by value.
+    (--enable-float4-byval) */
+ #undef USE_FLOAT4_BYVAL

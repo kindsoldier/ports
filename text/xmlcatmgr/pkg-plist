@@ -1,0 +1,4 @@
+bin/xmlcatmgr
+@exec test -r %%CATALOG_SGML%% || %%PREFIX%%/bin/xmlcatmgr -sc %%CATALOG_SGML%% create
+@exec test -r %%CATALOG_XML%% || %%PREFIX%%/bin/xmlcatmgr -c %%CATALOG_XML%% create
+

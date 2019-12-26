@@ -1,0 +1,9 @@
+--- ./data/gmpc.desktop.in.orig	2010-03-22 06:18:42.000000000 +0300
++++ ./data/gmpc.desktop.in	2012-08-10 00:05:01.000000000 +0400
+@@ -1,5 +1,5 @@
+ [Desktop Entry]
+-_Name=Gnome Music Player Client
++Name=Gmpc
+ _Comment=A gnome frontend for the mpd daemon
+ Exec=gmpc
+ Terminal=false

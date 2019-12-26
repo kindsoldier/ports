@@ -1,0 +1,235 @@
+--- ./language.dat.orig	2014-07-05 04:23:32.000000000 +0300
++++ ./language.dat	2015-11-15 06:13:53.968550000 +0200
+@@ -55,156 +55,156 @@
+ % ushyph2.tex is another (historical) name for ushyph.tex.
+ % --karl
+ % 
+-dumylang	dumyhyph.tex    %for testing a new language.
+-nohyphenation	zerohyph.tex    %a language with no patterns at all.
++%dumylang	dumyhyph.tex    %for testing a new language.
++%nohyphenation	zerohyph.tex    %a language with no patterns at all.
+ % from dehyph-exptl:
+ german-x-2014-05-21 dehypht-x-2014-05-21.tex
+ =german-x-latest
+ ngerman-x-2014-05-21 dehyphn-x-2014-05-21.tex
+ =ngerman-x-latest
+ % from hyphen-afrikaans:
+-afrikaans loadhyph-af.tex
++%afrikaans loadhyph-af.tex
+ % from hyphen-ancientgreek:
+-ancientgreek loadhyph-grc.tex
+-ibycus ibyhyph.tex
++%ancientgreek loadhyph-grc.tex
++%ibycus ibyhyph.tex
+ % from hyphen-arabic:
+-arabic zerohyph.tex
++%arabic zerohyph.tex
+ % from hyphen-armenian:
+-armenian loadhyph-hy.tex
++%armenian loadhyph-hy.tex
+ % from hyphen-basque:
+-basque loadhyph-eu.tex
++%basque loadhyph-eu.tex
+ % from hyphen-bulgarian:
+-bulgarian loadhyph-bg.tex
++%bulgarian loadhyph-bg.tex
+ % from hyphen-catalan:
+-catalan loadhyph-ca.tex
++%catalan loadhyph-ca.tex
+ % from hyphen-chinese:
+-pinyin loadhyph-zh-latn-pinyin.tex
++%pinyin loadhyph-zh-latn-pinyin.tex
+ % from hyphen-coptic:
+-coptic loadhyph-cop.tex
++%coptic loadhyph-cop.tex
+ % from hyphen-croatian:
+-croatian loadhyph-hr.tex
++%croatian loadhyph-hr.tex
+ % from hyphen-czech:
+-czech loadhyph-cs.tex
++%czech loadhyph-cs.tex
+ % from hyphen-danish:
+-danish loadhyph-da.tex
++%danish loadhyph-da.tex
+ % from hyphen-dutch:
+-dutch loadhyph-nl.tex
++%dutch loadhyph-nl.tex
+ % from hyphen-english:
+ ukenglish loadhyph-en-gb.tex
+ =british
+ =UKenglish
+-usenglishmax loadhyph-en-us.tex
++%usenglishmax loadhyph-en-us.tex
+ % from hyphen-esperanto:
+-esperanto loadhyph-eo.tex
++%esperanto loadhyph-eo.tex
+ % from hyphen-estonian:
+-estonian loadhyph-et.tex
++%estonian loadhyph-et.tex
+ % from hyphen-ethiopic:
+-ethiopic loadhyph-mul-ethi.tex
+-=amharic
+-=geez
++%ethiopic loadhyph-mul-ethi.tex
++%=amharic
++%=geez
+ % from hyphen-farsi:
+-farsi zerohyph.tex
+-=persian
++%farsi zerohyph.tex
++%=persian
+ % from hyphen-finnish:
+-finnish loadhyph-fi.tex
++%finnish loadhyph-fi.tex
+ % from hyphen-french:
+ french loadhyph-fr.tex
+ =patois
+ =francais
+ % from hyphen-friulan:
+-friulan loadhyph-fur.tex
++%friulan loadhyph-fur.tex
+ % from hyphen-galician:
+-galician loadhyph-gl.tex
++%galician loadhyph-gl.tex
+ % from hyphen-georgian:
+-georgian loadhyph-ka.tex
++%georgian loadhyph-ka.tex
+ % from hyphen-german:
+ german loadhyph-de-1901.tex
+ ngerman loadhyph-de-1996.tex
+-swissgerman loadhyph-de-ch-1901.tex
++%swissgerman loadhyph-de-ch-1901.tex
+ % from hyphen-greek:
+ monogreek loadhyph-el-monoton.tex
+ greek loadhyph-el-polyton.tex
+ =polygreek
+ % from hyphen-hungarian:
+-hungarian loadhyph-hu.tex
++%hungarian loadhyph-hu.tex
+ % from hyphen-icelandic:
+-icelandic loadhyph-is.tex
++%icelandic loadhyph-is.tex
+ % from hyphen-indic:
+-assamese loadhyph-as.tex
+-bengali loadhyph-bn.tex
+-gujarati loadhyph-gu.tex
+-hindi loadhyph-hi.tex
+-kannada loadhyph-kn.tex
+-malayalam loadhyph-ml.tex
+-marathi loadhyph-mr.tex
+-oriya loadhyph-or.tex
+-panjabi loadhyph-pa.tex
+-tamil loadhyph-ta.tex
+-telugu loadhyph-te.tex
++%assamese loadhyph-as.tex
++%bengali loadhyph-bn.tex
++%gujarati loadhyph-gu.tex
++%hindi loadhyph-hi.tex
++%kannada loadhyph-kn.tex
++%malayalam loadhyph-ml.tex
++%marathi loadhyph-mr.tex
++%oriya loadhyph-or.tex
++%panjabi loadhyph-pa.tex
++%tamil loadhyph-ta.tex
++%telugu loadhyph-te.tex
+ % from hyphen-indonesian:
+-indonesian loadhyph-id.tex
++%indonesian loadhyph-id.tex
+ % from hyphen-interlingua:
+-interlingua loadhyph-ia.tex
++%interlingua loadhyph-ia.tex
+ % from hyphen-irish:
+ irish loadhyph-ga.tex
+ % from hyphen-italian:
+-italian loadhyph-it.tex
++%italian loadhyph-it.tex
+ % from hyphen-kurmanji:
+-kurmanji loadhyph-kmr.tex
++%kurmanji loadhyph-kmr.tex
+ % from hyphen-latin:
+ latin loadhyph-la.tex
+-classiclatin loadhyph-la-x-classic.tex
++%classiclatin loadhyph-la-x-classic.tex
+ % from hyphen-latvian:
+-latvian loadhyph-lv.tex
++%latvian loadhyph-lv.tex
+ % from hyphen-lithuanian:
+-lithuanian loadhyph-lt.tex
++%lithuanian loadhyph-lt.tex
+ % from hyphen-mongolian:
+-mongolian loadhyph-mn-cyrl.tex
+-mongolianlmc loadhyph-mn-cyrl-x-lmc.tex
++%mongolian loadhyph-mn-cyrl.tex
++%mongolianlmc loadhyph-mn-cyrl-x-lmc.tex
+ % from hyphen-norwegian:
+-bokmal loadhyph-nb.tex
+-=norwegian
+-=norsk
+-nynorsk loadhyph-nn.tex
++%bokmal loadhyph-nb.tex
++%=norwegian
++%=norsk
++%nynorsk loadhyph-nn.tex
+ % from hyphen-piedmontese:
+-piedmontese loadhyph-pms.tex
++%piedmontese loadhyph-pms.tex
+ % from hyphen-polish:
+-polish loadhyph-pl.tex
++%polish loadhyph-pl.tex
+ % from hyphen-portuguese:
+-portuguese loadhyph-pt.tex
+-=portuges
+-=brazil
+-=brazilian
++%portuguese loadhyph-pt.tex
++%=portuges
++%=brazil
++%=brazilian
+ % from hyphen-romanian:
+-romanian loadhyph-ro.tex
++%romanian loadhyph-ro.tex
+ % from hyphen-romansh:
+-romansh loadhyph-rm.tex
++%romansh loadhyph-rm.tex
+ % from hyphen-russian:
+ russian loadhyph-ru.tex
+ % from hyphen-sanskrit:
+-sanskrit loadhyph-sa.tex
++%sanskrit loadhyph-sa.tex
+ % from hyphen-serbian:
+-serbian loadhyph-sr-latn.tex
+-serbianc loadhyph-sr-cyrl.tex
++%serbian loadhyph-sr-latn.tex
++%serbianc loadhyph-sr-cyrl.tex
+ % from hyphen-slovak:
+-slovak loadhyph-sk.tex
++%slovak loadhyph-sk.tex
+ % from hyphen-slovenian:
+-slovenian loadhyph-sl.tex
+-=slovene
++%slovenian loadhyph-sl.tex
++%=slovene
+ % from hyphen-spanish:
+-spanish loadhyph-es.tex
+-=espanol
++%spanish loadhyph-es.tex
++%=espanol
+ % from hyphen-swedish:
+-swedish loadhyph-sv.tex
++%swedish loadhyph-sv.tex
+ % from hyphen-thai:
+-thai loadhyph-th.tex
++%thai loadhyph-th.tex
+ % from hyphen-turkish:
+-turkish loadhyph-tr.tex
++%turkish loadhyph-tr.tex
+ % from hyphen-turkmen:
+-turkmen loadhyph-tk.tex
++%turkmen loadhyph-tk.tex
+ % from hyphen-ukrainian:
+ ukrainian loadhyph-uk.tex
+ % from hyphen-uppersorbian:
+-uppersorbian loadhyph-hsb.tex
++%uppersorbian loadhyph-hsb.tex
+ % from hyphen-welsh:
+ welsh loadhyph-cy.tex

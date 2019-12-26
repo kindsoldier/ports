@@ -1,0 +1,11 @@
+--- ./gtk-2.0/Makefile.in.orig	2013-09-26 14:22:00.000000000 +0300
++++ ./gtk-2.0/Makefile.in	2013-09-26 14:24:01.000000000 +0300
+@@ -287,7 +287,7 @@
+ 	-DG_LOG_DOMAIN=\"gtk-xfce-engine\" \
+ 	$(PLATFORM_CPPFLAGS)
+ 
+-enginedir = $(libdir)/gtk-2.0/$(GTK2_BINARY_VERSION)/engines
++enginedir = $(libdir)/gtk/engines
+ engine_LTLIBRARIES = libxfce.la
+ libxfce_la_SOURCES = \
+ 	cairo-support.c	 \

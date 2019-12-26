@@ -1,0 +1,58 @@
+bin/aconnect
+bin/alsaloop
+bin/alsamixer
+bin/alsatplg
+bin/alsaucm
+bin/amidi
+bin/amixer
+bin/aplay
+bin/aplaymidi
+bin/arecord
+bin/arecordmidi
+bin/aseqdump
+bin/aseqnet
+bin/iecset
+bin/speaker-test
+lib/udev/90-alsa-restore.rules
+man/man1/aconnect.1.gz
+man/man1/alsa-info.sh.1.gz
+man/man1/alsactl.1.gz
+man/man1/alsaloop.1.gz
+man/man1/alsamixer.1.gz
+man/man1/amidi.1.gz
+man/man1/amixer.1.gz
+man/man1/aplay.1.gz
+man/man1/aplaymidi.1.gz
+man/man1/arecord.1.gz
+man/man1/arecordmidi.1.gz
+man/man1/aseqdump.1.gz
+man/man1/aseqnet.1.gz
+man/man1/iecset.1.gz
+man/man1/speaker-test.1.gz
+man/man8/alsaconf.8.gz
+sbin/alsa-info.sh
+sbin/alsaconf
+sbin/alsactl
+share/alsa/init/00main
+share/alsa/init/ca0106
+share/alsa/init/default
+share/alsa/init/hda
+share/alsa/init/help
+share/alsa/init/info
+share/alsa/init/test
+share/alsa/speaker-test/sample_map.csv
+share/sounds/alsa/Front_Center.wav
+share/sounds/alsa/Front_Left.wav
+share/sounds/alsa/Front_Right.wav
+share/sounds/alsa/Noise.wav
+share/sounds/alsa/Rear_Center.wav
+share/sounds/alsa/Rear_Left.wav
+share/sounds/alsa/Rear_Right.wav
+share/sounds/alsa/Side_Left.wav
+share/sounds/alsa/Side_Right.wav
+@dir lib/udev
+@dir share/alsa/init
+@dir share/alsa/speaker-test
+@dir share/alsa
+@dir share/sounds/alsa
+@dir share/sounds

@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/auto/Crypt/OpenSSH/ChachaPoly/ChachaPoly.so
+%%SITE_ARCH%%/Crypt/OpenSSH/ChachaPoly.pm
+%%PERL5_MAN3%%/Crypt::OpenSSH::ChachaPoly.3.gz

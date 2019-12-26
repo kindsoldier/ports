@@ -1,0 +1,35 @@
+--- ./Makefile.in.orig	2016-01-28 22:02:21.000000000 +0200
++++ ./Makefile.in	2016-03-28 19:48:14.823597000 +0200
+@@ -448,16 +448,16 @@
+ 
+ install-dll-nettle:
+ 	$(MKDIR_P) $(DESTDIR)$(bindir)
+-	$(INSTALL_DATA) $(LIBNETTLE_FORLINK) $(DESTDIR)$(bindir)/$(LIBNETTLE_FORLINK)
++	$(INSTALL_DATA) $(LIBNETTLE_FORLINK) $(DESTDIR)$(bindir)/$(LIBNETTLE_SONAME)
+ 
+ install-shared-nettle: $(LIBNETTLE_FORLINK) @IF_DLL@ install-dll-nettle
+ 	$(MKDIR_P) $(DESTDIR)$(libdir)
+ 	$(INSTALL_DATA) $(LIBNETTLE_FILE_SRC) $(DESTDIR)$(libdir)/$(LIBNETTLE_FILE)
+ 	[ -z "$(LIBNETTLE_SONAME)" ] \
+                 || (cd $(DESTDIR)$(libdir) \
+-		&& rm -f $(LIBNETTLE_SONAME) $(LIBNETTLE_FORLINK) \
+-		&& $(LN_S) $(LIBNETTLE_FILE) $(LIBNETTLE_SONAME) \
+-		&& $(LN_S) $(LIBNETTLE_FILE) $(LIBNETTLE_FORLINK))
++		&& rm -f $(LIBNETTLE_FORLINK) \
++		&& $(LN_S) $(LIBNETTLE_SONAME) $(LIBNETTLE_FORLINK))
++
+ 
+ install-dll-hogweed:
+ 	$(MKDIR_P) $(DESTDIR)$(bindir)
+@@ -468,9 +468,8 @@
+ 	$(INSTALL_DATA) $(LIBHOGWEED_FILE_SRC) $(DESTDIR)$(libdir)/$(LIBHOGWEED_FILE)
+ 	[ -z "$(LIBHOGWEED_SONAME)" ] \
+                 || (cd $(DESTDIR)$(libdir) \
+-		&& rm -f $(LIBHOGWEED_SONAME) $(LIBHOGWEED_FORLINK) \
+-		&& $(LN_S) $(LIBHOGWEED_FILE) $(LIBHOGWEED_SONAME) \
+-		&& $(LN_S) $(LIBHOGWEED_FILE) $(LIBHOGWEED_FORLINK))
++		&& rm -f $(LIBHOGWEED_FORLINK) \
++		&& $(LN_S) $(LIBHOGWEED_SONAME) $(LIBHOGWEED_FORLINK))
+ 
+ # I'd like to use makes VPATH search to locate the files to be
+ # installed. But it seems most make programs don't set $<, $^, $? and

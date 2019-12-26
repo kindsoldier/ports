@@ -1,0 +1,11 @@
+--- ./avahi-dnsconfd/Makefile.in.orig	2012-02-15 01:36:36.846059000 +0300
++++ ./avahi-dnsconfd/Makefile.in	2015-01-02 15:33:56.000000000 +0200
+@@ -494,7 +494,7 @@
+ 	rm -f $$list
+ avahi-dnsconfd$(EXEEXT): $(avahi_dnsconfd_OBJECTS) $(avahi_dnsconfd_DEPENDENCIES) $(EXTRA_avahi_dnsconfd_DEPENDENCIES) 
+ 	@rm -f avahi-dnsconfd$(EXEEXT)
+-	$(AM_V_CCLD)$(avahi_dnsconfd_LINK) $(avahi_dnsconfd_OBJECTS) $(avahi_dnsconfd_LDADD) $(LIBS)
++	$(AM_V_CCLD)$(avahi_dnsconfd_LINK) $(avahi_dnsconfd_OBJECTS) $(avahi_dnsconfd_LDADD) $(LIBS) $(INTLLIBS)
+ install-pkgsysconfSCRIPTS: $(pkgsysconf_SCRIPTS)
+ 	@$(NORMAL_INSTALL)
+ 	test -z "$(pkgsysconfdir)" || $(MKDIR_P) "$(DESTDIR)$(pkgsysconfdir)"

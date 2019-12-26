@@ -1,0 +1,15 @@
+#!/bin/sh
+
+set -x
+
+case $2 in
+    PRE-INSTALL)
+	;;
+    POST-INSTALL)
+	/bin/mkdir -p ${PKG_PREFIX}/etc/gtk && \
+	${PKG_PREFIX}/bin/gdk-pixbuf-query-loaders --update-cache && \
+	${PKG_PREFIX}/bin/gtk-query-immodules > ${PKG_PREFIX}/etc/gtk/gtk.immodules
+	;;
+esac
+exit 0
+#EOF

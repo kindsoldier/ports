@@ -1,0 +1,7 @@
+#
+# $Id$
+#
+MANPATH %%PREFIX%%/%%PERL_LIB%%/man
+MANPATH %%PREFIX%%/%%SITE_PERL%%/man
+#EOF
+

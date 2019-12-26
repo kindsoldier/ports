@@ -1,0 +1,25 @@
+--- ./config.layout.orig	2005-02-09 14:18:43.000000000 +0200
++++ ./config.layout	2018-07-09 12:04:37.544289000 +0200
+@@ -11,7 +11,7 @@
+ 
+ #   Classical APR-util path layout designed for parallel installs.
+ <Layout apr-util>
+-    prefix:        /usr/local/apr
++    prefix:        /usr/local/
+     exec_prefix:   ${prefix}
+     bindir:        ${exec_prefix}/bin
+     sbindir:       ${exec_prefix}/bin
+@@ -20,10 +20,10 @@
+     mandir:        ${prefix}/man
+     sysconfdir:    ${prefix}/conf
+     datadir:       ${prefix}
+-    installbuilddir: ${datadir}/build
+-    includedir:    ${prefix}/include/apr-${APRUTIL_MAJOR_VERSION}
++    installbuilddir: ${datadir}/pkgdata/apr/build
++    includedir:    ${prefix}/include/apr
+     localstatedir: ${prefix}
+-    libsuffix:     -${APRUTIL_MAJOR_VERSION}
++    libsuffix:   
+ </Layout>
+ 
+ #   Classical single-installation APR path layout.

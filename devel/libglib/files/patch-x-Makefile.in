@@ -1,0 +1,11 @@
+--- ./Makefile.in.orig	2018-09-21 11:47:05.000000000 +0200
++++ ./Makefile.in	2019-01-26 10:13:24.305377000 +0200
+@@ -834,7 +834,7 @@
+ 
+ @ENABLE_INSTALLED_TESTS_TRUE@installed_test_meta_DATA = $(installed_testcases:=.test)
+ ACLOCAL_AMFLAGS = -I m4macros ${ACLOCAL_FLAGS}
+-SUBDIRS = . m4macros glib gmodule gthread gobject gio po docs tests
++SUBDIRS = . m4macros glib gmodule gthread gobject gio po
+ DIST_SUBDIRS = $(SUBDIRS) build win32
+ bin_SCRIPTS = glib-gettextize
+ AM_CPPFLAGS = \

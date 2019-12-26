@@ -1,0 +1,10 @@
+    **** NOTE ****
+
+Sinatra optionally integrates with haml/sass or Builder
+for templating and mongrel or thin as an HTTP server.
+To use them, install the respective ports separately:
+
+    rubygem-haml
+    rubygem-builder
+    rubygem-mongrel
+    rubygem-thin

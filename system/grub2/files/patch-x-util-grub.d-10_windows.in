@@ -1,0 +1,32 @@
+--- ./util/grub.d/10_windows.in.orig	2012-03-05 00:11:43.000000000 +0300
++++ ./util/grub.d/10_windows.in	2015-10-14 20:45:09.718867000 +0200
+@@ -41,15 +41,15 @@
+ get_os_name_from_boot_ini ()
+ {
+   # Fail if no or more than one partition.
+-  test "`sed -n 's,^\(\(multi\|scsi\)[^=]*\)=.*$,\1,p' "$1" 2>/dev/null | \
++  test "`gsed -n 's,^\(\(multi\|scsi\)[^=]*\)=.*$,\1,p' "$1" 2>/dev/null | \
+     sort | uniq | wc -l`" = 1 || return 1
+ 
+   # Search 'default=PARTITION'
+-  get_os_name_from_boot_ini_part=`sed -n 's,^default=,,p' "$1" | sed 's,\\\\,/,g;s,[ \t\r]*$,,;1q'`
++  get_os_name_from_boot_ini_part=`gsed -n 's,^default=,,p' "$1" | gsed 's,\\\\,/,g;s,[ \t\r]*$,,;1q'`
+   test -n "$get_os_name_from_boot_ini_part" || return 1
+ 
+   # Search 'PARTITION="NAME" ...'
+-  get_os_name_from_boot_ini_name=`sed -n 's,\\\\,/,g;s,^'"$get_os_name_from_boot_ini_part"'="\([^"]*\)".*$,\1,p' "$1" | sed 1q`
++  get_os_name_from_boot_ini_name=`gsed -n 's,\\\\,/,g;s,^'"$get_os_name_from_boot_ini_part"'="\([^"]*\)".*$,\1,p' "$1" | gsed 1q`
+   test -n "$get_os_name_from_boot_ini_name" || return 1
+ 
+   echo "$get_os_name_from_boot_ini_name"
+@@ -87,8 +87,8 @@
+ menuentry '$(echo "$OS" | grub_quote)' \$menuentry_id_option '$osid-$(grub_get_device_id "${dev}")' {
+ EOF
+ 
+-  save_default_entry | sed -e 's,^,\t,'
+-  prepare_grub_to_access_device "$dev" | sed 's,^,\t,'
++  save_default_entry | gsed -e 's,^,\t,'
++  prepare_grub_to_access_device "$dev" | gsed 's,^,\t,'
+   test -z "$needmap" || cat <<EOF
+ 	drivemap -s (hd0) \$root
+ EOF

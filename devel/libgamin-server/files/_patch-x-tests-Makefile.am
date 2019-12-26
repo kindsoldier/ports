@@ -1,0 +1,11 @@
+--- ./tests/Makefile.am.orig	2009-09-28 21:21:59.499530317 +0300
++++ ./tests/Makefile.am	2009-09-28 21:21:34.359437504 +0300
+@@ -10,7 +10,7 @@
+ testgam_SOURCES = testing.c
+ testgam_LDFLAGS =
+ testgam_DEPENDENCIES = $(DEPS)
+-testgam_LDADD= $(LDADDS) -L$(top_builddir)/libgamin -lgamin-1
++testgam_LDADD= $(LDADDS) -L$(top_builddir)/libgamin -lgamin
+ 
+ dist-hook:
+ 	(cd $(srcdir) ; tar -cf - --exclude CVS scenario result ) | (cd $(distdir); tar xf -)

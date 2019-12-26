@@ -1,0 +1,35 @@
+--- ./avahi-daemon/Makefile.in.orig	2012-02-15 01:36:36.663058000 +0300
++++ ./avahi-daemon/Makefile.in	2015-01-02 15:33:56.000000000 +0200
+@@ -69,7 +69,7 @@
+ @ENABLE_CHROOT_TRUE@@HAVE_LIBDAEMON_TRUE@@HAVE_XML_TRUE@	caps.c caps.h
+ 
+ @ENABLE_CHROOT_TRUE@@HAVE_LIBDAEMON_TRUE@@HAVE_XML_TRUE@am__append_3 = -lcap
+-@HAVE_DLOPEN_TRUE@@HAVE_LIBDAEMON_TRUE@@HAVE_XML_TRUE@am__append_4 = -ldl
++@HAVE_DLOPEN_TRUE@@HAVE_LIBDAEMON_TRUE@@HAVE_XML_TRUE@am__append_4 = 
+ @HAVE_DBUS_TRUE@@HAVE_LIBDAEMON_TRUE@@HAVE_XML_TRUE@am__append_5 = \
+ @HAVE_DBUS_TRUE@@HAVE_LIBDAEMON_TRUE@@HAVE_XML_TRUE@	dbus-protocol.c dbus-protocol.h \
+ @HAVE_DBUS_TRUE@@HAVE_LIBDAEMON_TRUE@@HAVE_XML_TRUE@	dbus-util.c dbus-util.h \
+@@ -520,8 +520,8 @@
+ 	$(am__append_1)
+ @HAVE_LIBDAEMON_TRUE@@HAVE_XML_TRUE@pkgsysconfdir = $(sysconfdir)/avahi
+ @HAVE_LIBDAEMON_TRUE@@HAVE_XML_TRUE@servicedir = $(pkgsysconfdir)/services
+-@HAVE_LIBDAEMON_TRUE@@HAVE_XML_TRUE@introspectiondir = $(datadir)/dbus-1/interfaces
+-@HAVE_LIBDAEMON_TRUE@@HAVE_XML_TRUE@dbussystemservicesdir = $(datadir)/dbus-1/system-services
++@HAVE_LIBDAEMON_TRUE@@HAVE_XML_TRUE@introspectiondir = $(datadir)/dbus/interfaces
++@HAVE_LIBDAEMON_TRUE@@HAVE_XML_TRUE@dbussystemservicesdir = $(datadir)/dbus/system-services
+ @HAVE_LIBDAEMON_TRUE@@HAVE_XML_TRUE@avahi_daemon_SOURCES = main.c \
+ @HAVE_LIBDAEMON_TRUE@@HAVE_XML_TRUE@	main.h simple-protocol.c \
+ @HAVE_LIBDAEMON_TRUE@@HAVE_XML_TRUE@	simple-protocol.h \
+@@ -556,9 +556,9 @@
+ 
+ @HAVE_LIBDAEMON_TRUE@@HAVE_XML_TRUE@ini_file_parser_test_CFLAGS = $(AM_CFLAGS)
+ @HAVE_LIBDAEMON_TRUE@@HAVE_XML_TRUE@ini_file_parser_test_LDADD = $(AM_LDADD) ../avahi-common/libavahi-common.la ../avahi-core/libavahi-core.la
+-@HAVE_LIBDAEMON_TRUE@@HAVE_XML_TRUE@pkgsysconf_DATA = \
+-@HAVE_LIBDAEMON_TRUE@@HAVE_XML_TRUE@	avahi-daemon.conf \
+-@HAVE_LIBDAEMON_TRUE@@HAVE_XML_TRUE@	hosts
++@HAVE_LIBDAEMON_TRUE@@HAVE_XML_TRUE@pkgsysconf_DATA =
++@HAVE_LIBDAEMON_TRUE@@HAVE_XML_TRUE@	
++@HAVE_LIBDAEMON_TRUE@@HAVE_XML_TRUE@	
+ 
+ @HAVE_LIBDAEMON_TRUE@@HAVE_XML_TRUE@dist_service_DATA = \
+ @HAVE_LIBDAEMON_TRUE@@HAVE_XML_TRUE@	ssh.service \

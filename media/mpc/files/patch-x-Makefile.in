@@ -1,0 +1,29 @@
+--- ./Makefile.in.orig	2011-06-04 20:16:27.000000000 +0300
++++ ./Makefile.in	2014-12-31 18:06:43.000000000 +0200
+@@ -190,7 +190,7 @@
+ builddir = @builddir@
+ datadir = @datadir@
+ datarootdir = @datarootdir@
+-docdir = @docdir@
++docdir = @datadir@/examples/mpc
+ dvidir = @dvidir@
+ exec_prefix = @exec_prefix@
+ host_alias = @host_alias@
+@@ -220,7 +220,7 @@
+ ACLOCAL_AMFLAGS = -I m4
+ AUTOMAKE_OPTIONS = foreign 1.10 dist-bzip2
+ man_MANS = doc/mpc.1
+-doc_DATA = AUTHORS COPYING NEWS README \
++doc_DATA =  \
+ 	doc/mpd-m3u-handler.sh doc/mpd-pls-handler.sh doc/mppledit \
+ 	doc/mpc-completion.bash
+ 
+@@ -865,7 +865,7 @@
+ 
+ info-am:
+ 
+-install-data-am: install-docDATA install-man
++install-data-am: install-man
+ 
+ install-dvi: install-dvi-am
+ 

@@ -1,0 +1,31 @@
+--- .//icudefs.mk.in.orig	2013-07-09 04:16:33.000000000 +0300
++++ .//icudefs.mk.in	2014-12-23 17:53:11.000000000 +0200
+@@ -47,7 +47,7 @@
+ # to change the build this way). When building in common mode, the data
+ # name is the versioned platform-dependent one. 
+ 
+-ICUDATA_DIR = @pkgicudatadir@/$(PACKAGE)$(ICULIBSUFFIX)/$(VERSION)
++ICUDATA_DIR = @pkgicudatadir@/$(PACKAGE)$(ICULIBSUFFIX)
+ 
+ ICUDATA_BASENAME_VERSION = $(ICUPREFIX)dt@LIB_VERSION_MAJOR@
+ # the entry point is almost like the basename, but has the lib suffix.  
+@@ -87,8 +87,8 @@
+ 
+ # ICU specific directories
+ 
+-pkgdatadir = $(datadir)/$(PACKAGE)$(ICULIBSUFFIX)/$(VERSION)
+-pkglibdir = $(libdir)/$(PACKAGE)$(ICULIBSUFFIX)/$(VERSION)
++pkgdatadir = $(datadir)/$(PACKAGE)$(ICULIBSUFFIX)
++pkglibdir = $(libdir)/$(PACKAGE)$(ICULIBSUFFIX)
+ pkgsysconfdir = $(sysconfdir)/$(PACKAGE)$(ICULIBSUFFIX)
+ 
+ # Installation programs
+@@ -195,7 +195,7 @@
+ LDLIBRARYPATH_ENVVAR = LD_LIBRARY_PATH
+ 
+ # Versioned target for a shared library.
+-FINAL_SO_TARGET = $(SO_TARGET).$(SO_TARGET_VERSION)
++FINAL_SO_TARGET = $(SO_TARGET).$(SO_TARGET_VERSION_MAJOR)
+ MIDDLE_SO_TARGET = $(SO_TARGET).$(SO_TARGET_VERSION_MAJOR)
+ SHARED_OBJECT = $(FINAL_SO_TARGET)
+ 

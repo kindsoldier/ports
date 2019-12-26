@@ -1,0 +1,81 @@
+--- ./Makefile.in.orig	2014-10-16 10:35:13.000000000 +0300
++++ ./Makefile.in	2014-11-29 17:09:27.000000000 +0200
+@@ -94,8 +94,8 @@
+ 	$(srcdir)/Makefile.in $(srcdir)/Makefile.am \
+ 	$(top_srcdir)/configure $(am__configure_deps) \
+ 	$(srcdir)/config.h.in $(srcdir)/libxml.spec.in \
+-	$(srcdir)/libxml-2.0.pc.in \
+-	$(srcdir)/libxml-2.0-uninstalled.pc.in \
++	$(srcdir)/libxml2.pc.in \
++	$(srcdir)/libxml2-uninstalled.pc.in \
+ 	$(srcdir)/libxml2-config.cmake.in $(srcdir)/xml2-config.in \
+ 	depcomp COPYING TODO config.guess config.sub install-sh \
+ 	missing ltmain.sh
+@@ -110,8 +110,8 @@
+  configure.lineno config.status.lineno
+ mkinstalldirs = $(install_sh) -d
+ CONFIG_HEADER = config.h
+-CONFIG_CLEAN_FILES = libxml2.spec libxml-2.0.pc \
+-	libxml-2.0-uninstalled.pc libxml2-config.cmake xml2-config
++CONFIG_CLEAN_FILES = libxml2.spec libxml2.pc \
++	libxml2-uninstalled.pc libxml2-config.cmake xml2-config
+ CONFIG_CLEAN_VPATH_FILES =
+ am__vpath_adj_setup = srcdirstrip=`echo "$(srcdir)" | sed 's|.|.|g'`;
+ am__vpath_adj = case $$p in \
+@@ -678,7 +678,7 @@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ ACLOCAL_AMFLAGS = -I m4
+-SUBDIRS = include . doc example xstc $(PYTHON_SUBDIR)
++SUBDIRS = include . doc python
+ DIST_SUBDIRS = include . doc example python xstc
+ AM_CPPFLAGS = -I$(top_builddir)/include -I$(srcdir)/include
+ AM_CFLAGS = $(THREAD_CFLAGS) $(Z_CFLAGS) $(LZMA_CFLAGS)
+@@ -816,7 +816,7 @@
+ 	     check-relaxng-test-suite.py check-relaxng-test-suite2.py \
+ 	     check-xsddata-test-suite.py check-xinclude-test-suite.py \
+              example/Makefile.am example/gjobread.c example/gjobs.xml \
+-	     $(man_MANS) libxml-2.0.pc.in libxml-2.0-uninstalled.pc.in \
++	     $(man_MANS) libxml2.pc.in libxml2-uninstalled.pc.in \
+ 	     libxml2-config.cmake.in \
+ 	     trionan.c trionan.h triostr.c triostr.h trio.c trio.h \
+ 	     triop.h triodef.h libxml.h elfgcchack.h xzlib.h buf.h \
+@@ -826,7 +826,7 @@
+ 	     $(CVS_EXTRA_DIST)
+ 
+ pkgconfigdir = $(libdir)/pkgconfig
+-pkgconfig_DATA = libxml-2.0.pc
++pkgconfig_DATA = libxml2.pc
+ cmakedir = $(libdir)/cmake/libxml2
+ cmake_DATA = libxml2-config.cmake
+ 
+@@ -899,9 +899,9 @@
+ 	-rm -f config.h stamp-h1
+ libxml2.spec: $(top_builddir)/config.status $(srcdir)/libxml.spec.in
+ 	cd $(top_builddir) && $(SHELL) ./config.status $@
+-libxml-2.0.pc: $(top_builddir)/config.status $(srcdir)/libxml-2.0.pc.in
++libxml2.pc: $(top_builddir)/config.status $(srcdir)/libxml2.pc.in
+ 	cd $(top_builddir) && $(SHELL) ./config.status $@
+-libxml-2.0-uninstalled.pc: $(top_builddir)/config.status $(srcdir)/libxml-2.0-uninstalled.pc.in
++libxml2-uninstalled.pc: $(top_builddir)/config.status $(srcdir)/libxml2-uninstalled.pc.in
+ 	cd $(top_builddir) && $(SHELL) ./config.status $@
+ libxml2-config.cmake: $(top_builddir)/config.status $(srcdir)/libxml2-config.cmake.in
+ 	cd $(top_builddir) && $(SHELL) ./config.status $@
+@@ -1780,7 +1780,7 @@
+ 
+ info-am:
+ 
+-install-data-am: install-cmakeDATA install-data-local \
++install-data-am: \
+ 	install-m4dataDATA install-man install-pkgconfigDATA
+ 
+ install-dvi: install-dvi-recursive
+@@ -1788,7 +1788,7 @@
+ install-dvi-am:
+ 
+ install-exec-am: install-binPROGRAMS install-binSCRIPTS \
+-	install-confexecDATA install-libLTLIBRARIES
++	install-libLTLIBRARIES
+ 
+ install-html: install-html-recursive
+ 

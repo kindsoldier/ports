@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=GanttProject
+GenericName=Gantt chart based project scheduling and management tool
+Comment=Gantt chart based project scheduling and management tool
+Icon=ganttproject
+Exec=ganttproject
+Categories=Development;Java;Utility;

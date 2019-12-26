@@ -1,0 +1,37 @@
+--- ./Makefile.in.orig	2005-07-12 05:27:47.000000000 +0300
++++ ./Makefile.in	2015-10-14 08:27:41.375709000 +0200
+@@ -8,7 +8,7 @@
+ MANDIR = @prefix@/man/man1
+ 
+ DEFINES = -DHAVE_CONFIG_H ${VERSION}
+-CFLAGS = -Wall -O3 ${DEBUG} ${DEFINES}
++CFLAGS += -Wall ${DEBUG} ${DEFINES}
+ 
+ 
+ OBJS = rename.o fixtoken.o misc.o @LIBOBJS@
+@@ -16,7 +16,7 @@
+ all: rename
+ 
+ rename:	$(OBJS)
+-	$(CC) $(CFLAGS) -o $@ $^
++	$(CC) $(CFLAGS) @LDFLAGS@ -o $@ $^
+ 	strip $@
+ 
+ static:	$(OBJS)
+@@ -30,11 +30,13 @@
+ 	rm -f core rename *.o config.status config.cache config.h config.log Makefile
+ 
+ install:
+-	install -o root -g wheel -m 0755 -s rename $(BINDIR)
+-	install -o root -g wheel -m 0644 rename.1 $(MANDIR)
+-	
++	install -o root -g wheel -m 0755 -s rename $(DESTDIR)$(BINDIR)
++	install -o root -g wheel -m 0644 rename.1 $(DESTDIR)$(MANDIR)
++
+ rename.o: rename.c rename.h
+ regex.o: regex.c regex.h
+ fixtoken.o: fixtoken.c
+ misc.o: misc.c
+ 
++.c.o:
++	$(CC) $(CFLAGS) @CPPFLAGS@ -o $@ -c $<

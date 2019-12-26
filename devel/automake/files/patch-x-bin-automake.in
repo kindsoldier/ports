@@ -1,0 +1,11 @@
+--- ./bin/automake.in.orig	2018-03-08 22:27:05.000000000 +0200
++++ ./bin/automake.in	2019-09-16 16:22:38.610016000 +0200
+@@ -31,7 +31,7 @@
+ 
+ BEGIN
+ {
+-  unshift (@INC, '@datadir@/@PACKAGE@-@APIVERSION@')
++  unshift (@INC, '@datadir@/@PACKAGE@')
+     unless $ENV{AUTOMAKE_UNINSTALLED};
+ 
+   # Override SHELL.  This is required on DJGPP so that system() uses

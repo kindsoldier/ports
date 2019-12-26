@@ -1,0 +1,13 @@
+diff --git a/src/backend/executor/nodeAgg.c src/backend/executor/nodeAgg.c
+index 7ca74ad58d3..523217126ef 100644
+--- a/src/backend/executor/nodeAgg.c
++++ src/backend/executor/nodeAgg.c
+@@ -644,7 +644,7 @@ advance_transition_function(AggState *aggstate,
+ 								   pertrans->transtypeByVal,
+ 								   pertrans->transtypeLen);
+ 		}
+-		if (!pergroupstate->transValueIsNull)
++		if (!(pergroupstate->noTransValue || pergroupstate->transValueIsNull))
+ 		{
+ 			if (DatumIsReadWriteExpandedObject(pergroupstate->transValue,
+ 											   false,

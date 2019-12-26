@@ -1,0 +1,28 @@
+bin/gringotts
+share/applications/gringotts.desktop
+share/doc/gringotts/AUTHORS
+share/doc/gringotts/BUGS
+share/doc/gringotts/ChangeLog
+share/doc/gringotts/COPYING
+share/doc/gringotts/FAQ
+share/doc/gringotts/NEWS
+share/doc/gringotts/README
+share/doc/gringotts/TODO
+share/locale/de/LC_MESSAGES/gringotts.mo
+share/locale/fr/LC_MESSAGES/gringotts.mo
+share/locale/it/LC_MESSAGES/gringotts.mo
+share/locale/pl/LC_MESSAGES/gringotts.mo
+share/locale/ru/LC_MESSAGES/gringotts.mo
+share/pixmaps/gringotts-32.xpm
+share/pixmaps/gringotts.xpm
+@dir share/doc/gringotts
+@dir share/locale/de/LC_MESSAGES
+@dir share/locale/de
+@dir share/locale/fr/LC_MESSAGES
+@dir share/locale/fr
+@dir share/locale/it/LC_MESSAGES
+@dir share/locale/it
+@dir share/locale/pl/LC_MESSAGES
+@dir share/locale/pl
+@dir share/locale/ru/LC_MESSAGES
+@dir share/locale/ru

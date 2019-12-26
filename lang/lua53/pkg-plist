@@ -1,0 +1,13 @@
+bin/lua
+bin/luac
+include/lua/lauxlib.h
+include/lua/lua.h
+include/lua/lua.hpp
+include/lua/luaconf.h
+include/lua/lualib.h
+lib/liblua.a
+lib/liblua.so.0
+lib/pkgconfig/lua.pc
+man/man1/lua.1.gz
+man/man1/luac.1.gz
+@dir include/lua

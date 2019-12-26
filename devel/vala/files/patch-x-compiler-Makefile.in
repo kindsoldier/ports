@@ -1,0 +1,48 @@
+--- ./compiler/Makefile.in.orig	2011-06-01 17:37:55.000000000 +0300
++++ ./compiler/Makefile.in	2011-11-09 18:04:35.000000000 +0300
+@@ -56,7 +56,7 @@
+ valac_OBJECTS = $(am_valac_OBJECTS)
+ am__DEPENDENCIES_1 =
+ valac_DEPENDENCIES = $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+-	../codegen/libvala@PACKAGE_SUFFIX@.la $(am__DEPENDENCIES_1)
++	../codegen/libvala.la $(am__DEPENDENCIES_1)
+ AM_V_lt = $(am__v_lt_$(V))
+ am__v_lt_ = $(am__v_lt_$(AM_DEFAULT_VERBOSITY))
+ am__v_lt_0 = --silent
+@@ -216,7 +216,7 @@
+ oldincludedir = @oldincludedir@
+ pdfdir = @pdfdir@
+ prefix = @prefix@
+-program_transform_name = @program_transform_name@
++program_transform_name = 
+ psdir = @psdir@
+ sbindir = @sbindir@
+ sharedstatedir = @sharedstatedir@
+@@ -252,7 +252,7 @@
+ valac_LDADD = \
+ 	$(COVERAGE_LIBS) \
+ 	$(GLIB_LIBS) \
+-	../codegen/libvala@PACKAGE_SUFFIX@.la \
++	../codegen/libvala.la \
+ 	$(NULL)
+ 
+ EXTRA_DIST = $(valac_VALASOURCES) valac.vala.stamp
+@@ -532,6 +532,7 @@
+ install-exec-am: install-binPROGRAMS
+ 	@$(NORMAL_INSTALL)
+ 	$(MAKE) $(AM_MAKEFLAGS) install-exec-hook
++
+ install-html: install-html-am
+ 
+ install-html-am:
+@@ -594,9 +595,7 @@
+ 	@touch $@
+ 
+ install-exec-hook:
+-	cd $(DESTDIR)$(bindir) && $(LN_S) -f valac@PACKAGE_SUFFIX@$(EXEEXT) vala@PACKAGE_SUFFIX@$(EXEEXT)
+-@ENABLE_UNVERSIONED_TRUE@	cd $(DESTDIR)$(bindir) && $(LN_S) -f valac@PACKAGE_SUFFIX@$(EXEEXT) valac$(EXEEXT)
+-@ENABLE_UNVERSIONED_TRUE@	cd $(DESTDIR)$(bindir) && $(LN_S) -f vala@PACKAGE_SUFFIX@$(EXEEXT) vala$(EXEEXT)
++#@ENABLE_UNVERSIONED_TRUE@	cd $(DESTDIR)$(bindir) && $(LN_S) -f valac$(EXEEXT) vala$(EXEEXT)
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

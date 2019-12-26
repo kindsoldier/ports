@@ -1,0 +1,20 @@
+bin/icc2ps
+bin/icclink
+bin/icctrans
+bin/jpegicc
+bin/tiffdiff
+bin/tifficc
+bin/wtpt
+include/lcms/icc34.h
+include/lcms/lcms.h
+lib/liblcms.a
+lib/liblcms.la
+lib/liblcms.so
+lib/liblcms.so.1
+lib/pkgconfig/lcms.pc
+man/man1/icc2ps.1.gz
+man/man1/icclink.1.gz
+man/man1/jpegicc.1.gz
+man/man1/tifficc.1.gz
+man/man1/wtpt.1.gz
+@dir include/lcms

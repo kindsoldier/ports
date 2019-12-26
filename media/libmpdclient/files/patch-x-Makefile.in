@@ -1,0 +1,14 @@
+--- ./Makefile.in.orig	2013-10-30 01:14:45.000000000 +0300
++++ ./Makefile.in	2014-12-31 17:59:57.000000000 +0200
+@@ -1302,9 +1302,9 @@
+ 
+ info-am:
+ 
+-install-data-am: install-data-local install-docDATA \
++install-data-am: install-data-local  \
+ 	install-mpdincludeHEADERS install-pkgconfigDATA \
+-	install-vapiDATA
++
+ 
+ install-dvi: install-dvi-am
+ 

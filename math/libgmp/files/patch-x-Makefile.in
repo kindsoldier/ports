@@ -1,0 +1,31 @@
+--- ./Makefile.in.orig	2016-12-16 17:45:34.000000000 +0200
++++ ./Makefile.in	2019-12-23 15:05:32.970237000 +0200
+@@ -560,12 +560,24 @@
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-LIBGMP_LT_CURRENT = 13
++#LIBGMP_LT_CURRENT = 13
++#LIBGMP_LT_REVISION = 2
++#LIBGMP_LT_AGE = 3
++#LIBGMPXX_LT_CURRENT = 9
++#LIBGMPXX_LT_REVISION = 2
++#LIBGMPXX_LT_AGE = 5
++
++LIBGMP_LT_CURRENT = 10
+ LIBGMP_LT_REVISION = 2
+-LIBGMP_LT_AGE = 3
+-LIBGMPXX_LT_CURRENT = 9
++LIBGMP_LT_AGE = 0
++LIBGMPXX_LT_CURRENT = 6
+ LIBGMPXX_LT_REVISION = 2
+-LIBGMPXX_LT_AGE = 5
++LIBGMPXX_LT_AGE = 2
++LIBMP_LT_CURRENT = 4
++LIBMP_LT_REVISION = 22
++LIBMP_LT_AGE = 1
++
++
+ SUBDIRS = tests mpn mpz mpq mpf printf scanf rand cxx demos tune doc
+ 
+ # The "test -f" support for srcdir!=builddir is similar to the automake .c.o

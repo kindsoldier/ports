@@ -1,0 +1,17 @@
+--- ./CMakeLists.txt.orig	2017-10-31 21:36:00.000000000 +0200
++++ ./CMakeLists.txt	2018-02-12 15:43:14.026990000 +0200
+@@ -14,12 +14,12 @@
+ cmake_minimum_required(VERSION 2.8.12)
+ project(doxygen)
+ 
+-option(build_wizard    "Build the GUI frontend for doxygen." OFF)
++option(build_wizard    "Build the GUI frontend for doxygen." ON)
+ option(build_app       "Example showing how to embed doxygen in an application." OFF)
+ option(build_parse     "Parses source code and dumps the dependencies between the code elements." OFF)
+ option(build_xmlparser "Example showing how to parse doxygen's XML output." OFF)
+ option(build_search    "Build external search tools (doxysearch and doxyindexer)" OFF)
+-option(build_doc       "Build user manual" OFF)
++option(build_doc       "Build user manual" ON)
+ option(use_sqlite3     "Add support for sqlite3 output [experimental]." OFF)
+ option(use_libclang    "Add support for libclang parsing." OFF)
+ option(win_static      "Link with /MT in stead of /MD on windows" OFF)

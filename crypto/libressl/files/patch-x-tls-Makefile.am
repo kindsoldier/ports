@@ -1,0 +1,65 @@
+--- ./tls/Makefile.am.orig	2018-06-13 18:07:51.000000000 +0200
++++ ./tls/Makefile.am	2018-09-15 15:12:44.048594000 +0200
+@@ -1,39 +1,39 @@
+ include $(top_srcdir)/Makefile.am.common
+ 
+-lib_LTLIBRARIES = libtls.la
++lib_LTLIBRARIES = libretls.la
+ 
+ EXTRA_DIST = VERSION
+ EXTRA_DIST += CMakeLists.txt
+ EXTRA_DIST += tls.sym
+ 
+-libtls_la_LDFLAGS = -version-info @LIBTLS_VERSION@ -no-undefined -export-symbols $(top_srcdir)/tls/tls.sym
+-libtls_la_LIBADD = $(abs_top_builddir)/ssl/libssl.la
+-libtls_la_LIBADD += $(abs_top_builddir)/crypto/libcrypto.la
+-libtls_la_LIBADD += $(PLATFORM_LDADD)
++libretls_la_LDFLAGS = -version-info @LIBTLS_VERSION@ -no-undefined -export-symbols $(top_srcdir)/tls/tls.sym
++libretls_la_LIBADD = $(abs_top_builddir)/ssl/libressl.la
++libretls_la_LIBADD += $(abs_top_builddir)/crypto/librecrypto.la
++libretls_la_LIBADD += $(PLATFORM_LDADD)
+ 
+-libtls_la_CPPFLAGS = $(AM_CPPFLAGS)
++libretls_la_CPPFLAGS = $(AM_CPPFLAGS)
+ if OPENSSLDIR_DEFINED
+-libtls_la_CPPFLAGS += -D_PATH_SSL_CA_FILE=\"@OPENSSLDIR@/cert.pem\"
++libretls_la_CPPFLAGS += -D_PATH_SSL_CA_FILE=\"@OPENSSLDIR@/cert.pem\"
+ else
+-libtls_la_CPPFLAGS += -D_PATH_SSL_CA_FILE=\"$(sysconfdir)/ssl/cert.pem\"
++libretls_la_CPPFLAGS += -D_PATH_SSL_CA_FILE=\"$(sysconfdir)/ssl/cert.pem\"
+ endif
+ 
+-libtls_la_SOURCES = tls.c
+-libtls_la_SOURCES += tls_client.c
+-libtls_la_SOURCES += tls_bio_cb.c
+-libtls_la_SOURCES += tls_config.c
+-libtls_la_SOURCES += tls_conninfo.c
+-libtls_la_SOURCES += tls_keypair.c
+-libtls_la_SOURCES += tls_server.c
+-libtls_la_SOURCES += tls_ocsp.c
+-libtls_la_SOURCES += tls_peer.c
+-libtls_la_SOURCES += tls_util.c
+-libtls_la_SOURCES += tls_verify.c
++libretls_la_SOURCES = tls.c
++libretls_la_SOURCES += tls_client.c
++libretls_la_SOURCES += tls_bio_cb.c
++libretls_la_SOURCES += tls_config.c
++libretls_la_SOURCES += tls_conninfo.c
++libretls_la_SOURCES += tls_keypair.c
++libretls_la_SOURCES += tls_server.c
++libretls_la_SOURCES += tls_ocsp.c
++libretls_la_SOURCES += tls_peer.c
++libretls_la_SOURCES += tls_util.c
++libretls_la_SOURCES += tls_verify.c
+ noinst_HEADERS = tls_internal.h
+ 
+ if HOST_WIN
+-libtls_la_SOURCES += compat/ftruncate.c
+-libtls_la_SOURCES += compat/getuid.c
+-libtls_la_SOURCES += compat/pread.c
+-libtls_la_SOURCES += compat/pwrite.c
++libretls_la_SOURCES += compat/ftruncate.c
++libretls_la_SOURCES += compat/getuid.c
++libretls_la_SOURCES += compat/pread.c
++libretls_la_SOURCES += compat/pwrite.c
+ endif

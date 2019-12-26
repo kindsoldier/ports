@@ -1,0 +1,11 @@
+--- ./skin/Makefile.in.orig	2015-07-26 21:06:28.000000000 +0200
++++ ./skin/Makefile.in	2015-11-18 08:02:33.368232000 +0200
+@@ -341,7 +341,7 @@
+ winmm_LIBS = @winmm_LIBS@
+ xml_CFLAGS = @xml_CFLAGS@
+ xml_LIBS = @xml_LIBS@
+-SUBDIRS = dark default metal ocean plain woody no_skin
++SUBDIRS =  plain no_skin
+ all: all-recursive
+ 
+ .SUFFIXES:

@@ -1,0 +1,20 @@
+--- ./bin/aclocal.in.orig	2018-02-26 22:38:27.000000000 +0200
++++ ./bin/aclocal.in	2019-09-16 16:22:38.604062000 +0200
+@@ -27,7 +27,7 @@
+ 
+ BEGIN
+ {
+-  unshift (@INC, '@datadir@/@PACKAGE@-@APIVERSION@')
++  unshift (@INC, '@datadir@/@PACKAGE@')
+     unless $ENV{AUTOMAKE_UNINSTALLED};
+ }
+ 
+@@ -68,7 +68,7 @@
+ # ACLOCAL_PATH environment variable, and reset with the '--system-acdir'
+ # option.
+ my @user_includes = ();
+-my @automake_includes = ('@datadir@/aclocal-' . $APIVERSION);
++my @automake_includes = ('@datadir@/aclocal');
+ my @system_includes = ('@datadir@/aclocal');
+ 
+ # Whether we should copy M4 file in $user_includes[0].

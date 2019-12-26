@@ -1,0 +1,7 @@
+%%SITE_ARCH%%/Net/LibIDN.pm
+%%SITE_ARCH%%/auto/Net/LibIDN/LibIDN.so
+%%SITE_ARCH%%/auto/Net/LibIDN/autosplit.ix
+%%PERL5_MAN3%%/Net::LibIDN.3.gz
+@dir %%SITE_ARCH%%/Net
+@dir %%SITE_ARCH%%/auto/Net/LibIDN
+@dir %%SITE_ARCH%%/auto/Net

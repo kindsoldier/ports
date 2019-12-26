@@ -1,0 +1,11 @@
+--- ./Makefile.in.orig	2015-02-04 13:24:51.000000000 +0200
++++ ./Makefile.in	2015-03-05 00:25:56.000000000 +0200
+@@ -1381,7 +1381,7 @@
+ 
+ info-am:
+ 
+-install-data-am: install-docDATA install-pkgincludeHEADERS
++install-data-am:  install-pkgincludeHEADERS
+ 
+ install-dvi: install-dvi-am
+ 

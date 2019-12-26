@@ -1,0 +1,13 @@
+bin/dbus-binding-tool
+include/dbus/dbus/dbus-glib-bindings.h
+include/dbus/dbus/dbus-glib-lowlevel.h
+include/dbus/dbus/dbus-glib.h
+include/dbus/dbus/dbus-gtype-specialized.h
+include/dbus/dbus/dbus-gvalue-parse-variant.h
+lib/libdbus-glib.a
+lib/libdbus-glib.la
+lib/libdbus-glib.so
+lib/libdbus-glib.so.5
+lib/pkgconfig/dbus-glib.pc
+@dir include/dbus/dbus
+@dir include/dbus

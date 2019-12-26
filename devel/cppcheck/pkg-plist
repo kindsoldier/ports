@@ -1,0 +1,25 @@
+bin/cppcheck
+bin/cppcheck-htmlreport
+man/man1/cppcheck.1.gz
+share/cppcheck/avr.cfg
+share/cppcheck/boost.cfg
+share/cppcheck/bsd.cfg
+share/cppcheck/cppcheck-lib.cfg
+share/cppcheck/embedded_sql.cfg
+share/cppcheck/gnu.cfg
+share/cppcheck/googletest.cfg
+share/cppcheck/gtk.cfg
+share/cppcheck/microsoft_sal.cfg
+share/cppcheck/motif.cfg
+share/cppcheck/posix.cfg
+share/cppcheck/python.cfg
+share/cppcheck/qt.cfg
+share/cppcheck/ruby.cfg
+share/cppcheck/sdl.cfg
+share/cppcheck/sfml.cfg
+share/cppcheck/std.cfg
+share/cppcheck/tinyxml2.cfg
+share/cppcheck/windows.cfg
+share/cppcheck/wxwidgets.cfg
+share/cppcheck/zlib.cfg
+@dir share/cppcheck

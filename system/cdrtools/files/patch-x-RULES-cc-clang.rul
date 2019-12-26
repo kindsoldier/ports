@@ -1,0 +1,39 @@
+--- ./RULES/cc-clang.rul.orig	2014-03-25 17:51:00.000000000 +0300
++++ ./RULES/cc-clang.rul	2018-06-10 14:33:47.223315000 +0200
+@@ -33,9 +33,9 @@
+ CPPOPTS=	-I$(ARCHDIR) -I$(OINCSDIR) $(INCDIRS:%=-I%) $(INCDIRSX:%=-I%)
+ COPTS=		$(CLANG_OPTXX)
+ #		-Wtraditional now causes more pain than it helps 
+-CWOPTS=		-Wall -Wtraditional
+-CWOPTS=		-Wall -Wno-unknown-pragmas \
+-		-Wshadow -Wmissing-prototypes -Wstrict-prototypes
++#CWOPTS=		-Wall -Wtraditional
++#CWOPTS=		-Wall -Wno-unknown-pragmas \
++#		-Wshadow -Wmissing-prototypes -Wstrict-prototypes
+ COPTOPT=	-O
+ COPTDYN=	-fpic
+ COPTGPROF=	-pg
+@@ -74,15 +74,15 @@
+ CC=		$(CC_COM_DEF)
+ CCC=		$(CC++_COM_DEF)
+ 
+-CCCC=		@echo "	==> COMPILING \"$@\""; $(CC_COM) $(CLANG_OPTXX)
+-CC++ =		@echo "	==> COMPILING \"$@\""; $(CC++_COM) $(CLANG_OPTXX)
+-LDCC=		@echo "	==> LINKING \"$@\""; $(CC_COM) $(CLANG_OPTXX)
+-LDCC++ =	@echo "	==> LINKING \"$@\""; $(CC++_COM) $(CLANG_OPTXX)
+-DYNLD=		@echo "	==> LINKING dynamic library \"$@\""; $(CC_COM) $(CLANG_OPTXX)
+-DYNLDC++ =	@echo "	==> LINKING dynamic library \"$@\""; $(CC++_COM) $(CLANG_OPTXX)
++CCCC=		$(CC_COM) $(CLANG_OPTXX)
++CC++ =		$(CC++_COM) $(CLANG_OPTXX)
++LDCC=		$(CC_COM) $(CLANG_OPTXX)
++LDCC++ =	$(CC++_COM) $(CLANG_OPTXX)
++DYNLD=		$(CC_COM) $(CLANG_OPTXX)
++DYNLDC++ =	$(CC++_COM) $(CLANG_OPTXX)
+ 
+ RMDEP=		:
+-MKDEP=		@echo "	==> MAKING DEPENDENCIES \"$@\""; $(RMDEP); $(CC_COM) $(CLANG_OPTXX) -M
++MKDEP=		$(RMDEP); $(CC_COM) $(CLANG_OPTXX) -M
+ MKDEP_OUT=
+-MKC++DEP=	@echo "	==> MAKING DEPENDENCIES \"$@\""; $(RMDEP); $(CC++_COM) $(CLANG_OPTXX) -M
++MKC++DEP=	$(RMDEP); $(CC++_COM) $(CLANG_OPTXX) -M
+ MKC++DEP_OUT=

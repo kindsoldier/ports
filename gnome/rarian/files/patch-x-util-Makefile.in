@@ -1,0 +1,20 @@
+--- ./util/Makefile.in.orig	2008-09-01 21:44:56.000000000 +0300
++++ ./util/Makefile.in	2010-09-28 02:27:52.000000000 +0300
+@@ -33,7 +33,7 @@
+ POST_UNINSTALL = :
+ build_triplet = @build@
+ host_triplet = @host@
+-bin_PROGRAMS = rarian-example$(EXEEXT) $(am__EXEEXT_1)
++bin_PROGRAMS =  $(am__EXEEXT_1)
+ @ENABLE_SK_COMPAT_TRUE@am__append_1 = rarian-sk-migrate \
+ @ENABLE_SK_COMPAT_TRUE@    rarian-sk-preinstall \
+ @ENABLE_SK_COMPAT_TRUE@    rarian-sk-gen-uuid \
+@@ -828,7 +828,7 @@
+ @ENABLE_INSTALL_TRUE@@ENABLE_SK_COMPAT_TRUE@	@cd $(DESTDIR)$(bindir); ln -s rarian-sk-rebuild scrollkeeper-rebuilddb
+ @ENABLE_INSTALL_TRUE@@ENABLE_SK_COMPAT_TRUE@	@cd $(DESTDIR)$(bindir); ln -s rarian-sk-install scrollkeeper-uninstall
+ @ENABLE_INSTALL_TRUE@@ENABLE_SK_COMPAT_TRUE@	@cd $(DESTDIR)$(bindir); ln -s rarian-sk-update scrollkeeper-update
+-@ENABLE_INSTALL_TRUE@@ENABLE_SK_COMPAT_TRUE@	@mkdir -p $(DESTDIR)/$(localstatedir)/lib/rarian
++@ENABLE_INSTALL_TRUE@@ENABLE_SK_COMPAT_TRUE@	@mkdir -p $(DESTDIR)/$(localstatedir)/db/rarian
+ @ENABLE_INSTALL_TRUE@@ENABLE_SKDB_UPDATE_TRUE@@ENABLE_SK_COMPAT_TRUE@	@echo "Translating current database"
+ @ENABLE_INSTALL_TRUE@@ENABLE_SKDB_UPDATE_TRUE@@ENABLE_SK_COMPAT_TRUE@	@$(DESTDIR)$(bindir)/rarian-sk-update
+ 

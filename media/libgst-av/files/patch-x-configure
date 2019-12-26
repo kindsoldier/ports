@@ -1,0 +1,11 @@
+--- ./configure.orig	2017-06-02 09:36:46.140027000 +0200
++++ ./configure	2017-06-02 09:55:56.707862000 +0200
+@@ -17620,7 +17620,7 @@
+         --disable-filters --enable-filter=yadif --disable-doc --disable-vda --disable-d3d11va --disable-dxva2 \
+         --disable-videotoolbox --disable-vaapi --disable-crystalhd \
+         --disable-nvenc --disable-mmal --disable-libmfx \
+-        --disable-iconv --enable-optimizations"
++        --disable-iconv --enable-optimizations --disable-asm"
+ 
+   if test "x$enable_gpl" == "xyes"; then
+     emblibav_configure_args="$emblibav_configure_args --enable-gpl"

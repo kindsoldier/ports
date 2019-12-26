@@ -1,0 +1,13 @@
+--- ./GNUmakefile.in.orig	2015-05-20 11:29:33.000000000 +0200
++++ ./GNUmakefile.in	2016-03-26 14:34:10.717147000 +0200
+@@ -82015,8 +82015,8 @@
+ jsc: $(javascriptcore_built_nosources) Programs/jsc$(EXEEXT)
+ 
+ # jsc
+-Programs/jsc$(EXEEXT): Programs/jsc-@WEBKITGTK_API_MAJOR_VERSION@$(EXEEXT)
+-	$(AM_V_GEN)cp -f Programs/jsc-@WEBKITGTK_API_MAJOR_VERSION@$(EXEEXT) Programs/jsc$(EXEEXT)
++#Programs/jsc$(EXEEXT): Programs/jsc-@WEBKITGTK_API_MAJOR_VERSION@$(EXEEXT)
++#	$(AM_V_GEN)cp -f Programs/jsc-@WEBKITGTK_API_MAJOR_VERSION@$(EXEEXT) Programs/jsc$(EXEEXT)
+ 
+ # The GIR file is generated via autoconf, as we don't need to run the scanner against non-GObject libraries.
+ @ENABLE_INTROSPECTION_TRUE@JavaScriptCore-@WEBKITGTK_API_VERSION@.typelib: JavaScriptCore-@WEBKITGTK_API_VERSION@.gir $(G_IR_COMPILER)

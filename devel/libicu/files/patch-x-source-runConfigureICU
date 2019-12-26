@@ -1,0 +1,17 @@
+--- .//runConfigureICU.orig	2013-12-31 23:51:27.000000000 +0300
++++ .//runConfigureICU	2014-12-23 15:59:41.000000000 +0200
+@@ -366,14 +366,6 @@
+ 
+ if test $release -eq 1
+ then
+-    if test "$RELEASE_CFLAGS" = ""
+-    then
+-        case $CC in
+-            gcc|*/gcc|*-gcc-*|*/*-gcc-*)
+-                RELEASE_CFLAGS=-O3
+-                ;;
+-        esac
+-    fi
+     if test "$RELEASE_CFLAGS" != ""
+     then
+         CFLAGS="$CFLAGS $RELEASE_CFLAGS"

@@ -1,0 +1,38 @@
+bin/isoqlog
+share/isoqlog/htmltemp/daily.html
+share/isoqlog/htmltemp/domain.html
+share/isoqlog/htmltemp/generaldaily.html
+share/isoqlog/htmltemp/generaldomain.html
+share/isoqlog/htmltemp/generalmonthly.html
+share/isoqlog/htmltemp/generalyearly.html
+share/isoqlog/htmltemp/images/dot.gif
+share/isoqlog/htmltemp/images/home.gif
+share/isoqlog/htmltemp/images/isoqlog.gif
+share/isoqlog/htmltemp/images/pk.gif
+share/isoqlog/htmltemp/images/up.gif
+share/isoqlog/htmltemp/index.html
+share/isoqlog/htmltemp/library/isoqlog.css
+share/isoqlog/htmltemp/monthly.html
+share/isoqlog/htmltemp/yearly.html
+share/isoqlog/lang/bulgarian
+share/isoqlog/lang/czech
+share/isoqlog/lang/danish
+share/isoqlog/lang/dutch
+share/isoqlog/lang/english
+share/isoqlog/lang/finnish
+share/isoqlog/lang/french
+share/isoqlog/lang/german
+share/isoqlog/lang/italian
+share/isoqlog/lang/norwegian
+share/isoqlog/lang/polish
+share/isoqlog/lang/portuguese
+share/isoqlog/lang/romana
+share/isoqlog/lang/russian
+share/isoqlog/lang/spanish
+share/isoqlog/lang/swedish
+share/isoqlog/lang/turkish
+@dir share/isoqlog/htmltemp/images
+@dir share/isoqlog/htmltemp/library
+@dir share/isoqlog/htmltemp
+@dir share/isoqlog/lang
+@dir share/isoqlog

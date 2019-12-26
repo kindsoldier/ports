@@ -1,0 +1,49 @@
+--- ./samples/lynx.lss.orig	2006-09-19 03:28:28.000000000 +0300
++++ ./samples/lynx.lss	2009-09-01 22:08:16.000000000 +0300
+@@ -5,35 +5,35 @@
+ #
+ # If you really want the terminal's default colors, and if lynx is built using
+ # ncurses' default-color support, remove these two lines:
+-normal:		normal:			lightgray:black
+-default:	normal:			white:black
++normal:		normal:			black:lightgray
++default:	normal:			black:white
+ 
+ # Normal type styles correspond to HTML tags.
+ #
+ # The next line (beginning with "em") means:  use bold if mono, otherwise
+ # brightblue on <defaultbackground>
+ em:		bold:			brightblue
+-strong:		bold:			brightred
+-b:		bold:			red
++strong:		bold:			brown
++b:		bold:			white:		black
+ i:		bold:			brightblue
+-a:		bold:			green
++a:		bold:			blue:		lightgray
+ img:		dim:			brown
+ fig:		normal:			gray
+ caption:	reverse:		brown
+ hr:		normal:			yellow
+ blockquote:	normal:			brightblue
+ ul:		normal:			brown
+-address:	normal:			magenta
+-title:		normal:			magenta
++address:	normal:			yellow:		blue
++title:		normal:			yellow:		blue
+ tt:		dim:			brightmagenta:	black
+-h1:		bold:			yellow:		blue
+-label:		normal:			magenta
+-q:		normal:			yellow:		magenta
++h1:		bold:			green		
++label:		normal:			red:	black
++q:		normal:			yellow:		gray
+ small:		dim:			default
+ big:		bold:			yellow
+ sup:		bold:			yellow
+ sub:		dim:			gray
+-li:		normal:			magenta
++li:		normal:			black
+ code:		normal:			cyan
+ cite:		normal:			cyan
+ 

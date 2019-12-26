@@ -1,0 +1,22 @@
+# Created by: Sergey Skvortsov <skv@protey.ru>
+# $FreeBSD: head/net/p5-XML-Compile-SOAP-AnyEvent/Makefile 412348 2016-04-01 14:17:44Z mat $
+
+PORTNAME=	XML-Compile-SOAP-AnyEvent
+PORTVERSION=	0.90
+CATEGORIES=	net perl5
+MASTER_SITES=	CPAN
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	perl@FreeBSD.org
+COMMENT=	Exchange XML via AnyEvent::HTTP
+
+BUILD_DEPENDS=	p5-AnyEvent-HTTP>=1.46:perl/p5-AnyEvent-HTTP \
+		p5-HTTP-Message>=0:perl/p5-HTTP-Message \
+		p5-Log-Report>=1.05:perl/p5-Log-Report \
+		p5-XML-Compile-SOAP>=3.05:perl/p5-XML-Compile-SOAP
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+USES=		perl5
+USE_PERL5=	configure
+
+.include <bsd.port.mk>

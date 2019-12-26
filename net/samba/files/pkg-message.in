@@ -1,0 +1,15 @@
+**************************************************************************
+For run swat:
+
+1 Add/check in /etc/services you need to add a line like this:
+
+swat 901/tcp
+
+2 Add/check in /etc/inetd.conf you should add a line like this:
+
+swat stream tcp nowait.400 root %%PREFIX%%/sbin/swat swat
+
+
+
+
+**************************************************************************

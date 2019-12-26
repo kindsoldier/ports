@@ -1,0 +1,18 @@
+#!/bin/sh -x
+
+APXS="%%APXS%%"
+AP_LIBEXEC_DIR="%%AP_LIBEXEC_DIR%%"
+
+case $2 in 
+    PRE-INSTALL)
+	;;
+    POST-INSTALL)
+%%MOD_INSTALL%%	for module_name in dav_svn authz_svn
+%%MOD_INSTALL%%	do
+%%MOD_INSTALL%%	    ${APXS} -e -A -n ${module_name} \
+%%MOD_INSTALL%%		${AP_LIBEXEC_DIR}/mod_${module_name}.so || true
+%%MOD_INSTALL%%	done
+	;;
+esac
+#EOF
+

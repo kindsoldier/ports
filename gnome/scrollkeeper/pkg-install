@@ -1,0 +1,26 @@
+#!/bin/sh
+
+set -x
+
+#PATH=${PATH}:/bin:/usr/bin:/usr/local/bin
+#export PATH
+
+PREFIX=$(xml2-config --prefix)
+
+case $2 in 
+    PRE-INSTALL)
+	;;
+    POST-INSTALL)
+	ROOTCATALOG=${PREFIX}/share/xml/catalog.xml
+	SKPDBDIR=/var/db/scrollkeeper
+	install -d -m 0755 -o root -g wheel ${SKPDBDIR}
+	SKPREFIX=$(scrollkeeper-config --prefix)
+	xmlcatalog --noout --add "public" \
+	    "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" \
+	    "${SKPREFIX}/share/xml/scrollkeeper/dtds/scrollkeeper-omf.dtd" \
+	    ${ROOTCATALOG}
+	scrollkeeper-rebuilddb -q -p ${SKPDBDIR}
+	;;
+esac
+exit 0
+#EOF

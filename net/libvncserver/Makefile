@@ -1,0 +1,55 @@
+#
+# $Id$
+#
+PORTNAME=	libvncserver
+PORTVERSION=	0.9.12
+DISTVERSIONPREFIX=	LibVNCServer-
+CATEGORIES=	net devel
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Provide an easy API to a custom vnc server
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	LibVNC
+
+DISTNAME=	LibVNCServer-${PORTVERSION}
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Provide an easy API to a custom vnc server
+
+
+LIB_DEPENDS+=	libpng.so:graph/libpng
+LIB_DEPENDS+=	libjpeg.so:graph/libjpeg
+LIB_DEPENDS+=	libgcrypt.so:crypto/libgcrypt
+LIB_DEPENDS+=	liblzo2.so:arch/liblzo2
+LIB_DEPENDS+=	libgpg-error.so:crypto/libgpg-error
+
+USE_LDCONFIG=	yes
+USES+=          cmake gmake
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+
+CMAKE_ARGS+= -DCMAKE_BUILD_TYPE:STRING=Release
+
+CMAKE_ARGS+= -DWITH_GCRYPT=ON
+CMAKE_ARGS+= -DWITH_GNUTLS=ON
+CMAKE_ARGS+= -DWITH_IPv6=ON
+CMAKE_ARGS+= -DWITH_JPEG=ON
+CMAKE_ARGS+= -DWITH_LZO=ON
+CMAKE_ARGS+= -DWITH_PNG=ON
+CMAKE_ARGS+= -DWITH_THREADS=ON
+CMAKE_ARGS+= -DWITH_TIGHTVNC_FILETRANSFER=ON
+CMAKE_ARGS+= -DWITH_WEBSOCKETS=ON
+CMAKE_ARGS+= -DWITH_ZLIB=ON
+
+CMAKE_ARGS+= -DWITH_OPENSSL=OFF
+CMAKE_ARGS+= -DWITH_SASL=OFF
+CMAKE_ARGS+= -DWITH_SDL=OFF
+CMAKE_ARGS+= -DWITH_SYSTEMD=OFF
+CMAKE_ARGS+= -DWITH_FFMPEG=OFF
+
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/rfb/default8x16.h ${STAGEDIR}${PREFIX}/include/rfb
+
+.include <bsd.port.mk>
+#EOF

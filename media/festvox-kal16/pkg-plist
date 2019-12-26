@@ -1,0 +1,11 @@
+share/festival/lib/voices/english/kal_diphone/COPYING
+share/festival/lib/voices/english/kal_diphone/festvox/kal_diphone.scm
+share/festival/lib/voices/english/kal_diphone/festvox/kaldurtreeZ.scm
+share/festival/lib/voices/english/kal_diphone/group/kallpc16k.group
+@dir share/festival/lib/voices/english/kal_diphone/festvox
+@dir share/festival/lib/voices/english/kal_diphone/group
+@dir share/festival/lib/voices/english/kal_diphone
+@dir share/festival/lib/voices/english
+@dir share/festival/lib/voices
+@dir share/festival/lib
+@dir share/festival

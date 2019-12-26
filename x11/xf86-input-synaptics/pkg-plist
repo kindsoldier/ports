@@ -1,0 +1,9 @@
+bin/synclient
+bin/syndaemon
+include/xorg/synaptics-properties.h
+lib/pkgconfig/xorg-synaptics.pc
+lib/xorg/modules/input/synaptics_drv.la
+lib/xorg/modules/input/synaptics_drv.so
+man/man1/synclient.1.gz
+man/man1/syndaemon.1.gz
+man/man4/synaptics.4.gz

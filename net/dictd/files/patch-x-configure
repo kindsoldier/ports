@@ -1,0 +1,20 @@
+--- ./configure.orig	2008-04-07 00:44:03.000000000 +0300
++++ ./configure	2015-12-17 14:21:16.184605000 +0200
+@@ -3722,7 +3722,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-ldl  $LIBS"
++LIBS="  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -3778,7 +3778,7 @@
+ { echo "$as_me:$LINENO: result: $ac_cv_lib_dl_dlopen" >&5
+ echo "${ECHO_T}$ac_cv_lib_dl_dlopen" >&6; }
+ if test $ac_cv_lib_dl_dlopen = yes; then
+-  LIBS="$LIBS -ldl"; USE_PLUGIN=2
++  LIBS="$LIBS "; USE_PLUGIN=2
+ else
+   { echo "$as_me:$LINENO: checking for lt_dlopen in -lltdl" >&5
+ echo $ECHO_N "checking for lt_dlopen in -lltdl... $ECHO_C" >&6; }

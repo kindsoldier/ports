@@ -1,0 +1,440 @@
+include/gstreamer/gst/audio/gstaudioaggregator.h
+include/gstreamer/gst/base/gstaggregator.h
+include/gstreamer/gst/basecamerabinsrc/gstbasecamerasrc.h
+include/gstreamer/gst/basecamerabinsrc/gstcamerabin-enum.h
+include/gstreamer/gst/basecamerabinsrc/gstcamerabinpreview.h
+include/gstreamer/gst/codecparsers/gsth264parser.h
+include/gstreamer/gst/codecparsers/gsth265parser.h
+include/gstreamer/gst/codecparsers/gstjpegparser.h
+include/gstreamer/gst/codecparsers/gstmpeg4parser.h
+include/gstreamer/gst/codecparsers/gstmpegvideometa.h
+include/gstreamer/gst/codecparsers/gstmpegvideoparser.h
+include/gstreamer/gst/codecparsers/gstvc1parser.h
+include/gstreamer/gst/codecparsers/gstvp8parser.h
+include/gstreamer/gst/codecparsers/gstvp8rangedecoder.h
+include/gstreamer/gst/codecparsers/gstvp9parser.h
+include/gstreamer/gst/gl/egl/gstegl.h
+include/gstreamer/gst/gl/egl/gsteglimagememory.h
+include/gstreamer/gst/gl/egl/gstglcontext_egl.h
+include/gstreamer/gst/gl/egl/gstgldisplay_egl.h
+include/gstreamer/gst/gl/gl.h
+include/gstreamer/gst/gl/glprototypes/all_functions.h
+include/gstreamer/gst/gl/glprototypes/base.h
+include/gstreamer/gst/gl/glprototypes/blending.h
+include/gstreamer/gst/gl/glprototypes/buffers.h
+include/gstreamer/gst/gl/glprototypes/debug.h
+include/gstreamer/gst/gl/glprototypes/eglimage.h
+include/gstreamer/gst/gl/glprototypes/fbo.h
+include/gstreamer/gst/gl/glprototypes/fixedfunction.h
+include/gstreamer/gst/gl/glprototypes/gles.h
+include/gstreamer/gst/gl/glprototypes/gstgl_compat.h
+include/gstreamer/gst/gl/glprototypes/gstgl_gles2compat.h
+include/gstreamer/gst/gl/glprototypes/opengl.h
+include/gstreamer/gst/gl/glprototypes/query.h
+include/gstreamer/gst/gl/glprototypes/shaders.h
+include/gstreamer/gst/gl/glprototypes/sync.h
+include/gstreamer/gst/gl/glprototypes/vao.h
+include/gstreamer/gst/gl/gstgl_enums.h
+include/gstreamer/gst/gl/gstgl_fwd.h
+include/gstreamer/gst/gl/gstglapi.h
+include/gstreamer/gst/gl/gstglbasefilter.h
+include/gstreamer/gst/gl/gstglbasememory.h
+include/gstreamer/gst/gl/gstglbuffer.h
+include/gstreamer/gst/gl/gstglbufferpool.h
+include/gstreamer/gst/gl/gstglcolorconvert.h
+include/gstreamer/gst/gl/gstglcontext.h
+include/gstreamer/gst/gl/gstglcontrolbindingproxy.h
+include/gstreamer/gst/gl/gstgldebug.h
+include/gstreamer/gst/gl/gstgldisplay.h
+include/gstreamer/gst/gl/gstglfeature.h
+include/gstreamer/gst/gl/gstglfilter.h
+include/gstreamer/gst/gl/gstglformat.h
+include/gstreamer/gst/gl/gstglframebuffer.h
+include/gstreamer/gst/gl/gstglmemory.h
+include/gstreamer/gst/gl/gstglmemorypbo.h
+include/gstreamer/gst/gl/gstgloverlaycompositor.h
+include/gstreamer/gst/gl/gstglquery.h
+include/gstreamer/gst/gl/gstglshader.h
+include/gstreamer/gst/gl/gstglshaderstrings.h
+include/gstreamer/gst/gl/gstglsl.h
+include/gstreamer/gst/gl/gstglslstage.h
+include/gstreamer/gst/gl/gstglsyncmeta.h
+include/gstreamer/gst/gl/gstglupload.h
+include/gstreamer/gst/gl/gstglutils.h
+include/gstreamer/gst/gl/gstglviewconvert.h
+include/gstreamer/gst/gl/gstglwindow.h
+include/gstreamer/gst/gl/x11/gstgldisplay_x11.h
+include/gstreamer/gst/insertbin/gstinsertbin.h
+include/gstreamer/gst/interfaces/photography-enumtypes.h
+include/gstreamer/gst/interfaces/photography.h
+include/gstreamer/gst/mpegts/gst-atsc-section.h
+include/gstreamer/gst/mpegts/gst-dvb-descriptor.h
+include/gstreamer/gst/mpegts/gst-dvb-section.h
+include/gstreamer/gst/mpegts/gst-scte-section.h
+include/gstreamer/gst/mpegts/gstmpegts-enumtypes.h
+include/gstreamer/gst/mpegts/gstmpegtsdescriptor.h
+include/gstreamer/gst/mpegts/gstmpegtssection.h
+include/gstreamer/gst/mpegts/mpegts.h
+include/gstreamer/gst/player/gstplayer-g-main-context-signal-dispatcher.h
+include/gstreamer/gst/player/gstplayer-media-info.h
+include/gstreamer/gst/player/gstplayer-signal-dispatcher.h
+include/gstreamer/gst/player/gstplayer-types.h
+include/gstreamer/gst/player/gstplayer-video-overlay-video-renderer.h
+include/gstreamer/gst/player/gstplayer-video-renderer.h
+include/gstreamer/gst/player/gstplayer-visualization.h
+include/gstreamer/gst/player/gstplayer.h
+include/gstreamer/gst/player/player.h
+include/gstreamer/gst/uridownloader/gstfragment.h
+include/gstreamer/gst/uridownloader/gsturidownloader_debug.h
+include/gstreamer/gst/uridownloader/gsturidownloader.h
+include/gstreamer/gst/video/gstvideoaggregator.h
+include/gstreamer/gst/video/gstvideoaggregatorpad.h
+lib/gstreamer/include/gst/gl/gstglconfig.h
+lib/gstreamer/libgstaccurip.la
+lib/gstreamer/libgstaccurip.so
+lib/gstreamer/libgstadpcmdec.la
+lib/gstreamer/libgstadpcmdec.so
+lib/gstreamer/libgstadpcmenc.la
+lib/gstreamer/libgstadpcmenc.so
+lib/gstreamer/libgstaiff.la
+lib/gstreamer/libgstaiff.so
+lib/gstreamer/libgstasfmux.la
+lib/gstreamer/libgstasfmux.so
+lib/gstreamer/libgstaudiofxbad.la
+lib/gstreamer/libgstaudiofxbad.so
+lib/gstreamer/libgstaudiomixer.la
+lib/gstreamer/libgstaudiomixer.so
+lib/gstreamer/libgstaudiovisualizers.la
+lib/gstreamer/libgstaudiovisualizers.so
+lib/gstreamer/libgstautoconvert.la
+lib/gstreamer/libgstautoconvert.so
+lib/gstreamer/libgstbayer.la
+lib/gstreamer/libgstbayer.so
+lib/gstreamer/libgstbz2.la
+lib/gstreamer/libgstbz2.so
+lib/gstreamer/libgstcamerabin2.la
+lib/gstreamer/libgstcamerabin2.so
+lib/gstreamer/libgstcoloreffects.la
+lib/gstreamer/libgstcoloreffects.so
+lib/gstreamer/libgstcompositor.la
+lib/gstreamer/libgstcompositor.so
+lib/gstreamer/libgstcurl.la
+lib/gstreamer/libgstcurl.so
+lib/gstreamer/libgstdashdemux.la
+lib/gstreamer/libgstdashdemux.so
+lib/gstreamer/libgstdataurisrc.la
+lib/gstreamer/libgstdataurisrc.so
+lib/gstreamer/libgstdebugutilsbad.la
+lib/gstreamer/libgstdebugutilsbad.so
+lib/gstreamer/libgstdtsdec.la
+lib/gstreamer/libgstdtsdec.so
+lib/gstreamer/libgstdvb.la
+lib/gstreamer/libgstdvb.so
+lib/gstreamer/libgstdvbsuboverlay.la
+lib/gstreamer/libgstdvbsuboverlay.so
+lib/gstreamer/libgstdvdspu.la
+lib/gstreamer/libgstdvdspu.so
+lib/gstreamer/libgstfaac.la
+lib/gstreamer/libgstfaac.so
+lib/gstreamer/libgstfaad.la
+lib/gstreamer/libgstfaad.so
+lib/gstreamer/libgstfestival.la
+lib/gstreamer/libgstfestival.so
+lib/gstreamer/libgstfieldanalysis.la
+lib/gstreamer/libgstfieldanalysis.so
+lib/gstreamer/libgstfreeverb.la
+lib/gstreamer/libgstfreeverb.so
+lib/gstreamer/libgstfrei0r.la
+lib/gstreamer/libgstfrei0r.so
+lib/gstreamer/libgstgaudieffects.la
+lib/gstreamer/libgstgaudieffects.so
+lib/gstreamer/libgstgdp.la
+lib/gstreamer/libgstgdp.so
+lib/gstreamer/libgstgeometrictransform.la
+lib/gstreamer/libgstgeometrictransform.so
+lib/gstreamer/libgstgsm.la
+lib/gstreamer/libgstgsm.so
+lib/gstreamer/libgstgtksink.la
+lib/gstreamer/libgstgtksink.so
+lib/gstreamer/libgsthls.la
+lib/gstreamer/libgsthls.so
+lib/gstreamer/libgstid3tag.la
+lib/gstreamer/libgstid3tag.so
+lib/gstreamer/libgstinter.la
+lib/gstreamer/libgstinter.so
+lib/gstreamer/libgstinterlace.la
+lib/gstreamer/libgstinterlace.so
+lib/gstreamer/libgstivfparse.la
+lib/gstreamer/libgstivfparse.so
+lib/gstreamer/libgstivtc.la
+lib/gstreamer/libgstivtc.so
+lib/gstreamer/libgstjp2kdecimator.la
+lib/gstreamer/libgstjp2kdecimator.so
+lib/gstreamer/libgstjpegformat.la
+lib/gstreamer/libgstjpegformat.so
+lib/gstreamer/libgstkate.la
+lib/gstreamer/libgstkate.so
+lib/gstreamer/libgstmidi.la
+lib/gstreamer/libgstmidi.so
+lib/gstreamer/libgstmodplug.la
+lib/gstreamer/libgstmodplug.so
+lib/gstreamer/libgstmpegpsdemux.la
+lib/gstreamer/libgstmpegpsdemux.so
+lib/gstreamer/libgstmpegpsmux.la
+lib/gstreamer/libgstmpegpsmux.so
+lib/gstreamer/libgstmpegtsdemux.la
+lib/gstreamer/libgstmpegtsdemux.so
+lib/gstreamer/libgstmpegtsmux.la
+lib/gstreamer/libgstmpegtsmux.so
+lib/gstreamer/libgstmxf.la
+lib/gstreamer/libgstmxf.so
+lib/gstreamer/libgstneonhttpsrc.la
+lib/gstreamer/libgstneonhttpsrc.so
+lib/gstreamer/libgstnetsim.la
+lib/gstreamer/libgstnetsim.so
+lib/gstreamer/libgstopengl.la
+lib/gstreamer/libgstopengl.so
+lib/gstreamer/libgstopusparse.la
+lib/gstreamer/libgstopusparse.so
+lib/gstreamer/libgstpcapparse.la
+lib/gstreamer/libgstpcapparse.so
+lib/gstreamer/libgstpnm.la
+lib/gstreamer/libgstpnm.so
+lib/gstreamer/libgstrawparse.la
+lib/gstreamer/libgstrawparse.so
+lib/gstreamer/libgstremovesilence.la
+lib/gstreamer/libgstremovesilence.so
+lib/gstreamer/libgstrfbsrc.la
+lib/gstreamer/libgstrfbsrc.so
+lib/gstreamer/libgstrtponvif.la
+lib/gstreamer/libgstrtponvif.so
+lib/gstreamer/libgstsdpelem.la
+lib/gstreamer/libgstsdpelem.so
+lib/gstreamer/libgstsegmentclip.la
+lib/gstreamer/libgstsegmentclip.so
+lib/gstreamer/libgstshm.la
+lib/gstreamer/libgstshm.so
+lib/gstreamer/libgstsiren.la
+lib/gstreamer/libgstsiren.so
+lib/gstreamer/libgstsmooth.la
+lib/gstreamer/libgstsmooth.so
+lib/gstreamer/libgstsmoothstreaming.la
+lib/gstreamer/libgstsmoothstreaming.so
+lib/gstreamer/libgstsndfile.la
+lib/gstreamer/libgstsndfile.so
+lib/gstreamer/libgstspandsp.la
+lib/gstreamer/libgstspandsp.so
+lib/gstreamer/libgstspeed.la
+lib/gstreamer/libgstspeed.so
+lib/gstreamer/libgstsrtp.la
+lib/gstreamer/libgstsrtp.so
+lib/gstreamer/libgststereo.la
+lib/gstreamer/libgststereo.so
+lib/gstreamer/libgstsubenc.la
+lib/gstreamer/libgstsubenc.so
+lib/gstreamer/libgstvideofiltersbad.la
+lib/gstreamer/libgstvideofiltersbad.so
+lib/gstreamer/libgstvideoframe_audiolevel.la
+lib/gstreamer/libgstvideoframe_audiolevel.so
+lib/gstreamer/libgstvideoparsersbad.la
+lib/gstreamer/libgstvideoparsersbad.so
+lib/gstreamer/libgstvideosignal.la
+lib/gstreamer/libgstvideosignal.so
+lib/gstreamer/libgstvmnc.la
+lib/gstreamer/libgstvmnc.so
+lib/gstreamer/libgstwebp.la
+lib/gstreamer/libgstwebp.so
+lib/gstreamer/libgstx265.la
+lib/gstreamer/libgstx265.so
+lib/gstreamer/libgsty4mdec.la
+lib/gstreamer/libgsty4mdec.so
+lib/gstreamer/libgstyadif.la
+lib/gstreamer/libgstyadif.so
+lib/libgstadaptivedemux.la
+lib/libgstadaptivedemux.so
+lib/libgstadaptivedemux.so.8
+lib/libgstbadaudio.la
+lib/libgstbadaudio.so
+lib/libgstbadaudio.so.8
+lib/libgstbadbase.la
+lib/libgstbadbase.so
+lib/libgstbadbase.so.8
+lib/libgstbadvideo.la
+lib/libgstbadvideo.so
+lib/libgstbadvideo.so.8
+lib/libgstbasecamerabinsrc.la
+lib/libgstbasecamerabinsrc.so
+lib/libgstbasecamerabinsrc.so.8
+lib/libgstcodecparsers.la
+lib/libgstcodecparsers.so
+lib/libgstcodecparsers.so.8
+lib/libgstgl.la
+lib/libgstgl.so
+lib/libgstgl.so.8
+lib/libgstinsertbin.la
+lib/libgstinsertbin.so
+lib/libgstinsertbin.so.8
+lib/libgstmpegts.la
+lib/libgstmpegts.so
+lib/libgstmpegts.so.8
+lib/libgstphotography.la
+lib/libgstphotography.so
+lib/libgstphotography.so.8
+lib/libgstplayer.la
+lib/libgstplayer.so
+lib/libgstplayer.so.8
+lib/libgsturidownloader.la
+lib/libgsturidownloader.so
+lib/libgsturidownloader.so.8
+lib/pkgconfig/gstreamer-bad-audio.pc
+lib/pkgconfig/gstreamer-bad-base.pc
+lib/pkgconfig/gstreamer-bad-video.pc
+lib/pkgconfig/gstreamer-codecparsers.pc
+lib/pkgconfig/gstreamer-gl.pc
+lib/pkgconfig/gstreamer-insertbin.pc
+lib/pkgconfig/gstreamer-mpegts.pc
+lib/pkgconfig/gstreamer-player.pc
+lib/pkgconfig/gstreamer-plugins-bad.pc
+share/gstreamer/presets/GstFreeverb.prs
+share/locale/af/LC_MESSAGES/gst-plugins-bad.mo
+share/locale/az/LC_MESSAGES/gst-plugins-bad.mo
+share/locale/bg/LC_MESSAGES/gst-plugins-bad.mo
+share/locale/ca/LC_MESSAGES/gst-plugins-bad.mo
+share/locale/cs/LC_MESSAGES/gst-plugins-bad.mo
+share/locale/da/LC_MESSAGES/gst-plugins-bad.mo
+share/locale/de/LC_MESSAGES/gst-plugins-bad.mo
+share/locale/el/LC_MESSAGES/gst-plugins-bad.mo
+share/locale/en_GB/LC_MESSAGES/gst-plugins-bad.mo
+share/locale/eo/LC_MESSAGES/gst-plugins-bad.mo
+share/locale/es/LC_MESSAGES/gst-plugins-bad.mo
+share/locale/eu/LC_MESSAGES/gst-plugins-bad.mo
+share/locale/fi/LC_MESSAGES/gst-plugins-bad.mo
+share/locale/fr/LC_MESSAGES/gst-plugins-bad.mo
+share/locale/gl/LC_MESSAGES/gst-plugins-bad.mo
+share/locale/hr/LC_MESSAGES/gst-plugins-bad.mo
+share/locale/hu/LC_MESSAGES/gst-plugins-bad.mo
+share/locale/id/LC_MESSAGES/gst-plugins-bad.mo
+share/locale/it/LC_MESSAGES/gst-plugins-bad.mo
+share/locale/ja/LC_MESSAGES/gst-plugins-bad.mo
+share/locale/ky/LC_MESSAGES/gst-plugins-bad.mo
+share/locale/lt/LC_MESSAGES/gst-plugins-bad.mo
+share/locale/lv/LC_MESSAGES/gst-plugins-bad.mo
+share/locale/mt/LC_MESSAGES/gst-plugins-bad.mo
+share/locale/nb/LC_MESSAGES/gst-plugins-bad.mo
+share/locale/nl/LC_MESSAGES/gst-plugins-bad.mo
+share/locale/or/LC_MESSAGES/gst-plugins-bad.mo
+share/locale/pl/LC_MESSAGES/gst-plugins-bad.mo
+share/locale/pt_BR/LC_MESSAGES/gst-plugins-bad.mo
+share/locale/ro/LC_MESSAGES/gst-plugins-bad.mo
+share/locale/ru/LC_MESSAGES/gst-plugins-bad.mo
+share/locale/sk/LC_MESSAGES/gst-plugins-bad.mo
+share/locale/sl/LC_MESSAGES/gst-plugins-bad.mo
+share/locale/sq/LC_MESSAGES/gst-plugins-bad.mo
+share/locale/sr/LC_MESSAGES/gst-plugins-bad.mo
+share/locale/sv/LC_MESSAGES/gst-plugins-bad.mo
+share/locale/tr/LC_MESSAGES/gst-plugins-bad.mo
+share/locale/uk/LC_MESSAGES/gst-plugins-bad.mo
+share/locale/vi/LC_MESSAGES/gst-plugins-bad.mo
+share/locale/zh_CN/LC_MESSAGES/gst-plugins-bad.mo
+@dir include/gstreamer/gst/audio
+@dir include/gstreamer/gst/base
+@dir include/gstreamer/gst/basecamerabinsrc
+@dir include/gstreamer/gst/codecparsers
+@dir include/gstreamer/gst/gl/egl
+@dir include/gstreamer/gst/gl/glprototypes
+@dir include/gstreamer/gst/gl/x11
+@dir include/gstreamer/gst/gl
+@dir include/gstreamer/gst/insertbin
+@dir include/gstreamer/gst/interfaces
+@dir include/gstreamer/gst/mpegts
+@dir include/gstreamer/gst/player
+@dir include/gstreamer/gst/uridownloader
+@dir include/gstreamer/gst/video
+@dir include/gstreamer/gst
+@dir include/gstreamer
+@dir lib/gstreamer/include/gst/gl
+@dir lib/gstreamer/include/gst
+@dir lib/gstreamer/include
+@dir lib/gstreamer
+@dir share/gstreamer/presets
+@dir share/gstreamer
+@dir share/locale/af
+@dir share/locale/az/LC_MESSAGES
+@dir share/locale/az
+@dir share/locale/bg/LC_MESSAGES
+@dir share/locale/bg
+@dir share/locale/ca/LC_MESSAGES
+@dir share/locale/ca
+@dir share/locale/cs/LC_MESSAGES
+@dir share/locale/cs
+@dir share/locale/da/LC_MESSAGES
+@dir share/locale/da
+@dir share/locale/de/LC_MESSAGES
+@dir share/locale/de
+@dir share/locale/el/LC_MESSAGES
+@dir share/locale/el
+@dir share/locale/en_GB/LC_MESSAGES
+@dir share/locale/en_GB
+@dir share/locale/eo/LC_MESSAGES
+@dir share/locale/eo
+@dir share/locale/es/LC_MESSAGES
+@dir share/locale/es
+@dir share/locale/eu/LC_MESSAGES
+@dir share/locale/eu
+@dir share/locale/fi/LC_MESSAGES
+@dir share/locale/fi
+@dir share/locale/fr/LC_MESSAGES
+@dir share/locale/fr
+@dir share/locale/gl/LC_MESSAGES
+@dir share/locale/gl
+@dir share/locale/hr/LC_MESSAGES
+@dir share/locale/hr
+@dir share/locale/hu/LC_MESSAGES
+@dir share/locale/hu
+@dir share/locale/id/LC_MESSAGES
+@dir share/locale/id
+@dir share/locale/it/LC_MESSAGES
+@dir share/locale/it
+@dir share/locale/ja/LC_MESSAGES
+@dir share/locale/ja
+@dir share/locale/ky/LC_MESSAGES
+@dir share/locale/ky
+@dir share/locale/lt/LC_MESSAGES
+@dir share/locale/lt
+@dir share/locale/lv/LC_MESSAGES
+@dir share/locale/lv
+@dir share/locale/mt/LC_MESSAGES
+@dir share/locale/mt
+@dir share/locale/nb/LC_MESSAGES
+@dir share/locale/nb
+@dir share/locale/nl/LC_MESSAGES
+@dir share/locale/nl
+@dir share/locale/or/LC_MESSAGES
+@dir share/locale/or
+@dir share/locale/pl/LC_MESSAGES
+@dir share/locale/pl
+@dir share/locale/pt_BR/LC_MESSAGES
+@dir share/locale/pt_BR
+@dir share/locale/ro/LC_MESSAGES
+@dir share/locale/ro
+@dir share/locale/ru/LC_MESSAGES
+@dir share/locale/ru
+@dir share/locale/sk/LC_MESSAGES
+@dir share/locale/sk
+@dir share/locale/sl/LC_MESSAGES
+@dir share/locale/sl
+@dir share/locale/sq/LC_MESSAGES
+@dir share/locale/sq
+@dir share/locale/sr/LC_MESSAGES
+@dir share/locale/sr
+@dir share/locale/sv/LC_MESSAGES
+@dir share/locale/sv
+@dir share/locale/tr/LC_MESSAGES
+@dir share/locale/tr
+@dir share/locale/uk/LC_MESSAGES
+@dir share/locale/uk
+@dir share/locale/vi/LC_MESSAGES
+@dir share/locale/vi
+@dir share/locale/zh_CN/LC_MESSAGES
+@dir share/locale/zh_CN
+@dir share/locale

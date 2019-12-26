@@ -1,0 +1,10 @@
+#!/bin/sh
+
+case $2 in
+    PRE-INSTALL)
+	;;
+    POST-INSTALL)
+	${PKG_PREFIX}/bin/gtk-update-icon-cache -q -f ${PKG_PREFIX}/share/icons/Tango
+	;;
+esac
+#EOF

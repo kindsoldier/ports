@@ -1,0 +1,210 @@
+bin/svn
+bin/svnadmin
+bin/svnbench
+bin/svndumpfilter
+bin/svnfsfs
+bin/svnlook
+bin/svnmucc
+bin/svnrdump
+bin/svnserve
+bin/svnsync
+bin/svnversion
+include/subversion/mod_authz_svn.h
+include/subversion/mod_dav_svn.h
+include/subversion/svn_auth.h
+include/subversion/svn_base64.h
+include/subversion/svn_cache_config.h
+include/subversion/svn_checksum.h
+include/subversion/svn_client.h
+include/subversion/svn_cmdline.h
+include/subversion/svn_compat.h
+include/subversion/svn_config.h
+include/subversion/svn_ctype.h
+include/subversion/svn_dav.h
+include/subversion/svn_delta.h
+include/subversion/svn_diff.h
+include/subversion/svn_dirent_uri.h
+include/subversion/svn_dso.h
+include/subversion/svn_error_codes.h
+include/subversion/svn_error.h
+include/subversion/svn_fs.h
+include/subversion/svn_hash.h
+include/subversion/svn_io.h
+include/subversion/svn_iter.h
+include/subversion/svn_md5.h
+include/subversion/svn_mergeinfo.h
+include/subversion/svn_nls.h
+include/subversion/svn_opt.h
+include/subversion/svn_path.h
+include/subversion/svn_pools.h
+include/subversion/svn_props.h
+include/subversion/svn_quoprint.h
+include/subversion/svn_ra_svn.h
+include/subversion/svn_ra.h
+include/subversion/svn_repos.h
+include/subversion/svn_sorts.h
+include/subversion/svn_string.h
+include/subversion/svn_subst.h
+include/subversion/svn_time.h
+include/subversion/svn_types.h
+include/subversion/svn_user.h
+include/subversion/svn_utf.h
+include/subversion/svn_version.h
+include/subversion/svn_wc.h
+include/subversion/svn_x509.h
+include/subversion/svn_xml.h
+include/subversion/svn-revision.txt
+lib/libsvn_client.a
+lib/libsvn_client.la
+lib/libsvn_client.so
+lib/libsvn_client.so.0
+lib/libsvn_delta.a
+lib/libsvn_delta.la
+lib/libsvn_delta.so
+lib/libsvn_delta.so.0
+lib/libsvn_diff.a
+lib/libsvn_diff.la
+lib/libsvn_diff.so
+lib/libsvn_diff.so.0
+lib/libsvn_fs_fs.a
+lib/libsvn_fs_fs.la
+lib/libsvn_fs_fs.so
+lib/libsvn_fs_fs.so.0
+lib/libsvn_fs_util.a
+lib/libsvn_fs_util.la
+lib/libsvn_fs_util.so
+lib/libsvn_fs_util.so.0
+lib/libsvn_fs_x.a
+lib/libsvn_fs_x.la
+lib/libsvn_fs_x.so
+lib/libsvn_fs_x.so.0
+lib/libsvn_fs.a
+lib/libsvn_fs.la
+lib/libsvn_fs.so
+lib/libsvn_fs.so.0
+lib/libsvn_ra_local.a
+lib/libsvn_ra_local.la
+lib/libsvn_ra_local.so
+lib/libsvn_ra_local.so.0
+lib/libsvn_ra_serf.a
+lib/libsvn_ra_serf.la
+lib/libsvn_ra_serf.so
+lib/libsvn_ra_serf.so.0
+lib/libsvn_ra_svn.a
+lib/libsvn_ra_svn.la
+lib/libsvn_ra_svn.so
+lib/libsvn_ra_svn.so.0
+lib/libsvn_ra.a
+lib/libsvn_ra.la
+lib/libsvn_ra.so
+lib/libsvn_ra.so.0
+lib/libsvn_repos.a
+lib/libsvn_repos.la
+lib/libsvn_repos.so
+lib/libsvn_repos.so.0
+lib/libsvn_subr.a
+lib/libsvn_subr.la
+lib/libsvn_subr.so
+lib/libsvn_subr.so.0
+lib/libsvn_swig_perl.a
+lib/libsvn_swig_perl.la
+lib/libsvn_swig_perl.so
+lib/libsvn_swig_perl.so.0
+lib/libsvn_wc.a
+lib/libsvn_wc.la
+lib/libsvn_wc.so
+lib/libsvn_wc.so.0
+%%SITE_ARCH%%/auto/SVN/_Client/_Client.so
+%%SITE_ARCH%%/auto/SVN/_Core/_Core.so
+%%SITE_ARCH%%/auto/SVN/_Delta/_Delta.so
+%%SITE_ARCH%%/auto/SVN/_Fs/_Fs.so
+%%SITE_ARCH%%/auto/SVN/_Ra/_Ra.so
+%%SITE_ARCH%%/auto/SVN/_Repos/_Repos.so
+%%SITE_ARCH%%/auto/SVN/_Wc/_Wc.so
+%%SITE_ARCH%%/SVN/Base.pm
+%%SITE_ARCH%%/SVN/Client.pm
+%%SITE_ARCH%%/SVN/Core.pm
+%%SITE_ARCH%%/SVN/Delta.pm
+%%SITE_ARCH%%/SVN/Fs.pm
+%%SITE_ARCH%%/SVN/Ra.pm
+%%SITE_ARCH%%/SVN/Repos.pm
+%%SITE_ARCH%%/SVN/Wc.pm
+%%PERL5_MAN3%%/SVN::Base.3.gz
+%%PERL5_MAN3%%/SVN::Client.3.gz
+%%PERL5_MAN3%%/SVN::Core.3.gz
+%%PERL5_MAN3%%/SVN::Delta.3.gz
+%%PERL5_MAN3%%/SVN::Fs.3.gz
+%%PERL5_MAN3%%/SVN::Ra.3.gz
+%%PERL5_MAN3%%/SVN::Repos.3.gz
+%%PERL5_MAN3%%/SVN::Wc.3.gz
+man/man1/svn.1.gz
+man/man1/svnadmin.1.gz
+man/man1/svndumpfilter.1.gz
+man/man1/svnlook.1.gz
+man/man1/svnmucc.1.gz
+man/man1/svnrdump.1.gz
+man/man1/svnsync.1.gz
+man/man1/svnversion.1.gz
+man/man5/svnserve.conf.5.gz
+man/man8/svnserve.8.gz
+share/locale/de/LC_MESSAGES/subversion.mo
+share/locale/es/LC_MESSAGES/subversion.mo
+share/locale/fr/LC_MESSAGES/subversion.mo
+share/locale/it/LC_MESSAGES/subversion.mo
+share/locale/ja/LC_MESSAGES/subversion.mo
+share/locale/ko/LC_MESSAGES/subversion.mo
+share/locale/nb/LC_MESSAGES/subversion.mo
+share/locale/pl/LC_MESSAGES/subversion.mo
+share/locale/pt_BR/LC_MESSAGES/subversion.mo
+share/locale/sv/LC_MESSAGES/subversion.mo
+share/locale/zh_CN/LC_MESSAGES/subversion.mo
+share/locale/zh_TW/LC_MESSAGES/subversion.mo
+share/pkgconfig/libsvn_client.pc
+share/pkgconfig/libsvn_delta.pc
+share/pkgconfig/libsvn_diff.pc
+share/pkgconfig/libsvn_fs_fs.pc
+share/pkgconfig/libsvn_fs_util.pc
+share/pkgconfig/libsvn_fs_x.pc
+share/pkgconfig/libsvn_fs.pc
+share/pkgconfig/libsvn_ra_local.pc
+share/pkgconfig/libsvn_ra_serf.pc
+share/pkgconfig/libsvn_ra_svn.pc
+share/pkgconfig/libsvn_ra.pc
+share/pkgconfig/libsvn_repos.pc
+share/pkgconfig/libsvn_subr.pc
+share/pkgconfig/libsvn_wc.pc
+@dir include/subversion
+@dir %%SITE_ARCH%%/SVN
+@dir %%SITE_ARCH%%/auto/SVN/_Client
+@dir %%SITE_ARCH%%/auto/SVN/_Core
+@dir %%SITE_ARCH%%/auto/SVN/_Delta
+@dir %%SITE_ARCH%%/auto/SVN/_Fs
+@dir %%SITE_ARCH%%/auto/SVN/_Ra
+@dir %%SITE_ARCH%%/auto/SVN/_Repos
+@dir %%SITE_ARCH%%/auto/SVN/_Wc
+@dir %%SITE_ARCH%%/auto/SVN
+@dir share/locale/de/LC_MESSAGES
+@dir share/locale/de
+@dir share/locale/es/LC_MESSAGES
+@dir share/locale/es
+@dir share/locale/fr/LC_MESSAGES
+@dir share/locale/fr
+@dir share/locale/it/LC_MESSAGES
+@dir share/locale/it
+@dir share/locale/ja/LC_MESSAGES
+@dir share/locale/ja
+@dir share/locale/ko/LC_MESSAGES
+@dir share/locale/ko
+@dir share/locale/nb/LC_MESSAGES
+@dir share/locale/nb
+@dir share/locale/pl/LC_MESSAGES
+@dir share/locale/pl
+@dir share/locale/pt_BR/LC_MESSAGES
+@dir share/locale/pt_BR
+@dir share/locale/sv/LC_MESSAGES
+@dir share/locale/sv
+@dir share/locale/zh_CN/LC_MESSAGES
+@dir share/locale/zh_CN
+@dir share/locale/zh_TW/LC_MESSAGES
+@dir share/locale/zh_TW
+@dir share/locale

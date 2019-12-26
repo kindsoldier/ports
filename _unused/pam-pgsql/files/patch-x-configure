@@ -1,0 +1,11 @@
+--- ./configure.orig	2014-10-02 15:22:28.000000000 +0300
++++ ./configure	2015-12-05 13:33:06.121150000 +0200
+@@ -12940,7 +12940,7 @@
+ $as_echo_n "checking where to look for the pam_pgsql.conf file... " >&6; }
+ 
+ if test "${sysconfdir}" = '${prefix}/etc'; then :
+-  sysconfdir=/etc
++  sysconfdir=${prefix}/etc
+ fi
+ 
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: ${sysconfdir}" >&5

@@ -1,0 +1,27 @@
+--- ./winpr/CMakeLists.txt.orig	2019-03-26 17:03:34.930582000 +0200
++++ ./winpr/CMakeLists.txt	2019-03-26 17:11:51.994025000 +0200
+@@ -50,7 +50,7 @@
+ set(WINPR_VERSION_MAJOR "2")
+ set(WINPR_VERSION_MINOR "0")
+ set(WINPR_VERSION_REVISION "0")
+-set(WINPR_VERSION "${WINPR_VERSION_MAJOR}.${WINPR_VERSION_MINOR}.${WINPR_VERSION_REVISION}")
++set(WINPR_VERSION "${WINPR_VERSION_MAJOR}")
+ set(WINPR_VERSION_FULL "${WINPR_VERSION}")
+ set(WINPR_API_VERSION "${WINPR_VERSION_MAJOR}")
+ 
+@@ -184,7 +184,14 @@
+ 	add_subdirectory(test)
+ endif()
+ 
+-install_freerdp_man(wlog.7 7)
++if(WITH_MANPAGES)
++	if(BSD)
++	   install(FILES wlog.7 DESTINATION man/man7)
++	else()
++	   install_freerdp_man(wlog.7 7)
++	endif()
++endif(WITH_MANPAGES)
++
+ # Exporting
+ 
+ if(${CMAKE_VERSION} VERSION_GREATER "2.8.10")

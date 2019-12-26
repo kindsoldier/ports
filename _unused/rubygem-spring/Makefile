@@ -1,0 +1,21 @@
+# Created by: Steve Wills <swills@FreeBSD.org>
+# $FreeBSD:ruby/Makefile 441476 2017-05-22 17:18:29Z sunpoet $
+
+PORTNAME=	spring
+PORTVERSION=	2.0.2
+CATEGORIES=	devel rubygems
+MASTER_SITES=	RG
+
+MAINTAINER=	ruby@FreeBSD.org
+COMMENT=	Rails application preloader
+
+
+RUN_DEPENDS=	rubygem-activesupport4>=4.2:ruby/rubygem-activesupport4
+
+NO_ARCH=	yes
+USE_RUBY=	yes
+USES=		gem
+
+PLIST_FILES=	bin/spring
+
+.include <bsd.port.mk>

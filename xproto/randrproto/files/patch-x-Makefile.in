@@ -1,0 +1,11 @@
+--- ./Makefile.in.orig	2012-07-12 15:46:07.000000000 +0300
++++ ./Makefile.in	2014-11-29 20:01:23.000000000 +0200
+@@ -603,7 +603,7 @@
+ 
+ info-am:
+ 
+-install-data-am: install-dist_docDATA install-pkgconfigDATA \
++install-data-am:  install-pkgconfigDATA \
+ 	install-randrHEADERS
+ 
+ install-dvi: install-dvi-am

@@ -1,0 +1,31 @@
+--- ./CMakeLists.txt.orig	2019-04-18 19:43:39.000000000 +0200
++++ ./CMakeLists.txt	2019-07-14 09:15:27.502507000 +0200
+@@ -46,7 +46,7 @@
+ set ( LIB_VERSION_AGE 1 )
+ set ( LIB_VERSION_REVISION 2 )
+ set ( LIB_VERSION_INFO
+-      "${LIB_VERSION_CURRENT}.${LIB_VERSION_AGE}.${LIB_VERSION_REVISION}" )
++      "${LIB_VERSION_CURRENT}" )
+ 
+ # Options disabled by default
+ option ( enable-debug "enable debugging (default=no)" off )
+@@ -71,6 +71,7 @@
+ option ( enable-winmidi "compile Windows MIDI support (if it is available)" on )
+ option ( enable-pkgconfig "use pkg-config to locate fluidsynth's (mostly optional) dependencies" on )
+ option ( enable-pulseaudio "compile PulseAudio support (if it is available)" on )
++option ( enable-sndio "compile Sndio support (if it is available)" on )
+ option ( enable-readline "compile readline lib line editing (if it is available)" on )
+ option ( enable-threads "enable multi-threading support (such as parallel voice synthesis)" on )
+ 
+@@ -489,6 +490,11 @@
+     unset_pkg_config ( PULSE )
+     endif ( enable-pulseaudio )
+ 
++    unset ( SNDIO_SUPPORT CACHE )
++    if ( enable-sndio )
++      set ( SNDIO_SUPPORT 1 )
++    endif ( enable-sndio )
++
+     unset ( ALSA_SUPPORT CACHE )
+     if ( enable-alsa )
+     pkg_check_modules ( ALSA alsa>=0.9.1 )

@@ -1,0 +1,36 @@
+--- ./Makefile.in.orig	2012-05-15 13:38:54.000000000 +0300
++++ ./Makefile.in	2014-12-27 13:57:35.000000000 +0200
+@@ -356,13 +356,13 @@
+ 	vala/libcanberra.vapi \
+ 	vala/libcanberra-gtk.vapi
+ 
+-SUBDIRS = src gtkdoc doc
++SUBDIRS = src gtkdoc
+ MAINTAINERCLEANFILES = README
+ noinst_DATA = README
+ pkgconfigdir = $(libdir)/pkgconfig
+ pkgconfig_DATA = libcanberra.pc $(am__append_1) $(am__append_2)
+ vapidir = $(datadir)/vala/vapi
+-vapi_DATA = vala/libcanberra.vapi $(am__append_3)
++vapi_DATA =
+ DISTCHECK_CONFIGURE_FLAGS = \
+ 	--enable-gtk-doc \
+ 	--with-systemdsystemunitdir=$$dc_install_base/$(systemdsystemunitdir)
+@@ -876,7 +876,7 @@
+ 
+ info-am:
+ 
+-install-data-am: install-dist_docDATA install-pkgconfigDATA \
++install-data-am:  install-pkgconfigDATA \
+ 	install-vapiDATA
+ 
+ install-dvi: install-dvi-recursive
+@@ -957,7 +957,7 @@
+ homepage: dist
+ 	test -d $$HOME/homepage/private
+ 	mkdir -p $$HOME/homepage/private/projects/libcanberra $$HOME/homepage/private/projects/libcanberra/gtkdoc
+-	cp libcanberra-@PACKAGE_VERSION@.tar.xz $$HOME/homepage/private/projects/libcanberra
++	cp libcanberra.tar.xz $$HOME/homepage/private/projects/libcanberra
+ 	cp doc/README.html doc/style.css $$HOME/homepage/private/projects/libcanberra
+ 	cp -a gtkdoc/html/* $$HOME/homepage/private/projects/libcanberra/gtkdoc
+ 	ln -sf README.html $$HOME/homepage/private/projects/libcanberra/index.html

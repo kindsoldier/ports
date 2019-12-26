@@ -1,0 +1,11 @@
+--- ./btcflash/Makefile.orig	2013-04-21 21:21:20.000000000 +0300
++++ ./btcflash/Makefile	2018-06-10 14:33:47.076832000 +0200
+@@ -6,7 +6,7 @@
+ ###########################################################################
+ 
+ INSDIR=		bin
+-TARGET=		btcflash
++#TARGET=		btcflash
+ CPPOPTS +=	-DUSE_LARGEFILES
+ CPPOPTS +=	-DSCHILY_PRINT
+ CPPOPTS +=	-I../cdrecord

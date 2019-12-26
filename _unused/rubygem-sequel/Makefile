@@ -1,0 +1,19 @@
+# Created by: Wen Heping<wenheping@gmail.com>
+# $FreeBSD: head/devel/rubygem-sequel/Makefile 453074 2017-10-28 17:33:24Z sunpoet $
+
+PORTNAME=	sequel
+PORTVERSION=	5.2.0
+CATEGORIES=	devel rubygems
+MASTER_SITES=	RG
+
+MAINTAINER=	ruby@FreeBSD.org
+COMMENT=	Database Toolkit for Ruby
+
+
+NO_ARCH=	yes
+USE_RUBY=	yes
+USES=		gem
+
+PLIST_FILES=	bin/sequel
+
+.include <bsd.port.mk>

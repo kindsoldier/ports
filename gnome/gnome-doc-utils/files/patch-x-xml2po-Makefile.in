@@ -1,0 +1,11 @@
+--- ./xml2po/Makefile.in.orig	2011-04-25 03:19:37.000000000 +0300
++++ ./xml2po/Makefile.in	2014-12-29 12:33:09.000000000 +0200
+@@ -252,7 +252,7 @@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ SUBDIRS = xml2po examples
+-pkgconfigdir = $(datadir)/pkgconfig
++pkgconfigdir = $(libdir)/pkgconfig
+ pkgconfig_DATA = xml2po.pc
+ man_MANS = xml2po.1
+ EXTRA_DIST = \

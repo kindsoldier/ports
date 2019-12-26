@@ -1,0 +1,33 @@
+#!/bin/sh
+
+set -x
+
+EXIM_GROUP="%%EXIM_GROUP%%"
+EXIM_OWNER="%%EXIM_OWNER%%"
+EXIM_GROUPID="%%EXIM_GROUPID%%"
+EXIM_OWNERID="%%EXIM_OWNERID%%"
+EXIM_LOGDIR="%%EXIM_LOGDIR%%"
+EXIM_SPOOLDIR="%%EXIM_SPOOLDIR%%"
+EXIM_CONFDIR="%%EXIM_CONFDIR%%"
+
+PKG_PREFIX="/notexist"
+
+case $2 in 
+    PRE-INSTALL)
+	pw group add ${EXIM_GROUP}  -g ${EXIM_GROUPID}
+	pw user add ${EXIM_OWNER} -g ${EXIM_GROUP}  \
+	    -d ${EXIM_SPOOLDIR} -s /usr/sbin/nologin -u ${EXIM_OWNERID} \
+	    -c "exim"
+	pw user mod ${EXIM_OWNER} -d ${EXIM_SPOOLDIR}
+	pw group mod ${EXIM_GROUP} -M ${EXIM_OWNER}
+	pw group show ${EXIM_GROUP}
+	pw user show ${EXIM_OWNER}
+	install -d -o  ${EXIM_OWNER} -g ${EXIM_GROUP} -m 0750 ${EXIM_LOGDIR}
+	install -d -o  ${EXIM_OWNER} -g ${EXIM_GROUP} -m 0750 ${EXIM_SPOOLDIR}
+	install -d -o root -g wheel -m 0750 ${EXIM_CONFDIR}
+	;;
+    POST-INSTALL)
+	;;
+esac
+exit 0
+#EOF

@@ -1,0 +1,11 @@
+--- ./doc/Makefile.in.orig	2011-08-09 16:50:49.000000000 +0300
++++ ./doc/Makefile.in	2011-11-10 17:30:51.000000000 +0300
+@@ -1528,7 +1528,7 @@
+ #
+ 
+ # install all the documentation
+-install-data-local: install.wgetrc @COMMENT_IF_NO_POD2MAN@install.man
++install-data-local:  @COMMENT_IF_NO_POD2MAN@install.man
+ 
+ # uninstall all the documentation
+ uninstall-local: @COMMENT_IF_NO_POD2MAN@uninstall.man

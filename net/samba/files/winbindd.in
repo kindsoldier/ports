@@ -1,0 +1,22 @@
+#!/bin/sh
+
+# PROVIDE: winbindd
+# REQUIRE: DAEMON nmbd
+
+. /etc/rc.subr
+
+name="winbindd"
+rcvar="${name}_enable"
+command="%%PREFIX%%/sbin/${name}"
+pidfile="%%SAMBA_RUNDIR%%/${name}.pid"
+procname="%%PREFIX%%/sbin/${name}"
+required_dirs="%%SAMBA_RUNDIR%% %%SAMBA_LOGDIR%% %%SAMBA_LOCKDIR%%"
+command_args=" -D"
+
+: ${winbindd_enable="NO"}
+
+
+load_rc_config $name
+
+run_rc_command "$1"
+#EOF

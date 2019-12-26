@@ -1,0 +1,34 @@
+#!/bin/sh
+#
+# PROVIDE: mpd
+# REQUIRE: SERVERS
+# BEFORE: DAEMON
+# KEYWORD: shutdown
+#
+. /etc/rc.subr
+
+name="mpd"
+rcvar="mpd_enable"
+
+load_rc_config ${name}
+
+: ${mpd_enable="NO"}
+#: ${mpd_flags="-b"}
+
+pidfile="/var/run/${name}.pid"
+command="%%PREFIX%%/sbin/${name}"
+required_files="%%PREFIX%%/etc/${name}/mpd.conf"
+
+case "${mpd_flags}" in
+*-p\ *)
+        echo "ERROR: \$mpd_flags includes -p option." \
+                "PID file is already set to $pidfile."
+        exit 1
+        ;;
+*)
+        command_args="-b -p ${pidfile} ${mpd_flags}"
+        ;;
+esac
+
+run_rc_command "$1"
+#EOF

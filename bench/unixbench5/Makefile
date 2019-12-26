@@ -1,0 +1,58 @@
+# Created by: se
+# $FreeBSD: head/benchmarks/unixbench/Makefile 450894 2017-09-29 14:45:48Z pizzamig $
+
+PORTNAME=	unixbench
+DISTVERSIONPREFIX=	v
+DISTVERSION=	5.1.3
+CATEGORIES=	benchmarks
+
+MAINTAINER=	pizzamig@FreeBSD.org
+COMMENT=	BYTE magazine's Public Domain benchmark for UNIX
+
+
+#RUN_DEPENDS=	x11perf:x11/x11perf
+
+USES=		gmake perl5 shebangfix
+USE_GITHUB=	yes
+GH_ACCOUNT=	kdlucas
+GH_PROJECT=	byte-unixbench
+WRKSRC_SUBDIR=	UnixBench
+
+SUB_FILES=	unixbench
+SHEBANG_FILES=	Run pgms/gfx-x11
+
+do-install:
+	${INSTALL_SCRIPT} ${WRKDIR}/unixbench ${STAGEDIR}${PREFIX}/bin/
+	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/unixbench
+	${INSTALL_SCRIPT} ${WRKSRC}/Run ${STAGEDIR}${PREFIX}/libexec/unixbench
+	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/unixbench/pgms
+	for f in ${WRKSRC}/pgms/* ; do \
+		case $$f in \
+			*.sh|*gfx-x11) \
+				${INSTALL_SCRIPT} $${f} \
+					${STAGEDIR}${PREFIX}/libexec/unixbench/pgms/ ;; \
+			*.logo|*.base) \
+				${INSTALL_DATA} $${f} \
+					${STAGEDIR}${PREFIX}/libexec/unixbench/pgms/ ;; \
+			*.orig|*.rej|*~) \
+				;;\
+			*) \
+				${INSTALL_PROGRAM} $${f} \
+					${STAGEDIR}${PREFIX}/libexec/unixbench/pgms/ ;; \
+		esac ; \
+	done
+
+#	${INSTALL_PROGRAM} ${WRKSRC}/pgms/*  ${STAGEDIR}${PREFIX}/libexec/unixbench/pgms/
+#	${INSTALL_SCRIPT} ${WRKSRC}/pgms/*.sh ${STAGEDIR}${PREFIX}/libexec/unixbench/pgms/
+#	${INSTALL_SCRIPT} ${WRKSRC}/pgms/*gfx-x11 ${STAGEDIR}${PREFIX}/libexec/unixbench/pgms/
+#
+#	${INSTALL_DATA} ${WRKSRC}/pgms/*.logo ${STAGEDIR}${PREFIX}/libexec/unixbench/pgms/
+#	${INSTALL_DATA} ${WRKSRC}/pgms/*base ${STAGEDIR}${PREFIX}/libexec/unixbench/pgms/
+
+
+	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/unixbench/testdir
+	${INSTALL_DATA} ${WRKSRC}/testdir/* ${STAGEDIR}${PREFIX}/libexec/unixbench/testdir/
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${PREFIX}/libexec/unixbench/
+	${INSTALL_DATA} ${WRKSRC}/Makefile ${STAGEDIR}${PREFIX}/libexec/unixbench/
+
+.include <bsd.port.mk>

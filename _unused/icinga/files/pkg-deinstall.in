@@ -1,0 +1,20 @@
+#!/bin/sh
+
+set -x
+
+ICINGA_SPOOLDIR="%%ICINGA_SPOOLDIR%%"
+case $2 in 
+    DEINSTALL)
+	;;
+    POST-DEINSTALL)
+	if [ -d ${ICINGA_SPOOLDIR} ]; then
+	  rmdir -p ${ICINGA_SPOOLDIR}
+	fi
+	if [ -d ${ICINGA_SPOOLDIR} ]; then
+	  ls -l ${ICINGA_SPOOLDIR}
+	  du -sch ${ICINGA_SPOOLDIR}
+	fi
+	;;
+esac
+exit 0
+#EOF

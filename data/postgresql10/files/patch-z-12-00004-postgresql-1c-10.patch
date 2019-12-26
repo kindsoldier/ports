@@ -1,0 +1,68 @@
+9b0237baa5e387cdfc9d89079d1bd29d17e6a99f
+ SUBDIRS += sslinfo
+--- a/src/backend/libpq/pg_hba.conf.sample
++++ src/backend/libpq/pg_hba.conf.sample
+@@ -79,7 +79,8 @@
+ @remove-line-for-nolocal@# "local" is for Unix domain socket connections only
+ @remove-line-for-nolocal@local   all             all                                     @authmethodlocal@
+ # IPv4 local connections:
+-host    all             all             127.0.0.1/32            @authmethodhost@
++#host    all             all             127.0.0.1/32            @authmethodhost@
++host    all             all             0.0.0.0/0            @authmethodhost@
+ # IPv6 local connections:
+ host    all             all             ::1/128                 @authmethodhost@
+ # Allow replication connections from localhost, by a user with the
+--- a/src/bin/pg_upgrade/Makefile
++++ src/bin/pg_upgrade/Makefile
+@@ -14,6 +14,7 @@ OBJS = check.o controldata.o dump.o exec
+ override CPPFLAGS := -DDLSUFFIX=\"$(DLSUFFIX)\" -I$(srcdir) -I$(libpq_srcdir) $(CPPFLAGS)
+ override LDFLAGS := -L$(top_builddir)/src/fe_utils -lpgfeutils $(libpq_pgport) $(LDFLAGS)
+ 
++EXTRA_INSTALL += contrib/online_analyze contrib/plantuner contrib/mchar
+ 
+ all: pg_upgrade
+ 
+@@ -37,7 +38,7 @@ clean distclean maintainer-clean:
+ 	       pg_upgrade_dump_*.custom pg_upgrade_*.log
+ 
+ check: test.sh all
+-	MAKE=$(MAKE) bindir=$(bindir) libdir=$(libdir) EXTRA_REGRESS_OPTS="$(EXTRA_REGRESS_OPTS)" $(SHELL) $< --install
++	MAKE=$(MAKE) bindir=$(bindir) libdir=$(libdir) EXTRA_INSTALL="$(EXTRA_INSTALL)" EXTRA_REGRESS_OPTS="$(EXTRA_REGRESS_OPTS)" $(SHELL) $< --install
+ 
+ # installcheck is not supported because there's no meaningful way to test
+ # pg_upgrade against a single already-running server
+--- a/src/bin/pg_upgrade/test.sh
++++ src/bin/pg_upgrade/test.sh
+@@ -76,6 +76,11 @@ if [ "$1" = '--install' ]; then
+ 
+ 	"$MAKE" -s -C ../.. install DESTDIR="$temp_install"
+ 
++	# installing EXTRA_INSTALL dependencies
++	for extra in ${EXTRA_INSTALL}; do
++		$MAKE -s -C ../../../${extra} DESTDIR="$temp_install" install
++	done
++
+ 	# platform-specific magic to find the shared libraries; see pg_regress.c
+ 	LD_LIBRARY_PATH=$libdir:$LD_LIBRARY_PATH
+ 	export LD_LIBRARY_PATH
+--- a/src/test/regress/GNUmakefile
++++ src/test/regress/GNUmakefile
+@@ -23,6 +23,8 @@ ifdef MAX_CONNECTIONS
+ MAXCONNOPT += --max-connections=$(MAX_CONNECTIONS)
+ endif
+ 
++EXTRA_INSTALL += contrib/online_analyze contrib/plantuner contrib/mchar
++
+ # stuff to pass into build of pg_regress
+ EXTRADEFS = '-DHOST_TUPLE="$(host_tuple)"' \
+ 	'-DSHELLPROG="$(SHELL)"' \
+--- a/src/Makefile.global.in
++++ src/Makefile.global.in
+@@ -333,6 +333,7 @@ ifeq ($(MAKELEVEL),0)
+ 	rm -rf '$(abs_top_builddir)'/tmp_install
+ 	$(MKDIR_P) '$(abs_top_builddir)'/tmp_install/log
+ 	$(MAKE) -C '$(top_builddir)' DESTDIR='$(abs_top_builddir)'/tmp_install install >'$(abs_top_builddir)'/tmp_install/log/install.log 2>&1
++	sed -i 's/logging_collector = on/logging_collector = off/' '$(abs_top_builddir)'/tmp_install/usr/share/postgresql/10/postgresql.conf.sample
+ endif
+ 	$(if $(EXTRA_INSTALL),for extra in $(EXTRA_INSTALL); do $(MAKE) -C '$(top_builddir)'/$$extra DESTDIR='$(abs_top_builddir)'/tmp_install install >>'$(abs_top_builddir)'/tmp_install/log/install.log || exit; done)
+ endif

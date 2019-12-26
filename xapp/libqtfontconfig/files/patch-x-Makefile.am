@@ -1,0 +1,11 @@
+--- ./Makefile.am.orig	2017-09-21 09:50:41.000000000 +0200
++++ ./Makefile.am	2019-03-31 10:15:39.557294000 +0200
+@@ -56,7 +56,7 @@
+ 	$(srcdir)/test-driver \
+ 	`find "$(srcdir)" -type f -name Makefile.in -print`
+ 
+-pkgconfig_DATA = fontconfig.pc
++pkgconfig_DATA = qtfontconfig.pc
+ 
+ baseconfigdir = $(BASECONFIGDIR)
+ configdir = $(CONFIGDIR)

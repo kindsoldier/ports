@@ -1,0 +1,63 @@
+bin/ascii-xfr
+bin/minicom
+bin/runscript
+bin/xminicom
+man/man1/ascii-xfr.1.gz
+man/man1/minicom.1.gz
+man/man1/runscript.1.gz
+man/man1/xminicom.1.gz
+share/locale/cs/LC_MESSAGES/minicom.mo
+share/locale/da/LC_MESSAGES/minicom.mo
+share/locale/de/LC_MESSAGES/minicom.mo
+share/locale/es/LC_MESSAGES/minicom.mo
+share/locale/fi/LC_MESSAGES/minicom.mo
+share/locale/fr/LC_MESSAGES/minicom.mo
+share/locale/hu/LC_MESSAGES/minicom.mo
+share/locale/id/LC_MESSAGES/minicom.mo
+share/locale/ja/LC_MESSAGES/minicom.mo
+share/locale/nb/LC_MESSAGES/minicom.mo
+share/locale/pl/LC_MESSAGES/minicom.mo
+share/locale/pt_BR/LC_MESSAGES/minicom.mo
+share/locale/ro/LC_MESSAGES/minicom.mo
+share/locale/ru/LC_MESSAGES/minicom.mo
+share/locale/rw/LC_MESSAGES/minicom.mo
+share/locale/sv/LC_MESSAGES/minicom.mo
+share/locale/vi/LC_MESSAGES/minicom.mo
+share/locale/zh_TW/LC_MESSAGES/minicom.mo
+@dir share/locale/cs/LC_MESSAGES
+@dir share/locale/cs
+@dir share/locale/da/LC_MESSAGES
+@dir share/locale/da
+@dir share/locale/de/LC_MESSAGES
+@dir share/locale/de
+@dir share/locale/es/LC_MESSAGES
+@dir share/locale/es
+@dir share/locale/fi/LC_MESSAGES
+@dir share/locale/fi
+@dir share/locale/fr/LC_MESSAGES
+@dir share/locale/fr
+@dir share/locale/hu/LC_MESSAGES
+@dir share/locale/hu
+@dir share/locale/id/LC_MESSAGES
+@dir share/locale/id
+@dir share/locale/ja/LC_MESSAGES
+@dir share/locale/ja
+@dir share/locale/nb/LC_MESSAGES
+@dir share/locale/nb
+@dir share/locale/pl/LC_MESSAGES
+@dir share/locale/pl
+@dir share/locale/pt_BR/LC_MESSAGES
+@dir share/locale/pt_BR
+@dir share/locale/ro/LC_MESSAGES
+@dir share/locale/ro
+@dir share/locale/ru/LC_MESSAGES
+@dir share/locale/ru
+@dir share/locale/rw/LC_MESSAGES
+@dir share/locale/rw
+@dir share/locale/sv/LC_MESSAGES
+@dir share/locale/sv
+@dir share/locale/vi/LC_MESSAGES
+@dir share/locale/vi
+@dir share/locale/zh_TW/LC_MESSAGES
+@dir share/locale/zh_TW
+@dir share/locale

@@ -1,0 +1,31 @@
+%%DTD_DIRREL%%/calstblx.dtd
+%%DTD_DIRREL%%/catalog.xml
+%%DTD_DIRREL%%/dbcentx.mod
+%%DTD_DIRREL%%/dbgenent.mod
+%%DTD_DIRREL%%/dbhierx.mod
+%%DTD_DIRREL%%/dbnotnx.mod
+%%DTD_DIRREL%%/dbpoolx.mod
+%%DTD_DIRREL%%/docbookx.dtd
+%%DTD_DIRREL%%/soextblx.dtd
+%%DTD_DIRREL%%/ent/iso-amsa.ent
+%%DTD_DIRREL%%/ent/iso-amsb.ent
+%%DTD_DIRREL%%/ent/iso-amsc.ent
+%%DTD_DIRREL%%/ent/iso-amsn.ent
+%%DTD_DIRREL%%/ent/iso-amso.ent
+%%DTD_DIRREL%%/ent/iso-amsr.ent
+%%DTD_DIRREL%%/ent/iso-box.ent
+%%DTD_DIRREL%%/ent/iso-cyr1.ent
+%%DTD_DIRREL%%/ent/iso-cyr2.ent
+%%DTD_DIRREL%%/ent/iso-dia.ent
+%%DTD_DIRREL%%/ent/iso-grk1.ent
+%%DTD_DIRREL%%/ent/iso-grk2.ent
+%%DTD_DIRREL%%/ent/iso-grk3.ent
+%%DTD_DIRREL%%/ent/iso-grk4.ent
+%%DTD_DIRREL%%/ent/iso-lat1.ent
+%%DTD_DIRREL%%/ent/iso-lat2.ent
+%%DTD_DIRREL%%/ent/iso-num.ent
+%%DTD_DIRREL%%/ent/iso-pub.ent
+%%DTD_DIRREL%%/ent/iso-tech.ent
+@dir %%DTD_DIRREL%%/ent
+@dir %%DTD_DIRREL%%
+

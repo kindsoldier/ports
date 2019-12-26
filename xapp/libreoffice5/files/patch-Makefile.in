@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2017-05-03 16:46:29 UTC
++++ Makefile.in
+@@ -250,7 +250,7 @@ endif
+ #
+ # Bootstrap
+ #
+-bootstrap: check-if-root compilerplugins
++bootstrap: compilerplugins
+ 
+ #
+ # Build

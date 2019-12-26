@@ -1,0 +1,15 @@
+#!/bin/sh
+
+set -x
+
+case $2 in
+POST-INSTALL)
+	for mdir in %%MIMEDIRS%%; do
+	    if [ -d ${mdir} ]; then
+		${PKG_PREFIX}/bin/update-mime-database ${mdir}
+	    fi
+	done
+	exit 0
+	;;
+esac
+#EOF

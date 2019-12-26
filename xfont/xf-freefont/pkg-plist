@@ -1,0 +1,15 @@
+share/fonts/X11/TTF/FreeMono.ttf
+share/fonts/X11/TTF/FreeMonoBold.ttf
+share/fonts/X11/TTF/FreeMonoBoldOblique.ttf
+share/fonts/X11/TTF/FreeMonoOblique.ttf
+share/fonts/X11/TTF/FreeSans.ttf
+share/fonts/X11/TTF/FreeSansBold.ttf
+share/fonts/X11/TTF/FreeSansBoldOblique.ttf
+share/fonts/X11/TTF/FreeSansOblique.ttf
+share/fonts/X11/TTF/FreeSerif.ttf
+share/fonts/X11/TTF/FreeSerifBold.ttf
+share/fonts/X11/TTF/FreeSerifBoldItalic.ttf
+share/fonts/X11/TTF/FreeSerifItalic.ttf
+@dir share/fonts/X11/TTF
+@dir share/fonts/X11
+@dir share/fonts

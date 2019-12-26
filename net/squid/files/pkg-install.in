@@ -1,0 +1,33 @@
+#!/bin/sh
+
+set -x
+
+SQUID_LOGDIR="%%SQUID_LOGDIR%%"
+SQUID_SWAPDIR="%%SQUID_SWAPDIR%%"
+SQUID_RUNDIR="%%SQUID_RUNDIR%%"
+
+GROUP="%%SQUID_GROUP%%"
+OWNER="%%SQUID_OWNER%%"
+
+GROUP_ID="%%SQUID_GROUP_ID%%"
+OWNER_ID="%%SQUID_OWNER_ID%%"
+
+PKG_PREFIX="/notexist"
+
+case $2 in 
+    PRE-INSTALL)
+	pw group add ${GROUP} -g ${GROUP_ID}
+	pw user add ${OWNER} -u ${OWNER_ID} -g ${GROUP} \
+	  -d ${PKG_PREFIX} -s "/usr/sbin/nologin" -c "squid"
+	pw group mod ${GROUP} -M ${OWNER}
+	pw group show ${GROUP} 
+	pw user show ${OWNER}
+
+	install -d -o ${OWNER} -g ${GROUP} -m 0750 ${SQUID_SWAPDIR}
+	install -d -o ${OWNER} -g ${GROUP} -m 0750 ${SQUID_LOGDIR}
+	install -d -o ${OWNER} -g ${GROUP} -m 0750 ${SQUID_RUNDIR}
+	;;
+    POST-INSTALL)
+	;;
+esac
+#EOF

@@ -1,0 +1,10 @@
+--- ./ristretto.desktop.in.orig	2012-06-01 09:41:20.000000000 +0300
++++ ./ristretto.desktop.in	2014-12-27 17:21:18.000000000 +0200
+@@ -1,6 +1,6 @@
+ [Desktop Entry]
+ Version=1.0
+-_Name=Ristretto Image Viewer
++_Name=Ristretto
+ _Comment=Look at your images easily
+ _GenericName=Image Viewer
+ Exec=ristretto %F

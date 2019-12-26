@@ -1,0 +1,72 @@
+#!/bin/sh
+
+# PROVIDE: pgsql
+# REQUIRE: LOGIN
+
+
+prefix="%%PREFIX%%";
+pgsql_data="%%PG_DB_DIR%%";
+
+. /etc/rc.subr
+
+# -i - enable internet sockets
+# -l - enable ssl
+pgsql_flags=" -i ";
+pgsql_owner="%%PG_OWNER%%";
+
+name="pgsql";
+
+rcvar="pgsql_enable";
+
+procname="${prefix}/bin/postgres";
+pidfile="${pgsql_data}/postmaster.pid";
+
+pgctl="${prefix}/bin/pg_ctl";
+pgctl_args="-s -w -m fast -D ${pgsql_data} -o \"${pgsql_flags}\"";
+
+extra_commands="initdb reload";
+
+start_cmd="pgsql_command_start";
+stop_cmd="pgsql_command_stop";
+restart_cmd="pgsql_command_restart";
+reload_cmd="pgsql_command_reload";
+initdb_cmd="pgsql_initdb";
+
+pgsql_command_start()
+{
+    if [ "$(check_process $procname)x" != "x" ]; then
+      echo "$name already running? ($(check_process $procname))";
+      exit 0;
+    fi
+    su ${pgsql_owner} -c "exec ${pgctl} ${pgctl_args} start" && echo "Starting pgsql.";
+}
+
+pgsql_command_stop()
+{
+    su ${pgsql_owner} -c "exec ${pgctl} ${pgctl_args} stop" && echo "Stoping pgsql.";
+    wait_for_pids $(check_process "$procname")
+}
+
+pgsql_command_restart()
+{
+    pgsql_command_stop;
+#    wait_for_pids $(check_process "$procname")
+    pgsql_command_start;
+}
+
+pgsql_command_reload()
+{
+    su ${pgsql_owner} -c "exec ${pgctl} ${pgctl_args} reload" && echo "Reload pgsql.";
+}
+
+pgsql_initdb()
+{
+    su ${pgsql_owner} -c "exec ${prefix}/bin//%%BIN_PREFIX%%initdb -D ${pgsql_data} -E UTF8 --locale en_GB.UTF-8 -U pgsql -W -A md5" && echo "Init pgsql database in ${pgsql_data}";
+}
+
+load_rc_config $name
+
+: ${pgsql_enable=NO}
+
+run_rc_command "$1"
+#EOF

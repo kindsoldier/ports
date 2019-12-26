@@ -1,0 +1,12 @@
+#!/bin/sh -x
+
+set -x
+
+case $2 in 
+    PRE-INSTALL)
+	;;
+    POST-INSTALL)
+	  glib-compile-schemas ${PKG_PREFIX}/share/glib/schemas
+	;;
+esac
+#EOF

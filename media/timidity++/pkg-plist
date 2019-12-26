@@ -1,0 +1,3 @@
+bin/timidity
+man/man1/timidity.1.gz
+man/man5/timidity.cfg.5.gz

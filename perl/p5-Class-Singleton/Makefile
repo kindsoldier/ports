@@ -1,0 +1,17 @@
+# Created by: will
+# $FreeBSD: head/devel/p5-Class-Singleton/Makefile 373448 2014-11-26 13:08:24Z mat $
+
+PORTNAME=	Class-Singleton
+PORTVERSION=	1.5
+CATEGORIES=	devel perl5
+MASTER_SITES=	CPAN
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	perl@FreeBSD.org
+COMMENT=	Perl module that describes a singular object class
+
+
+USES=		perl5
+USE_PERL5=	configure
+
+.include <bsd.port.mk>

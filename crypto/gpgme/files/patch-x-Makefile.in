@@ -1,0 +1,11 @@
+--- ./Makefile.in.orig	2014-07-30 12:54:52.000000000 +0300
++++ ./Makefile.in	2014-12-28 23:06:38.000000000 +0200
+@@ -323,7 +323,7 @@
+ 
+ @RUN_GPG_TESTS_FALSE@tests = 
+ @RUN_GPG_TESTS_TRUE@tests = tests
+-SUBDIRS = src ${tests} doc lang
++SUBDIRS = src ${tests} doc 
+ gen_start_date = 2011-12-01T00:00:00
+ all: config.h
+ 	$(MAKE) $(AM_MAKEFLAGS) all-recursive

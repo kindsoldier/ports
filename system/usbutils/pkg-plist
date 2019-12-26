@@ -1,0 +1,9 @@
+bin/usb-devices
+sbin/lsusb
+sbin/update-usbids
+lib/pkgconfig/usbutils.pc
+share/usbutils/usb.ids
+share/usbutils/usb.ids.gz
+man/man1/usb-devices.1.gz
+man/man8/lsusb.8.gz
+@dir share/usbutils

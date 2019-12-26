@@ -1,0 +1,275 @@
+9b0237baa5e387cdfc9d89079d1bd29d17e6a99f
+--- a/contrib/Makefile
++++ contrib/Makefile
+@@ -49,7 +49,12 @@ SUBDIRS = \
+ 		tsm_system_rows \
+ 		tsm_system_time \
+ 		unaccent	\
+-		vacuumlo
++		vacuumlo	\
++		mchar       	\
++		fulleq          \
++		fasttrun	\
++		online_analyze	\
++		plantuner
+ 
+ ifeq ($(with_openssl),yes)
+ SUBDIRS += sslinfo
+--- a/src/backend/libpq/pg_hba.conf.sample
++++ src/backend/libpq/pg_hba.conf.sample
+@@ -79,7 +79,8 @@
+ @remove-line-for-nolocal@# "local" is for Unix domain socket connections only
+ @remove-line-for-nolocal@local   all             all                                     @authmethodlocal@
+ # IPv4 local connections:
+-host    all             all             127.0.0.1/32            @authmethodhost@
++#host    all             all             127.0.0.1/32            @authmethodhost@
++host    all             all             0.0.0.0/0            @authmethodhost@
+ # IPv6 local connections:
+ host    all             all             ::1/128                 @authmethodhost@
+ # Allow replication connections from localhost, by a user with the
+--- a/src/backend/utils/misc/postgresql.conf.sample
++++ src/backend/utils/misc/postgresql.conf.sample
+@@ -56,12 +56,12 @@
+ 
+ # - Connection Settings -
+ 
+-#listen_addresses = 'localhost'		# what IP address(es) to listen on;
++listen_addresses = '*'		# what IP address(es) to listen on;
+ 					# comma-separated list of addresses;
+ 					# defaults to 'localhost'; use '*' for all
+ 					# (change requires restart)
+ #port = 5432				# (change requires restart)
+-#max_connections = 100			# (change requires restart)
++max_connections = 500			# (change requires restart)
+ #superuser_reserved_connections = 3	# (change requires restart)
+ #unix_socket_directories = '/tmp'	# comma-separated list of directories
+ 					# (change requires restart)
+@@ -118,12 +118,12 @@
+ 					# (change requires restart)
+ #huge_pages = try			# on, off, or try
+ 					# (change requires restart)
+-#temp_buffers = 8MB			# min 800kB
++temp_buffers = 256MB			# min 800kB
+ #max_prepared_transactions = 0		# zero disables the feature
+ 					# (change requires restart)
+ # Caution: it is not advisable to set max_prepared_transactions nonzero unless
+ # you actively intend to use prepared transactions.
+-#work_mem = 4MB				# min 64kB
++work_mem = 64MB				# min 64kB
+ #maintenance_work_mem = 64MB		# min 1MB
+ #autovacuum_work_mem = -1		# min 1MB, or -1 to use maintenance_work_mem
+ #max_stack_depth = 2MB			# min 100kB
+@@ -143,7 +143,7 @@
+ 
+ # - Kernel Resources -
+ 
+-#max_files_per_process = 1000		# min 25
++max_files_per_process = 8000		# min 25
+ 					# (change requires restart)
+ 
+ # - Cost-Based Vacuum Delay -
+@@ -348,8 +348,8 @@
+ #default_statistics_target = 100	# range 1-10000
+ #constraint_exclusion = partition	# on, off, or partition
+ #cursor_tuple_fraction = 0.1		# range 0.0-1.0
+-#from_collapse_limit = 8
+-#join_collapse_limit = 8		# 1 disables collapsing of explicit
++from_collapse_limit = 20
++join_collapse_limit = 20		# 1 disables collapsing of explicit
+ 					# JOIN clauses
+ #force_parallel_mode = off
+ #jit = off				# allow JIT compilation
+@@ -361,25 +361,25 @@
+ 
+ # - Where to Log -
+ 
+-#log_destination = 'stderr'		# Valid values are combinations of
++log_destination = 'stderr'		# Valid values are combinations of
+ 					# stderr, csvlog, syslog, and eventlog,
+ 					# depending on platform.  csvlog
+ 					# requires logging_collector to be on.
+ 
+ # This is used when logging to stderr:
+-#logging_collector = off		# Enable capturing of stderr and csvlog
++logging_collector = on		# Enable capturing of stderr and csvlog
+ 					# into log files. Required to be on for
+ 					# csvlogs.
+ 					# (change requires restart)
+ 
+ # These are only used if logging_collector is on:
+-#log_directory = 'log'			# directory where log files are written,
++log_directory = 'pg_log'		# directory where log files are written,
+ 					# can be absolute or relative to PGDATA
+-#log_filename = 'postgresql-%Y-%m-%d_%H%M%S.log'	# log file name pattern,
++log_filename = 'postgresql-%a.log'	# log file name pattern,
+ 					# can include strftime() escapes
+ #log_file_mode = 0600			# creation mode for log files,
+ 					# begin with 0 to use octal notation
+-#log_truncate_on_rotation = off		# If on, an existing log file with the
++log_truncate_on_rotation = on		# If on, an existing log file with the
+ 					# same name as the new log file will be
+ 					# truncated rather than appended to.
+ 					# But such truncation only occurs on
+@@ -387,9 +387,9 @@
+ 					# or size-driven rotation.  Default is
+ 					# off, meaning append to existing files
+ 					# in all cases.
+-#log_rotation_age = 1d			# Automatic rotation of logfiles will
++log_rotation_age = 1d			# Automatic rotation of logfiles will
+ 					# happen after that time.  0 disables.
+-#log_rotation_size = 10MB		# Automatic rotation of logfiles will
++log_rotation_size = 0		# Automatic rotation of logfiles will
+ 					# happen after that much log output.
+ 					# 0 disables.
+ 
+@@ -451,7 +451,7 @@
+ #log_duration = off
+ #log_error_verbosity = default		# terse, default, or verbose messages
+ #log_hostname = off
+-#log_line_prefix = '%m [%p] '		# special values:
++log_line_prefix = '< %m >'			# special values:
+ 					#   %a = application name
+ 					#   %u = user name
+ 					#   %d = database name
+@@ -613,7 +613,7 @@
+ 
+ # - Shared Library Preloading -
+ 
+-#shared_preload_libraries = ''	# (change requires restart)
++shared_preload_libraries = 'online_analyze, plantuner'	# (change requires restart)
+ #local_preload_libraries = ''
+ #session_preload_libraries = ''
+ #jit_provider = 'llvmjit'		# JIT library to use
+@@ -628,7 +628,7 @@
+ #------------------------------------------------------------------------------
+ 
+ #deadlock_timeout = 1s
+-#max_locks_per_transaction = 64		# min 10
++max_locks_per_transaction = 150	# min 10
+ 					# (change requires restart)
+ #max_pred_locks_per_transaction = 64	# min 10
+ 					# (change requires restart)
+@@ -647,11 +647,11 @@
+ #array_nulls = on
+ #backslash_quote = safe_encoding	# on, off, or safe_encoding
+ #default_with_oids = off
+-#escape_string_warning = on
++escape_string_warning = off
+ #lo_compat_privileges = off
+ #operator_precedence_warning = off
+ #quote_all_identifiers = off
+-#standard_conforming_strings = on
++standard_conforming_strings = off
+ #synchronize_seqscans = on
+ 
+ # - Other Platforms and Clients -
+@@ -687,4 +687,10 @@
+ # CUSTOMIZED OPTIONS
+ #------------------------------------------------------------------------------
+ 
+-# Add settings for extensions here
++online_analyze.threshold = 50
++online_analyze.scale_factor = 0.1
++online_analyze.enable = off
++online_analyze.verbose = off
++online_analyze.local_tracking = on
++online_analyze.min_interval = 10000 
++online_analyze.table_type = 'temporary'
+--- a/src/bin/pg_upgrade/Makefile
++++ src/bin/pg_upgrade/Makefile
+@@ -14,6 +14,8 @@
+ override CPPFLAGS := -DDLSUFFIX=\"$(DLSUFFIX)\" -I$(srcdir) -I$(libpq_srcdir) $(CPPFLAGS)
+ LDFLAGS_INTERNAL += -L$(top_builddir)/src/fe_utils -lpgfeutils $(libpq_pgport)
+ 
++EXTRA_INSTALL += contrib/online_analyze contrib/plantuner contrib/mchar
++
+ ifdef NO_TEMP_INSTALL
+ 	tbindir=$(abs_top_builddir)/tmp_install/$(bindir)
+ 	tlibdir=$(abs_top_builddir)/tmp_install/$(libdir)
+--- a/src/bin/pg_upgrade/test.sh
++++ src/bin/pg_upgrade/test.sh
+@@ -76,6 +76,11 @@ if [ "$1" = '--install' ]; then
+ 
+ 	"$MAKE" -s -C ../.. install DESTDIR="$temp_install"
+ 
++	# installing EXTRA_INSTALL dependencies
++	for extra in ${EXTRA_INSTALL}; do
++		$MAKE -s -C ../../../${extra} DESTDIR="$temp_install" install
++	done
++
+ 	# platform-specific magic to find the shared libraries; see pg_regress.c
+ 	LD_LIBRARY_PATH=$libdir:$LD_LIBRARY_PATH
+ 	export LD_LIBRARY_PATH
+--- a/src/test/regress/GNUmakefile
++++ src/test/regress/GNUmakefile
+@@ -23,6 +23,8 @@ ifdef MAX_CONNECTIONS
+ MAXCONNOPT += --max-connections=$(MAX_CONNECTIONS)
+ endif
+ 
++EXTRA_INSTALL += contrib/online_analyze contrib/plantuner contrib/mchar
++
+ # stuff to pass into build of pg_regress
+ EXTRADEFS = '-DHOST_TUPLE="$(host_tuple)"' \
+ 	'-DSHELLPROG="$(SHELL)"' \
+--- a/src/Makefile.global.in
++++ src/Makefile.global.in
+@@ -344,6 +344,7 @@
+ 	rm -rf '$(abs_top_builddir)'/tmp_install
+ 	$(MKDIR_P) '$(abs_top_builddir)'/tmp_install/log
+ 	$(MAKE) -C '$(top_builddir)' DESTDIR='$(abs_top_builddir)'/tmp_install install >'$(abs_top_builddir)'/tmp_install/log/install.log 2>&1
++	sed -i 's/logging_collector = on/logging_collector = off/' '$(abs_top_builddir)'/tmp_install/usr/share/postgresql/10/postgresql.conf.sample
+ 	$(MAKE) -j1 $(if $(CHECKPREP_TOP),-C $(CHECKPREP_TOP),) checkprep >>'$(abs_top_builddir)'/tmp_install/log/install.log 2>&1
+ endif
+ endif
+--- a/src/tools/msvc/MSBuildProject.pm
++++ src/tools/msvc/MSBuildProject.pm
+@@ -78,7 +78,7 @@
+ 		'Release',
+ 		{
+ 			defs    => "",
+-			opt     => 'Full',
++			opt     => 'MaxSpeed',
+ 			strpool => 'true',
+ 			runtime => 'MultiThreadedDLL'
+ 		});
+--- a/src/tools/msvc/VCBuildProject.pm
++++ src/tools/msvc/VCBuildProject.pm
+@@ -49,8 +49,8 @@
+ 		'Release',
+ 		{
+ 			defs     => "",
+-			wholeopt => 0,
+-			opt      => 3,
++			wholeopt => 1,
++			opt      => 2,
+ 			strpool  => 'true',
+ 			runtime  => 2
+ 		});
+--- a/contrib/pg_trgm/expected/pg_trgm.out
++++ contrib/pg_trgm/expected/pg_trgm.out
+@@ -3907,16 +3907,15 @@
+ EXPLAIN (COSTS OFF)
+ SELECT DISTINCT city, similarity(city, 'Warsaw'), show_limit()
+   FROM restaurants WHERE city % 'Warsaw';
+-                         QUERY PLAN                          
+--------------------------------------------------------------
+- Unique
+-   ->  Sort
+-         Sort Key: city, (similarity(city, 'Warsaw'::text))
+-         ->  Bitmap Heap Scan on restaurants
+-               Recheck Cond: (city % 'Warsaw'::text)
+-               ->  Bitmap Index Scan on restaurants_city_idx
+-                     Index Cond: (city % 'Warsaw'::text)
+-(7 rows)
++                            QUERY PLAN                             
++-------------------------------------------------------------------
++ HashAggregate
++   Group Key: city, similarity(city, 'Warsaw'::text), show_limit()
++   ->  Bitmap Heap Scan on restaurants
++         Recheck Cond: (city % 'Warsaw'::text)
++         ->  Bitmap Index Scan on restaurants_city_idx
++               Index Cond: (city % 'Warsaw'::text)
++(6 rows)
+ 
+ SELECT set_limit(0.3);
+  set_limit 

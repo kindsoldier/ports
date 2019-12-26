@@ -1,0 +1,11 @@
+--- ./rc.d/vpnsw.in.orig	2017-12-24 10:49:00.000000000 +0200
++++ ./rc.d/vpnsw.in	2019-10-01 21:17:01.979502000 +0200
+@@ -18,7 +18,7 @@
+ 
+ load_rc_config ${name}
+ 
+-: ${pgagent_enable:="NO"}
++: ${vpnsw_enable:="NO"}
+ 
+ run_rc_command "$1"
+ #EOF

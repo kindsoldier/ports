@@ -1,0 +1,96 @@
+etc/rc.d/maacom
+sbin/maacom
+share/maacom/create-pg-db.sql
+share/maacom/public/css/app.css
+share/maacom/public/css/datatables.css
+share/maacom/public/css/datatables.min.css
+share/maacom/public/css/foundation-float.css
+share/maacom/public/css/foundation-float.min.css
+share/maacom/public/css/foundation.css
+share/maacom/public/css/foundation.min.css
+share/maacom/public/favicon.ico
+share/maacom/public/favicon.png
+share/maacom/public/icons/foundation-icons.css
+share/maacom/public/icons/foundation-icons.eot
+share/maacom/public/icons/foundation-icons.svg
+share/maacom/public/icons/foundation-icons.ttf
+share/maacom/public/icons/foundation-icons.woff
+share/maacom/public/icons/preview.html
+share/maacom/public/images/sort_asc_disabled.png
+share/maacom/public/images/sort_asc.png
+share/maacom/public/images/sort_both.png
+share/maacom/public/images/sort_desc_disabled.png
+share/maacom/public/images/sort_desc.png
+share/maacom/public/js/app.js
+share/maacom/public/js/datatables.js
+share/maacom/public/js/datatables.min.js
+share/maacom/public/js/foundation.js
+share/maacom/public/js/foundation.min.js
+share/maacom/public/js/jquery.js
+share/maacom/public/js/jquery.min.js
+share/maacom/public/js/what-input.js
+share/maacom/schema.sql
+share/maacom/templs/alias-add-form.html.ep
+share/maacom/templs/alias-add-handler.html.ep
+share/maacom/templs/alias-delete-form.html.ep
+share/maacom/templs/alias-delete-handler.html.ep
+share/maacom/templs/alias-list.html.ep
+share/maacom/templs/alias-rename-form.html.ep
+share/maacom/templs/alias-rename-handler.html.ep
+share/maacom/templs/alias-update-form.html.ep
+share/maacom/templs/alias-update-handler.html.ep
+share/maacom/templs/domain-add-form.html.ep
+share/maacom/templs/domain-add-handler.html.ep
+share/maacom/templs/domain-delete-form.html.ep
+share/maacom/templs/domain-delete-handler.html.ep
+share/maacom/templs/domain-list.html.ep
+share/maacom/templs/domain-rename-form.html.ep
+share/maacom/templs/domain-rename-handler.html.ep
+share/maacom/templs/domain-update-form.html.ep
+share/maacom/templs/domain-update-handler.html.ep
+share/maacom/templs/exception.development.html.ep
+share/maacom/templs/exception.production.html.ep
+share/maacom/templs/forwarded-add-form.html.ep
+share/maacom/templs/forwarded-add-handler.html.ep
+share/maacom/templs/forwarded-delete-form.html.ep
+share/maacom/templs/forwarded-delete-handler.html.ep
+share/maacom/templs/forwarded-list.html.ep
+share/maacom/templs/forwarded-update-form.html.ep
+share/maacom/templs/forwarded-update-handler.html.ep
+share/maacom/templs/hello.html.ep
+share/maacom/templs/layouts/default.html.ep
+share/maacom/templs/login.html.ep
+share/maacom/templs/mxlog.html.ep
+share/maacom/templs/not_found.development.html.ep
+share/maacom/templs/not_found.production.html.ep
+share/maacom/templs/trusted-add-form.html.ep
+share/maacom/templs/trusted-add-handler.html.ep
+share/maacom/templs/trusted-delete-form.html.ep
+share/maacom/templs/trusted-delete-handler.html.ep
+share/maacom/templs/trusted-list.html.ep
+share/maacom/templs/trusted-update-form.html.ep
+share/maacom/templs/trusted-update-handler.html.ep
+share/maacom/templs/unwanted-add-form.html.ep
+share/maacom/templs/unwanted-add-handler.html.ep
+share/maacom/templs/unwanted-delete-form.html.ep
+share/maacom/templs/unwanted-delete-handler.html.ep
+share/maacom/templs/unwanted-list.html.ep
+share/maacom/templs/unwanted-update-form.html.ep
+share/maacom/templs/unwanted-update-handler.html.ep
+share/maacom/templs/user-add-form.html.ep
+share/maacom/templs/user-add-handler.html.ep
+share/maacom/templs/user-delete-form.html.ep
+share/maacom/templs/user-delete-handler.html.ep
+share/maacom/templs/user-list.html.ep
+share/maacom/templs/user-rename-form.html.ep
+share/maacom/templs/user-rename-handler.html.ep
+share/maacom/templs/user-update-form.html.ep
+share/maacom/templs/user-update-handler.html.ep
+@dir share/maacom/public/css
+@dir share/maacom/public/icons
+@dir share/maacom/public/images
+@dir share/maacom/public/js
+@dir share/maacom/public
+@dir share/maacom/templs/layouts
+@dir share/maacom/templs
+@dir share/maacom

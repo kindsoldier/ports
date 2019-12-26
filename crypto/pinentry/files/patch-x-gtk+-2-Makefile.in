@@ -1,0 +1,20 @@
+--- ./gtk+-2/Makefile.in.orig	2014-10-26 13:20:20.000000000 +0200
++++ ./gtk+-2/Makefile.in	2014-12-29 18:53:52.000000000 +0200
+@@ -70,7 +70,7 @@
+ POST_UNINSTALL = :
+ build_triplet = @build@
+ host_triplet = @host@
+-bin_PROGRAMS = pinentry-gtk-2$(EXEEXT)
++bin_PROGRAMS = pinentry-gtk2$(EXEEXT)
+ subdir = gtk+-2
+ DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+@@ -324,7 +324,7 @@
+ 
+ clean-binPROGRAMS:
+ 	-test -z "$(bin_PROGRAMS)" || rm -f $(bin_PROGRAMS)
+-pinentry-gtk-2$(EXEEXT): $(pinentry_gtk_2_OBJECTS) $(pinentry_gtk_2_DEPENDENCIES) $(EXTRA_pinentry_gtk_2_DEPENDENCIES) 
++pinentry-gtk2$(EXEEXT): $(pinentry_gtk_2_OBJECTS) $(pinentry_gtk_2_DEPENDENCIES) $(EXTRA_pinentry_gtk_2_DEPENDENCIES) 
+ 	@rm -f pinentry-gtk-2$(EXEEXT)
+ 	$(LINK) $(pinentry_gtk_2_OBJECTS) $(pinentry_gtk_2_LDADD) $(LIBS)
+ 

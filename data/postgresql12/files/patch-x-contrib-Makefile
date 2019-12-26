@@ -1,0 +1,101 @@
+--- ./contrib/Makefile.orig	2019-09-30 22:06:55.000000000 +0200
++++ ./contrib/Makefile	2019-11-03 20:17:22.743267000 +0200
+@@ -5,6 +5,11 @@
+ include $(top_builddir)/src/Makefile.global
+ 
+ SUBDIRS = \
++		oid2name	\
++		vacuumlo
++
++
++NOSUBDIRS = \
+ 		adminpack	\
+ 		amcheck		\
+ 		auth_delay	\
+@@ -26,7 +31,6 @@
+ 		isn		\
+ 		lo		\
+ 		ltree		\
+-		oid2name	\
+ 		pageinspect	\
+ 		passwordcheck	\
+ 		pg_buffercache	\
+@@ -48,43 +52,42 @@
+ 		tsm_system_rows \
+ 		tsm_system_time \
+ 		unaccent	\
+-		vacuumlo
+ 
+-ifeq ($(with_openssl),yes)
+-SUBDIRS += sslinfo
+-else
+-ALWAYS_SUBDIRS += sslinfo
+-endif
+-
+-ifneq ($(with_uuid),no)
+-SUBDIRS += uuid-ossp
+-else
+-ALWAYS_SUBDIRS += uuid-ossp
+-endif
+-
+-ifeq ($(with_libxml),yes)
+-SUBDIRS += xml2
+-else
+-ALWAYS_SUBDIRS += xml2
+-endif
+-
+-ifeq ($(with_selinux),yes)
+-SUBDIRS += sepgsql
+-else
+-ALWAYS_SUBDIRS += sepgsql
+-endif
+-
+-ifeq ($(with_perl),yes)
+-SUBDIRS += hstore_plperl jsonb_plperl
+-else
+-ALWAYS_SUBDIRS += hstore_plperl jsonb_plperl
+-endif
+-
+-ifeq ($(with_python),yes)
+-SUBDIRS += hstore_plpython jsonb_plpython ltree_plpython
+-else
+-ALWAYS_SUBDIRS += hstore_plpython jsonb_plpython ltree_plpython
+-endif
++#ifeq ($(with_openssl),yes)
++#SUBDIRS += sslinfo
++#else
++#ALWAYS_SUBDIRS += sslinfo
++#endif
++
++#ifneq ($(with_uuid),no)
++#SUBDIRS += uuid-ossp
++#else
++#ALWAYS_SUBDIRS += uuid-ossp
++#endif
++
++#ifeq ($(with_libxml),yes)
++#SUBDIRS += xml2
++#else
++#ALWAYS_SUBDIRS += xml2
++#endif
++
++#ifeq ($(with_selinux),yes)
++#SUBDIRS += sepgsql
++#else
++#ALWAYS_SUBDIRS += sepgsql
++#endif
++
++#ifeq ($(with_perl),yes)
++#SUBDIRS += hstore_plperl jsonb_plperl
++#else
++#ALWAYS_SUBDIRS += hstore_plperl jsonb_plperl
++#endif
++
++#ifeq ($(with_python),yes)
++#SUBDIRS += hstore_plpython jsonb_plpython ltree_plpython
++#else
++#ALWAYS_SUBDIRS += hstore_plpython jsonb_plpython ltree_plpython
++#endif
+ 
+ # Missing:
+ #		start-scripts	\ (does not have a makefile)

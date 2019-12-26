@@ -1,0 +1,21 @@
+--- ./application/views/alias/list.phtml.orig	2016-04-11 19:28:04.000000000 +0200
++++ ./application/views/alias/list.phtml	2016-07-19 15:37:04.963682000 +0200
+@@ -46,6 +46,7 @@
+             <th>Address</th>
+             <th>Domain</th>
+             <th width="55">Active</th>
++            <th width="55">Internal</th>
+             <th>Goto</th>
+             <th width="60"></th>
+         </tr>
+@@ -60,6 +61,10 @@
+                 <span id="toggle-active-{$alias.id}" onclick="toggleActive( 'toggle-active-{$alias.id}', {$alias.id} );" class="btn btn-mini {if $alias.active}btn-success{else}btn-danger{/if}">{$alias.active|yesno}</span>
+             </td>
+             <td>
++                <div id="throb-toggle-internal-{$alias.id}" style="float: right;"></div>
++                <span id="toggle-internal-{$alias.id}" onclick="toggleInternal( 'toggle-internal-{$alias.id}', {$alias.id} );" class="btn btn-mini {if $alias.internal}btn-success{else}btn-danger{/if}">{$alias.internal|yesno}</span>
++            </td>
++            <td>
+                 <div id="alias-goto-{$alias.id}" {if strlen( $alias.goto ) > 50 } class="have-tooltip-long" title="{$alias.goto|regex_replace:"/[,]/":", "}"{/if}>
+                 {$alias.goto|shorten:50}
+                 </div>

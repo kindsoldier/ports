@@ -1,0 +1,416 @@
+bin/jsc
+include/webkitgtk/JavaScriptCore/JavaScript.h
+include/webkitgtk/JavaScriptCore/JSBase.h
+include/webkitgtk/JavaScriptCore/JSContextRef.h
+include/webkitgtk/JavaScriptCore/JSObjectRef.h
+include/webkitgtk/JavaScriptCore/JSStringRef.h
+include/webkitgtk/JavaScriptCore/JSValueRef.h
+include/webkitgtk/JavaScriptCore/WebKitAvailability.h
+include/webkitgtk/webkit/webkit.h
+include/webkitgtk/webkit/webkitapplicationcache.h
+include/webkitgtk/webkit/webkitdefines.h
+include/webkitgtk/webkit/webkitdom.h
+include/webkitgtk/webkit/webkitdownload.h
+include/webkitgtk/webkit/webkitenumtypes.h
+include/webkitgtk/webkit/webkiterror.h
+include/webkitgtk/webkit/webkitfavicondatabase.h
+include/webkitgtk/webkit/webkitfilechooserrequest.h
+include/webkitgtk/webkit/webkitgeolocationpolicydecision.h
+include/webkitgtk/webkit/webkitglobals.h
+include/webkitgtk/webkit/webkithittestresult.h
+include/webkitgtk/webkit/webkiticondatabase.h
+include/webkitgtk/webkit/webkitnetworkrequest.h
+include/webkitgtk/webkit/webkitnetworkresponse.h
+include/webkitgtk/webkit/webkitsecurityorigin.h
+include/webkitgtk/webkit/webkitsoupauthdialog.h
+include/webkitgtk/webkit/webkitspellchecker.h
+include/webkitgtk/webkit/webkitversion.h
+include/webkitgtk/webkit/webkitviewportattributes.h
+include/webkitgtk/webkit/webkitwebbackforwardlist.h
+include/webkitgtk/webkit/webkitwebdatabase.h
+include/webkitgtk/webkit/webkitwebdatasource.h
+include/webkitgtk/webkit/webkitwebframe.h
+include/webkitgtk/webkit/webkitwebhistoryitem.h
+include/webkitgtk/webkit/webkitwebinspector.h
+include/webkitgtk/webkit/webkitwebnavigationaction.h
+include/webkitgtk/webkit/webkitwebplugin.h
+include/webkitgtk/webkit/webkitwebplugindatabase.h
+include/webkitgtk/webkit/webkitwebpolicydecision.h
+include/webkitgtk/webkit/webkitwebresource.h
+include/webkitgtk/webkit/webkitwebsettings.h
+include/webkitgtk/webkit/webkitwebview.h
+include/webkitgtk/webkit/webkitwebwindowfeatures.h
+include/webkitgtk/webkit2/webkit-web-extension.h
+include/webkitgtk/webkit2/webkit2.h
+include/webkitgtk/webkit2/WebKitAuthenticationRequest.h
+include/webkitgtk/webkit2/WebKitBackForwardList.h
+include/webkitgtk/webkit2/WebKitBackForwardListItem.h
+include/webkitgtk/webkit2/WebKitCertificateInfo.h
+include/webkitgtk/webkit2/WebKitContextMenu.h
+include/webkitgtk/webkit2/WebKitContextMenuActions.h
+include/webkitgtk/webkit2/WebKitContextMenuItem.h
+include/webkitgtk/webkit2/WebKitCookieManager.h
+include/webkitgtk/webkit2/WebKitCredential.h
+include/webkitgtk/webkit2/WebKitDefines.h
+include/webkitgtk/webkit2/WebKitDownload.h
+include/webkitgtk/webkit2/WebKitEditingCommands.h
+include/webkitgtk/webkit2/WebKitEnumTypes.h
+include/webkitgtk/webkit2/WebKitError.h
+include/webkitgtk/webkit2/WebKitFaviconDatabase.h
+include/webkitgtk/webkit2/WebKitFileChooserRequest.h
+include/webkitgtk/webkit2/WebKitFindController.h
+include/webkitgtk/webkit2/WebKitFormSubmissionRequest.h
+include/webkitgtk/webkit2/WebKitForwardDeclarations.h
+include/webkitgtk/webkit2/WebKitFrame.h
+include/webkitgtk/webkit2/WebKitGeolocationPermissionRequest.h
+include/webkitgtk/webkit2/WebKitHitTestResult.h
+include/webkitgtk/webkit2/WebKitJavascriptResult.h
+include/webkitgtk/webkit2/WebKitMimeInfo.h
+include/webkitgtk/webkit2/WebKitNavigationPolicyDecision.h
+include/webkitgtk/webkit2/WebKitPermissionRequest.h
+include/webkitgtk/webkit2/WebKitPlugin.h
+include/webkitgtk/webkit2/WebKitPolicyDecision.h
+include/webkitgtk/webkit2/WebKitPrintOperation.h
+include/webkitgtk/webkit2/WebKitResponsePolicyDecision.h
+include/webkitgtk/webkit2/WebKitScriptDialog.h
+include/webkitgtk/webkit2/WebKitScriptWorld.h
+include/webkitgtk/webkit2/WebKitSecurityManager.h
+include/webkitgtk/webkit2/WebKitSettings.h
+include/webkitgtk/webkit2/WebKitURIRequest.h
+include/webkitgtk/webkit2/WebKitURIResponse.h
+include/webkitgtk/webkit2/WebKitURISchemeRequest.h
+include/webkitgtk/webkit2/WebKitVersion.h
+include/webkitgtk/webkit2/WebKitWebContext.h
+include/webkitgtk/webkit2/WebKitWebExtension.h
+include/webkitgtk/webkit2/WebKitWebInspector.h
+include/webkitgtk/webkit2/WebKitWebPage.h
+include/webkitgtk/webkit2/WebKitWebResource.h
+include/webkitgtk/webkit2/WebKitWebView.h
+include/webkitgtk/webkit2/WebKitWebViewBase.h
+include/webkitgtk/webkit2/WebKitWebViewGroup.h
+include/webkitgtk/webkit2/WebKitWindowProperties.h
+include/webkitgtk/webkitdom/webkitdom.h
+include/webkitgtk/webkitdom/WebKitDOMAttr.h
+include/webkitgtk/webkitdom/WebKitDOMAudioTrack.h
+include/webkitgtk/webkitdom/WebKitDOMAudioTrackList.h
+include/webkitgtk/webkitdom/WebKitDOMBarProp.h
+include/webkitgtk/webkitdom/WebKitDOMBatteryManager.h
+include/webkitgtk/webkitdom/WebKitDOMBlob.h
+include/webkitgtk/webkitdom/WebKitDOMCDATASection.h
+include/webkitgtk/webkitdom/WebKitDOMCharacterData.h
+include/webkitgtk/webkitdom/WebKitDOMComment.h
+include/webkitgtk/webkitdom/WebKitDOMConsole.h
+include/webkitgtk/webkitdom/WebKitDOMCSSRule.h
+include/webkitgtk/webkitdom/WebKitDOMCSSRuleList.h
+include/webkitgtk/webkitdom/WebKitDOMCSSStyleDeclaration.h
+include/webkitgtk/webkitdom/WebKitDOMCSSStyleSheet.h
+include/webkitgtk/webkitdom/WebKitDOMCSSValue.h
+include/webkitgtk/webkitdom/WebKitDOMCustom.h
+include/webkitgtk/webkitdom/WebKitDOMDatabase.h
+include/webkitgtk/webkitdom/webkitdomdefines.h
+include/webkitgtk/webkitdom/WebKitDOMDeprecated.h
+include/webkitgtk/webkitdom/WebKitDOMDocument.h
+include/webkitgtk/webkitdom/WebKitDOMDocumentFragment.h
+include/webkitgtk/webkitdom/WebKitDOMDocumentType.h
+include/webkitgtk/webkitdom/WebKitDOMDOMApplicationCache.h
+include/webkitgtk/webkitdom/WebKitDOMDOMImplementation.h
+include/webkitgtk/webkitdom/WebKitDOMDOMMimeType.h
+include/webkitgtk/webkitdom/WebKitDOMDOMMimeTypeArray.h
+include/webkitgtk/webkitdom/WebKitDOMDOMNamedFlowCollection.h
+include/webkitgtk/webkitdom/WebKitDOMDOMPlugin.h
+include/webkitgtk/webkitdom/WebKitDOMDOMPluginArray.h
+include/webkitgtk/webkitdom/WebKitDOMDOMSecurityPolicy.h
+include/webkitgtk/webkitdom/WebKitDOMDOMSelection.h
+include/webkitgtk/webkitdom/WebKitDOMDOMSettableTokenList.h
+include/webkitgtk/webkitdom/WebKitDOMDOMStringList.h
+include/webkitgtk/webkitdom/WebKitDOMDOMStringMap.h
+include/webkitgtk/webkitdom/WebKitDOMDOMTokenList.h
+include/webkitgtk/webkitdom/WebKitDOMDOMWindow.h
+include/webkitgtk/webkitdom/WebKitDOMDOMWindowCSS.h
+include/webkitgtk/webkitdom/WebKitDOMElement.h
+include/webkitgtk/webkitdom/WebKitDOMEntityReference.h
+include/webkitgtk/webkitdom/WebKitDOMEvent.h
+include/webkitgtk/webkitdom/WebKitDOMEventTarget.h
+include/webkitgtk/webkitdom/WebKitDOMFile.h
+include/webkitgtk/webkitdom/WebKitDOMFileList.h
+include/webkitgtk/webkitdom/WebKitDOMGamepad.h
+include/webkitgtk/webkitdom/WebKitDOMGamepadList.h
+include/webkitgtk/webkitdom/WebKitDOMGeolocation.h
+include/webkitgtk/webkitdom/WebKitDOMHistory.h
+include/webkitgtk/webkitdom/WebKitDOMHTMLAnchorElement.h
+include/webkitgtk/webkitdom/WebKitDOMHTMLAppletElement.h
+include/webkitgtk/webkitdom/WebKitDOMHTMLAreaElement.h
+include/webkitgtk/webkitdom/WebKitDOMHTMLAudioElement.h
+include/webkitgtk/webkitdom/WebKitDOMHTMLBaseElement.h
+include/webkitgtk/webkitdom/WebKitDOMHTMLBaseFontElement.h
+include/webkitgtk/webkitdom/WebKitDOMHTMLBodyElement.h
+include/webkitgtk/webkitdom/WebKitDOMHTMLBRElement.h
+include/webkitgtk/webkitdom/WebKitDOMHTMLButtonElement.h
+include/webkitgtk/webkitdom/WebKitDOMHTMLCanvasElement.h
+include/webkitgtk/webkitdom/WebKitDOMHTMLCollection.h
+include/webkitgtk/webkitdom/WebKitDOMHTMLDetailsElement.h
+include/webkitgtk/webkitdom/WebKitDOMHTMLDirectoryElement.h
+include/webkitgtk/webkitdom/WebKitDOMHTMLDivElement.h
+include/webkitgtk/webkitdom/WebKitDOMHTMLDListElement.h
+include/webkitgtk/webkitdom/WebKitDOMHTMLDocument.h
+include/webkitgtk/webkitdom/WebKitDOMHTMLElement.h
+include/webkitgtk/webkitdom/WebKitDOMHTMLEmbedElement.h
+include/webkitgtk/webkitdom/WebKitDOMHTMLFieldSetElement.h
+include/webkitgtk/webkitdom/WebKitDOMHTMLFontElement.h
+include/webkitgtk/webkitdom/WebKitDOMHTMLFormElement.h
+include/webkitgtk/webkitdom/WebKitDOMHTMLFrameElement.h
+include/webkitgtk/webkitdom/WebKitDOMHTMLFrameSetElement.h
+include/webkitgtk/webkitdom/WebKitDOMHTMLHeadElement.h
+include/webkitgtk/webkitdom/WebKitDOMHTMLHeadingElement.h
+include/webkitgtk/webkitdom/WebKitDOMHTMLHRElement.h
+include/webkitgtk/webkitdom/WebKitDOMHTMLHtmlElement.h
+include/webkitgtk/webkitdom/WebKitDOMHTMLIFrameElement.h
+include/webkitgtk/webkitdom/WebKitDOMHTMLImageElement.h
+include/webkitgtk/webkitdom/WebKitDOMHTMLInputElement.h
+include/webkitgtk/webkitdom/WebKitDOMHTMLKeygenElement.h
+include/webkitgtk/webkitdom/WebKitDOMHTMLLabelElement.h
+include/webkitgtk/webkitdom/WebKitDOMHTMLLegendElement.h
+include/webkitgtk/webkitdom/WebKitDOMHTMLLIElement.h
+include/webkitgtk/webkitdom/WebKitDOMHTMLLinkElement.h
+include/webkitgtk/webkitdom/WebKitDOMHTMLMapElement.h
+include/webkitgtk/webkitdom/WebKitDOMHTMLMarqueeElement.h
+include/webkitgtk/webkitdom/WebKitDOMHTMLMediaElement.h
+include/webkitgtk/webkitdom/WebKitDOMHTMLMenuElement.h
+include/webkitgtk/webkitdom/WebKitDOMHTMLMetaElement.h
+include/webkitgtk/webkitdom/WebKitDOMHTMLModElement.h
+include/webkitgtk/webkitdom/WebKitDOMHTMLObjectElement.h
+include/webkitgtk/webkitdom/WebKitDOMHTMLOListElement.h
+include/webkitgtk/webkitdom/WebKitDOMHTMLOptGroupElement.h
+include/webkitgtk/webkitdom/WebKitDOMHTMLOptionElement.h
+include/webkitgtk/webkitdom/WebKitDOMHTMLOptionsCollection.h
+include/webkitgtk/webkitdom/WebKitDOMHTMLParagraphElement.h
+include/webkitgtk/webkitdom/WebKitDOMHTMLParamElement.h
+include/webkitgtk/webkitdom/WebKitDOMHTMLPreElement.h
+include/webkitgtk/webkitdom/WebKitDOMHTMLQuoteElement.h
+include/webkitgtk/webkitdom/WebKitDOMHTMLScriptElement.h
+include/webkitgtk/webkitdom/WebKitDOMHTMLSelectElement.h
+include/webkitgtk/webkitdom/WebKitDOMHTMLStyleElement.h
+include/webkitgtk/webkitdom/WebKitDOMHTMLTableCaptionElement.h
+include/webkitgtk/webkitdom/WebKitDOMHTMLTableCellElement.h
+include/webkitgtk/webkitdom/WebKitDOMHTMLTableColElement.h
+include/webkitgtk/webkitdom/WebKitDOMHTMLTableElement.h
+include/webkitgtk/webkitdom/WebKitDOMHTMLTableRowElement.h
+include/webkitgtk/webkitdom/WebKitDOMHTMLTableSectionElement.h
+include/webkitgtk/webkitdom/WebKitDOMHTMLTextAreaElement.h
+include/webkitgtk/webkitdom/WebKitDOMHTMLTitleElement.h
+include/webkitgtk/webkitdom/WebKitDOMHTMLUListElement.h
+include/webkitgtk/webkitdom/WebKitDOMHTMLVideoElement.h
+include/webkitgtk/webkitdom/WebKitDOMKeyboardEvent.h
+include/webkitgtk/webkitdom/WebKitDOMLocation.h
+include/webkitgtk/webkitdom/WebKitDOMMediaController.h
+include/webkitgtk/webkitdom/WebKitDOMMediaError.h
+include/webkitgtk/webkitdom/WebKitDOMMediaList.h
+include/webkitgtk/webkitdom/WebKitDOMMediaQueryList.h
+include/webkitgtk/webkitdom/WebKitDOMMessagePort.h
+include/webkitgtk/webkitdom/WebKitDOMMouseEvent.h
+include/webkitgtk/webkitdom/WebKitDOMNamedNodeMap.h
+include/webkitgtk/webkitdom/WebKitDOMNavigator.h
+include/webkitgtk/webkitdom/WebKitDOMNode.h
+include/webkitgtk/webkitdom/WebKitDOMNodeFilter.h
+include/webkitgtk/webkitdom/WebKitDOMNodeIterator.h
+include/webkitgtk/webkitdom/WebKitDOMNodeList.h
+include/webkitgtk/webkitdom/WebKitDOMObject.h
+include/webkitgtk/webkitdom/WebKitDOMPerformance.h
+include/webkitgtk/webkitdom/WebKitDOMPerformanceEntry.h
+include/webkitgtk/webkitdom/WebKitDOMPerformanceEntryList.h
+include/webkitgtk/webkitdom/WebKitDOMPerformanceNavigation.h
+include/webkitgtk/webkitdom/WebKitDOMPerformanceTiming.h
+include/webkitgtk/webkitdom/WebKitDOMProcessingInstruction.h
+include/webkitgtk/webkitdom/WebKitDOMRange.h
+include/webkitgtk/webkitdom/WebKitDOMScreen.h
+include/webkitgtk/webkitdom/WebKitDOMShadowRoot.h
+include/webkitgtk/webkitdom/WebKitDOMStorage.h
+include/webkitgtk/webkitdom/WebKitDOMStorageInfo.h
+include/webkitgtk/webkitdom/WebKitDOMStorageQuota.h
+include/webkitgtk/webkitdom/WebKitDOMStyleMedia.h
+include/webkitgtk/webkitdom/WebKitDOMStyleSheet.h
+include/webkitgtk/webkitdom/WebKitDOMStyleSheetList.h
+include/webkitgtk/webkitdom/WebKitDOMText.h
+include/webkitgtk/webkitdom/WebKitDOMTextTrack.h
+include/webkitgtk/webkitdom/WebKitDOMTextTrackCue.h
+include/webkitgtk/webkitdom/WebKitDOMTextTrackCueList.h
+include/webkitgtk/webkitdom/WebKitDOMTextTrackList.h
+include/webkitgtk/webkitdom/WebKitDOMTimeRanges.h
+include/webkitgtk/webkitdom/WebKitDOMTouch.h
+include/webkitgtk/webkitdom/WebKitDOMTrackEvent.h
+include/webkitgtk/webkitdom/WebKitDOMTreeWalker.h
+include/webkitgtk/webkitdom/WebKitDOMUIEvent.h
+include/webkitgtk/webkitdom/WebKitDOMValidityState.h
+include/webkitgtk/webkitdom/WebKitDOMVideoPlaybackQuality.h
+include/webkitgtk/webkitdom/WebKitDOMVideoTrack.h
+include/webkitgtk/webkitdom/WebKitDOMVideoTrackList.h
+include/webkitgtk/webkitdom/WebKitDOMWebKitNamedFlow.h
+include/webkitgtk/webkitdom/WebKitDOMWebKitPoint.h
+include/webkitgtk/webkitdom/WebKitDOMWheelEvent.h
+include/webkitgtk/webkitdom/WebKitDOMXPathExpression.h
+include/webkitgtk/webkitdom/WebKitDOMXPathNSResolver.h
+include/webkitgtk/webkitdom/WebKitDOMXPathResult.h
+lib/libjavascriptcoregtk.la
+lib/libjavascriptcoregtk.so
+lib/libjavascriptcoregtk.so.16
+lib/libwebkitgtk.la
+lib/libwebkitgtk.so
+lib/libwebkitgtk.so.22
+lib/pkgconfig/javascriptcoregtk.pc
+lib/pkgconfig/webkit.pc
+share/locale/ar/LC_MESSAGES/WebKitGTK.mo
+share/locale/as/LC_MESSAGES/WebKitGTK.mo
+share/locale/bg/LC_MESSAGES/WebKitGTK.mo
+share/locale/cs/LC_MESSAGES/WebKitGTK.mo
+share/locale/de/LC_MESSAGES/WebKitGTK.mo
+share/locale/el/LC_MESSAGES/WebKitGTK.mo
+share/locale/en_CA/LC_MESSAGES/WebKitGTK.mo
+share/locale/en_GB/LC_MESSAGES/WebKitGTK.mo
+share/locale/eo/LC_MESSAGES/WebKitGTK.mo
+share/locale/es/LC_MESSAGES/WebKitGTK.mo
+share/locale/et/LC_MESSAGES/WebKitGTK.mo
+share/locale/eu/LC_MESSAGES/WebKitGTK.mo
+share/locale/fr/LC_MESSAGES/WebKitGTK.mo
+share/locale/gl/LC_MESSAGES/WebKitGTK.mo
+share/locale/gu/LC_MESSAGES/WebKitGTK.mo
+share/locale/he/LC_MESSAGES/WebKitGTK.mo
+share/locale/hi/LC_MESSAGES/WebKitGTK.mo
+share/locale/hu/LC_MESSAGES/WebKitGTK.mo
+share/locale/id/LC_MESSAGES/WebKitGTK.mo
+share/locale/it/LC_MESSAGES/WebKitGTK.mo
+share/locale/ja/LC_MESSAGES/WebKitGTK.mo
+share/locale/kn/LC_MESSAGES/WebKitGTK.mo
+share/locale/ko/LC_MESSAGES/WebKitGTK.mo
+share/locale/lt/LC_MESSAGES/WebKitGTK.mo
+share/locale/lv/LC_MESSAGES/WebKitGTK.mo
+share/locale/ml/LC_MESSAGES/WebKitGTK.mo
+share/locale/mr/LC_MESSAGES/WebKitGTK.mo
+share/locale/nb/LC_MESSAGES/WebKitGTK.mo
+share/locale/nl/LC_MESSAGES/WebKitGTK.mo
+share/locale/or/LC_MESSAGES/WebKitGTK.mo
+share/locale/pa/LC_MESSAGES/WebKitGTK.mo
+share/locale/pl/LC_MESSAGES/WebKitGTK.mo
+share/locale/pt_BR/LC_MESSAGES/WebKitGTK.mo
+share/locale/pt/LC_MESSAGES/WebKitGTK.mo
+share/locale/ro/LC_MESSAGES/WebKitGTK.mo
+share/locale/ru/LC_MESSAGES/WebKitGTK.mo
+share/locale/sl/LC_MESSAGES/WebKitGTK.mo
+share/locale/sr@latin/LC_MESSAGES/WebKitGTK.mo
+share/locale/sr/LC_MESSAGES/WebKitGTK.mo
+share/locale/sv/LC_MESSAGES/WebKitGTK.mo
+share/locale/ta/LC_MESSAGES/WebKitGTK.mo
+share/locale/te/LC_MESSAGES/WebKitGTK.mo
+share/locale/uk/LC_MESSAGES/WebKitGTK.mo
+share/locale/vi/LC_MESSAGES/WebKitGTK.mo
+share/locale/zh_CN/LC_MESSAGES/WebKitGTK.mo
+share/locale/zh_TW/LC_MESSAGES/WebKitGTK.mo
+share/webkitgtk/images/deleteButton.png
+share/webkitgtk/images/inputSpeech.png
+share/webkitgtk/images/missingImage.png
+share/webkitgtk/images/nullPlugin.png
+share/webkitgtk/images/panIcon.png
+share/webkitgtk/images/textAreaResizeCorner.png
+share/webkitgtk/images/urlIcon.png
+share/webkitgtk/resources/audio/Composite.wav
+share/webkitgtk/resources/error.html
+@dir include/webkitgtk/JavaScriptCore
+@dir include/webkitgtk/webkit
+@dir include/webkitgtk/webkit2
+@dir include/webkitgtk/webkitdom
+@dir include/webkitgtk
+@dir share/locale/ar/LC_MESSAGES
+@dir share/locale/ar
+@dir share/locale/as/LC_MESSAGES
+@dir share/locale/as
+@dir share/locale/bg/LC_MESSAGES
+@dir share/locale/bg
+@dir share/locale/cs/LC_MESSAGES
+@dir share/locale/cs
+@dir share/locale/de/LC_MESSAGES
+@dir share/locale/de
+@dir share/locale/el/LC_MESSAGES
+@dir share/locale/el
+@dir share/locale/en_CA/LC_MESSAGES
+@dir share/locale/en_CA
+@dir share/locale/en_GB/LC_MESSAGES
+@dir share/locale/en_GB
+@dir share/locale/eo/LC_MESSAGES
+@dir share/locale/eo
+@dir share/locale/es/LC_MESSAGES
+@dir share/locale/es
+@dir share/locale/et/LC_MESSAGES
+@dir share/locale/et
+@dir share/locale/eu/LC_MESSAGES
+@dir share/locale/eu
+@dir share/locale/fr/LC_MESSAGES
+@dir share/locale/fr
+@dir share/locale/gl/LC_MESSAGES
+@dir share/locale/gl
+@dir share/locale/gu/LC_MESSAGES
+@dir share/locale/gu
+@dir share/locale/he/LC_MESSAGES
+@dir share/locale/he
+@dir share/locale/hi/LC_MESSAGES
+@dir share/locale/hi
+@dir share/locale/hu/LC_MESSAGES
+@dir share/locale/hu
+@dir share/locale/id/LC_MESSAGES
+@dir share/locale/id
+@dir share/locale/it/LC_MESSAGES
+@dir share/locale/it
+@dir share/locale/ja/LC_MESSAGES
+@dir share/locale/ja
+@dir share/locale/kn/LC_MESSAGES
+@dir share/locale/kn
+@dir share/locale/ko/LC_MESSAGES
+@dir share/locale/ko
+@dir share/locale/lt/LC_MESSAGES
+@dir share/locale/lt
+@dir share/locale/lv/LC_MESSAGES
+@dir share/locale/lv
+@dir share/locale/ml/LC_MESSAGES
+@dir share/locale/ml
+@dir share/locale/mr/LC_MESSAGES
+@dir share/locale/mr
+@dir share/locale/nb/LC_MESSAGES
+@dir share/locale/nb
+@dir share/locale/nl/LC_MESSAGES
+@dir share/locale/nl
+@dir share/locale/or/LC_MESSAGES
+@dir share/locale/or
+@dir share/locale/pa/LC_MESSAGES
+@dir share/locale/pa
+@dir share/locale/pl/LC_MESSAGES
+@dir share/locale/pl
+@dir share/locale/pt/LC_MESSAGES
+@dir share/locale/pt
+@dir share/locale/pt_BR/LC_MESSAGES
+@dir share/locale/pt_BR
+@dir share/locale/ro/LC_MESSAGES
+@dir share/locale/ro
+@dir share/locale/ru/LC_MESSAGES
+@dir share/locale/ru
+@dir share/locale/sl/LC_MESSAGES
+@dir share/locale/sl
+@dir share/locale/sr/LC_MESSAGES
+@dir share/locale/sr
+@dir share/locale/sr@latin/LC_MESSAGES
+@dir share/locale/sr@latin
+@dir share/locale/sv/LC_MESSAGES
+@dir share/locale/sv
+@dir share/locale/ta/LC_MESSAGES
+@dir share/locale/ta
+@dir share/locale/te/LC_MESSAGES
+@dir share/locale/te
+@dir share/locale/uk/LC_MESSAGES
+@dir share/locale/uk
+@dir share/locale/vi/LC_MESSAGES
+@dir share/locale/vi
+@dir share/locale/zh_CN/LC_MESSAGES
+@dir share/locale/zh_CN
+@dir share/locale/zh_TW/LC_MESSAGES
+@dir share/locale/zh_TW
+@dir share/webkitgtk/images
+@dir share/webkitgtk/resources/audio
+@dir share/webkitgtk/resources
+@dir share/webkitgtk

@@ -1,0 +1,13 @@
+--- ./Makefile.in.orig	Tue Jun 19 16:37:06 2007
++++ ./Makefile.in	Tue Aug 28 11:57:03 2007
+@@ -1310,8 +1310,8 @@
+ 
+ info-am:
+ 
+-install-data-am: install-dist_docDATA install-dist_htmlDATA \
+-	install-htmlDATA install-includeHEADERS install-man \
++install-data-am: \
++	install-includeHEADERS install-man \
+ 	install-nodist_includeHEADERS install-pkgconfigDATA
+ 
+ install-dvi: install-dvi-am

@@ -1,0 +1,59 @@
+# Created by: Alexander Novitsky <alecn2002@yandex.ru>
+# $FreeBSD: head/devel/ruby-gems/Makefile 509753 2019-08-24 19:53:02Z sunpoet $
+
+PORTNAME=	gems
+PORTVERSION=	3.0.6
+CATEGORIES=	devel ruby
+MASTER_SITES=	https://rubygems.org/rubygems/
+PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
+DISTNAME=	ruby${PORTNAME}-${PORTVERSION}
+DIST_SUBDIR=	ruby
+
+MAINTAINER=	ruby@FreeBSD.org
+COMMENT=	Package management framework for the Ruby language
+
+USES=		tar:tgz
+USE_RUBY=	yes
+
+NO_ARCH=	yes
+NO_BUILD=	yes
+RUBY_SETUP=	setup.rb
+
+GEMS_BASE_DIR=		lib/ruby/gems
+GEMS_BASE_DIR_P=	${GEMS_BASE_DIR}
+GEMS_VER_DIR=		${GEMS_BASE_DIR}/${RUBY_VER}
+GEMS_VER_DIR_P=		${GEMS_BASE_DIR_P}/%%RUBY_VER%%
+GEMS_DOC_BASE_DIR=	${GEMS_VER_DIR}/doc
+GEMS_DOC_BASE_DIR_P=	${GEMS_VER_DIR_P}/doc
+GEMS_DOC_DIR=		${GEMS_DOC_BASE_DIR}/${DISTNAME}
+GEMS_DOC_DIR_P=		${GEMS_DOC_BASE_DIR_P}/%%DISTNAME%%
+GEMS_ENV=		DONT_USE_BUNDLER_FOR_GEMDEPS=true GEM_HOME=${STAGEDIR}${PREFIX}/${GEMS_VER_DIR}
+RUBY_SETUP_OPTIONS=	--destdir=${STAGEDIR} --no-regenerate-binstubs
+RUBY_VER_SHORT=		${RUBY_VER:S/.//}
+
+GEMS_DIR=		${GEMS_VER_DIR}/gems
+DOC_DIR=		${GEMS_VER_DIR}/doc
+CACHE_DIR=		${GEMS_VER_DIR}/cache
+SPEC_DIR=		${GEMS_VER_DIR}/specifications
+EXT_DIR=		${GEMS_VER_DIR}/extensions
+
+PLIST_SUB+=	DISTNAME="${DISTNAME}"
+PLIST_SUB+=	RUBY_VER_SHORT="${RUBY_VER_SHORT}"
+PLIST_SUB+=	GEMS_DIR="${GEMS_DIR}"
+PLIST_SUB+=	DOC_DIR="${DOC_DIR}"
+PLIST_SUB+=	CACHE_DIR="${CACHE_DIR}"
+PLIST_SUB+=	SPEC_DIR="${SPEC_DIR}"
+PLIST_SUB+=	EXT_DIR="${EXT_DIR}"
+
+#OPTIONS_DEFINE=	DOCS
+#DOCS_VARS_OFF=	RUBY_SETUP_OPTIONS+="--no-ri --no-rdoc"
+
+do-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/${GEMS_VER_DIR}
+	cd ${WRKSRC}/ && ${SETENV} ${GEMS_ENV} ${RUBY} ${RUBY_SETUP} ${RUBY_SETUP_OPTIONS}
+	${LN} -sf gem ${STAGEDIR}${PREFIX}/bin/gem${RUBY_VER_SHORT} 
+
+post-install:
+	cd ${STAGEDIR}${PREFIX}/ && ${FIND} -ds ${GEMS_DOC_DIR}/ ! -type d >> ${TMPPLIST}
+
+.include <bsd.port.mk>

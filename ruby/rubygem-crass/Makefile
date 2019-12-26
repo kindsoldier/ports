@@ -1,0 +1,16 @@
+# Created by: Steve Wills <swills@FreeBSD.org>
+# $FreeBSD: head/www/rubygem-crass/Makefile 466896 2018-04-09 18:51:35Z sunpoet $
+
+PORTNAME=	crass
+PORTVERSION=	1.0.5
+CATEGORIES=	www rubygems
+MASTER_SITES=	RG
+
+MAINTAINER=	ruby@FreeBSD.org
+COMMENT=	CSS parser based on the CSS Syntax Level 3 draft
+
+NO_ARCH=	yes
+USE_RUBY=	yes
+USES=		gem
+
+.include <bsd.port.mk>

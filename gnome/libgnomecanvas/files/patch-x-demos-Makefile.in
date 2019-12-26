@@ -1,0 +1,11 @@
+--- ./demos/Makefile.in.orig	2006-03-13 13:13:17.000000000 +0200
++++ ./demos/Makefile.in	2010-10-11 11:00:44.000000000 +0300
+@@ -232,7 +232,7 @@
+ 	-DG_LOG_DOMAIN=\"GnomeCanvas\"
+ 
+ LDADD = \
+-	$(top_builddir)/libgnomecanvas/libgnomecanvas-2.la \
++	$(top_builddir)/libgnomecanvas/libgnomecanvas.la \
+ 	$(INTLLIBS)
+ 
+ canvas_demo_SOURCES = \

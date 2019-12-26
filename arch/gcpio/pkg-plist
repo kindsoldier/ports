@@ -1,0 +1,80 @@
+bin/gcpio
+libexec/gcpio/grmt
+share/locale/da/LC_MESSAGES/cpio.mo
+share/locale/de/LC_MESSAGES/cpio.mo
+share/locale/es/LC_MESSAGES/cpio.mo
+share/locale/fi/LC_MESSAGES/cpio.mo
+share/locale/fr/LC_MESSAGES/cpio.mo
+share/locale/ga/LC_MESSAGES/cpio.mo
+share/locale/gl/LC_MESSAGES/cpio.mo
+share/locale/hr/LC_MESSAGES/cpio.mo
+share/locale/hu/LC_MESSAGES/cpio.mo
+share/locale/id/LC_MESSAGES/cpio.mo
+share/locale/it/LC_MESSAGES/cpio.mo
+share/locale/ja/LC_MESSAGES/cpio.mo
+share/locale/ko/LC_MESSAGES/cpio.mo
+share/locale/nl/LC_MESSAGES/cpio.mo
+share/locale/pl/LC_MESSAGES/cpio.mo
+share/locale/pt_BR/LC_MESSAGES/cpio.mo
+share/locale/ro/LC_MESSAGES/cpio.mo
+share/locale/ru/LC_MESSAGES/cpio.mo
+share/locale/sr/LC_MESSAGES/cpio.mo
+share/locale/sv/LC_MESSAGES/cpio.mo
+share/locale/tr/LC_MESSAGES/cpio.mo
+share/locale/uk/LC_MESSAGES/cpio.mo
+share/locale/vi/LC_MESSAGES/cpio.mo
+share/locale/zh_CN/LC_MESSAGES/cpio.mo
+share/locale/zh_TW/LC_MESSAGES/cpio.mo
+man/man1/gcpio.1.gz
+@comment man/man8/grmt.8.gz
+@dir libexec/gcpio
+@dir share/locale/da/LC_MESSAGES
+@dir share/locale/da
+@dir share/locale/de/LC_MESSAGES
+@dir share/locale/de
+@dir share/locale/es/LC_MESSAGES
+@dir share/locale/es
+@dir share/locale/fi/LC_MESSAGES
+@dir share/locale/fi
+@dir share/locale/fr/LC_MESSAGES
+@dir share/locale/fr
+@dir share/locale/ga/LC_MESSAGES
+@dir share/locale/ga
+@dir share/locale/gl/LC_MESSAGES
+@dir share/locale/gl
+@dir share/locale/hr/LC_MESSAGES
+@dir share/locale/hr
+@dir share/locale/hu/LC_MESSAGES
+@dir share/locale/hu
+@dir share/locale/id/LC_MESSAGES
+@dir share/locale/id
+@dir share/locale/it/LC_MESSAGES
+@dir share/locale/it
+@dir share/locale/ja/LC_MESSAGES
+@dir share/locale/ja
+@dir share/locale/ko/LC_MESSAGES
+@dir share/locale/ko
+@dir share/locale/nl/LC_MESSAGES
+@dir share/locale/nl
+@dir share/locale/pl/LC_MESSAGES
+@dir share/locale/pl
+@dir share/locale/pt_BR/LC_MESSAGES
+@dir share/locale/pt_BR
+@dir share/locale/ro/LC_MESSAGES
+@dir share/locale/ro
+@dir share/locale/ru/LC_MESSAGES
+@dir share/locale/ru
+@dir share/locale/sr/LC_MESSAGES
+@dir share/locale/sr
+@dir share/locale/sv/LC_MESSAGES
+@dir share/locale/sv
+@dir share/locale/tr/LC_MESSAGES
+@dir share/locale/tr
+@dir share/locale/uk/LC_MESSAGES
+@dir share/locale/uk
+@dir share/locale/vi/LC_MESSAGES
+@dir share/locale/vi
+@dir share/locale/zh_CN/LC_MESSAGES
+@dir share/locale/zh_CN
+@dir share/locale/zh_TW/LC_MESSAGES
+@dir share/locale/zh_TW

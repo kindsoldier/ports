@@ -1,0 +1,7 @@
+include/libgltf/libgltf.h
+include/libgltf/types.h
+lib/libgltf.la
+lib/libgltf.so
+lib/libgltf.so.0
+lib/pkgconfig/libgltf.pc
+@dir include/libgltf

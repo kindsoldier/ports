@@ -1,0 +1,19 @@
+#!/bin/sh
+
+set -x
+
+MUSICPD_DB_DIR="%%MUSICPD_DB_DIR%%"
+#SLURP_DIR="%%SLURP_DIR%%"
+MUSICPD_RUN_DIR="%%MUSICPD_RUN_DIR%%"
+
+case $2 in 
+    DEINSTALL)
+	;;
+    POST-DEINSTALL)
+#	for dir in ${MUSICPD_DB_DIR} ${MUSICPD_RUN_DIR}; do
+#	    rmdir ${dir} || ls -l ${dir}
+#	done
+
+	;;
+esac
+#EOF

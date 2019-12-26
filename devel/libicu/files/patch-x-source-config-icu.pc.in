@@ -1,0 +1,13 @@
+--- .//config/icu.pc.in.orig	2013-08-31 01:45:31.000000000 +0300
++++ .//config/icu.pc.in	2014-12-23 16:04:33.000000000 +0200
+@@ -22,8 +22,8 @@
+ ICULIBSUFFIX=@ICULIBSUFFIX@
+ LIBICU=lib${ICUPREFIX}
+ #SHAREDLIBCFLAGS=-fPIC
+-pkglibdir=${libdir}/@PACKAGE@${ICULIBSUFFIX}/@VERSION@
+-#pkgdatadir=${datadir}/@PACKAGE@${ICULIBSUFFIX}/@VERSION@
++pkglibdir=${libdir}/@PACKAGE@${ICULIBSUFFIX}
++#pkgdatadir=${datadir}/@PACKAGE@${ICULIBSUFFIX}
+ ICUDATA_NAME = icudt@LIB_VERSION_MAJOR@@ICUDATA_CHAR@
+ #ICUPKGDATA_DIR=@libdir@
+ #ICUDATA_DIR=${pkgdatadir}

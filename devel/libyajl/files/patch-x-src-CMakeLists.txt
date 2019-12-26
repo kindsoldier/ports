@@ -1,0 +1,32 @@
+--- ./src/CMakeLists.txt.orig	2014-03-19 15:58:29.000000000 +1100
++++ ./src/CMakeLists.txt	2015-05-15 09:31:31.711092000 +1000
+@@ -30,12 +30,12 @@
+ # set up some paths
+ SET (libDir ${CMAKE_CURRENT_BINARY_DIR}/../${YAJL_DIST_NAME}/lib)
+ SET (incDir ${CMAKE_CURRENT_BINARY_DIR}/../${YAJL_DIST_NAME}/include/yajl)
+-SET (shareDir ${CMAKE_CURRENT_BINARY_DIR}/../${YAJL_DIST_NAME}/share/pkgconfig)
++SET (shareDir ${CMAKE_CURRENT_BINARY_DIR}/../${YAJL_DIST_NAME}/lib/pkgconfig)
+ 
+ # set the output path for libraries
+ SET(LIBRARY_OUTPUT_PATH ${libDir})
+ 
+-ADD_LIBRARY(yajl_s STATIC ${SRCS} ${HDRS} ${PUB_HDRS})
++ADD_LIBRARY(yajl_s STATIC ${SRCS} ${HDRS} ${PUB_HDRS})
+ 
+ ADD_LIBRARY(yajl SHARED ${SRCS} ${HDRS} ${PUB_HDRS})
+ 
+@@ -43,7 +43,7 @@
+ SET_TARGET_PROPERTIES(yajl PROPERTIES
+                       DEFINE_SYMBOL YAJL_SHARED
+                       SOVERSION ${YAJL_MAJOR}
+-                      VERSION ${YAJL_MAJOR}.${YAJL_MINOR}.${YAJL_MICRO})
++                      VERSION ${YAJL_MAJOR})
+ 
+ #### ensure a .dylib has correct absolute installation paths upon installation
+ IF(APPLE)
+@@ -84,4 +84,4 @@
+ INSTALL(TARGETS yajl_s ARCHIVE DESTINATION lib${LIB_SUFFIX})
+ INSTALL(FILES ${PUB_HDRS} DESTINATION include/yajl)
+ INSTALL(FILES ${incDir}/yajl_version.h DESTINATION include/yajl)
+-INSTALL(FILES ${shareDir}/yajl.pc DESTINATION share/pkgconfig)
++INSTALL(FILES ${shareDir}/yajl.pc DESTINATION lib/pkgconfig)

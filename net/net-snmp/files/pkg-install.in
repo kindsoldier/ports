@@ -1,0 +1,21 @@
+#!/bin/sh
+
+set -x
+
+PREFIX="%%PREFIX%%"
+
+CONF_DIR=${PREFIX}/etc/snmp
+NETSNMP_DIR=/var/net-snmp
+AGENTX_DIR=/var/agentx
+
+
+case $2 in 
+    PRE-INSTALL)
+	install -d -m 0755  -o root -g wheel ${AGENTX_DIR}
+	install -d -m 0750  -o root -g wheel ${NETSNMP_DIR}
+	install -d -m 0750  -o root -g wheel ${CONF_DIR}
+	;;
+    POST-INSTALL)
+	;;
+esac
+#EOF

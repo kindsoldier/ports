@@ -1,0 +1,11 @@
+--- ./python/tests/Makefile.in.orig	2014-11-29 17:00:50.000000000 +0200
++++ ./python/tests/Makefile.in	2014-11-29 17:00:50.000000000 +0200
+@@ -584,7 +584,7 @@
+ 
+ info-am:
+ 
+-install-data-am: install-dist_exampleDATA
++install-data-am:
+ 
+ install-dvi: install-dvi-am
+ 

@@ -1,0 +1,11 @@
+--- ./src/libFLAC/Makefile.in.orig	2013-05-27 11:11:57.459950000 +0300
++++ ./src/libFLAC/Makefile.in	2013-09-22 04:26:11.000000000 +0300
+@@ -440,7 +440,7 @@
+ 
+ 
+ # see 'http://www.gnu.org/software/libtool/manual/libtool.html#Libtool-versioning' for numbering convention
+-libFLAC_la_LDFLAGS = $(AM_LDFLAGS) -version-info 11:0:3 $(LOCAL_EXTRA_LDFLAGS) @LT_NO_UNDEFINED@
++libFLAC_la_LDFLAGS = $(AM_LDFLAGS) -version-info 10:0:2 $(LOCAL_EXTRA_LDFLAGS) @LT_NO_UNDEFINED@
+ libFLAC_sources = \
+ 	bitmath.c \
+ 	bitreader.c \

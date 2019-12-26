@@ -1,0 +1,46 @@
+#!/bin/sh
+
+set -x
+
+POLKIT_GROUP="%%POLKIT_GROUP%%"
+POLKIT_OWNER="%%POLKIT_OWNER%%"
+
+case $2 in 
+    PRE-INSTALL)
+
+	POLKIT_GROUP_ID="%%POLKIT_GROUP_ID%%"
+	POLKIT_OWNER_ID="%%POLKIT_OWNER_ID%%"
+
+#	PKG_PREFIX="%%PREFIX%%"
+#	POLKIT_LOCALSTATEDIR="%%LOCALSTATEDIR%%"
+#	POLKIT_RUNDIR="%%POLKIT_RUNDIR%%"
+#	POLKIT_DBDIR="%%POLKIT_DBDIR%%"
+
+	POLKIT_NAME="polkitd"
+	POLKIT_SHELL="/usr/sbin/nologin"
+
+
+	pw group add ${POLKIT_GROUP}  -g ${POLKIT_GROUP_ID}
+	pw group show ${POLKIT_GROUP}
+	pw user add ${POLKIT_OWNER} -u ${POLKIT_OWNER_ID} \
+	    -g ${POLKIT_GROUP}  \
+	    -d "/var/tmp" \
+	    -s ${POLKIT_SHELL} -u ${POLKIT_OWNER_ID} \
+	    -c "${POLKIT_NAME}"
+	pw group mod ${POLKIT_GROUP} -M ${POLKIT_OWNER}
+	pw user show ${POLKIT_OWNER}
+	pw group show ${POLKIT_GROUP}
+#	install -d -o ${POLKIT_OWNER} -g ${POLKIT_GROUP} -m 0755 ${POLKIT_DBDIR}
+#	install -d -o ${POLKIT_OWNER} -g ${POLKIT_GROUP} -m 0755 ${POLKIT_RUNDIR}
+	;;
+    POST-INSTALL)
+	mkdir /var/lib/polkit
+	for i in 10-vendor.d 20-org.d 30-site.d 50-local.d 90-mandatory.d; do
+	  install -d -o root -g wheel -m 0755 ${PKG_PREFIX}/etc/polkit/localauthority/${i}
+	  install -d -o root -g wheel -m 0755 /var/lib/polkit/localauthority/${i}
+	done 
+	chown -R ${POLKIT_OWNER}:wheel ${PKG_PREFIX}/etc/polkit
+	;;
+esac
+exit 0
+#EOF

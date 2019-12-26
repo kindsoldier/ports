@@ -1,0 +1,8 @@
+--- ./mkspecs/features/help.prf.orig	2015-05-07 16:14:42.000000000 +0200
++++ ./mkspecs/features/help.prf	2019-03-22 13:54:51.684474000 +0200
+@@ -1,4 +1,5 @@
+ INCLUDEPATH = $$QMAKE_INCDIR_QT/QtHelp $$INCLUDEPATH
+ QT += sql
++LIBS += -lQtCLucene
+ 
+ qtAddLibrary(QtHelp)

@@ -1,0 +1,9 @@
+bin/uclpack
+include/ucl/ucl_asm.h
+include/ucl/ucl.h
+include/ucl/uclconf.h
+lib/libucl.a
+lib/libucl.la
+lib/libucl.so
+lib/libucl.so.1
+@dir include/ucl

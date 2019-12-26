@@ -1,0 +1,27 @@
+--- ./app/Makefile.in.orig	2013-02-05 22:06:28.000000000 +0300
++++ ./app/Makefile.in	2015-10-23 20:35:46.789751000 +0200
+@@ -1411,16 +1411,16 @@
+ @HAVE_WINDRES_TRUE@		$(GIMPAPPRC) $@
+ 
+ install-exec-hook:
+-@DEFAULT_BINARY_TRUE@	cd $(DESTDIR)$(bindir) \
+-@DEFAULT_BINARY_TRUE@	&& rm -f gimp$(EXEEXT) \
+-@DEFAULT_BINARY_TRUE@	&& $(LN_S) gimp-$(GIMP_APP_VERSION)$(EXEEXT) gimp$(EXEEXT)
+-@DEFAULT_BINARY_TRUE@@ENABLE_GIMP_CONSOLE_TRUE@	cd $(DESTDIR)$(bindir) \
+-@DEFAULT_BINARY_TRUE@@ENABLE_GIMP_CONSOLE_TRUE@	&& rm -f gimp-console$(EXEEXT) \
+-@DEFAULT_BINARY_TRUE@@ENABLE_GIMP_CONSOLE_TRUE@	&& $(LN_S) gimp-console-$(GIMP_APP_VERSION)$(EXEEXT) gimp-console$(EXEEXT)
++#@DEFAULT_BINARY_TRUE@	cd $(DESTDIR)$(bindir) \
++#@DEFAULT_BINARY_TRUE@	&& rm -f gimp$(EXEEXT) \
++#@DEFAULT_BINARY_TRUE@	&& $(LN_S) gimp-$(GIMP_APP_VERSION)$(EXEEXT) gimp$(EXEEXT)
++#@DEFAULT_BINARY_TRUE@@ENABLE_GIMP_CONSOLE_TRUE@	cd $(DESTDIR)$(bindir) \
++#@DEFAULT_BINARY_TRUE@@ENABLE_GIMP_CONSOLE_TRUE@	&& rm -f gimp-console$(EXEEXT) \
++#@DEFAULT_BINARY_TRUE@@ENABLE_GIMP_CONSOLE_TRUE@	&& $(LN_S) gimp-console-$(GIMP_APP_VERSION)$(EXEEXT) gimp-console$(EXEEXT)
+ 
+ uninstall-local:
+-@DEFAULT_BINARY_TRUE@	rm -f $(DESTDIR)$(bindir)/gimp$(EXEEXT)
+-@DEFAULT_BINARY_TRUE@@ENABLE_GIMP_CONSOLE_TRUE@	rm -f $(DESTDIR)$(bindir)/gimp-console$(EXEEXT)
++#@DEFAULT_BINARY_TRUE@	rm -f $(DESTDIR)$(bindir)/gimp$(EXEEXT)
++#@DEFAULT_BINARY_TRUE@@ENABLE_GIMP_CONSOLE_TRUE@	rm -f $(DESTDIR)$(bindir)/gimp-console$(EXEEXT)
+ 
+ # require gimp-console when making dist
+ #

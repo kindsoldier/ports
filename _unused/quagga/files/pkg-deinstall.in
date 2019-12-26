@@ -1,0 +1,16 @@
+#!/bin/sh
+set -x
+RUN_DIR="%%RUN_DIR%%"
+LOG_DIR="%%LOG_DIR%%"
+
+case $2 in 
+    DEINSTALL)
+	;;
+    POST-DEINSTALL)
+	for dir in ${LOG_DIR} ${RUN_DIR}; do
+	    rmdir -p ${dir}
+	done
+	;;
+esac
+exit 0
+#EOF

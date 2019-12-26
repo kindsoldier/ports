@@ -1,0 +1,2 @@
+This is the GNU implementation of the popular `grep' *nix
+utility.  It allows for the fast locating of strings in text files.

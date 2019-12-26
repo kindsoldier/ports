@@ -1,0 +1,17 @@
+# $FreeBSD:ruby/Makefile 430276 2017-01-01 19:33:06Z swills $
+
+PORTNAME=	mimemagic
+PORTVERSION=	0.3.2
+CATEGORIES=	misc rubygems
+MASTER_SITES=	RG
+
+MAINTAINER=	ruby@FreeBSD.org
+COMMENT=	MIME detection by extension or content in pure ruby
+COMMENT=	Detects the mime type of a file by extension or by content
+
+
+NO_ARCH=	yes
+USE_RUBY=	yes
+USES=		gem
+
+.include <bsd.port.mk>

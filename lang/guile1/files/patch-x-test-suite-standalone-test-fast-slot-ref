@@ -1,0 +1,11 @@
+--- ./test-suite/standalone/test-fast-slot-ref.orig	2010-12-13 21:42:19.000000000 +0200
++++ ./test-suite/standalone/test-fast-slot-ref	2014-01-06 21:26:21.000000000 +0300
+@@ -25,7 +25,7 @@
+ # executing the (%fast-slot-ref i 3) line.  For reasons as yet
+ # unknown, it does not cause a segmentation fault if the same code is
+ # loaded as a script; that is why we run it here using "guile -q <<EOF".
+-exec guile -q -l /home/ludo/src/guile/libguile/stack-limit-calibration.scm >/dev/null 2>&1 <<EOF
++exec guile -q -l /usr/ports/langs/guile/work/guile-1.8.8/libguile/stack-limit-calibration.scm >/dev/null 2>&1 <<EOF
+ (use-modules (oop goops))
+ (define-module (oop goops))
+ (define-class <c> () (a #:init-value 1) (b #:init-value 2) (c #:init-value 3))

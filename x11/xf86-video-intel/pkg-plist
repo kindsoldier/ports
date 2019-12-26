@@ -1,0 +1,12 @@
+lib/libI810XvMC.la
+lib/libI810XvMC.so
+lib/libI810XvMC.so.1
+lib/libIntelXvMC.la
+lib/libIntelXvMC.so
+lib/libIntelXvMC.so.1
+lib/xorg/modules/drivers/intel_drv.la
+lib/xorg/modules/drivers/intel_drv.so
+man/man4/intel.4.gz
+@dir lib/xorg/modules/drivers
+@dir lib/xorg/modules
+@dir lib/xorg

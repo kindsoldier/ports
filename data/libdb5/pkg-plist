@@ -1,0 +1,26 @@
+bin/db5_archive
+bin/db5_checkpoint
+bin/db5_deadlock
+bin/db5_dump
+bin/db5_hotbackup
+bin/db5_load
+bin/db5_log_verify
+bin/db5_printlog
+bin/db5_recover
+bin/db5_replicate
+bin/db5_stat
+bin/db5_tuner
+bin/db5_upgrade
+bin/db5_verify
+include/db5/db.h
+include/db5/db_185.h
+include/db5/db_cxx.h
+lib/libdb5.a
+lib/libdb5.la
+lib/libdb5.so
+lib/libdb5.so.0
+lib/libdb5_cxx.a
+lib/libdb5_cxx.la
+lib/libdb5_cxx.so
+lib/libdb5_cxx.so.0
+@dir include/db5

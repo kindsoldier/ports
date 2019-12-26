@@ -1,0 +1,15 @@
+bin/autoexpect
+bin/expect
+include/expect_comm.h
+include/expect_tcl.h
+include/expect.h
+include/tcldbg.h
+lib/expect/5.43/pkgIndex.tcl
+lib/libexpect543.a
+lib/libexpect543.so.1
+lib/libexpect543.so
+man/man1/autoexpect.1.gz
+man/man1/expect.1.gz
+man/man3/libexpect.3.gz
+@dir lib/expect/5.43
+@dir lib/expect

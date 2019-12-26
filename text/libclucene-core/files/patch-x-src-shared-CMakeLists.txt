@@ -1,0 +1,10 @@
+--- ./src/shared/CMakeLists.txt.orig	2011-03-17 02:21:07.000000000 +0200
++++ ./src/shared/CMakeLists.txt	2016-07-07 08:30:48.027268000 +0200
+@@ -330,7 +330,6 @@
+ 
+ #set properties on the libraries
+ SET_TARGET_PROPERTIES(clucene-shared PROPERTIES
+-    VERSION ${CLUCENE_VERSION}
+     SOVERSION ${CLUCENE_SOVERSION}
+     COMPILE_DEFINITIONS_DEBUG _DEBUG
+ )

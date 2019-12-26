@@ -1,0 +1,11 @@
+--- ./libparanoia/Makefile.orig	2006-09-15 02:46:17.000000000 +0300
++++ ./libparanoia/Makefile	2018-06-10 14:33:47.187110000 +0200
+@@ -5,7 +5,7 @@
+ include		$(SRCROOT)/$(RULESDIR)/rules.top
+ ###########################################################################
+ 
+-MK_FILES= paranoia.mk paranoia_p.mk $(NO_SHL)shlparanoia.mk
++MK_FILES= paranoia.mk $(NO_SHL)shlparanoia.mk
+ 
+ ###########################################################################
+ include		$(SRCROOT)/$(RULESDIR)/rules.mks

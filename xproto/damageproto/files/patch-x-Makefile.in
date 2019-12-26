@@ -1,0 +1,11 @@
+--- ./Makefile.in.orig	2010-10-30 06:35:01.000000000 +0300
++++ ./Makefile.in	2014-11-29 19:50:33.000000000 +0200
+@@ -597,7 +597,7 @@
+ 
+ info-am:
+ 
+-install-data-am: install-damageHEADERS install-dist_docDATA \
++install-data-am: install-damageHEADERS \
+ 	install-pkgconfigDATA
+ 
+ install-dvi: install-dvi-am

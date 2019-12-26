@@ -1,0 +1,80 @@
+--- ./libgnome/Makefile.in.orig	2015-10-22 09:13:34.845965000 +0200
++++ ./libgnome/Makefile.in	2015-10-22 09:13:34.874961000 +0200
+@@ -45,15 +45,15 @@
+ subdir = libgnome
+ DIST_COMMON = $(libgnomeinclude_HEADERS) $(noinst_HEADERS) \
+ 	$(srcdir)/Makefile.am $(srcdir)/Makefile.in \
+-	$(srcdir)/libgnome-2.0-uninstalled.pc.in \
+-	$(srcdir)/libgnome-2.0.pc.in
++	$(srcdir)/libgnome-uninstalled.pc.in \
++	$(srcdir)/libgnome.pc.in
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ am__aclocal_m4_deps = $(top_srcdir)/configure.in
+ am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
+ 	$(ACLOCAL_M4)
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = $(top_builddir)/config.h
+-CONFIG_CLEAN_FILES = libgnome-2.0.pc libgnome-2.0-uninstalled.pc
++CONFIG_CLEAN_FILES = libgnome.pc libgnome-uninstalled.pc
+ CONFIG_CLEAN_VPATH_FILES =
+ am__vpath_adj_setup = srcdirstrip=`echo "$(srcdir)" | sed 's|.|.|g'`;
+ am__vpath_adj = case $$p in \
+@@ -103,7 +103,7 @@
+ PROGRAMS = $(bin_PROGRAMS)
+ am_gnome_open_OBJECTS = gnome-open.$(OBJEXT)
+ gnome_open_OBJECTS = $(am_gnome_open_OBJECTS)
+-gnome_open_DEPENDENCIES = libgnome-2.la $(am__DEPENDENCIES_1) \
++gnome_open_DEPENDENCIES = libgnome.la $(am__DEPENDENCIES_1) \
+ 	$(am__DEPENDENCIES_1)
+ DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
+ depcomp = $(SHELL) $(top_srcdir)/depcomp
+@@ -365,7 +365,7 @@
+ 	gnome-open.c
+ 
+ gnome_open_LDADD = \
+-	libgnome-2.la	\
++	libgnome.la	\
+ 	$(LIBGNOME_LIBS) \
+ 	$(GIO_LIBS)
+ 
+@@ -375,8 +375,8 @@
+ 
+ CLEANFILES = xgen-gth xgen-gtc
+ EXTRA_DIST = \
+-	libgnome-2.0.pc.in		\
+-	libgnome-2.0-uninstalled.pc.in	\
++	libgnome.pc.in		\
++	libgnome-uninstalled.pc.in	\
+ 	parse-path.cP
+ 
+ libgnome_2_la_LDFLAGS = \
+@@ -388,7 +388,7 @@
+ 	$(LIBGNOME_LIBS)
+ 
+ pkgconfigdir = $(libdir)/pkgconfig
+-pkgconfig_DATA = libgnome-2.0.pc
++pkgconfig_DATA = libgnome.pc
+ all: $(BUILT_SOURCES)
+ 	$(MAKE) $(AM_MAKEFLAGS) all-am
+ 
+@@ -424,9 +424,9 @@
+ $(ACLOCAL_M4): @MAINTAINER_MODE_TRUE@ $(am__aclocal_m4_deps)
+ 	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
+ $(am__aclocal_m4_deps):
+-libgnome-2.0.pc: $(top_builddir)/config.status $(srcdir)/libgnome-2.0.pc.in
++libgnome.pc: $(top_builddir)/config.status $(srcdir)/libgnome.pc.in
+ 	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@
+-libgnome-2.0-uninstalled.pc: $(top_builddir)/config.status $(srcdir)/libgnome-2.0-uninstalled.pc.in
++libgnome-uninstalled.pc: $(top_builddir)/config.status $(srcdir)/libgnome-uninstalled.pc.in
+ 	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@
+ install-libLTLIBRARIES: $(lib_LTLIBRARIES)
+ 	@$(NORMAL_INSTALL)
+@@ -459,7 +459,7 @@
+ 	  echo "rm -f \"$${dir}/so_locations\""; \
+ 	  rm -f "$${dir}/so_locations"; \
+ 	done
+-libgnome-2.la: $(libgnome_2_la_OBJECTS) $(libgnome_2_la_DEPENDENCIES) 
++libgnome.la: $(libgnome_2_la_OBJECTS) $(libgnome_2_la_DEPENDENCIES) 
+ 	$(AM_V_CCLD)$(libgnome_2_la_LINK) -rpath $(libdir) $(libgnome_2_la_OBJECTS) $(libgnome_2_la_LIBADD) $(LIBS)
+ install-binPROGRAMS: $(bin_PROGRAMS)
+ 	@$(NORMAL_INSTALL)

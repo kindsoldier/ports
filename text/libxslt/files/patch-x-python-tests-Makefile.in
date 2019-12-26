@@ -1,0 +1,11 @@
+--- ./python/tests/Makefile.in.orig	2012-11-21 10:21:50.000000000 +0300
++++ ./python/tests/Makefile.in	2014-11-29 17:23:25.000000000 +0200
+@@ -346,7 +346,7 @@
+ check: check-am
+ all-am: Makefile
+ installdirs:
+-install: install-am
++install:
+ install-exec: install-exec-am
+ install-data: install-data-am
+ uninstall: uninstall-am

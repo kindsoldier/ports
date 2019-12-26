@@ -1,0 +1,11 @@
+--- ./src/backend/Makefile.orig	2016-01-04 23:29:34.000000000 +0200
++++ ./src/backend/Makefile	2016-02-06 13:12:50.315213000 +0200
+@@ -121,6 +121,8 @@
+ 
+ $(top_builddir)/src/port/libpgport_srv.a: | submake-libpgport
+ 
++symlinks: $(top_builddir)/src/include/parser/gram.h $(top_builddir)/src/include/utils/fmgroids.h $(top_builddir)/src/include/utils/probes.h
++
+ 
+ # The postgres.o target is needed by the rule in Makefile.global that
+ # creates the exports file when MAKE_EXPORTS = true.

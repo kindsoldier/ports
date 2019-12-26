@@ -1,0 +1,118 @@
+diff -urNp a/src/bin/pg_basebackup/pg_receivewal.c src/bin/pg_basebackup/pg_receivewal.c
+--- a/src/bin/pg_basebackup/pg_receivewal.c	2018-05-07 23:51:40.000000000 +0300
++++ src/bin/pg_basebackup/pg_receivewal.c	2018-07-06 14:48:10.133357476 +0300
+@@ -96,6 +96,7 @@
+ 	printf(_("  -d, --dbname=CONNSTR   connection string\n"));
+ 	printf(_("  -h, --host=HOSTNAME    database server host or socket directory\n"));
+ 	printf(_("  -p, --port=PORT        database server port number\n"));
++	printf(_("  -u, --umask            set files mode according to umask (might break security!)\n"));
+ 	printf(_("  -U, --username=NAME    connect as specified database user\n"));
+ 	printf(_("  -w, --no-password      never prompt for password\n"));
+ 	printf(_("  -W, --password         force password prompt (should happen automatically)\n"));
+@@ -477,6 +478,7 @@
+ 		{"endpos", required_argument, NULL, 'E'},
+ 		{"host", required_argument, NULL, 'h'},
+ 		{"port", required_argument, NULL, 'p'},
++		{"umask", no_argument, NULL, 'u'},
+ 		{"username", required_argument, NULL, 'U'},
+ 		{"no-loop", no_argument, NULL, 'n'},
+ 		{"no-password", no_argument, NULL, 'w'},
+@@ -518,7 +520,7 @@
+ 		}
+ 	}
+ 
+-	while ((c = getopt_long(argc, argv, "D:d:E:h:p:U:s:S:nwWvZ:",
++	while ((c = getopt_long(argc, argv, "D:d:E:h:p:U:s:S:nuwWvZ:",
+ 							long_options, &option_index)) != -1)
+ 	{
+ 		switch (c)
+@@ -541,6 +543,9 @@
+ 				}
+ 				dbport = pg_strdup(optarg);
+ 				break;
++			case 'u':
++				useumask = 1;
++				break;
+ 			case 'U':
+ 				dbuser = pg_strdup(optarg);
+ 				break;
+diff -urNp a/src/bin/pg_basebackup/pg_recvlogical.c src/bin/pg_basebackup/pg_recvlogical.c
+--- a/src/bin/pg_basebackup/pg_recvlogical.c	2018-05-07 23:51:40.000000000 +0300
++++ src/bin/pg_basebackup/pg_recvlogical.c	2018-07-06 14:27:21.819405264 +0300
+@@ -335,11 +335,14 @@ StreamLogicalLog(void)
+ 		{
+ 			struct stat statbuf;
+ 
++			mode_t mode = (useumask == 1) ?
++				(S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH) : (S_IRUSR | S_IWUSR);
++
+ 			if (strcmp(outfile, "-") == 0)
+ 				outfd = fileno(stdout);
+ 			else
+ 				outfd = open(outfile, O_CREAT | O_APPEND | O_WRONLY | PG_BINARY,
+-							 S_IRUSR | S_IWUSR);
++							 mode);
+ 			if (outfd == -1)
+ 			{
+ 				fprintf(stderr,
+diff -urNp a/src/bin/pg_basebackup/streamutil.c src/bin/pg_basebackup/streamutil.c
+--- a/src/bin/pg_basebackup/streamutil.c	2018-05-07 23:51:40.000000000 +0300
++++ src/bin/pg_basebackup/streamutil.c	2018-07-06 14:27:21.820405275 +0300
+@@ -38,6 +38,7 @@ char	   *dbhost = NULL;
+ char	   *dbuser = NULL;
+ char	   *dbport = NULL;
+ char	   *dbname = NULL;
++int			useumask = 0;	/* 0=auto, -1=never, 1=always */
+ int			dbgetpassword = 0;	/* 0=auto, -1=never, 1=always */
+ static bool have_password = false;
+ static char password[100];
+diff -urNp a/src/bin/pg_basebackup/streamutil.h src/bin/pg_basebackup/streamutil.h
+--- a/src/bin/pg_basebackup/streamutil.h	2018-05-07 23:51:40.000000000 +0300
++++ src/bin/pg_basebackup/streamutil.h	2018-07-06 14:27:21.820405275 +0300
+@@ -23,6 +23,7 @@
+ extern char *dbuser;
+ extern char *dbport;
+ extern char *dbname;
++extern int  useumask;
+ extern int	dbgetpassword;
+ extern uint32 WalSegSz;
+ 
+diff -urNp a/src/bin/pg_basebackup/walmethods.c src/bin/pg_basebackup/walmethods.c
+--- a/src/bin/pg_basebackup/walmethods.c	2018-05-07 23:51:40.000000000 +0300
++++ src/bin/pg_basebackup/walmethods.c	2018-07-06 14:27:21.821405285 +0300
+@@ -78,6 +78,8 @@
+ #ifdef HAVE_LIBZ
+ 	gzFile		gzfp = NULL;
+ #endif
++	mode_t		mode = (useumask == 1) ?
++		(S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH) : (S_IRUSR | S_IWUSR);
+ 
+ 	snprintf(tmppath, sizeof(tmppath), "%s/%s%s%s",
+ 			 dir_data->basedir, pathname,
+@@ -90,7 +92,7 @@
+ 	 * does not do any system calls to fsync() to make changes permanent on
+ 	 * disk.
+ 	 */
+-	fd = open(tmppath, O_WRONLY | O_CREAT | PG_BINARY, pg_file_create_mode);
++	fd = open(tmppath, O_WRONLY | O_CREAT | PG_BINARY, pg_file_create_mode | mode);
+ 	if (fd < 0)
+ 		return NULL;
+ 
+@@ -533,6 +535,8 @@
+ {
+ 	int			save_errno;
+ 	static char tmppath[MAXPGPATH];
++	mode_t		mode = (useumask == 1) ?
++		(S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH) : (S_IRUSR | S_IWUSR);
+ 
+ 	tar_clear_error();
+ 
+@@ -543,7 +547,7 @@
+ 		 */
+ 		tar_data->fd = open(tar_data->tarfilename,
+ 							O_WRONLY | O_CREAT | PG_BINARY,
+-							pg_file_create_mode);
++							pg_file_create_mode | mode);
+ 		if (tar_data->fd < 0)
+ 			return NULL;
+ 

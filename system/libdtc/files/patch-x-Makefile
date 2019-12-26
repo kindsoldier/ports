@@ -1,0 +1,20 @@
+--- ./Makefile.orig	2017-09-27 12:00:10.000000000 +0200
++++ ./Makefile	2018-03-03 19:16:07.523782000 +0200
+@@ -162,7 +162,7 @@
+ LIBFDT_objdir = libfdt
+ LIBFDT_srcdir = libfdt
+ LIBFDT_archive = $(LIBFDT_objdir)/libfdt.a
+-LIBFDT_lib = $(LIBFDT_objdir)/libfdt-$(DTC_VERSION).$(SHAREDLIB_EXT)
++LIBFDT_lib = $(LIBFDT_objdir)/libfdt.$(VERSION)
+ LIBFDT_include = $(addprefix $(LIBFDT_srcdir)/,$(LIBFDT_INCLUDES))
+ LIBFDT_version = $(addprefix $(LIBFDT_srcdir)/,$(LIBFDT_VERSION))
+ 
+@@ -197,7 +197,7 @@
+ 	@$(VECHO) INSTALL-LIB
+ 	$(INSTALL) -d $(DESTDIR)$(LIBDIR)
+ 	$(INSTALL) $(LIBFDT_lib) $(DESTDIR)$(LIBDIR)
+-	ln -sf $(notdir $(LIBFDT_lib)) $(DESTDIR)$(LIBDIR)/$(LIBFDT_soname)
++#	ln -sf $(notdir $(LIBFDT_lib)) $(DESTDIR)$(LIBDIR)/$(LIBFDT_soname)
+ 	ln -sf $(LIBFDT_soname) $(DESTDIR)$(LIBDIR)/libfdt.$(SHAREDLIB_EXT)
+ 	$(INSTALL) -m 644 $(LIBFDT_archive) $(DESTDIR)$(LIBDIR)
+ 

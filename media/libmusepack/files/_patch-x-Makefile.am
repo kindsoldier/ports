@@ -1,0 +1,37 @@
+--- ./Makefile.am.orig	2015-10-22 18:49:35.268128000 +0200
++++ ./Makefile.am	2015-10-22 18:49:35.264268000 +0200
+@@ -1,33 +1,6 @@
+ AUTOMAKE_OPTIONS = foreign
+ 
+-ACLOCAL_AMFLAGS = -I m4
+-
+-EXTRA_DIST = CMakeLists.txt libmpc.kdevelop docs win32
+-
+-if MPC_CHAP
+-  MPCCHAP_DIR = mpcchap
+-endif
+-if MPC_GAIN
+-  MPCGAIN_DIR = mpcgain
+-endif
+-
+-SUBDIRS = \
+-include \
+-libmpcdec \
+-libmpcenc \
+-libmpcpsy \
+-libwavformat \
+-mpcenc \
+-mpc2sv8 \
+-mpccut \
+-mpcdec \
+-wavcmp \
+-$(MPCCHAP_DIR) \
+-$(MPCGAIN_DIR)
+-
+-AUTOMAKE_OPTIONS = foreign
+-
+-ACLOCAL_AMFLAGS = -I m4
++	mpccut mpcdec wavcmp
+ 
+ EXTRA_DIST = CMakeLists.txt libmpc.kdevelop docs win32
+ 

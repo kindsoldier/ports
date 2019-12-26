@@ -1,0 +1,25 @@
+# Created by: Nicola Vitale <nivit@FreeBSD.org>
+# $FreeBSD: head/textproc/libsass/Makefile 434373 2017-02-18 16:13:25Z nivit $
+
+PORTNAME=	libsass
+PORTVERSION=	3.4.3
+CATEGORIES=	textproc
+
+MAINTAINER=	nivit@FreeBSD.org
+COMMENT=	C/C++ implementation of a Sass compiler
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	sass
+
+USES=		autoreconf compiler:c++11-lib gmake libtool pathfix
+GNU_CONFIGURE=	yes
+MAKEFILE=	GNUmakefile
+PATHFIX_MAKEFILEIN=	GNUmakefile.am
+INSTALL_TARGET=	install-strip
+
+USE_LDCONFIG=	yes
+
+post-patch:
+	${ECHO_CMD} "${ECHO_CMD} \"${PORTVERSION}\"" > ${WRKSRC}/version.sh
+
+.include <bsd.port.mk>

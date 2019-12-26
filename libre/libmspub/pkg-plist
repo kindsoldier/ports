@@ -1,0 +1,10 @@
+bin/pub2raw
+bin/pub2xhtml
+include/libmspub/libmspub/libmspub.h
+include/libmspub/libmspub/MSPUBDocument.h
+lib/libmspub.la
+lib/libmspub.so
+lib/libmspub.so.1
+lib/pkgconfig/libmspub.pc
+@dir include/libmspub/libmspub
+@dir include/libmspub

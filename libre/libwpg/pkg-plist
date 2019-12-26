@@ -1,0 +1,10 @@
+bin/wpg2raw
+bin/wpg2svg
+include/libwpg/libwpg/libwpg.h
+include/libwpg/libwpg/WPGraphics.h
+lib/libwpg.la
+lib/libwpg.so
+lib/libwpg.so.3
+lib/pkgconfig/libwpg.pc
+@dir include/libwpg/libwpg
+@dir include/libwpg

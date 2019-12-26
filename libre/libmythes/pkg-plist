@@ -1,0 +1,7 @@
+include/mythes.hxx
+lib/libmythes.a
+lib/libmythes.la
+lib/libmythes.so
+lib/libmythes.so.0
+lib/pkgconfig/mythes.pc
+@dir lib/pkgconfig

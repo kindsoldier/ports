@@ -1,0 +1,17 @@
+include/readline/chardefs.h
+include/readline/history.h
+include/readline/keymaps.h
+include/readline/readline.h
+include/readline/rlconf.h
+include/readline/rlstdc.h
+include/readline/rltypedefs.h
+include/readline/tilde.h
+lib/libhistory.a
+lib/libhistory.so
+lib/libhistory.so.6
+lib/libreadline.a
+lib/libreadline.so
+lib/libreadline.so.6
+man/man3/history.3.gz
+man/man3/readline.3.gz
+@dir include/readline

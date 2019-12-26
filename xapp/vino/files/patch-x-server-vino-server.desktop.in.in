@@ -1,0 +1,10 @@
+--- ./server/vino-server.desktop.in.in.orig	2011-05-02 19:07:11.000000000 +0300
++++ ./server/vino-server.desktop.in.in	2015-01-12 15:25:34.000000000 +0200
+@@ -3,7 +3,6 @@
+ _Comment=GNOME Remote Desktop Server
+ Exec=@LIBEXECDIR@/vino-server
+ Icon=preferences-desktop-remote-desktop
+-OnlyShowIn=GNOME;
+ Terminal=false
+ Type=Application
+ AutostartCondition=GNOME /desktop/gnome/remote_access/enabled

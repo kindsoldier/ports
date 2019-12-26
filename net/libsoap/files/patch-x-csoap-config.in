@@ -1,0 +1,11 @@
+--- ./csoap-config.in.orig	2006-07-09 19:24:18.000000000 +0300
++++ ./csoap-config.in	2016-05-31 15:04:16.024142000 +0200
+@@ -68,7 +68,7 @@
+ 			;;
+ 
+ 		--cflags)
+-			echo -I${includedir}/libcsoap-$relcsoap -I${includedir}/nanohttp-$relnanohttp @XML_CPPFLAGS@ @PTHREAD_CFLAGS@
++			echo -I${includedir} @XML_CPPFLAGS@ @PTHREAD_CFLAGS@
+ 		 	;;
+ 
+ 		--libs)

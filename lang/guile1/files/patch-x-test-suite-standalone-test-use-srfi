@@ -1,0 +1,29 @@
+--- ./test-suite/standalone/test-use-srfi.orig	2010-12-13 21:42:19.000000000 +0200
++++ ./test-suite/standalone/test-use-srfi	2014-01-06 21:26:21.000000000 +0300
+@@ -19,7 +19,7 @@
+ 
+ # Test that two srfi numbers on the command line work.
+ #
+-guile -q -l /home/ludo/src/guile/libguile/stack-limit-calibration.scm --use-srfi=1,10 >/dev/null <<EOF
++guile -q -l /usr/ports/langs/guile/work/guile-1.8.8/libguile/stack-limit-calibration.scm --use-srfi=1,10 >/dev/null <<EOF
+ (if (and (defined? 'partition)
+          (defined? 'define-reader-ctor))
+     (exit 0)   ;; good
+@@ -38,7 +38,7 @@
+ # `top-repl' the core bindings got ahead of anything --use-srfi gave.
+ #
+ 
+-guile -q -l /home/ludo/src/guile/libguile/stack-limit-calibration.scm --use-srfi=1 >/dev/null <<EOF
++guile -q -l /usr/ports/langs/guile/work/guile-1.8.8/libguile/stack-limit-calibration.scm --use-srfi=1 >/dev/null <<EOF
+ (catch #t
+   (lambda ()
+     (iota 2 3 4))
+@@ -56,7 +56,7 @@
+ # exercises duplicates handling in `top-repl' versus `use-srfis' (in
+ # boot-9.scm).
+ #
+-guile -q -l /home/ludo/src/guile/libguile/stack-limit-calibration.scm --use-srfi=17 >/dev/null <<EOF
++guile -q -l /usr/ports/langs/guile/work/guile-1.8.8/libguile/stack-limit-calibration.scm --use-srfi=17 >/dev/null <<EOF
+ (if (procedure-with-setter? car)
+     (exit 0)   ;; good
+     (exit 1))  ;; bad

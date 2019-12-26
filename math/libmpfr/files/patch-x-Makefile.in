@@ -1,0 +1,11 @@
+--- ./Makefile.in.orig	2011-10-28 13:16:50.000000000 +0300
++++ ./Makefile.in	2011-10-28 13:36:29.000000000 +0300
+@@ -263,7 +263,7 @@
+ top_srcdir = @top_srcdir@
+ AUTOMAKE_OPTIONS = gnu
+ ACLOCAL_AMFLAGS = -I m4
+-SUBDIRS = doc src tests tune
++SUBDIRS = src tests tune doc
+ nobase_dist_doc_DATA = AUTHORS BUGS COPYING COPYING.LESSER NEWS TODO \
+   examples/ReadMe examples/divworst.c examples/rndo-add.c examples/sample.c \
+   examples/version.c

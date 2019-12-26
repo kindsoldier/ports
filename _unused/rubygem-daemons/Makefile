@@ -1,0 +1,17 @@
+# Created by: Rui Lopes (<rgl ruilopes com>)
+# $FreeBSD: head/devel/rubygem-daemons/Makefile 452725 2017-10-23 18:27:16Z sunpoet $
+
+PORTNAME=	daemons
+PORTVERSION=	1.2.5
+CATEGORIES=	devel rubygems
+MASTER_SITES=	RG
+
+MAINTAINER=	ruby@FreeBSD.org
+COMMENT=	Toolkit to convert your script to a controllable daemon
+
+
+NO_ARCH=	yes
+USE_RUBY=	yes
+USES=		gem
+
+.include <bsd.port.mk>

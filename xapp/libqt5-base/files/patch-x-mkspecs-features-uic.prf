@@ -1,0 +1,8 @@
+--- ./mkspecs/features/uic.prf.orig	2019-03-17 13:52:21.138747000 +0200
++++ ./mkspecs/features/uic.prf	2019-03-17 13:52:45.947642000 +0200
+@@ -1,4 +1,4 @@
+-qtPrepareTool(QMAKE_UIC, uic, _DEP)
++qtPrepareTool(QMAKE_UIC, uic, _DEP)
+ 
+ isEmpty(UI_DIR):UI_DIR = .
+ isEmpty(QMAKE_MOD_UIC):QMAKE_MOD_UIC = ui_

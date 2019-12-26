@@ -1,0 +1,22 @@
+--- .//config/Makefile.inc.in.orig	2013-12-12 03:25:57.000000000 +0300
++++ .//config/Makefile.inc.in	2014-12-23 15:58:28.000000000 +0200
+@@ -142,7 +142,7 @@
+ LDLIBRARYPATH_ENVVAR = LD_LIBRARY_PATH
+ 
+ # Versioned target for a shared library
+-FINAL_SO_TARGET = $(SO_TARGET).$(SO_TARGET_VERSION)
++#FINAL_SO_TARGET = $(SO_TARGET).$(SO_TARGET_VERSION)
+ MIDDLE_SO_TARGET = $(SO_TARGET).$(SO_TARGET_VERSION_MAJOR)
+ 
+ # Access to important ICU tools.
+@@ -155,8 +155,8 @@
+ PKGDATA  = $(bindir)/pkgdata
+ 
+ # moved here because of dependencies
+-pkgdatadir = $(datadir)/$(PACKAGE)$(ICULIBSUFFIX)/$(VERSION)
+-pkglibdir = $(libdir)/$(PACKAGE)$(ICULIBSUFFIX)/$(VERSION)
++pkgdatadir = $(datadir)/$(PACKAGE)$(ICULIBSUFFIX)
++pkglibdir = $(libdir)/$(PACKAGE)$(ICULIBSUFFIX)
+ 
+ ##################################################################
+ ##################################################################

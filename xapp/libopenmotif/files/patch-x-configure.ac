@@ -1,0 +1,14 @@
+--- ./configure.ac.orig	2012-10-22 17:50:39.000000000 +0300
++++ ./configure.ac	2015-10-26 11:21:18.164483000 +0200
+@@ -163,10 +163,7 @@
+ 
+ if test x$GCC = xyes
+ then
+-    CFLAGS="$CFLAGS -Wall -g -fno-strict-aliasing -Wno-unused -Wno-comment"
+-    if test ` $CC -dumpversion | sed -e 's/\(^.\).*/\1/'` = "4" ; then
+-        CFLAGS="$CFLAGS -fno-tree-ter"
+-    fi
++    CFLAGS="$CFLAGS -Wall -fno-strict-aliasing -Wno-unused -Wno-comment"
+ fi
+ AC_DEFINE(NO_OL_COMPAT, 1, "No OL Compatability")
+ 

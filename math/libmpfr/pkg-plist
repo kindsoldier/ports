@@ -1,0 +1,6 @@
+include/mpf2mpfr.h
+include/mpfr.h
+lib/libmpfr.a
+lib/libmpfr.la
+lib/libmpfr.so
+lib/libmpfr.so.5

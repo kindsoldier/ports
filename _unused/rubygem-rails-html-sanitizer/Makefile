@@ -1,0 +1,18 @@
+# $FreeBSD:ruby/Makefile 465482 2018-03-24 21:11:55Z sunpoet $
+
+PORTNAME=	rails-html-sanitizer
+PORTVERSION=	1.0.4
+CATEGORIES=	textproc rubygems
+MASTER_SITES=	RG
+
+MAINTAINER=	ruby@FreeBSD.org
+COMMENT=	Sanitize HTML fragments in Rails applications
+
+
+RUN_DEPENDS=	rubygem-loofah>=2.2.2:ruby/rubygem-loofah
+
+NO_ARCH=	yes
+USE_RUBY=	yes
+USES=		gem
+
+.include <bsd.port.mk>

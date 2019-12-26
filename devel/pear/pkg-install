@@ -1,0 +1,21 @@
+#!/bin/sh
+
+set -x
+
+# Regenerate %%PEARDIR%%/.depdb post-install
+# This is to prevent fs or stage violation for first dependent port
+
+case $2 in 
+    PRE-INSTALL)
+    ;;
+    POST-INSTALL)
+	${PKG_PREFIX}/bin/pear list > /dev/null
+	touch ${PKG_PREFIX}/share/pear/.depdb
+	touch ${PKG_PREFIX}/share/pear/.depdblock
+	touch ${PKG_PREFIX}/share/pear/.filemap
+	touch ${PKG_PREFIX}/share/pear/.lock
+    ;;
+esac
+exit 0
+#EOF
+

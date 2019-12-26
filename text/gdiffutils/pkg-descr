@@ -1,0 +1,4 @@
+The diff utilities can be used to compare files, and generate a record
+of the "differences" between files.  This record can be used by the
+patch program to bring one file up to date with the other.  All these
+utilities (except cmp) only work on text files.

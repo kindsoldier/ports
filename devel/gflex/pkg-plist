@@ -1,0 +1,76 @@
+bin/gflex
+include/flex/FlexLexer.h
+lib/libgfl.a
+lib/libgfl.la
+man/man1/gflex.1.gz
+share/locale/ca/LC_MESSAGES/flex.mo
+share/locale/da/LC_MESSAGES/flex.mo
+share/locale/de/LC_MESSAGES/flex.mo
+share/locale/en@boldquot/LC_MESSAGES/flex.mo
+share/locale/en@quot/LC_MESSAGES/flex.mo
+share/locale/eo/LC_MESSAGES/flex.mo
+share/locale/es/LC_MESSAGES/flex.mo
+share/locale/fi/LC_MESSAGES/flex.mo
+share/locale/fr/LC_MESSAGES/flex.mo
+share/locale/ga/LC_MESSAGES/flex.mo
+share/locale/hr/LC_MESSAGES/flex.mo
+share/locale/ko/LC_MESSAGES/flex.mo
+share/locale/nl/LC_MESSAGES/flex.mo
+share/locale/pl/LC_MESSAGES/flex.mo
+share/locale/pt_BR/LC_MESSAGES/flex.mo
+share/locale/ro/LC_MESSAGES/flex.mo
+share/locale/ru/LC_MESSAGES/flex.mo
+share/locale/sr/LC_MESSAGES/flex.mo
+share/locale/sv/LC_MESSAGES/flex.mo
+share/locale/tr/LC_MESSAGES/flex.mo
+share/locale/vi/LC_MESSAGES/flex.mo
+share/locale/zh_CN/LC_MESSAGES/flex.mo
+share/locale/zh_TW/LC_MESSAGES/flex.mo
+@dir include/flex
+@dir share/locale/ca/LC_MESSAGES
+@dir share/locale/ca
+@dir share/locale/da/LC_MESSAGES
+@dir share/locale/da
+@dir share/locale/de/LC_MESSAGES
+@dir share/locale/de
+@dir share/locale/en@boldquot/LC_MESSAGES
+@dir share/locale/en@boldquot
+@dir share/locale/en@quot/LC_MESSAGES
+@dir share/locale/en@quot
+@dir share/locale/eo/LC_MESSAGES
+@dir share/locale/eo
+@dir share/locale/es/LC_MESSAGES
+@dir share/locale/es
+@dir share/locale/fi/LC_MESSAGES
+@dir share/locale/fi
+@dir share/locale/fr/LC_MESSAGES
+@dir share/locale/fr
+@dir share/locale/ga/LC_MESSAGES
+@dir share/locale/ga
+@dir share/locale/hr/LC_MESSAGES
+@dir share/locale/hr
+@dir share/locale/ko/LC_MESSAGES
+@dir share/locale/ko
+@dir share/locale/nl/LC_MESSAGES
+@dir share/locale/nl
+@dir share/locale/pl/LC_MESSAGES
+@dir share/locale/pl
+@dir share/locale/pt_BR/LC_MESSAGES
+@dir share/locale/pt_BR
+@dir share/locale/ro/LC_MESSAGES
+@dir share/locale/ro
+@dir share/locale/ru/LC_MESSAGES
+@dir share/locale/ru
+@dir share/locale/sr/LC_MESSAGES
+@dir share/locale/sr
+@dir share/locale/sv/LC_MESSAGES
+@dir share/locale/sv
+@dir share/locale/tr/LC_MESSAGES
+@dir share/locale/tr
+@dir share/locale/vi/LC_MESSAGES
+@dir share/locale/vi
+@dir share/locale/zh_CN/LC_MESSAGES
+@dir share/locale/zh_CN
+@dir share/locale/zh_TW/LC_MESSAGES
+@dir share/locale/zh_TW
+@dir share/locale

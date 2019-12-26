@@ -1,0 +1,9 @@
+--- ./configure.ac.orig	2012-12-04 05:56:54.000000000 +0300
++++ ./configure.ac	2019-05-25 13:36:16.533409000 +0200
+@@ -309,5 +309,5 @@
+ 		fi],
+ 	[AC_MSG_RESULT([no])])
+ 
+-AC_CONFIG_FILES([Makefile openpgm-${RELEASE_INFO}.pc openpgm.spec])
++AC_CONFIG_FILES([Makefile openpgm.pc:openpgm-${RELEASE_INFO}.pc.in openpgm.spec])
+ AC_OUTPUT

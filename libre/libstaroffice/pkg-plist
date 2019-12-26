@@ -1,0 +1,12 @@
+bin/sd2raw
+bin/sd2svg
+bin/sd2text
+bin/sdc2csv
+bin/sdw2html
+include/libstaroffice/libstaroffice/libstaroffice.hxx
+include/libstaroffice/libstaroffice/STOFFDocument.hxx
+lib/libstaroffice.so
+lib/libstaroffice.so.0
+lib/pkgconfig/libstaroffice.pc
+@dir include/libstaroffice/libstaroffice
+@dir include/libstaroffice

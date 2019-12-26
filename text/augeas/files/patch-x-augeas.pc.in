@@ -1,0 +1,10 @@
+--- ./augeas.pc.in.orig	2015-05-22 20:46:09.000000000 +0200
++++ ./augeas.pc.in	2016-11-16 17:48:53.662981000 +0200
+@@ -6,6 +6,6 @@
+ Name: augeas
+ Version: @VERSION@
+ Description: Augeas configuration editing library
+-Requires.private: libxml-2.0
++Requires.private: libxml2
+ Libs: -L${libdir} -laugeas @LIBS@
+ Cflags: -I${includedir}

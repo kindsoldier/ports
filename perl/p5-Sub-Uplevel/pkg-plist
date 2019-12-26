@@ -1,0 +1,3 @@
+%%SITE_PERL%%/Sub/Uplevel.pm
+%%PERL5_MAN3%%/Sub::Uplevel.3.gz
+@dir %%SITE_PERL%%/Sub

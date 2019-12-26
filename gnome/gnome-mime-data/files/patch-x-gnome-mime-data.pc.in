@@ -1,0 +1,15 @@
+--- ./gnome-mime-data.pc.in.orig	2010-10-04 19:13:55.000000000 +0300
++++ ./gnome-mime-data.pc.in	2010-10-04 19:13:55.000000000 +0300
+@@ -0,0 +1,12 @@
++prefix=@prefix@
++exec_prefix=@exec_prefix@
++libdir=@libdir@
++includedir=@includedir@
++
++
++Name: gnome-mime-data
++Description: Base set of file types and applications for GNOME
++Version: @VERSION@
++Requires:
++Libs:
++Cflags:

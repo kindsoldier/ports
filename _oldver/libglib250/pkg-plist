@@ -1,0 +1,663 @@
+bin/gapplication
+bin/gdbus
+bin/gdbus-codegen
+bin/gio
+bin/gio-querymodules
+bin/glib-compile-resources
+bin/glib-compile-schemas
+bin/glib-genmarshal
+bin/glib-gettextize
+bin/glib-mkenums
+bin/gobject-query
+bin/gresource
+bin/gsettings
+bin/gtester
+bin/gtester-report
+include/gio-unix/gio/gdesktopappinfo.h
+include/gio-unix/gio/gfiledescriptorbased.h
+include/gio-unix/gio/gunixconnection.h
+include/gio-unix/gio/gunixcredentialsmessage.h
+include/gio-unix/gio/gunixfdlist.h
+include/gio-unix/gio/gunixfdmessage.h
+include/gio-unix/gio/gunixinputstream.h
+include/gio-unix/gio/gunixmounts.h
+include/gio-unix/gio/gunixoutputstream.h
+include/gio-unix/gio/gunixsocketaddress.h
+include/glib/gio/gaction.h
+include/glib/gio/gactiongroup.h
+include/glib/gio/gactiongroupexporter.h
+include/glib/gio/gactionmap.h
+include/glib/gio/gappinfo.h
+include/glib/gio/gapplication.h
+include/glib/gio/gapplicationcommandline.h
+include/glib/gio/gasyncinitable.h
+include/glib/gio/gasyncresult.h
+include/glib/gio/gbufferedinputstream.h
+include/glib/gio/gbufferedoutputstream.h
+include/glib/gio/gbytesicon.h
+include/glib/gio/gcancellable.h
+include/glib/gio/gcharsetconverter.h
+include/glib/gio/gcontenttype.h
+include/glib/gio/gconverter.h
+include/glib/gio/gconverterinputstream.h
+include/glib/gio/gconverteroutputstream.h
+include/glib/gio/gcredentials.h
+include/glib/gio/gdatagrambased.h
+include/glib/gio/gdatainputstream.h
+include/glib/gio/gdataoutputstream.h
+include/glib/gio/gdbusactiongroup.h
+include/glib/gio/gdbusaddress.h
+include/glib/gio/gdbusauthobserver.h
+include/glib/gio/gdbusconnection.h
+include/glib/gio/gdbuserror.h
+include/glib/gio/gdbusinterface.h
+include/glib/gio/gdbusinterfaceskeleton.h
+include/glib/gio/gdbusintrospection.h
+include/glib/gio/gdbusmenumodel.h
+include/glib/gio/gdbusmessage.h
+include/glib/gio/gdbusmethodinvocation.h
+include/glib/gio/gdbusnameowning.h
+include/glib/gio/gdbusnamewatching.h
+include/glib/gio/gdbusobject.h
+include/glib/gio/gdbusobjectmanager.h
+include/glib/gio/gdbusobjectmanagerclient.h
+include/glib/gio/gdbusobjectmanagerserver.h
+include/glib/gio/gdbusobjectproxy.h
+include/glib/gio/gdbusobjectskeleton.h
+include/glib/gio/gdbusproxy.h
+include/glib/gio/gdbusserver.h
+include/glib/gio/gdbusutils.h
+include/glib/gio/gdrive.h
+include/glib/gio/gdtlsclientconnection.h
+include/glib/gio/gdtlsconnection.h
+include/glib/gio/gdtlsserverconnection.h
+include/glib/gio/gemblem.h
+include/glib/gio/gemblemedicon.h
+include/glib/gio/gfile.h
+include/glib/gio/gfileattribute.h
+include/glib/gio/gfileenumerator.h
+include/glib/gio/gfileicon.h
+include/glib/gio/gfileinfo.h
+include/glib/gio/gfileinputstream.h
+include/glib/gio/gfileiostream.h
+include/glib/gio/gfilemonitor.h
+include/glib/gio/gfilenamecompleter.h
+include/glib/gio/gfileoutputstream.h
+include/glib/gio/gfilterinputstream.h
+include/glib/gio/gfilteroutputstream.h
+include/glib/gio/gicon.h
+include/glib/gio/ginetaddress.h
+include/glib/gio/ginetaddressmask.h
+include/glib/gio/ginetsocketaddress.h
+include/glib/gio/ginitable.h
+include/glib/gio/ginputstream.h
+include/glib/gio/gio-autocleanups.h
+include/glib/gio/gio.h
+include/glib/gio/gioenums.h
+include/glib/gio/gioenumtypes.h
+include/glib/gio/gioerror.h
+include/glib/gio/giomodule.h
+include/glib/gio/gioscheduler.h
+include/glib/gio/giostream.h
+include/glib/gio/giotypes.h
+include/glib/gio/glistmodel.h
+include/glib/gio/gliststore.h
+include/glib/gio/gloadableicon.h
+include/glib/gio/gmemoryinputstream.h
+include/glib/gio/gmemoryoutputstream.h
+include/glib/gio/gmenu.h
+include/glib/gio/gmenuexporter.h
+include/glib/gio/gmenumodel.h
+include/glib/gio/gmount.h
+include/glib/gio/gmountoperation.h
+include/glib/gio/gnativevolumemonitor.h
+include/glib/gio/gnetworkaddress.h
+include/glib/gio/gnetworking.h
+include/glib/gio/gnetworkmonitor.h
+include/glib/gio/gnetworkservice.h
+include/glib/gio/gnotification.h
+include/glib/gio/goutputstream.h
+include/glib/gio/gpermission.h
+include/glib/gio/gpollableinputstream.h
+include/glib/gio/gpollableoutputstream.h
+include/glib/gio/gpollableutils.h
+include/glib/gio/gpropertyaction.h
+include/glib/gio/gproxy.h
+include/glib/gio/gproxyaddress.h
+include/glib/gio/gproxyaddressenumerator.h
+include/glib/gio/gproxyresolver.h
+include/glib/gio/gremoteactiongroup.h
+include/glib/gio/gresolver.h
+include/glib/gio/gresource.h
+include/glib/gio/gseekable.h
+include/glib/gio/gsettings.h
+include/glib/gio/gsettingsbackend.h
+include/glib/gio/gsettingsschema.h
+include/glib/gio/gsimpleaction.h
+include/glib/gio/gsimpleactiongroup.h
+include/glib/gio/gsimpleasyncresult.h
+include/glib/gio/gsimpleiostream.h
+include/glib/gio/gsimplepermission.h
+include/glib/gio/gsimpleproxyresolver.h
+include/glib/gio/gsocket.h
+include/glib/gio/gsocketaddress.h
+include/glib/gio/gsocketaddressenumerator.h
+include/glib/gio/gsocketclient.h
+include/glib/gio/gsocketconnectable.h
+include/glib/gio/gsocketconnection.h
+include/glib/gio/gsocketcontrolmessage.h
+include/glib/gio/gsocketlistener.h
+include/glib/gio/gsocketservice.h
+include/glib/gio/gsrvtarget.h
+include/glib/gio/gsubprocess.h
+include/glib/gio/gsubprocesslauncher.h
+include/glib/gio/gtask.h
+include/glib/gio/gtcpconnection.h
+include/glib/gio/gtcpwrapperconnection.h
+include/glib/gio/gtestdbus.h
+include/glib/gio/gthemedicon.h
+include/glib/gio/gthreadedsocketservice.h
+include/glib/gio/gtlsbackend.h
+include/glib/gio/gtlscertificate.h
+include/glib/gio/gtlsclientconnection.h
+include/glib/gio/gtlsconnection.h
+include/glib/gio/gtlsdatabase.h
+include/glib/gio/gtlsfiledatabase.h
+include/glib/gio/gtlsinteraction.h
+include/glib/gio/gtlspassword.h
+include/glib/gio/gtlsserverconnection.h
+include/glib/gio/gvfs.h
+include/glib/gio/gvolume.h
+include/glib/gio/gvolumemonitor.h
+include/glib/gio/gzlibcompressor.h
+include/glib/gio/gzlibdecompressor.h
+include/glib/glib-object.h
+include/glib/glib-unix.h
+include/glib/glib.h
+include/glib/glib/deprecated/gallocator.h
+include/glib/glib/deprecated/gcache.h
+include/glib/glib/deprecated/gcompletion.h
+include/glib/glib/deprecated/gmain.h
+include/glib/glib/deprecated/grel.h
+include/glib/glib/deprecated/gthread.h
+include/glib/glib/galloca.h
+include/glib/glib/garray.h
+include/glib/glib/gasyncqueue.h
+include/glib/glib/gatomic.h
+include/glib/glib/gbacktrace.h
+include/glib/glib/gbase64.h
+include/glib/glib/gbitlock.h
+include/glib/glib/gbookmarkfile.h
+include/glib/glib/gbytes.h
+include/glib/glib/gcharset.h
+include/glib/glib/gchecksum.h
+include/glib/glib/gconvert.h
+include/glib/glib/gdataset.h
+include/glib/glib/gdate.h
+include/glib/glib/gdatetime.h
+include/glib/glib/gdir.h
+include/glib/glib/genviron.h
+include/glib/glib/gerror.h
+include/glib/glib/gfileutils.h
+include/glib/glib/ggettext.h
+include/glib/glib/ghash.h
+include/glib/glib/ghmac.h
+include/glib/glib/ghook.h
+include/glib/glib/ghostutils.h
+include/glib/glib/gi18n-lib.h
+include/glib/glib/gi18n.h
+include/glib/glib/giochannel.h
+include/glib/glib/gkeyfile.h
+include/glib/glib/glib-autocleanups.h
+include/glib/glib/glist.h
+include/glib/glib/gmacros.h
+include/glib/glib/gmain.h
+include/glib/glib/gmappedfile.h
+include/glib/glib/gmarkup.h
+include/glib/glib/gmem.h
+include/glib/glib/gmessages.h
+include/glib/glib/gnode.h
+include/glib/glib/goption.h
+include/glib/glib/gpattern.h
+include/glib/glib/gpoll.h
+include/glib/glib/gprimes.h
+include/glib/glib/gprintf.h
+include/glib/glib/gqsort.h
+include/glib/glib/gquark.h
+include/glib/glib/gqueue.h
+include/glib/glib/grand.h
+include/glib/glib/gregex.h
+include/glib/glib/gscanner.h
+include/glib/glib/gsequence.h
+include/glib/glib/gshell.h
+include/glib/glib/gslice.h
+include/glib/glib/gslist.h
+include/glib/glib/gspawn.h
+include/glib/glib/gstdio.h
+include/glib/glib/gstrfuncs.h
+include/glib/glib/gstring.h
+include/glib/glib/gstringchunk.h
+include/glib/glib/gtestutils.h
+include/glib/glib/gthread.h
+include/glib/glib/gthreadpool.h
+include/glib/glib/gtimer.h
+include/glib/glib/gtimezone.h
+include/glib/glib/gtrashstack.h
+include/glib/glib/gtree.h
+include/glib/glib/gtypes.h
+include/glib/glib/gunicode.h
+include/glib/glib/gurifuncs.h
+include/glib/glib/gutils.h
+include/glib/glib/gvariant.h
+include/glib/glib/gvarianttype.h
+include/glib/glib/gversion.h
+include/glib/glib/gversionmacros.h
+include/glib/glib/gwin32.h
+include/glib/gmodule.h
+include/glib/gobject/gbinding.h
+include/glib/gobject/gboxed.h
+include/glib/gobject/gclosure.h
+include/glib/gobject/genums.h
+include/glib/gobject/glib-types.h
+include/glib/gobject/gmarshal.h
+include/glib/gobject/gobject-autocleanups.h
+include/glib/gobject/gobject.h
+include/glib/gobject/gobjectnotifyqueue.c
+include/glib/gobject/gparam.h
+include/glib/gobject/gparamspecs.h
+include/glib/gobject/gsignal.h
+include/glib/gobject/gsourceclosure.h
+include/glib/gobject/gtype.h
+include/glib/gobject/gtypemodule.h
+include/glib/gobject/gtypeplugin.h
+include/glib/gobject/gvalue.h
+include/glib/gobject/gvaluearray.h
+include/glib/gobject/gvaluecollector.h
+include/glib/gobject/gvaluetypes.h
+lib/gio/modules/libgiofam.a
+lib/gio/modules/libgiofam.la
+lib/gio/modules/libgiofam.so
+lib/glib/include/glibconfig.h
+lib/libgio.a
+lib/libgio.la
+lib/libgio.so
+lib/libgio.so.2
+lib/libglib.a
+lib/libglib.la
+lib/libglib.so
+lib/libglib.so.2
+lib/libgmodule.a
+lib/libgmodule.la
+lib/libgmodule.so
+lib/libgmodule.so.2
+lib/libgobject.a
+lib/libgobject.la
+lib/libgobject.so
+lib/libgobject.so.2
+lib/libgthread.a
+lib/libgthread.la
+lib/libgthread.so
+lib/libgthread.so.2
+lib/pkgconfig/gio-unix.pc
+lib/pkgconfig/gio.pc
+lib/pkgconfig/glib.pc
+lib/pkgconfig/gmodule-export.pc
+lib/pkgconfig/gmodule-no-export.pc
+lib/pkgconfig/gmodule.pc
+lib/pkgconfig/gobject.pc
+lib/pkgconfig/gthread.pc
+man/man1/gapplication.1.gz
+man/man1/gdbus-codegen.1.gz
+man/man1/gdbus.1.gz
+man/man1/gio-querymodules.1.gz
+man/man1/gio.1.gz
+man/man1/glib-compile-resources.1.gz
+man/man1/glib-compile-schemas.1.gz
+man/man1/glib-genmarshal.1.gz
+man/man1/glib-gettextize.1.gz
+man/man1/glib-mkenums.1.gz
+man/man1/gobject-query.1.gz
+man/man1/gresource.1.gz
+man/man1/gsettings.1.gz
+man/man1/gtester-report.1.gz
+man/man1/gtester.1.gz
+share/aclocal/glib-gettext.m4
+share/aclocal/glib.m4
+share/aclocal/gsettings.m4
+share/gettext/its/gschema.its
+share/gettext/its/gschema.loc
+share/glib/codegen/__init__.py
+share/glib/codegen/__init__.pyc
+share/glib/codegen/__init__.pyo
+share/glib/codegen/codegen_docbook.py
+share/glib/codegen/codegen_docbook.pyc
+share/glib/codegen/codegen_docbook.pyo
+share/glib/codegen/codegen_main.py
+share/glib/codegen/codegen_main.pyc
+share/glib/codegen/codegen_main.pyo
+share/glib/codegen/codegen.py
+share/glib/codegen/codegen.pyc
+share/glib/codegen/codegen.pyo
+share/glib/codegen/config.py
+share/glib/codegen/config.pyc
+share/glib/codegen/config.pyo
+share/glib/codegen/dbustypes.py
+share/glib/codegen/dbustypes.pyc
+share/glib/codegen/dbustypes.pyo
+share/glib/codegen/parser.py
+share/glib/codegen/parser.pyc
+share/glib/codegen/parser.pyo
+share/glib/codegen/utils.py
+share/glib/codegen/utils.pyc
+share/glib/codegen/utils.pyo
+share/glib/gdb/glib_gdb.py
+share/glib/schemas/gschema.dtd
+share/locale/af/LC_MESSAGES/glib20.mo
+share/locale/am/LC_MESSAGES/glib20.mo
+share/locale/an/LC_MESSAGES/glib20.mo
+share/locale/ar/LC_MESSAGES/glib20.mo
+share/locale/as/LC_MESSAGES/glib20.mo
+share/locale/ast/LC_MESSAGES/glib20.mo
+share/locale/az/LC_MESSAGES/glib20.mo
+share/locale/be@latin/LC_MESSAGES/glib20.mo
+share/locale/be/LC_MESSAGES/glib20.mo
+share/locale/bg/LC_MESSAGES/glib20.mo
+share/locale/bn_IN/LC_MESSAGES/glib20.mo
+share/locale/bn/LC_MESSAGES/glib20.mo
+share/locale/bs/LC_MESSAGES/glib20.mo
+share/locale/ca@valencia/LC_MESSAGES/glib20.mo
+share/locale/ca/LC_MESSAGES/glib20.mo
+share/locale/cs/LC_MESSAGES/glib20.mo
+share/locale/cy/LC_MESSAGES/glib20.mo
+share/locale/da/LC_MESSAGES/glib20.mo
+share/locale/de/LC_MESSAGES/glib20.mo
+share/locale/dz/LC_MESSAGES/glib20.mo
+share/locale/el/LC_MESSAGES/glib20.mo
+share/locale/en_CA/LC_MESSAGES/glib20.mo
+share/locale/en_GB/LC_MESSAGES/glib20.mo
+share/locale/en@shaw/LC_MESSAGES/glib20.mo
+share/locale/eo/LC_MESSAGES/glib20.mo
+share/locale/es/LC_MESSAGES/glib20.mo
+share/locale/et/LC_MESSAGES/glib20.mo
+share/locale/eu/LC_MESSAGES/glib20.mo
+share/locale/fa/LC_MESSAGES/glib20.mo
+share/locale/fi/LC_MESSAGES/glib20.mo
+share/locale/fr/LC_MESSAGES/glib20.mo
+share/locale/ga/LC_MESSAGES/glib20.mo
+share/locale/gd/LC_MESSAGES/glib20.mo
+share/locale/gl/LC_MESSAGES/glib20.mo
+share/locale/gu/LC_MESSAGES/glib20.mo
+share/locale/he/LC_MESSAGES/glib20.mo
+share/locale/hi/LC_MESSAGES/glib20.mo
+share/locale/hr/LC_MESSAGES/glib20.mo
+share/locale/hu/LC_MESSAGES/glib20.mo
+share/locale/hy/LC_MESSAGES/glib20.mo
+share/locale/id/LC_MESSAGES/glib20.mo
+share/locale/is/LC_MESSAGES/glib20.mo
+share/locale/it/LC_MESSAGES/glib20.mo
+share/locale/ja/LC_MESSAGES/glib20.mo
+share/locale/ka/LC_MESSAGES/glib20.mo
+share/locale/kk/LC_MESSAGES/glib20.mo
+share/locale/kn/LC_MESSAGES/glib20.mo
+share/locale/ko/LC_MESSAGES/glib20.mo
+share/locale/ku/LC_MESSAGES/glib20.mo
+share/locale/lt/LC_MESSAGES/glib20.mo
+share/locale/lv/LC_MESSAGES/glib20.mo
+share/locale/mai/LC_MESSAGES/glib20.mo
+share/locale/mg/LC_MESSAGES/glib20.mo
+share/locale/mk/LC_MESSAGES/glib20.mo
+share/locale/ml/LC_MESSAGES/glib20.mo
+share/locale/mn/LC_MESSAGES/glib20.mo
+share/locale/mr/LC_MESSAGES/glib20.mo
+share/locale/ms/LC_MESSAGES/glib20.mo
+share/locale/nb/LC_MESSAGES/glib20.mo
+share/locale/nds/LC_MESSAGES/glib20.mo
+share/locale/ne/LC_MESSAGES/glib20.mo
+share/locale/nl/LC_MESSAGES/glib20.mo
+share/locale/nn/LC_MESSAGES/glib20.mo
+share/locale/oc/LC_MESSAGES/glib20.mo
+share/locale/or/LC_MESSAGES/glib20.mo
+share/locale/pa/LC_MESSAGES/glib20.mo
+share/locale/pl/LC_MESSAGES/glib20.mo
+share/locale/ps/LC_MESSAGES/glib20.mo
+share/locale/pt_BR/LC_MESSAGES/glib20.mo
+share/locale/pt/LC_MESSAGES/glib20.mo
+share/locale/ro/LC_MESSAGES/glib20.mo
+share/locale/ru/LC_MESSAGES/glib20.mo
+share/locale/rw/LC_MESSAGES/glib20.mo
+share/locale/si/LC_MESSAGES/glib20.mo
+share/locale/sk/LC_MESSAGES/glib20.mo
+share/locale/sl/LC_MESSAGES/glib20.mo
+share/locale/sq/LC_MESSAGES/glib20.mo
+share/locale/sr@ije/LC_MESSAGES/glib20.mo
+share/locale/sr@latin/LC_MESSAGES/glib20.mo
+share/locale/sr/LC_MESSAGES/glib20.mo
+share/locale/sv/LC_MESSAGES/glib20.mo
+share/locale/ta/LC_MESSAGES/glib20.mo
+share/locale/te/LC_MESSAGES/glib20.mo
+share/locale/tg/LC_MESSAGES/glib20.mo
+share/locale/th/LC_MESSAGES/glib20.mo
+share/locale/tl/LC_MESSAGES/glib20.mo
+share/locale/tr/LC_MESSAGES/glib20.mo
+share/locale/tt/LC_MESSAGES/glib20.mo
+share/locale/ug/LC_MESSAGES/glib20.mo
+share/locale/uk/LC_MESSAGES/glib20.mo
+share/locale/vi/LC_MESSAGES/glib20.mo
+share/locale/wa/LC_MESSAGES/glib20.mo
+share/locale/xh/LC_MESSAGES/glib20.mo
+share/locale/yi/LC_MESSAGES/glib20.mo
+share/locale/zh_CN/LC_MESSAGES/glib20.mo
+share/locale/zh_HK/LC_MESSAGES/glib20.mo
+share/locale/zh_TW/LC_MESSAGES/glib20.mo
+@dir include/gio-unix/gio
+@dir include/gio-unix
+@dir include/glib/gio
+@dir include/glib/glib/deprecated
+@dir include/glib/glib
+@dir include/glib/gobject
+@dir include/glib
+@dir lib/gio/modules
+@dir lib/gio
+@dir lib/glib/include
+@dir lib/glib
+@dir share/gettext/its
+@dir share/gettext
+@dir share/glib/codegen
+@dir share/glib/gdb
+@dir share/glib/schemas
+@dir share/glib
+@dir share/locale/af/LC_MESSAGES
+@dir share/locale/af
+@dir share/locale/am/LC_MESSAGES
+@dir share/locale/am
+@dir share/locale/an/LC_MESSAGES
+@dir share/locale/an
+@dir share/locale/ar/LC_MESSAGES
+@dir share/locale/ar
+@dir share/locale/as/LC_MESSAGES
+@dir share/locale/as
+@dir share/locale/ast/LC_MESSAGES
+@dir share/locale/ast
+@dir share/locale/az/LC_MESSAGES
+@dir share/locale/az
+@dir share/locale/be/LC_MESSAGES
+@dir share/locale/be
+@dir share/locale/be@latin/LC_MESSAGES
+@dir share/locale/be@latin
+@dir share/locale/bg/LC_MESSAGES
+@dir share/locale/bg
+@dir share/locale/bn/LC_MESSAGES
+@dir share/locale/bn
+@dir share/locale/bn_IN/LC_MESSAGES
+@dir share/locale/bn_IN
+@dir share/locale/bs/LC_MESSAGES
+@dir share/locale/bs
+@dir share/locale/ca/LC_MESSAGES
+@dir share/locale/ca
+@dir share/locale/ca@valencia/LC_MESSAGES
+@dir share/locale/ca@valencia
+@dir share/locale/cs/LC_MESSAGES
+@dir share/locale/cs
+@dir share/locale/cy/LC_MESSAGES
+@dir share/locale/cy
+@dir share/locale/da/LC_MESSAGES
+@dir share/locale/da
+@dir share/locale/de/LC_MESSAGES
+@dir share/locale/de
+@dir share/locale/dz/LC_MESSAGES
+@dir share/locale/dz
+@dir share/locale/el/LC_MESSAGES
+@dir share/locale/el
+@dir share/locale/en_CA/LC_MESSAGES
+@dir share/locale/en_CA
+@dir share/locale/en_GB/LC_MESSAGES
+@dir share/locale/en_GB
+@dir share/locale/en@shaw/LC_MESSAGES
+@dir share/locale/en@shaw
+@dir share/locale/eo/LC_MESSAGES
+@dir share/locale/eo
+@dir share/locale/es/LC_MESSAGES
+@dir share/locale/es
+@dir share/locale/et/LC_MESSAGES
+@dir share/locale/et
+@dir share/locale/eu/LC_MESSAGES
+@dir share/locale/eu
+@dir share/locale/fa/LC_MESSAGES
+@dir share/locale/fa
+@dir share/locale/fi/LC_MESSAGES
+@dir share/locale/fi
+@dir share/locale/fr/LC_MESSAGES
+@dir share/locale/fr
+@dir share/locale/ga/LC_MESSAGES
+@dir share/locale/ga
+@dir share/locale/gd/LC_MESSAGES
+@dir share/locale/gd
+@dir share/locale/gl/LC_MESSAGES
+@dir share/locale/gl
+@dir share/locale/gu/LC_MESSAGES
+@dir share/locale/gu
+@dir share/locale/he/LC_MESSAGES
+@dir share/locale/he
+@dir share/locale/hi/LC_MESSAGES
+@dir share/locale/hi
+@dir share/locale/hr/LC_MESSAGES
+@dir share/locale/hr
+@dir share/locale/hu/LC_MESSAGES
+@dir share/locale/hu
+@dir share/locale/hy/LC_MESSAGES
+@dir share/locale/hy
+@dir share/locale/id/LC_MESSAGES
+@dir share/locale/id
+@dir share/locale/is/LC_MESSAGES
+@dir share/locale/is
+@dir share/locale/it/LC_MESSAGES
+@dir share/locale/it
+@dir share/locale/ja/LC_MESSAGES
+@dir share/locale/ja
+@dir share/locale/ka/LC_MESSAGES
+@dir share/locale/ka
+@dir share/locale/kk/LC_MESSAGES
+@dir share/locale/kk
+@dir share/locale/kn/LC_MESSAGES
+@dir share/locale/kn
+@dir share/locale/ko/LC_MESSAGES
+@dir share/locale/ko
+@dir share/locale/ku/LC_MESSAGES
+@dir share/locale/ku
+@dir share/locale/lt/LC_MESSAGES
+@dir share/locale/lt
+@dir share/locale/lv/LC_MESSAGES
+@dir share/locale/lv
+@dir share/locale/mai/LC_MESSAGES
+@dir share/locale/mai
+@dir share/locale/mg/LC_MESSAGES
+@dir share/locale/mg
+@dir share/locale/mk/LC_MESSAGES
+@dir share/locale/mk
+@dir share/locale/ml/LC_MESSAGES
+@dir share/locale/ml
+@dir share/locale/mn/LC_MESSAGES
+@dir share/locale/mn
+@dir share/locale/mr/LC_MESSAGES
+@dir share/locale/mr
+@dir share/locale/ms/LC_MESSAGES
+@dir share/locale/ms
+@dir share/locale/nb/LC_MESSAGES
+@dir share/locale/nb
+@dir share/locale/nds/LC_MESSAGES
+@dir share/locale/nds
+@dir share/locale/ne/LC_MESSAGES
+@dir share/locale/ne
+@dir share/locale/nl/LC_MESSAGES
+@dir share/locale/nl
+@dir share/locale/nn/LC_MESSAGES
+@dir share/locale/nn
+@dir share/locale/oc/LC_MESSAGES
+@dir share/locale/oc
+@dir share/locale/or/LC_MESSAGES
+@dir share/locale/or
+@dir share/locale/pa/LC_MESSAGES
+@dir share/locale/pa
+@dir share/locale/pl/LC_MESSAGES
+@dir share/locale/pl
+@dir share/locale/ps/LC_MESSAGES
+@dir share/locale/ps
+@dir share/locale/pt/LC_MESSAGES
+@dir share/locale/pt
+@dir share/locale/pt_BR/LC_MESSAGES
+@dir share/locale/pt_BR
+@dir share/locale/ro/LC_MESSAGES
+@dir share/locale/ro
+@dir share/locale/ru/LC_MESSAGES
+@dir share/locale/ru
+@dir share/locale/rw/LC_MESSAGES
+@dir share/locale/rw
+@dir share/locale/si/LC_MESSAGES
+@dir share/locale/si
+@dir share/locale/sk/LC_MESSAGES
+@dir share/locale/sk
+@dir share/locale/sl/LC_MESSAGES
+@dir share/locale/sl
+@dir share/locale/sq/LC_MESSAGES
+@dir share/locale/sq
+@dir share/locale/sr/LC_MESSAGES
+@dir share/locale/sr
+@dir share/locale/sr@ije/LC_MESSAGES
+@dir share/locale/sr@ije
+@dir share/locale/sr@latin/LC_MESSAGES
+@dir share/locale/sr@latin
+@dir share/locale/sv/LC_MESSAGES
+@dir share/locale/sv
+@dir share/locale/ta/LC_MESSAGES
+@dir share/locale/ta
+@dir share/locale/te/LC_MESSAGES
+@dir share/locale/te
+@dir share/locale/tg/LC_MESSAGES
+@dir share/locale/tg
+@dir share/locale/th/LC_MESSAGES
+@dir share/locale/th
+@dir share/locale/tl/LC_MESSAGES
+@dir share/locale/tl
+@dir share/locale/tr/LC_MESSAGES
+@dir share/locale/tr
+@dir share/locale/tt/LC_MESSAGES
+@dir share/locale/tt
+@dir share/locale/ug/LC_MESSAGES
+@dir share/locale/ug
+@dir share/locale/uk/LC_MESSAGES
+@dir share/locale/uk
+@dir share/locale/vi/LC_MESSAGES
+@dir share/locale/vi
+@dir share/locale/wa/LC_MESSAGES
+@dir share/locale/wa
+@dir share/locale/xh/LC_MESSAGES
+@dir share/locale/xh
+@dir share/locale/yi/LC_MESSAGES
+@dir share/locale/yi
+@dir share/locale/zh_CN/LC_MESSAGES
+@dir share/locale/zh_CN
+@dir share/locale/zh_HK/LC_MESSAGES
+@dir share/locale/zh_HK
+@dir share/locale/zh_TW/LC_MESSAGES
+@dir share/locale/zh_TW
+@dir share/locale

@@ -1,0 +1,7 @@
+bin/toast
+bin/tcat
+bin/untoast
+include/gsm.h
+lib/libgsm.a
+lib/libgsm.so
+lib/libgsm.so.1

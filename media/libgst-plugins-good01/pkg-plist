@@ -1,0 +1,230 @@
+lib/gstreamer01/libgstalaw.la
+lib/gstreamer01/libgstalaw.so
+lib/gstreamer01/libgstalpha.la
+lib/gstreamer01/libgstalpha.so
+lib/gstreamer01/libgstalphacolor.la
+lib/gstreamer01/libgstalphacolor.so
+lib/gstreamer01/libgstapetag.la
+lib/gstreamer01/libgstapetag.so
+lib/gstreamer01/libgstaudiofx.la
+lib/gstreamer01/libgstaudiofx.so
+lib/gstreamer01/libgstaudioparsers.la
+lib/gstreamer01/libgstaudioparsers.so
+lib/gstreamer01/libgstauparse.la
+lib/gstreamer01/libgstauparse.so
+lib/gstreamer01/libgstautodetect.la
+lib/gstreamer01/libgstautodetect.so
+lib/gstreamer01/libgstavi.la
+lib/gstreamer01/libgstavi.so
+lib/gstreamer01/libgstcairo.la
+lib/gstreamer01/libgstcairo.so
+lib/gstreamer01/libgstcutter.la
+lib/gstreamer01/libgstcutter.so
+lib/gstreamer01/libgstdebug.la
+lib/gstreamer01/libgstdebug.so
+lib/gstreamer01/libgstdeinterlace.la
+lib/gstreamer01/libgstdeinterlace.so
+lib/gstreamer01/libgstefence.la
+lib/gstreamer01/libgstefence.so
+lib/gstreamer01/libgsteffectv.la
+lib/gstreamer01/libgsteffectv.so
+lib/gstreamer01/libgstequalizer.la
+lib/gstreamer01/libgstequalizer.so
+lib/gstreamer01/libgstflac.la
+lib/gstreamer01/libgstflac.so
+lib/gstreamer01/libgstflv.la
+lib/gstreamer01/libgstflv.so
+lib/gstreamer01/libgsticydemux.la
+lib/gstreamer01/libgsticydemux.so
+lib/gstreamer01/libgstid3demux.la
+lib/gstreamer01/libgstid3demux.so
+lib/gstreamer01/libgstimagefreeze.la
+lib/gstreamer01/libgstimagefreeze.so
+lib/gstreamer01/libgstinterleave.la
+lib/gstreamer01/libgstinterleave.so
+lib/gstreamer01/libgstisomp4.la
+lib/gstreamer01/libgstisomp4.so
+lib/gstreamer01/libgstjpeg.la
+lib/gstreamer01/libgstjpeg.so
+lib/gstreamer01/libgstlevel.la
+lib/gstreamer01/libgstlevel.so
+lib/gstreamer01/libgstmatroska.la
+lib/gstreamer01/libgstmatroska.so
+lib/gstreamer01/libgstmulaw.la
+lib/gstreamer01/libgstmulaw.so
+lib/gstreamer01/libgstmultifile.la
+lib/gstreamer01/libgstmultifile.so
+lib/gstreamer01/libgstmultipart.la
+lib/gstreamer01/libgstmultipart.so
+lib/gstreamer01/libgstnavigationtest.la
+lib/gstreamer01/libgstnavigationtest.so
+lib/gstreamer01/libgstoss4audio.la
+lib/gstreamer01/libgstoss4audio.so
+lib/gstreamer01/libgstossaudio.la
+lib/gstreamer01/libgstossaudio.so
+lib/gstreamer01/libgstpng.la
+lib/gstreamer01/libgstpng.so
+lib/gstreamer01/libgstreplaygain.la
+lib/gstreamer01/libgstreplaygain.so
+lib/gstreamer01/libgstrtp.la
+lib/gstreamer01/libgstrtp.so
+lib/gstreamer01/libgstrtpmanager.la
+lib/gstreamer01/libgstrtpmanager.so
+lib/gstreamer01/libgstrtsp.la
+lib/gstreamer01/libgstrtsp.so
+lib/gstreamer01/libgstshapewipe.la
+lib/gstreamer01/libgstshapewipe.so
+lib/gstreamer01/libgstsmpte.la
+lib/gstreamer01/libgstsmpte.so
+lib/gstreamer01/libgstspectrum.la
+lib/gstreamer01/libgstspectrum.so
+lib/gstreamer01/libgstspeex.la
+lib/gstreamer01/libgstspeex.so
+lib/gstreamer01/libgsttaglib.la
+lib/gstreamer01/libgsttaglib.so
+lib/gstreamer01/libgstudp.la
+lib/gstreamer01/libgstudp.so
+lib/gstreamer01/libgstvideobox.la
+lib/gstreamer01/libgstvideobox.so
+lib/gstreamer01/libgstvideocrop.la
+lib/gstreamer01/libgstvideocrop.so
+lib/gstreamer01/libgstvideofilter.la
+lib/gstreamer01/libgstvideofilter.so
+lib/gstreamer01/libgstvideomixer.la
+lib/gstreamer01/libgstvideomixer.so
+lib/gstreamer01/libgstwavenc.la
+lib/gstreamer01/libgstwavenc.so
+lib/gstreamer01/libgstwavpack.la
+lib/gstreamer01/libgstwavpack.so
+lib/gstreamer01/libgstwavparse.la
+lib/gstreamer01/libgstwavparse.so
+lib/gstreamer01/libgstximagesrc.la
+lib/gstreamer01/libgstximagesrc.so
+lib/gstreamer01/libgsty4menc.la
+lib/gstreamer01/libgsty4menc.so
+share/gstreamer01/presets/GstIirEqualizer10Bands.prs
+share/gstreamer01/presets/GstIirEqualizer3Bands.prs
+share/locale/af/LC_MESSAGES/gst-plugins-good01.mo
+share/locale/az/LC_MESSAGES/gst-plugins-good01.mo
+share/locale/bg/LC_MESSAGES/gst-plugins-good01.mo
+share/locale/ca/LC_MESSAGES/gst-plugins-good01.mo
+share/locale/cs/LC_MESSAGES/gst-plugins-good01.mo
+share/locale/da/LC_MESSAGES/gst-plugins-good01.mo
+share/locale/de/LC_MESSAGES/gst-plugins-good01.mo
+share/locale/el/LC_MESSAGES/gst-plugins-good01.mo
+share/locale/en_GB/LC_MESSAGES/gst-plugins-good01.mo
+share/locale/eo/LC_MESSAGES/gst-plugins-good01.mo
+share/locale/es/LC_MESSAGES/gst-plugins-good01.mo
+share/locale/eu/LC_MESSAGES/gst-plugins-good01.mo
+share/locale/fi/LC_MESSAGES/gst-plugins-good01.mo
+share/locale/fr/LC_MESSAGES/gst-plugins-good01.mo
+share/locale/gl/LC_MESSAGES/gst-plugins-good01.mo
+share/locale/hu/LC_MESSAGES/gst-plugins-good01.mo
+share/locale/id/LC_MESSAGES/gst-plugins-good01.mo
+share/locale/it/LC_MESSAGES/gst-plugins-good01.mo
+share/locale/ja/LC_MESSAGES/gst-plugins-good01.mo
+share/locale/lt/LC_MESSAGES/gst-plugins-good01.mo
+share/locale/lv/LC_MESSAGES/gst-plugins-good01.mo
+share/locale/mt/LC_MESSAGES/gst-plugins-good01.mo
+share/locale/nb/LC_MESSAGES/gst-plugins-good01.mo
+share/locale/nl/LC_MESSAGES/gst-plugins-good01.mo
+share/locale/or/LC_MESSAGES/gst-plugins-good01.mo
+share/locale/pl/LC_MESSAGES/gst-plugins-good01.mo
+share/locale/pt_BR/LC_MESSAGES/gst-plugins-good01.mo
+share/locale/ro/LC_MESSAGES/gst-plugins-good01.mo
+share/locale/ru/LC_MESSAGES/gst-plugins-good01.mo
+share/locale/sk/LC_MESSAGES/gst-plugins-good01.mo
+share/locale/sl/LC_MESSAGES/gst-plugins-good01.mo
+share/locale/sq/LC_MESSAGES/gst-plugins-good01.mo
+share/locale/sr/LC_MESSAGES/gst-plugins-good01.mo
+share/locale/sv/LC_MESSAGES/gst-plugins-good01.mo
+share/locale/tr/LC_MESSAGES/gst-plugins-good01.mo
+share/locale/uk/LC_MESSAGES/gst-plugins-good01.mo
+share/locale/vi/LC_MESSAGES/gst-plugins-good01.mo
+share/locale/zh_CN/LC_MESSAGES/gst-plugins-good01.mo
+share/locale/zh_HK/LC_MESSAGES/gst-plugins-good01.mo
+share/locale/zh_TW/LC_MESSAGES/gst-plugins-good01.mo
+@dir lib/gstreamer01
+@dir share/gstreamer01/presets
+@dir share/gstreamer01
+@dir share/locale/af/LC_MESSAGES
+@dir share/locale/af
+@dir share/locale/az/LC_MESSAGES
+@dir share/locale/az
+@dir share/locale/bg/LC_MESSAGES
+@dir share/locale/bg
+@dir share/locale/ca/LC_MESSAGES
+@dir share/locale/ca
+@dir share/locale/cs/LC_MESSAGES
+@dir share/locale/cs
+@dir share/locale/da/LC_MESSAGES
+@dir share/locale/da
+@dir share/locale/de/LC_MESSAGES
+@dir share/locale/de
+@dir share/locale/el/LC_MESSAGES
+@dir share/locale/el
+@dir share/locale/en_GB/LC_MESSAGES
+@dir share/locale/en_GB
+@dir share/locale/eo/LC_MESSAGES
+@dir share/locale/eo
+@dir share/locale/es/LC_MESSAGES
+@dir share/locale/es
+@dir share/locale/eu/LC_MESSAGES
+@dir share/locale/eu
+@dir share/locale/fi/LC_MESSAGES
+@dir share/locale/fi
+@dir share/locale/fr/LC_MESSAGES
+@dir share/locale/fr
+@dir share/locale/gl/LC_MESSAGES
+@dir share/locale/gl
+@dir share/locale/hu/LC_MESSAGES
+@dir share/locale/hu
+@dir share/locale/id/LC_MESSAGES
+@dir share/locale/id
+@dir share/locale/it/LC_MESSAGES
+@dir share/locale/it
+@dir share/locale/ja/LC_MESSAGES
+@dir share/locale/ja
+@dir share/locale/lt/LC_MESSAGES
+@dir share/locale/lt
+@dir share/locale/lv/LC_MESSAGES
+@dir share/locale/lv
+@dir share/locale/mt/LC_MESSAGES
+@dir share/locale/mt
+@dir share/locale/nb/LC_MESSAGES
+@dir share/locale/nb
+@dir share/locale/nl/LC_MESSAGES
+@dir share/locale/nl
+@dir share/locale/or/LC_MESSAGES
+@dir share/locale/or
+@dir share/locale/pl/LC_MESSAGES
+@dir share/locale/pl
+@dir share/locale/pt_BR/LC_MESSAGES
+@dir share/locale/pt_BR
+@dir share/locale/ro/LC_MESSAGES
+@dir share/locale/ro
+@dir share/locale/ru/LC_MESSAGES
+@dir share/locale/ru
+@dir share/locale/sk/LC_MESSAGES
+@dir share/locale/sk
+@dir share/locale/sl/LC_MESSAGES
+@dir share/locale/sl
+@dir share/locale/sq/LC_MESSAGES
+@dir share/locale/sq
+@dir share/locale/sr/LC_MESSAGES
+@dir share/locale/sr
+@dir share/locale/sv/LC_MESSAGES
+@dir share/locale/sv
+@dir share/locale/tr/LC_MESSAGES
+@dir share/locale/tr
+@dir share/locale/uk/LC_MESSAGES
+@dir share/locale/uk
+@dir share/locale/vi/LC_MESSAGES
+@dir share/locale/vi
+@dir share/locale/zh_CN/LC_MESSAGES
+@dir share/locale/zh_CN
+@dir share/locale/zh_HK/LC_MESSAGES
+@dir share/locale/zh_HK
+@dir share/locale/zh_TW/LC_MESSAGES
+@dir share/locale/zh_TW
+@dir share/locale

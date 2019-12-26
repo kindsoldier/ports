@@ -1,0 +1,20 @@
+--- ./libcryptui/Makefile.in.orig	2010-09-28 00:36:56.000000000 +0300
++++ ./libcryptui/Makefile.in	2010-10-06 19:12:47.000000000 +0300
+@@ -418,7 +418,7 @@
+ # PKGCONFIG
+ # 
+ pkgconfigdir = $(libdir)/pkgconfig
+-pkgconfig_DATA = cryptui-$(LIBCRYPTUI_MAJOR).pc
++pkgconfig_DATA = cryptui.pc
+ 
+ # ------------------------------------------------------------------
+ # COMMON
+@@ -1036,7 +1036,7 @@
+ @HAVE_INTROSPECTION_TRUE@	$(INCLUDES) \
+ @HAVE_INTROSPECTION_TRUE@	--include=Gtk-2.0 \
+ @HAVE_INTROSPECTION_TRUE@	--library=libcryptui.la \
+-@HAVE_INTROSPECTION_TRUE@    --pkg gtk+-2.0 \
++@HAVE_INTROSPECTION_TRUE@    --pkg gtk+ \
+ @HAVE_INTROSPECTION_TRUE@    --output $@ \
+ @HAVE_INTROSPECTION_TRUE@	$(inc_HEADERS) \
+ @HAVE_INTROSPECTION_TRUE@	$(libcryptui_src)

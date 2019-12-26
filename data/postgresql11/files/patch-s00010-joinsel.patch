@@ -1,0 +1,2838 @@
+diff --git a/src/backend/catalog/dependency.c src/backend/catalog/dependency.c
+index a0334764830..1b5de765768 100644
+--- a/src/backend/catalog/dependency.c
++++ src/backend/catalog/dependency.c
+@@ -303,6 +303,27 @@ performDeletion(const ObjectAddress *object,
+ 	Relation	depRel;
+ 	ObjectAddresses *targetObjects;
+ 
++	if (flags & PERFORM_DELETION_CONCURRENTLY)
++	{
++		/*
++		 * We must commit our transaction in order to make the first pg_index
++		 * state update visible to other sessions.  If the DROP machinery has
++		 * already performed any other actions (removal of other objects,
++		 * pg_depend entries, etc), the commit would make those actions
++		 * permanent, which would leave us with inconsistent catalog state if
++		 * we fail partway through the following sequence.  Since DROP INDEX
++		 * CONCURRENTLY is restricted to dropping just one index that has no
++		 * dependencies, we should get here before anything's been done ---
++		 * but let's check that to be sure.  We can verify that the current
++		 * transaction has not executed any transactional updates by checking
++		 * that no XID has been assigned.
++		 */
++		if (GetTopTransactionIdIfAny() != InvalidTransactionId)
++			ereport(ERROR,
++					(errcode(ERRCODE_FEATURE_NOT_SUPPORTED),
++					 errmsg("DROP INDEX CONCURRENTLY must be first action in transaction")));
++	}
++
+ 	/*
+ 	 * We save some cycles by opening pg_depend just once and passing the
+ 	 * Relation pointer down to all the recursive deletion steps.
+diff --git a/src/backend/catalog/index.c src/backend/catalog/index.c
+index d959b7cc819..044f5e52fcf 100644
+--- a/src/backend/catalog/index.c
++++ src/backend/catalog/index.c
+@@ -52,6 +52,7 @@
+ #include "commands/tablecmds.h"
+ #include "commands/event_trigger.h"
+ #include "commands/trigger.h"
++#include "commands/typecmds.h"
+ #include "executor/executor.h"
+ #include "miscadmin.h"
+ #include "nodes/makefuncs.h"
+@@ -145,7 +146,7 @@ static void ResetReindexProcessing(void);
+ static void SetReindexPending(List *indexes);
+ static void RemoveReindexPending(Oid indexOid);
+ static void ResetReindexPending(void);
+-
++static Oid IndexTypeCreate(Relation indexRelation);
+ 
+ /*
+  * relationHasPrimaryKey
+@@ -699,6 +700,110 @@ UpdateIndexRelation(Oid indexoid,
+ 	heap_freetuple(tuple);
+ }
+ 
++/*
++ * We only need to create reltype for multicolumn user-defined
++ * B-tree indexes that don't have a reltype yet.
++ */
++#define INDEX_NEEDS_RELTYPE(indexRelation, indexInfo) ( \
++	!IsSystemRelation(indexRelation)				\
++	&& indexInfo->ii_NumIndexAttrs > 1				\
++	&& indexInfo->ii_Am == BTREE_AM_OID				\
++	&& indexRelation->rd_rel->reltype == InvalidOid	\
++	&& (!IsBinaryUpgrade || binary_upgrade_next_pg_type_oid != InvalidOid))
++
++/*
++ * IndexTypeCreate
++ *
++ * Create type for specified index.
++ */
++Oid
++IndexTypeCreate(Relation indexRelation)
++{
++	Oid			ownerId = GetUserId();
++	Oid			namespaceId = RelationGetNamespace(indexRelation);
++	Oid			new_array_oid = AssignTypeArrayOid();
++	ObjectAddress new_type_addr;
++	char	   *relarrayname;
++
++	/* Index must not have a reltype yet */
++	Assert(indexRelation->rd_rel->reltype == InvalidOid);
++
++	/*
++	* Build compound type for compound index to be able to use it in statistic.
++	* We need to collect statistic for compound indexes to be able to better
++	* predict selectivity of multicolumn joins.
++	*/
++	new_type_addr = TypeCreate(InvalidOid,
++			RelationGetRelationName(indexRelation),
++			namespaceId,
++			RelationGetRelid(indexRelation),
++			RELKIND_INDEX,
++			ownerId,			/* owner's ID */
++			-1,					/* internal size (varlena) */
++			TYPTYPE_COMPOSITE,	/* type-type (composite) */
++			TYPCATEGORY_COMPOSITE,	/* type-category (ditto) */
++			false,				/* composite types are never preferred */
++			DEFAULT_TYPDELIM,	/* default array delimiter */
++			F_RECORD_IN,		/* input procedure */
++			F_RECORD_OUT,		/* output procedure */
++			F_RECORD_RECV,		/* receive procedure */
++			F_RECORD_SEND,		/* send procedure */
++			InvalidOid,			/* typmodin procedure - none */
++			InvalidOid,			/* typmodout procedure - none */
++			InvalidOid,			/* analyze procedure - default */
++			InvalidOid,			/* array element type - irrelevant */
++			false,				/* this is not an array type */
++			new_array_oid,		/* array type if any */
++			InvalidOid,			/* domain base type - irrelevant */
++			NULL,				/* default value - none */
++			NULL,				/* default binary representation */
++			false,				/* passed by reference */
++			'd',				/* alignment - must be the largest! */
++			'x',				/* fully TOASTable */
++			-1,					/* typmod */
++			0,					/* array dimensions for typBaseType */
++			false,				/* Type NOT NULL */
++			InvalidOid);		/* rowtypes never have a collation */
++
++	relarrayname = makeArrayTypeName(RelationGetRelationName(indexRelation),
++										namespaceId);
++
++	TypeCreate(new_array_oid,	/* force the type's OID to this */
++				relarrayname,	/* Array type name */
++				namespaceId,	/* Same namespace as parent */
++				InvalidOid,		/* Not composite, no relationOid */
++				0,				/* relkind, also N/A here */
++				ownerId,		/* owner's ID */
++				-1,				/* Internal size (varlena) */
++				TYPTYPE_BASE,	/* Not composite - typelem is */
++				TYPCATEGORY_ARRAY,	/* type-category (array) */
++				false,			/* array types are never preferred */
++				DEFAULT_TYPDELIM,	/* default array delimiter */
++				F_ARRAY_IN,		/* array input proc */
++				F_ARRAY_OUT,	/* array output proc */
++				F_ARRAY_RECV,	/* array recv (bin) proc */
++				F_ARRAY_SEND,	/* array send (bin) proc */
++				InvalidOid,		/* typmodin procedure - none */
++				InvalidOid,		/* typmodout procedure - none */
++				F_ARRAY_TYPANALYZE,	/* array analyze procedure */
++				new_type_addr.objectId,	/* array element type - the rowtype */
++				true,			/* yes, this is an array type */
++				InvalidOid,		/* this has no array type */
++				InvalidOid,		/* domain base type - irrelevant */
++				NULL,			/* default value - none */
++				NULL,			/* default binary representation */
++				false,			/* passed by reference */
++				'd',			/* alignment - must be the largest! */
++				'x',			/* fully TOASTable */
++				-1,				/* typmod */
++				0,				/* array dimensions for typBaseType */
++				false,			/* Type NOT NULL */
++				InvalidOid);	/* rowtypes never have a collation */
++
++	pfree(relarrayname);
++
++	return new_type_addr.objectId;
++}
+ 
+ /*
+  * index_create
+@@ -783,6 +888,7 @@ index_create(Relation heapRelation,
+ 	bool		concurrent = (flags & INDEX_CREATE_CONCURRENT) != 0;
+ 	bool		partitioned = (flags & INDEX_CREATE_PARTITIONED) != 0;
+ 	char		relkind;
++	Oid			new_reltype = InvalidOid;
+ 
+ 	/* constraint flags can only be set when a constraint is requested */
+ 	Assert((constr_flags == 0) ||
+@@ -946,6 +1052,10 @@ index_create(Relation heapRelation,
+ 
+ 	Assert(indexRelationId == RelationGetRelid(indexRelation));
+ 
++	/* Create a reltype for index if it is needed */
++	if (INDEX_NEEDS_RELTYPE(indexRelation, indexInfo))
++		new_reltype = IndexTypeCreate(indexRelation);
++
+ 	/*
+ 	 * Obtain exclusive lock on it.  Although no other transactions can see it
+ 	 * until we commit, this prevents deadlock-risk complaints from lock
+@@ -959,6 +1069,7 @@ index_create(Relation heapRelation,
+ 	 *
+ 	 * XXX should have a cleaner way to create cataloged indexes
+ 	 */
++	indexRelation->rd_rel->reltype = new_reltype;
+ 	indexRelation->rd_rel->relowner = heapRelation->rd_rel->relowner;
+ 	indexRelation->rd_rel->relam = accessMethodObjectId;
+ 	indexRelation->rd_rel->relhasoids = false;
+@@ -1480,6 +1591,7 @@ index_drop(Oid indexId, bool concurrent)
+ 	Relation	indexRelation;
+ 	HeapTuple	tuple;
+ 	bool		hasexprs;
++	bool		remove_statistics;
+ 	LockRelId	heaprelid,
+ 				indexrelid;
+ 	LOCKTAG		heaplocktag;
+@@ -1547,24 +1659,6 @@ index_drop(Oid indexId, bool concurrent)
+ 	 */
+ 	if (concurrent)
+ 	{
+-		/*
+-		 * We must commit our transaction in order to make the first pg_index
+-		 * state update visible to other sessions.  If the DROP machinery has
+-		 * already performed any other actions (removal of other objects,
+-		 * pg_depend entries, etc), the commit would make those actions
+-		 * permanent, which would leave us with inconsistent catalog state if
+-		 * we fail partway through the following sequence.  Since DROP INDEX
+-		 * CONCURRENTLY is restricted to dropping just one index that has no
+-		 * dependencies, we should get here before anything's been done ---
+-		 * but let's check that to be sure.  We can verify that the current
+-		 * transaction has not executed any transactional updates by checking
+-		 * that no XID has been assigned.
+-		 */
+-		if (GetTopTransactionIdIfAny() != InvalidTransactionId)
+-			ereport(ERROR,
+-					(errcode(ERRCODE_FEATURE_NOT_SUPPORTED),
+-					 errmsg("DROP INDEX CONCURRENTLY must be first action in transaction")));
+-
+ 		/*
+ 		 * Mark index invalid by updating its pg_index entry
+ 		 */
+@@ -1685,6 +1779,16 @@ index_drop(Oid indexId, bool concurrent)
+ 	if (userIndexRelation->rd_rel->relkind != RELKIND_PARTITIONED_INDEX)
+ 		RelationDropStorage(userIndexRelation);
+ 
++	/*
++	 * We might have stored multicolumn statistics for btree indexes. They are
++	 * created only for non-system and non-TOAST indexes, so check only for such
++	 * such indexes.
++	 */
++	remove_statistics =
++		IndexRelationGetNumberOfAttributes(userIndexRelation) > 1 &&
++		userIndexRelation->rd_rel->relam == BTREE_AM_OID &&
++		!IsSystemRelation(userIndexRelation);
++
+ 	/*
+ 	 * Close and flush the index's relcache entry, to ensure relcache doesn't
+ 	 * try to rebuild it while we're deleting catalog entries. We keep the
+@@ -1712,10 +1816,10 @@ index_drop(Oid indexId, bool concurrent)
+ 	heap_close(indexRelation, RowExclusiveLock);
+ 
+ 	/*
+-	 * if it has any expression columns, we might have stored statistics about
+-	 * them.
++	 * if it has any expression columns or whole index stat, we might have
++	 * stored statistics about them.
+ 	 */
+-	if (hasexprs)
++	if (hasexprs || remove_statistics)
+ 		RemoveStatistics(indexId, 0);
+ 
+ 	/*
+@@ -2189,6 +2293,14 @@ index_update_stats(Relation rel,
+ 		dirty = true;
+ 	}
+ 
++	/* If index's reltype has been created, update it in pg_class. */
++	// if (rel->rd_rel->relkind == RELKIND_INDEX &&
++	// 	rd_rel->reltype != rel->rd_rel->reltype)
++	// {
++	// 	rd_rel->reltype = rel->rd_rel->reltype;
++	// 	dirty = true;
++	// }
++
+ 	if (reltuples >= 0)
+ 	{
+ 		BlockNumber relpages = RelationGetNumberOfBlocks(rel);
+@@ -3547,9 +3659,6 @@ index_set_state_flags(Oid indexId, IndexStateFlagsAction action)
+ 	HeapTuple	indexTuple;
+ 	Form_pg_index indexForm;
+ 
+-	/* Assert that current xact hasn't done any transactional updates */
+-	Assert(GetTopTransactionIdIfAny() == InvalidTransactionId);
+-
+ 	/* Open pg_index and fetch a writable copy of the index's tuple */
+ 	pg_index = heap_open(IndexRelationId, RowExclusiveLock);
+ 
+@@ -3736,6 +3845,41 @@ reindex_index(Oid indexId, bool skip_constraint_checks, char persistence,
+ 	PG_END_TRY();
+ 	ResetReindexProcessing();
+ 
++	/*
++	 * We might have stored multicolumn statistics for btree indexes. They are
++	 * created only for non-system and non-TOAST indexes, so check only for such
++	 * such indexes.
++	 */
++	if (indexInfo->ii_NumIndexAttrs > 1 && indexInfo->ii_Am == BTREE_AM_OID &&
++		!IsSystemRelation(iRel))
++		RemoveStatistics(indexId, 0);
++
++	/* Create a reltype for index if it is needed */
++	if (INDEX_NEEDS_RELTYPE(iRel, indexInfo))
++	{
++		Relation	pg_class;
++		HeapTuple	tuple;
++		Form_pg_class rd_rel;
++		Oid			new_reltype;
++
++		new_reltype = IndexTypeCreate(iRel);
++
++		pg_class = heap_open(RelationRelationId, RowExclusiveLock);
++		tuple = SearchSysCacheCopy1(RELOID, ObjectIdGetDatum(indexId));
++		if (!HeapTupleIsValid(tuple))
++			elog(ERROR, "could not find tuple for relation %u", indexId);
++		rd_rel = (Form_pg_class) GETSTRUCT(tuple);
++
++		rd_rel->reltype = new_reltype;
++
++		CatalogTupleUpdate(pg_class, &tuple->t_self, tuple);
++
++		heap_freetuple(tuple);
++		heap_close(pg_class, RowExclusiveLock);
++
++		iRel->rd_rel->reltype = new_reltype;
++	}
++
+ 	/*
+ 	 * If the index is marked invalid/not-ready/dead (ie, it's from a failed
+ 	 * CREATE INDEX CONCURRENTLY, or a DROP INDEX CONCURRENTLY failed midway),
+diff --git a/src/backend/commands/analyze.c src/backend/commands/analyze.c
+index 5d52c94c63d..521907c1132 100644
+--- a/src/backend/commands/analyze.c
++++ src/backend/commands/analyze.c
+@@ -35,8 +35,11 @@
+ #include "commands/vacuum.h"
+ #include "executor/executor.h"
+ #include "foreign/fdwapi.h"
++#include "funcapi.h"
+ #include "miscadmin.h"
+ #include "nodes/nodeFuncs.h"
++#include "nodes/makefuncs.h"
++#include "nodes/pg_list.h"
+ #include "parser/parse_oper.h"
+ #include "parser/parse_relation.h"
+ #include "pgstat.h"
+@@ -61,6 +64,7 @@
+ #include "utils/syscache.h"
+ #include "utils/timestamp.h"
+ #include "utils/tqual.h"
++#include "utils/typcache.h"
+ 
+ 
+ /* Per-index data for ANALYZE */
+@@ -70,6 +74,7 @@ typedef struct AnlIndexData
+ 	double		tupleFract;		/* fraction of rows for partial index */
+ 	VacAttrStats **vacattrstats;	/* index attrs to analyze */
+ 	int			attr_cnt;
++	bool        multicolumn;    /* Collect compound row statistic for multicolumn index */
+ } AnlIndexData;
+ 
+ 
+@@ -514,6 +519,21 @@ do_analyze_rel(Relation onerel, int options, VacuumParams *params,
+ 				}
+ 				thisdata->attr_cnt = tcnt;
+ 			}
++			else if (indexInfo->ii_NumIndexAttrs > 1 && va_cols == NIL &&
++					 Irel[ind]->rd_rel->reltype != InvalidOid)
++			{
++				/* Collect statistic for multicolumn index for better predicting selectivity of multicolumn joins */
++				RowExpr* row = makeNode(RowExpr);
++				row->row_typeid = Irel[ind]->rd_rel->reltype;
++				row->row_format = COERCE_EXPLICIT_CAST;
++				row->location = -1;
++				row->colnames = NULL;
++				thisdata->vacattrstats = (VacAttrStats **)palloc(sizeof(VacAttrStats *));
++				thisdata->vacattrstats[0] = examine_attribute(Irel[ind], 1, (Node*)row);
++				thisdata->vacattrstats[0]->tupDesc = lookup_type_cache(row->row_typeid, TYPECACHE_TUPDESC)->tupDesc;
++				thisdata->attr_cnt = 1;
++				thisdata->multicolumn = true;
++			}
+ 		}
+ 	}
+ 
+@@ -837,28 +857,41 @@ compute_index_stats(Relation onerel, double totalrows,
+ 							   values,
+ 							   isnull);
+ 
+-				/*
+-				 * Save just the columns we care about.  We copy the values
+-				 * into ind_context from the estate's per-tuple context.
+-				 */
+-				for (i = 0; i < attr_cnt; i++)
++				if (thisdata->multicolumn)
+ 				{
+-					VacAttrStats *stats = thisdata->vacattrstats[i];
+-					int			attnum = stats->attr->attnum;
+-
+-					if (isnull[attnum - 1])
+-					{
+-						exprvals[tcnt] = (Datum) 0;
+-						exprnulls[tcnt] = true;
+-					}
+-					else
++					/* For multicolumn index construct compound value */
++					VacAttrStats *stats = thisdata->vacattrstats[0];
++					exprvals[tcnt] = HeapTupleGetDatum(heap_form_tuple(stats->tupDesc,
++																	   values,
++																	   isnull));
++					exprnulls[tcnt] = false;
++					tcnt++;
++				}
++				else
++				{
++					/*
++					 * Save just the columns we care about.  We copy the values
++					 * into ind_context from the estate's per-tuple context.
++					 */
++					for (i = 0; i < attr_cnt; i++)
+ 					{
+-						exprvals[tcnt] = datumCopy(values[attnum - 1],
+-												   stats->attrtype->typbyval,
+-												   stats->attrtype->typlen);
+-						exprnulls[tcnt] = false;
++						VacAttrStats *stats = thisdata->vacattrstats[i];
++						int			attnum = stats->attr->attnum;
++
++						if (isnull[attnum - 1])
++						{
++							exprvals[tcnt] = (Datum) 0;
++							exprnulls[tcnt] = true;
++						}
++						else
++						{
++							exprvals[tcnt] = datumCopy(values[attnum - 1],
++													   stats->attrtype->typbyval,
++													   stats->attrtype->typlen);
++							exprnulls[tcnt] = false;
++						}
++						tcnt++;
+ 					}
+-					tcnt++;
+ 				}
+ 			}
+ 		}
+@@ -2658,6 +2691,7 @@ compute_scalar_stats(VacAttrStatsP stats,
+ 		 * histogram won't collapse to empty or a singleton.)
+ 		 */
+ 		num_hist = ndistinct - num_mcv;
++
+ 		if (num_hist > num_bins)
+ 			num_hist = num_bins + 1;
+ 		if (num_hist >= 2)
+diff --git a/src/backend/optimizer/path/clausesel.c src/backend/optimizer/path/clausesel.c
+index f4717942c3a..fa8c5088185 100644
+--- a/src/backend/optimizer/path/clausesel.c
++++ src/backend/optimizer/path/clausesel.c
+@@ -14,16 +14,31 @@
+  */
+ #include "postgres.h"
+ 
++#include "access/genam.h"
++#include "access/htup_details.h"
++#include "catalog/pg_collation.h"
++#include "commands/vacuum.h"
++#include "funcapi.h"
+ #include "nodes/makefuncs.h"
++#include "nodes/nodeFuncs.h"
+ #include "optimizer/clauses.h"
+ #include "optimizer/cost.h"
+ #include "optimizer/pathnode.h"
+ #include "optimizer/plancat.h"
++#include "optimizer/var.h"
++#include "parser/parsetree.h"
++#include "utils/array.h"
++#include "utils/builtins.h"
+ #include "utils/fmgroids.h"
+ #include "utils/lsyscache.h"
++#include "utils/rel.h"
+ #include "utils/selfuncs.h"
++#include "utils/syscache.h"
++#include "utils/typcache.h"
+ #include "statistics/statistics.h"
+ 
++#define EXHAUSTIVE_IN_SELECTIVITY_THRESHOLD (default_statistics_target/4)
++#define RANGE_IN_SELECTIVITY_THRESHOLD (default_statistics_target/20)
+ 
+ /*
+  * Data structure for accumulating info about possible range-query
+@@ -43,6 +58,948 @@ static void addRangeClause(RangeQueryClause **rqlist, Node *clause,
+ 			   bool varonleft, bool isLTsel, Selectivity s2);
+ static RelOptInfo *find_single_rel_for_clauses(PlannerInfo *root,
+ 							List *clauses);
++static bool treat_as_join_clause(Node *clause, RestrictInfo *rinfo,
++					 int varRelid, SpecialJoinInfo *sjinfo);
++
++typedef enum CorrelationKind {
++	CKRestrict = 0,
++	CKIndepend,		/* unknown correlation */
++	CKLikelySelf,	/* Seems, should be close to be correlated, like agg with
++					   self join */
++	CKSelf,			/* 100% correlation because of self join */
++	CKMul			/* product of all CKLikelySelf * CKSelf */
++} CorrelationKind;
++static CorrelationKind get_correlation_kind(PlannerInfo *root, int varRelid,
++											OpExpr* expr);
++
++/*
++ *  Get variabe node. Returns null if node is not a Var node.
++ */
++static inline Var*
++get_var(Node* node)
++{
++	if (IsA(node, RelabelType))
++		node = (Node *) ((RelabelType *) node)->arg;
++
++	return IsA(node, Var) ? (Var*)node : NULL;
++}
++
++/*
++ * Locate compound index which can be used for multicolumn clauses/join.
++ */
++static IndexOptInfo*
++locate_inner_multicolumn_index(PlannerInfo *root, Index varno, List* vars,
++						 int n_clauses,
++						 int **permutation, List **missed_vars, int* n_keys)
++{
++	ListCell		*ilist;
++	RelOptInfo		*rel = find_base_rel(root, varno);
++	IndexOptInfo	*index_opt = NULL;
++	List			*missed_vars_opt = NIL;
++	int				*permutation_opt = NULL;
++	int				n_index_cols_opt = 0;
++	bool			used[INDEX_MAX_KEYS];
++	int				posvars[INDEX_MAX_KEYS];
++
++	*n_keys = 0;
++	*missed_vars = NIL;
++
++	Assert(list_length(vars) >= 1);
++	Assert(list_length(vars) <= n_clauses);
++
++	foreach(ilist, rel->indexlist)
++	{
++		IndexOptInfo	*index = (IndexOptInfo *) lfirst(ilist);
++		ListCell		*vlist;
++		int				i, n_index_cols = 0;
++		List			*missed = NIL;
++		int				*perm = NULL;
++
++		memset(used, 0, sizeof(used));
++		perm = palloc(n_clauses * sizeof(*perm));
++		for(i=0; i<n_clauses; i++)
++			perm[i] = -1;
++
++		i = 0;
++		foreach (vlist, vars)
++		{
++			Var* var = lfirst(vlist);
++			int pos;
++
++			for (pos = 0; pos < index->nkeycolumns; pos++)
++			{
++				if (index->indexkeys[pos] == var->varattno)
++				{
++					if (used[pos])
++						missed = lappend(missed, var);
++					else
++					{
++						used[pos] = true;
++						posvars[pos] = i;
++						perm[i] = pos;
++						n_index_cols++;
++						break;
++					}
++				}
++			}
++
++			/* var isn't found in index columns */
++			if (pos == index->nkeycolumns && !list_member_ptr(missed, var))
++				missed = lappend(missed, var);
++
++			i += 1;
++		}
++
++		if (n_index_cols == 0)
++			continue;
++
++		/* check that found columns are first columns in index */
++		if (index->nkeycolumns != n_index_cols)
++		{
++			int old_n_index_cols = n_index_cols;
++
++			for (i = 0; i < old_n_index_cols; i++)
++			{
++				if (n_index_cols != old_n_index_cols)
++				{
++					/*
++					 * We will use only first n_index_cols columns instead of
++					 * found old_n_index_cols, so, all other columns should be
++					 * added to missed list
++					 */
++					if (used[i])
++					{
++						Var *var = list_nth(vars, posvars[i]);
++
++						missed = lappend(missed, var);
++					}
++				}
++				else if (!used[i])
++				{
++					if (i==0)
++						/* there isn't useful prefix */
++						goto TryNextIndex;
++
++					/* we will use only first i columns, save as new n_index_cols */
++					n_index_cols = i;
++				}
++			}
++		}
++
++		/* found exact match vars - index, immediately return */
++		if (vlist == NULL && list_length(missed) == 0 && n_index_cols == index->nkeycolumns)
++		{
++			*permutation = perm;
++			*n_keys = n_index_cols;
++			return index;
++		}
++
++		/* save partially matched index */
++		if (index_opt == NULL ||
++			n_index_cols > n_index_cols_opt ||
++			(n_index_cols == n_index_cols_opt && index->nkeycolumns < index_opt->nkeycolumns))
++		{
++			index_opt = index;
++			missed_vars_opt = missed;
++			if (permutation_opt)
++				pfree(permutation_opt);
++			permutation_opt = perm;
++			perm = NULL;
++			n_index_cols_opt = n_index_cols;
++		}
++TryNextIndex:
++		if (perm)
++			pfree(perm);
++	}
++
++	if (index_opt)
++	{
++		*missed_vars = list_concat_unique(*missed_vars, missed_vars_opt);
++		*permutation = permutation_opt;
++		*n_keys = n_index_cols_opt;
++	}
++
++	return index_opt;
++}
++
++/*
++ * verify that used vars are leading columns
++ */
++static bool
++check_leading_vars_index(IndexOptInfo *index, int n_vars,
++						 bool used[INDEX_MAX_KEYS])
++{
++	int	i;
++
++	if (index->nkeycolumns == n_vars)
++		return true;
++
++	for(i=0; i<n_vars; i++)
++		if (used[i] == false)
++			return false;
++
++	return true;
++}
++
++
++/*
++ * Locate index which exactly match joins vars
++ */
++static IndexOptInfo*
++locate_outer_multicolumn_index(PlannerInfo *root, Index varno, List* vars,
++							   int *permutation)
++{
++	ListCell   *ilist;
++	RelOptInfo* rel = find_base_rel(root, varno);
++	int n_vars = list_length(vars);
++	bool	used[INDEX_MAX_KEYS];
++	IndexOptInfo *index_opt = NULL;
++
++	Assert(n_vars >= 1);
++
++	foreach(ilist, rel->indexlist)
++	{
++		IndexOptInfo	*index = (IndexOptInfo *) lfirst(ilist);
++		ListCell		*vlist;
++		int				i;
++
++		if (index->nkeycolumns < n_vars)
++			continue;
++
++		memset(used, 0, sizeof(used));
++
++		i = 0;
++		foreach (vlist, vars)
++		{
++			Var* var = lfirst(vlist);
++
++			if (permutation[i] < 0 ||
++				index->nkeycolumns <= permutation[i] ||
++				index->indexkeys[permutation[i]] != var->varattno)
++				break;
++
++			used[i] = true;
++			i += 1;
++		}
++
++		if (vlist == NULL && check_leading_vars_index(index, n_vars, used))
++		{
++			if (index->nkeycolumns == n_vars)
++				/* found exact match vars - index, immediately return */
++				return index;
++			else if (index_opt == NULL ||
++					 index_opt->nkeycolumns > index->nkeycolumns)
++				/* found better candidate - store it */
++				index_opt = index;
++		}
++	}
++
++	return index_opt;
++}
++
++typedef struct InArrayClause
++{
++	ArrayType*	array;
++	Datum*		elems;
++	bool*		nulls;
++	int			index;
++	int			n_elems;
++	int			curr_elem;
++} InArrayClause;
++
++typedef struct TupleIterator
++{
++	Datum	values	[INDEX_MAX_KEYS];
++	bool	isnull[INDEX_MAX_KEYS];
++	int		n_variants;
++	int		i_variant;
++	int		*permutation;
++	List	*in_clauses;
++	bool	isExhaustive;
++} TupleIterator;
++
++static void
++initTupleIterator(TupleIterator *it, List *consts, int *permutation,
++				  List *in_clauses)
++{
++	ListCell	*l;
++	int			i;
++
++	it->n_variants = 1;
++	it->permutation = permutation;
++	it->in_clauses = in_clauses;
++	it->isExhaustive = false;
++	for(i = 0; i < INDEX_MAX_KEYS; i++)
++		it->isnull[i] = true;
++
++	i = 0;
++	foreach (l, consts)
++	{
++		Const* c = (Const*) lfirst(l);
++		int j = permutation[i++];
++
++		if (j<0)
++			continue;
++		it->values[j] = c->constvalue;
++		it->isnull[j] = c->constisnull;
++	}
++
++	foreach (l, in_clauses)
++	{
++		InArrayClause*	iac = (InArrayClause*) lfirst(l);
++		int16			elmlen;
++		bool			elmbyval;
++		char			elmalign;
++
++		get_typlenbyvalalign(iac->array->elemtype,
++							 &elmlen, &elmbyval, &elmalign);
++		deconstruct_array(iac->array, iac->array->elemtype,
++						  elmlen, elmbyval, elmalign,
++						  &iac->elems, &iac->nulls, &iac->n_elems);
++		iac->curr_elem = 0;
++		it->n_variants *= iac->n_elems;
++	}
++
++	if (it->n_variants > EXHAUSTIVE_IN_SELECTIVITY_THRESHOLD)
++	{
++		it->isExhaustive = true;
++		it->n_variants = EXHAUSTIVE_IN_SELECTIVITY_THRESHOLD;
++	}
++
++	it->i_variant = it->n_variants;
++}
++
++static void
++resetTupleIterator(TupleIterator *it)
++{
++	ListCell	*l;
++
++	it->i_variant = it->n_variants;
++
++	foreach (l, it->in_clauses)
++	{
++		InArrayClause*  iac = (InArrayClause*) lfirst(l);
++
++		iac->curr_elem = 0;
++	}
++}
++
++static bool
++getTupleIterator(TupleIterator *it)
++{
++	ListCell	*l;
++	int			carry = 1;
++
++	if (it->i_variant == 0)
++		return false;
++
++	it->i_variant--;
++
++	foreach (l, it->in_clauses)
++	{
++		InArrayClause* iac = (InArrayClause*) lfirst(l);
++		int j = it->permutation[iac->index];
++
++		if (j<0)
++			continue;
++
++		if (it->isExhaustive)
++		{
++			/* use random subset of IN list(s) */
++			iac->curr_elem = random() % iac->n_elems;
++		}
++		else if ((iac->curr_elem += carry) >= iac->n_elems)
++		{
++			iac->curr_elem = 0;
++			carry = 1;
++		}
++		else
++			carry = 0;
++
++		it->values[j] = iac->elems[iac->curr_elem];
++		it->isnull[j] = iac->nulls[iac->curr_elem];
++	}
++
++	return true;
++}
++
++static Selectivity
++estimate_selectivity_by_index(PlannerInfo *root, IndexOptInfo* index,
++							  VariableStatData *vardata,
++							  List *consts, List** missed_vars, int *permutation,
++							  List *in_clauses, int n_keys,
++							  bool *usedEqSel)
++{
++	TupleIterator	it;
++	Selectivity		sum = 0.0;
++	TypeCacheEntry	*typentry;
++	Datum			constant;
++	int				nBins;
++
++	/*
++	 * Assume that two compound types are coherent, so we can use equality
++	 * function from one type to compare it with other type. Use >= and <= range
++	 * definition.
++	 */
++	typentry = lookup_type_cache(vardata->atttype,
++								 TYPECACHE_EQ_OPR | TYPECACHE_TUPDESC);
++	initTupleIterator(&it, consts, permutation, in_clauses);
++
++	/*
++	 * Try to  simplify calculations: if all variants matches to small amount of
++	 * bins histogram the we don't need to check tuples separately, it's enough
++	 * to checck min and max tuples and compute selecivity by range of bins
++	 */
++
++	if (n_keys != index->nkeycolumns &&
++		it.n_variants > RANGE_IN_SELECTIVITY_THRESHOLD)
++	{
++		Datum	constantMax = 0,
++				constantMin = 0;
++		FmgrInfo		opprocLT, opprocGT;
++
++		fmgr_info(F_RECORD_GT, &opprocGT);
++		fmgr_info(F_RECORD_LT, &opprocLT);
++
++		/*
++		 * Find min and max tuples
++		 */
++		while(getTupleIterator(&it))
++		{
++			constant = HeapTupleGetDatum(heap_form_tuple(typentry->tupDesc,
++														 it.values, it.isnull));
++
++			if (constantMax == 0 ||
++				DatumGetBool(FunctionCall2Coll(&opprocGT,
++											   DEFAULT_COLLATION_OID,
++											   constant, constantMax)))
++			{
++				constantMax = constant;
++				if (constantMin != 0)
++					continue;
++			}
++			if (constantMin == 0 ||
++				DatumGetBool(FunctionCall2Coll(&opprocLT,
++											   DEFAULT_COLLATION_OID,
++											   constant, constantMin)))
++			{
++				constantMin = constant;
++			}
++		}
++
++		sum = prefix_record_histogram_selectivity(vardata,
++												  constantMin, constantMax,
++												  n_keys, &nBins);
++
++		if (sum > 0 && nBins <= it.n_variants)
++			/*
++			 * conclude that all  tuples are in the same, rather small, range of
++			 * bins
++			 */
++			goto finish;
++
++		/*
++		 * let try tuples one by one
++		 */
++		sum = 0.0;
++		resetTupleIterator(&it);
++	}
++
++	while(getTupleIterator(&it))
++	{
++		Selectivity	s;
++
++		constant = HeapTupleGetDatum(heap_form_tuple(typentry->tupDesc,
++													 it.values, it.isnull));
++
++		if (n_keys != index->nkeycolumns)
++		{
++			s = prefix_record_histogram_selectivity(vardata,
++													constant, constant,
++													n_keys, &nBins);
++
++			if (s < 0)
++			{
++				/*
++				 * There is no histogram, fallback to single available option
++				 */
++				s = eqconst_selectivity(typentry->eq_opr, vardata,
++											 constant, false, true, false,
++											 n_keys);
++
++				if (usedEqSel)
++					*usedEqSel = true;
++			}
++		}
++		else
++		{
++			s = eqconst_selectivity(typentry->eq_opr, vardata,
++									constant, false, true, false,
++									-1);
++		}
++
++		sum += s - s*sum;
++	}
++
++finish:
++	if (it.isExhaustive)
++		sum *= ((double)(it.n_variants))/EXHAUSTIVE_IN_SELECTIVITY_THRESHOLD;
++
++	return sum;
++}
++
++typedef struct ClauseVarPair
++{
++	Var		*var;
++	int		idx;
++} ClauseVarPair;
++
++static void
++appendCVP(List **cvp, Var *var, int idx)
++{
++	ClauseVarPair	*e;
++
++	e = palloc(sizeof(*e));
++	e->var = var;
++	e->idx = idx;
++
++	*cvp = lappend(*cvp, e);
++}
++
++static bool
++initVarData(IndexOptInfo *index, VariableStatData *vardata)
++{
++	Relation	indexRel = index_open(index->indexoid, AccessShareLock);
++
++	if (!indexRel->rd_rel->reltype)
++	{
++		index_close(indexRel, AccessShareLock);
++
++		return false;
++	}
++
++	memset(vardata, 0, sizeof(*vardata));
++	vardata->isunique = index->unique;
++	vardata->atttype = indexRel->rd_rel->reltype;
++	vardata->rel = index->rel;
++	vardata->acl_ok = true;
++	vardata->statsTuple = SearchSysCache3(STATRELATTINH,
++										  ObjectIdGetDatum(index->indexoid),
++										  Int16GetDatum(1),
++										  BoolGetDatum(false));
++	vardata->freefunc = ReleaseSysCache;
++
++	index_close(indexRel, AccessShareLock);
++
++	if (!HeapTupleIsValid(vardata->statsTuple))
++	{
++		ReleaseVariableStats(*vardata);
++		return false;
++	}
++
++	vardata->sslots = index->sslots;
++
++	return true;
++}
++
++static int
++markEstimatedColumns(Bitmapset **estimatedclauses, List	*pairs,
++					 List	*vars, List	*missed_vars)
++{
++	ListCell	*l;
++	int			n_estimated = 0;
++
++	foreach(l, vars)
++	{
++		Var* var = (Var *) lfirst(l);
++		ListCell	*ll;
++
++		if (list_member_ptr(missed_vars, var))
++			continue;
++
++		foreach(ll, pairs)
++		{
++			ClauseVarPair *cvp=(ClauseVarPair*)lfirst(ll);
++
++			if (cvp->var == var)
++			{
++				*estimatedclauses = bms_add_member(*estimatedclauses, cvp->idx);
++				n_estimated += 1;
++				break;
++			}
++		}
++
++		Assert(ll != NULL);
++	}
++
++	return n_estimated;
++}
++
++#define SET_VARNOS(vn) do {										\
++	if ((vn) != 0)												\
++	{															\
++		if (data[0].varno == 0)									\
++			data[0].varno = (vn);								\
++		else if (data[1].varno == 0 && data[0].varno != (vn))	\
++			data[1].varno = (vn);								\
++	}															\
++} while(0)
++
++#define GET_RELBY_NO(vn)	\
++((data[0].varno == (vn) && (vn) != 0) ? &data[0] : ((data[1].varno == (vn) && (vn) != 0) ? &data[1] : NULL))
++
++#define SET_CURDATA(vn)	((cur = GET_RELBY_NO(vn)) != NULL)
++
++/*
++ * Check if clauses represent multicolumn join with compound indexes available
++ * for both side of comparison of indexed columns of one relation with constant
++ * values. If so, calculates selectivity of compound type comparison and returns
++ * true.
++ */
++static bool
++use_multicolumn_statistic(PlannerInfo *root, List *clauses, int varRelid,
++						  JoinType jointype, SpecialJoinInfo *sjinfo,
++						  Selectivity* restrict_selectivity, Selectivity *join_selectivity,
++						  Bitmapset	**estimatedclauses, CorrelationKind
++						  *correlationKind)
++{
++	ListCell			*l;
++	List*				var_clause_map = NIL;
++	List*				missed_vars = NIL;
++	int					i;
++	int					*permutation = NULL;
++	int					n_estimated = 0;
++	int					n_keys;
++	TypeCacheEntry		*typentry;
++
++	struct	{
++		Index				varno;
++
++		List				*restrictionColumns;
++		List				*restrictionConsts;
++		List				*in_clauses;
++		List				*ineqRestrictionClauses;
++
++		List				*joinColumns;
++
++		IndexOptInfo		*index;
++		VariableStatData	vardata;
++	} data[2], *cur;
++
++	if (list_length(clauses) < 1)
++		return false;
++
++	/*
++	 * Do not use expensive machinery for simple cases, we believe that default
++	 * selectivity estimator works well enough
++	 */
++	if (root->join_rel_list == NIL && root->parent_root == NULL)
++		return false;
++
++	*correlationKind = CKIndepend;
++	memset(data, 0, sizeof(data));
++
++	i=-1;
++	foreach(l, clauses)
++	{
++		Node* clause = (Node *) lfirst(l);
++		RestrictInfo* rinfo = NULL;
++		OpExpr	   *opclause = NULL;
++
++		i++;
++
++		/* do not use already estimated clauses */
++		if (bms_is_member(i, *estimatedclauses))
++			continue;
++
++		if (IsA(clause, RestrictInfo))
++		{
++			rinfo = (RestrictInfo *) clause;
++			if (!rinfo->orclause)
++				clause = (Node*)rinfo->clause;
++		}
++		if (IsA(clause, OpExpr))
++			opclause = (OpExpr*)clause;
++
++		if (IsA(clause, Var)) /* boolean variable */
++		{
++			Var* var1 = (Var*)clause;
++
++			SET_VARNOS(var1->varno);
++			if (SET_CURDATA(var1->varno))
++			{
++				cur->restrictionColumns = lappend(cur->restrictionColumns, var1);
++				appendCVP(&var_clause_map, var1, i);
++				cur->restrictionConsts = lappend(cur->restrictionConsts,
++												 makeBoolConst(true, false));
++			}
++		}
++		else if (IsA(clause, BoolExpr) && ((BoolExpr*)clause)->boolop == NOT_EXPR) /* (NOT bool_expr) */
++		{
++			Node* arg1 = (Node*) linitial( ((BoolExpr*)clause)->args);
++			Var* var1 = get_var(arg1);
++
++			if (var1 == NULL)
++				continue;
++
++			SET_VARNOS(var1->varno);
++			if (SET_CURDATA(var1->varno))
++			{
++				cur->restrictionColumns = lappend(cur->restrictionColumns, var1);
++				appendCVP(&var_clause_map, var1, i);
++				cur->restrictionConsts = lappend(cur->restrictionConsts,
++												 makeBoolConst(false, false));
++			}
++		}
++		else if (IsA(clause, ScalarArrayOpExpr))
++		{
++			ScalarArrayOpExpr* in = (ScalarArrayOpExpr*)clause;
++			Var* var1;
++			Node* arg2;
++			InArrayClause* iac;
++
++			var1 = get_var((Node*)linitial(in->args));
++			arg2 = (Node*) lsecond(in->args);
++
++			if (!in->useOr
++				|| list_length(in->args) != 2
++				|| get_oprrest(in->opno) != F_EQSEL
++				|| var1 == NULL
++				|| !IsA(arg2, Const))
++			{
++				continue;
++			}
++
++			SET_VARNOS(var1->varno);
++			if (SET_CURDATA(var1->varno))
++			{
++				cur->restrictionColumns = lappend(cur->restrictionColumns, var1);
++				appendCVP(&var_clause_map, var1, i);
++				cur->restrictionConsts = lappend(cur->restrictionConsts, arg2);
++
++				iac = (InArrayClause*)palloc(sizeof(InArrayClause));
++				iac->array = (ArrayType*)DatumGetPointer(((Const*)arg2)->constvalue);
++				iac->index = list_length(cur->restrictionConsts) - 1;
++
++				cur->in_clauses = lappend(cur->in_clauses, iac);
++			}
++		}
++		else if (opclause
++				 && list_length(opclause->args) == 2)
++		{
++			int oprrest = get_oprrest(opclause->opno);
++			Node* arg1 = (Node*) linitial(opclause->args);
++			Node* arg2 = (Node*) lsecond(opclause->args);
++			Var* var1 = get_var(arg1);
++			Var* var2 = get_var(arg2);
++
++			if (oprrest == F_EQSEL && treat_as_join_clause((Node*)opclause, NULL, varRelid, sjinfo))
++			{
++				if (var1 == NULL || var2 == NULL || var1->vartype != var2->vartype)
++					continue;
++
++				SET_VARNOS(var1->varno);
++				SET_VARNOS(var2->varno);
++
++				if (var1->varno == data[0].varno && var2->varno == data[1].varno)
++				{
++					data[0].joinColumns = lappend(data[0].joinColumns, var1);
++					appendCVP(&var_clause_map, var1, i);
++					data[1].joinColumns = lappend(data[1].joinColumns, var2);
++					appendCVP(&var_clause_map, var2, i);
++				}
++				else if (var1->varno == data[1].varno && var2->varno == data[0].varno)
++				{
++					data[0].joinColumns = lappend(data[0].joinColumns, var2);
++					appendCVP(&var_clause_map, var2, i);
++					data[1].joinColumns = lappend(data[1].joinColumns, var1);
++					appendCVP(&var_clause_map, var1, i);
++				}
++			}
++			else /* Estimate selectivity for a restriction clause. */
++			{
++				/*
++				 * Give up if it is not equality comparison of variable with
++				 * constant or some other clause is treated as join condition
++				 */
++				if (((var1 == NULL) == (var2 == NULL)))
++					continue;
++
++				if (var1 == NULL)
++				{
++					/* swap var1 and var2 */
++					var1 = var2;
++					arg2 = arg1;
++				}
++
++				SET_VARNOS(var1->varno);
++
++				if (SET_CURDATA(var1->varno))
++				{
++					if ((rinfo && is_pseudo_constant_clause_relids(arg2, rinfo->right_relids))
++						|| (!rinfo && NumRelids(clause) == 1 && is_pseudo_constant_clause(arg2)))
++					{
++						/* Restriction clause with a pseudoconstant . */
++						Node* const_val = estimate_expression_value(root, arg2);
++
++						if (IsA(const_val, Const))
++						{
++							switch (oprrest)
++							{
++								case F_EQSEL:
++									cur->restrictionColumns =
++										lappend(cur->restrictionColumns, var1);
++									cur->restrictionConsts =
++										lappend(cur->restrictionConsts, const_val);
++									appendCVP(&var_clause_map, var1, i);
++									break;
++								case F_SCALARGTSEL:
++								case F_SCALARGESEL:
++								case F_SCALARLTSEL:
++								case F_SCALARLESEL:
++									/*
++									 * We do not consider range predicates now,
++									 * but we can mark them as estimated
++									 * if their variables are covered by index.
++									 */
++									appendCVP(&var_clause_map, var1, i);
++									cur->ineqRestrictionClauses =
++										lappend(cur->ineqRestrictionClauses, var1);
++									break;
++								default:
++									break;
++							}
++						}
++					}
++
++				}
++			}
++		}
++		/* else just skip clause to work with it later in caller */
++	}
++
++	*restrict_selectivity = 1.0;
++	*join_selectivity = 1.0;
++
++	/*
++	 * First, try to estimate selectivity by restrictions
++	 */
++	for(i=0; i<lengthof(data); i++)
++	{
++		cur = &data[i];
++
++		/* compute restriction clauses if applicable */
++		if (cur->varno == 0 || list_length(cur->restrictionColumns) < 1)
++			continue;
++
++		cur->index = locate_inner_multicolumn_index(
++					root, cur->varno, cur->restrictionColumns,
++					list_length(clauses), &permutation, &missed_vars, &n_keys);
++
++		if (cur->index && n_keys > 0 &&
++			initVarData(cur->index, &cur->vardata))
++		{
++			bool	usedEqSel= false;
++
++			*restrict_selectivity *= estimate_selectivity_by_index(
++									root, cur->index, &cur->vardata,
++									cur->restrictionConsts, &missed_vars, permutation,
++									cur->in_clauses, n_keys, &usedEqSel);
++
++			ReleaseVariableStats(cur->vardata);
++
++			/*
++			 * mark inequality clauses as used, see estimate_selectivity_by_index()
++			 */
++			if (usedEqSel)
++			{
++				foreach(l, cur->ineqRestrictionClauses)
++				{
++					Var* var = (Var *) lfirst(l);
++
++					/*
++					 * Note, restrictionColumns will contains extra columns !
++					 */
++					for(i=0; i<cur->index->nkeycolumns; i++)
++						if (cur->index->indexkeys[i] == var->varattno)
++							cur->restrictionColumns =
++								lappend(cur->restrictionColumns, var);
++				}
++			}
++
++			n_estimated +=
++				markEstimatedColumns(estimatedclauses, var_clause_map,
++									 cur->restrictionColumns, missed_vars);
++		}
++
++		if (permutation)
++			pfree(permutation);
++		permutation = NULL;
++	}
++
++	/* Deal with join clauses, if possible */
++	if (list_length(data[0].joinColumns) < 1)
++		goto cleanup;
++
++	data[0].index = locate_inner_multicolumn_index(
++						root,
++						data[0].varno, data[0].joinColumns,
++						list_length(clauses), &permutation, &missed_vars, &n_keys);
++
++	if (!data[0].index || n_keys < 1)
++		goto cleanup;
++
++	Assert(permutation != NULL);
++	Assert(data[1].varno != 0);
++	Assert(list_length(data[0].joinColumns) == list_length(data[1].joinColumns));
++
++	data[1].index = locate_outer_multicolumn_index(
++										root,
++										data[1].varno, data[1].joinColumns,
++										permutation);
++
++	if (!data[1].index)
++		goto cleanup;
++
++	if (!initVarData(data[0].index, &data[0].vardata))
++		goto cleanup;
++
++	if (!initVarData(data[1].index, &data[1].vardata))
++	{
++		ReleaseVariableStats(data[0].vardata);
++		goto cleanup;
++	}
++
++	typentry = lookup_type_cache(data[0].vardata.atttype, TYPECACHE_EQ_OPR);
++	*join_selectivity *= eqjoin_selectivity(root, typentry->eq_opr,
++											&data[0].vardata, &data[1].vardata,
++									   sjinfo, n_keys);
++
++	/* for self join */
++	if (data[0].index->indexoid == data[1].index->indexoid)
++		*correlationKind = CKSelf;
++	else
++	{
++		RangeTblEntry *lrte = planner_rt_fetch(data[0].index->rel->relid, root),
++					  *rrte = planner_rt_fetch(data[1].index->rel->relid, root);
++
++		if (lrte->relid == rrte->relid)
++			*correlationKind = CKSelf;
++	}
++
++	for (i = 0; i < lengthof(data); i++)
++		ReleaseVariableStats(data[i].vardata);
++
++	n_estimated +=
++				markEstimatedColumns(estimatedclauses, var_clause_map,
++									 data[0].joinColumns, missed_vars);
++
++cleanup:
++	if (permutation)
++		pfree(permutation);
++
++	return n_estimated != 0;
++}
+ 
+ /****************************************************************************
+  *		ROUTINES TO COMPUTE SELECTIVITIES
+@@ -95,6 +1052,28 @@ static RelOptInfo *find_single_rel_for_clauses(PlannerInfo *root,
+  * Of course this is all very dependent on the behavior of the inequality
+  * selectivity functions; perhaps some day we can generalize the approach.
+  */
++
++static void
++appendSelectivityRes(Selectivity s[5], Selectivity sel, CorrelationKind ck)
++{
++	switch(ck)
++	{
++		case CKRestrict:
++			s[ck] *= sel;
++			break;
++		case CKSelf:
++		case CKLikelySelf:
++			s[CKMul] *= sel;
++			if (s[ck] > sel)
++				s[ck] = sel;
++		case CKIndepend:
++			s[CKIndepend] *= sel;
++			break;
++		default:
++			elog(ERROR, "unknown selectivity kind: %d", ck);
++	}
++}
++
+ Selectivity
+ clauselist_selectivity(PlannerInfo *root,
+ 					   List *clauses,
+@@ -102,12 +1081,14 @@ clauselist_selectivity(PlannerInfo *root,
+ 					   JoinType jointype,
+ 					   SpecialJoinInfo *sjinfo)
+ {
+-	Selectivity s1 = 1.0;
++	Selectivity s[5 /* per CorrelationKind */]  = {1.0, 1.0, 1.0, 1.0, 1.0};
++	Selectivity s2 = 1.0, s3 = 1.0;
+ 	RelOptInfo *rel;
+ 	Bitmapset  *estimatedclauses = NULL;
+ 	RangeQueryClause *rqlist = NULL;
+ 	ListCell   *l;
+ 	int			listidx;
++	CorrelationKind	ck;
+ 
+ 	/*
+ 	 * If there's exactly one clause, just go directly to
+@@ -130,9 +1111,10 @@ clauselist_selectivity(PlannerInfo *root,
+ 		 * filled with the 0-based list positions of clauses used that way, so
+ 		 * that we can ignore them below.
+ 		 */
+-		s1 *= dependencies_clauselist_selectivity(root, clauses, varRelid,
++		s2 = dependencies_clauselist_selectivity(root, clauses, varRelid,
+ 												  jointype, sjinfo, rel,
+ 												  &estimatedclauses);
++		appendSelectivityRes(s, s2, CKRestrict);
+ 
+ 		/*
+ 		 * This would be the place to apply any other types of extended
+@@ -140,12 +1122,25 @@ clauselist_selectivity(PlannerInfo *root,
+ 		 */
+ 	}
+ 
++	/*
++	 * Check if join conjuncts corresponds to some compound indexes on left and
++	 * right joined relations or indexed columns of one relation is compared
++	 * with constant values. In this case selectivity of join can be calculated
++	 * based on statistic of this compound index.
++	 */
++	while(use_multicolumn_statistic(root, clauses, varRelid, jointype, sjinfo,
++									&s2, &s3, &estimatedclauses, &ck))
++	{
++		appendSelectivityRes(s, s2, CKRestrict);
++		appendSelectivityRes(s, s3, ck);
++	}
++
+ 	/*
+ 	 * Apply normal selectivity estimates for remaining clauses. We'll be
+ 	 * careful to skip any clauses which were already estimated above.
+ 	 *
+ 	 * Anything that doesn't look like a potential rangequery clause gets
+-	 * multiplied into s1 and forgotten. Anything that does gets inserted into
++	 * multiplied into s and forgotten. Anything that does gets inserted into
+ 	 * an rqlist entry.
+ 	 */
+ 	listidx = -1;
+@@ -153,7 +1148,6 @@ clauselist_selectivity(PlannerInfo *root,
+ 	{
+ 		Node	   *clause = (Node *) lfirst(l);
+ 		RestrictInfo *rinfo;
+-		Selectivity s2;
+ 
+ 		listidx++;
+ 
+@@ -178,7 +1172,7 @@ clauselist_selectivity(PlannerInfo *root,
+ 			rinfo = (RestrictInfo *) clause;
+ 			if (rinfo->pseudoconstant)
+ 			{
+-				s1 = s1 * s2;
++				appendSelectivityRes(s, s2, CKRestrict);
+ 				continue;
+ 			}
+ 			clause = (Node *) rinfo->clause;
+@@ -192,12 +1186,17 @@ clauselist_selectivity(PlannerInfo *root,
+ 		 * the simple way we are expecting.)  Most of the tests here can be
+ 		 * done more efficiently with rinfo than without.
+ 		 */
++		ck = treat_as_join_clause(clause, rinfo, varRelid, sjinfo) ?
++				CKIndepend : CKRestrict;
+ 		if (is_opclause(clause) && list_length(((OpExpr *) clause)->args) == 2)
+ 		{
+ 			OpExpr	   *expr = (OpExpr *) clause;
+ 			bool		varonleft = true;
+ 			bool		ok;
+ 
++			if (ck == CKIndepend)
++				ck = get_correlation_kind(root, varRelid, expr);
++
+ 			if (rinfo)
+ 			{
+ 				ok = (bms_membership(rinfo->clause_relids) == BMS_SINGLETON) &&
+@@ -236,7 +1235,7 @@ clauselist_selectivity(PlannerInfo *root,
+ 						break;
+ 					default:
+ 						/* Just merge the selectivity in generically */
+-						s1 = s1 * s2;
++						appendSelectivityRes(s, s2, ck);
+ 						break;
+ 				}
+ 				continue;		/* drop to loop bottom */
+@@ -244,7 +1243,7 @@ clauselist_selectivity(PlannerInfo *root,
+ 		}
+ 
+ 		/* Not the right form, so treat it generically. */
+-		s1 = s1 * s2;
++		appendSelectivityRes(s, s2, ck);
+ 	}
+ 
+ 	/*
+@@ -306,15 +1305,13 @@ clauselist_selectivity(PlannerInfo *root,
+ 				}
+ 			}
+ 			/* Merge in the selectivity of the pair of clauses */
+-			s1 *= s2;
++			appendSelectivityRes(s, s2, CKRestrict);
+ 		}
+ 		else
+ 		{
+ 			/* Only found one of a pair, merge it in generically */
+-			if (rqlist->have_lobound)
+-				s1 *= rqlist->lobound;
+-			else
+-				s1 *= rqlist->hibound;
++			appendSelectivityRes(s, (rqlist->have_lobound) ? rqlist->lobound :
++								 rqlist->hibound, CKRestrict);
+ 		}
+ 		/* release storage and advance */
+ 		rqnext = rqlist->next;
+@@ -322,7 +1319,25 @@ clauselist_selectivity(PlannerInfo *root,
+ 		rqlist = rqnext;
+ 	}
+ 
+-	return s1;
++	/* count final selectivity */
++	s2 = s[CKRestrict] * s[CKIndepend];
++
++	if (s[CKIndepend] != s[CKMul])
++	{
++		/* we hahe both independ and correlated - fallback */
++		s2 *= s[CKMul];
++	}
++	else
++	{
++		/* we have only correlated join clauses */
++		if (s[CKLikelySelf] != 1.0 && s2 < s[CKLikelySelf])
++			s2 = s2 + (s[CKLikelySelf] - s2) * 0.25;
++
++		if (s[CKSelf] != 1.0 && s2 < s[CKSelf])
++			s2 = s2 + (s[CKSelf] - s2) * 1.0;
++	}
++
++	return s2;
+ }
+ 
+ /*
+@@ -531,6 +1546,137 @@ treat_as_join_clause(Node *clause, RestrictInfo *rinfo,
+ 	}
+ }
+ 
++typedef struct RangeTblEntryContext {
++	RangeTblEntry	*rte;
++	int				count;
++} RangeTblEntryContext;
++
++static bool
++find_rte_walker(Node *node, RangeTblEntryContext *context)
++{
++	if (node == NULL)
++		return false;
++
++	if (context->count > 1)
++		return true; /* skip rest */
++
++	if (IsA(node, RangeTblEntry)) {
++		RangeTblEntry	*rte = (RangeTblEntry*)node;
++
++		if (rte->rtekind == RTE_RELATION)
++		{
++			if (context->count == 0)
++			{
++				context->count++;
++				context->rte=rte;
++			}
++			else if (rte->relid != context->rte->relid)
++			{
++				context->count++;
++				return true; /* more that one relation in subtree */
++			}
++		}
++		else if (!(rte->rtekind == RTE_SUBQUERY || rte->rtekind == RTE_JOIN ||
++				   rte->rtekind == RTE_CTE))
++		{
++			context->count++;
++			return true; /* more that one relation in subtree */
++		}
++
++		return false; /* allow range_table_walker to continue */
++	}
++
++	if (IsA(node, Query))
++		return query_tree_walker((Query *) node, find_rte_walker,
++								 (void *) context, QTW_EXAMINE_RTES);
++
++	return expression_tree_walker(node, find_rte_walker, (void *) context);
++}
++
++static RangeTblEntry*
++find_single_rte(RangeTblEntry *node)
++{
++	RangeTblEntryContext	context;
++
++	context.rte = NULL;
++	context.count = 0;
++
++	(void)range_table_walker(list_make1(node),
++							 find_rte_walker,
++							 (void *) &context, QTW_EXAMINE_RTES);
++
++	return context.count == 1 ? context.rte : NULL;
++}
++
++#define IsSameRelationRTE(a, b)	( \
++	(a)->rtekind == (b)->rtekind && \
++	(a)->rtekind == RTE_RELATION && \
++	(a)->relid == (b)->relid \
++)
++
++
++/*
++ * Any self join or join with aggregation over the same table
++ */
++
++static CorrelationKind
++get_correlation_kind(PlannerInfo *root, int varRelid, OpExpr* expr)
++{
++	Node	*left_arg, *right_arg;
++	Relids	left_varnos, right_varnos;
++	int		left_varno, right_varno;
++	RangeTblEntry	*left_rte, *right_rte;
++
++	if (varRelid != 0)
++		/* We consider only case of joins, not restriction mode */
++		return CKIndepend;
++
++	/* Check if it is equality comparison */
++	if (get_oprrest(expr->opno) != F_EQSEL)
++		return CKIndepend;
++
++	left_arg = linitial(expr->args);
++	right_arg = lsecond(expr->args);
++
++	/*
++	 * Check if it is join of two different relations
++	 */
++	left_varnos = pull_varnos(left_arg);
++	right_varnos = pull_varnos(right_arg);
++	if (!bms_get_singleton_member(left_varnos, &left_varno) ||
++		!bms_get_singleton_member(right_varnos, &right_varno) ||
++		left_varno == right_varno)
++		return CKIndepend;
++
++	left_rte = planner_rt_fetch(left_varno, root);
++	right_rte = planner_rt_fetch(right_varno, root);
++
++	if (IsSameRelationRTE(left_rte, right_rte))
++	{
++		Var *lvar = get_var(left_arg),
++			*rvar = get_var(right_arg);
++
++		/* self join detected, check if it simple a=b clause */
++		if (lvar == NULL || rvar == NULL)
++			return CKLikelySelf;
++		return (lvar->varattno == rvar->varattno) ?
++											CKSelf : CKLikelySelf;
++	}
++
++	if ((left_rte = find_single_rte(left_rte)) == NULL)
++		return CKIndepend;
++	if ((right_rte = find_single_rte(right_rte)) == NULL)
++		return CKIndepend;
++
++	if (IsSameRelationRTE(left_rte, right_rte))
++	{
++		/* self join detected, but over some transformation which cannot be
++		 * flatten */
++		return CKLikelySelf;
++	}
++
++	return CKIndepend;
++}
+ 
+ /*
+  * clause_selectivity -
+diff --git a/src/backend/optimizer/util/plancat.c src/backend/optimizer/util/plancat.c
+index d99d1393fb4..382756bd561 100644
+--- a/src/backend/optimizer/util/plancat.c
++++ src/backend/optimizer/util/plancat.c
+@@ -421,6 +421,8 @@ get_relation_info(PlannerInfo *root, Oid relationObjectId, bool inhparent,
+ 
+ 			index_close(indexRelation, NoLock);
+ 
++			memset(info->sslots, 0, sizeof(info->sslots));
++
+ 			indexinfos = lcons(info, indexinfos);
+ 		}
+ 
+diff --git a/src/backend/tcop/postgres.c src/backend/tcop/postgres.c
+index 015d7120472..36ce8817ea8 100644
+--- a/src/backend/tcop/postgres.c
++++ src/backend/tcop/postgres.c
+@@ -71,6 +71,7 @@
+ #include "tcop/pquery.h"
+ #include "tcop/tcopprot.h"
+ #include "tcop/utility.h"
++#include "utils/builtins.h"
+ #include "utils/lsyscache.h"
+ #include "utils/memutils.h"
+ #include "utils/ps_status.h"
+diff --git a/src/backend/utils/adt/rowtypes.c src/backend/utils/adt/rowtypes.c
+index 5f729342f8d..0c0acab7c92 100644
+--- a/src/backend/utils/adt/rowtypes.c
++++ src/backend/utils/adt/rowtypes.c
+@@ -26,7 +26,6 @@
+ #include "utils/lsyscache.h"
+ #include "utils/typcache.h"
+ 
+-
+ /*
+  * structure to cache metadata needed for record I/O
+  */
+@@ -785,6 +784,9 @@ record_cmp(FunctionCallInfo fcinfo)
+ {
+ 	HeapTupleHeader record1 = PG_GETARG_HEAPTUPLEHEADER(0);
+ 	HeapTupleHeader record2 = PG_GETARG_HEAPTUPLEHEADER(1);
++	int				record_cmp_prefix =
++							(PG_NARGS() == 3 && PG_GETARG_INT32(2) > 0) ?
++									PG_GETARG_INT32(2) : INT_MAX;
+ 	int			result = 0;
+ 	Oid			tupType1;
+ 	Oid			tupType2;
+@@ -869,6 +871,9 @@ record_cmp(FunctionCallInfo fcinfo)
+ 	nulls2 = (bool *) palloc(ncolumns2 * sizeof(bool));
+ 	heap_deform_tuple(&tuple2, tupdesc2, values2, nulls2);
+ 
++	ncolumns1 = Min(ncolumns1, record_cmp_prefix);
++	ncolumns2 = Min(ncolumns2, record_cmp_prefix);
++
+ 	/*
+ 	 * Scan corresponding columns, allowing for dropped columns in different
+ 	 * places in the two rows.  i1 and i2 are physical column indexes, j is
+@@ -1027,6 +1032,9 @@ record_eq(PG_FUNCTION_ARGS)
+ {
+ 	HeapTupleHeader record1 = PG_GETARG_HEAPTUPLEHEADER(0);
+ 	HeapTupleHeader record2 = PG_GETARG_HEAPTUPLEHEADER(1);
++	int				record_cmp_prefix =
++							(PG_NARGS() == 3 && PG_GETARG_INT32(2) > 0) ?
++									PG_GETARG_INT32(2) : INT_MAX;
+ 	bool		result = true;
+ 	Oid			tupType1;
+ 	Oid			tupType2;
+@@ -1111,6 +1119,9 @@ record_eq(PG_FUNCTION_ARGS)
+ 	nulls2 = (bool *) palloc(ncolumns2 * sizeof(bool));
+ 	heap_deform_tuple(&tuple2, tupdesc2, values2, nulls2);
+ 
++	ncolumns1 = Min(ncolumns1, record_cmp_prefix);
++	ncolumns2 = Min(ncolumns2, record_cmp_prefix);
++
+ 	/*
+ 	 * Scan corresponding columns, allowing for dropped columns in different
+ 	 * places in the two rows.  i1 and i2 are physical column indexes, j is
+diff --git a/src/backend/utils/adt/selfuncs.c src/backend/utils/adt/selfuncs.c
+index 8592e6cb87c..9e4ffe0e2ad 100644
+--- a/src/backend/utils/adt/selfuncs.c
++++ src/backend/utils/adt/selfuncs.c
+@@ -164,15 +164,12 @@ static double var_eq_const(VariableStatData *vardata, Oid operator,
+ static double var_eq_non_const(VariableStatData *vardata, Oid operator,
+ 				 Node *other,
+ 				 bool varonleft, bool negate);
+-static double ineq_histogram_selectivity(PlannerInfo *root,
+-						   VariableStatData *vardata,
+-						   FmgrInfo *opproc, bool isgt, bool iseq,
+-						   Datum constval, Oid consttype);
+ static double eqjoinsel_inner(Oid operator,
+-				VariableStatData *vardata1, VariableStatData *vardata2);
++				VariableStatData *vardata1, VariableStatData *vardata2,
++				int record_cmp_prefix);
+ static double eqjoinsel_semi(Oid operator,
+ 			   VariableStatData *vardata1, VariableStatData *vardata2,
+-			   RelOptInfo *inner_rel);
++			   RelOptInfo *inner_rel, int record_cmp_prefix);
+ static bool estimate_multivariate_ndistinct(PlannerInfo *root,
+ 								RelOptInfo *rel, List **varinfos, double *ndistinct);
+ static bool convert_to_scalar(Datum value, Oid valuetypid, double *scaledvalue,
+@@ -299,6 +296,31 @@ eqsel_internal(PG_FUNCTION_ARGS, bool negate)
+ 	return selec;
+ }
+ 
++static bool
++get_cached_attstatsslot(AttStatsSlot *sslot, VariableStatData *vardata,
++						int reqkind, Oid reqop, int flags)
++{
++	if (vardata->sslots)
++	{
++		/*
++		 * vardata has somewhere cache
++		 */
++		AttStatsSlot	*sslotp;
++
++		sslotp = fill_attstatsslot(vardata->sslots, vardata->statsTuple,
++								   reqkind, reqop, flags);
++
++		if (sslotp)
++		{
++			*sslot = *sslotp;
++			return true;
++		}
++	}
++
++	return get_attstatsslot(sslot, vardata->statsTuple,
++							reqkind, reqop, flags);
++}
++
+ /*
+  * var_eq_const --- eqsel for var = const case
+  *
+@@ -308,6 +330,18 @@ static double
+ var_eq_const(VariableStatData *vardata, Oid operator,
+ 			 Datum constval, bool constisnull,
+ 			 bool varonleft, bool negate)
++{
++	return eqconst_selectivity(operator, vardata, constval, constisnull,
++				varonleft, negate, -1);
++}
++
++
++Selectivity
++eqconst_selectivity(Oid operator,
++					VariableStatData *vardata,
++					Datum constval, bool constisnull,
++					bool varonleft, bool negate,
++					int	record_cmp_prefix)
+ {
+ 	double		selec;
+ 	double		nullfrac = 0.0;
+@@ -340,7 +374,8 @@ var_eq_const(VariableStatData *vardata, Oid operator,
+ 	 * different from ours, but it's much more likely to be right than
+ 	 * ignoring the information.)
+ 	 */
+-	if (vardata->isunique && vardata->rel && vardata->rel->tuples >= 1.0)
++	if (vardata->isunique && vardata->rel && vardata->rel->tuples >= 1.0 &&
++		record_cmp_prefix <= 0)
+ 	{
+ 		selec = 1.0 / vardata->rel->tuples;
+ 	}
+@@ -359,9 +394,9 @@ var_eq_const(VariableStatData *vardata, Oid operator,
+ 		 * don't like this, maybe you shouldn't be using eqsel for your
+ 		 * operator...)
+ 		 */
+-		if (get_attstatsslot(&sslot, vardata->statsTuple,
+-							 STATISTIC_KIND_MCV, InvalidOid,
+-							 ATTSTATSSLOT_VALUES | ATTSTATSSLOT_NUMBERS))
++		if (get_cached_attstatsslot(&sslot, vardata,
++									STATISTIC_KIND_MCV, InvalidOid,
++									ATTSTATSSLOT_VALUES | ATTSTATSSLOT_NUMBERS))
+ 		{
+ 			FmgrInfo	eqproc;
+ 
+@@ -371,15 +406,17 @@ var_eq_const(VariableStatData *vardata, Oid operator,
+ 			{
+ 				/* be careful to apply operator right way 'round */
+ 				if (varonleft)
+-					match = DatumGetBool(FunctionCall2Coll(&eqproc,
++					match = DatumGetBool(FunctionCall3Coll(&eqproc,
+ 														   DEFAULT_COLLATION_OID,
+ 														   sslot.values[i],
+-														   constval));
++														   constval,
++														   Int32GetDatum(record_cmp_prefix)));
+ 				else
+-					match = DatumGetBool(FunctionCall2Coll(&eqproc,
++					match = DatumGetBool(FunctionCall3Coll(&eqproc,
+ 														   DEFAULT_COLLATION_OID,
+ 														   constval,
+-														   sslot.values[i]));
++														   sslot.values[i],
++														   Int32GetDatum(record_cmp_prefix)));
+ 				if (match)
+ 					break;
+ 			}
+@@ -605,7 +642,8 @@ scalarineqsel(PlannerInfo *root, Oid operator, bool isgt, bool iseq,
+ 	 */
+ 	hist_selec = ineq_histogram_selectivity(root, vardata,
+ 											&opproc, isgt, iseq,
+-											constval, consttype);
++											constval, consttype,
++											-1);
+ 
+ 	/*
+ 	 * Now merge the results from the MCV and histogram calculations,
+@@ -770,6 +808,121 @@ histogram_selectivity(VariableStatData *vardata, FmgrInfo *opproc,
+ 	return result;
+ }
+ 
++static int
++prefix_record_histogram_search(AttStatsSlot	*sslot, int start,
++							   Datum constval,  int record_cmp_prefix,
++							   FmgrInfo	*opproc, bool isgt)
++{
++	int			lobound = start;	/* first possible slot to search */
++	int			hibound = sslot->nvalues;	/* last+1 slot to search */
++
++	while (lobound < hibound)
++	{
++		int			probe = (lobound + hibound) / 2;
++		bool		ltcmp;
++
++		ltcmp = DatumGetBool(FunctionCall3Coll(opproc,
++											   DEFAULT_COLLATION_OID,
++											   sslot->values[probe],
++											   constval,
++											   Int32GetDatum(record_cmp_prefix)));
++		if (isgt)
++			ltcmp = !ltcmp;
++		if (ltcmp)
++			lobound = probe + 1;
++		else
++			hibound = probe;
++	}
++
++	return lobound;
++}
++
++/*
++ * Simple function to estimate selctivity by prefix of record, it just counts
++ * number of histogram bins matched by record prefix - similar to
++ * histogram_selectivity() but it knows about sortability of record
++ */
++double
++prefix_record_histogram_selectivity(VariableStatData *vardata,
++									Datum constvalLeft, Datum constvalRight,
++									int record_cmp_prefix, int *n_bins)
++{
++	double		result = -1.0;
++	AttStatsSlot sslot;
++
++	if (HeapTupleIsValid(vardata->statsTuple) &&
++		get_cached_attstatsslot(&sslot, vardata,
++								STATISTIC_KIND_HISTOGRAM, InvalidOid,
++								ATTSTATSSLOT_VALUES))
++	{
++		FmgrInfo	opprocLT, opprocGT;
++		int			start = -1,
++					end = -1;
++
++
++		if (sslot.nvalues > 2)
++		{
++			fmgr_info(F_RECORD_GE, &opprocGT);
++			fmgr_info(F_RECORD_LE, &opprocLT);
++
++			start = prefix_record_histogram_search(&sslot, 0, constvalLeft,
++												   record_cmp_prefix,
++												   &opprocGT, true);
++			if (start < 0)
++				start = 0;
++
++			end   = prefix_record_histogram_search(&sslot, start, constvalRight,
++												   -1,
++												   &opprocLT, false);
++			if (end >= sslot.nvalues)
++				end = sslot.nvalues - 1;
++		}
++		else
++		{
++			fmgr_info(F_RECORD_GT, &opprocGT);
++			fmgr_info(F_RECORD_LE, &opprocLT);
++
++			/*
++			 *  Find first bin which start border is less than constant
++			 */
++			for (start = sslot.nvalues - 1; start >= 0; start--)
++			{
++				if (DatumGetBool(FunctionCall3Coll(&opprocGT,
++												   DEFAULT_COLLATION_OID,
++												   constvalLeft,
++												   sslot.values[start],
++												   Int32GetDatum(record_cmp_prefix))))
++				break;
++			}
++
++			if (start < 0)
++				start=0;
++
++			/*
++			 * Find last bin which end border is less than constant
++			 */
++			for (end = start; end <= sslot.nvalues - 2; end ++)
++			{
++				if (DatumGetBool(FunctionCall3Coll(&opprocLT,
++												   DEFAULT_COLLATION_OID,
++												   constvalRight,
++												   sslot.values[end + 1],
++												   Int32GetDatum(-1))))
++					break;
++			}
++		}
++
++		*n_bins = (start >= end) ? 0 : end - start;
++		result = (start >= end) ? 0.5 :  end - start;
++		result /= ((double) (sslot.nvalues));
++
++		free_attstatsslot(&sslot);
++	}
++
++	return result;
++
++}
++
+ /*
+  *	ineq_histogram_selectivity	- Examine the histogram for scalarineqsel
+  *
+@@ -783,11 +936,12 @@ histogram_selectivity(VariableStatData *vardata, FmgrInfo *opproc,
+  * null entries.  The caller is expected to combine this result with
+  * statistics for those portions of the column population.
+  */
+-static double
++Selectivity
+ ineq_histogram_selectivity(PlannerInfo *root,
+ 						   VariableStatData *vardata,
+ 						   FmgrInfo *opproc, bool isgt, bool iseq,
+-						   Datum constval, Oid consttype)
++						   Datum constval, Oid consttype,
++						   int record_cmp_prefix)
+ {
+ 	double		hist_selec;
+ 	AttStatsSlot sslot;
+@@ -874,10 +1028,11 @@ ineq_histogram_selectivity(PlannerInfo *root,
+ 														 NULL,
+ 														 &sslot.values[probe]);
+ 
+-				ltcmp = DatumGetBool(FunctionCall2Coll(opproc,
++				ltcmp = DatumGetBool(FunctionCall3Coll(opproc,
+ 													   DEFAULT_COLLATION_OID,
+ 													   sslot.values[probe],
+-													   constval));
++													   constval,
++													   Int32GetDatum(record_cmp_prefix)));
+ 				if (isgt)
+ 					ltcmp = !ltcmp;
+ 				if (ltcmp)
+@@ -2301,21 +2456,39 @@ eqjoinsel(PG_FUNCTION_ARGS)
+ 	JoinType	jointype = (JoinType) PG_GETARG_INT16(3);
+ #endif
+ 	SpecialJoinInfo *sjinfo = (SpecialJoinInfo *) PG_GETARG_POINTER(4);
+-	double		selec;
+ 	VariableStatData vardata1;
+ 	VariableStatData vardata2;
+ 	bool		join_is_reversed;
+-	RelOptInfo *inner_rel;
++	double		selec;
+ 
+ 	get_join_variables(root, args, sjinfo,
+ 					   &vardata1, &vardata2, &join_is_reversed);
+ 
++	selec =	join_is_reversed
++		? eqjoin_selectivity(root, operator, &vardata2, &vardata1, sjinfo, -1)
++		: eqjoin_selectivity(root, operator, &vardata1, &vardata2, sjinfo, -1);
++
++	ReleaseVariableStats(vardata1);
++	ReleaseVariableStats(vardata2);
++
++	PG_RETURN_FLOAT8((float8)selec);
++}
++
++Selectivity
++eqjoin_selectivity(PlannerInfo *root, Oid operator, VariableStatData* vardata1,
++				   VariableStatData* vardata2, SpecialJoinInfo *sjinfo,
++				   int record_cmp_prefix)
++{
++	Selectivity	selec;
++	RelOptInfo *inner_rel;
++
+ 	switch (sjinfo->jointype)
+ 	{
+ 		case JOIN_INNER:
+ 		case JOIN_LEFT:
+ 		case JOIN_FULL:
+-			selec = eqjoinsel_inner(operator, &vardata1, &vardata2);
++			selec = eqjoinsel_inner(operator, vardata1, vardata2,
++									record_cmp_prefix);
+ 			break;
+ 		case JOIN_SEMI:
+ 		case JOIN_ANTI:
+@@ -2328,13 +2501,8 @@ eqjoinsel(PG_FUNCTION_ARGS)
+ 			 */
+ 			inner_rel = find_join_input_rel(root, sjinfo->min_righthand);
+ 
+-			if (!join_is_reversed)
+-				selec = eqjoinsel_semi(operator, &vardata1, &vardata2,
+-									   inner_rel);
+-			else
+-				selec = eqjoinsel_semi(get_commutator(operator),
+-									   &vardata2, &vardata1,
+-									   inner_rel);
++			selec = eqjoinsel_semi(operator, vardata1, vardata2, inner_rel,
++								   record_cmp_prefix);
+ 			break;
+ 		default:
+ 			/* other values not expected here */
+@@ -2344,12 +2512,9 @@ eqjoinsel(PG_FUNCTION_ARGS)
+ 			break;
+ 	}
+ 
+-	ReleaseVariableStats(vardata1);
+-	ReleaseVariableStats(vardata2);
+-
+ 	CLAMP_PROBABILITY(selec);
+ 
+-	PG_RETURN_FLOAT8((float8) selec);
++	return selec;
+ }
+ 
+ /*
+@@ -2360,7 +2525,8 @@ eqjoinsel(PG_FUNCTION_ARGS)
+  */
+ static double
+ eqjoinsel_inner(Oid operator,
+-				VariableStatData *vardata1, VariableStatData *vardata2)
++				VariableStatData *vardata1, VariableStatData *vardata2,
++				int record_cmp_prefix)
+ {
+ 	double		selec;
+ 	double		nd1;
+@@ -2388,9 +2554,9 @@ eqjoinsel_inner(Oid operator,
+ 		/* note we allow use of nullfrac regardless of security check */
+ 		stats1 = (Form_pg_statistic) GETSTRUCT(vardata1->statsTuple);
+ 		if (statistic_proc_security_check(vardata1, opfuncoid))
+-			have_mcvs1 = get_attstatsslot(&sslot1, vardata1->statsTuple,
+-										  STATISTIC_KIND_MCV, InvalidOid,
+-										  ATTSTATSSLOT_VALUES | ATTSTATSSLOT_NUMBERS);
++			have_mcvs1 = get_cached_attstatsslot(&sslot1, vardata1,
++												 STATISTIC_KIND_MCV, InvalidOid,
++												 ATTSTATSSLOT_VALUES | ATTSTATSSLOT_NUMBERS);
+ 	}
+ 
+ 	if (HeapTupleIsValid(vardata2->statsTuple))
+@@ -2398,9 +2564,9 @@ eqjoinsel_inner(Oid operator,
+ 		/* note we allow use of nullfrac regardless of security check */
+ 		stats2 = (Form_pg_statistic) GETSTRUCT(vardata2->statsTuple);
+ 		if (statistic_proc_security_check(vardata2, opfuncoid))
+-			have_mcvs2 = get_attstatsslot(&sslot2, vardata2->statsTuple,
+-										  STATISTIC_KIND_MCV, InvalidOid,
+-										  ATTSTATSSLOT_VALUES | ATTSTATSSLOT_NUMBERS);
++			have_mcvs2 = get_cached_attstatsslot(&sslot2, vardata2,
++												 STATISTIC_KIND_MCV, InvalidOid,
++												 ATTSTATSSLOT_VALUES | ATTSTATSSLOT_NUMBERS);
+ 	}
+ 
+ 	if (have_mcvs1 && have_mcvs2)
+@@ -2454,10 +2620,11 @@ eqjoinsel_inner(Oid operator,
+ 			{
+ 				if (hasmatch2[j])
+ 					continue;
+-				if (DatumGetBool(FunctionCall2Coll(&eqproc,
++				if (DatumGetBool(FunctionCall3Coll(&eqproc,
+ 												   DEFAULT_COLLATION_OID,
+ 												   sslot1.values[i],
+-												   sslot2.values[j])))
++												   sslot2.values[j],
++												   Int32GetDatum(record_cmp_prefix))))
+ 				{
+ 					hasmatch1[i] = hasmatch2[j] = true;
+ 					matchprodfreq += sslot1.numbers[i] * sslot2.numbers[j];
+@@ -2578,7 +2745,7 @@ eqjoinsel_inner(Oid operator,
+ static double
+ eqjoinsel_semi(Oid operator,
+ 			   VariableStatData *vardata1, VariableStatData *vardata2,
+-			   RelOptInfo *inner_rel)
++			   RelOptInfo *inner_rel, int record_cmp_prefix)
+ {
+ 	double		selec;
+ 	double		nd1;
+@@ -2638,17 +2805,17 @@ eqjoinsel_semi(Oid operator,
+ 		/* note we allow use of nullfrac regardless of security check */
+ 		stats1 = (Form_pg_statistic) GETSTRUCT(vardata1->statsTuple);
+ 		if (statistic_proc_security_check(vardata1, opfuncoid))
+-			have_mcvs1 = get_attstatsslot(&sslot1, vardata1->statsTuple,
+-										  STATISTIC_KIND_MCV, InvalidOid,
+-										  ATTSTATSSLOT_VALUES | ATTSTATSSLOT_NUMBERS);
++			have_mcvs1 = get_cached_attstatsslot(&sslot1, vardata1,
++												 STATISTIC_KIND_MCV, InvalidOid,
++												 ATTSTATSSLOT_VALUES | ATTSTATSSLOT_NUMBERS);
+ 	}
+ 
+ 	if (HeapTupleIsValid(vardata2->statsTuple) &&
+ 		statistic_proc_security_check(vardata2, opfuncoid))
+ 	{
+-		have_mcvs2 = get_attstatsslot(&sslot2, vardata2->statsTuple,
+-									  STATISTIC_KIND_MCV, InvalidOid,
+-									  ATTSTATSSLOT_VALUES);
++		have_mcvs2 = get_cached_attstatsslot(&sslot2, vardata2,
++											 STATISTIC_KIND_MCV, InvalidOid,
++											 ATTSTATSSLOT_VALUES);
+ 		/* note: currently don't need stanumbers from RHS */
+ 	}
+ 
+@@ -2701,10 +2868,11 @@ eqjoinsel_semi(Oid operator,
+ 			{
+ 				if (hasmatch2[j])
+ 					continue;
+-				if (DatumGetBool(FunctionCall2Coll(&eqproc,
++				if (DatumGetBool(FunctionCall3Coll(&eqproc,
+ 												   DEFAULT_COLLATION_OID,
+ 												   sslot1.values[i],
+-												   sslot2.values[j])))
++												   sslot2.values[j],
++												   Int32GetDatum(record_cmp_prefix))))
+ 				{
+ 					hasmatch1[i] = hasmatch2[j] = true;
+ 					nmatches++;
+@@ -6110,7 +6278,8 @@ prefix_selectivity(PlannerInfo *root, VariableStatData *vardata,
+ 	prefixsel = ineq_histogram_selectivity(root, vardata,
+ 										   &opproc, true, true,
+ 										   prefixcon->constvalue,
+-										   prefixcon->consttype);
++										   prefixcon->consttype,
++										   -1);
+ 
+ 	if (prefixsel < 0.0)
+ 	{
+@@ -6137,7 +6306,8 @@ prefix_selectivity(PlannerInfo *root, VariableStatData *vardata,
+ 		topsel = ineq_histogram_selectivity(root, vardata,
+ 											&opproc, false, false,
+ 											greaterstrcon->constvalue,
+-											greaterstrcon->consttype);
++											greaterstrcon->consttype,
++											-1);
+ 
+ 		/* ineq_histogram_selectivity worked before, it shouldn't fail now */
+ 		Assert(topsel >= 0.0);
+diff --git a/src/backend/utils/cache/lsyscache.c src/backend/utils/cache/lsyscache.c
+index 82d39e94980..88ea9ec74ba 100644
+--- a/src/backend/utils/cache/lsyscache.c
++++ src/backend/utils/cache/lsyscache.c
+@@ -42,6 +42,7 @@
+ #include "utils/datum.h"
+ #include "utils/fmgroids.h"
+ #include "utils/lsyscache.h"
++#include "utils/memutils.h"
+ #include "utils/rel.h"
+ #include "utils/syscache.h"
+ #include "utils/typcache.h"
+@@ -3045,6 +3046,53 @@ get_attstatsslot(AttStatsSlot *sslot, HeapTuple statstuple,
+ 	return true;
+ }
+ 
++AttStatsSlot*
++fill_attstatsslot(AttStatsSlot *sslots, HeapTuple statstuple,
++				  int reqkind, Oid reqop, int flags)
++{
++	int	add_flags = 0, has_flags = 0;
++	AttStatsSlot	*sslot;
++	MemoryContext	cntx;
++
++	if (reqkind >= STATISTIC_NUM_SLOTS)
++		return NULL;			/* not there */
++
++	sslot = sslots + reqkind;
++
++	if (sslot->values != NULL)
++		has_flags |= ATTSTATSSLOT_VALUES;
++	if (sslot->numbers != NULL)
++		has_flags |= ATTSTATSSLOT_NUMBERS;
++
++	if ((flags & ATTSTATSSLOT_VALUES) && !(has_flags & ATTSTATSSLOT_VALUES))
++		add_flags |= ATTSTATSSLOT_VALUES;
++
++	if ((flags & ATTSTATSSLOT_NUMBERS) && !(has_flags & ATTSTATSSLOT_NUMBERS))
++		add_flags |= ATTSTATSSLOT_NUMBERS;
++
++	if (add_flags == 0 && (reqop == InvalidOid || sslot->staop == reqop))
++		return sslot;
++
++	sslot->incache = false;
++	free_attstatsslot(sslot);
++
++	/* 
++	 * GEQO could call us in short-lived memory context, use rather long-lived
++	 * context to cache statstic data
++	 */
++	cntx = MemoryContextSwitchTo(MessageContext);
++
++	if (get_attstatsslot(sslot, statstuple, reqkind, reqop,
++						 add_flags | has_flags))
++		sslot->incache = true;
++	else
++		sslot = NULL;
++
++	MemoryContextSwitchTo(cntx);
++
++	return sslot;
++}
++
+ /*
+  * free_attstatsslot
+  *		Free data allocated by get_attstatsslot
+@@ -3052,6 +3100,10 @@ get_attstatsslot(AttStatsSlot *sslot, HeapTuple statstuple,
+ void
+ free_attstatsslot(AttStatsSlot *sslot)
+ {
++	/* do not free cached slot */
++	if (sslot->incache)
++		return;
++
+ 	/* The values[] array was separately palloc'd by deconstruct_array */
+ 	if (sslot->values)
+ 		pfree(sslot->values);
+diff --git a/src/bin/pg_dump/common.c src/bin/pg_dump/common.c
+index 9b5869add8b..372aa154f32 100644
+--- a/src/bin/pg_dump/common.c
++++ src/bin/pg_dump/common.c
+@@ -54,6 +54,7 @@ static DumpableObject **oprinfoindex;
+ static DumpableObject **collinfoindex;
+ static DumpableObject **nspinfoindex;
+ static DumpableObject **extinfoindex;
++static DumpableObject **idxinfoindex;
+ static int	numTables;
+ static int	numTypes;
+ static int	numFuncs;
+@@ -61,6 +62,7 @@ static int	numOperators;
+ static int	numCollations;
+ static int	numNamespaces;
+ static int	numExtensions;
++static int	numIndexes;
+ 
+ /* This is an array of object identities, not actual DumpableObjects */
+ static ExtensionMemberId *extmembers;
+@@ -77,9 +79,8 @@ static int	ExtensionMemberIdCompare(const void *p1, const void *p2);
+ static void findParentsByOid(TableInfo *self,
+ 				 InhInfo *inhinfo, int numInherits);
+ static int	strInArray(const char *pattern, char **arr, int arr_size);
+-static IndxInfo *findIndexByOid(Oid oid, DumpableObject **idxinfoindex,
+-			   int numIndexes);
+-
++static IndxInfo *findTableIndexByOid(Oid oid,
++				DumpableObject **idxinfoTableIndex, int numTableIndexes);
+ 
+ /*
+  * getSchemaData
+@@ -96,6 +97,7 @@ getSchemaData(Archive *fout, int *numTablesPtr)
+ 	NamespaceInfo *nspinfo;
+ 	ExtensionInfo *extinfo;
+ 	InhInfo    *inhinfo;
++	IndxInfo   *idxinfo;
+ 	int			numAggregates;
+ 	int			numInherits;
+ 	int			numRules;
+@@ -258,7 +260,8 @@ getSchemaData(Archive *fout, int *numTablesPtr)
+ 
+ 	if (g_verbose)
+ 		write_msg(NULL, "reading indexes\n");
+-	getIndexes(fout, tblinfo, numTables);
++	idxinfo = getIndexes(fout, tblinfo, numTables, &numIndexes);
++	idxinfoindex = buildIndexArray(idxinfo, numIndexes, sizeof(IndxInfo));
+ 
+ 	if (g_verbose)
+ 		write_msg(NULL, "flagging indexes in partitioned tables\n");
+@@ -414,7 +417,7 @@ flagInhIndexes(Archive *fout, TableInfo tblinfo[], int numTables)
+ 			if (index->parentidx == 0)
+ 				continue;
+ 
+-			parentidx = findIndexByOid(index->parentidx,
++			parentidx = findTableIndexByOid(index->parentidx,
+ 									   parentIndexArray[parenttbl->dobj.dumpId],
+ 									   parenttbl->numIndexes);
+ 			if (parentidx == NULL)
+@@ -936,15 +939,26 @@ findExtensionByOid(Oid oid)
+ 
+ /*
+  * findIndexByOid
++ *	  find the entry (in idxinfo) of the index with the given oid
++ *	  returns NULL if not found
++ */
++IndxInfo *
++findIndexByOid(Oid oid)
++{
++	return (IndxInfo *) findObjectByOid(oid, idxinfoindex, numIndexes);
++}
++
++/*
++ * findTableIndexByOid
+  *		find the entry of the index with the given oid
+  *
+- * This one's signature is different from the previous ones because we lack a
+- * global array of all indexes, so caller must pass their array as argument.
++ * This one's signature is different from the previous ones because we use
++ * it to find an index of specific table who passes its index array as argument.
+  */
+ static IndxInfo *
+-findIndexByOid(Oid oid, DumpableObject **idxinfoindex, int numIndexes)
++findTableIndexByOid(Oid oid, DumpableObject **tbl_idxinfoindex, int tblNumIndexes)
+ {
+-	return (IndxInfo *) findObjectByOid(oid, idxinfoindex, numIndexes);
++	return (IndxInfo *) findObjectByOid(oid, tbl_idxinfoindex, tblNumIndexes);
+ }
+ 
+ /*
+diff --git a/src/bin/pg_dump/pg_dump.c src/bin/pg_dump/pg_dump.c
+index 54ed71ca4c1..f4fb4da7d3a 100644
+--- a/src/bin/pg_dump/pg_dump.c
++++ src/bin/pg_dump/pg_dump.c
+@@ -1523,11 +1523,22 @@ selectDumpableType(TypeInfo *tyinfo, Archive *fout)
+ 	if (OidIsValid(tyinfo->typrelid) &&
+ 		tyinfo->typrelkind != RELKIND_COMPOSITE_TYPE)
+ 	{
+-		TableInfo  *tytable = findTableByOid(tyinfo->typrelid);
++		DumpableObject *parentRel;
+ 
+ 		tyinfo->dobj.objType = DO_DUMMY_TYPE;
+-		if (tytable != NULL)
+-			tyinfo->dobj.dump = tytable->dobj.dump;
++
++		/* Get associated relation */
++		if (tyinfo->typrelkind == RELKIND_INDEX)
++			parentRel = (DumpableObject *) findIndexByOid(tyinfo->typrelid);
++		else
++			parentRel = (DumpableObject *) findTableByOid(tyinfo->typrelid);
++
++		/*
++		 * If associated relation found, dump based on if the
++		 * contents of the associated relation are being dumped.
++		 */
++		if (parentRel != NULL)
++			tyinfo->dobj.dump = parentRel->dump;
+ 		else
+ 			tyinfo->dobj.dump = DUMP_COMPONENT_NONE;
+ 		return;
+@@ -4247,6 +4258,9 @@ binary_upgrade_set_type_oids_by_type_oid(Archive *fout,
+ 	PGresult   *res;
+ 	Oid			pg_type_array_oid;
+ 
++	if (pg_type_oid == InvalidOid)
++		return;
++
+ 	appendPQExpBufferStr(upgrade_buffer, "\n-- For binary upgrade, must preserve pg_type oid\n");
+ 	appendPQExpBuffer(upgrade_buffer,
+ 					  "SELECT pg_catalog.binary_upgrade_set_next_pg_type_oid('%u'::pg_catalog.oid);\n\n",
+@@ -6745,8 +6759,8 @@ getInherits(Archive *fout, int *numInherits)
+  * Note: index data is not returned directly to the caller, but it
+  * does get entered into the DumpableObject tables.
+  */
+-void
+-getIndexes(Archive *fout, TableInfo tblinfo[], int numTables)
++IndxInfo *
++getIndexes(Archive *fout, TableInfo tblinfo[], int numTables, int *numIndexes)
+ {
+ 	int			i,
+ 				j;
+@@ -6777,6 +6791,9 @@ getIndexes(Archive *fout, TableInfo tblinfo[], int numTables)
+ 				i_indstatcols,
+ 				i_indstatvals;
+ 	int			ntups;
++	Size		off = 0;
++
++	*numIndexes = 0;
+ 
+ 	for (i = 0; i < numTables; i++)
+ 	{
+@@ -7022,6 +7039,7 @@ getIndexes(Archive *fout, TableInfo tblinfo[], int numTables)
+ 			(IndxInfo *) pg_malloc(ntups * sizeof(IndxInfo));
+ 		constrinfo = (ConstraintInfo *) pg_malloc(ntups * sizeof(ConstraintInfo));
+ 		tbinfo->numIndexes = ntups;
++		*numIndexes += ntups;
+ 
+ 		for (j = 0; j < ntups; j++)
+ 		{
+@@ -7091,6 +7109,27 @@ getIndexes(Archive *fout, TableInfo tblinfo[], int numTables)
+ 	}
+ 
+ 	destroyPQExpBuffer(query);
++
++	/*
++	 * A second pass to form an array of all index infos.
++	 * Now that we know the total number of indexes after the first pass,
++	 * we can allocate all needed memory in one call instead of using realloc.
++	 */
++	indxinfo = (IndxInfo *) pg_malloc(*numIndexes * sizeof(IndxInfo));
++
++	for (i = 0; i < numTables; i++)
++	{
++		TableInfo  *tbinfo = &tblinfo[i];
++		int			copynum = tbinfo->numIndexes;
++
++		if (copynum < 1)
++			continue;
++
++		memcpy(indxinfo + off, tbinfo->indexes, copynum * sizeof(IndxInfo));
++		off += copynum;
++	}
++
++	return indxinfo;
+ }
+ 
+ /*
+@@ -16291,8 +16330,13 @@ dumpIndex(Archive *fout, IndxInfo *indxinfo)
+ 		int			nstatvals;
+ 
+ 		if (dopt->binary_upgrade)
++		{
+ 			binary_upgrade_set_pg_class_oids(fout, q,
+ 											 indxinfo->dobj.catId.oid, true);
++			if (indxinfo->indnkeyattrs > 1)
++				binary_upgrade_set_type_oids_by_rel_oid(fout, q,
++														indxinfo->dobj.catId.oid);
++		}
+ 
+ 		/* Plain secondary index */
+ 		appendPQExpBuffer(q, "%s;\n", indxinfo->indexdef);
+@@ -18041,6 +18085,27 @@ addBoundaryDependencies(DumpableObject **dobjs, int numObjs,
+ 		 */
+ 		switch (dobj->objType)
+ 		{
++			case DO_DUMMY_TYPE:
++			{
++				/*
++				 * In Vanilla, dummy types were only created for tables.
++				 * In Postgres Pro for improving join selectivity estimation
++				 * we also create two types for each composite index:
++				 *   1) a type for attributes of the index
++				 *   2) a type which is an array containing elements of type (1)
++				 * These types depend on indexes, so adding preDataBound -> type
++				 * dependency would create a loop; don't do that.
++				 */
++				TypeInfo *tyinfo = (TypeInfo *) dobj;
++				if (tyinfo->isArray)
++					/* If it's an array, take its element type */
++					tyinfo = findTypeByOid(tyinfo->typelem);
++
++				if (OidIsValid(tyinfo->typrelid) &&
++					(tyinfo->typrelkind == RELKIND_INDEX ||
++					tyinfo->typrelkind == RELKIND_PARTITIONED_INDEX))
++					break;
++			}
+ 			case DO_NAMESPACE:
+ 			case DO_EXTENSION:
+ 			case DO_TYPE:
+@@ -18057,7 +18122,6 @@ addBoundaryDependencies(DumpableObject **dobjs, int numObjs,
+ 			case DO_ATTRDEF:
+ 			case DO_PROCLANG:
+ 			case DO_CAST:
+-			case DO_DUMMY_TYPE:
+ 			case DO_TSPARSER:
+ 			case DO_TSDICT:
+ 			case DO_TSTEMPLATE:
+diff --git a/src/bin/pg_dump/pg_dump.h src/bin/pg_dump/pg_dump.h
+index b1f635a32e6..118172b9561 100644
+--- a/src/bin/pg_dump/pg_dump.h
++++ src/bin/pg_dump/pg_dump.h
+@@ -670,6 +670,7 @@ extern OprInfo *findOprByOid(Oid oid);
+ extern CollInfo *findCollationByOid(Oid oid);
+ extern NamespaceInfo *findNamespaceByOid(Oid oid);
+ extern ExtensionInfo *findExtensionByOid(Oid oid);
++extern IndxInfo *findIndexByOid(Oid oid);
+ 
+ extern void setExtensionMembership(ExtensionMemberId *extmems, int nextmems);
+ extern ExtensionInfo *findOwningExtension(CatalogId catalogId);
+@@ -698,7 +699,8 @@ extern ConvInfo *getConversions(Archive *fout, int *numConversions);
+ extern TableInfo *getTables(Archive *fout, int *numTables);
+ extern void getOwnedSeqs(Archive *fout, TableInfo tblinfo[], int numTables);
+ extern InhInfo *getInherits(Archive *fout, int *numInherits);
+-extern void getIndexes(Archive *fout, TableInfo tblinfo[], int numTables);
++extern IndxInfo *getIndexes(Archive *fout, TableInfo tblinfo[], int numTables,
++						int *numIndexes);
+ extern void getExtendedStatistics(Archive *fout);
+ extern void getConstraints(Archive *fout, TableInfo tblinfo[], int numTables);
+ extern RuleInfo *getRules(Archive *fout, int *numRules);
+diff --git a/src/include/nodes/relation.h src/include/nodes/relation.h
+index 20cbb78abde..68981fc2b97 100644
+--- a/src/include/nodes/relation.h
++++ src/include/nodes/relation.h
+@@ -15,11 +15,13 @@
+ #define RELATION_H
+ 
+ #include "access/sdir.h"
++#include "catalog/pg_statistic.h"
+ #include "fmgr.h"
+ #include "lib/stringinfo.h"
+ #include "nodes/params.h"
+ #include "nodes/parsenodes.h"
+ #include "storage/block.h"
++#include "utils/lsyscache.h"
+ 
+ 
+ /*
+@@ -811,6 +813,10 @@ typedef struct IndexOptInfo
+ 	bool		amcanparallel;	/* does AM support parallel scan? */
+ 	/* Rather than include amapi.h here, we declare amcostestimate like this */
+ 	void		(*amcostestimate) ();	/* AM's cost estimator */
++
++	/* cache for per-tuple index statistic. That stats could be large and it
++	 * will be expensive to uncomress it every time */
++	AttStatsSlot	sslots[STATISTIC_NUM_SLOTS + 1];
+ } IndexOptInfo;
+ 
+ /*
+diff --git a/src/include/utils/builtins.h src/include/utils/builtins.h
+index d0416e90fcc..142ae49c0ad 100644
+--- a/src/include/utils/builtins.h
++++ src/include/utils/builtins.h
+@@ -18,7 +18,6 @@
+ #include "nodes/nodes.h"
+ #include "utils/fmgrprotos.h"
+ 
+-
+ /* bool.c */
+ extern bool parse_bool(const char *value, bool *result);
+ extern bool parse_bool_with_len(const char *value, size_t len, bool *result);
+diff --git a/src/include/utils/lsyscache.h src/include/utils/lsyscache.h
+index e868d84cef6..8d3998c19b0 100644
+--- a/src/include/utils/lsyscache.h
++++ src/include/utils/lsyscache.h
+@@ -55,6 +55,8 @@ typedef struct AttStatsSlot
+ 	/* Remaining fields are private to get_attstatsslot/free_attstatsslot */
+ 	void	   *values_arr;		/* palloc'd values array, if any */
+ 	void	   *numbers_arr;	/* palloc'd numbers array, if any */
++
++	bool		incache;		/* do not free because struct is cached */
+ } AttStatsSlot;
+ 
+ /* Hook for plugins to get control in get_attavgwidth() */
+@@ -173,6 +175,8 @@ extern int32 get_typavgwidth(Oid typid, int32 typmod);
+ extern int32 get_attavgwidth(Oid relid, AttrNumber attnum);
+ extern bool get_attstatsslot(AttStatsSlot *sslot, HeapTuple statstuple,
+ 				 int reqkind, Oid reqop, int flags);
++extern AttStatsSlot* fill_attstatsslot(AttStatsSlot *sslots, HeapTuple statstuple,
++				 int reqkind, Oid reqop, int flags);
+ extern void free_attstatsslot(AttStatsSlot *sslot);
+ extern char *get_namespace_name(Oid nspid);
+ extern char *get_namespace_name_or_temp(Oid nspid);
+diff --git a/src/include/utils/selfuncs.h src/include/utils/selfuncs.h
+index 95e44280c4c..a52a6da5472 100644
+--- a/src/include/utils/selfuncs.h
++++ src/include/utils/selfuncs.h
+@@ -76,6 +76,7 @@ typedef struct VariableStatData
+ 	int32		atttypmod;		/* actual typmod (after stripping relabel) */
+ 	bool		isunique;		/* matches unique index or DISTINCT clause */
+ 	bool		acl_ok;			/* result of ACL check on table or column */
++	AttStatsSlot	*sslots;
+ } VariableStatData;
+ 
+ #define ReleaseVariableStats(vardata)  \
+@@ -176,6 +177,9 @@ extern double histogram_selectivity(VariableStatData *vardata, FmgrInfo *opproc,
+ 					  Datum constval, bool varonleft,
+ 					  int min_hist_size, int n_skip,
+ 					  int *hist_size);
++double prefix_record_histogram_selectivity(VariableStatData *vardata,
++									Datum constvalLeft, Datum constvalRight,
++									int record_cmp_prefix, int *n_bins);
+ 
+ extern Pattern_Prefix_Status pattern_fixed_prefix(Const *patt,
+ 					 Pattern_Type ptype,
+@@ -226,5 +230,19 @@ extern Selectivity scalararraysel_containment(PlannerInfo *root,
+ 						   Node *leftop, Node *rightop,
+ 						   Oid elemtype, bool isEquality, bool useOr,
+ 						   int varRelid);
++extern Selectivity eqjoin_selectivity(PlannerInfo *root, Oid operator,
++									  VariableStatData* vardata1,
++									  VariableStatData* vardata2,
++									  SpecialJoinInfo *sjinfo,
++									  int record_cmp_prefix);
++extern Selectivity eqconst_selectivity(Oid operator, VariableStatData *vardata,
++									   Datum constval, bool constisnull,
++									   bool varonleft, bool negate,
++									   int record_cmp_prefix);
++extern Selectivity ineq_histogram_selectivity(PlannerInfo *root,
++											  VariableStatData *vardata,
++											  FmgrInfo *opproc, bool isgt, bool iseq,
++											  Datum constval, Oid consttype,
++											  int record_cmp_prefix);
+ 
+ #endif							/* SELFUNCS_H */
+diff --git a/src/test/regress/expected/insert_conflict.out src/test/regress/expected/insert_conflict.out
+index a28611745c1..44306281940 100644
+--- a/src/test/regress/expected/insert_conflict.out
++++ src/test/regress/expected/insert_conflict.out
+@@ -891,6 +891,17 @@ create table parted_conflict_1 (drp text, c int, a int, b text);
+ alter table parted_conflict_1 drop column drp;
+ create unique index on parted_conflict (a, b);
+ alter table parted_conflict attach partition parted_conflict_1 for values from (0) to (1000);
++-- test that index types were created after ALTER TABLE
++select p.reltype > 0
++from pg_index i
++join pg_inherits inh on inh.inhparent = i.indexrelid
++join pg_class p on p.oid = inh.inhrelid
++where i.indrelid = 'parted_conflict'::regclass::oid;
++ ?column? 
++----------
++ t
++(1 row)
++
+ truncate parted_conflict;
+ insert into parted_conflict values (50, 'cincuenta', 1);
+ insert into parted_conflict values (50, 'cincuenta', 2)
+diff --git a/src/test/regress/expected/stats_ext.out src/test/regress/expected/stats_ext.out
+index eebf250998e..309c8942ed1 100644
+--- a/src/test/regress/expected/stats_ext.out
++++ src/test/regress/expected/stats_ext.out
+@@ -402,6 +402,14 @@ CREATE TABLE functional_dependencies (
+ SET random_page_cost = 1.2;
+ CREATE INDEX fdeps_ab_idx ON functional_dependencies (a, b);
+ CREATE INDEX fdeps_abc_idx ON functional_dependencies (a, b, c);
++-- test that index types were created
++SELECT reltype > 0 FROM pg_class where relname in ('fdeps_ab_idx', 'fdeps_abc_idx');
++ ?column? 
++----------
++ t
++ t
++(2 rows)
++
+ -- random data (no functional dependencies)
+ INSERT INTO functional_dependencies (a, b, c, filler1)
+      SELECT mod(i, 23), mod(i, 29), mod(i, 31), i FROM generate_series(1,5000) s(i);
+@@ -493,6 +501,14 @@ EXPLAIN (COSTS OFF)
+ 
+ -- check change of column type doesn't break it
+ ALTER TABLE functional_dependencies ALTER COLUMN c TYPE numeric;
++-- test that index types were created after ALTER TABLE
++SELECT reltype > 0 FROM pg_class where relname in ('fdeps_ab_idx', 'fdeps_abc_idx');
++ ?column? 
++----------
++ t
++ t
++(2 rows)
++
+ EXPLAIN (COSTS OFF)
+  SELECT * FROM functional_dependencies WHERE a = 1 AND b = '1' AND c = 1;
+                     QUERY PLAN                     
+diff --git a/src/test/regress/sql/insert_conflict.sql src/test/regress/sql/insert_conflict.sql
+index c68013e1795..3a5fa16e7a2 100644
+--- a/src/test/regress/sql/insert_conflict.sql
++++ src/test/regress/sql/insert_conflict.sql
+@@ -566,6 +566,14 @@ create table parted_conflict_1 (drp text, c int, a int, b text);
+ alter table parted_conflict_1 drop column drp;
+ create unique index on parted_conflict (a, b);
+ alter table parted_conflict attach partition parted_conflict_1 for values from (0) to (1000);
++
++-- test that index types were created after ALTER TABLE
++select p.reltype > 0
++from pg_index i
++join pg_inherits inh on inh.inhparent = i.indexrelid
++join pg_class p on p.oid = inh.inhrelid
++where i.indrelid = 'parted_conflict'::regclass::oid;
++
+ truncate parted_conflict;
+ insert into parted_conflict values (50, 'cincuenta', 1);
+ insert into parted_conflict values (50, 'cincuenta', 2)
+diff --git a/src/test/regress/sql/stats_ext.sql src/test/regress/sql/stats_ext.sql
+index 43ff77c5344..2d29190aa7a 100644
+--- a/src/test/regress/sql/stats_ext.sql
++++ src/test/regress/sql/stats_ext.sql
+@@ -229,6 +229,9 @@ SET random_page_cost = 1.2;
+ CREATE INDEX fdeps_ab_idx ON functional_dependencies (a, b);
+ CREATE INDEX fdeps_abc_idx ON functional_dependencies (a, b, c);
+ 
++-- test that index types were created
++SELECT reltype > 0 FROM pg_class where relname in ('fdeps_ab_idx', 'fdeps_abc_idx');
++
+ -- random data (no functional dependencies)
+ INSERT INTO functional_dependencies (a, b, c, filler1)
+      SELECT mod(i, 23), mod(i, 29), mod(i, 31), i FROM generate_series(1,5000) s(i);
+@@ -281,6 +284,9 @@ EXPLAIN (COSTS OFF)
+ -- check change of column type doesn't break it
+ ALTER TABLE functional_dependencies ALTER COLUMN c TYPE numeric;
+ 
++-- test that index types were created after ALTER TABLE
++SELECT reltype > 0 FROM pg_class where relname in ('fdeps_ab_idx', 'fdeps_abc_idx');
++
+ EXPLAIN (COSTS OFF)
+  SELECT * FROM functional_dependencies WHERE a = 1 AND b = '1' AND c = 1;
+ 

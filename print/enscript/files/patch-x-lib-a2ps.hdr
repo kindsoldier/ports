@@ -1,0 +1,13 @@
+--- ./lib/a2ps.hdr.orig	2009-01-14 00:47:22.000000000 +0200
++++ ./lib/a2ps.hdr	2010-08-31 14:21:34.000000000 +0300
+@@ -66,10 +66,6 @@
+     .5 setlinewidth
+     d_header_x d_header_y d_header_w 24 Box stroke
+ 
+-    % userstr
+-    d_header_x d_header_w add userstr stringwidth pop sub a2ps_marg sub
+-    d_header_y 29 add moveto userstr show
+-
+     % datestr
+     d_header_x a2ps_marg add d_header_y 6 add moveto fmodstr show
+ 

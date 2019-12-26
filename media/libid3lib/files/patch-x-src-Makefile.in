@@ -1,0 +1,10 @@
+--- ./src/Makefile.in.orig	2003-03-02 02:23:00.000000000 +0200
++++ ./src/Makefile.in	2019-06-18 13:52:42.538868000 +0200
+@@ -183,7 +183,6 @@
+ 
+ libid3_la_LDFLAGS = \
+   -version-info $(LT_VERSION) \
+-  -release $(LT_RELEASE) \
+   -export-dynamic
+ 
+ subdir = src

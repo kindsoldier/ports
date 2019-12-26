@@ -1,0 +1,11 @@
+bin/dmake
+share/dmake/startup/config.mk
+share/dmake/startup/startup.mk
+share/dmake/startup/unix/linux/macros.mk
+share/dmake/startup/unix/macros.mk
+share/dmake/startup/unix/recipes.mk
+man/man1/dmake.1.gz
+@dir share/dmake/startup/unix/linux
+@dir share/dmake/startup/unix
+@dir share/dmake/startup
+@dir share/dmake

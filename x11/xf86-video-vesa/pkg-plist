@@ -1,0 +1,4 @@
+lib/xorg/modules/drivers/vesa_drv.la
+lib/xorg/modules/drivers/vesa_drv.so
+man/man4/vesa.4.gz
+

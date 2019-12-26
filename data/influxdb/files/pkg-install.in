@@ -1,0 +1,31 @@
+#!/bin/sh
+
+INFLUXD_GROUP="%%INFLUXD_GROUP%%"
+INFLUXD_OWNER="%%INFLUXD_OWNER%%"
+INFLUXD_GROUP_ID="%%INFLUXD_GROUP_ID%%"
+INFLUXD_OWNER_ID="%%INFLUXD_OWNER_ID%%"
+
+PKG_PREFIX="/notexist"
+
+set -x
+
+case $2 in 
+    PRE-INSTALL)
+	pw group add ${INFLUXD_GROUP}  -g ${INFLUXD_GROUP_ID}
+	pw user add ${INFLUXD_OWNER} -g ${INFLUXD_GROUP}  \
+	    -d ${PKG_PREFIX} -s /usr/sbin/nologin -u ${INFLUXD_OWNER_ID} \
+	    -c "grafana"
+	pw group mod ${INFLUXD_GROUP} -M ${INFLUXD_OWNER}
+	pw group show ${INFLUXD_GROUP}
+	pw user show ${INFLUXD_OWNER}
+
+	install -d -o ${INFLUXD_OWNER} -g ${INFLUXD_GROUP} -m 0750 %%INFLUXD_DBDIR%%
+	install -d -o ${INFLUXD_OWNER} -g ${INFLUXD_GROUP} -m 0750 %%INFLUXD_PIDDIR%%
+	install -d -o ${INFLUXD_OWNER} -g ${INFLUXD_GROUP} -m 0750 %%INFLUXD_LOGDIR%%
+
+	;;
+    POST-INSTALL)
+	;;
+esac
+exit 0
+#EOF

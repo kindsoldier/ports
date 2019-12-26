@@ -1,0 +1,5 @@
+bin/dnsperf
+bin/resperf
+bin/resperf-report
+man/man1/dnsperf.1.gz
+man/man1/resperf.1.gz

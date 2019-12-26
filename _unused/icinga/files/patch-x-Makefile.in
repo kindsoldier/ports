@@ -1,0 +1,253 @@
+--- ./Makefile.in.orig	2015-04-05 19:02:09.000000000 +0200
++++ ./Makefile.in	2015-05-19 16:31:29.715565000 +0200
+@@ -39,7 +39,10 @@
+ EVENTHANDLERDIR=@EVENTHANDLERDIR@
+ DOWNTIMESDIR=@DOWNTIMESDIR@
+ P1FILELOC=@P1FILELOC@
+-CFGDIR=@sysconfdir@
++#CFGDIR=@sysconfdir@
++
++CFGDIR=@prefix@/share/examples/icinga
++
+ BINDIR=@bindir@
+ LIBDIR=@libdir@
+ CGIDIR=@sbindir@
+@@ -139,16 +142,16 @@
+ ###############################
+ 
+ all:
+-	cd $(SRC_BASE) && $(MAKE)
+-	cd $(SRC_CGI) && $(MAKE)
+-	cd $(SRC_HTM) && $(MAKE)
++	$(MAKE) -C $(SRC_BASE)
++	$(MAKE) -C $(SRC_CGI)
++	$(MAKE) -C $(SRC_HTM)
+ 
+ 	if [ x$(USE_EVENTBROKER) = xyes ]; then \
+-		cd $(SRC_MODULE) && $(MAKE); \
++		$(MAKE) -C $(SRC_MODULE); \
+ 	fi
+ 
+ 	@if [ x$(USE_IDOUTILS) = xyes ]; then \
+-		cd $(SRC_IDOUTILS) && $(MAKE); \
++		$(MAKE) -C $(SRC_IDOUTILS); \
+ 	fi
+ 
+ 	@echo ""
+@@ -216,7 +219,7 @@
+ 	@echo ""
+ 
+ icinga:
+-	cd $(SRC_BASE) && $(MAKE)
++	$(MAKE) -C $(SRC_BASE)
+ 
+ config:
+ 	@echo "Sample config files are automatically generated once you run the"
+@@ -224,11 +227,11 @@
+ 	@echo "system by using the 'make install-config' command."
+ 
+ cgis:
+-	cd $(SRC_CGI) && $(MAKE)
++	$(MAKE) -C $(SRC_CGI)
+ 
+ idoutils:
+ 	@if [ x$(USE_IDOUTILS) = xyes ]; then \
+-		cd $(SRC_IDOUTILS) && $(MAKE); \
++		$(MAKE) -C $(SRC_IDOUTILS); \
+         else \
+                 echo "" ;\
+                 echo "Sorry, IDOUtils not enabled!" ;\
+@@ -237,13 +240,13 @@
+         fi
+ 
+ html:
+-	cd $(SRC_HTM) && $(MAKE)
++	$(MAKE) -C $(SRC_HTM)
+ 
+ contrib:
+-	cd $(SRC_CONTRIB) && $(MAKE)
++	$(MAKE) -C $(SRC_CONTRIB)
+ 
+ modules:
+-	cd $(SRC_MODULE) && $(MAKE)
++	$(MAKE) -C $(SRC_MODULE)
+ 
+ classicui-standalone: cgis
+ 
+@@ -257,31 +260,31 @@
+ ###############################
+ 
+ clean:
+-	cd $(SRC_BASE) && $(MAKE) $@
+-	cd $(SRC_CGI) && $(MAKE) $@
+-	cd $(SRC_COMMON) && $(MAKE) $@
+-	cd $(SRC_XDATA) && $(MAKE) $@
+-	cd $(SRC_HTM) && $(MAKE) $@
+-	cd $(SRC_INCLUDE) && $(MAKE) $@
+-	cd $(SRC_CONTRIB) && $(MAKE) $@
+-	cd $(SRC_MODULE) && $(MAKE) $@
+-	cd $(SRC_IDOUTILS) && $(MAKE) $@
+-	cd $(SRC_T) && $(MAKE) $@
++	$(MAKE) -C $(SRC_BASE) $@
++	$(MAKE) -C $(SRC_CGI) $@
++	$(MAKE) -C $(SRC_COMMON) $@
++	$(MAKE) -C $(SRC_XDATA) $@
++	$(MAKE) -C $(SRC_HTM) $@
++	$(MAKE) -C $(SRC_INCLUDE) $@
++	$(MAKE) -C $(SRC_CONTRIB) $@
++	$(MAKE) -C $(SRC_MODULE) $@
++	$(MAKE) -C $(SRC_IDOUTILS) $@
++	$(MAKE) -C $(SRC_T) $@
+ 
+ 	rm -f *.cfg core
+ 	rm -f *~ *.*~ */*~ */*.*~ */*/*.*~
+ 
+ distclean: clean
+-	cd $(SRC_BASE) && $(MAKE) $@
+-	cd $(SRC_CGI) && $(MAKE) $@
+-	cd $(SRC_COMMON) && $(MAKE) $@
+-	cd $(SRC_XDATA) && $(MAKE) $@
+-	cd $(SRC_HTM) && $(MAKE) $@
+-	cd $(SRC_INCLUDE) && $(MAKE) $@
+-	cd $(SRC_CONTRIB) && $(MAKE) $@
+-	cd $(SRC_MODULE) && $(MAKE) $@
+-	cd $(SRC_IDOUTILS) && $(MAKE) $@
+-	cd $(SRC_T) && $(MAKE) $@
++	$(MAKE) -C $(SRC_BASE) $@
++	$(MAKE) -C $(SRC_CGI) $@
++	$(MAKE) -C $(SRC_COMMON) $@
++	$(MAKE) -C $(SRC_XDATA) $@
++	$(MAKE) -C $(SRC_HTM) $@
++	$(MAKE) -C $(SRC_INCLUDE) $@
++	$(MAKE) -C $(SRC_CONTRIB) $@
++	$(MAKE) -C $(SRC_MODULE) $@
++	$(MAKE) -C $(SRC_IDOUTILS) $@
++	$(MAKE) -C $(SRC_T) $@
+ 
+ 	rm -f sample-config/*.cfg sample-config/*.conf sample-config/template-object/*.cfg sample-config/modules/*.cfg
+ 	rm -f daemon-init pkginfo rc.ido2db ido2db-systemd icinga-systemd sysconfig-env
+@@ -301,7 +304,7 @@
+ 	$(MAKE) test-perl
+ 
+ test-perl: icinga cgis
+-	cd t && $(MAKE) test
++	$(MAKE) -C t test
+ 
+ ###############################
+ # Package
+@@ -315,8 +318,8 @@
+ 	#${MAKE} submodule-init
+ 	#${MAKE} submodule-update
+ 	#${MAKE} submodule-update-latest
+-	cd ${SRC_DOCBOOK_EN} && make en
+-	cd ${SRC_DOCBOOK_DE} && make de
++	$(MAKE) -C ${SRC_DOCBOOK_EN} en
++	$(MAKE) -C ${SRC_DOCBOOK_DE} de
+ 	cp ${SRC_DOCBOOK_IMAGES}/*.png ${SRC_DOCS_IMAGES}/
+ 	@echo "updated docs :)"
+ 
+@@ -349,28 +352,28 @@
+ 
+ 
+ install-html:
+-	cd $(SRC_HTM) && $(MAKE) install
++	$(MAKE) -C $(SRC_HTM) install
+ 
+ install-dev-docu:
+-	cd $(SRC_HTM) && $(MAKE) install-dev-docu
++	$(MAKE) -C $(SRC_HTM) install-dev-docu
+ 
+ install-base:
+-	cd $(SRC_BASE) && $(MAKE) install
++	$(MAKE) -C $(SRC_BASE) install
+ 
+ install-cgis:
+-	cd $(SRC_CGI) && $(MAKE) install
++	$(MAKE) -C $(SRC_CGI) install
+ 
+ install:
+-	cd $(SRC_BASE) && $(MAKE) $@
+-	cd $(SRC_CGI) && $(MAKE) $@
+-	cd $(SRC_HTM) && $(MAKE) $@
++	$(MAKE) -C $(SRC_BASE) $@
++	$(MAKE) -C $(SRC_CGI) $@
++	$(MAKE) -C $(SRC_HTM) $@
+ 
+ 	$(MAKE) install-basic
+ 
+ install-unstripped:
+-	cd $(SRC_BASE) && $(MAKE) $@
+-	cd $(SRC_CGI) && $(MAKE) $@
+-	cd $(SRC_HTM) && $(MAKE) $@
++	$(MAKE) -C $(SRC_BASE) $@
++	$(MAKE) -C $(SRC_CGI) $@
++	$(MAKE) -C $(SRC_HTM) $@
+ 
+ 	$(MAKE) install-basic
+ 
+@@ -425,8 +428,8 @@
+ 
+ install-cgiconf:
+ 	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(CFGDIR)
+-	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/cgi.cfg $(DESTDIR)$(CFGDIR)/cgi.cfg
+-	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/cgiauth.cfg $(DESTDIR)$(CFGDIR)/cgiauth.cfg
++	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/cgi.cfg $(DESTDIR)$(CFGDIR)/cgi.cfg.sample
++	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/cgiauth.cfg $(DESTDIR)$(CFGDIR)/cgiauth.cfg.sample
+ 
+ 
+ install-config: install-cgiconf
+@@ -434,21 +437,21 @@
+ 	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(CFGDIR)/objects
+ 	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(CFGDIR)/conf.d
+ 	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(CFGDIR)/modules
+-	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/icinga.cfg $(DESTDIR)$(CFGDIR)/icinga.cfg
+-	$(INSTALL) -b -m 660 $(INSTALL_OPTS) sample-config/resource.cfg $(DESTDIR)$(CFGDIR)/resource.cfg
+-	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/template-object/templates.cfg $(DESTDIR)$(CFGDIR)/objects/templates.cfg
+-	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/template-object/commands.cfg $(DESTDIR)$(CFGDIR)/objects/commands.cfg
+-	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/template-object/contacts.cfg $(DESTDIR)$(CFGDIR)/objects/contacts.cfg
+-	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/template-object/notifications.cfg $(DESTDIR)$(CFGDIR)/objects/notifications.cfg
+-	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/template-object/timeperiods.cfg $(DESTDIR)$(CFGDIR)/objects/timeperiods.cfg
+-	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/template-object/localhost.cfg $(DESTDIR)$(CFGDIR)/objects/localhost.cfg
+-	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/template-object/windows.cfg $(DESTDIR)$(CFGDIR)/objects/windows.cfg
+-	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/template-object/printer.cfg $(DESTDIR)$(CFGDIR)/objects/printer.cfg
+-	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/template-object/switch.cfg $(DESTDIR)$(CFGDIR)/objects/switch.cfg
+-	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/modules/livestatus.cfg $(DESTDIR)$(CFGDIR)/modules/livestatus.cfg
+-	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/modules/mod_gearman.cfg $(DESTDIR)$(CFGDIR)/modules/mod_gearman.cfg
+-	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/modules/pnp4nagios.cfg $(DESTDIR)$(CFGDIR)/modules/pnp4nagios.cfg
+-	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/modules/flapjack.cfg $(DESTDIR)$(CFGDIR)/modules/flapjack.cfg
++	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/icinga.cfg $(DESTDIR)$(CFGDIR)/icinga.cfg.sample
++	$(INSTALL) -b -m 660 $(INSTALL_OPTS) sample-config/resource.cfg $(DESTDIR)$(CFGDIR)/resource.cfg.sample
++	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/template-object/templates.cfg $(DESTDIR)$(CFGDIR)/objects/templates.cfg.sample
++	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/template-object/commands.cfg $(DESTDIR)$(CFGDIR)/objects/commands.cfg.sample
++	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/template-object/contacts.cfg $(DESTDIR)$(CFGDIR)/objects/contacts.cfg.sample
++	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/template-object/notifications.cfg $(DESTDIR)$(CFGDIR)/objects/notifications.cfg.sample
++	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/template-object/timeperiods.cfg $(DESTDIR)$(CFGDIR)/objects/timeperiods.cfg.sample
++	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/template-object/localhost.cfg $(DESTDIR)$(CFGDIR)/objects/localhost.cfg.sample
++	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/template-object/windows.cfg $(DESTDIR)$(CFGDIR)/objects/windows.cfg.sample
++	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/template-object/printer.cfg $(DESTDIR)$(CFGDIR)/objects/printer.cfg.sample
++	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/template-object/switch.cfg $(DESTDIR)$(CFGDIR)/objects/switch.cfg.sample
++	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/modules/livestatus.cfg $(DESTDIR)$(CFGDIR)/modules/livestatus.cfg.sample
++	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/modules/mod_gearman.cfg $(DESTDIR)$(CFGDIR)/modules/mod_gearman.cfg.sample
++	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/modules/pnp4nagios.cfg $(DESTDIR)$(CFGDIR)/modules/pnp4nagios.cfg.sample
++	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/modules/flapjack.cfg $(DESTDIR)$(CFGDIR)/modules/flapjack.cfg.sample
+ 
+ 	@echo ""
+ 	@echo "*** Config files installed ***"
+@@ -466,7 +469,7 @@
+ 
+ install-webconf:
+ 	$(MKDIR) -p -m 775 $(DESTDIR)$(HTTPD_CONF)
+-	$(INSTALL) -b -m 644 $(INSTALL_OPTS) sample-config/httpd.conf $(DESTDIR)$(HTTPDCONFFILE)
++	$(INSTALL) -b -m 644 $(INSTALL_OPTS) sample-config/httpd.conf $(DESTDIR)$(HTTPDCONFFILE).sample
+ 	@if [ x$(APACHE24_DEBIAN) = xyes ]; then \
+ 		echo " Debian Apache 2.4 detected. " ;\
+ 		echo " Run 'a2enconf icinga' and 'service apache2 reload'" ;\
+@@ -488,7 +491,7 @@
+ 
+ install-idoutils:
+ 	@if [ x$(USE_IDOUTILS) = xyes ]; then \
+-		cd $(SRC_IDOUTILS) && $(MAKE) $@ ;\
++		$(MAKE) -C $(SRC_IDOUTILS) $@ ;\
+ 	fi
+ 	@if [ x$(USE_IDOUTILS) = xyes ]; then \
+ 		echo "" ;\

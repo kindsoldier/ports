@@ -1,0 +1,19 @@
+# Created by: Joseph Benden <joe@thrallingpenguin.com>
+# $FreeBSD: head/devel/rubygem-gyoku/Makefile 433374 2017-02-05 05:32:36Z sunpoet $
+
+PORTNAME=	gyoku
+PORTVERSION=	1.3.1
+CATEGORIES=	devel rubygems
+MASTER_SITES=	RG
+
+MAINTAINER=	joe@thrallingpenguin.com
+COMMENT=	Library for translating Ruby hashes to XML
+
+RUN_DEPENDS=	rubygem-builder>=2.1.2:ruby/rubygem-builder
+
+NO_ARCH=	yes
+
+USE_RUBY=	yes
+USES=		gem
+
+.include <bsd.port.mk>

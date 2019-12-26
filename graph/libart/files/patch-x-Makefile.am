@@ -1,0 +1,99 @@
+--- ./Makefile.am.orig	2009-04-18 15:29:25.000000000 +0300
++++ ./Makefile.am	2014-12-27 03:01:06.000000000 +0200
+@@ -1,7 +1,7 @@
+ noinst_PROGRAMS = testart testuta
+ 
+ bin_SCRIPTS = \
+-	libart2-config
++	libart-config
+ 	
+ noinst_SCRIPTS = gen_art_config.sh
+ 
+@@ -16,7 +16,7 @@
+ 	libart-2.0.pc.in	\
+ 	libart-2.0-uninstalled.pc.in
+ 
+-lib_LTLIBRARIES = libart_lgpl_2.la
++lib_LTLIBRARIES = libart.la
+ 
+ if PLATFORM_WIN32
+ no_undefined = -no-undefined
+@@ -26,9 +26,9 @@
+ export_symbols = -export-symbols libart.def
+ 
+ install-libtool-import-lib:
+-	$(INSTALL) .libs/libart_lgpl_2.dll.a $(DESTDIR)$(libdir)
++	$(INSTALL) .libs/libart2.dll.a $(DESTDIR)$(libdir)
+ uninstall-libtool-import-lib:
+-	-rm $(DESTDIR)$(libdir)/libart_lgpl_2.dll.a
++	-rm $(DESTDIR)$(libdir)/libart2.dll.a
+ else
+ install-libtool-import-lib:
+ uninstall-libtool-import-lib:
+@@ -37,23 +37,23 @@
+ endif
+ 
+ if MS_LIB_AVAILABLE
+-noinst_DATA = art_lgpl_2.lib
++noinst_DATA = art_lgpl.lib
+ 
+ install-ms-lib:
+-	$(INSTALL) art_lgpl_2.lib $(DESTDIR)$(libdir)
++	$(INSTALL) art_lgpl.lib $(DESTDIR)$(libdir)
+ 
+ uninstall-ms-lib:
+-	-rm $(DESTDIR)$(libdir)/art_lgpl_2.lib
++	-rm $(DESTDIR)$(libdir)/art_lgpl.lib
+ 
+-art_lgpl_2.lib : libart_lgpl_2.la
+-	lib -name:libart_lgpl_2-@LIBART_MAJOR_VERSION@.dll -def:libart.def -out:$@
++art_lgpl_2.lib : libart.la
++	lib -name:libart.dll -def:libart.def -out:$@
+ 
+ else
+ install-ms-lib:
+ uninstall-ms-lib:
+ endif
+ 
+-libart_lgpl_2_la_SOURCES = \
++libart_la_SOURCES = \
+ 	art_affine.c \
+ 	art_alphagamma.c \
+ 	art_bpath.c \
+@@ -96,10 +96,10 @@
+ 	art_vpath_svp.c	\
+ 	libart-features.c
+ 
+-libart_lgpl_2_la_LDFLAGS = -version-info @LIBART_VERSION_INFO@ $(no_undefined) $(export_symbols)
+-libart_lgpl_2_la_LIBADD = $(libm)
++libart_la_LDFLAGS = -version-info @LIBART_VERSION_INFO@ $(no_undefined) $(export_symbols)
++libart_la_LIBADD = $(libm)
+ 
+-libart_lgplincdir = $(includedir)/libart-2.0/libart_lgpl
++libart_lgplincdir = $(includedir)/libart/libart_lgpl
+ libart_lgplinc_HEADERS = \
+ 	art_affine.h \
+ 	art_alphagamma.h \
+@@ -148,8 +148,8 @@
+ 
+ INCLUDES = -I$(top_srcdir) -I$(top_builddir) -DLIBART_COMPILATION
+ 
+-DEPS = $(top_builddir)/libart_lgpl_2.la
+-LDADDS = $(top_builddir)/libart_lgpl_2.la
++DEPS = $(top_builddir)/libart.la
++LDADDS = $(top_builddir)/libart.la
+ 
+ testart_SOURCES=testart.c
+ testart_LDFLAGS =
+@@ -164,10 +164,7 @@
+ tests:	testart testuta
+ 
+ pkgconfigdir = $(libdir)/pkgconfig
+-pkgconfig_DATA = libart-2.0.pc
+-
+-libart2-config: libart-config
+-	cp -f libart-config libart2-config
++pkgconfig_DATA = libart.pc
+ 
+ install-data-local: install-ms-lib install-libtool-import-lib
+ 

@@ -1,0 +1,35 @@
+#!/bin/sh
+
+set -x
+
+GROUP="%%GROUP%%"
+OWNER="%%OWNER%%"
+GROUP_ID="%%GROUP_ID%%"
+OWNER_ID="%%OWNER_ID%%"
+
+SPOOLDIR="%%SPOOLDIR%%"
+
+SMTPQ=${OWNER}
+SMTPD=${OWNER}
+
+case $2 in 
+    PRE-INSTALL)
+	pw group add ${GROUP} -g ${GROUP_ID}
+	pw user add ${OWNER} -g ${GROUP} -d "/var/empty" -s "/usr/sbin/nologin" \
+	  -u ${OWNER_ID} \
+	  -c "opensmtpd"
+	pw group mod ${GROUP} -M ${OWNER}
+	pw group show ${GROUP}
+	pw user show ${OWNER}
+	;;
+    POST-INSTALL)
+	install -o ${SMTPQ} -g wheel -m 700 -d ${SPOOLDIR}/corrupt
+	install -o root  -g ${SMTPQ} -m 770 -d ${SPOOLDIR}/offline
+	install -o ${SMTPQ} -g wheel -m 700 -d ${SPOOLDIR}/purge
+	install -o ${SMTPQ} -g wheel -m 700 -d ${SPOOLDIR}/queue
+	install -o ${SMTPQ} -g wheel -m 700 -d ${SPOOLDIR}/temporary
+	chmod 0711 ${SPOOLDIR}
+	;;
+esac
+exit 0
+#EOF

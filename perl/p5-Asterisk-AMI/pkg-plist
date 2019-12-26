@@ -1,0 +1,11 @@
+%%SITE_PERL%%/Asterisk/AMI.pm
+%%SITE_PERL%%/Asterisk/AMI/Common.pm
+%%SITE_PERL%%/Asterisk/AMI/Common/Dev.pm
+%%PERL5_MAN3%%/Asterisk::AMI::Common::Dev.3.gz
+%%PERL5_MAN3%%/Asterisk::AMI::Common.3.gz
+%%PERL5_MAN3%%/Asterisk::AMI.3.gz
+@dir %%SITE_PERL%%/Asterisk/AMI/Common
+@dir %%SITE_PERL%%/Asterisk/AMI
+@dir %%SITE_PERL%%/Asterisk
+@dir %%SITE_ARCH%%/auto/Asterisk/AMI
+@dir %%SITE_ARCH%%/auto/Asterisk

@@ -1,0 +1,6 @@
+include/libgringotts.h
+lib/libgringotts.a
+lib/libgringotts.la
+lib/libgringotts.so
+lib/libgringotts.so.2
+lib/pkgconfig/libgringotts.pc

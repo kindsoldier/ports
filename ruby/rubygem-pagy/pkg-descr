@@ -1,0 +1,4 @@
+Agnostic pagination in plain ruby: it works with any framework, ORM and DB type, 
+with all kinds of collections, even pre-paginated, scopes, Arrays, JSON data... 
+Easy, powerful, fast and light.
+

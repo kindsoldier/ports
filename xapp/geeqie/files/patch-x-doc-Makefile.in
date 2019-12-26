@@ -1,0 +1,11 @@
+--- ./doc/Makefile.in.orig	2012-08-12 23:14:06.000000000 +0300
++++ ./doc/Makefile.in	2014-12-29 12:42:46.000000000 +0200
+@@ -462,7 +462,7 @@
+ install-data-hook: html
+ 	if [ -x "$(GNOME_DOC_TOOL)" ]; then \
+ 		cd html; for f in * ; do $(INSTALL_DATA) "$$f" "$(DESTDIR)$(helpdir)/$$f" ; done; \
+-		ln -s GuideIndex.html "$(DESTDIR)$(helpdir)/index.html" ; \
++		ln -sf GuideIndex.html "$(DESTDIR)$(helpdir)/index.html" ; \
+ 	fi
+ 
+ uninstall-hook:

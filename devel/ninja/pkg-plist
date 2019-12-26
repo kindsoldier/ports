@@ -1,0 +1,5 @@
+bin/ninja
+share/doc/ninja/HACKING.md
+share/doc/ninja/manual.asciidoc
+share/doc/ninja/README
+@dir share/doc/ninja

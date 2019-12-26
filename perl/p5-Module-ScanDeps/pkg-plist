@@ -1,0 +1,5 @@
+@comment bin/scandeps.pl
+%%SITE_PERL%%/Module/ScanDeps.pm
+%%SITE_PERL%%/Module/ScanDeps/Cache.pm
+@comment %%PERL5_MAN1%%/scandeps.pl.1.gz
+%%PERL5_MAN3%%/Module::ScanDeps.3.gz

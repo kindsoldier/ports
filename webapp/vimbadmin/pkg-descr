@@ -1,0 +1,10 @@
+The ViMbAdmin project (vim-be-admin) provides a web based virtual
+mailbox administration system to allow mail administrators to easily
+manage domains, mailboxes and aliases.
+
+ViMbAdmin was written in PHP using our own web application framework
+which includes the Zend Framework, the Doctrine ORM and the Smarty
+templating system with JQuery and Bootstrap.
+
+WWW: https://github.com/opensolutions/ViMbAdmin
+

@@ -1,0 +1,11 @@
+--- ./Makefile.in.orig	2016-09-29 12:58:36.000000000 +0200
++++ ./Makefile.in	2017-05-28 22:38:36.768461000 +0200
+@@ -386,7 +386,7 @@
+ xkb_rules_symlink = @xkb_rules_symlink@
+ AUTOMAKE_OPTIONS = foreign
+ SUBDIRS = compat geometry keycodes po rules symbols types docs man
+-pkgconfigdir = $(datadir)/pkgconfig
++pkgconfigdir = $(libdir)/pkgconfig
+ pkgconfig_DATA = xkeyboard-config.pc
+ EXTRA_DIST = config.rpath COPYING README \
+        autogen.sh \

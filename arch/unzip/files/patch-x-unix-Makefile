@@ -1,0 +1,59 @@
+--- ./unix/Makefile.orig	2009-01-19 00:41:18.000000000 +0200
++++ ./unix/Makefile	2015-10-10 07:31:08.385508000 +0200
+@@ -42,7 +42,7 @@
+ # such as -DDOSWILD).
+ 
+ # UnZip flags
+-CC = cc#	try using "gcc" target rather than changing this (CC and LD
++CC ?= cc#	try using "gcc" target rather than changing this (CC and LD
+ LD = $(CC)#	must match, else "unresolved symbol:  ___main" is possible)
+ AS = as
+ LOC = $(D_USE_BZ2) $(LOCAL_UNZIP)
+@@ -448,22 +448,22 @@
+ 	@echo " "
+ 
+ install:	$(MANS)
+-	-$(INSTALL_D) $(BINDIR)
+-	$(INSTALL_PROGRAM) $(UNZIPS) $(BINDIR)
+-	$(INSTALL) unix/zipgrep $(BINDIR)
+-	$(RM) $(BINDIR)/zipinfo$E
+-	$(LN) $(BINDIR)/unzip$E $(BINDIR)/zipinfo$E
+-	-$(INSTALL_D) $(MANDIR)
+-	$(INSTALL) man/funzip.1 $(MANDIR)/funzip.$(manext)
+-	$(INSTALL) man/unzip.1 $(MANDIR)/unzip.$(manext)
+-	$(INSTALL) man/unzipsfx.1 $(MANDIR)/unzipsfx.$(manext)
+-	$(INSTALL) man/zipgrep.1 $(MANDIR)/zipgrep.$(manext)
+-	$(INSTALL) man/zipinfo.1 $(MANDIR)/zipinfo.$(manext)
+-	$(CHMOD) $(BINPERMS) $(INSTALLEDBIN)
+-	$(CHMOD) $(MANPERMS) $(INSTALLEDMAN)
++	-$(INSTALL_D) $(DESTDIR)/$(BINDIR)
++	$(INSTALL_PROGRAM) $(UNZIPS) $(DESTDIR)/$(BINDIR)
++	$(INSTALL) unix/zipgrep $(DESTDIR)/$(BINDIR)
++	$(RM) $(DESTDIR)/$(BINDIR)/zipinfo$E
++	$(LN) unzip$E $(DESTDIR)/$(BINDIR)/zipinfo$E
++	-$(INSTALL_D) $(DESTDIR)/$(MANDIR)
++	$(INSTALL) man/funzip.1 $(DESTDIR)/$(MANDIR)/funzip.$(manext)
++	$(INSTALL) man/unzip.1 $(DESTDIR)/$(MANDIR)/unzip.$(manext)
++	$(INSTALL) man/unzipsfx.1 $(DESTDIR)/$(MANDIR)/unzipsfx.$(manext)
++	$(INSTALL) man/zipgrep.1 $(DESTDIR)/$(MANDIR)/zipgrep.$(manext)
++	$(INSTALL) man/zipinfo.1 $(DESTDIR)/$(MANDIR)/zipinfo.$(manext)
++	$(CHMOD) $(BINPERMS) $(DESTDIR)/$(INSTALLEDBIN)
++	$(CHMOD) $(MANPERMS) $(DESTDIR)/$(INSTALLEDMAN)
+ 
+ uninstall:
+-	$(RM) $(INSTALLEDBIN) $(INSTALLEDMAN)
++	$(RM) $(INSTALLEDBIN) $(DESTDIR)/$(INSTALLEDMAN)
+ 
+ # added 10/28/04 EG
+ flags:  unix/configure
+@@ -763,8 +763,8 @@
+ # FreeBSD on Intel:
+ freebsd:		unix_make
+ 	@echo 'NOTE:  use bsd target for non-Intel FreeBSD compiles (if any).'
+-	$(MAKE) unzips CC=gcc LD=gcc AS=gcc\
+-	 CFLAGS="-O3 -Wall -DASM_CRC -DBSD"\
++	$(MAKE) unzips CC=clang LD=clang AS=clang \
++	 CFLAGS="-O2 -Wall -DASM_CRC -DBSD"\
+ 	 AF="-Di386 $(AF)" CRCA_O=crc_gcc$O
+ 
+ # Generic BSDish Unix gcc.  ``The -O3 only works with later versions of gcc;

@@ -1,0 +1,17 @@
+#!/bin/sh
+
+set -x
+
+PREFIX=${PKG_PREFIX}
+LOCALBASE=${PKG_PREFIX}
+
+case $2 in 
+    DEINSTALL)
+	;;
+    POST-DEINSTALL)
+	${LOCALBASE}/bin/update-desktop-database -q ${PREFIX}/share/applications
+	${LOCALBASE}/bin/gtk-update-icon-cache -q ${PREFIX}//share/icons/hicolor
+	${LOCALBASE}/bin/glib-compile-schemas ${PREFIX}/share/glib/schemas
+	;;
+esac
+#EOF

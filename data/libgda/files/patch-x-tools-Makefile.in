@@ -1,0 +1,19 @@
+--- ./tools/Makefile.in.orig	2019-03-27 08:44:47.076993000 +0200
++++ ./tools/Makefile.in	2019-03-27 08:48:29.284838000 +0200
+@@ -1226,11 +1226,11 @@
+ @DEFAULT_BINARY_TRUE@	done
+ 
+ install-exec-hook:
+-@DEFAULT_BINARY_TRUE@	cd $(DESTDIR)$(bindir) \
+-@DEFAULT_BINARY_TRUE@	&& rm -f gda-list-config$(EXEEXT) gda-sql$(EXEEXT) gda-list-server-op$(EXEEXT) \
+-@DEFAULT_BINARY_TRUE@	&& $(LN_S) gda-list-config$(EXEEXT) gda-list-config$(EXEEXT) \
+-@DEFAULT_BINARY_TRUE@	&& $(LN_S) gda-sql$(EXEEXT) gda-sql$(EXEEXT) \
+-@DEFAULT_BINARY_TRUE@	&& $(LN_S) gda-list-server-op$(EXEEXT) gda-list-server-op$(EXEEXT)
++#@DEFAULT_BINARY_TRUE@	cd $(DESTDIR)$(bindir) \
++#@DEFAULT_BINARY_TRUE@	&& rm -f gda-list-config$(EXEEXT) gda-sql$(EXEEXT) gda-list-server-op$(EXEEXT) \
++#@DEFAULT_BINARY_TRUE@	&& $(LN_S) gda-list-config$(EXEEXT) gda-list-config$(EXEEXT) \
++#@DEFAULT_BINARY_TRUE@	&& $(LN_S) gda-sql$(EXEEXT) gda-sql$(EXEEXT) \
++#@DEFAULT_BINARY_TRUE@	&& $(LN_S) gda-list-server-op$(EXEEXT) gda-list-server-op$(EXEEXT)
+ 
+ uninstall-local:
+ @DEFAULT_BINARY_TRUE@	rm -f $(DESTDIR)$(bindir)/gda-list-config$(EXEEXT) $(DESTDIR)$(bindir)/gda-sql$(EXEEXT) $(DESTDIR)$(bindir)/gda-list-server-op$(EXEEXT)

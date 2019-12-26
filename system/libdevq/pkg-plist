@@ -1,0 +1,6 @@
+include/libdevq.h
+lib/libdevq.la
+lib/libdevq.so
+lib/libdevq.so.0
+lib/pkgconfig/libdevq.pc
+@dir lib/pkgconfig

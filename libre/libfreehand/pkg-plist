@@ -1,0 +1,12 @@
+bin/fh2raw
+bin/fh2svg
+bin/fh2text
+include/libfreehand/libfreehand/FreeHandDocument.h
+include/libfreehand/libfreehand/libfreehand.h
+lib/libfreehand.a
+lib/libfreehand.la
+lib/libfreehand.so
+lib/libfreehand.so.1
+lib/pkgconfig/libfreehand.pc
+@dir include/libfreehand/libfreehand
+@dir include/libfreehand

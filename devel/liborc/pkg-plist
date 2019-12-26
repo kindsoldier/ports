@@ -1,0 +1,51 @@
+bin/orc-bugreport
+bin/orcc
+include/orc/orc-test/orcarray.h
+include/orc/orc-test/orcprofile.h
+include/orc/orc-test/orcrandom.h
+include/orc/orc-test/orctest.h
+include/orc/orc/orc-stdint.h
+include/orc/orc/orc.h
+include/orc/orc/orcarm.h
+include/orc/orc/orcbytecode.h
+include/orc/orc/orcbytecodes.h
+include/orc/orc/orccode.h
+include/orc/orc/orccompiler.h
+include/orc/orc/orcconstant.h
+include/orc/orc/orccpu.h
+include/orc/orc/orccpuinsn.h
+include/orc/orc/orcdebug.h
+include/orc/orc/orcemulateopcodes.h
+include/orc/orc/orcexecutor.h
+include/orc/orc/orcfunctions.h
+include/orc/orc/orcinstruction.h
+include/orc/orc/orcinternal.h
+include/orc/orc/orclimits.h
+include/orc/orc/orcmips.h
+include/orc/orc/orcmmx.h
+include/orc/orc/orcneon.h
+include/orc/orc/orconce.h
+include/orc/orc/orcopcode.h
+include/orc/orc/orcparse.h
+include/orc/orc/orcpowerpc.h
+include/orc/orc/orcprogram.h
+include/orc/orc/orcrule.h
+include/orc/orc/orcsse.h
+include/orc/orc/orctarget.h
+include/orc/orc/orcutils.h
+include/orc/orc/orcvariable.h
+include/orc/orc/orcx86.h
+include/orc/orc/orcx86insn.h
+lib/liborc-test.la
+lib/liborc-test.so
+lib/liborc-test.so.25
+lib/liborc.la
+lib/liborc.so
+lib/liborc.so.25
+lib/pkgconfig/orc.pc
+share/aclocal/orc.m4
+@dir include/orc/orc
+@dir include/orc/orc-test
+@dir include/orc
+@dir share/aclocal
+

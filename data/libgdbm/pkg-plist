@@ -1,0 +1,5 @@
+include/gdbm.h
+lib/libgdbm.a
+lib/libgdbm.la
+lib/libgdbm.so
+lib/libgdbm.so.3

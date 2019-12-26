@@ -1,0 +1,10 @@
+#!/bin/sh
+
+case $2 in 
+    PRE-INSTALL)
+	;;
+    POST-INSTALL)
+	;;
+esac
+exit 0
+#EOF

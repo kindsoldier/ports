@@ -1,0 +1,110 @@
+--- ./configure.orig	2007-09-29 01:12:33.000000000 +0300
++++ ./configure	2015-10-14 20:03:15.418725000 +0200
+@@ -8852,7 +8852,7 @@
+       hardcode_shlibpath_var=no
+       ;;
+ 
+-    freebsd1*)
++    freebsd1.*)
+       ld_shlibs=no
+       ;;
+ 
+@@ -9501,7 +9501,7 @@
+   shlibpath_var=LD_LIBRARY_PATH
+   ;;
+ 
+-freebsd1*)
++freebsd1.*)
+   dynamic_linker=no
+   ;;
+ 
+@@ -9512,7 +9512,7 @@
+     objformat=`/usr/bin/objformat`
+   else
+     case $host_os in
+-    freebsd[123]*) objformat=aout ;;
++    freebsd[123].*) objformat=aout ;;
+     *) objformat=elf ;;
+     esac
+   fi
+@@ -11948,7 +11948,7 @@
+ 	;;
+     esac
+     ;;
+-  freebsd[12]*)
++  freebsd[12].*)
+     # C++ shared libraries reported to be fairly broken before switch to ELF
+     ld_shlibs_CXX=no
+     ;;
+@@ -13480,7 +13480,7 @@
+   shlibpath_var=LD_LIBRARY_PATH
+   ;;
+ 
+-freebsd1*)
++freebsd1.*)
+   dynamic_linker=no
+   ;;
+ 
+@@ -13491,7 +13491,7 @@
+     objformat=`/usr/bin/objformat`
+   else
+     case $host_os in
+-    freebsd[123]*) objformat=aout ;;
++    freebsd[123].*) objformat=aout ;;
+     *) objformat=elf ;;
+     esac
+   fi
+@@ -15497,7 +15497,7 @@
+       hardcode_shlibpath_var_F77=no
+       ;;
+ 
+-    freebsd1*)
++    freebsd1.*)
+       ld_shlibs_F77=no
+       ;;
+ 
+@@ -16094,7 +16094,7 @@
+   shlibpath_var=LD_LIBRARY_PATH
+   ;;
+ 
+-freebsd1*)
++freebsd1.*)
+   dynamic_linker=no
+   ;;
+ 
+@@ -16105,7 +16105,7 @@
+     objformat=`/usr/bin/objformat`
+   else
+     case $host_os in
+-    freebsd[123]*) objformat=aout ;;
++    freebsd[123].*) objformat=aout ;;
+     *) objformat=elf ;;
+     esac
+   fi
+@@ -18111,7 +18111,7 @@
+       hardcode_shlibpath_var_GCJ=no
+       ;;
+ 
+-    freebsd1*)
++    freebsd1.*)
+       ld_shlibs_GCJ=no
+       ;;
+ 
+@@ -18708,7 +18708,7 @@
+   shlibpath_var=LD_LIBRARY_PATH
+   ;;
+ 
+-freebsd1*)
++freebsd1.*)
+   dynamic_linker=no
+   ;;
+ 
+@@ -18719,7 +18719,7 @@
+     objformat=`/usr/bin/objformat`
+   else
+     case $host_os in
+-    freebsd[123]*) objformat=aout ;;
++    freebsd[123].*) objformat=aout ;;
+     *) objformat=elf ;;
+     esac
+   fi

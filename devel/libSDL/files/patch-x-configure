@@ -1,0 +1,131 @@
+--- ./configure.orig	2009-10-17 20:35:13.000000000 +0300
++++ ./configure	2010-08-28 22:34:38.000000000 +0300
+@@ -9542,7 +9542,7 @@
+   sys_lib_search_path_spec="/shlib /usr/lib /usr/X11/lib /usr/contrib/lib /lib /usr/local/lib"
+   sys_lib_dlsearch_path_spec="/shlib /usr/lib /usr/local/lib"
+   # the default ld.so.conf also contains /usr/contrib/lib and
+-  # /usr/X11R6/lib (/usr/X11 is a link to /usr/X11R6), but let us allow
++  # /usr/X11R7/lib (/usr/X11 is a link to /usr/X11R6), but let us allow
+   # libtool to hard-code these into programs
+   ;;
+ 
+@@ -15554,7 +15554,7 @@
+   sys_lib_search_path_spec="/shlib /usr/lib /usr/X11/lib /usr/contrib/lib /lib /usr/local/lib"
+   sys_lib_dlsearch_path_spec="/shlib /usr/lib /usr/local/lib"
+   # the default ld.so.conf also contains /usr/contrib/lib and
+-  # /usr/X11R6/lib (/usr/X11 is a link to /usr/X11R6), but let us allow
++  # /usr/X11R7/lib (/usr/X11 is a link to /usr/X11R6), but let us allow
+   # libtool to hard-code these into programs
+   ;;
+ 
+@@ -16391,7 +16391,7 @@
+ BUILD_LDFLAGS="$LDFLAGS"
+ EXTRA_LDFLAGS="$BASE_LDFLAGS"
+ ## These are common directories to find software packages
+-#for path in /usr/freeware /usr/pkg /usr/X11R6 /usr/local; do
++#for path in /usr/freeware /usr/pkg /usr/X11R7 /usr/local; do
+ #    if test -d $path/include; then
+ #        EXTRA_CFLAGS="$EXTRA_CFLAGS -I$path/include"
+ #    fi
+@@ -21857,10 +21857,10 @@
+             have_nas=yes
+             NAS_LIBS="-laudio"
+ 
+-        elif test -r /usr/X11R6/include/audio/audiolib.h; then
++        elif test -r /usr/X11R7/include/audio/audiolib.h; then
+             have_nas=yes
+-            NAS_CFLAGS="-I/usr/X11R6/include/"
+-            NAS_LIBS="-L/usr/X11R6/lib -laudio -lXt"
++            NAS_CFLAGS="-I/usr/X11R7/include/"
++            NAS_LIBS="-L/usr/X11R7/lib -laudio -lXt"
+ 
+ 
+         elif test -r /usr/freeware/include/nas/audiolib.h; then
+@@ -23047,8 +23047,8 @@
+             *-*-darwin*)
+                 # This isn't necessary for X11, but fixes GLX detection
+                 if test "x$x_includes" = xNONE && test "x$x_libraries" = xNONE; then
+-                    x_includes="/usr/X11R6/include"
+-                    x_libraries="/usr/X11R6/lib"
++                    x_includes="/usr/X11R7/include"
++                    x_libraries="/usr/X11R7/lib"
+                 fi
+                 ;;
+         esac
+@@ -23118,22 +23118,22 @@
+ # Check X11 before X11Rn because it is often a symlink to the current release.
+ ac_x_header_dirs='
+ /usr/X11/include
+-/usr/X11R6/include
++/usr/X11R7/include
+ /usr/X11R5/include
+ /usr/X11R4/include
+ 
+ /usr/include/X11
+-/usr/include/X11R6
++/usr/include/X11R7
+ /usr/include/X11R5
+ /usr/include/X11R4
+ 
+ /usr/local/X11/include
+-/usr/local/X11R6/include
++/usr/local/X11R7/include
+ /usr/local/X11R5/include
+ /usr/local/X11R4/include
+ 
+ /usr/local/include/X11
+-/usr/local/include/X11R6
++/usr/local/include/X11R7
+ /usr/local/include/X11R5
+ /usr/local/include/X11R4
+ 
+@@ -24349,7 +24349,7 @@
+     fi
+   fi
+ 
+-  # Check for libraries that X11R6 Xt/Xaw programs need.
++  # Check for libraries that X11R7 Xt/Xaw programs need.
+   ac_save_LDFLAGS=$LDFLAGS
+   test -n "$x_libraries" && LDFLAGS="$LDFLAGS -L$x_libraries"
+   # SM needs ICE to (dynamically) link under SunOS 4.x (so we have to
+@@ -24448,10 +24448,10 @@
+             case "$host" in
+                 *-*-darwin*) # Latest Mac OS X actually ships with Xrandr/Xrender libs...
+                     x11_symbols_private=yes
+-                    x11_lib='/usr/X11R6/lib/libX11.6.dylib'
+-                    x11ext_lib='/usr/X11R6/lib/libXext.6.dylib'
+-                    xrender_lib='/usr/X11R6/lib/libXrender.1.dylib'
+-                    xrandr_lib='/usr/X11R6/lib/libXrandr.2.dylib'
++                    x11_lib='/usr/X11R7/lib/libX11.6.dylib'
++                    x11ext_lib='/usr/X11R7/lib/libXext.6.dylib'
++                    xrender_lib='/usr/X11R7/lib/libXrender.1.dylib'
++                    xrandr_lib='/usr/X11R7/lib/libXrandr.2.dylib'
+                     ;;
+                 *-*-osf*)
+                     x11_lib='libX11.so'
+@@ -24462,10 +24462,10 @@
+                     x11ext_lib='libXext.so'
+                     ;;
+                 *)
+-                    x11_lib=`find_lib "libX11.so.*" "$X_LIBS -L/usr/X11/$base_libdir -L/usr/X11R6/$base_libdir" | sed 's/.*\/\(.*\)/\1/; q'`
+-                    x11ext_lib=`find_lib "libXext.so.*" "$X_LIBS -L/usr/X11/$base_libdir -L/usr/X11R6/$base_libdir" | sed 's/.*\/\(.*\)/\1/; q'`
+-                    xrender_lib=`find_lib "libXrender.so.*" "$X_LIBS -L/usr/X11/$base_libdir -L/usr/X11R6/$base_libdir" | sed 's/.*\/\(.*\)/\1/; q'`
+-                    xrandr_lib=`find_lib "libXrandr.so.*" "$X_LIBS -L/usr/X11/$base_libdir -L/usr/X11R6/$base_libdir" | sed 's/.*\/\(.*\)/\1/; q'`
++                    x11_lib=`find_lib "libX11.so.*" "$X_LIBS -L/usr/X11/$base_libdir -L/usr/X11R7/$base_libdir" | sed 's/.*\/\(.*\)/\1/; q'`
++                    x11ext_lib=`find_lib "libXext.so.*" "$X_LIBS -L/usr/X11/$base_libdir -L/usr/X11R7/$base_libdir" | sed 's/.*\/\(.*\)/\1/; q'`
++                    xrender_lib=`find_lib "libXrender.so.*" "$X_LIBS -L/usr/X11/$base_libdir -L/usr/X11R7/$base_libdir" | sed 's/.*\/\(.*\)/\1/; q'`
++                    xrandr_lib=`find_lib "libXrandr.so.*" "$X_LIBS -L/usr/X11/$base_libdir -L/usr/X11R7/$base_libdir" | sed 's/.*\/\(.*\)/\1/; q'`
+                     ;;
+             esac
+ 
+@@ -27369,8 +27369,8 @@
+ #            pthread_cflags="-D_REENTRANT -D_THREAD_SAFE"
+             ;;
+         *-*-freebsd*|*-*-dragonfly*)
+-            pthread_cflags="-D_REENTRANT -D_THREAD_SAFE"
+-            pthread_lib="-pthread"
++            pthread_cflags="-D_REENTRANT ${PTHREAD_CFLAGS}"
++            pthread_lib="${PTHREAD_LIBS}"
+             ;;
+         *-*-netbsd*)
+             pthread_cflags="-D_REENTRANT -D_THREAD_SAFE"

@@ -1,0 +1,32 @@
+#!/bin/sh
+#
+# PROVIDE: nfcapd
+# REQUIRE: DAEMON
+#
+. /etc/rc.subr
+
+name="nfcapd"
+rcvar="nfcapd_enable"
+command="%%PREFIX%%/sbin/${name}"
+pidfile="%%RUN_DIR%%/${name}.pid"
+procname="${command}"
+command_args=" -D -P ${pidfile}"
+required_dirs="%%RUN_DIR%%"
+
+load_rc_config $name
+
+: ${nfcapd_enable="NO"}
+: ${nfcapd_datadir="/var/${name}"}
+: ${nfcapd_port=9995}
+: ${nfcapd_schema=8}
+: ${nfcapd_time=120}
+: ${nfcapd_args=""}
+
+
+required_dirs="%%RUN_DIR%% ${nfcapd_datadir}"
+
+
+: ${nfcapd_flags="-l ${nfcapd_datadir} -t ${nfcapd_time} -p ${nfcapd_port} -S ${nfcapd_schema} ${nfcapd_args}"}
+
+run_rc_command "$1"
+#EOF

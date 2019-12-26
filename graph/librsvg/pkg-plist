@@ -1,0 +1,15 @@
+bin/rsvg-convert
+include/librsvg/librsvg-enum-types.h
+include/librsvg/librsvg-features.h
+include/librsvg/rsvg-cairo.h
+include/librsvg/rsvg.h
+lib/gdk-pixbuf/loaders/libpixbufloader-svg.a
+lib/gdk-pixbuf/loaders/libpixbufloader-svg.la
+lib/gdk-pixbuf/loaders/libpixbufloader-svg.so
+lib/librsvg.a
+lib/librsvg.la
+lib/librsvg.so
+lib/librsvg.so.2
+lib/pkgconfig/librsvg.pc
+man/man1/rsvg-convert.1.gz
+@dir include/librsvg

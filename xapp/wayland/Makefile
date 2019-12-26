@@ -1,0 +1,27 @@
+# Created by: kwm@FreeBSD.org
+# $FreeBSD: head/graphics/wayland/Makefile 490980 2019-01-22 20:51:38Z zeising $
+
+PORTNAME=	wayland
+PORTVERSION=	1.16.0
+CATEGORIES=	graphics
+MASTER_SITES=	https://wayland.freedesktop.org/releases/
+
+MAINTAINER=	x11@FreeBSD.org
+COMMENT=	Wayland composite "server"
+
+LIB_DEPENDS+=	libexpat.so:text/libexpat
+LIB_DEPENDS+=	libffi.so:devel/libffi
+LIB_DEPENDS+=   libepoll-shim.so:devel/libepoll-shim
+
+CFLAGS+=	-I${LOCALBASE}/include/libepoll-shim
+
+USES=		autoreconf gmake libtool localbase pathfix pkgconfig tar:xz
+
+USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-documentation
+CONFIGURE_ENV=	ac_cv_func_posix_fallocate=no # EINVAL for many FS on 12.0
+
+INSTALL_TARGET=	install-strip
+
+.include <bsd.port.mk>

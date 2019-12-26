@@ -1,0 +1,22 @@
+#!/bin/sh
+#
+# PROVIDE: apache
+# REQUIRE: DAEMON
+
+. /etc/rc.subr
+
+name="apache"
+bin_name="apache"
+rcvar="apache_enable"
+
+command="%%PREFIX%%/sbin/${bin_name}"
+pidfile="/var/run/apache/httpd.pid"
+required_files="%%PREFIX%%/etc/apache/${bin_name}.conf %%PREFIX%%/etc/apache/magic %%PREFIX%%/etc/apache/mime.types"
+procname="${command}"
+
+load_rc_config $name
+
+: ${apache_enable="NO"}
+
+run_rc_command "$1"
+#EOF

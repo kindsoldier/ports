@@ -1,0 +1,15 @@
+--- ./configure.ac.orig	2017-05-22 17:13:39.000000000 +0200
++++ ./configure.ac	2019-12-24 18:01:05.820257000 +0200
+@@ -65,10 +65,10 @@
+ m4_define([libva_interface_bias], [m4_eval(va_api_major_version + 1)])
+ m4_define([libva_interface_age],  [0])
+ m4_define([libva_binary_age],
+-          [m4_eval(100 * va_api_minor_version + va_api_micro_version - libva_interface_age)])
++          [m4_eval(1 * va_api_minor_version + va_api_micro_version - libva_interface_age)])
+ 
+ m4_define([libva_lt_current],
+-          [m4_eval(100 * va_api_minor_version + va_api_micro_version + libva_interface_bias)])
++          [m4_eval(1 * va_api_minor_version + va_api_micro_version + libva_interface_bias)])
+ m4_define([libva_lt_revision],
+           [m4_eval(libva_interface_age)])
+ m4_define([libva_lt_age],

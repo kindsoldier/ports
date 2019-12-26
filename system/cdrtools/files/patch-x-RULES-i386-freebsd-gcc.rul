@@ -1,0 +1,11 @@
+--- ./RULES/i386-freebsd-gcc.rul.orig	2007-05-08 14:03:08.000000000 +0300
++++ ./RULES/i386-freebsd-gcc.rul	2018-06-10 14:33:47.229930000 +0200
+@@ -28,7 +28,7 @@
+ 
+ LIB_PREFIX=	lib
+ LIB_SUFFIX=	.a
+-SHL_SUFFIX=	.so.1.0
++SHL_SUFFIX=	.so.1
+ 
+ LIB_SOCKET=	
+ LIB_MATH=	-lm

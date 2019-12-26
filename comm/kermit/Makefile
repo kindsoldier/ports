@@ -1,0 +1,37 @@
+# Created by: Paul Traina <pst@FreeBSD.org>
+# $FreeBSD: head/comms/kermit/Makefile 459648 2018-01-22 12:39:20Z danfe $
+
+PORTNAME=	kermit
+PORTVERSION=	9.0.304
+CATEGORIES=	comms ftp net
+MASTER_SITES=	ftp://ftp.kermitproject.org/kermit/test/tar/
+DISTNAME=	cku${PORTVERSION:E}-dev22
+
+MAINTAINER=	danfe@FreeBSD.org
+COMMENT=	Portable scriptable network and serial communication program
+
+NO_WRKSUBDIR=	yes
+MAKEFILE=	makefile
+ALL_TARGET=	freebsd+ssl
+MAKE_ARGS=	CC2="${CC}" SSLINC="-I/usr/include" SSLLIB="-L/usr/lib"
+
+PORTDOCS=	*
+PORTEXAMPLES=	*
+
+post-patch:
+	${REINPLACE_CMD} -e 's,-O2 -pipe,${CFLAGS},' ${WRKSRC}/${MAKEFILE}
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/wermit ${STAGEDIR}${PREFIX}/bin/kermit
+	${INSTALL_MAN} ${WRKSRC}/ckuker.nr \
+		${STAGEDIR}${MANPREFIX}/man/man1/kermit.1
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.txt ${STAGEDIR}${DOCSDIR}
+	${LN} -sf ckaaaa.txt ${STAGEDIR}${DOCSDIR}/READ.ME
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${PATCHDIR}/ckermit.ini \
+		${STAGEDIR}${EXAMPLESDIR}/dot.kermrc
+	${INSTALL_DATA} ${PATCHDIR}/ckermod.ini \
+		${STAGEDIR}${EXAMPLESDIR}/dot.mykermrc
+
+.include <bsd.port.mk>

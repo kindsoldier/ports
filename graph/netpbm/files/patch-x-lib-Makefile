@@ -1,0 +1,68 @@
+--- ./lib/Makefile.orig	2017-09-30 22:37:42.000000000 +0200
++++ ./lib/Makefile	2018-04-23 16:17:20.284017000 +0200
+@@ -125,10 +125,11 @@
+ # The $(SONAME) link is needed only to test the programs without
+ # installing the libraries (in that case, you also need to direct the 
+ # dynamic linker to the source directories, e.g. set LD_LIBRARY_PATH).
+-$(SONAME): libnetpbm.$(NETPBMLIBSUFFIX).$(MAJ).$(MIN)
++$(SONAME): libnetpbm.$(NETPBMLIBSUFFIX).$(MAJ)
+ 	rm -f $@
+ 	$(SYMLINK) $< $@
+-libnetpbm.$(NETPBMLIBSUFFIX).$(MAJ).$(MIN): $(LIBOBJECTS) $(LIBOBJECTS_X)
++
++libnetpbm.$(NETPBMLIBSUFFIX).$(MAJ): $(LIBOBJECTS) $(LIBOBJECTS_X)
+ 	$(LD) $(LDSHLIB) -o $@ $(LIBOBJECTS) $(LIBOBJECTS_X) \
+           $(SHLIB_CLIB) -lm $(LADD)
+ endif
+@@ -220,13 +221,12 @@
+ .PHONY: install.lib
+ ifeq ($(NETPBMLIBTYPE),unixshared)
+ # install a Unix-style shared library
+-install.lib: $(PKGDIR)/lib $(PKGDIR)/link
+-	cd $(PKGDIR)/lib ; rm -f libnetpbm.$(NETPBMLIBSUFFIX).$(MAJ).*
++install.lib: $(PKGDIR)/lib $(PKGDIR)/lib
++	cd $(PKGDIR)/lib ; rm -f libnetpbm.$(NETPBMLIBSUFFIX).$(MAJ)
+ 	$(INSTALL) -c -m $(INSTALL_PERM_LIBD) \
+-	  libnetpbm.$(NETPBMLIBSUFFIX).$(MAJ).$(MIN)  $(PKGDIR)/lib/
+-	cd $(PKGDIR)/lib/ ; \
+-          rm -f libnetpbm.$(NETPBMLIBSUFFIX).$(MAJ); \
+-          $(SYMLINK) libnetpbm.$(NETPBMLIBSUFFIX).$(MAJ).$(MIN) $(SONAME)
++	  libnetpbm.$(NETPBMLIBSUFFIX).$(MAJ)  $(PKGDIR)/lib/
++#	cd $(PKGDIR)/lib/ ; \
++#          $(SYMLINK) libnetpbm.$(NETPBMLIBSUFFIX).$(MAJ) $(SONAME)
+ endif
+ ifeq ($(NETPBMLIBTYPE),dll)
+ #install a Windows DLL shared library
+@@ -262,26 +262,26 @@
+ 	  $(SRCDIR)/lib/$(@:%_installhdr=%) $(PKGDIR)/include/netpbm/
+ 
+ .PHONY: install.staticlib
+-install.staticlib: $(PKGDIR)/link
++install.staticlib: $(PKGDIR)/lib
+ 	$(INSTALL) -c -m $(INSTALL_PERM_LIBS) libnetpbm.$(STATICLIBSUFFIX) \
+-	  $(PKGDIR)/link
++	  $(PKGDIR)/lib
+ 
+ # Install a shared library stub -- the ".so" file used at link time to
+ # prepare a program for dynamically linking a library at run time 
+ .PHONY: install.sharedlibstub
+-install.sharedlibstub: $(PKGDIR)/link
++install.sharedlibstub: $(PKGDIR)/lib
+ ifeq ($(NETPBMLIBTYPE),unixshared)
+ # install the link-time (.so) links to the runtime libraries
+-	cd $(PKGDIR)/link ; \
++	cd $(PKGDIR)/lib ; \
+           rm -f libnetpbm.$(NETPBMLIBSUFFIX); \
+           $(SYMLINK) ../lib/libnetpbm.$(NETPBMLIBSUFFIX).$(MAJ) \
+             libnetpbm.$(NETPBMLIBSUFFIX)
+ endif
+ ifeq ($(NETPBMLIBTYPE),dll)
+-	$(INSTALL) -c -m $(INSTALL_PERM_LIBS) libnetpbm.dll.a $(PKGDIR)/link
++	$(INSTALL) -c -m $(INSTALL_PERM_LIBS) libnetpbm.dll.a $(PKGDIR)/lib
+ endif
+ ifeq ($(NETPBMLIBTYPE),dylib)
+-	cd $(PKGDIR)/link/ ; \
++	cd $(PKGDIR)/lib/ ; \
+           rm -f libnetpbm.dylib; \
+ 	$(SYMLINK) ../lib/libnetpbm.$(MAJ).$(MIN).dylib libnetpbm.dylib
+ endif

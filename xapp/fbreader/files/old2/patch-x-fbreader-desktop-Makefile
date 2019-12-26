@@ -1,0 +1,24 @@
+--- ./fbreader/desktop/Makefile.orig	2014-01-05 20:17:25.000000000 +0300
++++ ./fbreader/desktop/Makefile	2014-01-05 22:13:02.000000000 +0300
+@@ -7,13 +7,13 @@
+ BINARY = $(DESTDIR)$(BINDIR)/FBReader
+ 
+ install:
+-	@strip $(BINARY)
+-	@install -d $(DESTDIR)/usr/local/share/applications
+-	@install -m 0644 desktop $(DESTDIR)/usr/local/share/applications/$(TARGET).desktop
+-	@install -d $(DESTDIR)$(IMAGEDIR)
+-	@install -m 0644 ../data/icons/application/$(TARGET_ARCH).png $(DESTDIR)$(IMAGEDIR)/FBReader.png
+-	@install -m 0644 ../data/default/config.desktop.xml $(SHARE_FBREADER)/default/config.xml
+-	@install -m 0644 ../data/default/keymap.desktop.xml $(SHARE_FBREADER)/default/keymap.xml
+-	@install -m 0644 ../data/default/styles.desktop.xml $(SHARE_FBREADER)/default/styles.xml
++	strip $(BINARY)
++	install -d $(DESTDIR)/usr/local/share/applications
++	install -m 0644 desktop $(DESTDIR)/usr/local/share/applications/$(TARGET).desktop
++	install -d $(DESTDIR)$(IMAGEDIR)
++	install -m 0644 ../data/icons/application/$(TARGET_ARCH).png $(DESTDIR)$(IMAGEDIR)/FBReader.png
++	install -m 0644 ../data/default/config.desktop.xml $(SHARE_FBREADER)/default/config.xml
++	install -m 0644 ../data/default/keymap.desktop.xml $(SHARE_FBREADER)/default/keymap.xml
++	install -m 0644 ../data/default/styles.desktop.xml $(SHARE_FBREADER)/default/styles.xml
+ 
+ clean:

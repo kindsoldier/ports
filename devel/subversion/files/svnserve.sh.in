@@ -1,0 +1,27 @@
+#!/bin/sh
+#
+# $Id$
+#
+# PROVIDE: svnserve
+# REQUIRE: LOGIN
+
+. /etc/rc.subr
+
+name="svnserve";
+
+rcvar="svnserve_enable"
+
+#pidfile="%%RUN_DIR%%/master.pid"
+
+procname="%%PREFIX%%/bin/${name}"
+command="%%PREFIX%%/bin/${name}"
+command_args=" --daemon "
+required_dirs="${svnserve_repos}"
+
+load_rc_config ${name}
+
+: ${svnserve_enable:="NO"}
+
+
+run_rc_command "$1"
+#EOF

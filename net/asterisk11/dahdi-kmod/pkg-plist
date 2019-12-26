@@ -1,0 +1,37 @@
+@cwd /
+boot/modules/dahdi-fw-hx8.bin.ko
+boot/modules/dahdi-fw-oct6114-064.bin.ko
+boot/modules/dahdi-fw-oct6114-128.bin.ko
+boot/modules/dahdi-fw-oct6114-256.bin.ko
+boot/modules/dahdi-fw-tc400m.bin.ko
+boot/modules/dahdi-fw-te820.bin.ko
+boot/modules/dahdi-fw-vpmoct032.bin.ko
+boot/modules/dahdi.ko
+boot/modules/dahdi_dynamic_eth.ko
+boot/modules/dahdi_dynamic_ethmf.ko
+boot/modules/dahdi_dynamic_loc.ko
+boot/modules/dahdi_echocan_jpah.ko
+boot/modules/dahdi_echocan_kb1.ko
+boot/modules/dahdi_echocan_mg2.ko
+boot/modules/dahdi_echocan_sec.ko
+boot/modules/dahdi_echocan_sec2.ko
+boot/modules/dahdi_transcode.ko
+boot/modules/dahdi_voicebus.ko
+boot/modules/dahdi_vpmadt032_loader.ko
+boot/modules/ng_dahdi_netdev.ko
+boot/modules/wcb4xxp.ko
+boot/modules/wcfxo.ko
+boot/modules/wct4xxp.ko
+boot/modules/wctc4xxp.ko
+boot/modules/wctdm.ko
+boot/modules/wctdm24xxp.ko
+boot/modules/wcte11xp.ko
+boot/modules/wcte12xp.ko
+
+
+@cwd /usr/local
+include/dahdi/dahdi_config.h
+include/dahdi/user.h
+include/dahdi/wctdm_user.h
+
+@dirrm include/dahdi

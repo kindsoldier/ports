@@ -1,0 +1,19 @@
+--- ./unix/configure.orig	2008-06-20 06:32:20.000000000 +0300
++++ ./unix/configure	2009-08-17 12:24:49.000000000 +0300
+@@ -224,7 +224,6 @@
+ [ -f /usr/ccs/lib/cpp ] && CPP="/usr/ccs/lib/cpp -P"
+ [ -f /usr/lib/cpp ] && CPP=/usr/lib/cpp
+ [ -f /lib/cpp ] && CPP=/lib/cpp
+-[ -f /usr/bin/cpp ] && CPP=/usr/bin/cpp
+ [ -f /xenix ] && CPP="${CC} -E"
+ [ -f /lynx.os ] && CPP="${CC} -E"
+ 
+@@ -244,7 +243,7 @@
+     echo "int foo() { return 0;}" > conftest.c
+     $CC -c conftest.c >/dev/null 2>/dev/null
+     echo Check if compiler generates underlines
+-    nm conftest.o | grep "(^|[^_])foo" >/dev/null 2>/dev/null
++    nm conftest.o | egrep "(^|[^_])foo" >/dev/null 2>/dev/null
+     [ $? -eq 0 ] && CPP="${CPP} -DNO_UNDERLINE"
+     if eval "$CPP crc_i386.S > _crc_i386.s 2>/dev/null"; then
+       if eval "$CC -c _crc_i386.s >/dev/null 2>/dev/null" && [ -f _crc_i386.o ]

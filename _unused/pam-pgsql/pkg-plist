@@ -1,0 +1,5 @@
+lib/pam_pgsql.la
+lib/pam_pgsql.so
+share/doc/pam-pgsql/README
+share/doc/pam-pgsql/sample.sql
+@dir share/doc/pam-pgsql

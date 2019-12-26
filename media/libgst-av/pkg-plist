@@ -1,0 +1,3 @@
+lib/gstreamer/libgstlibav.la
+lib/gstreamer/libgstlibav.so
+@dir lib/gstreamer

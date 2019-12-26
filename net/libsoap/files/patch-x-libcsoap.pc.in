@@ -1,0 +1,11 @@
+--- ./libcsoap.pc.in.orig	2006-03-06 15:28:21.000000000 +0200
++++ ./libcsoap.pc.in	2016-05-31 14:18:02.818440000 +0200
+@@ -6,6 +6,6 @@
+ Name: csoap
+ Description: C API for SOAP applications
+ Version: @csoap_version_dotted@
+-Libs: -L${libdir} -lcsoap-@csoap_release@ -lnanohttp-@nanohttp_release@ @XML_LIBS@
+-Cflags: @XML_CPPFLAGS@ -I${includedir}/libcsoap-@csoap_release@ -I${includedir}/nanohttp-@nanohttp_release@
++Libs: -L${libdir} -lcsoap -lnanohttp @XML_LIBS@
++Cflags: @XML_CPPFLAGS@ -I${includedir}
+ 

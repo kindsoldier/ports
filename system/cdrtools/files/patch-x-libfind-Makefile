@@ -1,0 +1,11 @@
+--- ./libfind/Makefile.orig	2006-09-14 15:32:27.000000000 +0300
++++ ./libfind/Makefile	2018-06-10 14:33:47.173313000 +0200
+@@ -5,7 +5,7 @@
+ include		$(SRCROOT)/$(RULESDIR)/rules.top
+ ###########################################################################
+ 
+-MK_FILES= libfind.mk libfind_p.mk $(NO_SHL)shlfind.mk
++MK_FILES= libfind.mk $(NO_SHL)shlfind.mk
+ 
+ ###########################################################################
+ include		$(SRCROOT)/$(RULESDIR)/rules.mks

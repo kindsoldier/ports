@@ -1,0 +1,49 @@
+--- ./src/gallium/targets/xvmc/Makefile.am.orig	2017-06-05 23:09:09.000000000 +0200
++++ ./src/gallium/targets/xvmc/Makefile.am	2019-04-01 16:30:16.629572000 +0200
+@@ -13,7 +13,7 @@
+ 	-shared \
+ 	-module \
+ 	-no-undefined \
+-	-version-number $(XVMC_MAJOR):$(XVMC_MINOR) \
++	-version-number $(XVMC_MAJOR):$(XVMC_MINOR):$(XVMC_MAJOR) \
+ 	$(GC_SECTIONS) \
+ 	$(LD_NO_UNDEFINED)
+ 
+@@ -69,24 +69,18 @@
+ # hardlink each megadriver instance, but don't actually have
+ # libXvMCgallium.so in the set of final installed files.
+ install-data-hook:
+-	$(AM_V_GEN)dest_dir=$(DESTDIR)/$(xvmcdir);			\
+-	for i in $(TARGET_DRIVERS); do					\
+-		j=libXvMCgallium.$(LIB_EXT);				\
+-		k=libXvMC$${i}.$(LIB_EXT);				\
+-		l=$${k}.$(XVMC_MAJOR).$(XVMC_MINOR).0;			\
+-		ln -f $${dest_dir}/$${j}.$(XVMC_MAJOR).$(XVMC_MINOR).0	\
+-		      $${dest_dir}/$${l};				\
+-		ln -sf $${l}						\
+-		       $${dest_dir}/$${k}.$(XVMC_MAJOR).$(XVMC_MINOR);	\
+-		ln -sf $${l}						\
+-		       $${dest_dir}/$${k}.$(XVMC_MAJOR);		\
+-		ln -sf $${l}						\
+-		       $${dest_dir}/$${k};				\
+-	done;								\
+-	$(RM) $${dest_dir}/libXvMCgallium.*;				\
+-	$(RM) -d $${dest_dir} &>/dev/null || true
++#	$(AM_V_GEN)dest_dir=$(DESTDIR)/$(xvmcdir);			\
++#	for i in $(TARGET_DRIVERS); do					\
++#		j=libXvMCgallium.$(LIB_EXT);				\
++#		k=libXvMC$${i}.$(LIB_EXT);				\
++#		l=$${k}.$(XVMC_MAJOR);			\
++#		ln -sf $${l}						\
++#		       $${dest_dir}/$${k};				\
++#	done;								\
++#	$(RM) $${dest_dir}/libXvMCgallium.*;				\
++#	$(RM) -d $${dest_dir} &>/dev/null || true
+ 
+ uninstall-hook:
+-	for i in $(TARGET_DRIVERS); do					\
+-		$(RM) $(DESTDIR)$(xvmcdir)/libXvMC$${i}.so{,.$(XVMC_MAJOR){,.$(XVMC_MINOR){,.0}}}; \
+-	done;
++#	for i in $(TARGET_DRIVERS); do					\
++#		$(RM) $(DESTDIR)$(xvmcdir)/libXvMC$${i}.so{,.$(XVMC_MAJOR){,.$(XVMC_MINOR){,.0}}}; \
++#	done;

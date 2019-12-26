@@ -1,0 +1,16 @@
+--- ./tests/Makefile.in.orig	2008-11-24 17:25:07.000000000 +0200
++++ ./tests/Makefile.in	2014-12-25 05:00:23.000000000 +0200
+@@ -204,11 +204,11 @@
+ 	-I$(top_builddir)/libgamin		\
+ 	-I$(top_srcdir)/libgamin
+ 
+-LDADD = $(top_builddir)/libgamin/libgamin-1.la
++LDADD = $(top_builddir)/libgamin/libgamin.la
+ testgam_SOURCES = testing.c
+ testgam_LDFLAGS = 
+ testgam_DEPENDENCIES = $(DEPS)
+-testgam_LDADD = $(LDADDS) -L$(top_builddir)/libgamin -lgamin-1
++testgam_LDADD = $(LDADDS) -L$(top_builddir)/libgamin -lgamin
+ all: all-am
+ 
+ .SUFFIXES:

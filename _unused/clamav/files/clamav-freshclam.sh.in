@@ -1,0 +1,24 @@
+#!/bin/sh
+
+# PROVIDE: freshclam
+# REQUIRE: LOGIN clamd
+# BEFORE: mail
+# KEYWORD: shutdown
+
+clamav_freshclam_enable="${clamav_freshclam_enable:=NO}"
+
+. /etc/rc.subr
+
+name=clamav_freshclam
+rcvar=`set_rcvar`
+
+command="%%PREFIX%%/bin/freshclam"
+pidfile="%%CL_RUN_DIR%%/freshclam.pid"
+command_args="--daemon -p ${pidfile}"
+required_dirs="%%CL_DB_DIR%%"
+required_files="%%PREFIX%%/etc/clamav/freshclam.conf"
+
+load_rc_config "$name"
+
+run_rc_command "$1"
+#EOF

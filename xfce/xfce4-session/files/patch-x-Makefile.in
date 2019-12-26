@@ -1,0 +1,10 @@
+--- ./Makefile.in.orig	2015-03-16 09:29:44.000000000 +0200
++++ ./Makefile.in	2015-08-18 15:07:34.044614000 +0200
+@@ -432,7 +432,6 @@
+ top_srcdir = @top_srcdir@
+ SUBDIRS = \
+ 	libxfsm								\
+-	doc								\
+ 	engines								\
+ 	icons								\
+ 	po								\

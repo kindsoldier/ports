@@ -1,0 +1,39 @@
+#!/bin/sh
+
+set -x
+
+
+case $2 in 
+    PRE-INSTALL)
+
+	NGINX_GROUP="%%NGINX_GROUP%%"
+	NGINX_OWNER="%%NGINX_OWNER%%"
+#	NGINX_GROUP_ID="%%NGINX_GROUP_ID%%"
+#	NGINX_OWNER_ID="%%NGINX_OWNER_ID%%"
+
+	PKG_PREFIX="%%PREFIX%%"
+#	NGINX_LOCALSTATEDIR="%%LOCALSTATEDIR%%"
+	NGINX_RUNDIR="%%NGINX_RUNDIR%%"
+	NGINX_LOGDIR="%%NGINX_LOGDIR%%"
+
+#	NGINX_NAME="nginx"
+#	NGINX_SHELL="/usr/sbin/nologin"
+
+#	pw group add ${NGINX_GROUP}  -g ${NGINX_GROUP_ID}
+#	pw group show ${NGINX_GROUP}
+#	pw user add ${NGINX_OWNER} -u ${NGINX_OWNER_ID} \
+#	    -g ${NGINX_GROUP}  \
+#	    -d ${PKG_PREFIX} \
+#	    -s "${NGINX_SHELL}" -u ${NGINX_OWNER_ID} \
+#	    -c "${NGINX_NAME}"
+#	pw group mod ${NGINX_GROUP} -M ${NGINX_OWNER}
+#	pw user show ${NGINX_OWNER}
+#	pw group show ${NGINX_GROUP}
+	install -d -o ${NGINX_OWNER} -g ${NGINX_GROUP} -m 0750 ${NGINX_LOGDIR}
+	install -d -o ${NGINX_OWNER} -g ${NGINX_GROUP} -m 0750 ${NGINX_RUNDIR}
+	;;
+    POST-INSTALL)
+	;;
+esac
+exit 0
+#EOF

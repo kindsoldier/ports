@@ -1,0 +1,49 @@
+--- ./Makefile.am.orig	2009-02-04 11:33:45.000000000 +0200
++++ ./Makefile.am	2009-09-14 22:58:17.000000000 +0300
+@@ -1,17 +1,17 @@
+ SUBDIRS = src csslint docs
+ SUBDIRS += tests
+ 
+-PKG_CONFIG_FILE_UNINSTALLED=libcroco-@LIBCROCO_MAJOR_VERSION@.@LIBCROCO_MINOR_VERSION@-uninstalled.pc
+-PKG_CONFIG_FILE=libcroco-@LIBCROCO_MAJOR_VERSION@.@LIBCROCO_MINOR_VERSION@.pc
++dnl PKG_CONFIG_FILE_UNINSTALLED=libcroco-uninstalled.pc
++PKG_CONFIG_FILE=libcroco.pc
+ 
+ pkgconfigdir=$(libdir)/pkgconfig
+ pkgconfig_DATA=$(PKG_CONFIG_FILE)
+ 
+-INCLUDE_DIR_NAME=@PACKAGE@-@LIBCROCO_MAJOR_VERSION@.@LIBCROCO_MINOR_VERSION@
++INCLUDE_DIR_NAME=@PACKAGE@
+ extraincludedir=$(includedir)/$INCLUDE_DIR_NAME
+ 
+-CROCO_CONFIG_FILE_UNINSTALLED=croco-@LIBCROCO_MAJOR_VERSION@.@LIBCROCO_MINOR_VERSION@-config-uninstalled
+-CROCO_CONFIG_FILE=croco-@LIBCROCO_MAJOR_VERSION@.@LIBCROCO_MINOR_VERSION@-config
++dnl CROCO_CONFIG_FILE_UNINSTALLED=croco-config-uninstalled
++CROCO_CONFIG_FILE=croco-config
+ bin_SCRIPTS=$(CROCO_CONFIG_FILE)
+ 
+ #man_MANS = croco-config.1
+@@ -22,22 +22,9 @@
+ all-local: $(PKG_CONFIG_FILE_UNINSTALLED) $(PKG_CONFIG_FILE) \
+ $(CROCO_CONFIG_FILE_UNINSTALLED) $(CROCO_CONFIG_FILE)
+ 
+-
+-%-@LIBCROCO_MAJOR_VERSION@.@LIBCROCO_MINOR_VERSION@.pc: %.pc
+-	cp $< $@
+-
+-%-@LIBCROCO_MAJOR_VERSION@.@LIBCROCO_MINOR_VERSION@-uninstalled.pc: %.pc
+-	cp $< $@
+-
+-%-@LIBCROCO_MAJOR_VERSION@.@LIBCROCO_MINOR_VERSION@-config: %-config
+-	cp $< $@
+-
+-%-@LIBCROCO_MAJOR_VERSION@.@LIBCROCO_MINOR_VERSION@-config-uninstalled: %-config
+-	cp $< $@
+-
+ clean-local: cleantest
+ distclean-local:
+-	-rm ./croco-0.6-config ./libcroco-0.6.pc ./libcroco-0.6-uninstalled.pc ./croco-0.6-config-uninstalled
++	-rm ./croco-config ./libcroco.pc ./libcroco-uninstalled.pc ./croco-config-uninstalled
+ 
+ cleantest:
+ 	if test -x $(top_srcdir)/tests/testctl ; then $(top_srcdir)/tests/testctl cleanup ; fi

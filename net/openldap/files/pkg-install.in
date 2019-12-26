@@ -1,0 +1,30 @@
+#!/bin/sh -x
+
+DB_DIR="%%DB_DIR%%"
+RUN_DIR="%%RUN_DIR%%"
+
+CONF_DIR="%%CONF_DIR%%"
+
+OWNER="%%OWNER%%"
+GROUP="%%GROUP%%"
+OWNER_ID="%%OWNER_ID%%"
+GROUP_ID="%%GROUP_ID%%"
+
+case $2 in 
+    PRE-INSTALL)
+	pw group add ${GROUP} -g ${GROUP_ID}
+	pw group show ${GROUP}
+	pw user add ${OWNER} -g ${GROUP} -d "/notexist" \
+	    -s "/usr/sbin/nologin" -u ${OWNER_ID} -g ${GROUP} \
+	    -c "openldap"
+	pw user show ${OWNER}
+	pw group mod ${GROUP} -M ${OWNER}
+	pw group show ${GROUP}
+
+	install -d -m 700 -o ${OWNER} -g ${GROUP} ${DB_DIR}
+	install -d -m 755 -o ${OWNER} -g ${GROUP} ${RUN_DIR}
+	;;
+    POST-INSTALL)
+	;;
+esac
+#EOF

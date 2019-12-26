@@ -1,0 +1,21 @@
+#!/bin/sh
+#
+# PROVIDE: slapd
+# BEFORE: DAEMON
+#
+. "%%RC_SUBR%%"
+
+name="slapd"
+rcvar="${name}_enable"
+command="%%PREFIX%%/sbin/${name}"
+procname="${command}"
+required_dirs="%%LDAP_RUN_DIR%%"
+required_files="%%LDAP_CONF_DIR%%/${name}.conf"
+
+load_rc_config $name
+
+: ${slapd_flags="-h \"ldap:// ldaps:// ldapi://\""}
+: ${slapd_enable="NO"}
+
+run_rc_command "$1"
+#EOF

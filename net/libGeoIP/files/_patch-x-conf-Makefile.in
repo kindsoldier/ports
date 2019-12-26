@@ -1,0 +1,11 @@
+--- ./conf/Makefile.in.orig	2011-11-05 00:22:09.000000000 +0300
++++ ./conf/Makefile.in	2011-11-05 00:22:34.732479000 +0300
+@@ -182,7 +182,7 @@
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-dist_sysconf_DATA = GeoIP.conf.default
++dist_sysconf_DATA = 
+ DEFAULT_CONFIG_FILE = $(sysconfdir)/GeoIP.conf
+ all: all-am
+ 

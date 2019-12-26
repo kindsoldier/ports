@@ -1,0 +1,38 @@
+include/cairomm/cairomm/cairomm.h
+include/cairomm/cairomm/context.h
+include/cairomm/cairomm/device.h
+include/cairomm/cairomm/enums.h
+include/cairomm/cairomm/exception.h
+include/cairomm/cairomm/fontface.h
+include/cairomm/cairomm/fontoptions.h
+include/cairomm/cairomm/matrix.h
+include/cairomm/cairomm/path.h
+include/cairomm/cairomm/pattern.h
+include/cairomm/cairomm/quartz_font.h
+include/cairomm/cairomm/quartz_surface.h
+include/cairomm/cairomm/refptr.h
+include/cairomm/cairomm/region.h
+include/cairomm/cairomm/scaledfont.h
+include/cairomm/cairomm/script_surface.h
+include/cairomm/cairomm/script.h
+include/cairomm/cairomm/surface.h
+include/cairomm/cairomm/types.h
+include/cairomm/cairomm/win32_font.h
+include/cairomm/cairomm/win32_surface.h
+include/cairomm/cairomm/xlib_surface.h
+lib/cairomm/include/cairommconfig.h
+lib/libcairomm.la
+lib/libcairomm.so
+lib/libcairomm.so.5
+lib/pkgconfig/cairomm-ft.pc
+lib/pkgconfig/cairomm-pdf.pc
+lib/pkgconfig/cairomm-png.pc
+lib/pkgconfig/cairomm-ps.pc
+lib/pkgconfig/cairomm-svg.pc
+lib/pkgconfig/cairomm-xlib-xrender.pc
+lib/pkgconfig/cairomm-xlib.pc
+lib/pkgconfig/cairomm.pc
+@dir include/cairomm/cairomm
+@dir include/cairomm
+@dir lib/cairomm/include
+@dir lib/cairomm

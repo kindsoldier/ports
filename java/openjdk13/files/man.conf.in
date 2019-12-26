@@ -1,0 +1,6 @@
+#
+# $Id$
+#
+MANPATH %%PREFIX%%/%%PORTNAME%%/man
+#EOF
+

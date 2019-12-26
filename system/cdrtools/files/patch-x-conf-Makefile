@@ -1,0 +1,13 @@
+--- ./conf/Makefile.orig	2007-10-24 19:28:58.000000000 +0300
++++ ./conf/Makefile	2018-06-10 14:33:47.092558000 +0200
+@@ -47,8 +47,8 @@
+ 
+ ###########################################################################
+ # Now done in rules.top
+-#include		$(SRCROOT)/$(RULESDIR)/rules.cnf
+-include		$(SRCROOT)/$(RULESDIR)/rules.ins
++include		$(SRCROOT)/$(RULESDIR)/rules.cnf
++#include		$(SRCROOT)/$(RULESDIR)/rules.in0
+ ###########################################################################
+ 
+ OTHERTARGETS=	clean ibins depend rmdep \

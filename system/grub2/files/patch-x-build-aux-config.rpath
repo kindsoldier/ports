@@ -1,0 +1,20 @@
+--- ./build-aux/config.rpath.orig	2012-03-07 21:47:10.000000000 +0300
++++ ./build-aux/config.rpath	2015-10-14 16:02:17.242763000 +0200
+@@ -348,7 +348,7 @@
+     dgux*)
+       hardcode_libdir_flag_spec='-L$libdir'
+       ;;
+-    freebsd1*)
++    freebsd1.*)
+       ld_shlibs=no
+       ;;
+     freebsd2.2*)
+@@ -508,7 +508,7 @@
+     ;;
+   dgux*)
+     ;;
+-  freebsd1*)
++  freebsd1.*)
+     ;;
+   kfreebsd*-gnu)
+     ;;

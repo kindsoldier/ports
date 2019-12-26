@@ -1,0 +1,7 @@
+include/linebreak/linebreak.h
+include/linebreak/linebreakdef.h
+lib/liblinebreak.a
+lib/liblinebreak.la
+lib/liblinebreak.so
+lib/liblinebreak.so.2
+@dir include/linebreak

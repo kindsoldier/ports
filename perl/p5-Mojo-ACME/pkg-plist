@@ -1,0 +1,29 @@
+%%PERL5_MAN3%%/Mojo::ACME::CA.3.gz
+%%PERL5_MAN3%%/Mojo::ACME::ChallengeServer.3.gz
+%%PERL5_MAN3%%/Mojo::ACME::Key.3.gz
+%%PERL5_MAN3%%/Mojo::ACME.3.gz
+%%PERL5_MAN3%%/Mojolicious::Plugin::ACME::Command::acme::account::register.3.gz
+%%PERL5_MAN3%%/Mojolicious::Plugin::ACME::Command::acme::account.3.gz
+%%PERL5_MAN3%%/Mojolicious::Plugin::ACME::Command::acme::cert::generate.3.gz
+%%PERL5_MAN3%%/Mojolicious::Plugin::ACME::Command::acme::cert.3.gz
+%%PERL5_MAN3%%/Mojolicious::Plugin::ACME::Command::acme.3.gz
+%%PERL5_MAN3%%/Mojolicious::Plugin::ACME::Command.3.gz
+%%PERL5_MAN3%%/Mojolicious::Plugin::ACME.3.gz
+
+%%SITE_PERL%%/Mojo/ACME.pm
+%%SITE_PERL%%/Mojo/ACME/CA.pm
+%%SITE_PERL%%/Mojo/ACME/ChallengeServer.pm
+%%SITE_PERL%%/Mojo/ACME/Key.pm
+%%SITE_PERL%%/Mojolicious/Plugin/ACME.pm
+%%SITE_PERL%%/Mojolicious/Plugin/ACME/Command.pm
+%%SITE_PERL%%/Mojolicious/Plugin/ACME/Command/acme.pm
+%%SITE_PERL%%/Mojolicious/Plugin/ACME/Command/acme/account.pm
+%%SITE_PERL%%/Mojolicious/Plugin/ACME/Command/acme/account/register.pm
+%%SITE_PERL%%/Mojolicious/Plugin/ACME/Command/acme/cert.pm
+%%SITE_PERL%%/Mojolicious/Plugin/ACME/Command/acme/cert/generate.pm
+@dir %%SITE_PERL%%/Mojo/ACME
+@dir %%SITE_PERL%%/Mojolicious/Plugin/ACME/Command/acme/account
+@dir %%SITE_PERL%%/Mojolicious/Plugin/ACME/Command/acme/cert
+@dir %%SITE_PERL%%/Mojolicious/Plugin/ACME/Command/acme
+@dir %%SITE_PERL%%/Mojolicious/Plugin/ACME/Command
+@dir %%SITE_PERL%%/Mojolicious/Plugin/ACME

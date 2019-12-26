@@ -1,0 +1,13 @@
+bin/zint
+bin/zint-qt
+include/qzint.h
+include/zint.h
+lib/libQZint.so
+lib/libQZint.so.2
+lib/libzint.so
+lib/libzint.so.2
+share/applications/zint-qt.desktop
+share/cmake/Modules/FindZint.cmake
+share/pixmaps/zint.png
+@dir share/cmake/Modules
+@dir share/cmake

@@ -1,0 +1,47 @@
+--- ./src/libcmis/Makefile.in.orig	2015-02-02 22:36:11.000000000 +0200
++++ ./src/libcmis/Makefile.in	2015-02-02 23:01:17.000000000 +0200
+@@ -124,7 +124,7 @@
+ 	"$(DESTDIR)$(libcmis_la_includedir)"
+ LTLIBRARIES = $(lib_LTLIBRARIES) $(noinst_LTLIBRARIES)
+ am__DEPENDENCIES_1 =
+-libcmis_la_DEPENDENCIES = libcmis.la \
++libcmis_la_DEPENDENCIES = \
+ 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+ 	$(am__DEPENDENCIES_1)
+ am_libcmis_la_OBJECTS = dummy.lo
+@@ -394,7 +394,7 @@
+ 	xmlserializable.hxx \
+ 	libcmis.hxx
+ 
+-noinst_LTLIBRARIES = libcmis.la
++#noinst_LTLIBRARIES = libcmis.la
+ lib_LTLIBRARIES = libcmis.la
+ libcmis_la_SOURCES = \
+ 	dummy.cxx
+@@ -477,7 +477,6 @@
+ 
+ libcmis_la_LDFLAGS = -export-dynamic -no-undefined -version-info 4:1:0
+ libcmis_la_LIBADD = \
+-	libcmis.la \
+ 	$(XML2_LIBS) \
+ 	$(CURL_LIBS) \
+ 	$(BOOST_SMART_PTR_LIBS) \
+@@ -565,11 +564,15 @@
+ 	  rm -f $${locs}; \
+ 	}
+ 
+-libcmis.la: $(libcmis_la_OBJECTS) $(libcmis_la_DEPENDENCIES) $(EXTRA_libcmis_la_DEPENDENCIES) 
+-	$(AM_V_CXXLD)$(libcmis_la_LINK) -rpath $(libdir) $(libcmis_la_OBJECTS) $(libcmis_la_LIBADD) $(LIBS)
++#libcmis.la: $(libcmis_la_OBJECTS) $(libcmis_la_DEPENDENCIES) $(EXTRA_libcmis_la_DEPENDENCIES) 
++#	$(AM_V_CXXLD)$(libcmis_la_LINK) -rpath $(libdir) $(libcmis_la_OBJECTS) $(libcmis_la_LIBADD) $(LIBS)
++
++#libcmis.la: $(libcmis_la_OBJECTS) $(libcmis_la_DEPENDENCIES) $(EXTRA_libcmis_la_DEPENDENCIES) 
++#	$(AM_V_CXXLD)$(CXXLINK)  $(libcmis_la_OBJECTS) $(libcmis_la_LIBADD) $(LIBS)
+ 
+ libcmis.la: $(libcmis_la_OBJECTS) $(libcmis_la_DEPENDENCIES) $(EXTRA_libcmis_la_DEPENDENCIES) 
+-	$(AM_V_CXXLD)$(CXXLINK)  $(libcmis_la_OBJECTS) $(libcmis_la_LIBADD) $(LIBS)
++	$(AM_V_CXXLD)$(libcmis_la_LINK) -rpath $(libdir) $(libcmis_la_OBJECTS) $(LIBS)
++#	$(AM_V_CXXLD)$(CXXLINK)  $(libcmis_la_OBJECTS) $(LIBS)
+ 
+ mostlyclean-compile:
+ 	-rm -f *.$(OBJEXT)

@@ -1,0 +1,18 @@
+--- ./src/Makefile.am.orig	2017-05-03 22:16:37.000000000 +0200
++++ ./src/Makefile.am	2019-03-12 09:21:10.265638000 +0200
+@@ -10,12 +10,12 @@
+ endif
+ 
+ if ENABLE_LIBFL
+-lib_LTLIBRARIES = libfl.la
++lib_LTLIBRARIES = libgfl.la
+ endif
+-libfl_la_SOURCES = \
++libgfl_la_SOURCES = \
+ 	libmain.c \
+ 	libyywrap.c
+-libfl_la_LDFLAGS = -version-info @SHARED_VERSION_INFO@
++libgfl_la_LDFLAGS = -version-info @SHARED_VERSION_INFO@
+ 
+ stage1flex_SOURCES = \
+ 	scan.l \

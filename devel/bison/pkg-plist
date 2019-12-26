@@ -1,0 +1,221 @@
+bin/bison
+man/man1/bison.1.gz
+share/aclocal/bison-i18n.m4
+share/bison/m4sugar/foreach.m4
+share/bison/m4sugar/m4sugar.m4
+share/bison/README
+share/bison/skeletons/bison.m4
+share/bison/skeletons/c-like.m4
+share/bison/skeletons/c-skel.m4
+share/bison/skeletons/c.m4
+share/bison/skeletons/c++-skel.m4
+share/bison/skeletons/c++.m4
+share/bison/skeletons/d-skel.m4
+share/bison/skeletons/d.m4
+share/bison/skeletons/glr.c
+share/bison/skeletons/glr.cc
+share/bison/skeletons/java-skel.m4
+share/bison/skeletons/java.m4
+share/bison/skeletons/lalr1.cc
+share/bison/skeletons/lalr1.d
+share/bison/skeletons/lalr1.java
+share/bison/skeletons/location.cc
+share/bison/skeletons/README-D.txt
+share/bison/skeletons/stack.hh
+share/bison/skeletons/variant.hh
+share/bison/skeletons/yacc.c
+share/bison/xslt/bison.xsl
+share/bison/xslt/xml2dot.xsl
+share/bison/xslt/xml2text.xsl
+share/bison/xslt/xml2xhtml.xsl
+share/examples/bison/c/lexcalc/Makefile
+share/examples/bison/c/lexcalc/parse.y
+share/examples/bison/c/lexcalc/README.md
+share/examples/bison/c/lexcalc/scan.l
+share/examples/bison/c/mfcalc/calc.h
+share/examples/bison/c/mfcalc/Makefile
+share/examples/bison/c/mfcalc/mfcalc.y
+share/examples/bison/c/README.md
+share/examples/bison/c/rpcalc/Makefile
+share/examples/bison/c/rpcalc/rpcalc.y
+share/examples/bison/c++/calc++/calc++.cc
+share/examples/bison/c++/calc++/driver.cc
+share/examples/bison/c++/calc++/driver.hh
+share/examples/bison/c++/calc++/Makefile
+share/examples/bison/c++/calc++/parser.yy
+share/examples/bison/c++/calc++/README.md
+share/examples/bison/c++/calc++/scanner.ll
+share/examples/bison/c++/Makefile
+share/examples/bison/c++/README.md
+share/examples/bison/c++/simple.yy
+share/examples/bison/c++/variant-11.yy
+share/examples/bison/c++/variant.yy
+share/examples/bison/d/calc.y
+share/examples/bison/d/Makefile
+share/examples/bison/d/README.md
+share/examples/bison/java/Calc.y
+share/examples/bison/java/Makefile
+share/examples/bison/java/README.md
+share/examples/bison/README.md
+share/locale/ast/LC_MESSAGES/bison-runtime.mo
+share/locale/ca/LC_MESSAGES/bison-runtime.mo
+share/locale/ca/LC_MESSAGES/bison.mo
+share/locale/da/LC_MESSAGES/bison-runtime.mo
+share/locale/da/LC_MESSAGES/bison.mo
+share/locale/de/LC_MESSAGES/bison-runtime.mo
+share/locale/de/LC_MESSAGES/bison.mo
+share/locale/el/LC_MESSAGES/bison-runtime.mo
+share/locale/el/LC_MESSAGES/bison.mo
+share/locale/eo/LC_MESSAGES/bison-runtime.mo
+share/locale/eo/LC_MESSAGES/bison.mo
+share/locale/es/LC_MESSAGES/bison-runtime.mo
+share/locale/es/LC_MESSAGES/bison.mo
+share/locale/et/LC_MESSAGES/bison-runtime.mo
+share/locale/et/LC_MESSAGES/bison.mo
+share/locale/fi/LC_MESSAGES/bison-runtime.mo
+share/locale/fi/LC_MESSAGES/bison.mo
+share/locale/fr/LC_MESSAGES/bison-runtime.mo
+share/locale/fr/LC_MESSAGES/bison.mo
+share/locale/ga/LC_MESSAGES/bison-runtime.mo
+share/locale/ga/LC_MESSAGES/bison.mo
+share/locale/gl/LC_MESSAGES/bison-runtime.mo
+share/locale/hr/LC_MESSAGES/bison-runtime.mo
+share/locale/hr/LC_MESSAGES/bison.mo
+share/locale/hu/LC_MESSAGES/bison-runtime.mo
+share/locale/ia/LC_MESSAGES/bison-runtime.mo
+share/locale/id/LC_MESSAGES/bison-runtime.mo
+share/locale/id/LC_MESSAGES/bison.mo
+share/locale/it/LC_MESSAGES/bison-runtime.mo
+share/locale/it/LC_MESSAGES/bison.mo
+share/locale/ja/LC_MESSAGES/bison-runtime.mo
+share/locale/ja/LC_MESSAGES/bison.mo
+share/locale/ky/LC_MESSAGES/bison-runtime.mo
+share/locale/lt/LC_MESSAGES/bison-runtime.mo
+share/locale/lv/LC_MESSAGES/bison-runtime.mo
+share/locale/ms/LC_MESSAGES/bison-runtime.mo
+share/locale/ms/LC_MESSAGES/bison.mo
+share/locale/nb/LC_MESSAGES/bison-runtime.mo
+share/locale/nb/LC_MESSAGES/bison.mo
+share/locale/nl/LC_MESSAGES/bison-runtime.mo
+share/locale/nl/LC_MESSAGES/bison.mo
+share/locale/pl/LC_MESSAGES/bison-runtime.mo
+share/locale/pl/LC_MESSAGES/bison.mo
+share/locale/pt_BR/LC_MESSAGES/bison-runtime.mo
+share/locale/pt_BR/LC_MESSAGES/bison.mo
+share/locale/pt/LC_MESSAGES/bison-runtime.mo
+share/locale/pt/LC_MESSAGES/bison.mo
+share/locale/ro/LC_MESSAGES/bison-runtime.mo
+share/locale/ro/LC_MESSAGES/bison.mo
+share/locale/ru/LC_MESSAGES/bison-runtime.mo
+share/locale/ru/LC_MESSAGES/bison.mo
+share/locale/sl/LC_MESSAGES/bison-runtime.mo
+share/locale/sq/LC_MESSAGES/bison-runtime.mo
+share/locale/sr/LC_MESSAGES/bison-runtime.mo
+share/locale/sr/LC_MESSAGES/bison.mo
+share/locale/sv/LC_MESSAGES/bison-runtime.mo
+share/locale/sv/LC_MESSAGES/bison.mo
+share/locale/th/LC_MESSAGES/bison-runtime.mo
+share/locale/tr/LC_MESSAGES/bison-runtime.mo
+share/locale/tr/LC_MESSAGES/bison.mo
+share/locale/uk/LC_MESSAGES/bison-runtime.mo
+share/locale/uk/LC_MESSAGES/bison.mo
+share/locale/vi/LC_MESSAGES/bison-runtime.mo
+share/locale/vi/LC_MESSAGES/bison.mo
+share/locale/zh_CN/LC_MESSAGES/bison-runtime.mo
+share/locale/zh_CN/LC_MESSAGES/bison.mo
+share/locale/zh_TW/LC_MESSAGES/bison-runtime.mo
+share/locale/zh_TW/LC_MESSAGES/bison.mo
+@dir share/aclocal
+@dir share/bison/m4sugar
+@dir share/bison/skeletons
+@dir share/bison/xslt
+@dir share/bison
+@dir share/examples/bison/c/lexcalc
+@dir share/examples/bison/c/mfcalc
+@dir share/examples/bison/c/rpcalc
+@dir share/examples/bison/c
+@dir share/examples/bison/c++/calc++
+@dir share/examples/bison/c++
+@dir share/examples/bison/d
+@dir share/examples/bison/java
+@dir share/examples/bison
+@dir share/examples
+@dir share/locale/ast/LC_MESSAGES
+@dir share/locale/ast
+@dir share/locale/ca/LC_MESSAGES
+@dir share/locale/ca
+@dir share/locale/da/LC_MESSAGES
+@dir share/locale/da
+@dir share/locale/de/LC_MESSAGES
+@dir share/locale/de
+@dir share/locale/el/LC_MESSAGES
+@dir share/locale/el
+@dir share/locale/eo/LC_MESSAGES
+@dir share/locale/eo
+@dir share/locale/es/LC_MESSAGES
+@dir share/locale/es
+@dir share/locale/et/LC_MESSAGES
+@dir share/locale/et
+@dir share/locale/fi/LC_MESSAGES
+@dir share/locale/fi
+@dir share/locale/fr/LC_MESSAGES
+@dir share/locale/fr
+@dir share/locale/ga/LC_MESSAGES
+@dir share/locale/ga
+@dir share/locale/gl/LC_MESSAGES
+@dir share/locale/gl
+@dir share/locale/hr/LC_MESSAGES
+@dir share/locale/hr
+@dir share/locale/hu/LC_MESSAGES
+@dir share/locale/hu
+@dir share/locale/ia/LC_MESSAGES
+@dir share/locale/ia
+@dir share/locale/id/LC_MESSAGES
+@dir share/locale/id
+@dir share/locale/it/LC_MESSAGES
+@dir share/locale/it
+@dir share/locale/ja/LC_MESSAGES
+@dir share/locale/ja
+@dir share/locale/ky/LC_MESSAGES
+@dir share/locale/ky
+@dir share/locale/lt/LC_MESSAGES
+@dir share/locale/lt
+@dir share/locale/lv/LC_MESSAGES
+@dir share/locale/lv
+@dir share/locale/ms/LC_MESSAGES
+@dir share/locale/ms
+@dir share/locale/nb/LC_MESSAGES
+@dir share/locale/nb
+@dir share/locale/nl/LC_MESSAGES
+@dir share/locale/nl
+@dir share/locale/pl/LC_MESSAGES
+@dir share/locale/pl
+@dir share/locale/pt/LC_MESSAGES
+@dir share/locale/pt
+@dir share/locale/pt_BR/LC_MESSAGES
+@dir share/locale/pt_BR
+@dir share/locale/ro/LC_MESSAGES
+@dir share/locale/ro
+@dir share/locale/ru/LC_MESSAGES
+@dir share/locale/ru
+@dir share/locale/sl/LC_MESSAGES
+@dir share/locale/sl
+@dir share/locale/sq/LC_MESSAGES
+@dir share/locale/sq
+@dir share/locale/sr/LC_MESSAGES
+@dir share/locale/sr
+@dir share/locale/sv/LC_MESSAGES
+@dir share/locale/sv
+@dir share/locale/th/LC_MESSAGES
+@dir share/locale/th
+@dir share/locale/tr/LC_MESSAGES
+@dir share/locale/tr
+@dir share/locale/uk/LC_MESSAGES
+@dir share/locale/uk
+@dir share/locale/vi/LC_MESSAGES
+@dir share/locale/vi
+@dir share/locale/zh_CN/LC_MESSAGES
+@dir share/locale/zh_CN
+@dir share/locale/zh_TW/LC_MESSAGES
+@dir share/locale/zh_TW
+@dir share/locale

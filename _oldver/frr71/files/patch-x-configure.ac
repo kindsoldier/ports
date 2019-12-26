@@ -1,0 +1,20 @@
+--- ./configure.ac.orig	2019-06-18 08:10:14.000000000 +0200
++++ ./configure.ac	2019-09-28 17:14:15.352560000 +0200
+@@ -397,7 +397,7 @@
+ 	[ test "x$withval" != "xno" && with_pkg_git_version="yes" ])
+ AC_ARG_WITH([vtysh_pager],
+ 	AS_HELP_STRING([--with-vtysh-pager=PAGER], [control what pager is compiled in as default]),
+-	VTYSH_PAGER=$withval, VTYSH_PAGER="more")
++	VTYSH_PAGER=$withval, VTYSH_PAGER="cat")
+ AC_ARG_ENABLE([vtysh],
+   AS_HELP_STRING([--disable-vtysh], [do not build integrated vty shell for FRR]))
+ AC_ARG_ENABLE([doc],
+@@ -2237,7 +2237,7 @@
+ AC_DEFINE_UNQUOTED([MODULE_PATH], ["$CFG_MODULE"], [path to modules])
+ AC_DEFINE_UNQUOTED([YANG_MODELS_PATH], ["$CFG_YANGMODELS"], [path to YANG data models])
+ AC_DEFINE_UNQUOTED([LIBYANG_PLUGINS_PATH], ["$CFG_LIBYANG_PLUGINS"], [path to libyang plugins])
+-AC_DEFINE_UNQUOTED([WATCHFRR_SH_PATH], ["${CFG_SBIN%/}/watchfrr.sh"], [path to watchfrr.sh])
++AC_DEFINE_UNQUOTED([WATCHFRR_SH_PATH], ["/usr/sbin/service"], [path to service])
+ 
+ dnl ------------------------------------
+ dnl Enable RPKI and add librtr to libs

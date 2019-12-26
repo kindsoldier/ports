@@ -1,0 +1,27 @@
+bin/pcp_attach_node
+bin/pcp_detach_node
+bin/pcp_node_count
+bin/pcp_node_info
+bin/pcp_pool_status
+bin/pcp_proc_count
+bin/pcp_proc_info
+bin/pcp_promote_node
+bin/pcp_recovery_node
+bin/pcp_stop_pgpool
+bin/pcp_systemdb_info
+bin/pcp_watchdog_info
+bin/pg_md5
+bin/pgpool
+include/libpcp_ext.h
+include/pcp.h
+include/pool_process_reporting.h
+include/pool_type.h
+lib/libpcp.a
+lib/libpcp.la
+lib/libpcp.so
+lib/libpcp.so.0
+share/pgpool-II/insert_lock.sql
+share/pgpool-II/pgpool.pam
+share/pgpool-II/system_db.sql
+man/man8/pgpool.8.gz
+@dir share/pgpool-II

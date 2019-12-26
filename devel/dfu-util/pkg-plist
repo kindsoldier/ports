@@ -1,0 +1,4 @@
+bin/dfu-prefix
+bin/dfu-suffix
+bin/dfu-util
+man/man1/dfu-util.1.gz

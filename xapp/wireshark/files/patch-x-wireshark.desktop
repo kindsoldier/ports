@@ -1,0 +1,12 @@
+--- ./wireshark.desktop.orig	2016-07-27 20:27:01.000000000 +0200
++++ ./wireshark.desktop	2017-09-21 21:34:35.951224000 +0200
+@@ -72,7 +72,6 @@
+ TryExec=wireshark
+ Exec=wireshark %f
+ Terminal=false
+-MimeType=application/vnd.tcpdump.pcap;application/x-pcapng;application/x-snoop;application/x-iptrace;application/x-lanalyzer;application/x-nettl;application/x-radcom;application/x-etherpeek;application/x-visualnetworks;application/x-netinstobserver;application/x-5view;
++MimeType=application/vnd.tcpdump.pcap;application/x-pcapng;application/x-snoop;application/x-iptrace;application/x-lanalyzer;application/x-nettl;application/x-radcom;application/x-etherpeek;application/x-visualnetworks;application/x-netinstobserver;application/x-5view
+ # Category entry according to:
+-# http://standards.freedesktop.org/menu-spec/1.0/
+-Categories=System;Monitor;GTK;
++Categories=Network;Monitor;GTK;

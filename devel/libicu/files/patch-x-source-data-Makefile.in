@@ -1,0 +1,11 @@
+--- .//data/Makefile.in.orig	2014-02-27 22:23:50.000000000 +0300
++++ .//data/Makefile.in	2014-12-23 18:26:20.000000000 +0200
+@@ -25,7 +25,7 @@
+ PKGDATA_OPTS = -O $(top_builddir)/data/icupkg.inc
+ endif
+ ifeq ($(PKGDATA_VERSIONING),)
+-PKGDATA_VERSIONING = -r $(SO_TARGET_VERSION)
++PKGDATA_VERSIONING = -r $(SO_TARGET_VERSION_MAJOR)
+ endif
+ 
+ # This allows all the data to be in one directory

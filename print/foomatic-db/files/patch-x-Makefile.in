@@ -1,0 +1,29 @@
+--- ./Makefile.in.orig	2014-09-04 03:41:27.000000000 +0300
++++ ./Makefile.in	2015-01-05 00:48:17.000000000 +0200
+@@ -67,6 +67,7 @@
+ 	install -d $(DESTDIR)$(LIBDIR)/db/source/opt
+ 	install -d $(DESTDIR)$(LIBDIR)/db/source/PPD
+ 	install -d $(DESTDIR)$(LIBDIR)/xmlschema
++	install -d $(DESTDIR)$(datadir)/cups/model
+ 	cp db/oldprinterids $(DESTDIR)$(LIBDIR)/db
+ 	cp db/source/printer/*.xml $(DESTDIR)$(LIBDIR)/db/source/printer
+ 	( cd db/source/driver/; \
+@@ -76,13 +77,11 @@
+ 	cp db/source/opt/*.xml $(DESTDIR)$(LIBDIR)/db/source/opt
+ 	( cd db/source && tar cf - --exclude=.svn PPD ) | \
+ 	  ( cd $(DESTDIR)$(LIBDIR)/db/source && tar xf -)
+-	if test $(GZIP) != GZIP_NOT_FOUND -a $(GZIP_PPDS) != no ; then \
+-	  GZIP='' find $(DESTDIR)$(LIBDIR)/db/source/PPD -name "*.ppd" -exec $(GZIP) "{}" \; ; \
+-	fi
+-	if test $(CUPS_PPDS) != CUPS_PPDS_NOT_FOUND -a $(PPDS_TO_CUPS) != no ; then \
+-	  install -d $(DESTDIR)$(CUPS_PPDS); \
+-	  ln -sf $(LIBDIR)/db/source/PPD $(DESTDIR)$(CUPS_PPDS)/foomatic-db-ppds; \
+-	fi
++	cd $(DESTDIR)$(LIBDIR)/db/source && mv PPD ppd
++#	if test $(GZIP) != GZIP_NOT_FOUND -a $(GZIP_PPDS) != no ; then \
++#	  GZIP='' find $(DESTDIR)$(LIBDIR)/db/source/ppd -name "*.ppd" -exec $(GZIP) "{}" \; ; \
++#	fi
++	ln -sf $(LIBDIR)/db/source/ppd $(DESTDIR)$(datadir)/cups/model/foomatic-db
+ 	cp xmlschema/*.xsd $(DESTDIR)$(LIBDIR)/xmlschema
+ 
+ build:

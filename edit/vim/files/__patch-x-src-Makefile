@@ -1,0 +1,148 @@
+--- ./src/Makefile.orig	2013-08-10 15:21:15.000000000 +0300
++++ ./src/Makefile	2013-11-19 16:49:53.000000000 +0300
+@@ -954,7 +954,7 @@
+ ### Location of Vim files (should not need to be changed, and  {{{1
+ ### some things might not work when they are changed!)
+ VIMDIR = /vim
+-VIMRTDIR = /vim$(VIMMAJOR)$(VIMMINOR)
++VIMRTDIR = 
+ HELPSUBDIR = /doc
+ COLSUBDIR = /colors
+ SYNSUBDIR = /syntax
+@@ -2084,57 +2084,57 @@
+ 
+ # install the language specific files for tools, if they were unpacked
+ install-tool-languages:
+-	-$(SHELL) ./installman.sh xxd $(DEST_MAN_FR) "-fr" $(INSTALLMANARGS)
+-	-$(SHELL) ./installman.sh xxd $(DEST_MAN_FR_I) "-fr" $(INSTALLMANARGS)
+-	-$(SHELL) ./installman.sh xxd $(DEST_MAN_FR_U) "-fr.UTF-8" $(INSTALLMANARGS)
+-	-$(SHELL) ./installman.sh xxd $(DEST_MAN_IT) "-it" $(INSTALLMANARGS)
+-	-$(SHELL) ./installman.sh xxd $(DEST_MAN_IT_I) "-it" $(INSTALLMANARGS)
+-	-$(SHELL) ./installman.sh xxd $(DEST_MAN_IT_U) "-it.UTF-8" $(INSTALLMANARGS)
+-	-$(SHELL) ./installman.sh xxd $(DEST_MAN_JA_U) "-ja.UTF-8" $(INSTALLMANARGS)
+-	-$(SHELL) ./installman.sh xxd $(DEST_MAN_PL) "-pl" $(INSTALLMANARGS)
+-	-$(SHELL) ./installman.sh xxd $(DEST_MAN_PL_I) "-pl" $(INSTALLMANARGS)
+-	-$(SHELL) ./installman.sh xxd $(DEST_MAN_PL_U) "-pl.UTF-8" $(INSTALLMANARGS)
+-	-$(SHELL) ./installman.sh xxd $(DEST_MAN_RU) "-ru" $(INSTALLMANARGS)
+-	-$(SHELL) ./installman.sh xxd $(DEST_MAN_RU_U) "-ru.UTF-8" $(INSTALLMANARGS)
++#	-$(SHELL) ./installman.sh xxd $(DEST_MAN_FR) "-fr" $(INSTALLMANARGS)
++#	-$(SHELL) ./installman.sh xxd $(DEST_MAN_FR_I) "-fr" $(INSTALLMANARGS)
++#	-$(SHELL) ./installman.sh xxd $(DEST_MAN_FR_U) "-fr.UTF-8" $(INSTALLMANARGS)
++#	-$(SHELL) ./installman.sh xxd $(DEST_MAN_IT) "-it" $(INSTALLMANARGS)
++#	-$(SHELL) ./installman.sh xxd $(DEST_MAN_IT_I) "-it" $(INSTALLMANARGS)
++#	-$(SHELL) ./installman.sh xxd $(DEST_MAN_IT_U) "-it.UTF-8" $(INSTALLMANARGS)
++#	-$(SHELL) ./installman.sh xxd $(DEST_MAN_JA_U) "-ja.UTF-8" $(INSTALLMANARGS)
++#	-$(SHELL) ./installman.sh xxd $(DEST_MAN_PL) "-pl" $(INSTALLMANARGS)
++#	-$(SHELL) ./installman.sh xxd $(DEST_MAN_PL_I) "-pl" $(INSTALLMANARGS)
++#	-$(SHELL) ./installman.sh xxd $(DEST_MAN_PL_U) "-pl.UTF-8" $(INSTALLMANARGS)
++#	-$(SHELL) ./installman.sh xxd $(DEST_MAN_RU) "-ru" $(INSTALLMANARGS)
++#	-$(SHELL) ./installman.sh xxd $(DEST_MAN_RU_U) "-ru.UTF-8" $(INSTALLMANARGS)
+ 
+ # install the language specific files, if they were unpacked
+ install-languages: languages $(DEST_LANG) $(DEST_KMAP)
+-	-$(SHELL) ./installman.sh install $(DEST_MAN_FR) "-fr" $(INSTALLMANARGS)
+-	-$(SHELL) ./installman.sh install $(DEST_MAN_FR_I) "-fr" $(INSTALLMANARGS)
+-	-$(SHELL) ./installman.sh install $(DEST_MAN_FR_U) "-fr.UTF-8" $(INSTALLMANARGS)
+-	-$(SHELL) ./installman.sh install $(DEST_MAN_IT) "-it" $(INSTALLMANARGS)
+-	-$(SHELL) ./installman.sh install $(DEST_MAN_IT_I) "-it" $(INSTALLMANARGS)
+-	-$(SHELL) ./installman.sh install $(DEST_MAN_IT_U) "-it.UTF-8" $(INSTALLMANARGS)
+-	-$(SHELL) ./installman.sh install $(DEST_MAN_JA_U) "-ja.UTF-8" $(INSTALLMANARGS)
+-	-$(SHELL) ./installman.sh install $(DEST_MAN_PL) "-pl" $(INSTALLMANARGS)
+-	-$(SHELL) ./installman.sh install $(DEST_MAN_PL_I) "-pl" $(INSTALLMANARGS)
+-	-$(SHELL) ./installman.sh install $(DEST_MAN_PL_U) "-pl.UTF-8" $(INSTALLMANARGS)
+-	-$(SHELL) ./installman.sh install $(DEST_MAN_RU) "-ru" $(INSTALLMANARGS)
+-	-$(SHELL) ./installman.sh install $(DEST_MAN_RU_U) "-ru.UTF-8" $(INSTALLMANARGS)
+-	-$(SHELL) ./installml.sh install "$(GUI_MAN_TARGETS)" \
+-		$(DEST_MAN_FR) $(INSTALLMLARGS)
+-	-$(SHELL) ./installml.sh install "$(GUI_MAN_TARGETS)" \
+-		$(DEST_MAN_FR_I) $(INSTALLMLARGS)
+-	-$(SHELL) ./installml.sh install "$(GUI_MAN_TARGETS)" \
+-		$(DEST_MAN_FR_U) $(INSTALLMLARGS)
+-	-$(SHELL) ./installml.sh install "$(GUI_MAN_TARGETS)" \
+-		$(DEST_MAN_IT) $(INSTALLMLARGS)
+-	-$(SHELL) ./installml.sh install "$(GUI_MAN_TARGETS)" \
+-		$(DEST_MAN_IT_I) $(INSTALLMLARGS)
+-	-$(SHELL) ./installml.sh install "$(GUI_MAN_TARGETS)" \
+-		$(DEST_MAN_IT_U) $(INSTALLMLARGS)
+-	-$(SHELL) ./installml.sh install "$(GUI_MAN_TARGETS)" \
+-		$(DEST_MAN_JA_U) $(INSTALLMLARGS)
+-	-$(SHELL) ./installml.sh install "$(GUI_MAN_TARGETS)" \
+-		$(DEST_MAN_PL) $(INSTALLMLARGS)
+-	-$(SHELL) ./installml.sh install "$(GUI_MAN_TARGETS)" \
+-		$(DEST_MAN_PL_I) $(INSTALLMLARGS)
+-	-$(SHELL) ./installml.sh install "$(GUI_MAN_TARGETS)" \
+-		$(DEST_MAN_PL_U) $(INSTALLMLARGS)
+-	-$(SHELL) ./installml.sh install "$(GUI_MAN_TARGETS)" \
+-		$(DEST_MAN_RU) $(INSTALLMLARGS)
+-	-$(SHELL) ./installml.sh install "$(GUI_MAN_TARGETS)" \
+-		$(DEST_MAN_RU_U) $(INSTALLMLARGS)
++#	-$(SHELL) ./installman.sh install $(DEST_MAN_FR) "-fr" $(INSTALLMANARGS)#
++#	-$(SHELL) ./installman.sh install $(DEST_MAN_FR_I) "-fr" $(INSTALLMANARGS)
++#	-$(SHELL) ./installman.sh install $(DEST_MAN_FR_U) "-fr.UTF-8" $(INSTALLMANARGS)
++#	-$(SHELL) ./installman.sh install $(DEST_MAN_IT) "-it" $(INSTALLMANARGS)
++#	-$(SHELL) ./installman.sh install $(DEST_MAN_IT_I) "-it" $(INSTALLMANARGS)
++#	-$(SHELL) ./installman.sh install $(DEST_MAN_IT_U) "-it.UTF-8" $(INSTALLMANARGS)
++#	-$(SHELL) ./installman.sh install $(DEST_MAN_JA_U) "-ja.UTF-8" $(INSTALLMANARGS)
++#	-$(SHELL) ./installman.sh install $(DEST_MAN_PL) "-pl" $(INSTALLMANARGS)
++#	-$(SHELL) ./installman.sh install $(DEST_MAN_PL_I) "-pl" $(INSTALLMANARGS)
++#	-$(SHELL) ./installman.sh install $(DEST_MAN_PL_U) "-pl.UTF-8" $(INSTALLMANARGS)
++#	-$(SHELL) ./installman.sh install $(DEST_MAN_RU) "-ru" $(INSTALLMANARGS)
++#	-$(SHELL) ./installman.sh install $(DEST_MAN_RU_U) "-ru.UTF-8" $(INSTALLMANARGS)
++#	-$(SHELL) ./installml.sh install "$(GUI_MAN_TARGETS)" \
++#		$(DEST_MAN_FR) $(INSTALLMLARGS)
++#	-$(SHELL) ./installml.sh install "$(GUI_MAN_TARGETS)" \
++#		$(DEST_MAN_FR_I) $(INSTALLMLARGS)
++#	-$(SHELL) ./installml.sh install "$(GUI_MAN_TARGETS)" \
++#		$(DEST_MAN_FR_U) $(INSTALLMLARGS)
++#	-$(SHELL) ./installml.sh install "$(GUI_MAN_TARGETS)" \
++#		$(DEST_MAN_IT) $(INSTALLMLARGS)
++#	-$(SHELL) ./installml.sh install "$(GUI_MAN_TARGETS)" \
++#		$(DEST_MAN_IT_I) $(INSTALLMLARGS)
++#	-$(SHELL) ./installml.sh install "$(GUI_MAN_TARGETS)" \
++#		$(DEST_MAN_IT_U) $(INSTALLMLARGS)
++#	-$(SHELL) ./installml.sh install "$(GUI_MAN_TARGETS)" \
++#		$(DEST_MAN_JA_U) $(INSTALLMLARGS)
++#	-$(SHELL) ./installml.sh install "$(GUI_MAN_TARGETS)" \
++#		$(DEST_MAN_PL) $(INSTALLMLARGS)
++#	-$(SHELL) ./installml.sh install "$(GUI_MAN_TARGETS)" \
++#		$(DEST_MAN_PL_I) $(INSTALLMLARGS)
++#	-$(SHELL) ./installml.sh install "$(GUI_MAN_TARGETS)" \
++#		$(DEST_MAN_PL_U) $(INSTALLMLARGS)
++#	-$(SHELL) ./installml.sh install "$(GUI_MAN_TARGETS)" \
++#		$(DEST_MAN_RU) $(INSTALLMLARGS)
++#	-$(SHELL) ./installml.sh install "$(GUI_MAN_TARGETS)" \
++#		$(DEST_MAN_RU_U) $(INSTALLMLARGS)
+ 	if test -n "$(MAKEMO)" -a -f $(PODIR)/Makefile; then \
+ 	   cd $(PODIR); $(MAKE) prefix=$(DESTDIR)$(prefix) LOCALEDIR=$(DEST_LANG) \
+ 	   INSTALL_DATA=$(INSTALL_DATA) FILEMOD=$(FILEMOD) install; \
+@@ -2154,18 +2154,18 @@
+ ICON16PATH = $(DESTDIR)$(DATADIR)/icons/locolor/16x16/apps
+ KDEPATH = $(HOME)/.kde/share/icons
+ install-icons:
+-	if test -d $(ICON48PATH) -a -w $(ICON48PATH) \
+-		-a ! -f $(ICON48PATH)/gvim.png; then \
+-	   $(INSTALL_DATA) $(SCRIPTSOURCE)/vim48x48.png $(ICON48PATH)/gvim.png; \
+-	fi
+-	if test -d $(ICON32PATH) -a -w $(ICON32PATH) \
+-		-a ! -f $(ICON32PATH)/gvim.png; then \
+-	   $(INSTALL_DATA) $(SCRIPTSOURCE)/vim32x32.png $(ICON32PATH)/gvim.png; \
+-	fi
+-	if test -d $(ICON16PATH) -a -w $(ICON16PATH) \
+-		-a ! -f $(ICON16PATH)/gvim.png; then \
+-	   $(INSTALL_DATA) $(SCRIPTSOURCE)/vim16x16.png $(ICON16PATH)/gvim.png; \
+-	fi
++#	if test -d $(ICON48PATH) -a -w $(ICON48PATH) \
++#		-a ! -f $(ICON48PATH)/gvim.png; then \
++#	   $(INSTALL_DATA) $(SCRIPTSOURCE)/vim48x48.png $(ICON48PATH)/gvim.png; \
++#	fi
++#	if test -d $(ICON32PATH) -a -w $(ICON32PATH) \
++#		-a ! -f $(ICON32PATH)/gvim.png; then \
++#	   $(INSTALL_DATA) $(SCRIPTSOURCE)/vim32x32.png $(ICON32PATH)/gvim.png; \
++#	fi
++#	if test -d $(ICON16PATH) -a -w $(ICON16PATH) \
++#		-a ! -f $(ICON16PATH)/gvim.png; then \
++#	   $(INSTALL_DATA) $(SCRIPTSOURCE)/vim16x16.png $(ICON16PATH)/gvim.png; \
++#	fi
+ 
+ 
+ $(HELPSOURCE)/vim.1 $(MACROSOURCE) $(TOOLSSOURCE):

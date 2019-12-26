@@ -1,0 +1,73 @@
+etc/drirc
+include/EGL/egl.h
+include/EGL/eglext.h
+include/EGL/eglextchromium.h
+include/EGL/eglmesaext.h
+include/EGL/eglplatform.h
+include/gbm.h
+include/GL/gl_mangle.h
+include/GL/gl.h
+include/GL/glcorearb.h
+include/GL/glext.h
+include/GL/glx_mangle.h
+include/GL/glx.h
+include/GL/glxext.h
+include/GL/internal/dri_interface.h
+include/GLES/egl.h
+include/GLES/gl.h
+include/GLES/glext.h
+include/GLES/glplatform.h
+include/GLES2/gl2.h
+include/GLES2/gl2ext.h
+include/GLES2/gl2platform.h
+include/GLES3/gl3.h
+include/GLES3/gl31.h
+include/GLES3/gl32.h
+include/GLES3/gl3ext.h
+include/GLES3/gl3platform.h
+include/KHR/khrplatform.h
+lib/dri/i915_dri.so
+lib/dri/i965_dri.so
+lib/dri/kms_swrast_dri.so
+lib/dri/nouveau_vieux_dri.so
+lib/dri/r200_dri.so
+lib/dri/r600_dri.so
+lib/dri/radeon_dri.so
+lib/dri/swrast_dri.so
+lib/dri/vmwgfx_dri.so
+lib/libEGL.la
+lib/libEGL.so
+lib/libEGL.so.1
+lib/libgbm.la
+lib/libgbm.so
+lib/libgbm.so.1
+lib/libGL.la
+lib/libGL.so
+lib/libGL.so.1
+lib/libglapi.la
+lib/libglapi.so
+lib/libglapi.so.0
+lib/libGLESv1_CM.la
+lib/libGLESv1_CM.so
+lib/libGLESv1_CM.so.1
+lib/libGLESv2.la
+lib/libGLESv2.so
+lib/libGLESv2.so.2
+lib/libXvMCgallium.la
+lib/libXvMCgallium.so
+lib/libXvMCgallium.so.1
+lib/pkgconfig/dri.pc
+lib/pkgconfig/egl.pc
+lib/pkgconfig/gbm.pc
+lib/pkgconfig/gl.pc
+lib/pkgconfig/glesv1_cm.pc
+lib/pkgconfig/glesv2.pc
+@dir include/EGL
+@dir include/GL/internal
+@dir include/GL
+@dir include/GLES
+@dir include/GLES2
+@dir include/GLES3
+@dir include/KHR
+@dir lib/dri
+@dir lib/pkgconfig

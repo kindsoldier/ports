@@ -1,0 +1,11 @@
+--- ./docs/Makefile.in.orig	2008-09-01 21:44:55.000000000 +0300
++++ ./docs/Makefile.in	2010-09-28 02:27:52.000000000 +0300
+@@ -176,7 +176,7 @@
+ EXTRA_DIST = help-spec-0.2.xml index.xhtml rar-mdf.xhtml rar-lib.xhtml rar-skcompat.xhtml rarian.document.in omf_equivalence.txt
+ manualdir = $(datadir)/librarian/manual
+ manual_DATA = help-spec-0.2.xml index.xhtml rar-mdf.xhtml rar-lib.xhtml rar-skcompat.xhtml
+-metadatadir = $(datadir)/help
++metadatadir = $(datadir)/doc/rarian
+ metadata_DATA = rarian.document
+ all: all-am
+ 

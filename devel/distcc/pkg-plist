@@ -1,0 +1,9 @@
+bin/distcc
+bin/distccd
+bin/distccmon-text
+bin/lsdistcc
+bin/pump
+man/man1/distcc.1.gz
+man/man1/distccd.1.gz
+man/man1/distccmon-text.1.gz
+man/man1/pump.1.gz

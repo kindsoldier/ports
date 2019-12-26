@@ -1,0 +1,8 @@
+bin/type1afm
+include/t1lib.h
+lib/libt1.a
+lib/libt1.la
+lib/libt1.so
+lib/libt1.so.4
+share/t1lib/t1lib.config
+@dir share/t1lib

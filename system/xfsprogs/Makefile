@@ -1,0 +1,37 @@
+# Created by: Craig Rodrigues <rodrigc@FreeBSD.org>
+# $FreeBSD: head/sysutils/xfsprogs/Makefile 440701 2017-05-12 19:08:17Z danfe $
+
+PORTNAME=	xfsprogs
+PORTVERSION=	3.2.4
+CATEGORIES=	sysutils
+MASTER_SITES+=	ftp://oss.sgi.com/projects/xfs/cmd_tars/
+MASTER_SITES+=	ftp://oss.sgi.com/projects/xfs/previous/cmd_tars/
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Utilities for managing XFS filesystems
+
+USES=	 gmake #libtool:build
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	OPTIMIZER=" "
+CONFIGURE_ARGS=	--disable-shared --enable-readline
+ALL_TARGET=	# empty
+LDFLAGS+= -lncurses 
+
+post-patch:
+	${REINPLACE_CMD} -e '/utmp/d' \
+		${WRKSRC}/quota/report.c ${WRKSRC}/quota/util.c
+	${REINPLACE_CMD} \
+		-e 's|/usr/local|${LOCALBASE}|g' \
+		-e 's/lio_listio/timer_create/' \
+		${WRKSRC}/configure
+	${REINPLACE_CMD} -e '/#!/s|bash|sh|' \
+		${WRKSRC}/include/install-sh ${WRKSRC}/install-sh
+
+post-install:
+.for f in mkfs.xfs xfs_copy xfs_db xfs_estimate xfs_fsr xfs_growfs xfs_io \
+     xfs_logprint xfs_mdrestore xfs_quota xfs_repair xfs_rtcp
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/${f}
+.endfor
+
+.include <bsd.port.mk>
+#EOF

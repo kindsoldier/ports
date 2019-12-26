@@ -1,0 +1,32 @@
+#!/bin/sh
+
+set -x
+
+DC_GROUP="%%DC_GROUP%%"
+DC_OWNER="%%DC_OWNER%%"
+DC_GROUPID="%%DC_GROUPID%%"
+DC_OWNERID="%%DC_OWNERID%%"
+DC_RUNDIR="%%DC_RUNDIR%%"
+#DC_STATEDIR="%%DC_STATEDIR%%"
+DC_SYSCONFDIR="%%DC_SYSCONFDIR%%"
+
+PKG_PREFIX="/notexist"
+
+case $2 in 
+    PRE-INSTALL)
+	pw group add ${DC_GROUP}  -g ${DC_GROUPID}
+	pw user add ${DC_OWNER} -g ${DC_GROUP}  \
+	    -d ${PKG_PREFIX} -s /usr/sbin/nologin -u ${DC_OWNERID} \
+	    -c "dovecot"
+	pw group mod ${DC_GROUP} -M ${DC_OWNER}
+	pw group show ${DC_GROUP}
+	pw user show ${DC_OWNER}
+	install -d -o  ${DC_OWNER} -g ${DC_GROUP} -m 0755 ${DC_RUNDIR}
+#	install -d -o  ${DC_OWNER} -g ${DC_GROUP} -m 0750 ${DC_STATEDIR}
+	install -d -o root -g wheel -m 0755 ${DC_SYSCONFDIR}
+	;;
+    POST-INSTALL)
+	;;
+esac
+exit 0
+#EOF

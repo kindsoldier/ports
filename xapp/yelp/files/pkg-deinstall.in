@@ -1,0 +1,24 @@
+#!/bin/sh
+
+set -x
+
+LOCALBASE="%%LOCALBASE%%"
+
+SCHEMAS="etc/gconf/schemas/yelp.schemas"
+
+case $2 in
+    DEINSTALL)
+	GCONF_CONFIG_SOURCE="xml:merged:${LOCALBASE}/etc/gconf/gconf.xml.defaults"
+	export GCONF_CONFIG_SOURCE
+
+	for schema in $SCHEMAS; do 
+	    ${LOCALBASE}/bin/gconftool --makefile-uninstall-rule ${LOCALBASE}/${schema}
+	done
+	;;
+    POST-DEINSTALL)
+	${LOCALBASE}/bin/update-desktop-database -q ${LOCALBASE}/share/applications
+	${LOCALBASE}/bin/gtk-update-icon-cache -q ${LOCALBASE}/share/icons/hicolor
+	;;
+esac
+exit 0
+#EOF

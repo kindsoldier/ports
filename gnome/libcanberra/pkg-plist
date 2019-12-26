@@ -1,0 +1,29 @@
+bin/canberra-gtk-play
+include/canberra-gtk.h
+include/canberra.h
+lib/gtk/modules/libcanberra-gtk-module.la
+lib/gtk/modules/libcanberra-gtk-module.so
+lib/libcanberra-gtk.la
+lib/libcanberra-gtk.so
+lib/libcanberra-gtk.so.1
+lib/libcanberra.la
+lib/libcanberra.so
+lib/libcanberra.so.2
+lib/libcanberra/libcanberra-multi.la
+lib/libcanberra/libcanberra-multi.so
+lib/libcanberra/libcanberra-null.la
+lib/libcanberra/libcanberra-null.so
+lib/libcanberra/libcanberra-oss.la
+lib/libcanberra/libcanberra-oss.so
+lib/pkgconfig/libcanberra-gtk.pc
+lib/pkgconfig/libcanberra.pc
+share/gdm/autostart/LoginWindow/libcanberra-ready-sound.desktop
+share/gnome/autostart/libcanberra-login-sound.desktop
+share/gnome/shutdown/libcanberra-logout-sound.sh
+@dir lib/libcanberra
+@dir share/gdm/autostart/LoginWindow
+@dir share/gdm/autostart
+@dir share/gdm
+@dir share/gnome/autostart
+@dir share/gnome/shutdown
+@dir share/gnome

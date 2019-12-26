@@ -1,0 +1,11 @@
+--- ./libschily/Makefile.orig	2006-07-21 16:21:56.000000000 +0300
++++ ./libschily/Makefile	2018-06-10 14:33:47.207270000 +0200
+@@ -5,7 +5,7 @@
+ include		$(SRCROOT)/$(RULESDIR)/rules.top
+ ###########################################################################
+ 
+-MK_FILES= libschily.mk libschily_p.mk $(NO_SHL)shlschily.mk
++MK_FILES= libschily.mk $(NO_SHL)shlschily.mk
+ 
+ ###########################################################################
+ include		$(SRCROOT)/$(RULESDIR)/rules.mks

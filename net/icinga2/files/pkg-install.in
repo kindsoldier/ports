@@ -1,0 +1,31 @@
+#!/bin/sh -x
+
+ICINGA2_GROUP="%%ICINGA2_GROUP%%"
+ICINGA2_OWNER="%%ICINGA2_OWNER%%"
+ICINGA2_GROUP_ID="%%ICINGA2_GROUP_ID%%"
+ICINGA2_OWNER_ID="%%ICINGA2_OWNER_ID%%"
+ICINGA2_SPOOLDIR="%%ICINGA2_SPOOLDIR%%"
+ICINGA2_LOGDIR="%%ICINGA2_LOGDIR%%"
+
+PKG_PREFIX="/notexist"
+
+case $2 in 
+    PRE-INSTALL)
+	pw group add ${ICINGA2_GROUP}  -g ${ICINGA2_GROUP_ID}
+	pw user add ${ICINGA2_OWNER} -g ${ICINGA2_GROUP}  \
+	    -d ${PKG_PREFIX} -s /usr/sbin/nologin -u ${ICINGA2_OWNER_ID} \
+	    -c "icinga2"
+	pw group mod ${ICINGA2_GROUP} -M ${ICINGA2_OWNER}
+	pw group show ${ICINGA2_GROUP}
+	pw user show ${ICINGA2_OWNER}
+
+	for dir in ${ICINGA2_LOGDIR} ${ICINGA2_SPOOLDIR};
+	do
+	    install -d -o ${ICINGA2_OWNER} -g ${ICINGA2_GROUP} -m 0750 ${dir}
+	done
+	;;
+    POST-INSTALL)
+	;;
+esac
+exit 0
+#EOF

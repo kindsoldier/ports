@@ -1,0 +1,10 @@
+--- ./Makefile.am.orig	2017-05-03 22:16:37.000000000 +0200
++++ ./Makefile.am	2019-03-12 09:24:09.492367000 +0200
+@@ -61,6 +61,6 @@
+ 
+ install-exec-hook:
+ 	cd $(DESTDIR)$(bindir) && \
+-		$(LN_S) -f flex$(EXEEXT) flex++$(EXEEXT)
++		$(LN_S) -f gflex$(EXEEXT) gflex++$(EXEEXT)
+ 
+ .PHONY: ChangeLog indent

@@ -1,0 +1,11 @@
+--- ./src/lmdb/Makefile.in.orig	2016-09-09 15:11:35.000000000 +0200
++++ ./src/lmdb/Makefile.in	2016-10-31 13:34:18.879619000 +0200
+@@ -71,7 +71,7 @@
+ 
+ libbareoslmdb.la: Makefile $(LIBBAREOSLMDB_LOBJS)
+ 	@echo "Making $@ ..."
+-	$(LIBTOOL_LINK) $(CC) $(DEFS) $(DEBUG) $(LDFLAGS) -o $@ $(LIBBAREOSLMDB_LOBJS) -export-dynamic -rpath $(libdir) -release $(LIBBAREOSLMDB_LT_RELEASE) $(LIBS)
++	$(LIBTOOL_LINK) $(CC) $(DEFS) $(DEBUG) $(LDFLAGS) -o $@ $(LIBBAREOSLMDB_LOBJS) -export-dynamic -rpath $(libdir) -version 0:16:0 $(LIBS)
+ 
+ Makefile: $(srcdir)/Makefile.in $(topdir)/config.status
+ 	cd $(topdir) \

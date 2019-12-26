@@ -1,0 +1,14 @@
+include/libglade/glade/glade-build.h
+include/libglade/glade/glade-init.h
+include/libglade/glade/glade-parser.h
+include/libglade/glade/glade-xml.h
+include/libglade/glade/glade.h
+lib/libglade.a
+lib/libglade.la
+lib/libglade.so
+lib/libglade.so.0
+lib/pkgconfig/libglade.pc
+share/xml/libglade/glade.dtd
+@dir share/xml/libglade
+@dir include/libglade/glade
+@dir include/libglade

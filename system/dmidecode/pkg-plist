@@ -1,0 +1,9 @@
+etc/periodic/daily/320.dmidecode
+sbin/biosdecode
+sbin/dmidecode
+sbin/ownership
+sbin/vpddecode
+man/man8/biosdecode.8.gz
+man/man8/dmidecode.8.gz
+man/man8/ownership.8.gz
+man/man8/vpddecode.8.gz

@@ -1,0 +1,120 @@
+--- ./SConstruct.orig	2015-09-17 14:46:24.000000000 +0200
++++ ./SConstruct	2019-02-04 13:48:43.725987000 +0200
+@@ -74,6 +74,9 @@
+ 
+ opts = Variables(files=[SAVED_CONFIG])
+ opts.AddVariables(
++  RawListVariable('DESTDIR',
++               'Required *dummy*, without scons will stop with "Unknown variables: DESTDIR"',
++                None),
+   PathVariable('PREFIX',
+                'Directory to install under',
+                default_prefix,
+@@ -83,11 +86,11 @@
+                default_libdir,
+                createPathIsDirCreateWithTarget('install')),
+   PathVariable('APR',
+-               "Path to apr-1-config, or to APR's install area",
++               "Path to apr-config, or to APR's install area",
+                default_incdir,
+                PathVariable.PathAccept),
+   PathVariable('APU',
+-               "Path to apu-1-config, or to APR's install area",
++               "Path to apu-config, or to APR's install area",
+                default_incdir,
+                PathVariable.PathAccept),
+   PathVariable('OPENSSL',
+@@ -207,7 +210,8 @@
+ 
+ thisdir = os.getcwd()
+ libdir = '$LIBDIR'
+-incdir = '$PREFIX/include/serf-$MAJOR'
++incdir = '$PREFIX/include/serf'
++pkgconfdir = '$PREFIX/lib'
+ 
+ # This version string is used in the dynamic library name, and for Mac OS X also
+ # for the current_version and compatibility_version options in the .dylib
+@@ -216,13 +220,13 @@
+ # from current_version, so don't use the PATCH level to avoid that build and
+ # runtime patch levels have to be identical.
+ if sys.platform != 'sunos5':
+-  env['SHLIBVERSION'] = '%d.%d.%d' % (MAJOR, MINOR, 0)
++  env['SHLIBVERSION'] = '%d' % (MAJOR)
+ 
+-LIBNAME = 'libserf-%d' % (MAJOR,)
++LIBNAME = 'libserf'
+ if sys.platform != 'win32':
+   LIBNAMESTATIC = LIBNAME
+ else:
+-  LIBNAMESTATIC = 'serf-${MAJOR}'
++  LIBNAMESTATIC = 'serf'
+ 
+ env.Append(RPATH=libdir,
+            PDB='${TARGET.filebase}.pdb')
+@@ -317,7 +321,7 @@
+   env.Append(LIBS=[apr_libs, apu_libs])
+   if not env.get('SOURCE_LAYOUT', None):
+     env.Append(LIBPATH=['$APR/lib', '$APU/lib'],
+-               CPPPATH=['$APR/include/apr-1', '$APU/include/apr-1'])
++               CPPPATH=['$APR/include/apr', '$APU/include/apr'])
+   elif aprstatic:
+     env.Append(LIBPATH=['$APR/LibR','$APU/LibR'],
+                CPPPATH=['$APR/include', '$APU/include'])
+@@ -347,10 +351,10 @@
+                LIBPATH=['$OPENSSL/out32dll'])
+ else:
+   if os.path.isdir(apr):
+-    apr = os.path.join(apr, 'bin', 'apr-1-config')
++    apr = os.path.join(apr, 'bin', 'apr-config')
+     env['APR'] = apr
+   if os.path.isdir(apu):
+-    apu = os.path.join(apu, 'bin', 'apu-1-config')
++    apu = os.path.join(apu, 'bin', 'apu-config')
+     env['APU'] = apu
+ 
+   ### we should use --cc, but that is giving some scons error about an implict
+@@ -364,8 +368,8 @@
+   ### there is probably a better way to run/capture output.
+   ### env.ParseConfig() may be handy for getting this stuff into the build
+   if CALLOUT_OKAY:
+-    apr_libs = os.popen(env.subst('$APR --link-libtool --libs')).read().strip()
+-    apu_libs = os.popen(env.subst('$APU --link-libtool --libs')).read().strip()
++    apr_libs = os.popen(env.subst('$APR --libs')).read().strip()
++    apu_libs = os.popen(env.subst('$APU --libs')).read().strip()
+   else:
+     apr_libs = ''
+     apu_libs = ''
+@@ -392,13 +396,13 @@
+   env.Append(RPATH=':'+d)
+ 
+ # Set up the construction of serf-*.pc
+-pkgconfig = env.Textfile('serf-%d.pc' % (MAJOR,),
++pkgconfig = env.Textfile('serf.pc',
+                          env.File('build/serf.pc.in'),
+                          SUBST_DICT = {
+                            '@MAJOR@': str(MAJOR),
+                            '@PREFIX@': '$PREFIX',
+                            '@LIBDIR@': '$LIBDIR',
+-                           '@INCLUDE_SUBDIR@': 'serf-%d' % (MAJOR,),
++                           '@INCLUDE_SUBDIR@': 'serf',
+                            '@VERSION@': '%d.%d.%d' % (MAJOR, MINOR, PATCH),
+                            '@LIBS@': '%s %s %s -lz' % (apu_libs, apr_libs,
+                                                        env.get('GSSAPI_LIBS', '')),
+@@ -406,6 +410,8 @@
+ 
+ env.Default(lib_static, lib_shared, pkgconfig)
+ 
++#print env.Dump()
++
+ if CALLOUT_OKAY:
+   conf = Configure(env)
+ 
+@@ -437,7 +443,7 @@
+ env.Alias('install-lib', [install_static, install_shared,
+                           ])
+ env.Alias('install-inc', env.Install(incdir, HEADER_FILES))
+-env.Alias('install-pc', env.Install(os.path.join(libdir, 'pkgconfig'),
++env.Alias('install-pc', env.Install(os.path.join(pkgconfdir, 'pkgconfig'),
+                                     pkgconfig))
+ env.Alias('install', ['install-lib', 'install-inc', 'install-pc', ])
+ 

@@ -1,0 +1,12 @@
+--- ./src/desc/merge_822.orig	2008-03-31 14:43:59.000000000 +0300
++++ ./src/desc/merge_822	2017-11-30 16:46:53.266269000 +0200
+@@ -1,4 +1,8 @@
+-#!/usr/bin/perl -w
++#!/usr/local/bin/perl -w
++
++BEGIN {
++    push @INC, ".";
++}
+ use PARI::822;
+ 
+ PARI::822::read(\%funcs,$_,1)

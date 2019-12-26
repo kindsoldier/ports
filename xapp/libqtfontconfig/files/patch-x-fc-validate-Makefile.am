@@ -1,0 +1,29 @@
+--- ./fc-validate/Makefile.am.orig	2016-07-11 04:41:06.000000000 +0200
++++ ./fc-validate/Makefile.am	2019-03-31 10:15:39.538868000 +0200
+@@ -21,7 +21,7 @@
+ #  TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+ #  PERFORMANCE OF THIS SOFTWARE.
+ 
+-bin_PROGRAMS=fc-validate
++bin_PROGRAMS=qt-fc-validate
+ 
+ DOC2MAN = docbook2man
+ 
+@@ -31,7 +31,7 @@
+ 
+ AM_CPPFLAGS=-I${top_srcdir} $(FREETYPE_CFLAGS) $(WARN_CFLAGS)
+ 
+-BUILT_MANS=fc-validate.1
++BUILT_MANS=qt-fc-validate.1
+ 
+ if ENABLE_DOCS
+ man_MANS=${BUILT_MANS}
+@@ -41,7 +41,7 @@
+ 
+ CLEANFILES =
+ 
+-fc_validate_LDADD = ${top_builddir}/src/libfontconfig.la $(FREETYPE_LIBS)
++qt_fc_validate_LDADD = ${top_builddir}/src/libqtfontconfig.la $(FREETYPE_LIBS)
+ 
+ if USEDOCBOOK
+ 

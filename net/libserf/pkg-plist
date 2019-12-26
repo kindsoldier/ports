@@ -1,0 +1,8 @@
+include/serf/serf_bucket_types.h
+include/serf/serf_bucket_util.h
+include/serf/serf.h
+lib/libserf.a
+lib/libserf.so
+lib/libserf.so.1
+lib/pkgconfig/serf.pc
+@dir include/serf

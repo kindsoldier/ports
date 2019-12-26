@@ -1,0 +1,11 @@
+--- ./libcroco.pc.in.orig	2009-02-04 11:33:45.000000000 +0200
++++ ./libcroco.pc.in	2009-09-14 22:58:37.000000000 +0300
+@@ -6,7 +6,7 @@
+ Name: libcroco
+ Version: @VERSION@
+ Description: a CSS2 Parsing and manipulation Library in C.
+-Requires: glib-2.0 libxml-2.0
++Requires: glib libxml2
+ Libs: @CROCO_LIBS@
+ Cflags: @CROCO_CFLAGS@
+ 

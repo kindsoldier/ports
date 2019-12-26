@@ -1,0 +1,33 @@
+#!/bin/sh
+
+set -x
+
+case $2 in 
+    PRE-INSTALL)
+	BIND_OWNER="%%BIND_OWNER%%"
+	BIND_GROUP="%%BIND_GROUP%%"
+	BIND_OWNERID="%%BIND_OWNERID%%"
+	BIND_GROUPID="%%BIND_GROUPID%%"
+
+	BIND_RUNDIR="%%BIND_RUNDIR%%"
+	BIND_CHROOTDIR="%%BIND_CHROOTDIR%%"
+	BIND_SYSCONFDIR="%%BIND_SYSCONFDIR%%"
+	BIND_PREFIX="%%BIND_PREFIX%%"
+	BIND_HOME="/notexist"
+
+	pw group add ${BIND_GROUP} -g ${BIND_GROUPID} 
+	pw user add ${BIND_OWNER}  -g ${BIND_GROUP} \
+	    -d ${BIND_HOME} -s /usr/sbin/nologin -u ${BIND_OWNERID} \
+	    -c "bind"
+	pw group mod ${BIND_GROUP} -M ${BIND_OWNER}
+	pw group show ${BIND_GROUP}
+	pw user show ${BIND_OWNER}
+	install -d -o ${BIND_OWNER} -g ${BIND_GROUP} -m 0750 ${BIND_RUNDIR}
+	install -d -o ${BIND_OWNER} -g ${BIND_GROUP} -m 0750 ${BIND_CHROOTDIR}/${BIND_RUNDIR}
+	install -d -o ${BIND_OWNER} -g ${BIND_GROUP} -m 0750 ${BIND_CHROOTDIR}/${BIND_SYSCONFDIR}
+	;;
+    POST-INSTALL)
+	;;
+esac
+exit 0
+#EOF

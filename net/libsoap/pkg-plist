@@ -1,0 +1,36 @@
+bin/csoap-config
+bin/soapclient
+include/libcsoap/soap-admin.h
+include/libcsoap/soap-client.h
+include/libcsoap/soap-ctx.h
+include/libcsoap/soap-env.h
+include/libcsoap/soap-fault.h
+include/libcsoap/soap-router.h
+include/libcsoap/soap-server.h
+include/libcsoap/soap-service.h
+include/libcsoap/soap-xml.h
+include/nanohttp/nanohttp-base64.h
+include/nanohttp/nanohttp-client.h
+include/nanohttp/nanohttp-common.h
+include/nanohttp/nanohttp-logging.h
+include/nanohttp/nanohttp-mime.h
+include/nanohttp/nanohttp-request.h
+include/nanohttp/nanohttp-response.h
+include/nanohttp/nanohttp-server.h
+include/nanohttp/nanohttp-socket.h
+include/nanohttp/nanohttp-ssl.h
+include/nanohttp/nanohttp-stream.h
+lib/libcsoap.a
+lib/libcsoap.la
+lib/libcsoap.so
+lib/libcsoap.so.2
+lib/libnanohttp.a
+lib/libnanohttp.la
+lib/libnanohttp.so
+lib/libnanohttp.so.2
+lib/pkgconfig/libcsoap.pc
+share/aclocal/libcsoap.m4
+@dir include/libcsoap
+@dir include/nanohttp
+@dir lib/pkgconfig
+@dir share/aclocal

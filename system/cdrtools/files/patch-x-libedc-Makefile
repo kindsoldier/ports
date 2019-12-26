@@ -1,0 +1,11 @@
+--- ./libedc/Makefile.orig	2006-09-15 02:53:32.000000000 +0300
++++ ./libedc/Makefile	2018-06-10 14:33:47.159701000 +0200
+@@ -5,7 +5,7 @@
+ include		$(SRCROOT)/$(RULESDIR)/rules.top
+ ###########################################################################
+ 
+-MK_FILES= libedc.mk libedc_p.mk libedc_dec.mk libedc_dec_p.mk \
++MK_FILES= libedc.mk libedc_dec.mk \
+ 		$(NO_SHL)shledc.mk $(NO_SHL)shledc_dec.mk
+ 
+ ###########################################################################

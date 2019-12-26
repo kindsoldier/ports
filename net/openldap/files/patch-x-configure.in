@@ -1,0 +1,19 @@
+--- ./configure.in.orig	2015-08-14 17:25:28.000000000 +0200
++++ ./configure.in	2015-09-22 04:39:14.526844000 +0200
+@@ -1373,6 +1373,8 @@
+ 			ol_link_threads=posix
+ 			ol_link_pthreads=""
+ 		fi
++
++		OL_PTHREAD_TRY([-lpthread],	[ol_cv_pthread_lpthread])
+ 		
+ dnl		OL_PTHREAD_TRY([-mt],		[ol_cv_pthread_mt])
+ 		OL_PTHREAD_TRY([-kthread],	[ol_cv_pthread_kthread])
+@@ -1391,7 +1393,6 @@
+ 		OL_PTHREAD_TRY([-lpthread -Wl,-woff,85],
+ 			[ol_cv_pthread_lib_lpthread_woff])
+ 
+-		OL_PTHREAD_TRY([-lpthread],	[ol_cv_pthread_lpthread])
+ 		OL_PTHREAD_TRY([-lc_r],		[ol_cv_pthread_lc_r])
+ 
+ 		OL_PTHREAD_TRY([-threads],	[ol_cv_pthread_threads])

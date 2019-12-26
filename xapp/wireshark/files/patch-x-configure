@@ -1,0 +1,11 @@
+--- ./configure.orig	2014-12-27 13:04:38.000000000 +0200
++++ ./configure	2014-12-27 14:45:15.000000000 +0200
+@@ -36617,7 +36617,7 @@
+     LIBS="$LIBS $(pkg-config sbc --libs)"
+ fi
+ 
+-plugindir='${libdir}/wireshark/plugins/${VERSION}'
++plugindir='${libdir}/wireshark/plugins'
+ 
+ # Check whether --with-plugins was given.
+ if test "${with_plugins+set}" = set; then :

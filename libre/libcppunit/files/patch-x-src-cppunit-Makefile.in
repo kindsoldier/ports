@@ -1,0 +1,12 @@
+--- ./src/cppunit/Makefile.in.orig	2013-11-11 07:41:53.000000000 +0300
++++ ./src/cppunit/Makefile.in	2017-05-11 09:17:21.078174000 +0200
+@@ -390,8 +390,7 @@
+   Win32DynamicLibraryManager.cpp
+ 
+ libcppunit_la_LDFLAGS = \
+- -no-undefined -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) \
+- -release $(LT_RELEASE) $(LIBADD_DL)
++ -no-undefined -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
+ 
+ libcppunit_la_LIBADD = $(LIBADD_DL)
+ all: all-am

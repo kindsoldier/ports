@@ -1,0 +1,13 @@
+--- ./include/icc34.h.in.orig	Fri May 25 17:04:02 2007
++++ ./include/icc34.h.in	Wed Aug 29 10:16:54 2007
+@@ -184,8 +184,10 @@
+ typedef int32_t    icInt64Number[2];
+ 
+ #else
++#ifdef __unix__
+ #ifdef __sgi
+ #include "sgidefs.h"
++#endif
+ 
+ 
+ /*

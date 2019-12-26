@@ -1,0 +1,17 @@
+--- ./fbreader/Makefile.orig	2014-01-05 20:17:25.000000000 +0300
++++ ./fbreader/Makefile	2014-01-05 22:20:02.000000000 +0300
+@@ -21,9 +21,11 @@
+ 			exit 1; \
+ 		fi; \
+ 	done;
+-	@echo -n 'Linking $(TARGET) ...'
+-	@$(LD) $(LDFLAGS) -o $(TARGET) `find src -name *.o` $(TEXT_LIBS) $(CORE_LIBS) $(ZLUI_LIB) -lsqlite3
+-	@echo ' OK'
++
++	@echo 'Linking $(TARGET) ...'
++	@echo LDFLAGS=$(LDFLAGS)
++	$(LD) $(LDFLAGS) -o $(TARGET) `find src -name *.o` $(TEXT_LIBS) $(CORE_LIBS) $(ZLUI_LIB) -lsqlite3
++#	@echo ' OK'
+ 
+ FBSHAREDIR = $(DESTDIR)$(SHAREDIR)/FBReader
+ VARIANT = $(TARGET_ARCH)

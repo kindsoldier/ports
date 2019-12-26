@@ -1,0 +1,25 @@
+bin/db48_archive
+bin/db48_checkpoint
+bin/db48_deadlock
+bin/db48_dump
+bin/db48_dump185
+bin/db48_hotbackup
+bin/db48_load
+bin/db48_printlog
+bin/db48_recover
+bin/db48_sql
+bin/db48_stat
+bin/db48_upgrade
+bin/db48_verify
+include/db48/db_185.h
+include/db48/db_cxx.h
+include/db48/db.h
+lib/libdb48_cxx.a
+lib/libdb48_cxx.la
+lib/libdb48_cxx.so
+lib/libdb48_cxx.so.0
+lib/libdb48.a
+lib/libdb48.la
+lib/libdb48.so
+lib/libdb48.so.0
+@dir include/db48

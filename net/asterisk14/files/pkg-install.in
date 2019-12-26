@@ -1,0 +1,63 @@
+#!/bin/sh -x
+
+AS_GROUP="%%AS_GROUP%%"
+AS_OWNER="%%AS_OWNER%%"
+AS_GROUP_ID="%%AS_GROUP_ID%%"
+AS_OWNER_ID="%%AS_OWNER_ID%%"
+AS_RUNDIR="%%AS_RUNDIR%%"
+#AS_SYSCONFDIR="%%AS_SYSCONF_DIR%%"
+AS_DATADIR="%%AS_DATADIR%%"
+AS_LOGDIR="%%AS_LOGDIR%%"
+AS_DBDIR="%%AS_DBDIR%%"
+
+
+PKG_PREFIX="/notexist"
+
+case $2 in 
+    PRE-INSTALL)
+	pw group add ${AS_GROUP}  -g ${AS_GROUP_ID}
+
+	pw user add ${AS_OWNER} -g ${AS_GROUP}  \
+	    -d ${PKG_PREFIX} -s /usr/sbin/nologin -u ${AS_OWNER_ID} \
+	    -c "asterisk"
+
+	pw group mod ${AS_GROUP} -M ${AS_OWNER}
+
+	pw group show ${AS_GROUP}
+	pw user show ${AS_OWNER}
+
+	for dir in ${AS_RUNDIR} ${AS_DBDIR} ${AS_DATADIR} ${AS_DBDIR};
+	do
+	    mkdir -p ${dir}
+	    chown ${AS_OWNER}:${AS_GROUP} ${dir}
+	    chmod 0750 ${dir}
+	done
+
+	for dir in dictate meetme monitor outgoing system tmp voicemail;
+	do 
+	    mkdir -p ${AS_DATADIR}/${dir}
+	    chown ${AS_OWNER}:${AS_GROUP} ${AS_DATADIR}/${dir}
+	    chmod 0750 ${AS_DATADIR}/${dir}
+	done
+
+
+	for dir in cdr-csv cdr-custom cel-custom
+	do 
+	    mkdir -p ${AS_LOGDIR}/${dir}
+	    chown ${AS_OWNER}:${AS_GROUP} ${AS_LOGDIR}/${dir}
+	    chmod 0750 ${AS_LOGDIR}/${dir}
+	done
+
+##	for dir in ${AS_SYSCONF_DIR} ;
+#	do
+#	    mkdir -p ${dir}
+#	    chown root:wheel ${dir}
+#	    chmod 0750 ${dir}
+#	done
+	;;
+    POST-INSTALL)
+
+
+	;;
+esac
+#EOF

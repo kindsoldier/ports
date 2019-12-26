@@ -1,0 +1,23 @@
+--- ./apr-config.in.orig	2008-06-20 18:46:02.000000000 +0300
++++ ./apr-config.in	2018-07-09 11:44:39.326779000 +0200
+@@ -51,7 +51,7 @@
+ show_usage()
+ {
+     cat << EOF
+-Usage: apr-$APR_MAJOR_VERSION-config [OPTION]
++Usage: apr-config [OPTION]
+ 
+ Known values for OPTION are:
+   --prefix[=DIR]    change prefix to DIR
+@@ -77,9 +77,9 @@
+   --help            print this help
+ 
+ When linking with libtool, an application should do something like:
+-  APR_LIBS="\`apr-$APR_MAJOR_VERSION-config --link-libtool --libs\`"
++  APR_LIBS="\`apr-config --link-libtool --libs\`"
+ or when linking directly:
+-  APR_LIBS="\`apr-$APR_MAJOR_VERSION-config --link-ld --libs\`"
++  APR_LIBS="\`apr-config --link-ld --libs\`"
+ 
+ An application should use the results of --cflags, --cppflags, --includes,
+ and --ldflags in their build process.

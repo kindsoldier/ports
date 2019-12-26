@@ -1,0 +1,26 @@
+#!/bin/sh
+set -x
+#PREFIX=${PKG_PREFIX}
+
+LOCALSTATEDIR="%%LOCALSTATEDIR%%"
+
+case $2 in 
+    PRE-INSTALL)
+	install -d -o root -g wheel -m 0750 ${LOCALSTATEDIR}/db/rpm
+	install -d -o root -g wheel -m 0750 ${LOCALSTATEDIR}/rpm/BUILD
+	install -d -o root -g wheel -m 0750 ${LOCALSTATEDIR}/rpm/RPMS/i386
+	install -d -o root -g wheel -m 0750 ${LOCALSTATEDIR}/rpm/RPMS/i486
+	install -d -o root -g wheel -m 0750 ${LOCALSTATEDIR}/rpm/RPMS/i586
+	install -d -o root -g wheel -m 0750 ${LOCALSTATEDIR}/rpm/RPMS/i686
+	install -d -o root -g wheel -m 0750 ${LOCALSTATEDIR}/rpm/RPMS/athlon
+	install -d -o root -g wheel -m 0750 ${LOCALSTATEDIR}/rpm/RPMS/pentium3
+	install -d -o root -g wheel -m 0750 ${LOCALSTATEDIR}/rpm/RPMS/pentium4
+	install -d -o root -g wheel -m 0750 ${LOCALSTATEDIR}/rpm/RPMS/noarch
+	install -d -o root -g wheel -m 0750 ${LOCALSTATEDIR}/rpm/SOURCES
+	install -d -o root -g wheel -m 0750 ${LOCALSTATEDIR}/rpm/SPECS
+	install -d -o root -g wheel -m 0750 ${LOCALSTATEDIR}/rpm/SRPMS
+	;;
+    POST-INSTALL)
+	;;
+esac
+#EOF

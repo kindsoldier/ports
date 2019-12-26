@@ -1,0 +1,23 @@
+# $FreeBSD: head/russian/hunspell/Makefile 437328 2017-03-30 21:12:43Z mat $
+
+PORTNAME=	hunspell
+PORTVERSION=	20131101
+CATEGORIES=	russian textproc
+MASTER_SITES=	http://cdn.bitbucket.org/Shaman_Alex/russian-dictionary-hunspell/downloads/
+DISTNAME=	ru_RU_UTF-8_${PORTVERSION}
+DIST_SUBDIR=	${PORTNAME}
+PKGNAMESUFFIX=  -ru
+
+MAINTAINER=	office@FreeBSD.org
+COMMENT=	Russian hunspell dictionaries
+
+USES=		zip
+NO_ARCH=	yes
+NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
+
+do-install:
+	${MKDIR} ${STAGEDIR}${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/ru_RU.aff ${WRKSRC}/ru_RU.dic ${STAGEDIR}${DATADIR}/
+
+.include <bsd.port.mk>

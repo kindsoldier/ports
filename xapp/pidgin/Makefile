@@ -1,0 +1,92 @@
+#
+# $Id$
+#
+PORTNAME=	pidgin
+PORTVERSION=	2.13.0
+CATEGORIES?=	net
+MASTER_SITES=	 http://downloads.sourceforge.net/project/pidgin/Pidgin/${PORTVERSION}/
+
+MAINTAINER=	onborodin@gmail.com
+COMMENT=	Pidgin multi-protocol messaging client (GTK+ UI)
+
+
+LIB_DEPENDS+=	libgnutls.so:crypto/libgnutls
+LIB_DEPENDS+=	libglib.so:devel/libglib
+LIB_DEPENDS+=	libgmp.so:math/libgmp
+LIB_DEPENDS+=	libgtkspell.so:gnome/libgtkspell
+LIB_DEPENDS+=	libidn.so:net/libidn
+LIB_DEPENDS+=	libenchant.so:text/libenchant
+LIB_DEPENDS+=	libgtk-x11.so:gnome/libgtk2
+LIB_DEPENDS+=	libavahi-glib.so:net/avahi
+LIB_DEPENDS+=	libdbus-glib.so:xfce/libdbus-glib
+LIB_DEPENDS+=	libpango.so:gnome/libpango
+LIB_DEPENDS+=	libxml2.so:text/libxml2
+LIB_DEPENDS+=	libstartup-notification.so:xfce/libstartup-notification
+
+
+RUN_DEPENDS+=	gtk-update-icon-cache:gnome/libgtk2
+RUN_DEPENDS+=	update-desktop-database:xfce/desktop-file-utils
+RUN_DEPENDS+=	gconftool:gnome/gconf2
+
+
+GNU_CONFIGURE=	yes
+USES+=		tar:bzip2
+USES+=		gmake
+
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ARGS+= --mandir=${PREFIX}/man
+CONFIGURE_ARGS+= --disable-gstreamer
+CONFIGURE_ARGS+= --disable-cap
+CONFIGURE_ARGS+= --disable-consoleui
+CONFIGURE_ARGS+= --disable-meanwhile
+CONFIGURE_ARGS+= --disable-nm
+CONFIGURE_ARGS+= --disable-perl
+CONFIGURE_ARGS+= --disable-screensaver
+CONFIGURE_ARGS+= --disable-tcl
+CONFIGURE_ARGS+= --disable-tk
+CONFIGURE_ARGS+= --disable-vv
+CONFIGURE_ARGS+= --enable-avahi
+CONFIGURE_ARGS+= --enable-dbus
+CONFIGURE_ARGS+= --enable-gtkspell
+CONFIGURE_ARGS+= --enable-nss=no
+CONFIGURE_ARGS+= --enable-startup-notification 
+CONFIGURE_ARGS+= --with-avahi-client-includes=${LOCALBASE}/include
+CONFIGURE_ARGS+= --with-avahi-client-libs=${LOCALBASE}/lib
+CONFIGURE_ARGS+= --with-nspr-includes=${LOCALBASE}/include/nspr
+CONFIGURE_ARGS+= --with-nspr-libs=${LOCALBASE}/lib
+CONFIGURE_ARGS+= --without-zephyr
+MAKE_ARGS+= program_transform_name=""
+INSTALLS_SHLIB=	yes
+
+FILES+= ${WRKSRC}/configure
+FILES+= ${WRKSRC}/Makefile.in
+FILES+= ${WRKSRC}/*/Makefile.in
+FILES+= ${WRKSRC}/*/*/Makefile.in
+FILES+= ${WRKSRC}/*/*/*/Makefile.in
+FILES+= ${WRKSRC}/libpurple/data/*.pc.in
+FILES+= ${WRKSRC}/pidgin/data/*.pc.in
+
+post-patch:
+	${REINPLACE_CMD} -e 's,gio-2.0,gio,g' 		${FILES}
+	${REINPLACE_CMD} -e 's,glib-2.0,glib,g' 	${FILES}
+	${REINPLACE_CMD} -e 's,gmodule-2.0,gmodule,g' 	${FILES}
+	${REINPLACE_CMD} -e 's,gobject-2.0,gobject,g' 	${FILES}
+	${REINPLACE_CMD} -e 's,gthread-2.0,gthread,g' 	${FILES}
+	${REINPLACE_CMD} -e 's,gtk+-2.0,gtk+,g' 	${FILES}
+	${REINPLACE_CMD} -e 's,gtkspell-2.0,gtkspell,g' 	${FILES}
+	${REINPLACE_CMD} -e 's,libxml-2.0,libxml2,g' 	${FILES}
+	${REINPLACE_CMD} -e 's,dbus-1,dbus,g' 	 ${FILES}
+	${REINPLACE_CMD} -e 's,dbus-glib-1,dbus-glib,g'  ${FILES}
+	${REINPLACE_CMD} -e 's,libstartup-notification-1.0,libstartup-notification,g' 	 ${FILES}
+	${REINPLACE_CMD} -e 's,-@PURPLE_MAJOR_VERSION@,,g' 	 ${FILES}
+	${REINPLACE_CMD} -e 's,-$$(PURPLE_MAJOR_VERSION),,g' 	 ${FILES}
+	${REINPLACE_CMD} -e 's,-$$PURPLE_MAJOR_VERSION,,g' 	 ${FILES}
+
+
+PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
+PKGINSTALL=	${WRKDIR}/pkg-install
+SUB_FILES+= 	pkg-install pkg-deinstall
+
+.include <bsd.port.mk>
+#EOF

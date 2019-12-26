@@ -1,0 +1,11 @@
+--- ./python/Makefile.in.orig	2014-11-29 17:00:50.000000000 +0200
++++ ./python/Makefile.in	2014-11-29 17:13:18.000000000 +0200
+@@ -881,7 +881,7 @@
+ 
+ info-am:
+ 
+-install-data-am: install-dist_docsDATA install-dist_pythonDATA \
++install-data-am:  install-dist_pythonDATA \
+ 	install-pythonLTLIBRARIES
+ 
+ install-dvi: install-dvi-recursive

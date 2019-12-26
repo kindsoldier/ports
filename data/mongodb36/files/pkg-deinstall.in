@@ -1,0 +1,15 @@
+#!/bin/sh -x
+
+MONGO_OWNER="%%MONGO_OWNER%%"
+MONGO_GROUP="%%MONGO_GROUP%%"
+MONGO_DB_DIR="%%MONGO_DB_DIR%%"
+
+
+case $2 in 
+    DEINSTALL)
+	;;
+    POST-DEINSTALL)
+	rmdir ${MONGO_DB_DIR} || (ls -l ${MONGO_DB_DIR} ; du -sch ${MONGO_DB_DIR})
+	;;
+esac
+#EOF

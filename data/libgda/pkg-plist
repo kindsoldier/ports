@@ -1,0 +1,327 @@
+bin/gda-list-config
+bin/gda-list-server-op
+bin/gda-sql
+bin/gda-test-connection
+etc/libgda/config
+include/libgda/libgda-report/gda-report-docbook-document.h
+include/libgda/libgda-report/gda-report-document.h
+include/libgda/libgda-report/gda-report-engine.h
+include/libgda/libgda-report/gda-report-rml-document.h
+include/libgda/libgda-report/libgda-report.h
+include/libgda/libgda-xslt/libgda-xslt.h
+include/libgda/libgda/gda-attributes-manager.h
+include/libgda/libgda/gda-batch.h
+include/libgda/libgda/gda-binreloc.h
+include/libgda/libgda/gda-blob-op.h
+include/libgda/libgda/gda-column.h
+include/libgda/libgda/gda-config.h
+include/libgda/libgda/gda-connection-event.h
+include/libgda/libgda/gda-connection-private.h
+include/libgda/libgda/gda-connection.h
+include/libgda/libgda/gda-data-access-wrapper.h
+include/libgda/libgda/gda-data-comparator.h
+include/libgda/libgda/gda-data-handler.h
+include/libgda/libgda/gda-data-model-array.h
+include/libgda/libgda/gda-data-model-dir.h
+include/libgda/libgda/gda-data-model-extra.h
+include/libgda/libgda/gda-data-model-import.h
+include/libgda/libgda/gda-data-model-iter-extra.h
+include/libgda/libgda/gda-data-model-iter.h
+include/libgda/libgda/gda-data-model-private.h
+include/libgda/libgda/gda-data-model.h
+include/libgda/libgda/gda-data-pivot.h
+include/libgda/libgda/gda-data-proxy.h
+include/libgda/libgda/gda-data-select.h
+include/libgda/libgda/gda-decl.h
+include/libgda/libgda/gda-enum-types.h
+include/libgda/libgda/gda-enums.h
+include/libgda/libgda/gda-holder.h
+include/libgda/libgda/gda-lockable.h
+include/libgda/libgda/gda-log.h
+include/libgda/libgda/gda-marshal.h
+include/libgda/libgda/gda-meta-store.h
+include/libgda/libgda/gda-meta-struct.h
+include/libgda/libgda/gda-mutex.h
+include/libgda/libgda/gda-quark-list.h
+include/libgda/libgda/gda-repetitive-statement.h
+include/libgda/libgda/gda-row.h
+include/libgda/libgda/gda-server-operation.h
+include/libgda/libgda/gda-server-provider-extra.h
+include/libgda/libgda/gda-server-provider-private.h
+include/libgda/libgda/gda-server-provider.h
+include/libgda/libgda/gda-set.h
+include/libgda/libgda/gda-sql-builder.h
+include/libgda/libgda/gda-statement-extra.h
+include/libgda/libgda/gda-statement.h
+include/libgda/libgda/gda-transaction-status-private.h
+include/libgda/libgda/gda-transaction-status.h
+include/libgda/libgda/gda-tree-manager.h
+include/libgda/libgda/gda-tree-mgr-columns.h
+include/libgda/libgda/gda-tree-mgr-label.h
+include/libgda/libgda/gda-tree-mgr-schemas.h
+include/libgda/libgda/gda-tree-mgr-select.h
+include/libgda/libgda/gda-tree-mgr-tables.h
+include/libgda/libgda/gda-tree-node.h
+include/libgda/libgda/gda-tree.h
+include/libgda/libgda/gda-util.h
+include/libgda/libgda/gda-value.h
+include/libgda/libgda/gda-xa-transaction.h
+include/libgda/libgda/handlers/gda-handler-bin.h
+include/libgda/libgda/handlers/gda-handler-boolean.h
+include/libgda/libgda/handlers/gda-handler-numerical.h
+include/libgda/libgda/handlers/gda-handler-string.h
+include/libgda/libgda/handlers/gda-handler-time.h
+include/libgda/libgda/handlers/gda-handler-type.h
+include/libgda/libgda/libgda-global-variables.h
+include/libgda/libgda/libgda.h
+include/libgda/libgda/providers-support/gda-data-select-priv.h
+include/libgda/libgda/providers-support/gda-meta-column-types.h
+include/libgda/libgda/providers-support/gda-pstmt.h
+include/libgda/libgda/sql-parser/gda-sql-parser-enum-types.h
+include/libgda/libgda/sql-parser/gda-sql-parser.h
+include/libgda/libgda/sql-parser/gda-sql-statement.h
+include/libgda/libgda/sql-parser/gda-statement-struct-compound.h
+include/libgda/libgda/sql-parser/gda-statement-struct-decl.h
+include/libgda/libgda/sql-parser/gda-statement-struct-delete.h
+include/libgda/libgda/sql-parser/gda-statement-struct-insert.h
+include/libgda/libgda/sql-parser/gda-statement-struct-parts.h
+include/libgda/libgda/sql-parser/gda-statement-struct-pspec.h
+include/libgda/libgda/sql-parser/gda-statement-struct-select.h
+include/libgda/libgda/sql-parser/gda-statement-struct-trans.h
+include/libgda/libgda/sql-parser/gda-statement-struct-unknown.h
+include/libgda/libgda/sql-parser/gda-statement-struct-update.h
+include/libgda/libgda/sql-parser/gda-statement-struct-util.h
+include/libgda/libgda/sql-parser/gda-statement-struct.h
+include/libgda/libgda/sqlite/gda-sqlite-provider.h
+include/libgda/libgda/thread-wrapper/gda-thread-wrapper.h
+include/libgda/libgda/virtual/gda-vconnection-data-model.h
+include/libgda/libgda/virtual/gda-vconnection-hub.h
+include/libgda/libgda/virtual/gda-virtual-connection.h
+include/libgda/libgda/virtual/gda-virtual-provider.h
+include/libgda/libgda/virtual/gda-vprovider-data-model.h
+include/libgda/libgda/virtual/gda-vprovider-hub.h
+include/libgda/libgda/virtual/libgda-virtual.h
+lib/libgda-report.la
+lib/libgda-report.so
+lib/libgda-report.so.5
+lib/libgda-xslt.la
+lib/libgda-xslt.so
+lib/libgda-xslt.so.5
+lib/libgda.la
+lib/libgda.so
+lib/libgda.so.5
+lib/libgda/providers/libgda-sqlite.la
+lib/libgda/providers/libgda-sqlite.so
+lib/pkgconfig/libgda-report.pc
+lib/pkgconfig/libgda-sqlite.pc
+lib/pkgconfig/libgda-xslt.pc
+lib/pkgconfig/libgda.pc
+man/man1/gda-sql.1.gz
+man/man1/gda.1.gz
+share/libgda/dtd/libgda-array.dtd
+share/libgda/dtd/libgda-paramlist.dtd
+share/libgda/dtd/libgda-server-operation.dtd
+share/libgda/gda_trml2html/__init__.py
+share/libgda/gda_trml2html/trml2html.py
+share/libgda/gda_trml2html/utils.py
+share/libgda/gda_trml2pdf/__init__.py
+share/libgda/gda_trml2pdf/color.py
+share/libgda/gda_trml2pdf/trml2pdf.py
+share/libgda/gda_trml2pdf/utils.py
+share/libgda/information_schema.xml
+share/libgda/sqlite_specs_add_column.xml
+share/libgda/sqlite_specs_create_db.xml
+share/libgda/sqlite_specs_create_index.xml
+share/libgda/sqlite_specs_create_table.xml
+share/libgda/sqlite_specs_create_view.xml
+share/libgda/sqlite_specs_drop_db.xml
+share/libgda/sqlite_specs_drop_index.xml
+share/libgda/sqlite_specs_drop_table.xml
+share/libgda/sqlite_specs_drop_view.xml
+share/libgda/sqlite_specs_dsn.xml
+share/libgda/sqlite_specs_rename_table.xml
+share/libgda/web/cnc.js
+share/libgda/web/gda-print.css
+share/libgda/web/gda.css
+share/libgda/web/irb.css
+share/libgda/web/irb.js
+share/libgda/web/jquery.js
+share/libgda/web/md5.js
+share/libgda/web/mouseapp_2.js
+share/libgda/web/mouseirb_2.js
+share/locale/ar/LC_MESSAGES/libgda.mo
+share/locale/az/LC_MESSAGES/libgda.mo
+share/locale/bs/LC_MESSAGES/libgda.mo
+share/locale/ca@valencia/LC_MESSAGES/libgda.mo
+share/locale/ca/LC_MESSAGES/libgda.mo
+share/locale/cs/LC_MESSAGES/libgda.mo
+share/locale/da/LC_MESSAGES/libgda.mo
+share/locale/de/LC_MESSAGES/libgda.mo
+share/locale/dz/LC_MESSAGES/libgda.mo
+share/locale/el/LC_MESSAGES/libgda.mo
+share/locale/en_CA/LC_MESSAGES/libgda.mo
+share/locale/en_GB/LC_MESSAGES/libgda.mo
+share/locale/eo/LC_MESSAGES/libgda.mo
+share/locale/es/LC_MESSAGES/libgda.mo
+share/locale/eu/LC_MESSAGES/libgda.mo
+share/locale/fa/LC_MESSAGES/libgda.mo
+share/locale/fi/LC_MESSAGES/libgda.mo
+share/locale/fr/LC_MESSAGES/libgda.mo
+share/locale/ga/LC_MESSAGES/libgda.mo
+share/locale/gl/LC_MESSAGES/libgda.mo
+share/locale/hr/LC_MESSAGES/libgda.mo
+share/locale/hu/LC_MESSAGES/libgda.mo
+share/locale/id/LC_MESSAGES/libgda.mo
+share/locale/it/LC_MESSAGES/libgda.mo
+share/locale/ja/LC_MESSAGES/libgda.mo
+share/locale/ko/LC_MESSAGES/libgda.mo
+share/locale/lt/LC_MESSAGES/libgda.mo
+share/locale/lv/LC_MESSAGES/libgda.mo
+share/locale/mk/LC_MESSAGES/libgda.mo
+share/locale/ml/LC_MESSAGES/libgda.mo
+share/locale/ms/LC_MESSAGES/libgda.mo
+share/locale/nb/LC_MESSAGES/libgda.mo
+share/locale/ne/LC_MESSAGES/libgda.mo
+share/locale/nl/LC_MESSAGES/libgda.mo
+share/locale/oc/LC_MESSAGES/libgda.mo
+share/locale/pa/LC_MESSAGES/libgda.mo
+share/locale/pt_BR/LC_MESSAGES/libgda.mo
+share/locale/pt/LC_MESSAGES/libgda.mo
+share/locale/ru/LC_MESSAGES/libgda.mo
+share/locale/rw/LC_MESSAGES/libgda.mo
+share/locale/sk/LC_MESSAGES/libgda.mo
+share/locale/sl/LC_MESSAGES/libgda.mo
+share/locale/sq/LC_MESSAGES/libgda.mo
+share/locale/sr@latin/LC_MESSAGES/libgda.mo
+share/locale/sr/LC_MESSAGES/libgda.mo
+share/locale/sv/LC_MESSAGES/libgda.mo
+share/locale/tg/LC_MESSAGES/libgda.mo
+share/locale/tr/LC_MESSAGES/libgda.mo
+share/locale/uk/LC_MESSAGES/libgda.mo
+share/locale/vi/LC_MESSAGES/libgda.mo
+share/locale/zh_CN/LC_MESSAGES/libgda.mo
+share/locale/zh_HK/LC_MESSAGES/libgda.mo
+share/locale/zh_TW/LC_MESSAGES/libgda.mo
+@dir include/libgda/libgda/handlers
+@dir include/libgda/libgda/providers-support
+@dir include/libgda/libgda/sql-parser
+@dir include/libgda/libgda/sqlite
+@dir include/libgda/libgda/thread-wrapper
+@dir include/libgda/libgda/virtual
+@dir include/libgda/libgda
+@dir include/libgda/libgda-report
+@dir include/libgda/libgda-xslt
+@dir include/libgda
+@dir lib/libgda/providers
+@dir lib/libgda
+@dir share/libgda/dtd
+@dir share/libgda/gda_trml2html
+@dir share/libgda/gda_trml2pdf
+@dir share/libgda/web
+@dir share/libgda
+@dir share/locale/ar/LC_MESSAGES
+@dir share/locale/ar
+@dir share/locale/az/LC_MESSAGES
+@dir share/locale/az
+@dir share/locale/bs/LC_MESSAGES
+@dir share/locale/bs
+@dir share/locale/ca/LC_MESSAGES
+@dir share/locale/ca
+@dir share/locale/ca@valencia/LC_MESSAGES
+@dir share/locale/ca@valencia
+@dir share/locale/cs/LC_MESSAGES
+@dir share/locale/cs
+@dir share/locale/da/LC_MESSAGES
+@dir share/locale/da
+@dir share/locale/de/LC_MESSAGES
+@dir share/locale/de
+@dir share/locale/dz/LC_MESSAGES
+@dir share/locale/dz
+@dir share/locale/el/LC_MESSAGES
+@dir share/locale/el
+@dir share/locale/en_CA/LC_MESSAGES
+@dir share/locale/en_CA
+@dir share/locale/en_GB/LC_MESSAGES
+@dir share/locale/en_GB
+@dir share/locale/eo/LC_MESSAGES
+@dir share/locale/eo
+@dir share/locale/es/LC_MESSAGES
+@dir share/locale/es
+@dir share/locale/eu/LC_MESSAGES
+@dir share/locale/eu
+@dir share/locale/fa/LC_MESSAGES
+@dir share/locale/fa
+@dir share/locale/fi/LC_MESSAGES
+@dir share/locale/fi
+@dir share/locale/fr/LC_MESSAGES
+@dir share/locale/fr
+@dir share/locale/ga/LC_MESSAGES
+@dir share/locale/ga
+@dir share/locale/gl/LC_MESSAGES
+@dir share/locale/gl
+@dir share/locale/hr/LC_MESSAGES
+@dir share/locale/hr
+@dir share/locale/hu/LC_MESSAGES
+@dir share/locale/hu
+@dir share/locale/id/LC_MESSAGES
+@dir share/locale/id
+@dir share/locale/it/LC_MESSAGES
+@dir share/locale/it
+@dir share/locale/ja/LC_MESSAGES
+@dir share/locale/ja
+@dir share/locale/ko/LC_MESSAGES
+@dir share/locale/ko
+@dir share/locale/lt/LC_MESSAGES
+@dir share/locale/lt
+@dir share/locale/lv/LC_MESSAGES
+@dir share/locale/lv
+@dir share/locale/mk/LC_MESSAGES
+@dir share/locale/mk
+@dir share/locale/ml/LC_MESSAGES
+@dir share/locale/ml
+@dir share/locale/ms/LC_MESSAGES
+@dir share/locale/ms
+@dir share/locale/nb/LC_MESSAGES
+@dir share/locale/nb
+@dir share/locale/ne/LC_MESSAGES
+@dir share/locale/ne
+@dir share/locale/nl/LC_MESSAGES
+@dir share/locale/nl
+@dir share/locale/oc/LC_MESSAGES
+@dir share/locale/oc
+@dir share/locale/pa/LC_MESSAGES
+@dir share/locale/pa
+@dir share/locale/pt/LC_MESSAGES
+@dir share/locale/pt
+@dir share/locale/pt_BR/LC_MESSAGES
+@dir share/locale/pt_BR
+@dir share/locale/ru/LC_MESSAGES
+@dir share/locale/ru
+@dir share/locale/rw/LC_MESSAGES
+@dir share/locale/rw
+@dir share/locale/sk/LC_MESSAGES
+@dir share/locale/sk
+@dir share/locale/sl/LC_MESSAGES
+@dir share/locale/sl
+@dir share/locale/sq/LC_MESSAGES
+@dir share/locale/sq
+@dir share/locale/sr/LC_MESSAGES
+@dir share/locale/sr
+@dir share/locale/sr@latin/LC_MESSAGES
+@dir share/locale/sr@latin
+@dir share/locale/sv/LC_MESSAGES
+@dir share/locale/sv
+@dir share/locale/tg/LC_MESSAGES
+@dir share/locale/tg
+@dir share/locale/tr/LC_MESSAGES
+@dir share/locale/tr
+@dir share/locale/uk/LC_MESSAGES
+@dir share/locale/uk
+@dir share/locale/vi/LC_MESSAGES
+@dir share/locale/vi
+@dir share/locale/zh_CN/LC_MESSAGES
+@dir share/locale/zh_CN
+@dir share/locale/zh_HK/LC_MESSAGES
+@dir share/locale/zh_HK
+@dir share/locale/zh_TW/LC_MESSAGES
+@dir share/locale/zh_TW

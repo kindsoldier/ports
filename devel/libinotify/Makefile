@@ -1,0 +1,20 @@
+# Created by: stas
+# $FreeBSD: head/devel/libinotify/Makefile 487659 2018-12-17 07:59:57Z ale $
+
+PORTNAME=	libinotify
+PORTVERSION=	20180201
+CATEGORIES=	devel
+
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Kevent based inotify compatible library
+
+GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+USE_LDCONFIG=	yes
+USES=		autoreconf libtool
+
+GH_ACCOUNT=	${PORTNAME}-kqueue
+GH_PROJECT=	${PORTNAME}-kqueue
+USE_GITHUB=	yes
+
+.include <bsd.port.mk>

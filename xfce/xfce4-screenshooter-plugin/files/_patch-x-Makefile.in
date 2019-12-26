@@ -1,0 +1,14 @@
+--- ./Makefile.in.orig	2012-05-02 21:22:14.000000000 +0300
++++ ./Makefile.in	2014-12-22 17:58:49.000000000 +0200
+@@ -596,9 +596,9 @@
+ 
+ 
+ # Asturian documentation
+-astdocdir = $(datadir)/xfce4/doc/ast
++astdocdir = $(datadir)/doc/xfce4-screenshooter/ast
+ astdoc_DATA = docs/manual/ast/index.html
+-astimagesdir = $(datadir)/xfce4/doc/ast/images
++astimagesdir = $(datadir)/doc/xfce4-screenshooter/ast/images
+ astimages_DATA = \
+ 	docs/manual/ast/images/xfce4-screenshooter-dialog1.png \
+ 	docs/manual/ast/images/xfce4-screenshooter-dialog2.png \

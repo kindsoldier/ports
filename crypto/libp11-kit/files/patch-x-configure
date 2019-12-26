@@ -1,0 +1,20 @@
+--- ./configure.orig	2015-12-07 15:51:03.000000000 +0200
++++ ./configure	2016-03-28 20:05:26.553013000 +0200
+@@ -17957,7 +17957,7 @@
+ privatedir='${libdir}/p11-kit'
+ 
+ 
+-ac_config_files="$ac_config_files Makefile doc/Makefile doc/manual/Makefile po/Makefile.in p11-kit/p11-kit-1.pc p11-kit/pkcs11.conf.example trust/trust-extract-compat trust/test-extract"
++ac_config_files="$ac_config_files Makefile doc/Makefile doc/manual/Makefile po/Makefile.in p11-kit/p11-kit.pc p11-kit/pkcs11.conf.example trust/trust-extract-compat trust/test-extract"
+ 
+ cat >confcache <<\_ACEOF
+ # This file is a shell script that caches the results of configure
+@@ -19034,7 +19034,7 @@
+     "doc/Makefile") CONFIG_FILES="$CONFIG_FILES doc/Makefile" ;;
+     "doc/manual/Makefile") CONFIG_FILES="$CONFIG_FILES doc/manual/Makefile" ;;
+     "po/Makefile.in") CONFIG_FILES="$CONFIG_FILES po/Makefile.in" ;;
+-    "p11-kit/p11-kit-1.pc") CONFIG_FILES="$CONFIG_FILES p11-kit/p11-kit-1.pc" ;;
++    "p11-kit/p11-kit.pc") CONFIG_FILES="$CONFIG_FILES p11-kit/p11-kit.pc" ;;
+     "p11-kit/pkcs11.conf.example") CONFIG_FILES="$CONFIG_FILES p11-kit/pkcs11.conf.example" ;;
+     "trust/trust-extract-compat") CONFIG_FILES="$CONFIG_FILES trust/trust-extract-compat" ;;
+     "trust/test-extract") CONFIG_FILES="$CONFIG_FILES trust/test-extract" ;;

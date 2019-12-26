@@ -1,0 +1,8 @@
+--- ./po/Makevars.orig	2013-09-22 20:19:45.000000000 +0300
++++ ./po/Makevars	2014-12-27 02:09:51.000000000 +0200
+@@ -1,4 +1,4 @@
+-DOMAIN = json-glib-1.0
++DOMAIN = json-glib
+ XGETTEXT_OPTIONS = --keyword=_ --keyword=N_ --keyword=P_ --keyword=C_
+ COPYRIGHT_HOLDER = Intel Corporation
+ MSGID_BUGS_ADDRESS = http://bugzilla.gnome.org/enter_bug.cgi?product=json-glib

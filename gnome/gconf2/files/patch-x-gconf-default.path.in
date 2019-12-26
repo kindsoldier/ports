@@ -1,0 +1,20 @@
+--- ./gconf/default.path.in.orig	2011-03-14 19:00:57.000000000 +0200
++++ ./gconf/default.path.in	2011-11-02 06:59:44.000000000 +0300
+@@ -11,7 +11,7 @@
+ # To read in any mandatory settings that the Sys Admin may have created
+ # prior to a desktop system upgrade. The SysAdmin can stick read-only system
+ # wide sources in this file.
+-include @sysgconfdir@/2/local-mandatory.path
++include @sysgconfdir@/local-mandatory.path
+ 
+ # Now see where users want us to look - basically the user can stick arbitrary 
+ # sources in a ~/.gconf.path file and they're inserted here
+@@ -26,7 +26,7 @@
+ # To read in any defaults settings that the Sys Admin may have created
+ # prior to a desktop system upgrade. The SysAdmin can stick default values
+ # system-wide in this file.
+-include @sysgconfdir@/2/local-defaults.path
++include @sysgconfdir@/local-defaults.path
+ 
+ # Finally, look at the systemwide defaults
+ xml:readonly:@sysgconfdir@/gconf.xml.defaults

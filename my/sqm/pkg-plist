@@ -1,0 +1,57 @@
+etc/rc.d/sqm
+sbin/sqm
+sbin/sqm-helper
+share/sqm/create-pg-db.sql
+share/sqm/public/css/app.css
+share/sqm/public/css/datatables.css
+share/sqm/public/css/datatables.min.css
+share/sqm/public/css/foundation-float.css
+share/sqm/public/css/foundation-float.min.css
+share/sqm/public/css/foundation.css
+share/sqm/public/css/foundation.min.css
+share/sqm/public/favicon.ico
+share/sqm/public/favicon.png
+share/sqm/public/icons/foundation-icons.css
+share/sqm/public/icons/foundation-icons.eot
+share/sqm/public/icons/foundation-icons.svg
+share/sqm/public/icons/foundation-icons.ttf
+share/sqm/public/icons/foundation-icons.woff
+share/sqm/public/icons/preview.html
+share/sqm/public/images/sort_asc_disabled.png
+share/sqm/public/images/sort_asc.png
+share/sqm/public/images/sort_both.png
+share/sqm/public/images/sort_desc_disabled.png
+share/sqm/public/images/sort_desc.png
+share/sqm/public/js/app.js
+share/sqm/public/js/datatables.js
+share/sqm/public/js/datatables.min.js
+share/sqm/public/js/foundation.js
+share/sqm/public/js/foundation.min.js
+share/sqm/public/js/jquery.js
+share/sqm/public/js/jquery.min.js
+share/sqm/public/js/what-input.js
+share/sqm/schema.sql
+share/sqm/templs/exception.development.html.ep
+share/sqm/templs/exception.production.html.ep
+share/sqm/templs/hello.html.ep
+share/sqm/templs/layouts/default.html.ep
+share/sqm/templs/login.html.ep
+share/sqm/templs/not_found.development.html.ep
+share/sqm/templs/not_found.production.html.ep
+share/sqm/templs/user-add-form.html.ep
+share/sqm/templs/user-add-handler.html.ep
+share/sqm/templs/user-delete-form.html.ep
+share/sqm/templs/user-delete-handler.html.ep
+share/sqm/templs/user-list.html.ep
+share/sqm/templs/user-rename-form.html.ep
+share/sqm/templs/user-rename-handler.html.ep
+share/sqm/templs/user-update-form.html.ep
+share/sqm/templs/user-update-handler.html.ep
+@dir share/sqm/public/css
+@dir share/sqm/public/icons
+@dir share/sqm/public/images
+@dir share/sqm/public/js
+@dir share/sqm/public
+@dir share/sqm/templs/layouts
+@dir share/sqm/templs
+@dir share/sqm

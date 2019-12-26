@@ -1,0 +1,23 @@
+bin/bgp_btoa
+bin/vtysh
+lib/libfrr.a
+lib/libfrr.la
+lib/libfrr.so
+lib/libfrr.so.0
+sbin/bgpd
+sbin/ospf6d
+sbin/ospfd
+sbin/ripd
+sbin/ripngd
+sbin/ssd
+sbin/zebra
+share/examples/frr/bgpd.conf.sample
+share/examples/frr/bgpd.conf.sample2
+share/examples/frr/bgpd.conf.vnc.sample
+share/examples/frr/ospf6d.conf.sample
+share/examples/frr/ospfd.conf.sample
+share/examples/frr/ripd.conf.sample
+share/examples/frr/ripngd.conf.sample
+share/examples/frr/vtysh.conf.sample
+share/examples/frr/zebra.conf.sample
+@dir share/examples/frr

@@ -1,0 +1,32 @@
+#!/bin/sh
+
+set -x
+
+case $2 in 
+    PRE-INSTALL)
+	BAREOS_GROUP="%%BAREOS_GROUP%%"
+	BAREOS_OWNER="%%BAREOS_OWNER%%"
+	BAREOS_GROUP_ID="%%BAREOS_GROUP_ID%%"
+	BAREOS_OWNER_ID="%%BAREOS_OWNER_ID%%"
+	BAREOS_DBDIR="%%BAREOS_DBDIR%%"
+	BAREOS_LOGDIR="%%BAREOS_LOGDIR%%"
+	BAREOS_RUNDIR="%%BAREOS_RUNDIR%%"
+	PKG_PREFIX="/notexist"
+
+	pw group add ${BAREOS_GROUP} -g ${BAREOS_GROUP_ID}
+
+	pw user add ${BAREOS_OWNER} -g ${BAREOS_GROUP}  \
+	    -d ${PKG_PREFIX} -s /usr/sbin/nologin -u ${BAREOS_OWNER_ID} \
+	    -c "BAREOS"
+	pw group mod ${BAREOS_GROUP} -M ${BAREOS_OWNER}
+	pw group show ${BAREOS_GROUP}
+	pw user show ${BAREOS_OWNER}
+	for dir in ${BAREOS_DBDIR} ${BAREOS_LOGDIR} ${BAREOS_RUNDIR} ;
+	do
+	    install -d -m 0750  -o ${BAREOS_OWNER} -g ${BAREOS_GROUP} ${dir}
+	done
+	;;
+    POST-INSTALL)
+	;;
+esac
+#EOF

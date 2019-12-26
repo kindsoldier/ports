@@ -1,0 +1,19 @@
+# $FreeBSD: head/devel/rubygem-tilt/Makefile 486194 2018-11-29 16:46:04Z sunpoet $
+
+PORTNAME=	tilt
+PORTVERSION=	2.0.10
+CATEGORIES=	devel rubygems
+MASTER_SITES=	RG
+
+MAINTAINER=	ruby@FreeBSD.org
+COMMENT=	Generic interface to multiple Ruby template engines
+
+
+USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
+
+PLIST_FILES=	bin/tilt
+
+.include <bsd.port.mk>

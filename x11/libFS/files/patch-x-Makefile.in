@@ -1,0 +1,11 @@
+--- ./Makefile.in.orig	2014-03-16 21:03:53.000000000 +0300
++++ ./Makefile.in	2014-12-14 09:25:01.000000000 +0200
+@@ -853,7 +853,7 @@
+ 
+ info-am:
+ 
+-install-data-am: install-dist_docDATA install-pkgconfigDATA
++install-data-am: install-pkgconfigDATA
+ 
+ install-dvi: install-dvi-recursive
+ 

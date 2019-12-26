@@ -1,0 +1,18 @@
+--- ./configure.orig	2016-01-28 22:02:21.000000000 +0200
++++ ./configure	2016-03-28 19:52:40.982905000 +0200
+@@ -7198,13 +7198,13 @@
+   *)
+     LIBNETTLE_FORLINK=libnettle.so
+     LIBNETTLE_SONAME='$(LIBNETTLE_FORLINK).$(LIBNETTLE_MAJOR)'
+-    LIBNETTLE_FILE='$(LIBNETTLE_SONAME).$(LIBNETTLE_MINOR)'
++    LIBNETTLE_FILE='$(LIBNETTLE_SONAME)'
+     LIBNETTLE_LINK='$(CC) $(CFLAGS) $(LDFLAGS) -shared -Wl,-soname=$(LIBNETTLE_SONAME)'
+     LIBNETTLE_LIBS=''
+ 
+     LIBHOGWEED_FORLINK=libhogweed.so
+     LIBHOGWEED_SONAME='$(LIBHOGWEED_FORLINK).$(LIBHOGWEED_MAJOR)'
+-    LIBHOGWEED_FILE='$(LIBHOGWEED_SONAME).$(LIBHOGWEED_MINOR)'
++    LIBHOGWEED_FILE='$(LIBHOGWEED_SONAME)'
+     LIBHOGWEED_LINK='$(CC) $(CFLAGS) $(LDFLAGS) -shared -Wl,-soname=$(LIBHOGWEED_SONAME)'
+     # Requested by debian, to make linking with only -lhogweed work
+     # (does not work in general, e.g., with static linking all of

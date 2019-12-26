@@ -1,0 +1,11 @@
+--- ./configure.orig	2011-11-09 17:13:35.000000000 +0300
++++ ./configure	2011-11-09 18:01:17.000000000 +0300
+@@ -2690,7 +2690,7 @@
+ _ACEOF
+ 
+ 
+-program_transform_name="s,\$\$,${PACKAGE_SUFFIX},"
++program_transform_name="s,,,"
+ 
+ pkgdatadir=${datadir}/vala
+ 

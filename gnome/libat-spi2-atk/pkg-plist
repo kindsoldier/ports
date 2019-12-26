@@ -1,0 +1,13 @@
+include/at-spi2-atk/atk-bridge.h
+lib/gnome3-settings-daemon/gtk-modules/at-spi2-atk.desktop
+lib/gtk/modules/libatk-bridge.la
+lib/gtk/modules/libatk-bridge.so
+lib/libatk-bridge.la
+lib/libatk-bridge.so
+lib/libatk-bridge.so.0
+lib/pkgconfig/atk-bridge.pc
+@dir include/at-spi2-atk
+@dir lib/gnome3-settings-daemon/gtk-modules
+@dir lib/gnome3-settings-daemon
+@dir lib/gtk/modules
+@dir lib/gtk

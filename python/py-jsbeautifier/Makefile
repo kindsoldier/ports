@@ -1,0 +1,20 @@
+# Created by: Shaun Amott <shaun@FreeBSD.org>
+# $FreeBSD: head/devel/py-jsbeautifier/Makefile 472884 2018-06-20 17:05:41Z mat $
+
+PORTNAME=	jsbeautifier
+PORTVERSION=	1.6.12
+CATEGORIES=	devel python
+MASTER_SITES=	CHEESESHOP
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	shaun@FreeBSD.org
+COMMENT=	JavaScript unobfuscator and beautifier
+
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=1.6.1:python/py-six@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}editorconfig>=0.12.0:python/py-editorconfig@${PY_FLAVOR}
+
+USES?=		python
+USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
+
+.include <bsd.port.mk>

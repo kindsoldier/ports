@@ -1,0 +1,20 @@
+--- ./contrib/Makefile.orig	2017-06-13 14:32:49.140068000 +0200
++++ ./contrib/Makefile	2017-06-13 14:45:29.660549000 +0200
+@@ -5,11 +5,13 @@
+ include $(top_builddir)/src/Makefile.global
+ 
+ SUBDIRS = \
+-		vacuumlo \
+ 		oid2name	\
+-
+-
+-
++		vacuumlo	\
++		mchar		\
++		fulleq		\
++		fasttrun	\
++		online_analyze	\
++		plantuner
+ 
+ NO = \
+ 		adminpack	\

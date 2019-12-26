@@ -1,0 +1,45 @@
+#!/bin/sh
+
+set -x
+
+
+case $2 in 
+    PRE-INSTALL)
+
+	DBUS_GROUP="%%DBUS_GROUP%%"
+	DBUS_OWNER="%%DBUS_OWNER%%"
+	DBUS_GROUP_ID="%%DBUS_GROUP_ID%%"
+	DBUS_OWNER_ID="%%DBUS_OWNER_ID%%"
+
+	PKG_PREFIX="%%PREFIX%%"
+#	DBUS_LOCALSTATEDIR="%%LOCALSTATEDIR%%"
+	DBUS_RUNDIR="%%DBUS_RUNDIR%%"
+	DBUS_DBDIR="%%DBUS_DBDIR%%"
+
+	DBUS_NAME="dbus"
+	DBUS_SHELL="/usr/sbin/nologin"
+
+
+	pw group add ${DBUS_GROUP}  -g ${DBUS_GROUP_ID}
+	pw group show ${DBUS_GROUP}
+	pw user add ${DBUS_OWNER} -u ${DBUS_OWNER_ID} \
+	    -g ${DBUS_GROUP}  \
+	    -d "/var/tmp" \
+	    -s ${DBUS_SHELL} -u ${DBUS_OWNER_ID} \
+	    -c "${DBUS_NAME}"
+	pw group mod ${DBUS_GROUP} -M ${DBUS_OWNER}
+	pw user show ${DBUS_OWNER}
+	pw group show ${DBUS_GROUP}
+	install -d -o ${DBUS_OWNER} -g ${DBUS_GROUP} -m 0755 ${DBUS_DBDIR}
+	install -d -o ${DBUS_OWNER} -g ${DBUS_GROUP} -m 0755 ${DBUS_RUNDIR}
+	;;
+    POST-INSTALL)
+	DBUS_GROUP="%%DBUS_GROUP%%"
+	DBUS_OWNER="%%DBUS_OWNER%%"
+	chown root:${DBUS_GROUP} ${PKG_PREFIX}/libexec/dbus-daemon-launch-helper
+	install -d -o ${DBUS_OWNER} -g ${DBUS_GROUP} ${PKG_PREFIX}/etc/dbus/system.d
+	${PKG_PREFIX}/bin/dbus-uuidgen --ensure
+	;;
+esac
+exit 0
+#EOF

@@ -1,0 +1,68 @@
+etc/dbus/system.d/org.freedesktop.PolicyKit1.conf
+etc/pam.d/polkit
+etc/polkit/rules.d/50-default.rules
+bin/pkaction
+bin/pkcheck
+bin/pkexec
+bin/pkttyagent
+include/polkit/polkit/polkit.h
+include/polkit/polkit/polkitactiondescription.h
+include/polkit/polkit/polkitauthority.h
+include/polkit/polkit/polkitauthorityfeatures.h
+include/polkit/polkit/polkitauthorizationresult.h
+include/polkit/polkit/polkitcheckauthorizationflags.h
+include/polkit/polkit/polkitdetails.h
+include/polkit/polkit/polkitenumtypes.h
+include/polkit/polkit/polkiterror.h
+include/polkit/polkit/polkitidentity.h
+include/polkit/polkit/polkitimplicitauthorization.h
+include/polkit/polkit/polkitpermission.h
+include/polkit/polkit/polkitprivate.h
+include/polkit/polkit/polkitsubject.h
+include/polkit/polkit/polkitsystembusname.h
+include/polkit/polkit/polkittemporaryauthorization.h
+include/polkit/polkit/polkittypes.h
+include/polkit/polkit/polkitunixgroup.h
+include/polkit/polkit/polkitunixnetgroup.h
+include/polkit/polkit/polkitunixprocess.h
+include/polkit/polkit/polkitunixsession.h
+include/polkit/polkit/polkitunixuser.h
+include/polkit/polkitagent/polkitagent.h
+include/polkit/polkitagent/polkitagentenumtypes.h
+include/polkit/polkitagent/polkitagentlistener.h
+include/polkit/polkitagent/polkitagentsession.h
+include/polkit/polkitagent/polkitagenttextlistener.h
+include/polkit/polkitagent/polkitagenttypes.h
+lib/libpolkit-agent.la
+lib/libpolkit-agent.so
+lib/libpolkit-agent.so.0
+lib/libpolkit-gobject.la
+lib/libpolkit-gobject.so
+lib/libpolkit-gobject.so.0
+lib/pkgconfig/polkit-agent.pc
+lib/pkgconfig/polkit-gobject.pc
+lib/polkit/polkit-agent-helper
+lib/polkit/polkitd
+share/dbus/system-services/org.freedesktop.PolicyKit1.service
+share/locale/cs/LC_MESSAGES/polkit.mo
+share/locale/da/LC_MESSAGES/polkit.mo
+share/polkit/actions/org.freedesktop.policykit.policy
+man/man1/pkaction.1.gz
+man/man1/pkcheck.1.gz
+man/man1/pkexec.1.gz
+man/man1/pkttyagent.1.gz
+man/man8/polkit.8.gz
+man/man8/polkitd.8.gz
+@dir etc/polkit/rules.d
+@dir etc/polkit
+@dir include/polkit/polkit
+@dir include/polkit/polkitagent
+@dir include/polkit
+@dir lib/polkit
+@dir share/locale/cs/LC_MESSAGES
+@dir share/locale/cs
+@dir share/locale/da/LC_MESSAGES
+@dir share/locale/da
+@dir share/locale
+@dir share/polkit/actions
+@dir share/polkit

@@ -1,0 +1,10 @@
+--- ./Makefile.in.orig	2008-04-20 23:33:52.000000000 +0300
++++ ./Makefile.in	2016-04-25 16:20:17.214454000 +0200
+@@ -251,7 +251,6 @@
+ @USE_MPGLIB_FALSE@MPGLIB_LIB = 
+ @USE_MPGLIB_TRUE@MPGLIB_LIB = decoders/mpglib/libmpglib.la
+ libSDL_sound_la_LDFLAGS = \
+-	-release $(LT_RELEASE)	\
+ 	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
+ 
+ libSDL_sound_la_LIBADD = \

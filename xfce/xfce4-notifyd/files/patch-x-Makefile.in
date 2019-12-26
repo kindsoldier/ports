@@ -1,0 +1,11 @@
+--- ./Makefile.in.orig	2015-01-18 16:39:43.000000000 +0200
++++ ./Makefile.in	2015-01-18 16:42:05.000000000 +0200
+@@ -1588,7 +1588,7 @@
+ 
+ install-data-am: install-desktopDATA install-dist_defaultthemeDATA \
+ 	install-dist_icons48DATA install-dist_smokethemeDATA \
+-	install-dist_zomgponiesthemeDATA install-man \
++	 install-man \
+ 	install-serviceDATA install-xfce4_notifydPROGRAMS
+ 	@$(NORMAL_INSTALL)
+ 	$(MAKE) $(AM_MAKEFLAGS) install-data-hook

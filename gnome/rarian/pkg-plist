@@ -1,0 +1,23 @@
+include/rarian/rarian-info.h
+include/rarian/rarian-main.h
+include/rarian/rarian-man.h
+include/rarian/rarian-reg-utils.h
+include/rarian/rarian.h
+lib/librarian.a
+lib/librarian.la
+lib/librarian.so
+lib/librarian.so.0
+lib/pkgconfig/rarian.pc
+share/doc/rarian/rarian.document
+share/librarian/Templates/C/scrollkeeper_cl.xml
+share/librarian/manual/help-spec-0.2.xml
+share/librarian/manual/index.xhtml
+share/librarian/manual/rar-lib.xhtml
+share/librarian/manual/rar-mdf.xhtml
+share/librarian/manual/rar-skcompat.xhtml
+share/librarian/rarian-sk-cl.xml
+@dir share/librarian/Templates/C
+@dir share/librarian/Templates
+@dir share/librarian/manual
+@dir share/doc/rarian
+@dir include/rarian

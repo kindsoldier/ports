@@ -1,0 +1,10 @@
+--- src/contribs-lib/CMakeLists.txt~	2016-07-07 08:29:29.660163000 +0200
++++ src/contribs-lib/CMakeLists.txt	2016-07-07 08:33:32.441306000 +0200
+@@ -120,7 +120,6 @@
+ 
+ #set properties on the libraries
+ SET_TARGET_PROPERTIES(clucene-contribs-lib PROPERTIES
+-    VERSION ${CLUCENE_VERSION}
+     SOVERSION ${CLUCENE_SOVERSION}
+     COMPILE_DEFINITIONS_DEBUG _DEBUG
+ )

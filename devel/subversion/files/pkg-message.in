@@ -1,0 +1,10 @@
+**************************************************************************
+
+1Add $svnserve_repos="/path/to/svn/repos" to /etc/rc.conf,
+for /etc/rc.d/svnserve
+
+2 Main install svnserve via inetd 
+
+
+
+**************************************************************************

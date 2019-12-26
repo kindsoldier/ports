@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=OpenProject
+GenericName=Free, open source Project Manager
+Comment=Free, open source Project Manager
+Icon=openproj
+Exec=openproj
+Categories=Development;Java;Utility;

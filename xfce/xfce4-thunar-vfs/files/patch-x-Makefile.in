@@ -1,0 +1,10 @@
+--- ./Makefile.in.orig	2011-11-03 04:23:51.000000000 +0300
++++ ./Makefile.in	2011-11-03 04:38:27.000000000 +0300
+@@ -344,7 +344,6 @@
+ 	po								\
+ 	thunar-vfs							\
+ 	tests								\
+-	docs
+ 
+ EXTRA_DIST = \
+ 	HACKING								\

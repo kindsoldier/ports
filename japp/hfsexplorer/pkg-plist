@@ -1,0 +1,15 @@
+bin/hfsexplorer
+bin/hfsx.sh
+bin/resview.sh
+bin/unhfs.sh
+share/applications/hfsexplorer.desktop
+share/hfsexplorer/lib/apache-ant-1.7.0-bzip2.jar
+share/hfsexplorer/lib/csframework.jar
+share/hfsexplorer/lib/hfsx_dmglib.jar
+share/hfsexplorer/lib/hfsx.jar
+share/hfsexplorer/lib/iharder-base64.jar
+share/hfsexplorer/lib/swing-layout-1.0.3.jar
+share/hfsexplorer/res/icon.png
+@dir share/hfsexplorer/lib
+@dir share/hfsexplorer/res
+@dir share/hfsexplorer

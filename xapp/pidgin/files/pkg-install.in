@@ -1,0 +1,23 @@
+#!/bin/sh
+
+set -x
+
+LOCALBASE="%%LOCALBASE%%"
+
+SCHEMAS="etc/gconf/schemas/purple.schemas"
+
+case $2 in
+    PRE-INSTALL) 
+	;;
+    POST-INSTALL)
+	GCONF_CONFIG_SOURCE="xml:merged:${LOCALBASE}/etc/gconf/gconf.xml.defaults"
+	export GCONF_CONFIG_SOURCE
+	for schema in $SCHEMAS; do 
+	    ${LOCALBASE}/bin/gconftool --makefile-install-rule ${LOCALBASE}/${schema}
+	done
+	${LOCALBASE}/bin/update-desktop-database -q ${LOCALBASE}/share/applications
+	${LOCALBASE}/bin/gtk-update-icon-cache -q ${LOCALBASE}/share/icons/hicolor
+	;;
+esac
+exit 0
+#EOF

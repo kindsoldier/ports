@@ -1,0 +1,43 @@
+--- ./server/Makefile.in.orig	2011-05-02 19:35:08.000000000 +0300
++++ ./server/Makefile.in	2015-01-12 11:31:53.000000000 +0200
+@@ -436,7 +436,7 @@
+ desktopdir = $(sysconfdir)/xdg/autostart
+ desktop_in_files = vino-server.desktop.in
+ desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
+-servicedir = $(datadir)/dbus-1/services
++servicedir = $(datadir)/dbus/services
+ service_DATA = org.freedesktop.Telepathy.Client.Vino.service
+ uidir = $(datadir)/vino
+ ui_DATA = vino-prompt.ui
+@@ -1042,14 +1042,14 @@
+ 
+ 
+ dbus-interface-glue.h: dbus-interface.xml
+-	dbus-binding-tool --prefix=vino_dbus_listener --mode=glib-server $< > dbus-interface-glue.h
++	dbus-binding-tool --prefix=vino_dbus_listener --mode=glib-server dbus-interface.xml > dbus-interface-glue.h
+ 
+ vino-marshal.h: vino-marshal.list $(GLIB_GENMARSHAL)
+-	$(AM_V_GEN)$(GLIB_GENMARSHAL) $< --header --prefix=vino_marshal > $@
++	$(AM_V_GEN)$(GLIB_GENMARSHAL) vino-marshal.list --header --prefix=vino_marshal > $@
+ 
+ vino-marshal.c: vino-marshal.list $(GLIB_GENMARSHAL)
+ 	$(AM_V_GEN)echo "#include \"vino-marshal.h\"" > $@ && \
+-	$(GLIB_GENMARSHAL) $< --body --prefix=vino_marshal >> $@
++	$(GLIB_GENMARSHAL) vino-marshal.list --body --prefix=vino_marshal >> $@
+ 
+ vino-enums.c: @REBUILD@ $(vino_enum_headers)
+ 	$(AM_V_GEN)glib-mkenums    --fhead "#include <glib-object.h>\n" \
+@@ -1080,11 +1080,11 @@
+ @INTLTOOL_SCHEMAS_RULE@
+ 
+ vino-server.desktop.in: vino-server.desktop.in.in
+-	$(AM_V_GEN)sed -e "s|\@LIBEXECDIR\@|$(libexecdir)|" $< > $@
++	$(AM_V_GEN)sed -e "s|\@LIBEXECDIR\@|$(libexecdir)|" vino-server.desktop.in.in > $@
+ 
+ org.freedesktop.Telepathy.Client.Vino.service: org.freedesktop.Telepathy.Client.Vino.service.in \
+ 		Makefile
+-	@sed -e "s|[@]libexecdir[@]|$(libexecdir)|" $< > $@
++	@sed -e "s|[@]libexecdir[@]|$(libexecdir)|" org.freedesktop.Telepathy.Client.Vino.service.in > $@
+ 
+ @INTLTOOL_DESKTOP_RULE@
+ 

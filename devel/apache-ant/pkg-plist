@@ -1,0 +1,72 @@
+bin/ant
+share/java/apache-ant/bin/antRun
+share/java/apache-ant/etc/ant-bootstrap.jar
+share/java/apache-ant/etc/changelog.xsl
+share/java/apache-ant/etc/checkstyle/checkstyle-frames.xsl
+share/java/apache-ant/etc/checkstyle/checkstyle-text.xsl
+share/java/apache-ant/etc/checkstyle/checkstyle-xdoc.xsl
+share/java/apache-ant/etc/coverage-frames.xsl
+share/java/apache-ant/etc/jdepend-frames.xsl
+share/java/apache-ant/etc/jdepend.xsl
+share/java/apache-ant/etc/junit-frames-xalan1.xsl
+share/java/apache-ant/etc/junit-frames.xsl
+share/java/apache-ant/etc/junit-noframes.xsl
+share/java/apache-ant/etc/log.xsl
+share/java/apache-ant/etc/maudit-frames.xsl
+share/java/apache-ant/etc/mmetrics-frames.xsl
+share/java/apache-ant/etc/tagdiff.xsl
+share/java/apache-ant/lib/README
+share/java/apache-ant/lib/ant-antlr.jar
+share/java/apache-ant/lib/ant-antlr.pom
+share/java/apache-ant/lib/ant-apache-bcel.jar
+share/java/apache-ant/lib/ant-apache-bcel.pom
+share/java/apache-ant/lib/ant-apache-bsf.jar
+share/java/apache-ant/lib/ant-apache-bsf.pom
+share/java/apache-ant/lib/ant-apache-log4j.jar
+share/java/apache-ant/lib/ant-apache-log4j.pom
+share/java/apache-ant/lib/ant-apache-oro.jar
+share/java/apache-ant/lib/ant-apache-oro.pom
+share/java/apache-ant/lib/ant-apache-regexp.jar
+share/java/apache-ant/lib/ant-apache-regexp.pom
+share/java/apache-ant/lib/ant-apache-resolver.jar
+share/java/apache-ant/lib/ant-apache-resolver.pom
+share/java/apache-ant/lib/ant-apache-xalan2.jar
+share/java/apache-ant/lib/ant-apache-xalan2.pom
+share/java/apache-ant/lib/ant-commons-logging.jar
+share/java/apache-ant/lib/ant-commons-logging.pom
+share/java/apache-ant/lib/ant-commons-net.jar
+share/java/apache-ant/lib/ant-commons-net.pom
+share/java/apache-ant/lib/ant-jai.jar
+share/java/apache-ant/lib/ant-jai.pom
+share/java/apache-ant/lib/ant-javamail.jar
+share/java/apache-ant/lib/ant-javamail.pom
+share/java/apache-ant/lib/ant-jdepend.jar
+share/java/apache-ant/lib/ant-jdepend.pom
+share/java/apache-ant/lib/ant-jmf.jar
+share/java/apache-ant/lib/ant-jmf.pom
+share/java/apache-ant/lib/ant-jsch.jar
+share/java/apache-ant/lib/ant-jsch.pom
+share/java/apache-ant/lib/ant-junit.jar
+share/java/apache-ant/lib/ant-junit.pom
+share/java/apache-ant/lib/ant-junit4.jar
+share/java/apache-ant/lib/ant-junit4.pom
+share/java/apache-ant/lib/ant-launcher.jar
+share/java/apache-ant/lib/ant-launcher.pom
+share/java/apache-ant/lib/ant-netrexx.jar
+share/java/apache-ant/lib/ant-netrexx.pom
+share/java/apache-ant/lib/ant-parent.pom
+share/java/apache-ant/lib/ant-swing.jar
+share/java/apache-ant/lib/ant-swing.pom
+share/java/apache-ant/lib/ant-testutil.jar
+share/java/apache-ant/lib/ant-testutil.pom
+share/java/apache-ant/lib/ant.jar
+share/java/apache-ant/lib/ant.pom
+share/java/apache-ant/lib/libraries.properties
+man/man1/ant.1.gz
+man/man5/build.xml.5.gz
+@dir share/java/apache-ant/bin
+@dir share/java/apache-ant/etc/checkstyle
+@dir share/java/apache-ant/etc
+@dir share/java/apache-ant/lib
+@dir share/java/apache-ant
+@dir share/java

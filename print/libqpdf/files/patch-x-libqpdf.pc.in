@@ -1,0 +1,11 @@
+--- ./libqpdf.pc.in.orig	2014-06-08 00:06:13.000000000 +0300
++++ ./libqpdf.pc.in	2015-11-16 21:43:04.209445000 +0200
+@@ -6,6 +6,6 @@
+ Name: libqpdf
+ Description: PDF transformation library
+ Version: @PACKAGE_VERSION@
+-Requires.private: zlib, libpcre
+-Libs: -L${libdir} -lqpdf
++Requires.private: libpcre
++Libs: -L${libdir} -lqpdf -lz
+ Cflags: -I${includedir}

@@ -1,0 +1,22 @@
+--- ./config.layout.orig	2004-11-25 00:51:51.000000000 +0200
++++ ./config.layout	2018-07-09 11:44:39.341203000 +0200
+@@ -20,8 +20,8 @@
+     mandir:        ${prefix}/man
+     sysconfdir:    ${prefix}/conf
+     datadir:       ${prefix}
+-    installbuilddir: ${datadir}/build-${APR_MAJOR_VERSION}
+-    includedir:    ${prefix}/include/apr-${APR_MAJOR_VERSION}
++    installbuilddir: ${datadir}/libdata/apr/build
++    includedir:    ${prefix}/include/apr
+     localstatedir: ${prefix}
+     libsuffix:     -${APR_MAJOR_VERSION}
+ </Layout>
+@@ -223,7 +223,7 @@
+     libexecdir:    ${exec_prefix}/lib/apr/modules
+     mandir:        ${exec_prefix}/share/man
+     datadir:       ${exec_prefix}/share/apr
+-    includedir:    ${exec_prefix}/include/apr-${APR_MAJOR_VERSION}
++    includedir:    ${exec_prefix}/include/apr
+     localstatedir: ${prefix}/var/run
+     runtimedir:    ${prefix}/var/run
+     infodir:       ${exec_prefix}/share/info

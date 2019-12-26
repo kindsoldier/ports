@@ -1,0 +1,45 @@
+#!/bin/sh -x
+
+LDAP_DB_DIR="%%LDAP_DB_DIR%%"
+LDAP_RUN_DIR="%%LDAP_RUN_DIR%%"
+
+LDAP_CONF_DIR="%%LDAP_CONF_DIR%%"
+
+OWNER="%%LDAP_OWNER%%"
+GROUP="%%LDAP_GROUP%%"
+OWNER_ID="%%LDAP_OWNER_ID%%"
+GROUP_ID="%%LDAP_GROUP_ID%%"
+
+PKG_PREFIX="/notexist"
+
+case $2 in 
+    PRE-INSTALL)
+
+	pw group add ${GROUP} -g ${GROUP_ID}
+
+	pw group show ${GROUP}
+
+	pw user add ${OWNER}  -g ${GROUP} \
+	    -d ${PKG_PREFIX} -s "/usr/sbin/nologin" -u ${OWNER_ID} -g ${GROUP} \
+	    -c "openldap"
+
+	pw user show ${OWNER}
+
+	pw group mod ${GROUP} -M ${OWNER}
+	pw group show ${GROUP}
+
+	for dir in ${LDAP_DB_DIR} ${LDAP_RUN_DIR}; do
+	    mkdir -p ${dir}
+	    chmod 0700 ${dir}
+	    chown ${OWNER}:${GROUP} ${dir}
+	done
+	chmod 0755 ${LDAP_RUN_DIR}
+	;;
+    POST-INSTALL)
+	find ${LDAP_CONF_DIR} -type d | xargs chmod -R 0755
+	find ${LDAP_CONF_DIR} -type f | xargs chmod -R 0644 
+	find ${LDAP_CONF_DIR} -type l | xargs chmod -R 0644 
+	chown -R root:wheel ${LDAP_CONF_DIR}
+	;;
+esac
+#EOF

@@ -1,0 +1,11 @@
+--- ./docs/Makefile.in.orig	2014-12-27 17:49:28.000000000 +0200
++++ ./docs/Makefile.in	2014-12-31 00:56:03.000000000 +0200
+@@ -764,7 +764,7 @@
+ 
+ info-am:
+ 
+-install-data-am: install-docDATA install-man
++install-data-am: install-man
+ 
+ install-dvi: install-dvi-recursive
+ 

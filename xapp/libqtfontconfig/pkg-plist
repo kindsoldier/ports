@@ -1,0 +1,86 @@
+bin/qt-fc-cache
+bin/qt-fc-cat
+bin/qt-fc-list
+bin/qt-fc-match
+bin/qt-fc-pattern
+bin/qt-fc-query
+bin/qt-fc-scan
+bin/qt-fc-validate
+etc/qtfonts/conf.avail/10-autohint.conf
+etc/qtfonts/conf.avail/10-hinting-full.conf
+etc/qtfonts/conf.avail/10-hinting-medium.conf
+etc/qtfonts/conf.avail/10-hinting-none.conf
+etc/qtfonts/conf.avail/10-hinting-slight.conf
+etc/qtfonts/conf.avail/10-no-sub-pixel.conf
+etc/qtfonts/conf.avail/10-scale-bitmap-fonts.conf
+etc/qtfonts/conf.avail/10-sub-pixel-bgr.conf
+etc/qtfonts/conf.avail/10-sub-pixel-rgb.conf
+etc/qtfonts/conf.avail/10-sub-pixel-vbgr.conf
+etc/qtfonts/conf.avail/10-sub-pixel-vrgb.conf
+etc/qtfonts/conf.avail/10-unhinted.conf
+etc/qtfonts/conf.avail/11-lcdfilter-default.conf
+etc/qtfonts/conf.avail/11-lcdfilter-legacy.conf
+etc/qtfonts/conf.avail/11-lcdfilter-light.conf
+etc/qtfonts/conf.avail/20-unhint-small-vera.conf
+etc/qtfonts/conf.avail/25-unhint-nonlatin.conf
+etc/qtfonts/conf.avail/30-metric-aliases.conf
+etc/qtfonts/conf.avail/40-nonlatin.conf
+etc/qtfonts/conf.avail/45-generic.conf
+etc/qtfonts/conf.avail/45-latin.conf
+etc/qtfonts/conf.avail/49-sansserif.conf
+etc/qtfonts/conf.avail/50-user.conf
+etc/qtfonts/conf.avail/51-local.conf
+etc/qtfonts/conf.avail/60-generic.conf
+etc/qtfonts/conf.avail/60-latin.conf
+etc/qtfonts/conf.avail/65-fonts-persian.conf
+etc/qtfonts/conf.avail/65-khmer.conf
+etc/qtfonts/conf.avail/65-nonlatin.conf
+etc/qtfonts/conf.avail/69-unifont.conf
+etc/qtfonts/conf.avail/70-no-bitmaps.conf
+etc/qtfonts/conf.avail/70-yes-bitmaps.conf
+etc/qtfonts/conf.avail/80-delicious.conf
+etc/qtfonts/conf.avail/90-synthetic.conf
+etc/qtfonts/conf.d/10-hinting-slight.conf
+etc/qtfonts/conf.d/10-scale-bitmap-fonts.conf
+etc/qtfonts/conf.d/20-unhint-small-vera.conf
+etc/qtfonts/conf.d/30-metric-aliases.conf
+etc/qtfonts/conf.d/40-nonlatin.conf
+etc/qtfonts/conf.d/45-generic.conf
+etc/qtfonts/conf.d/45-latin.conf
+etc/qtfonts/conf.d/49-sansserif.conf
+etc/qtfonts/conf.d/50-user.conf
+etc/qtfonts/conf.d/51-local.conf
+etc/qtfonts/conf.d/60-generic.conf
+etc/qtfonts/conf.d/60-latin.conf
+etc/qtfonts/conf.d/65-fonts-persian.conf
+etc/qtfonts/conf.d/65-nonlatin.conf
+etc/qtfonts/conf.d/69-unifont.conf
+etc/qtfonts/conf.d/80-delicious.conf
+etc/qtfonts/conf.d/90-synthetic.conf
+etc/qtfonts/conf.d/README
+etc/qtfonts/fonts.conf
+include/qtfontconfig/fontconfig/fcfreetype.h
+include/qtfontconfig/fontconfig/fcprivate.h
+include/qtfontconfig/fontconfig/fontconfig.h
+lib/libqtfontconfig.la
+lib/libqtfontconfig.so
+lib/libqtfontconfig.so.11
+lib/pkgconfig/qtfontconfig.pc
+man/man1/qt-fc-cache.1.gz
+man/man1/qt-fc-cat.1.gz
+man/man1/qt-fc-list.1.gz
+man/man1/qt-fc-match.1.gz
+man/man1/qt-fc-pattern.1.gz
+man/man1/qt-fc-query.1.gz
+man/man1/qt-fc-scan.1.gz
+man/man1/qt-fc-validate.1.gz
+share/xml/qtfontconfig/fonts.dtd
+@dir etc/qtfonts/conf.avail
+@dir etc/qtfonts/conf.d
+@dir etc/qtfonts
+@dir include/qtfontconfig/fontconfig
+@dir include/qtfontconfig
+@dir share/doc/qtfontconfig/fontconfig-devel
+@dir share/doc/qtfontconfig
+@dir share/xml/qtfontconfig
+@dir share/xml

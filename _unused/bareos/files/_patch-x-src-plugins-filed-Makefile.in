@@ -1,0 +1,11 @@
+--- ./src/plugins/filed/Makefile.in.orig	2015-06-25 12:37:04.000000000 +0200
++++ ./src/plugins/filed/Makefile.in	2015-08-26 10:57:30.390981000 +0200
+@@ -93,7 +93,7 @@
+ 
+ install: all
+ 	$(MKDIR) $(DESTDIR)$(plugindir)
+-	$(CP) *.py *.py.template $(DESTDIR)$(plugindir)
++#	$(CP) *.py *.py.template $(DESTDIR)$(plugindir)
+ 	$(LIBTOOL_INSTALL) $(INSTALL_PROGRAM) bpipe-fd.la $(DESTDIR)$(plugindir)
+ 	$(RMF) $(DESTDIR)$(plugindir)/bpipe-fd.la
+ 	@for plugin in $(BUILD_PLUGINS); do \

@@ -1,0 +1,11 @@
+--- ./configure.orig	2001-01-03 18:40:32.000000000 +0200
++++ ./configure	2016-12-04 20:43:42.944749000 +0200
+@@ -825,7 +825,7 @@
+ esac
+ 
+ 
+-ALL_LINGUAS="da de el es fr gl it nl pl pt sl sv"
++ALL_LINGUAS="da de el es fr gl it nl pl pt ru sl sv"
+ 
+ # Extract the first word of "gcc", so it can be a program name with args.
+ set dummy gcc; ac_word=$2

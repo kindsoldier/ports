@@ -1,0 +1,20 @@
+# Created by: Wen Heping <wenheping@gmail.com>
+# $FreeBSD: head/net/rubygem-macaddr/Makefile 414136 2016-04-27 21:57:31Z swills $
+
+PORTNAME=	macaddr
+PORTVERSION=	1.7.1
+CATEGORIES=	net rubygems
+MASTER_SITES=	RG
+
+MAINTAINER=	ruby@FreeBSD.org
+COMMENT=	Cross Platform Mac Address Determination for Ruby
+
+
+RUN_DEPENDS=	rubygem-systemu>=2.6.2:ruby/rubygem-systemu
+
+NO_ARCH=	yes
+
+USE_RUBY=	yes
+USES=		gem
+
+.include <bsd.port.mk>

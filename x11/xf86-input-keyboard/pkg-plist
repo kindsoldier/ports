@@ -1,0 +1,6 @@
+lib/xorg/modules/input/kbd_drv.la
+lib/xorg/modules/input/kbd_drv.so
+man/man4/kbd.4.gz
+@dir lib/xorg/modules/input
+@dir lib/xorg/modules
+@dir lib/xorg

@@ -1,0 +1,18 @@
+--- ./gio/gdbus-2.0/codegen/gdbus-codegen.in.orig	2014-12-19 23:49:48.000000000 +0200
++++ ./gio/gdbus-2.0/codegen/gdbus-codegen.in	2015-11-02 02:08:15.553371000 +0200
+@@ -26,12 +26,12 @@
+ srcdir = os.getenv('UNINSTALLED_GLIB_SRCDIR', None)
+ 
+ if srcdir is not None:
+-    path = os.path.join(srcdir, 'gio', 'gdbus-2.0')
++    path = os.path.join(srcdir, 'gio', 'gdbus2')
+ elif os.name == 'nt':
+     # Makes gdbus-codegen 'relocatable' at runtime on Windows.
+-    path = os.path.join(os.path.dirname(__file__), '..', 'share', 'glib-2.0')
++    path = os.path.join(os.path.dirname(__file__), '..', 'share', 'glib')
+ else:
+-    path = os.path.join('@datadir@', 'glib-2.0')
++    path = os.path.join('@datadir@', 'glib')
+ 
+ sys.path.insert(0, os.path.abspath(path))
+ from codegen import codegen_main

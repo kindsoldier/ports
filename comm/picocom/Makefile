@@ -1,0 +1,20 @@
+# Created by: Martin Wilke <miwi@FreeBSD.org>
+# $FreeBSD: head/comms/picocom/Makefile 429389 2016-12-25 01:11:53Z vanilla $
+
+PORTNAME=	picocom
+PORTVERSION=	2.2
+CATEGORIES=	comms
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Dumb Terminal Emulator
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	npat-efault
+
+PLIST_FILES=	bin/picocom man/man1/picocom.1.gz
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
+
+.include <bsd.port.mk>

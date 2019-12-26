@@ -1,0 +1,12 @@
+--- ./apps/Makefile.in.orig	2011-03-28 00:26:03.000000000 +0300
++++ ./apps/Makefile.in	2011-11-05 00:22:34.719989000 +0300
+@@ -34,8 +34,7 @@
+ POST_UNINSTALL = :
+ build_triplet = @build@
+ host_triplet = @host@
+-bin_PROGRAMS = geoiplookup$(EXEEXT) geoiplookup6$(EXEEXT) \
+-	geoipupdate$(EXEEXT)
++bin_PROGRAMS = geoiplookup$(EXEEXT) geoiplookup6$(EXEEXT) 
+ subdir = apps
+ DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4

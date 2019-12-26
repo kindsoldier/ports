@@ -1,0 +1,23 @@
+#!/bin/sh -x
+
+set -x
+
+XMLCATMGR="%%XMLCATMGR%%";
+CATALOG_SGML="%%CATALOG_SGML%%";
+CATALOG_XML="%%CATALOG_XML%%";
+
+case $2 in 
+    PRE-INSTALL)
+	;;
+    POST-INSTALL)
+	mkdir -p $(dirname ${CATALOG_SGML})
+	if [ ! -f "${CATALOG_SGML}" ]; then
+	    ${XMLCATMGR} -sc "${CATALOG_SGML}" create
+	fi
+	mkdir -p $(dirname ${CATALOG_XML})
+	if [ ! -f  "${CATALOG_XML}" ]; then
+	    ${XMLCATMGR} -c "${CATALOG_XML}" create
+	fi
+	;;
+esac
+#EOF

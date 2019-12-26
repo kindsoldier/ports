@@ -1,0 +1,29 @@
+--- ./lib/dpkg/Makefile.in.orig	2016-07-31 16:22:35.000000000 +0200
++++ ./lib/dpkg/Makefile.in	2016-09-04 09:53:05.011823000 +0200
+@@ -419,7 +419,7 @@
+ builddir = @builddir@
+ datadir = @datadir@
+ datarootdir = @datarootdir@
+-devlibdir = @devlibdir@
++devlibdir = @prefix@/lib
+ docdir = @docdir@
+ dvidir = @dvidir@
+ exec_prefix = @exec_prefix@
+@@ -432,7 +432,7 @@
+ includedir = @includedir@
+ infodir = @infodir@
+ install_sh = @install_sh@
+-libdir = @libdir@
++libdir = @prefix@/lib
+ libexecdir = @libexecdir@
+ localedir = $(datadir)/locale
+ localstatedir = @localstatedir@
+@@ -468,7 +468,7 @@
+ 	libdpkg.map \
+ 	libdpkg.pc.in
+ 
+-pkgconfigdir = $(devlibdir)/pkgconfig
++pkgconfigdir = $(libdir)/pkgconfig
+ pkgconfig_DATA = libdpkg.pc
+ devlib_LTLIBRARIES = libdpkg.la
+ libdpkg_la_LDFLAGS = $(am__append_1) $(MD_LIBS)

@@ -1,0 +1,11 @@
+--- ./Makefile.in.orig	2010-10-30 06:28:46.000000000 +0300
++++ ./Makefile.in	2014-11-29 20:41:11.000000000 +0200
+@@ -597,7 +597,7 @@
+ 
+ info-am:
+ 
+-install-data-am: install-compositeHEADERS install-dist_docDATA \
++install-data-am: install-compositeHEADERS \
+ 	install-pkgconfigDATA
+ 
+ install-dvi: install-dvi-am

@@ -1,0 +1,8 @@
+%%SITE_ARCH%%/Crypt/OpenSSL/Random.pm
+%%SITE_ARCH%%/auto/Crypt/OpenSSL/Random/Random.so
+%%PERL5_MAN3%%/Crypt::OpenSSL::Random.3.gz
+@dir %%SITE_ARCH%%/Crypt/OpenSSL
+@dir %%SITE_ARCH%%/Crypt
+@dir %%SITE_ARCH%%/auto/Crypt/OpenSSL/Random
+@dir %%SITE_ARCH%%/auto/Crypt/OpenSSL
+@dir %%SITE_ARCH%%/auto/Crypt

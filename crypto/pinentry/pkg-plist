@@ -1,0 +1,3 @@
+bin/pinentry
+@comment bin/pinentry-gtk2
+bin/pinentry-tty

@@ -1,0 +1,20 @@
+--- ./configure.orig	2016-09-09 15:11:35.000000000 +0200
++++ ./configure	2016-10-31 13:27:35.614937000 +0200
+@@ -18636,7 +18636,7 @@
+           found_so=
+           found_a=
+           if test $use_additional = yes; then
+-            if test -n "$shlibext" && test -f "$additional_libdir/lib$name.$shlibext"; then
++            if test -n "$shlibext" && test -f "$additional_libdir/lib$name.$shlibext" && test "${enable_static_fd+set}" != set; then
+               found_dir="$additional_libdir"
+               found_so="$additional_libdir/lib$name.$shlibext"
+               if test -f "$additional_libdir/lib$name.la"; then
+@@ -22116,7 +22116,7 @@
+           found_so=
+           found_a=
+           if test $use_additional = yes; then
+-            if test -n "$shlibext" && test -f "$additional_libdir/lib$name.$shlibext"; then
++            if test -n "$shlibext" && test -f "$additional_libdir/lib$name.$shlibext" && test "${enable_static_fd+set}" != set; then
+               found_dir="$additional_libdir"
+               found_so="$additional_libdir/lib$name.$shlibext"
+               if test -f "$additional_libdir/lib$name.la"; then

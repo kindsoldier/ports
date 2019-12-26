@@ -1,0 +1,15 @@
+--- ./dist/configure.orig	2016-03-28 21:45:49.000000000 +0200
++++ ./dist/configure	2017-06-12 15:36:25.012393000 +0200
+@@ -17919,10 +17919,10 @@
+ INSTALLER="\$(LIBTOOL) --mode=install cp -p"
+ 
+ MAKEFILE_CC="\$(LIBTOOL) --mode=compile ${MAKEFILE_CC}"
+-MAKEFILE_SOLINK="\$(LIBTOOL) --mode=link ${MAKEFILE_CCLINK} -avoid-version"
++MAKEFILE_SOLINK="\$(LIBTOOL) --mode=link ${MAKEFILE_CCLINK} -version-info 8:6:8"
+ MAKEFILE_CCLINK="\$(LIBTOOL) --mode=link ${MAKEFILE_CCLINK}"
+ MAKEFILE_CXX="\$(LIBTOOL) --mode=compile ${MAKEFILE_CXX}"
+-MAKEFILE_XSOLINK="\$(LIBTOOL) --mode=link ${MAKEFILE_CXXLINK} -avoid-version"
++MAKEFILE_XSOLINK="\$(LIBTOOL) --mode=link ${MAKEFILE_CXXLINK} -version-info 8:6:8"
+ MAKEFILE_CXXLINK="\$(LIBTOOL) --mode=link ${MAKEFILE_CXXLINK}"
+ 
+ 

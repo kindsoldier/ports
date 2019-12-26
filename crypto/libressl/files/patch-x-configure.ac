@@ -1,0 +1,15 @@
+--- ./configure.ac.orig	2018-06-13 18:43:13.000000000 +0200
++++ ./configure.ac	2018-09-15 15:09:10.305169000 +0200
+@@ -126,9 +126,9 @@
+ 	apps/openssl/Makefile
+ 	apps/nc/Makefile
+ 	man/Makefile
+-	libcrypto.pc
+-	libssl.pc
+-	libtls.pc
++	librecrypto.pc:libcrypto.pc.in
++	libressl.pc:libssl.pc.in
++	libretls.pc:libtls.pc.in
+ 	openssl.pc
+ ])
+ 

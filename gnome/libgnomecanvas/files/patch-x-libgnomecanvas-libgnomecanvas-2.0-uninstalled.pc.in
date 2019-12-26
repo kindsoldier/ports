@@ -1,0 +1,15 @@
+--- ./libgnomecanvas/libgnomecanvas-2.0-uninstalled.pc.in.orig	2004-03-04 01:37:43.000000000 +0200
++++ ./libgnomecanvas/libgnomecanvas-2.0-uninstalled.pc.in	2010-10-11 11:00:44.000000000 +0300
+@@ -3,9 +3,9 @@
+ libdir=@libdir@
+ includedir=@includedir@
+ 
+-Name: libgnomecanvas-2.0
++Name: libgnomecanvas
+ Description: libgnomecanvas
+-Requires: libart-2.0 pango pangoft2 gtk+-2.0
++Requires: libart2 pango pangoft2 gtk2+
+ Version: @VERSION@
+-Libs: ${pc_top_builddir}/${pcfiledir}/libgnomecanvas-2.la
++Libs: ${pc_top_builddir}/${pcfiledir}/libgnomecanvas.la
+ Cflags: -I${pc_top_builddir}/${pcfiledir}/..

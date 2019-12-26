@@ -1,0 +1,17 @@
+--- ./mkisofs/Makefile.doc.orig	2007-06-14 01:03:03.000000000 +0300
++++ ./mkisofs/Makefile.doc	2018-06-10 14:33:47.216113000 +0200
+@@ -7,10 +7,10 @@
+ include		$(SRCROOT)/$(RULESDIR)/rules.top
+ ###########################################################################
+ 
+-MK_FILES=	Rcompresion.mk Reltorito.mk Rgraft_dirs.mk Rhfs_boot.mk \
+-		Rhfs_magic.mk Rhide.mk Rjoliet.mk Rmacosx.mk Rmkhybrid.mk \
+-		Rprep_boot.mk readme.mk Rrootinfo.mk Rsession.mk Rsort.mk \
+-		Rsparcboot.mk Rsunx86boot.mk
++#MK_FILES=	Rcompresion.mk Reltorito.mk Rgraft_dirs.mk Rhfs_boot.mk \
++#		Rhfs_magic.mk Rhide.mk Rjoliet.mk Rmacosx.mk Rmkhybrid.mk \
++#		Rprep_boot.mk readme.mk Rrootinfo.mk Rsession.mk Rsort.mk \
++#		Rsparcboot.mk Rsunx86boot.mk
+ 
+ #XMK_FILE=	Makefile.man
+ 

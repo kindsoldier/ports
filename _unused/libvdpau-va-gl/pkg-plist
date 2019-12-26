@@ -1,0 +1,7 @@
+lib/vdpau/libvdpau_i915.so
+lib/vdpau/libvdpau_i915.so.1
+lib/vdpau/libvdpau_i965.so
+lib/vdpau/libvdpau_i965.so.1
+lib/vdpau/libvdpau_va_gl.so
+lib/vdpau/libvdpau_va_gl.so.1
+@dir lib/vdpau

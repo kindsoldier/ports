@@ -1,0 +1,38 @@
+#!/bin/sh -x
+
+ICINGA_GROUP="%%ICINGA_GROUP%%"
+ICINGA_OWNER="%%ICINGA_OWNER%%"
+ICINGA_GROUP_ID="%%ICINGA_GROUP_ID%%"
+ICINGA_OWNER_ID="%%ICINGA_OWNER_ID%%"
+ICINGA_SPOOLDIR="%%ICINGA_SPOOLDIR%%"
+ICINGA_LOGDIR="%%ICINGA_LOGDIR%%"
+
+PKG_PREFIX="/notexist"
+
+case $2 in 
+    PRE-INSTALL)
+	pw group add ${ICINGA_GROUP}  -g ${ICINGA_GROUP_ID}
+	pw user add ${ICINGA_OWNER} -g ${ICINGA_GROUP}  \
+	    -d ${PKG_PREFIX} -s /usr/sbin/nologin -u ${ICINGA_OWNER_ID} \
+	    -c "icinga"
+	pw group mod ${ICINGA_GROUP} -M ${ICINGA_OWNER}
+	pw group show ${ICINGA_GROUP}
+	pw user show ${ICINGA_OWNER}
+	for dir in ${ICINGA_SPOOLDIR} ;
+	do
+	    mkdir -p ${dir}
+	    chown ${ICINGA_OWNER}:${ICINGA_GROUP} ${dir}
+	    chmod 0755 ${dir}
+	done
+	for dir in ${ICINGA_LOGDIR} ;
+	do
+	    mkdir -p ${dir}
+	    chown ${ICINGA_OWNER}:${ICINGA_GROUP} ${dir}
+	    chmod 0750 ${dir}
+	done
+	;;
+    POST-INSTALL)
+	;;
+esac
+exit 0
+#EOF

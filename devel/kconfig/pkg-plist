@@ -1,0 +1,17 @@
+bin/kconfig
+bin/kconfig-conf
+bin/kconfig-diff
+bin/kconfig-gettext
+bin/kconfig-mconf
+bin/kconfig-merge
+bin/kconfig-nconf
+bin/kconfig-tweak
+include/kconfig/expr.h
+include/kconfig/list.h
+include/kconfig/lkc_proto.h
+include/kconfig/lkc.h
+lib/libkconfig-parser.la
+lib/libkconfig-parser.so
+lib/libkconfig-parser.so.0
+lib/pkgconfig/kconfig-parser.pc
+@dir include/kconfig

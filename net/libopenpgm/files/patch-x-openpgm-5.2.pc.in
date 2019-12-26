@@ -1,0 +1,8 @@
+--- ./openpgm-5.2.pc.in.orig	2019-05-25 13:35:01.355815000 +0200
++++ ./openpgm-5.2.pc.in	2019-05-25 13:35:01.382409000 +0200
+@@ -9,4 +9,4 @@
+ # packagers may wish to move @LIBS@ to Libs.private for platforms with
+ # versions of pkg-config that support static linking.
+ Libs: -L${libdir} -lpgm @LIBS@
+-Cflags: -I${includedir}/pgm-@VERSION_MAJOR@.@VERSION_MINOR@
++Cflags: -I${includedir}/

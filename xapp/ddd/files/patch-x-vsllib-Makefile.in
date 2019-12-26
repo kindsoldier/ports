@@ -1,0 +1,11 @@
+--- ./vsllib/Makefile.in.orig	2009-02-11 19:25:55.000000000 +0200
++++ ./vsllib/Makefile.in	2018-03-08 17:38:03.331310000 +0200
+@@ -270,7 +270,7 @@
+ top_srcdir = @top_srcdir@
+ 
+ # Shared data installation
+-dddrootdir = $(pkgdatadir)-@VERSION@
++dddrootdir = $(pkgdatadir)/@VERSION@
+ 
+ # -----------------------------------------------------------------------------
+ # VSL files.

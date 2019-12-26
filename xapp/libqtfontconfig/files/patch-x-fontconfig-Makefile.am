@@ -1,0 +1,8 @@
+--- ./fontconfig/Makefile.am.orig	2016-07-11 04:41:06.000000000 +0200
++++ ./fontconfig/Makefile.am	2019-03-31 10:15:39.547963000 +0200
+@@ -1,4 +1,4 @@
+-fontconfigincludedir=$(includedir)/fontconfig
++fontconfigincludedir=$(includedir)/qtfontconfig/fontconfig
+ 
+ fontconfig_headers=		\
+ 	fontconfig.h		\

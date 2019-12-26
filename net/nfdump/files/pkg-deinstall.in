@@ -1,0 +1,25 @@
+#!/bin/sh -x
+
+NFCAP_RUN_DIR="%%NFCAP_RUN_DIR%%"
+NFCAP_LOG_DIR="/%%NFCAP_LOG_DIR%%"
+NFCAP_DB_DIR="%%NFCAP_DB_DIR%%"
+
+case $2 in 
+    DEINSTALL)
+	;;
+    POST-DEINSTALL)
+#	for dir in ${NFCAP_LOG_DIR} ${NFCAP_RUN_DIR} ${NFCAP_DB_DIR} ;
+	for dir in ${NFCAP_DB_DIR} ;
+	do
+	    rmdir ${dir} || ( ls -l ${dir}; du -sch ${dir} )
+	done
+	for n in 1 2 3 4 5; do 
+	    for dir in ${NFCAP_DB_DIR}${n} ; do
+		rmdir ${dir} || ( ls -l ${dir}; du -sch ${dir} )
+	    done
+	done
+
+	;;
+
+esac
+#EOF

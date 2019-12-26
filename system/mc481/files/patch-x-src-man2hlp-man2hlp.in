@@ -1,0 +1,8 @@
+--- ./src/man2hlp/man2hlp.in.orig	2011-12-20 01:23:14.000000000 +0300
++++ ./src/man2hlp/man2hlp.in	2015-10-12 23:17:22.855339000 +0200
+@@ -1,4 +1,4 @@
+-#! @PERL@ -w
++#!/usr/local/bin/perl -w
+ #
+ #  Man page to help file converter
+ #  Copyright (C) 1994, 1995, 1998, 2000, 2001, 2002, 2003, 2004, 2005,

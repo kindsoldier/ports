@@ -1,0 +1,5 @@
+bin/cvs
+bin/cvsbug
+man/man1/cvs.1.gz
+man/man5/cvs.5.gz
+man/man8/cvsbug.8.gz

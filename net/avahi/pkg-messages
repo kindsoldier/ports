@@ -1,0 +1,7 @@
+---
+1. Don't forget copy & edit configuration file from %%EXAMPLESDIR%% to
+%%PREFIX%%/etc/avahi - avahi-daemon.conf
+2. Edit /etc/rc.conf - add avahi_daemon_enable="YES",
+optional, for avahi-DNS - avahi_dnsconfd_enable="YES"
+---
+

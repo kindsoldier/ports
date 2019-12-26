@@ -1,0 +1,18 @@
+bin/key2raw
+bin/key2text
+bin/key2xhtml
+bin/numbers2csv
+bin/numbers2raw
+bin/numbers2text
+bin/pages2html
+bin/pages2raw
+bin/pages2text
+include/libetonyek/libetonyek/EtonyekDocument.h
+include/libetonyek/libetonyek/libetonyek.h
+lib/libetonyek.a
+lib/libetonyek.la
+lib/libetonyek.so
+lib/libetonyek.so.1
+lib/pkgconfig/libetonyek.pc
+@dir include/libetonyek/libetonyek
+@dir include/libetonyek

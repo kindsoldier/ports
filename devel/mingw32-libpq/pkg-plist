@@ -1,0 +1,30 @@
+mingw32/include/libpq-events.h
+mingw32/include/libpq-fe.h
+mingw32/include/libpq/libpq-fs.h
+mingw32/include/pg_config_ext.h
+mingw32/include/pg_config_manual.h
+mingw32/include/pg_config_os.h
+mingw32/include/pg_config.h
+mingw32/include/postgres_ext.h
+mingw32/include/postgresql/internal/c.h
+mingw32/include/postgresql/internal/libpq-int.h
+mingw32/include/postgresql/internal/libpq/pqcomm.h
+mingw32/include/postgresql/internal/port.h
+mingw32/include/postgresql/internal/postgres_fe.h
+mingw32/include/postgresql/internal/pqexpbuffer.h
+mingw32/include/postgresql/server/pg_config_ext.h
+mingw32/include/postgresql/server/pg_config_os.h
+mingw32/include/postgresql/server/pg_config.h
+mingw32/include/postgresql/server/utils
+mingw32/lib/libpgcommon.a
+mingw32/lib/libpq.a
+mingw32/lib/pkgconfig/libpq.pc
+@dir mingw32/include/libpq
+@dir mingw32/include/postgresql/internal/libpq
+@dir mingw32/include/postgresql/internal
+@dir mingw32/include/postgresql/server
+@dir mingw32/include/postgresql
+@dir mingw32/include
+@dir mingw32/lib/pkgconfig
+@dir mingw32/lib
+@dir mingw32
