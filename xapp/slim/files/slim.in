@@ -3,7 +3,7 @@
 # $FreeBSD: head/x11/slim/files/slim.in 319487 2013-05-31 11:54:01Z crees $
 #
 # PROVIDE: slim
-# REQUIRE: LOGIN dbus
+# REQUIRE: LOGIN dbus moused
 # KEYWORD: shutdown
 #
 # Add the following line to /etc/rc.conf to enable slim:
