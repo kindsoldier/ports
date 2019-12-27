@@ -8,7 +8,6 @@ bin/ldappasswd
 bin/ldapsearch
 bin/ldapurl
 bin/ldapwhoami
-etc/openldap/ldap.conf.sample
 etc/openldap/schema/collective.ldif
 etc/openldap/schema/collective.schema
 etc/openldap/schema/corba.ldif
