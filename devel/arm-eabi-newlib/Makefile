@@ -2,7 +2,7 @@
 # $Id$
 #
 PORTNAME=	newlib
-PORTVERSION=	2.5.0 #2.4.0
+PORTVERSION=	2.5.0
 CATEGORIES=	devel
 MASTER_SITES+=	http://mirrors.kernel.org/sources.redhat.com/newlib/
 MASTER_SITES+=	ftp://sourceware.org/pub/newlib/
