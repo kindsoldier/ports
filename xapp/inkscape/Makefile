@@ -37,6 +37,8 @@ LIB_DEPENDS+=   libatkmm.so:gnome/libatkmm
 
 ##LIB_DEPENDS+=	libpotrace.so:graph/libpotrace
 
+LDFLAGS+=       -L${LOCALBASE}/lib -L${LOCALBASE}/boost64/lib
+CPPFLAGS=	-I${LOCALBASE}/include -I${LOCALBASE}/boost64/include
 
 USES+=  tar:bz2 python:2.7,build compiler:c++11-lib cmake pathfix
 
@@ -44,6 +46,7 @@ SHEBANG_FILES+=	cxxtest/cxxtestgen.pl share/extensions/*.p[lm]
 SHEBANG_FILES+=	share/extensions/*.py share/extensions/genpofiles.sh
 SHEBANG_FILES+=	fix-roff-punct
 
+CMAKE_ARGS+=	-DBOOST_ROOT=${LOCALBASE}/boost64
 
 CMAKE_ARGS+=	-DWITH_GNOME_VFS:BOOL=NO
 CMAKE_ARGS+=	-DWITH_LIBCDR:BOOL=YES

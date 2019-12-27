@@ -2,10 +2,10 @@
 # $Id$
 #
 PORTNAME=	xarchiver
-PORTVERSION=	0.5.4
+PORTVERSION=	0.5.4.7
 CATEGORIES=	archivers
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	${PORTNAME:tl}
+#MASTER_SITES=	SF
+#MASTER_SITE_SUBDIR=	${PORTNAME:tl}
 
 MAINTAINER=	onborodin@gmail.com
 COMMENT=	Desktop-agnostic GTK+2 frontend to various archiving tools
@@ -16,9 +16,11 @@ LIB_DEPENDS+=	libgtk-x11.so:gnome/libgtk2
 RUN_DEPENDS+=	gtk-update-icon-cache:gnome/libgtk2
 RUN_DEPENDS+=	update-desktop-database:xfce/desktop-file-utils
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	ib
 
-USES+=		gmake
-USES+=		tar:bzip2
+
+USES+=		gmake #tar:bzip2
 GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include

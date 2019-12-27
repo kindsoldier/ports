@@ -23,6 +23,8 @@ RUN_DEPENDS+=	gtk-update-icon-cache:gnome/libgtk2
 RUN_DEPENDS+=	update-desktop-database:xfce/desktop-file-utils
 
 
+
+
 USES=		gmake tar:xz pathfix localbase pkgconfig
 CONFIGURE_ARGS=	--with-wx-config=${WX_CONFIG}
 CONFIGURE_ARGS+= --with-contrib-plugins=all
@@ -31,6 +33,10 @@ CONFIGURE_ARGS+= --with-boost-system=boost_system
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=  yes
+
+LDFLAGS+=       -L${LOCALBASE}/lib -L${LOCALBASE}/boost64/lib
+CPPFLAGS=	-I${LOCALBASE}/include -I${LOCALBASE}/boost64/include
+
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
