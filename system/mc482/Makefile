@@ -36,10 +36,11 @@ CONFIGURE_ARGS+= --with-diff-viewer
 CONFIGURE_ARGS+= --with-internal-edit
 CONFIGURE_ARGS+= --with-libintl-prefix=${LOCALEBASE}
 CONFIGURE_ARGS+= --with-subshell
-CONFIGURE_ARGS+= --without-x
+CONFIGURE_ARGS+= --without-x --disable-x
 CONFIGURE_ARGS+= --mandir=${PREFIX}/man
 CONFIGURE_ARGS+= --sysconfdir=${PREFIX}/share/mc/etc
 
+CONFIGURE_ENV+= ac_cv_lib_ICE_IceConnectionNumber=no
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
