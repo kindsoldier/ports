@@ -2,7 +2,7 @@
 # $FreeBSD: head/textproc/utf8proc/Makefile 429723 2016-12-28 08:00:30Z hrs $
 
 PORTNAME=	utf8proc
-PORTVERSION=	2.1.0
+PORTVERSION=	2.4.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc devel
 PKGNAMEPREFIX=	lib
