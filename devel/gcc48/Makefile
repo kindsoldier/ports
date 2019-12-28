@@ -94,6 +94,11 @@ PLIST_SUB+= SUFFIX=${GCC_SUFFIX}
 post-extract:
 	${MKDIR} ${WRKSRC}
 
+post-patch:
+	${FIND} ${WRKDIR} -type f -name '*.[ch]' | \
+	    ${XARGS} ${EGREP} -l '(HOST_WIDE|PLUGIN_COND)' | \
+	    ${XARGS} ${REINPLACE_CMD} -E -e 's,"(HOST_WIDE|PLUGIN_COND)," \1,g'
+
 pre-configure:
 	${MKDIR} ${WRKSRC}
 	${FIND} ${WRKSRC} -name 'config.cache' | ${XARGS} ${RM} -v
