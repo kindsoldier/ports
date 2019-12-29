@@ -10,13 +10,13 @@ MAINTAINER=	kmoore@FreeBSD.org
 COMMENT=	Grub-emu loader for bhyve
 
 CC=		gcc
+#USE_GCC=	yes
 
 ONLY_FOR_ARCHS=	amd64
 SSP_UNSAFE=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	grehan-freebsd
 USES=		bison gmake
-#USE_GCC=	yes
 PLIST_FILES=	sbin/grub-bhyve
 MAKE_JOBS_UNSAFE=	yes
 CONFIGURE_ARGS=	--with-platform=emu

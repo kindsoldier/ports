@@ -12,17 +12,19 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 
 USE_GITHUB=	nodefault
-GH_TUPLE=	imomaliev:tmux-bash-completion:e0f7021:bash
+GH_TUPLE=	imomaliev:tmux-bash-completion:ef56d3e:bash
 
 
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Terminal Multiplexer
 
 LIB_DEPENDS+= libevent.so:devel/libevent
+LIB_DEPENDS+= libutf8proc.so:text/libutf8proc
 
 GNU_CONFIGURE=	yes
-USES+=	gmake pkgconfig
+USES+=	        gmake pkgconfig
 CONFIGURE_ARGS+= --sysconfdir=${PREFIX}/etc
+CONFIGURE_ARGS+= --enable-utf8proc
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
