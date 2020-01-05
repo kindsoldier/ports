@@ -1,3 +1,28 @@
-sbin/m2cli
+bin/m2cli
+lib/m2store/public/bundle.0f59c8.css
+lib/m2store/public/bundle.4c5156.js
+lib/m2store/public/fa-brands-400.eot
+lib/m2store/public/fa-brands-400.svg
+lib/m2store/public/fa-brands-400.ttf
+lib/m2store/public/fa-brands-400.woff
+lib/m2store/public/fa-brands-400.woff2
+lib/m2store/public/fa-regular-400.eot
+lib/m2store/public/fa-regular-400.svg
+lib/m2store/public/fa-regular-400.ttf
+lib/m2store/public/fa-regular-400.woff
+lib/m2store/public/fa-regular-400.woff2
+lib/m2store/public/fa-solid-900.eot
+lib/m2store/public/fa-solid-900.svg
+lib/m2store/public/fa-solid-900.ttf
+lib/m2store/public/fa-solid-900.woff
+lib/m2store/public/fa-solid-900.woff2
+lib/m2store/public/favicon.ico
+lib/m2store/public/index.html
+lib/m2store/public/logo192.png
+lib/m2store/public/logo512.png
+lib/m2store/public/manifest.json
+lib/m2store/public/robots.txt
 sbin/m2pwd
 sbin/m2srv
+@dir lib/m2store/public
+@dir lib/m2store
