@@ -10,8 +10,7 @@ MASTER_SITES=	CHEESESHOP
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Let's Encrypt client #'
 
-ACME_VERSION=	0.26.1
-
+ACME_VERSION=	1.0.0
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}acme>=${ACME_VERSION}:python/py-acme@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}configargparse>=0.9.3:python/py-configargparse@${PY_FLAVOR} \
@@ -39,9 +38,7 @@ USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 
 post-patch:
-	${REINPLACE_CMD} \
-		-e 's|/etc/|${LOCALBASE}/etc/|' \
-		-e 's|/var/lib|/var/db|' \
-		${WRKSRC}/${PORTNAME}/constants.py
+	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/certbot/compat/misc.py
+
 
 .include <bsd.port.mk>

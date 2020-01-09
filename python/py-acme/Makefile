@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	ACME protocol implementation in Python
 
-ACME_VERSION=	0.26.1
+ACME_VERSION=	1.0.0
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography>=0.8:python/py-cryptography@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}josepy>=1.0.0:python/py-josepy@${PY_FLAVOR} \
@@ -22,7 +22,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography>=0.8:python/py-cryptography@${P
 		${PYTHON_PKGNAMEPREFIX}setuptools>=1.0:python/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>0:python/py-six@${PY_FLAVOR}
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes

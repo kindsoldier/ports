@@ -1,9 +1,11 @@
 --- ./data/Makefile.in.orig	2019-09-28 14:38:52.000000000 +0200
-+++ ./data/Makefile.in	2019-11-26 10:16:22.755796000 +0200
-@@ -492,13 +492,14 @@
++++ ./data/Makefile.in	2019-12-30 08:50:31.788564000 +0200
+@@ -492,13 +492,16 @@
  	tags/entities.html.tags
  
  template_files = \
++	templates/files/file.js \
++	templates/files/file.jsx \
 +	templates/files/file.go \
  	templates/files/file.html \
  	templates/files/file_html5.html \
