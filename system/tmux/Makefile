@@ -2,14 +2,10 @@
 # $Id$
 #
 PORTNAME=	tmux
-PORTVERSION=	2.9a
+PORTVERSION=	3.0a
 CATEGORIES=	sysutils
-#MASTER_SITES=	https://github.com/tmux/tmux/releases/download/${PORTVERSION}/ \
-#		SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION:S/a$//}
-
 MASTER_SITES=	https://github.com/tmux/tmux/releases/download/${PORTVERSION}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
-
 
 USE_GITHUB=	nodefault
 GH_TUPLE=	imomaliev:tmux-bash-completion:ef56d3e:bash
