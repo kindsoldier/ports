@@ -2,7 +2,7 @@
 # $Id$
 #
 PORTNAME=	m2store
-PORTVERSION=	0.1.7.2
+PORTVERSION=	0.1.8
 CATEGORIES=	www net
 
 MAINTAINER=	borodin@unix7.org
