@@ -24,7 +24,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}acme>=${ACME_VERSION}:python/py-acme@${PY_FL
 		${PYTHON_PKGNAMEPREFIX}six>0:python/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zope.component>0:python/py-zope.component@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zope.interface>0:python/py-zope.interface@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}ipaddress>0:python/py-ipaddress@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}ipaddress>0:python/py-ipaddress@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}distro>=1.0.1:python/py-distro@${PY_FLAVOR} 
 
 #RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}enum34>0:python/py-enum34@${PY_FLAVOR}
 
