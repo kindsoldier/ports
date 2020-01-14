@@ -2,7 +2,7 @@
 # $Id$
 #
 PORTNAME=	binutils
-PORTVERSION=	2.28
+PORTVERSION=	2.33.1
 CATEGORIES=	devel
 MASTER_SITES=	http://ftp.gnu.org/gnu/binutils/
 PKGNAMEPREFIX=	${TARGET}-
@@ -16,7 +16,7 @@ LIB_DEPENDS+=	libmpfr.so:math/libmpfr
 TARGET=arm-eabi
 
 CONFIGURE_TARGET=#
-USES+=		gmake tar:bz2
+USES+=		gmake tar:xz
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${WRKSRC}/include -I${LOCALBASE}/include
 CPPFLAGS+=	-I${WRKSRC}/include -I${LOCALBASE}/include
