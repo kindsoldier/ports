@@ -2,7 +2,7 @@
 # $Id$
 #
 PORTNAME=	binutils
-PORTVERSION=	2.32 #28
+PORTVERSION=	2.32
 CATEGORIES=	devel
 MASTER_SITES=	http://ftp.gnu.org/gnu/binutils/
 
