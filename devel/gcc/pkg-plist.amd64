@@ -1,3 +1,4 @@
+bin/c++
 bin/g++
 bin/gcc
 bin/gcc-ar
@@ -8,6 +9,22 @@ bin/gcov-dump
 bin/gcov-tool
 bin/gcpp
 bin/gfortran
+bin/%%TARGET%%-c++
+bin/%%TARGET%%-g++
+bin/%%TARGET%%-gcc
+bin/%%TARGET%%-gcc-ar
+bin/%%TARGET%%-gcc-nm
+bin/%%TARGET%%-gcc-ranlib
+bin/%%TARGET%%-gfortran
+info/gcc/cpp.info
+info/gcc/cppinternals.info
+info/gcc/gcc.info
+info/gcc/gccinstall.info
+info/gcc/gccint.info
+info/gcc/gfortran.info
+info/gcc/libgomp.info
+info/gcc/libitm.info
+info/gcc/libquadmath.info
 lib/gcc/9.2.0/gcc/%%TARGET%%/9.2.0/crtbegin.o
 lib/gcc/9.2.0/gcc/%%TARGET%%/9.2.0/crtbeginS.o
 lib/gcc/9.2.0/gcc/%%TARGET%%/9.2.0/crtend.o
@@ -1429,75 +1446,74 @@ man/man1/gcov-tool.1.gz
 man/man1/gcov.1.gz
 man/man1/gcpp.1.gz
 man/man1/gfortran.1.gz
-@dirrm info/gcc
-@dirrm lib/gcc/9.2.0/gcc/%%TARGET%%/9.2.0/finclude
-@dirrm lib/gcc/9.2.0/gcc/%%TARGET%%/9.2.0/include/ssp
-@dirrm lib/gcc/9.2.0/gcc/%%TARGET%%/9.2.0/include
-@dirrm lib/gcc/9.2.0/gcc/%%TARGET%%/9.2.0/include-fixed/netinet
-@dirrm lib/gcc/9.2.0/gcc/%%TARGET%%/9.2.0/include-fixed/sys
-@dirrm lib/gcc/9.2.0/gcc/%%TARGET%%/9.2.0/include-fixed
-@dirrm lib/gcc/9.2.0/gcc/%%TARGET%%/9.2.0/install-tools/include
-@dirrm lib/gcc/9.2.0/gcc/%%TARGET%%/9.2.0/install-tools
-@dirrm lib/gcc/9.2.0/gcc/%%TARGET%%/9.2.0/plugin/include/ada/gcc-interface
-@dirrm lib/gcc/9.2.0/gcc/%%TARGET%%/9.2.0/plugin/include/ada
-@dirrm lib/gcc/9.2.0/gcc/%%TARGET%%/9.2.0/plugin/include/c-family
-@dirrm lib/gcc/9.2.0/gcc/%%TARGET%%/9.2.0/plugin/include/config/i386
-@dirrm lib/gcc/9.2.0/gcc/%%TARGET%%/9.2.0/plugin/include/config
-@dirrm lib/gcc/9.2.0/gcc/%%TARGET%%/9.2.0/plugin/include/cp
-@dirrm lib/gcc/9.2.0/gcc/%%TARGET%%/9.2.0/plugin/include/d
-@dirrm lib/gcc/9.2.0/gcc/%%TARGET%%/9.2.0/plugin/include/objc
-@dirrm lib/gcc/9.2.0/gcc/%%TARGET%%/9.2.0/plugin/include
-@dirrm lib/gcc/9.2.0/gcc/%%TARGET%%/9.2.0/plugin
-@dirrm lib/gcc/9.2.0/gcc/%%TARGET%%/9.2.0
-@dirrm lib/gcc/9.2.0/gcc/%%TARGET%%
-@dirrm lib/gcc/9.2.0/gcc
-@dirrm lib/gcc/9.2.0/include/c++/backward
-@dirrm lib/gcc/9.2.0/include/c++/bits
-@dirrm lib/gcc/9.2.0/include/c++/debug
-@dirrm lib/gcc/9.2.0/include/c++/decimal
-@dirrm lib/gcc/9.2.0/include/c++/experimental/bits
-@dirrm lib/gcc/9.2.0/include/c++/experimental
-@dirrm lib/gcc/9.2.0/include/c++/ext/pb_ds/detail/bin_search_tree_
-@dirrm lib/gcc/9.2.0/include/c++/ext/pb_ds/detail/binary_heap_
-@dirrm lib/gcc/9.2.0/include/c++/ext/pb_ds/detail/binomial_heap_
-@dirrm lib/gcc/9.2.0/include/c++/ext/pb_ds/detail/binomial_heap_base_
-@dirrm lib/gcc/9.2.0/include/c++/ext/pb_ds/detail/branch_policy
-@dirrm lib/gcc/9.2.0/include/c++/ext/pb_ds/detail/cc_hash_table_map_
-@dirrm lib/gcc/9.2.0/include/c++/ext/pb_ds/detail/eq_fn
-@dirrm lib/gcc/9.2.0/include/c++/ext/pb_ds/detail/gp_hash_table_map_
-@dirrm lib/gcc/9.2.0/include/c++/ext/pb_ds/detail/hash_fn
-@dirrm lib/gcc/9.2.0/include/c++/ext/pb_ds/detail/left_child_next_sibling_heap_
-@dirrm lib/gcc/9.2.0/include/c++/ext/pb_ds/detail/list_update_map_
-@dirrm lib/gcc/9.2.0/include/c++/ext/pb_ds/detail/list_update_policy
-@dirrm lib/gcc/9.2.0/include/c++/ext/pb_ds/detail/ov_tree_map_
-@dirrm lib/gcc/9.2.0/include/c++/ext/pb_ds/detail/pairing_heap_
-@dirrm lib/gcc/9.2.0/include/c++/ext/pb_ds/detail/pat_trie_
-@dirrm lib/gcc/9.2.0/include/c++/ext/pb_ds/detail/rb_tree_map_
-@dirrm lib/gcc/9.2.0/include/c++/ext/pb_ds/detail/rc_binomial_heap_
-@dirrm lib/gcc/9.2.0/include/c++/ext/pb_ds/detail/resize_policy
-@dirrm lib/gcc/9.2.0/include/c++/ext/pb_ds/detail/splay_tree_
-@dirrm lib/gcc/9.2.0/include/c++/ext/pb_ds/detail/thin_heap_
-@dirrm lib/gcc/9.2.0/include/c++/ext/pb_ds/detail/tree_policy
-@dirrm lib/gcc/9.2.0/include/c++/ext/pb_ds/detail/trie_policy
-@dirrm lib/gcc/9.2.0/include/c++/ext/pb_ds/detail/unordered_iterator
-@dirrm lib/gcc/9.2.0/include/c++/ext/pb_ds/detail
-@dirrm lib/gcc/9.2.0/include/c++/ext/pb_ds
-@dirrm lib/gcc/9.2.0/include/c++/ext
-@dirrm lib/gcc/9.2.0/include/c++/parallel
-@dirrm lib/gcc/9.2.0/include/c++/profile/impl
-@dirrm lib/gcc/9.2.0/include/c++/profile
-@dirrm lib/gcc/9.2.0/include/c++/pstl
-@dirrm lib/gcc/9.2.0/include/c++/tr1
-@dirrm lib/gcc/9.2.0/include/c++/tr2
-@dirrm lib/gcc/9.2.0/include/c++/%%TARGET%%/bits
-@dirrm lib/gcc/9.2.0/include/c++/%%TARGET%%/ext
-@dirrm lib/gcc/9.2.0/include/c++/%%TARGET%%
-@dirrm lib/gcc/9.2.0/include/c++
-@dirrm lib/gcc/9.2.0/include
-@dirrm lib/gcc/9.2.0
-@dirrm lib/gcc
-@dirrm libexec/gcc/%%TARGET%%/9.2.0/install-tools
-@dirrm libexec/gcc/%%TARGET%%/9.2.0/plugin
-@dirrm libexec/gcc/%%TARGET%%/9.2.0
-@dirrm libexec/gcc/%%TARGET%%
-@dirrm libexec/gcc
+@dir info/gcc
+@dir lib/gcc/9.2.0/gcc/%%TARGET%%/9.2.0/finclude
+@dir lib/gcc/9.2.0/gcc/%%TARGET%%/9.2.0/include/ssp
+@dir lib/gcc/9.2.0/gcc/%%TARGET%%/9.2.0/include
+@dir lib/gcc/9.2.0/gcc/%%TARGET%%/9.2.0/include-fixed/netinet
+@dir lib/gcc/9.2.0/gcc/%%TARGET%%/9.2.0/include-fixed/sys
+@dir lib/gcc/9.2.0/gcc/%%TARGET%%/9.2.0/include-fixed
+@dir lib/gcc/9.2.0/gcc/%%TARGET%%/9.2.0/install-tools/include
+@dir lib/gcc/9.2.0/gcc/%%TARGET%%/9.2.0/install-tools
+@dir lib/gcc/9.2.0/gcc/%%TARGET%%/9.2.0/plugin/include/ada/gcc-interface
+@dir lib/gcc/9.2.0/gcc/%%TARGET%%/9.2.0/plugin/include/ada
+@dir lib/gcc/9.2.0/gcc/%%TARGET%%/9.2.0/plugin/include/c-family
+@dir lib/gcc/9.2.0/gcc/%%TARGET%%/9.2.0/plugin/include/config/i386
+@dir lib/gcc/9.2.0/gcc/%%TARGET%%/9.2.0/plugin/include/config
+@dir lib/gcc/9.2.0/gcc/%%TARGET%%/9.2.0/plugin/include/cp
+@dir lib/gcc/9.2.0/gcc/%%TARGET%%/9.2.0/plugin/include/d
+@dir lib/gcc/9.2.0/gcc/%%TARGET%%/9.2.0/plugin/include/objc
+@dir lib/gcc/9.2.0/gcc/%%TARGET%%/9.2.0/plugin/include
+@dir lib/gcc/9.2.0/gcc/%%TARGET%%/9.2.0/plugin
+@dir lib/gcc/9.2.0/gcc/%%TARGET%%/9.2.0
+@dir lib/gcc/9.2.0/gcc/%%TARGET%%
+@dir lib/gcc/9.2.0/gcc
+@dir lib/gcc/9.2.0/include/c++/backward
+@dir lib/gcc/9.2.0/include/c++/bits
+@dir lib/gcc/9.2.0/include/c++/debug
+@dir lib/gcc/9.2.0/include/c++/decimal
+@dir lib/gcc/9.2.0/include/c++/experimental/bits
+@dir lib/gcc/9.2.0/include/c++/experimental
+@dir lib/gcc/9.2.0/include/c++/ext/pb_ds/detail/bin_search_tree_
+@dir lib/gcc/9.2.0/include/c++/ext/pb_ds/detail/binary_heap_
+@dir lib/gcc/9.2.0/include/c++/ext/pb_ds/detail/binomial_heap_
+@dir lib/gcc/9.2.0/include/c++/ext/pb_ds/detail/binomial_heap_base_
+@dir lib/gcc/9.2.0/include/c++/ext/pb_ds/detail/branch_policy
+@dir lib/gcc/9.2.0/include/c++/ext/pb_ds/detail/cc_hash_table_map_
+@dir lib/gcc/9.2.0/include/c++/ext/pb_ds/detail/eq_fn
+@dir lib/gcc/9.2.0/include/c++/ext/pb_ds/detail/gp_hash_table_map_
+@dir lib/gcc/9.2.0/include/c++/ext/pb_ds/detail/hash_fn
+@dir lib/gcc/9.2.0/include/c++/ext/pb_ds/detail/left_child_next_sibling_heap_
+@dir lib/gcc/9.2.0/include/c++/ext/pb_ds/detail/list_update_map_
+@dir lib/gcc/9.2.0/include/c++/ext/pb_ds/detail/list_update_policy
+@dir lib/gcc/9.2.0/include/c++/ext/pb_ds/detail/ov_tree_map_
+@dir lib/gcc/9.2.0/include/c++/ext/pb_ds/detail/pairing_heap_
+@dir lib/gcc/9.2.0/include/c++/ext/pb_ds/detail/pat_trie_
+@dir lib/gcc/9.2.0/include/c++/ext/pb_ds/detail/rb_tree_map_
+@dir lib/gcc/9.2.0/include/c++/ext/pb_ds/detail/rc_binomial_heap_
+@dir lib/gcc/9.2.0/include/c++/ext/pb_ds/detail/resize_policy
+@dir lib/gcc/9.2.0/include/c++/ext/pb_ds/detail/splay_tree_
+@dir lib/gcc/9.2.0/include/c++/ext/pb_ds/detail/thin_heap_
+@dir lib/gcc/9.2.0/include/c++/ext/pb_ds/detail/tree_policy
+@dir lib/gcc/9.2.0/include/c++/ext/pb_ds/detail/trie_policy
+@dir lib/gcc/9.2.0/include/c++/ext/pb_ds/detail/unordered_iterator
+@dir lib/gcc/9.2.0/include/c++/ext/pb_ds/detail
+@dir lib/gcc/9.2.0/include/c++/ext/pb_ds
+@dir lib/gcc/9.2.0/include/c++/ext
+@dir lib/gcc/9.2.0/include/c++/parallel
+@dir lib/gcc/9.2.0/include/c++/profile/impl
+@dir lib/gcc/9.2.0/include/c++/profile
+@dir lib/gcc/9.2.0/include/c++/pstl
+@dir lib/gcc/9.2.0/include/c++/tr1
+@dir lib/gcc/9.2.0/include/c++/tr2
+@dir lib/gcc/9.2.0/include/c++/%%TARGET%%/bits
+@dir lib/gcc/9.2.0/include/c++/%%TARGET%%/ext
+@dir lib/gcc/9.2.0/include/c++/%%TARGET%%
+@dir lib/gcc/9.2.0/include/c++
+@dir lib/gcc/9.2.0/include
+@dir lib/gcc/9.2.0
+@dir libexec/gcc/%%TARGET%%/9.2.0/install-tools
+@dir libexec/gcc/%%TARGET%%/9.2.0/plugin
+@dir libexec/gcc/%%TARGET%%/9.2.0
+@dir libexec/gcc/%%TARGET%%
+@dir libexec/gcc
