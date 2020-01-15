@@ -68,13 +68,6 @@ PLIST_SUB+= SUFFIX=${GCC_SUFFIX}
 PLIST_SUB+= TARGET=${TARGET}
 PLIST_SUB+= VERSION=${PORTVERSION}
 
-INFO+= ${TARGET}/cpp
-INFO+= ${TARGET}/cppinternals
-INFO+= ${TARGET}/gcc
-INFO+= ${TARGET}/gccinstall
-INFO+= ${TARGET}/gccint
-
-
 post-configure:
 	${MKDIR} ${WRKSRC}/gcc/include
 
