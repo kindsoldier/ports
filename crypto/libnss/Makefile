@@ -2,8 +2,7 @@
 # $FreeBSD: head/security/nss/Makefile 439231 2017-04-23 16:11:22Z jbeich $
 
 PORTNAME=	nss
-PORTVERSION=	3.30.2
-#DISTVERSIONSUFFIX=	-with-ckbi-1.98
+PORTVERSION=	3.47.1
 CATEGORIES=	security
 MASTER_SITES=	MOZILLA/security/${PORTNAME}/releases/${DISTNAME:tu:C/[-.]/_/g}_RTM/src
 PKGNAMEPREFIX=  lib
@@ -27,7 +26,9 @@ MAKE_ENV+=	SQLITE_INCLUDE_DIR="${LOCALBASE}/include"
 MAKE_ENV+=	FREEBL_LOWHASH=1
 MAKE_ENV+=	NSS_DISABLE_GTESTS=1
 MAKE_ENV+=	NSS_USE_SYSTEM_SQLITE=1
-MAKE_ENV+= NSS_ENABLE_WERROR=0
+MAKE_ENV+=      NSS_ENABLE_WERROR=0
+MAKE_ENV+=      DEBUG=0
+
 #MAKE_ENV+= CC_IS_CLANG=0
 CFLAGS+=	-I${LOCALBASE}/include/nspr
 
@@ -38,7 +39,7 @@ DIST=		${WRKSRC:H}/dist
 
 EXTRACT_AFTER_ARGS=--exclude */lib/zlib --exclude */lib/dbm --exclude */lib/sqlite
 
-INSTALL_BINS+=	certcgi
+#INSTALL_BINS+=	certcgi
 INSTALL_BINS+=	certutil
 INSTALL_BINS+=	cmsutil
 INSTALL_BINS+=	crlutil
@@ -92,8 +93,8 @@ post-patch:
 	cd ${WRKSRC} && \
 		${FIND} . -name "*.c" -o -name "*.h" | \
 		${XARGS} ${REINPLACE_CMD} -e 's|"nspr.h"|<nspr.h>|'
-	${FIND} ${WRKSRC}/tests -name '*.sh' | ${XARGS} ${GREP} -l -F '/bin/bash' | \
-		${XARGS} ${REINPLACE_CMD} -e 's|#! */bin/bash|#!${SH}|'
+#	${FIND} ${WRKSRC}/tests -name '*.sh' | ${XARGS} ${GREP} -l -F '/bin/bash' | \
+#		${XARGS} ${REINPLACE_CMD} -e 's|#! */bin/bash|#!${SH}|'
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/nss/nss ${STAGEDIR}${PREFIX}/lib
