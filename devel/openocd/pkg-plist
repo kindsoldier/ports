@@ -1,8 +1,8 @@
 bin/openocd
-info/openocd.info
-info/openocd.info-1
-info/openocd.info-2
 man/man1/openocd.1.gz
+share/info/openocd.info
+share/info/openocd.info-1
+share/info/openocd.info-2
 share/openocd/contrib/60-openocd.rules
 share/openocd/contrib/libdcc/dcc_stdio.c
 share/openocd/contrib/libdcc/dcc_stdio.h
