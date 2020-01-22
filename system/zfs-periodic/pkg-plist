@@ -1,0 +1,10 @@
+etc/periodic/daily/000.zfs-snapshot
+etc/periodic/hourly/000.zfs-snapshot
+etc/periodic/monthly/000.zfs-snapshot
+etc/periodic/weekly/000.zfs-snapshot
+etc/periodic/zfs-snapshot
+@dir etc/periodic/daily
+@dir etc/periodic/hourly
+@dir etc/periodic/monthly
+@dir etc/periodic/weekly
+@dir etc/periodic
