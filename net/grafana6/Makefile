@@ -1,7 +1,7 @@
 # $FreeBSD: head/www/grafana6/Makefile 513980 2019-10-07 17:43:02Z swills $
 
 PORTNAME=	grafana
-PORTVERSION=	6.5.1
+PORTVERSION=	6.5.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES+=	https://dl.grafana.com/oss/release/:public
@@ -19,6 +19,7 @@ USE_RC_SUBR=	grafana
 
 USE_GITHUB=	yes
 TAG=		9504db8
+
 
 GO_TARGET=	./pkg/cmd/grafana-server \
 		./pkg/cmd/grafana-cli

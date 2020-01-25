@@ -5,6 +5,7 @@ bin/gc++filt
 bin/gelfedit
 bin/ggprof
 bin/gld
+bin/gld.bfd
 bin/gnm
 bin/gobjcopy
 bin/gobjdump
@@ -31,6 +32,7 @@ man/man1/gstrip.1.gz
 %%TARGET%%/bin/ar
 %%TARGET%%/bin/as
 %%TARGET%%/bin/ld
+%%TARGET%%/bin/ld.bfd
 %%TARGET%%/bin/nm
 %%TARGET%%/bin/objcopy
 %%TARGET%%/bin/objdump

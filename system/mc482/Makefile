@@ -2,7 +2,7 @@
 # $Id$
 #
 PORTNAME=	mc
-PORTVERSION=	4.8.23
+PORTVERSION=	4.8.24
 CATEGORIES=	misc shells
 MASTER_SITES+=	http://ftp.midnight-commander.org/
 MASTER_SITES+=	http://ftp.osuosl.org/pub/midnightcommander/
@@ -24,9 +24,10 @@ USES=		gmake shebangfix perl5 pkgconfig tar:xz libtool
 SHEBANG_FILES+=	misc/mcedit.menu.in
 SHEBANG_FILES+= configure
 SHEBANG_FILES+= configure.ac
-SHEBANG_FILES+= ${WRKSRC}/src/vfs/extfs/helpers/Makefile.in
-SHEBANG_FILES+= ${WRKSRC}/src/vfs/extfs/helpers/s3+.in
-SHEBANG_FILES+= ${WRKSRC}/src/vfs/extfs/helpers/uc1541.in
+SHEBANG_FILES+=	${WRKSRC}/src/vfs/extfs/helpers/s3+.in
+SHEBANG_FILES+=	${WRKSRC}/src/vfs/extfs/helpers/uc1541
+
+
 python_OLD_CMD=	@PYTHON@
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ZIP=${ZIP_CMD} UNZIP=${UNZIP_CMD}
@@ -53,8 +54,6 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src_diffviewer_ydiff.c
 RUN_DEPENDS+=	gdiff:text/gdiffutils
 .endif
 
-
-
 post-patch:
 	${REINPLACE_CMD} -e 's|missing-parameter-type|unused-variable|; \
 		s|but-set-variable|variable|' \
@@ -65,9 +64,6 @@ post-patch:
 	${REINPLACE_CMD} -e 's|glib-2.0|glib|g' ${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's|gthread-2.0|gthread|g' ${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's|^DIST_SUBDIRS =|#DIST_SUBDIRS =|' ${WRKSRC}/doc/man/Makefile.in
-
-
-
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/pixmaps

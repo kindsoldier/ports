@@ -2,7 +2,7 @@
 # $Id: Makefile 2701 2009-10-31 21:29:43Z root $
 #
 PORTNAME=	make
-PORTVERSION=	4.2
+PORTVERSION=	4.3
 PKGNAMEPREFIX=	g
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -25,7 +25,6 @@ MAKE_ARGS+=	inst_setgid=false
 CONFIGURE_ARGS+= --mandir=${PREFIX}/man
 CONFIGURE_ARGS+= --infodir=${PREFIX}/info
 CONFIGURE_ARGS+= --disable-nls
-
 
 INFO=	make
 

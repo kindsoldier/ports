@@ -2,7 +2,7 @@
 # $Id$
 #
 PORTNAME=	pkg
-DISTVERSION=	1.10.5 #1.7.2
+DISTVERSION=	1.10.5
 _PKG_VERSION=	${DISTVERSION}
 CATEGORIES=	ports-mgmt
 MASTER_SITES+=	http://files.etoilebsd.net/${PORTNAME}/
@@ -26,7 +26,7 @@ EXTRA_PATCHES=	${FILESDIR}/extra-patch-docs_pkg.8
 post-install:
 	${MV} ${STAGEDIR}${PREFIX}/lib/libpkg_static.a ${STAGEDIR}${PREFIX}/lib/libpkg.a
 	${RM} ${STAGEDIR}${PREFIX}/lib/libpkg_static.la
-	${MV} ${STAGEDIR}${PREFIX}/sbin/pkg-static ${STAGEDIR}${PREFIX}/sbin/pkg
+	${INSTALL} ${STAGEDIR}${PREFIX}/sbin/pkg-static ${STAGEDIR}${PREFIX}/sbin/pkg
 
 .include <bsd.port.mk>
 #EOF
