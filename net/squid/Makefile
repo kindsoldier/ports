@@ -2,13 +2,13 @@
 # $Id: Makefile 2316 2009-09-02 08:41:08Z root $
 #
 PORTNAME=	squid
-PORTVERSION=	4.8
+PORTVERSION=	4.9
 CATEGORIES=	net
 MASTER_SITES+=	http://www.squid-cache.org/Versions/v4/
-MASTER_SITES+=		http://www2.us.squid-cache.org/Versions/v4/
-MASTER_SITES+=		http://www1.at.squid-cache.org/Versions/v4/
-MASTER_SITES+=		http://www.eu.squid-cache.org/Versions/v4/
-MASTER_SITES+=		http://www1.jp.squid-cache.org/Versions/v4/
+MASTER_SITES+=	http://www2.us.squid-cache.org/Versions/v4/
+MASTER_SITES+=	http://www1.at.squid-cache.org/Versions/v4/
+MASTER_SITES+=	http://www.eu.squid-cache.org/Versions/v4/
+MASTER_SITES+=	http://www1.jp.squid-cache.org/Versions/v4/
 
 
 MAINTAINER= homeunix7@gmail.com
@@ -89,7 +89,7 @@ CONFIGURE_ARGS+= --enable-icmp
 #CONFIGURE_ARGS+= --enable-pf-transparent
 
 CONFIGURE_ARGS+= --enable-referer-log
-CONFIGURE_ARGS+= --enable-snmp
+CONFIGURE_ARGS+= --disable-snmp
 CONFIGURE_ARGS+= --enable-useragent-log
 CONFIGURE_ARGS+= --with-aufs-threads=10
 CONFIGURE_ARGS+= --with-openssl=/usr
