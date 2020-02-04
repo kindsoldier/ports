@@ -1,7 +1,7 @@
 # $FreeBSD: head/www/node/Makefile 453790 2017-11-09 02:31:47Z jbeich $
 
 PORTNAME=	node
-PORTVERSION=	12.12.0
+PORTVERSION=	12.14.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/v${PORTVERSION}/
@@ -28,7 +28,7 @@ USE_LDCONFIG=	yes
 PREFIX_RELDEST=	${PREFIX:S,^${DESTDIR},,}
 REINPLACE_ARGS=	-i ''
 CONFIGURE_ARGS+=	--prefix=${PREFIX_RELDEST}
-CONFIGURE_ARGS+=	--without-npm
+#CONFIGURE_ARGS+=	--without-npm
 CONFIGURE_ARGS+=	--shared-cares
 CONFIGURE_ARGS+=	--shared-libuv
 CONFIGURE_ARGS+=	--shared-zlib
