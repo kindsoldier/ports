@@ -1,3 +1,4 @@
+etc/rc.d/vm
 lib/vm-bhyve/vm-base
 lib/vm-bhyve/vm-cmd
 lib/vm-bhyve/vm-config
@@ -17,4 +18,23 @@ lib/vm-bhyve/vm-util
 lib/vm-bhyve/vm-zfs
 man/man8/vm.8.gz
 sbin/vm
+share/examples/vm-bhyve/alpine.conf
+share/examples/vm-bhyve/arch.conf
+share/examples/vm-bhyve/centos6.conf
+share/examples/vm-bhyve/centos7.conf
+share/examples/vm-bhyve/config.sample
+share/examples/vm-bhyve/coreos.conf
+share/examples/vm-bhyve/debian.conf
+share/examples/vm-bhyve/default.conf
+share/examples/vm-bhyve/dragonfly.conf
+share/examples/vm-bhyve/freebsd-zvol.conf
+share/examples/vm-bhyve/freepbx.conf
+share/examples/vm-bhyve/linux-zvol.conf
+share/examples/vm-bhyve/netbsd.conf
+share/examples/vm-bhyve/openbsd.conf
+share/examples/vm-bhyve/resflash.conf
+share/examples/vm-bhyve/ubuntu.conf
+share/examples/vm-bhyve/windows.conf
 @dir lib/vm-bhyve
+@dir share/examples/vm-bhyve
+@dir share/examples

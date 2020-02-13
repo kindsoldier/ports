@@ -14,7 +14,7 @@ USES=		cmake perl5 shebangfix
 USE_PERL5=	run
 SHEBANG_FILES=	3rd-party/dirsplit/dirsplit
 
-CONFLICTS?=	cdrtools-[0-9]* cjk-cdrtools-[0-9]* cdrtools-devel-[0-9]*
+#CONFLICTS?=	cdrtools-[0-9]* cjk-cdrtools-[0-9]* cdrtools-devel-[0-9]*
 
 post-patch:
 	${REINPLACE_CMD} -e 's|share/man|man|' ${WRKSRC}/include/AddSchilyBits.cmake \

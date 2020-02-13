@@ -1,0 +1,11 @@
+--- ./toolkit/library/moz.build.orig	2020-01-15 21:33:07.843496000 +0200
++++ ./toolkit/library/moz.build	2020-01-15 21:36:03.481188000 +0200
+@@ -260,7 +260,7 @@
+     OS_LIBS += CONFIG['MOZ_PANGO_LIBS']
+     OS_LIBS += CONFIG['XT_LIBS']
+     OS_LIBS += [
+-        'gthread-2.0',
++        'gthread',
+     ]
+ 
+ if CONFIG['MOZ_ENABLE_STARTUP_NOTIFICATION']:

@@ -23,11 +23,11 @@ CONFIGURE_ARGS=	--with-platform=emu
 CONFIGURE_ARGS+= CC=${CC}
 CONFIGURE_ARGS+= CPP="${CC} -E"
 CONFIGURE_ARGS+= LEX=${LOCALBASE}/bin/gflex
-CONFIGURE_ARGS+=	--enable-grub-mount=no
-CONFIGURE_ARGS+=	--enable-grub-mkfont=no
-CONFIGURE_ARGS+=	--enable-grub-emu-sdl=no
-CONFIGURE_ARGS+=	--disable-nls
-CONFIGURE_ARGS+=	--disable-werror
+CONFIGURE_ARGS+= --enable-grub-mount=no
+CONFIGURE_ARGS+= --enable-grub-mkfont=no
+CONFIGURE_ARGS+= --enable-grub-emu-sdl=no
+CONFIGURE_ARGS+= --disable-nls
+CONFIGURE_ARGS+= --disable-werror
 
 .include <bsd.port.pre.mk>
 

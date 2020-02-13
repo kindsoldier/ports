@@ -2,7 +2,7 @@
 # $FreeBSD: head/www/npm/Makefile 454516 2017-11-20 04:30:31Z sunpoet $
 
 PORTNAME=	npm
-PORTVERSION=	6.12.1
+PORTVERSION=	6.13.7 #6.12.1
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/sunpoet
 

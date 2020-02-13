@@ -1,0 +1,11 @@
+--- ./widget/gtk/mozgtk/gtk2/moz.build~	2019-12-23 13:37:31.773396000 +0200
++++ ./widget/gtk/mozgtk/gtk2/moz.build	2019-12-23 20:51:47.751373000 +0200
+@@ -34,7 +34,7 @@
+ OS_LIBS += [f for f in CONFIG['MOZ_GTK2_LIBS'] if f.startswith('-L')]
+ OS_LIBS += no_as_needed
+ OS_LIBS += [
+-    'gtk-x11-2.0',
++    'gtk-x11',
+     'gdk',
+ ]
+ OS_LIBS += as_needed
