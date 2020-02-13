@@ -2,24 +2,20 @@
 # $FreeBSD: head/devel/maven-wrapper/Makefile 346734 2014-03-02 05:22:25Z tabthorpe $
 
 PORTNAME=	maven-wrapper
-PORTVERSION=	1.2
+PORTVERSION=	1
 CATEGORIES=	devel java
-MASTER_SITES=	#
-DISTFILES=	#
+MASTER_SITES=	# none
+DISTFILES=	# none
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Wrapper script for the various installations of Maven
 
 NO_BUILD=	yes
 SUB_FILES=	mvn.sh
-SUB_LIST+=	CAT=${CAT}
-SUB_LIST+=	FIND=${FIND}
-SUB_LIST+=	TAIL=${TAIL}
+SUB_LIST=	CAT=${CAT} FIND=${FIND} TAIL=${TAIL}
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/etc/maven-wrapper/instances.d
-	${INSTALL_SCRIPT} ${WRKDIR}/mvn.sh ${STAGEDIR}${PREFIX}/bin/mvn
+	${MKDIR} "${STAGEDIR}${PREFIX}/etc/maven-wrapper/instances.d"
+	${INSTALL_SCRIPT} "${WRKDIR}/mvn.sh" "${STAGEDIR}${PREFIX}/bin/mvn"
 
 .include <bsd.port.mk>
-#EOF
-
