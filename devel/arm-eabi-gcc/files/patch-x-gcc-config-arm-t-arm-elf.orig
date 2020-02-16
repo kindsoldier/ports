@@ -1,7 +1,7 @@
---- ./gcc/config/arm/t-arm-elf.orig	2016-01-04 16:30:50.652828000 +0200
-+++ ./gcc/config/arm/t-arm-elf	2020-02-16 21:45:06.766251000 +0200
-@@ -1,90 +1,101 @@
--# Copyright (C) 1998-2016 Free Software Foundation, Inc.
+--- ./gcc/config/arm/t-arm-elf.orig	2015-01-05 14:33:28.000000000 +0200
++++ ./gcc/config/arm/t-arm-elf	2018-03-04 23:08:01.373328000 +0200
+@@ -1,90 +1,34 @@
+-# Copyright (C) 1998-2015 Free Software Foundation, Inc.
 -#
 -# This file is part of GCC.
 -#
@@ -18,73 +18,16 @@
 -# You should have received a copy of the GNU General Public License
 -# along with GCC; see the file COPYING3.  If not see
 -# <http://www.gnu.org/licenses/>.
-+# Custom multilibs for ARM
- 
+-
 -MULTILIB_OPTIONS     = marm/mthumb
 -MULTILIB_DIRNAMES    = arm thumb
 -MULTILIB_EXCEPTIONS  = 
 -MULTILIB_MATCHES     =
-+#    Architecture options usage
-+#   --------------------------------------------------------------------
-+#   || ARM Core | Command Line Options                       | multilib |
-+#   ||----------|--------------------------------------------|----------|
-+#   ||Cortex-M0+| -mthumb -mcpu=cortex-m0plus                | armv6-m  |
-+#   ||Cortex-M0 | -mthumb -mcpu=cortex-m0                    |          |
-+#   ||Cortex-M1 | -mthumb -mcpu=cortex-m1                    |          |
-+#   ||          |--------------------------------------------|          |
-+#   ||          | -mthumb -march=armv6-m                     |          |
-+#   ||----------|--------------------------------------------|----------|
-+#   ||Cortex-M3 | -mthumb -mcpu=cortex-m3                    | armv7-m  |
-+#   ||          |--------------------------------------------|          |
-+#   ||          | -mthumb -march=armv7-m                     |          |
-+#   ||----------|--------------------------------------------|----------|
-+#   ||Cortex-M4 | -mthumb -mcpu=cortex-m4                    | armv7e-m |
-+#   ||(No FP)   |--------------------------------------------|          |
-+#   ||          | -mthumb -march=armv7e-m                    |          |
-+#   ||----------|--------------------------------------------|----------|
-+#   ||Cortex-M4 | -mthumb -mcpu=cortex-m4 -mfloat-abi=softfp | armv7e-m |
-+#   ||(Soft FP) | -mfpu=fpv4-sp-d16                          | /softfp  |
-+#   ||          |--------------------------------------------|          |
-+#   ||          | -mthumb -march=armv7e-m -mfloat-abi=softfp |          |
-+#   ||          | -mfpu=fpv4-sp-d16                          |          |
-+#   ||----------|--------------------------------------------|----------|
-+#   ||Cortex-M4 | -mthumb -mcpu=cortex-m4 -mfloat-abi=hard   | armv7e-m |
-+#   ||(Hard FP) | -mfpu=fpv4-sp-d16                          | /fpu     |
-+#   ||          |--------------------------------------------|          |
-+#   ||          | -mthumb -march=armv7e-m -mfloat-abi=hard   |          |
-+#   ||          | -mfpu=fpv4-sp-d16                          |          |
-+#   ||----------|--------------------------------------------|----------|
-+#   ||Cortex-R4 | [-mthumb] -march=armv7-r                   | armv7-ar |
-+#   ||Cortex-R5 |                                            | /thumb   |
-+#   ||Cortex-R7 |                                            |      |
-+#   ||(No FP)   |                                            |          |
-+#   ||----------|--------------------------------------------|----------|
-+#   ||Cortex-R4 | [-mthumb] -march=armv7-r -mfloat-abi=softfp| armv7-ar |
-+#   ||Cortex-R5 | -mfpu=vfpv3-d16                            | /thumb   |
-+#   ||Cortex-R7 |                                            | /softfp  |
-+#   ||(Soft FP) |                                            |          |
-+#   ||----------|--------------------------------------------|----------|
-+#   ||Cortex-R4 | [-mthumb] -march=armv7-r -mfloat-abi=hard  | armv7-ar |
-+#   ||Cortex-R5 | -mfpu=vfpv3-d16                            | /thumb   |
-+#   ||Cortex-R7 |                                            | /fpu     |
-+#   ||(Hard FP) |                                            |          |
-+#   ||----------|--------------------------------------------|----------|
-+#   ||Cortex-A* | [-mthumb] -march=armv7-a                   | armv7-ar |
-+#   ||(No FP)   |                                            | /thumb   |
-+#   ||----------|--------------------------------------------|----------|
-+#   ||Cortex-A* | [-mthumb] -march=armv7-a -mfloat-abi=softfp| armv7-ar |
-+#   ||(Soft FP) | -mfpu=vfpv3-d16                            | /thumb   |
-+#   ||          |                                            | /softfp  |
-+#   ||----------|--------------------------------------------|----------|
-+#   ||Cortex-A* | [-mthumb] -march=armv7-a -mfloat-abi=hard  | armv7-ar |
-+#   ||(Hard FP) | -mfpu=vfpv3-d16                            | /thumb   |
-+#   ||          |                                            | /fpu     |
-+#   --------------------------------------------------------------------
- 
+-
 -#MULTILIB_OPTIONS     += mcpu=fa526/mcpu=fa626/mcpu=fa606te/mcpu=fa626te/mcpu=fmp626/mcpu=fa726te
 -#MULTILIB_DIRNAMES    += fa526 fa626 fa606te fa626te fmp626 fa726te
 -#MULTILIB_EXCEPTIONS  += *mthumb*/*mcpu=fa526 *mthumb*/*mcpu=fa626
- 
+-
 -#MULTILIB_OPTIONS      += march=armv7
 -#MULTILIB_DIRNAMES     += thumb2
 -#MULTILIB_EXCEPTIONS   += march=armv7* marm/*march=armv7*
@@ -94,7 +37,7 @@
 -#MULTILIB_MATCHES      += march?armv7=mcpu?cortex-a8
 -#MULTILIB_MATCHES      += march?armv7=mcpu?cortex-r4
 -#MULTILIB_MATCHES      += march?armv7=mcpu?cortex-m3
- 
+-
 -# Not quite true.  We can support hard-vfp calling in Thumb2, but how do we
 -# express that here?  Also, we really need architecture v5e or later
 -# (mcrr etc).
@@ -103,9 +46,7 @@
 -MULTILIB_EXCEPTIONS    += *mthumb/*mfloat-abi=hard*
 -#MULTILIB_EXCEPTIONS    += *mcpu=fa526/*mfloat-abi=hard*
 -#MULTILIB_EXCEPTIONS    += *mcpu=fa626/*mfloat-abi=hard*
-+MULTILIB_OPTIONS  = mthumb
-+MULTILIB_DIRNAMES = thumb
- 
+-
 -# MULTILIB_OPTIONS    += mcpu=ep9312
 -# MULTILIB_DIRNAMES   += ep9312
 -# MULTILIB_EXCEPTIONS += *mthumb/*mcpu=ep9312*
@@ -150,6 +91,11 @@
 -# MULTILIB_MATCHES    += mcpu?arm7=mcpu?arm600
 -# MULTILIB_MATCHES    += mcpu?arm7=mcpu?arm610
 -# MULTILIB_MATCHES    += mcpu?arm7=mcpu?arm620
++# Custom multilibs for ARM
++
++MULTILIB_OPTIONS  = mthumb
++MULTILIB_DIRNAMES = thumb
++
 +MULTILIB_OPTIONS  += march=armv6/march=armv6-m/march=armv7-a/march=armv7-r/march=armv7-m/march=armv7e-m
 +MULTILIB_DIRNAMES += armv6 armv6-m armv7-a armv7-r armv7-m armv7e-m
 +
@@ -172,18 +118,10 @@
 +MULTILIB_REQUIRED += mthumb/march=armv7-r
 +
 +MULTILIB_REQUIRED += mthumb/march=armv7-m/mfloat-abi=hard/mfpu=fpv4-sp-d16
-+MULTILIB_REQUIRED += mthumb/march=armv7-m/mfloat-abi=softfp/mfpu=fpv4-sp-d16
-+
 +MULTILIB_REQUIRED += mthumb/march=armv7-m
 +
-+# armv7e-m/softfp
-+MULTILIB_REQUIRED += mthumb/march=armv7e-m/mfloat-abi=softfp/mfpu=fpv4-sp-d16
-+MULTILIB_REQUIRED += mthumb/march=armv7e-m/mfloat-abi=softfp/mfpu=fpv4-sp-d16
-+
-+# armv7e-m/hardfp
 +MULTILIB_REQUIRED += mthumb/march=armv7e-m/mfloat-abi=hard/mfpu=fpv4-sp-d16
 +MULTILIB_REQUIRED += mthumb/march=armv7e-m/mfloat-abi=hard/mfpu=fpv5-d16
-+
 +MULTILIB_REQUIRED += mthumb/march=armv7e-m
 +
 +#EOF

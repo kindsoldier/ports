@@ -455,6 +455,13 @@ lib/gcc/arm-eabi/6.4.0/thumb/armv7-m/hard/fpv4-sp-d16/libgcc.a
 lib/gcc/arm-eabi/6.4.0/thumb/armv7-m/hard/fpv4-sp-d16/libgcov.a
 lib/gcc/arm-eabi/6.4.0/thumb/armv7-m/libgcc.a
 lib/gcc/arm-eabi/6.4.0/thumb/armv7-m/libgcov.a
+lib/gcc/arm-eabi/6.4.0/thumb/armv7-m/softfp/fpv4-sp-d16/crtbegin.o
+lib/gcc/arm-eabi/6.4.0/thumb/armv7-m/softfp/fpv4-sp-d16/crtend.o
+lib/gcc/arm-eabi/6.4.0/thumb/armv7-m/softfp/fpv4-sp-d16/crtfastmath.o
+lib/gcc/arm-eabi/6.4.0/thumb/armv7-m/softfp/fpv4-sp-d16/crti.o
+lib/gcc/arm-eabi/6.4.0/thumb/armv7-m/softfp/fpv4-sp-d16/crtn.o
+lib/gcc/arm-eabi/6.4.0/thumb/armv7-m/softfp/fpv4-sp-d16/libgcc.a
+lib/gcc/arm-eabi/6.4.0/thumb/armv7-m/softfp/fpv4-sp-d16/libgcov.a
 lib/gcc/arm-eabi/6.4.0/thumb/armv7-r/crtbegin.o
 lib/gcc/arm-eabi/6.4.0/thumb/armv7-r/crtend.o
 lib/gcc/arm-eabi/6.4.0/thumb/armv7-r/crtfastmath.o
@@ -490,6 +497,13 @@ lib/gcc/arm-eabi/6.4.0/thumb/armv7e-m/hard/fpv5-d16/libgcc.a
 lib/gcc/arm-eabi/6.4.0/thumb/armv7e-m/hard/fpv5-d16/libgcov.a
 lib/gcc/arm-eabi/6.4.0/thumb/armv7e-m/libgcc.a
 lib/gcc/arm-eabi/6.4.0/thumb/armv7e-m/libgcov.a
+lib/gcc/arm-eabi/6.4.0/thumb/armv7e-m/softfp/fpv4-sp-d16/crtbegin.o
+lib/gcc/arm-eabi/6.4.0/thumb/armv7e-m/softfp/fpv4-sp-d16/crtend.o
+lib/gcc/arm-eabi/6.4.0/thumb/armv7e-m/softfp/fpv4-sp-d16/crtfastmath.o
+lib/gcc/arm-eabi/6.4.0/thumb/armv7e-m/softfp/fpv4-sp-d16/crti.o
+lib/gcc/arm-eabi/6.4.0/thumb/armv7e-m/softfp/fpv4-sp-d16/crtn.o
+lib/gcc/arm-eabi/6.4.0/thumb/armv7e-m/softfp/fpv4-sp-d16/libgcc.a
+lib/gcc/arm-eabi/6.4.0/thumb/armv7e-m/softfp/fpv4-sp-d16/libgcov.a
 libexec/gcc/arm-eabi/6.4.0/cc1
 libexec/gcc/arm-eabi/6.4.0/collect2
 libexec/gcc/arm-eabi/6.4.0/install-tools/fixinc.sh
@@ -529,6 +543,8 @@ man/man1/arm-eabi-gcov.1.gz
 @dir lib/gcc/arm-eabi/6.4.0/thumb/armv7-a
 @dir lib/gcc/arm-eabi/6.4.0/thumb/armv7-m/hard/fpv4-sp-d16
 @dir lib/gcc/arm-eabi/6.4.0/thumb/armv7-m/hard
+@dir lib/gcc/arm-eabi/6.4.0/thumb/armv7-m/softfp/fpv4-sp-d16
+@dir lib/gcc/arm-eabi/6.4.0/thumb/armv7-m/softfp
 @dir lib/gcc/arm-eabi/6.4.0/thumb/armv7-m
 @dir lib/gcc/arm-eabi/6.4.0/thumb/armv7-r/hard/vfpv3-d16
 @dir lib/gcc/arm-eabi/6.4.0/thumb/armv7-r/hard
@@ -536,6 +552,8 @@ man/man1/arm-eabi-gcov.1.gz
 @dir lib/gcc/arm-eabi/6.4.0/thumb/armv7e-m/hard/fpv4-sp-d16
 @dir lib/gcc/arm-eabi/6.4.0/thumb/armv7e-m/hard/fpv5-d16
 @dir lib/gcc/arm-eabi/6.4.0/thumb/armv7e-m/hard
+@dir lib/gcc/arm-eabi/6.4.0/thumb/armv7e-m/softfp/fpv4-sp-d16
+@dir lib/gcc/arm-eabi/6.4.0/thumb/armv7e-m/softfp
 @dir lib/gcc/arm-eabi/6.4.0/thumb/armv7e-m
 @dir lib/gcc/arm-eabi/6.4.0/thumb
 @dir lib/gcc/arm-eabi/6.4.0

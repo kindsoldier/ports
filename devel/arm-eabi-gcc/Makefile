@@ -40,6 +40,8 @@ CXXFLAGS+=	-fbracket-depth=512 -Os
 
 CFLAGS+=	-DCROSS_DIRECTORY_STRUCTURE
 
+CONFIGURE_ARGS+= --without-headers
+
 CONFIGURE_ARGS+= --disable-bootstrap
 CONFIGURE_ARGS+= --disable-libssp
 CONFIGURE_ARGS+= --without-nls
@@ -61,7 +63,7 @@ post-extract:
 	${MKDIR} ${WRKSRC}
 
 post-patch:
-	${REINPLACE_CMD} -e 's,-g -O2,-g -O,' ${WRKSRC}/configure
+	${REINPLACE_CMD} -e 's,-g -O2,-O,' ${WRKSRC}/configure ${WRKSRC}/*/configure
 	${REINPLACE_CMD} -e '/LOCAL_INCLUDE_DIR/ d ' ${WRKSRC}/gcc/Makefile.in
 
 PLIST_SUB+= SUFFIX=${GCC_SUFFIX}

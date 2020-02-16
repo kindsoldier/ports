@@ -19,7 +19,7 @@ USES+= gmake
 SSP_UNSAFE=yes
 GNU_CONFIGURE=	yes
 LDFLAGS=	#
-CFLAGS=         -Os -g
+CFLAGS=         -Os
 TARGET=		arm-eabi
 
 CONFIGURE_TARGET= #

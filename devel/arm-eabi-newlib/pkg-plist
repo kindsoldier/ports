@@ -222,6 +222,21 @@ arm-eabi/lib/thumb/armv7-m/nosys.specs
 arm-eabi/lib/thumb/armv7-m/pid.specs
 arm-eabi/lib/thumb/armv7-m/rdimon-crt0.o
 arm-eabi/lib/thumb/armv7-m/rdimon.specs
+arm-eabi/lib/thumb/armv7-m/softfp/fpv4-sp-d16/aprofile-validation.specs
+arm-eabi/lib/thumb/armv7-m/softfp/fpv4-sp-d16/aprofile-ve.specs
+arm-eabi/lib/thumb/armv7-m/softfp/fpv4-sp-d16/cpu-init/rdimon-aem.o
+arm-eabi/lib/thumb/armv7-m/softfp/fpv4-sp-d16/crt0.o
+arm-eabi/lib/thumb/armv7-m/softfp/fpv4-sp-d16/iq80310.specs
+arm-eabi/lib/thumb/armv7-m/softfp/fpv4-sp-d16/libc.a
+arm-eabi/lib/thumb/armv7-m/softfp/fpv4-sp-d16/libg.a
+arm-eabi/lib/thumb/armv7-m/softfp/fpv4-sp-d16/libm.a
+arm-eabi/lib/thumb/armv7-m/softfp/fpv4-sp-d16/libnosys.a
+arm-eabi/lib/thumb/armv7-m/softfp/fpv4-sp-d16/librdimon.a
+arm-eabi/lib/thumb/armv7-m/softfp/fpv4-sp-d16/nano.specs
+arm-eabi/lib/thumb/armv7-m/softfp/fpv4-sp-d16/nosys.specs
+arm-eabi/lib/thumb/armv7-m/softfp/fpv4-sp-d16/pid.specs
+arm-eabi/lib/thumb/armv7-m/softfp/fpv4-sp-d16/rdimon-crt0.o
+arm-eabi/lib/thumb/armv7-m/softfp/fpv4-sp-d16/rdimon.specs
 arm-eabi/lib/thumb/armv7-r/aprofile-validation.specs
 arm-eabi/lib/thumb/armv7-r/aprofile-ve.specs
 arm-eabi/lib/thumb/armv7-r/cpu-init/rdimon-aem.o
@@ -297,6 +312,21 @@ arm-eabi/lib/thumb/armv7e-m/nosys.specs
 arm-eabi/lib/thumb/armv7e-m/pid.specs
 arm-eabi/lib/thumb/armv7e-m/rdimon-crt0.o
 arm-eabi/lib/thumb/armv7e-m/rdimon.specs
+arm-eabi/lib/thumb/armv7e-m/softfp/fpv4-sp-d16/aprofile-validation.specs
+arm-eabi/lib/thumb/armv7e-m/softfp/fpv4-sp-d16/aprofile-ve.specs
+arm-eabi/lib/thumb/armv7e-m/softfp/fpv4-sp-d16/cpu-init/rdimon-aem.o
+arm-eabi/lib/thumb/armv7e-m/softfp/fpv4-sp-d16/crt0.o
+arm-eabi/lib/thumb/armv7e-m/softfp/fpv4-sp-d16/iq80310.specs
+arm-eabi/lib/thumb/armv7e-m/softfp/fpv4-sp-d16/libc.a
+arm-eabi/lib/thumb/armv7e-m/softfp/fpv4-sp-d16/libg.a
+arm-eabi/lib/thumb/armv7e-m/softfp/fpv4-sp-d16/libm.a
+arm-eabi/lib/thumb/armv7e-m/softfp/fpv4-sp-d16/libnosys.a
+arm-eabi/lib/thumb/armv7e-m/softfp/fpv4-sp-d16/librdimon.a
+arm-eabi/lib/thumb/armv7e-m/softfp/fpv4-sp-d16/nano.specs
+arm-eabi/lib/thumb/armv7e-m/softfp/fpv4-sp-d16/nosys.specs
+arm-eabi/lib/thumb/armv7e-m/softfp/fpv4-sp-d16/pid.specs
+arm-eabi/lib/thumb/armv7e-m/softfp/fpv4-sp-d16/rdimon-crt0.o
+arm-eabi/lib/thumb/armv7e-m/softfp/fpv4-sp-d16/rdimon.specs
 @dir arm-eabi/include/machine
 @dir arm-eabi/include/sys
 @dir arm-eabi/include
@@ -315,6 +345,9 @@ arm-eabi/lib/thumb/armv7e-m/rdimon.specs
 @dir arm-eabi/lib/thumb/armv7-m/hard/fpv4-sp-d16/cpu-init
 @dir arm-eabi/lib/thumb/armv7-m/hard/fpv4-sp-d16
 @dir arm-eabi/lib/thumb/armv7-m/hard
+@dir arm-eabi/lib/thumb/armv7-m/softfp/fpv4-sp-d16/cpu-init
+@dir arm-eabi/lib/thumb/armv7-m/softfp/fpv4-sp-d16
+@dir arm-eabi/lib/thumb/armv7-m/softfp
 @dir arm-eabi/lib/thumb/armv7-m
 @dir arm-eabi/lib/thumb/armv7-r/cpu-init
 @dir arm-eabi/lib/thumb/armv7-r/hard/vfpv3-d16/cpu-init
@@ -327,6 +360,9 @@ arm-eabi/lib/thumb/armv7e-m/rdimon.specs
 @dir arm-eabi/lib/thumb/armv7e-m/hard/fpv5-d16/cpu-init
 @dir arm-eabi/lib/thumb/armv7e-m/hard/fpv5-d16
 @dir arm-eabi/lib/thumb/armv7e-m/hard
+@dir arm-eabi/lib/thumb/armv7e-m/softfp/fpv4-sp-d16/cpu-init
+@dir arm-eabi/lib/thumb/armv7e-m/softfp/fpv4-sp-d16
+@dir arm-eabi/lib/thumb/armv7e-m/softfp
 @dir arm-eabi/lib/thumb/armv7e-m
 @dir arm-eabi/lib/thumb
 @dir arm-eabi/lib
