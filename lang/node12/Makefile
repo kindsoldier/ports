@@ -19,7 +19,7 @@ RUN_DEPENDS+= libuv>=1.32:devel/libuv
 CONFLICTS_INSTALL=	node[4568]-[0-9]*
 ONLY_FOR_ARCHS=		aarch64 amd64 armv6 armv7 i386
 
-USES=		compiler:c++11-lib gmake python:2.7,build pkgconfig localbase shebangfix
+USES=	compiler:c++11-lib gmake python:2.7,build pkgconfig localbase shebangfix
 
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes

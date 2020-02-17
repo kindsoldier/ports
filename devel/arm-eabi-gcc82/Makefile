@@ -3,7 +3,7 @@
 #
 PORTNAME=	gcc
 DIST_SUBDIR=	arm
-PORTVERSION=	8.2.20181220
+PORTVERSION=	8.2.1
 CATEGORIES=	devel
 MASTER_SITES=	https://developer.arm.com/-/media/Files/downloads/gnu-rm/8-2018q4/
 DISTNAME=	${ORIGINAL_PACKAGE_NAME}-src

@@ -1,22 +1,5 @@
 bin/tinygo
 tinygo/bin/tinygo
-tinygo/lib/CMSIS/CMSIS/Include/arm_common_tables.h
-tinygo/lib/CMSIS/CMSIS/Include/arm_const_structs.h
-tinygo/lib/CMSIS/CMSIS/Include/arm_math.h
-tinygo/lib/CMSIS/CMSIS/Include/cmsis_armcc.h
-tinygo/lib/CMSIS/CMSIS/Include/cmsis_armcc_V6.h
-tinygo/lib/CMSIS/CMSIS/Include/cmsis_gcc.h
-tinygo/lib/CMSIS/CMSIS/Include/core_cm0.h
-tinygo/lib/CMSIS/CMSIS/Include/core_cm0plus.h
-tinygo/lib/CMSIS/CMSIS/Include/core_cm3.h
-tinygo/lib/CMSIS/CMSIS/Include/core_cm4.h
-tinygo/lib/CMSIS/CMSIS/Include/core_cm7.h
-tinygo/lib/CMSIS/CMSIS/Include/core_cmFunc.h
-tinygo/lib/CMSIS/CMSIS/Include/core_cmInstr.h
-tinygo/lib/CMSIS/CMSIS/Include/core_cmSimd.h
-tinygo/lib/CMSIS/CMSIS/Include/core_sc000.h
-tinygo/lib/CMSIS/CMSIS/Include/core_sc300.h
-tinygo/lib/CMSIS/README.md
 tinygo/lib/clang/include/__clang_cuda_builtin_vars.h
 tinygo/lib/clang/include/__clang_cuda_cmath.h
 tinygo/lib/clang/include/__clang_cuda_complex_builtins.h
@@ -31,8 +14,8 @@ tinygo/lib/clang/include/__wmmintrin_pclmul.h
 tinygo/lib/clang/include/adxintrin.h
 tinygo/lib/clang/include/altivec.h
 tinygo/lib/clang/include/ammintrin.h
-tinygo/lib/clang/include/arm64intr.h
 tinygo/lib/clang/include/arm_acle.h
+tinygo/lib/clang/include/arm64intr.h
 tinygo/lib/clang/include/armintr.h
 tinygo/lib/clang/include/avx2intrin.h
 tinygo/lib/clang/include/avx512bf16intrin.h
@@ -89,8 +72,8 @@ tinygo/lib/clang/include/iso646.h
 tinygo/lib/clang/include/limits.h
 tinygo/lib/clang/include/lwpintrin.h
 tinygo/lib/clang/include/lzcntintrin.h
-tinygo/lib/clang/include/mm3dnow.h
 tinygo/lib/clang/include/mm_malloc.h
+tinygo/lib/clang/include/mm3dnow.h
 tinygo/lib/clang/include/mmintrin.h
 tinygo/lib/clang/include/movdirintrin.h
 tinygo/lib/clang/include/msa.h
@@ -137,23 +120,23 @@ tinygo/lib/clang/include/xsaveintrin.h
 tinygo/lib/clang/include/xsaveoptintrin.h
 tinygo/lib/clang/include/xsavesintrin.h
 tinygo/lib/clang/include/xtestintrin.h
-tinygo/lib/compiler-rt/LICENSE.TXT
-tinygo/lib/compiler-rt/README.txt
-tinygo/lib/compiler-rt/lib/builtins/CMakeLists.txt
-tinygo/lib/compiler-rt/lib/builtins/Darwin-excludes/CMakeLists.txt
-tinygo/lib/compiler-rt/lib/builtins/Darwin-excludes/README.TXT
-tinygo/lib/compiler-rt/lib/builtins/Darwin-excludes/ios-armv7.txt
-tinygo/lib/compiler-rt/lib/builtins/Darwin-excludes/ios-armv7s.txt
-tinygo/lib/compiler-rt/lib/builtins/Darwin-excludes/ios.txt
-tinygo/lib/compiler-rt/lib/builtins/Darwin-excludes/ios6-armv7.txt
-tinygo/lib/compiler-rt/lib/builtins/Darwin-excludes/ios6-armv7s.txt
-tinygo/lib/compiler-rt/lib/builtins/Darwin-excludes/ios7-arm64.txt
-tinygo/lib/compiler-rt/lib/builtins/Darwin-excludes/iossim-i386.txt
-tinygo/lib/compiler-rt/lib/builtins/Darwin-excludes/iossim-x86_64.txt
-tinygo/lib/compiler-rt/lib/builtins/Darwin-excludes/iossim.txt
-tinygo/lib/compiler-rt/lib/builtins/Darwin-excludes/osx-i386.txt
-tinygo/lib/compiler-rt/lib/builtins/Darwin-excludes/osx.txt
-tinygo/lib/compiler-rt/lib/builtins/README.txt
+tinygo/lib/CMSIS/CMSIS/Include/arm_common_tables.h
+tinygo/lib/CMSIS/CMSIS/Include/arm_const_structs.h
+tinygo/lib/CMSIS/CMSIS/Include/arm_math.h
+tinygo/lib/CMSIS/CMSIS/Include/cmsis_armcc_V6.h
+tinygo/lib/CMSIS/CMSIS/Include/cmsis_armcc.h
+tinygo/lib/CMSIS/CMSIS/Include/cmsis_gcc.h
+tinygo/lib/CMSIS/CMSIS/Include/core_cm0.h
+tinygo/lib/CMSIS/CMSIS/Include/core_cm0plus.h
+tinygo/lib/CMSIS/CMSIS/Include/core_cm3.h
+tinygo/lib/CMSIS/CMSIS/Include/core_cm4.h
+tinygo/lib/CMSIS/CMSIS/Include/core_cm7.h
+tinygo/lib/CMSIS/CMSIS/Include/core_cmFunc.h
+tinygo/lib/CMSIS/CMSIS/Include/core_cmInstr.h
+tinygo/lib/CMSIS/CMSIS/Include/core_cmSimd.h
+tinygo/lib/CMSIS/CMSIS/Include/core_sc000.h
+tinygo/lib/CMSIS/CMSIS/Include/core_sc300.h
+tinygo/lib/CMSIS/README.md
 tinygo/lib/compiler-rt/lib/builtins/aarch64/chkstk.S
 tinygo/lib/compiler-rt/lib/builtins/absvdi2.c
 tinygo/lib/compiler-rt/lib/builtins/absvsi2.c
@@ -230,7 +213,6 @@ tinygo/lib/compiler-rt/lib/builtins/arm/switch16.S
 tinygo/lib/compiler-rt/lib/builtins/arm/switch32.S
 tinygo/lib/compiler-rt/lib/builtins/arm/switch8.S
 tinygo/lib/compiler-rt/lib/builtins/arm/switchu8.S
-tinygo/lib/compiler-rt/lib/builtins/arm/sync-ops.h
 tinygo/lib/compiler-rt/lib/builtins/arm/sync_fetch_and_add_4.S
 tinygo/lib/compiler-rt/lib/builtins/arm/sync_fetch_and_add_8.S
 tinygo/lib/compiler-rt/lib/builtins/arm/sync_fetch_and_and_4.S
@@ -252,6 +234,7 @@ tinygo/lib/compiler-rt/lib/builtins/arm/sync_fetch_and_umin_8.S
 tinygo/lib/compiler-rt/lib/builtins/arm/sync_fetch_and_xor_4.S
 tinygo/lib/compiler-rt/lib/builtins/arm/sync_fetch_and_xor_8.S
 tinygo/lib/compiler-rt/lib/builtins/arm/sync_synchronize.S
+tinygo/lib/compiler-rt/lib/builtins/arm/sync-ops.h
 tinygo/lib/compiler-rt/lib/builtins/arm/truncdfsf2vfp.S
 tinygo/lib/compiler-rt/lib/builtins/arm/udivmodsi4.S
 tinygo/lib/compiler-rt/lib/builtins/arm/udivsi3.S
@@ -263,19 +246,20 @@ tinygo/lib/compiler-rt/lib/builtins/ashlti3.c
 tinygo/lib/compiler-rt/lib/builtins/ashrdi3.c
 tinygo/lib/compiler-rt/lib/builtins/ashrti3.c
 tinygo/lib/compiler-rt/lib/builtins/assembly.h
-tinygo/lib/compiler-rt/lib/builtins/atomic.c
-tinygo/lib/compiler-rt/lib/builtins/atomic_flag_clear.c
 tinygo/lib/compiler-rt/lib/builtins/atomic_flag_clear_explicit.c
-tinygo/lib/compiler-rt/lib/builtins/atomic_flag_test_and_set.c
+tinygo/lib/compiler-rt/lib/builtins/atomic_flag_clear.c
 tinygo/lib/compiler-rt/lib/builtins/atomic_flag_test_and_set_explicit.c
+tinygo/lib/compiler-rt/lib/builtins/atomic_flag_test_and_set.c
 tinygo/lib/compiler-rt/lib/builtins/atomic_signal_fence.c
 tinygo/lib/compiler-rt/lib/builtins/atomic_thread_fence.c
+tinygo/lib/compiler-rt/lib/builtins/atomic.c
 tinygo/lib/compiler-rt/lib/builtins/bswapdi2.c
 tinygo/lib/compiler-rt/lib/builtins/bswapsi2.c
 tinygo/lib/compiler-rt/lib/builtins/clear_cache.c
 tinygo/lib/compiler-rt/lib/builtins/clzdi2.c
 tinygo/lib/compiler-rt/lib/builtins/clzsi2.c
 tinygo/lib/compiler-rt/lib/builtins/clzti2.c
+tinygo/lib/compiler-rt/lib/builtins/CMakeLists.txt
 tinygo/lib/compiler-rt/lib/builtins/cmpdi2.c
 tinygo/lib/compiler-rt/lib/builtins/cmpti2.c
 tinygo/lib/compiler-rt/lib/builtins/comparedf2.c
@@ -285,6 +269,19 @@ tinygo/lib/compiler-rt/lib/builtins/cpu_model.c
 tinygo/lib/compiler-rt/lib/builtins/ctzdi2.c
 tinygo/lib/compiler-rt/lib/builtins/ctzsi2.c
 tinygo/lib/compiler-rt/lib/builtins/ctzti2.c
+tinygo/lib/compiler-rt/lib/builtins/Darwin-excludes/CMakeLists.txt
+tinygo/lib/compiler-rt/lib/builtins/Darwin-excludes/ios-armv7.txt
+tinygo/lib/compiler-rt/lib/builtins/Darwin-excludes/ios-armv7s.txt
+tinygo/lib/compiler-rt/lib/builtins/Darwin-excludes/ios.txt
+tinygo/lib/compiler-rt/lib/builtins/Darwin-excludes/ios6-armv7.txt
+tinygo/lib/compiler-rt/lib/builtins/Darwin-excludes/ios6-armv7s.txt
+tinygo/lib/compiler-rt/lib/builtins/Darwin-excludes/ios7-arm64.txt
+tinygo/lib/compiler-rt/lib/builtins/Darwin-excludes/iossim-i386.txt
+tinygo/lib/compiler-rt/lib/builtins/Darwin-excludes/iossim-x86_64.txt
+tinygo/lib/compiler-rt/lib/builtins/Darwin-excludes/iossim.txt
+tinygo/lib/compiler-rt/lib/builtins/Darwin-excludes/osx-i386.txt
+tinygo/lib/compiler-rt/lib/builtins/Darwin-excludes/osx.txt
+tinygo/lib/compiler-rt/lib/builtins/Darwin-excludes/README.TXT
 tinygo/lib/compiler-rt/lib/builtins/divdc3.c
 tinygo/lib/compiler-rt/lib/builtins/divdf3.c
 tinygo/lib/compiler-rt/lib/builtins/divdi3.c
@@ -353,14 +350,14 @@ tinygo/lib/compiler-rt/lib/builtins/floatuntisf.c
 tinygo/lib/compiler-rt/lib/builtins/floatuntitf.c
 tinygo/lib/compiler-rt/lib/builtins/floatuntixf.c
 tinygo/lib/compiler-rt/lib/builtins/fp_add_impl.inc
-tinygo/lib/compiler-rt/lib/builtins/fp_extend.h
 tinygo/lib/compiler-rt/lib/builtins/fp_extend_impl.inc
+tinygo/lib/compiler-rt/lib/builtins/fp_extend.h
 tinygo/lib/compiler-rt/lib/builtins/fp_fixint_impl.inc
 tinygo/lib/compiler-rt/lib/builtins/fp_fixuint_impl.inc
 tinygo/lib/compiler-rt/lib/builtins/fp_lib.h
 tinygo/lib/compiler-rt/lib/builtins/fp_mul_impl.inc
-tinygo/lib/compiler-rt/lib/builtins/fp_trunc.h
 tinygo/lib/compiler-rt/lib/builtins/fp_trunc_impl.inc
+tinygo/lib/compiler-rt/lib/builtins/fp_trunc.h
 tinygo/lib/compiler-rt/lib/builtins/gcc_personality_v0.c
 tinygo/lib/compiler-rt/lib/builtins/hexagon/common_entry_exit_abi1.S
 tinygo/lib/compiler-rt/lib/builtins/hexagon/common_entry_exit_abi2.S
@@ -374,9 +371,9 @@ tinygo/lib/compiler-rt/lib/builtins/hexagon/dfsqrt.S
 tinygo/lib/compiler-rt/lib/builtins/hexagon/divdi3.S
 tinygo/lib/compiler-rt/lib/builtins/hexagon/divsi3.S
 tinygo/lib/compiler-rt/lib/builtins/hexagon/fabs_opt.S
+tinygo/lib/compiler-rt/lib/builtins/hexagon/fastmath_dlib_asm.S
 tinygo/lib/compiler-rt/lib/builtins/hexagon/fastmath2_dlib_asm.S
 tinygo/lib/compiler-rt/lib/builtins/hexagon/fastmath2_ldlib_asm.S
-tinygo/lib/compiler-rt/lib/builtins/hexagon/fastmath_dlib_asm.S
 tinygo/lib/compiler-rt/lib/builtins/hexagon/fma_opt.S
 tinygo/lib/compiler-rt/lib/builtins/hexagon/fmax_opt.S
 tinygo/lib/compiler-rt/lib/builtins/hexagon/fmin_opt.S
@@ -416,8 +413,8 @@ tinygo/lib/compiler-rt/lib/builtins/int_util.c
 tinygo/lib/compiler-rt/lib/builtins/int_util.h
 tinygo/lib/compiler-rt/lib/builtins/lshrdi3.c
 tinygo/lib/compiler-rt/lib/builtins/lshrti3.c
-tinygo/lib/compiler-rt/lib/builtins/macho_embedded/CMakeLists.txt
 tinygo/lib/compiler-rt/lib/builtins/macho_embedded/arm.txt
+tinygo/lib/compiler-rt/lib/builtins/macho_embedded/CMakeLists.txt
 tinygo/lib/compiler-rt/lib/builtins/macho_embedded/common.txt
 tinygo/lib/compiler-rt/lib/builtins/macho_embedded/i386.txt
 tinygo/lib/compiler-rt/lib/builtins/macho_embedded/thumb2-64.txt
@@ -474,6 +471,7 @@ tinygo/lib/compiler-rt/lib/builtins/ppc/gcc_qsub.c
 tinygo/lib/compiler-rt/lib/builtins/ppc/multc3.c
 tinygo/lib/compiler-rt/lib/builtins/ppc/restFP.S
 tinygo/lib/compiler-rt/lib/builtins/ppc/saveFP.S
+tinygo/lib/compiler-rt/lib/builtins/README.txt
 tinygo/lib/compiler-rt/lib/builtins/riscv/mulsi3.S
 tinygo/lib/compiler-rt/lib/builtins/subdf3.c
 tinygo/lib/compiler-rt/lib/builtins/subsf3.c
@@ -507,9 +505,9 @@ tinygo/lib/compiler-rt/lib/builtins/x86_64/floatdixf.c
 tinygo/lib/compiler-rt/lib/builtins/x86_64/floatundidf.S
 tinygo/lib/compiler-rt/lib/builtins/x86_64/floatundisf.S
 tinygo/lib/compiler-rt/lib/builtins/x86_64/floatundixf.S
+tinygo/lib/compiler-rt/LICENSE.TXT
+tinygo/lib/compiler-rt/README.txt
 tinygo/lib/nrfx/CHANGELOG.md
-tinygo/lib/nrfx/LICENSE
-tinygo/lib/nrfx/README.md
 tinygo/lib/nrfx/doc/buildfiles/extra_stylesheet.css
 tinygo/lib/nrfx/doc/buildfiles/favicon.ico
 tinygo/lib/nrfx/doc/buildfiles/footer.html
@@ -553,8 +551,8 @@ tinygo/lib/nrfx/doc/nrf51_series.dox
 tinygo/lib/nrfx/doc/nrf52810.dox
 tinygo/lib/nrfx/doc/nrf52832.dox
 tinygo/lib/nrfx/doc/nrf52840.dox
-tinygo/lib/nrfx/doc/nrfx.doxyfile
 tinygo/lib/nrfx/doc/nrfx_api.dox
+tinygo/lib/nrfx/doc/nrfx.doxyfile
 tinygo/lib/nrfx/drivers/include/nrf_bitmask.h
 tinygo/lib/nrfx/drivers/include/nrfx_adc.h
 tinygo/lib/nrfx/drivers/include/nrfx_clock.h
@@ -563,8 +561,8 @@ tinygo/lib/nrfx/drivers/include/nrfx_gpiote.h
 tinygo/lib/nrfx/drivers/include/nrfx_i2s.h
 tinygo/lib/nrfx/drivers/include/nrfx_lpcomp.h
 tinygo/lib/nrfx/drivers/include/nrfx_pdm.h
-tinygo/lib/nrfx/drivers/include/nrfx_power.h
 tinygo/lib/nrfx/drivers/include/nrfx_power_clock.h
+tinygo/lib/nrfx/drivers/include/nrfx_power.h
 tinygo/lib/nrfx/drivers/include/nrfx_ppi.h
 tinygo/lib/nrfx/drivers/include/nrfx_pwm.h
 tinygo/lib/nrfx/drivers/include/nrfx_qdec.h
@@ -593,8 +591,8 @@ tinygo/lib/nrfx/drivers/src/nrfx_gpiote.c
 tinygo/lib/nrfx/drivers/src/nrfx_i2s.c
 tinygo/lib/nrfx/drivers/src/nrfx_lpcomp.c
 tinygo/lib/nrfx/drivers/src/nrfx_pdm.c
-tinygo/lib/nrfx/drivers/src/nrfx_power.c
 tinygo/lib/nrfx/drivers/src/nrfx_power_clock.c
+tinygo/lib/nrfx/drivers/src/nrfx_power.c
 tinygo/lib/nrfx/drivers/src/nrfx_ppi.c
 tinygo/lib/nrfx/drivers/src/nrfx_pwm.c
 tinygo/lib/nrfx/drivers/src/nrfx_qdec.c
@@ -652,6 +650,7 @@ tinygo/lib/nrfx/hal/nrf_uart.h
 tinygo/lib/nrfx/hal/nrf_uarte.h
 tinygo/lib/nrfx/hal/nrf_usbd.h
 tinygo/lib/nrfx/hal/nrf_wdt.h
+tinygo/lib/nrfx/LICENSE
 tinygo/lib/nrfx/mdk/arm_startup_nrf51.s
 tinygo/lib/nrfx/mdk/arm_startup_nrf52.s
 tinygo/lib/nrfx/mdk/arm_startup_nrf52810.s
@@ -665,15 +664,9 @@ tinygo/lib/nrfx/mdk/iar_startup_nrf51.s
 tinygo/lib/nrfx/mdk/iar_startup_nrf52.s
 tinygo/lib/nrfx/mdk/iar_startup_nrf52810.s
 tinygo/lib/nrfx/mdk/iar_startup_nrf52840.s
+tinygo/lib/nrfx/mdk/nrf_common.ld
+tinygo/lib/nrfx/mdk/nrf_peripherals.h
 tinygo/lib/nrfx/mdk/nrf.h
-tinygo/lib/nrfx/mdk/nrf51.h
-tinygo/lib/nrfx/mdk/nrf51.svd
-tinygo/lib/nrfx/mdk/nrf51422_peripherals.h
-tinygo/lib/nrfx/mdk/nrf51801_peripherals.h
-tinygo/lib/nrfx/mdk/nrf51801_xxab.ld
-tinygo/lib/nrfx/mdk/nrf51802_peripherals.h
-tinygo/lib/nrfx/mdk/nrf51822_peripherals.h
-tinygo/lib/nrfx/mdk/nrf51824_peripherals.h
 tinygo/lib/nrfx/mdk/nrf51_bitfields.h
 tinygo/lib/nrfx/mdk/nrf51_common.ld
 tinygo/lib/nrfx/mdk/nrf51_deprecated.h
@@ -684,33 +677,39 @@ tinygo/lib/nrfx/mdk/nrf51_to_nrf52840.h
 tinygo/lib/nrfx/mdk/nrf51_xxaa.ld
 tinygo/lib/nrfx/mdk/nrf51_xxab.ld
 tinygo/lib/nrfx/mdk/nrf51_xxac.ld
-tinygo/lib/nrfx/mdk/nrf52.h
-tinygo/lib/nrfx/mdk/nrf52.svd
-tinygo/lib/nrfx/mdk/nrf52810.h
-tinygo/lib/nrfx/mdk/nrf52810.svd
-tinygo/lib/nrfx/mdk/nrf52810_bitfields.h
-tinygo/lib/nrfx/mdk/nrf52810_peripherals.h
-tinygo/lib/nrfx/mdk/nrf52810_xxaa.ld
-tinygo/lib/nrfx/mdk/nrf52832_peripherals.h
-tinygo/lib/nrfx/mdk/nrf52832_xxab.ld
-tinygo/lib/nrfx/mdk/nrf52840.h
-tinygo/lib/nrfx/mdk/nrf52840.svd
-tinygo/lib/nrfx/mdk/nrf52840_bitfields.h
-tinygo/lib/nrfx/mdk/nrf52840_peripherals.h
-tinygo/lib/nrfx/mdk/nrf52840_xxaa.ld
+tinygo/lib/nrfx/mdk/nrf51.h
+tinygo/lib/nrfx/mdk/nrf51.svd
+tinygo/lib/nrfx/mdk/nrf51422_peripherals.h
+tinygo/lib/nrfx/mdk/nrf51801_peripherals.h
+tinygo/lib/nrfx/mdk/nrf51801_xxab.ld
+tinygo/lib/nrfx/mdk/nrf51802_peripherals.h
+tinygo/lib/nrfx/mdk/nrf51822_peripherals.h
+tinygo/lib/nrfx/mdk/nrf51824_peripherals.h
 tinygo/lib/nrfx/mdk/nrf52_bitfields.h
 tinygo/lib/nrfx/mdk/nrf52_common.ld
 tinygo/lib/nrfx/mdk/nrf52_name_change.h
 tinygo/lib/nrfx/mdk/nrf52_to_nrf52810.h
 tinygo/lib/nrfx/mdk/nrf52_to_nrf52840.h
 tinygo/lib/nrfx/mdk/nrf52_xxaa.ld
-tinygo/lib/nrfx/mdk/nrf_common.ld
-tinygo/lib/nrfx/mdk/nrf_peripherals.h
+tinygo/lib/nrfx/mdk/nrf52.h
+tinygo/lib/nrfx/mdk/nrf52.svd
+tinygo/lib/nrfx/mdk/nrf52810_bitfields.h
+tinygo/lib/nrfx/mdk/nrf52810_peripherals.h
+tinygo/lib/nrfx/mdk/nrf52810_xxaa.ld
+tinygo/lib/nrfx/mdk/nrf52810.h
+tinygo/lib/nrfx/mdk/nrf52810.svd
+tinygo/lib/nrfx/mdk/nrf52832_peripherals.h
+tinygo/lib/nrfx/mdk/nrf52832_xxab.ld
+tinygo/lib/nrfx/mdk/nrf52840_bitfields.h
+tinygo/lib/nrfx/mdk/nrf52840_peripherals.h
+tinygo/lib/nrfx/mdk/nrf52840_xxaa.ld
+tinygo/lib/nrfx/mdk/nrf52840.h
+tinygo/lib/nrfx/mdk/nrf52840.svd
+tinygo/lib/nrfx/mdk/ses_startup_nrf_common.s
 tinygo/lib/nrfx/mdk/ses_startup_nrf51.s
 tinygo/lib/nrfx/mdk/ses_startup_nrf52.s
 tinygo/lib/nrfx/mdk/ses_startup_nrf52810.s
 tinygo/lib/nrfx/mdk/ses_startup_nrf52840.s
-tinygo/lib/nrfx/mdk/ses_startup_nrf_common.s
 tinygo/lib/nrfx/mdk/startup_config.h
 tinygo/lib/nrfx/mdk/system_nrf51.c
 tinygo/lib/nrfx/mdk/system_nrf51.h
@@ -721,12 +720,13 @@ tinygo/lib/nrfx/mdk/system_nrf52810.h
 tinygo/lib/nrfx/mdk/system_nrf52840.c
 tinygo/lib/nrfx/mdk/system_nrf52840.h
 tinygo/lib/nrfx/nrfx.h
+tinygo/lib/nrfx/README.md
 tinygo/lib/nrfx/soc/nrfx_coredep.h
-tinygo/lib/nrfx/soc/nrfx_irqs.h
 tinygo/lib/nrfx/soc/nrfx_irqs_nrf51.h
 tinygo/lib/nrfx/soc/nrfx_irqs_nrf52810.h
 tinygo/lib/nrfx/soc/nrfx_irqs_nrf52832.h
 tinygo/lib/nrfx/soc/nrfx_irqs_nrf52840.h
+tinygo/lib/nrfx/soc/nrfx_irqs.h
 tinygo/lib/nrfx/templates/nRF51/nrfx_config.h
 tinygo/lib/nrfx/templates/nRF52810/nrfx_config.h
 tinygo/lib/nrfx/templates/nRF52832/nrfx_config.h
@@ -1286,7 +1286,6 @@ tinygo/src/device/avr/attiny9.go
 tinygo/src/device/avr/attiny9.ld
 tinygo/src/device/avr/attiny9.s
 tinygo/src/device/avr/avr.go
-tinygo/src/device/nrf/README.markdown
 tinygo/src/device/nrf/nrf51.go
 tinygo/src/device/nrf/nrf51.s
 tinygo/src/device/nrf/nrf52.go
@@ -1295,6 +1294,7 @@ tinygo/src/device/nrf/nrf52810.go
 tinygo/src/device/nrf/nrf52810.s
 tinygo/src/device/nrf/nrf52840.go
 tinygo/src/device/nrf/nrf52840.s
+tinygo/src/device/nrf/README.markdown
 tinygo/src/device/riscv/riscv.go
 tinygo/src/device/riscv/start.S
 tinygo/src/device/sam/at91sam9cn11.go
@@ -1755,8 +1755,6 @@ tinygo/src/examples/systick/README.md
 tinygo/src/examples/systick/systick.go
 tinygo/src/examples/test/test.go
 tinygo/src/examples/wasm/.gitignore
-tinygo/src/examples/wasm/Makefile
-tinygo/src/examples/wasm/README.md
 tinygo/src/examples/wasm/callback/index.html
 tinygo/src/examples/wasm/callback/wasm.go
 tinygo/src/examples/wasm/callback/wasm.js
@@ -1766,27 +1764,29 @@ tinygo/src/examples/wasm/export/wasm.js
 tinygo/src/examples/wasm/invoke/index.html
 tinygo/src/examples/wasm/invoke/wasm.go
 tinygo/src/examples/wasm/invoke/wasm.js
-tinygo/src/examples/wasm/main/README.md
 tinygo/src/examples/wasm/main/index.html
 tinygo/src/examples/wasm/main/main.go
+tinygo/src/examples/wasm/main/README.md
+tinygo/src/examples/wasm/Makefile
+tinygo/src/examples/wasm/README.md
 tinygo/src/examples/wasm/server.go
 tinygo/src/examples/wasm/slices/index.html
 tinygo/src/examples/wasm/slices/wasm.go
 tinygo/src/examples/wasm/slices/wasm.js
 tinygo/src/internal/reflectlite/reflect.go
-tinygo/src/machine/board_arduino.go
-tinygo/src/machine/board_arduino_nano33.go
 tinygo/src/machine/board_arduino_nano33_baremetal.go
+tinygo/src/machine/board_arduino_nano33.go
+tinygo/src/machine/board_arduino.go
 tinygo/src/machine/board_atsamd21.go
 tinygo/src/machine/board_bluepill.go
-tinygo/src/machine/board_circuitplay_express.go
 tinygo/src/machine/board_circuitplay_express_baremetal.go
+tinygo/src/machine/board_circuitplay_express.go
 tinygo/src/machine/board_digispark.go
 tinygo/src/machine/board_fe310.go
 tinygo/src/machine/board_feather-m0.go
 tinygo/src/machine/board_feather-m4.go
-tinygo/src/machine/board_hifive1b.go
 tinygo/src/machine/board_hifive1b_baremetal.go
+tinygo/src/machine/board_hifive1b.go
 tinygo/src/machine/board_itsybitsy-m0.go
 tinygo/src/machine/board_itsybitsy-m4.go
 tinygo/src/machine/board_metro-m4-airlift.go
@@ -1806,7 +1806,6 @@ tinygo/src/machine/board_x9pro.go
 tinygo/src/machine/buffer.go
 tinygo/src/machine/i2c.go
 tinygo/src/machine/i2s.go
-tinygo/src/machine/machine.go
 tinygo/src/machine/machine_atmega.go
 tinygo/src/machine/machine_atsamd21.go
 tinygo/src/machine/machine_atsamd21e18.go
@@ -1826,13 +1825,14 @@ tinygo/src/machine/machine_nrf52840.go
 tinygo/src/machine/machine_stm32.go
 tinygo/src/machine/machine_stm32f103xx.go
 tinygo/src/machine/machine_stm32f407.go
+tinygo/src/machine/machine.go
 tinygo/src/machine/spi.go
 tinygo/src/machine/uart.go
 tinygo/src/machine/usb.go
-tinygo/src/os/file.go
 tinygo/src/os/file_other.go
 tinygo/src/os/file_unix.go
 tinygo/src/os/file_unix.go.orig
+tinygo/src/os/file.go
 tinygo/src/os/proc.go
 tinygo/src/reflect/sidetables.go
 tinygo/src/reflect/swapper.go
@@ -1873,7 +1873,6 @@ tinygo/src/runtime/os_linux.go
 tinygo/src/runtime/panic.go
 tinygo/src/runtime/poll.go
 tinygo/src/runtime/print.go
-tinygo/src/runtime/runtime.go
 tinygo/src/runtime/runtime_arm7tdmi.go
 tinygo/src/runtime/runtime_atmega.go
 tinygo/src/runtime/runtime_atsamd21.go
@@ -1884,11 +1883,11 @@ tinygo/src/runtime/runtime_atsamd51g19.go
 tinygo/src/runtime/runtime_atsamd51j19.go
 tinygo/src/runtime/runtime_attiny.go
 tinygo/src/runtime/runtime_avr.go
-tinygo/src/runtime/runtime_cortexm.go
 tinygo/src/runtime/runtime_cortexm_qemu.go
-tinygo/src/runtime/runtime_fe310.go
+tinygo/src/runtime/runtime_cortexm.go
 tinygo/src/runtime/runtime_fe310_baremetal.go
 tinygo/src/runtime/runtime_fe310_qemu.go
+tinygo/src/runtime/runtime_fe310.go
 tinygo/src/runtime/runtime_nrf.go
 tinygo/src/runtime/runtime_stm32.go
 tinygo/src/runtime/runtime_stm32f103xx.go
@@ -1897,14 +1896,15 @@ tinygo/src/runtime/runtime_tinygoriscv.go
 tinygo/src/runtime/runtime_unix.go
 tinygo/src/runtime/runtime_unix.go.orig
 tinygo/src/runtime/runtime_wasm.go
-tinygo/src/runtime/scheduler.go
+tinygo/src/runtime/runtime.go
 tinygo/src/runtime/scheduler_coroutines.go
 tinygo/src/runtime/scheduler_cortexm.S
 tinygo/src/runtime/scheduler_tasks.go
+tinygo/src/runtime/scheduler.go
 tinygo/src/runtime/slice.go
 tinygo/src/runtime/stack.go
-tinygo/src/runtime/string.go
 tinygo/src/runtime/string_count.go
+tinygo/src/runtime/string.go
 tinygo/src/runtime/strings_go111.go
 tinygo/src/runtime/sync.go
 tinygo/src/runtime/volatile/register.go
@@ -1914,10 +1914,10 @@ tinygo/src/sync/once.go
 tinygo/src/sync/pool.go
 tinygo/src/syscall/errno.go
 tinygo/src/syscall/str.go
-tinygo/src/syscall/syscall.go
 tinygo/src/syscall/syscall_baremetal.go
 tinygo/src/syscall/syscall_darwin.go
 tinygo/src/syscall/syscall_libc.go
+tinygo/src/syscall/syscall.go
 tinygo/src/syscall/tables_baremetal.go
 tinygo/src/testing/benchmark.go
 tinygo/src/testing/doc.go
@@ -1931,9 +1931,9 @@ tinygo/targets/atsamd21g18a.json
 tinygo/targets/atsamd51.ld
 tinygo/targets/atsamd51g19a.json
 tinygo/targets/atsamd51j19a.json
-tinygo/targets/avr.S
 tinygo/targets/avr.json
 tinygo/targets/avr.ld
+tinygo/targets/avr.S
 tinygo/targets/bluepill.json
 tinygo/targets/circuitplay-express.json
 tinygo/targets/cortex-m-qemu.json
@@ -1982,6 +1982,92 @@ tinygo/targets/stm32f103rb.ld
 tinygo/targets/stm32f407.ld
 tinygo/targets/stm32f4disco.json
 tinygo/targets/trinket-m0.json
-tinygo/targets/wasm.json
 tinygo/targets/wasm_exec.js
+tinygo/targets/wasm.json
 tinygo/targets/x9pro.json
+@dir bin
+@dir tinygo/bin
+@dir tinygo/lib/clang/include
+@dir tinygo/lib/clang
+@dir tinygo/lib/CMSIS/CMSIS/Include
+@dir tinygo/lib/CMSIS/CMSIS
+@dir tinygo/lib/CMSIS
+@dir tinygo/lib/compiler-rt/lib/builtins/aarch64
+@dir tinygo/lib/compiler-rt/lib/builtins/arm
+@dir tinygo/lib/compiler-rt/lib/builtins/Darwin-excludes
+@dir tinygo/lib/compiler-rt/lib/builtins/hexagon
+@dir tinygo/lib/compiler-rt/lib/builtins/i386
+@dir tinygo/lib/compiler-rt/lib/builtins/macho_embedded
+@dir tinygo/lib/compiler-rt/lib/builtins/ppc
+@dir tinygo/lib/compiler-rt/lib/builtins/riscv
+@dir tinygo/lib/compiler-rt/lib/builtins/x86_64
+@dir tinygo/lib/compiler-rt/lib/builtins
+@dir tinygo/lib/compiler-rt/lib
+@dir tinygo/lib/compiler-rt
+@dir tinygo/lib/nrfx/doc/buildfiles
+@dir tinygo/lib/nrfx/doc/config_dox
+@dir tinygo/lib/nrfx/doc
+@dir tinygo/lib/nrfx/drivers/include
+@dir tinygo/lib/nrfx/drivers/src/prs
+@dir tinygo/lib/nrfx/drivers/src
+@dir tinygo/lib/nrfx/drivers
+@dir tinygo/lib/nrfx/hal
+@dir tinygo/lib/nrfx/mdk
+@dir tinygo/lib/nrfx/soc
+@dir tinygo/lib/nrfx/templates/nRF51
+@dir tinygo/lib/nrfx/templates/nRF52810
+@dir tinygo/lib/nrfx/templates/nRF52832
+@dir tinygo/lib/nrfx/templates/nRF52840
+@dir tinygo/lib/nrfx/templates
+@dir tinygo/lib/nrfx
+@dir tinygo/lib
+@dir tinygo/pkg/armv6m-none-eabi
+@dir tinygo/pkg/armv7em-none-eabi
+@dir tinygo/pkg/armv7m-none-eabi
+@dir tinygo/pkg
+@dir tinygo/src/device/arm
+@dir tinygo/src/device/avr
+@dir tinygo/src/device/nrf
+@dir tinygo/src/device/riscv
+@dir tinygo/src/device/sam
+@dir tinygo/src/device/sifive
+@dir tinygo/src/device/stm32
+@dir tinygo/src/device
+@dir tinygo/src/examples/adc
+@dir tinygo/src/examples/blinkm
+@dir tinygo/src/examples/blinky1
+@dir tinygo/src/examples/blinky2
+@dir tinygo/src/examples/button
+@dir tinygo/src/examples/button2
+@dir tinygo/src/examples/echo
+@dir tinygo/src/examples/gba-display
+@dir tinygo/src/examples/i2s
+@dir tinygo/src/examples/mcp3008
+@dir tinygo/src/examples/microbit-blink
+@dir tinygo/src/examples/pwm
+@dir tinygo/src/examples/serial
+@dir tinygo/src/examples/systick
+@dir tinygo/src/examples/test
+@dir tinygo/src/examples/wasm/callback
+@dir tinygo/src/examples/wasm/export
+@dir tinygo/src/examples/wasm/invoke
+@dir tinygo/src/examples/wasm/main
+@dir tinygo/src/examples/wasm/slices
+@dir tinygo/src/examples/wasm
+@dir tinygo/src/examples
+@dir tinygo/src/internal/reflectlite
+@dir tinygo/src/internal
+@dir tinygo/src/machine
+@dir tinygo/src/os
+@dir tinygo/src/reflect
+@dir tinygo/src/runtime/cgo
+@dir tinygo/src/runtime/internal/sys
+@dir tinygo/src/runtime/internal
+@dir tinygo/src/runtime/volatile
+@dir tinygo/src/runtime
+@dir tinygo/src/sync
+@dir tinygo/src/syscall
+@dir tinygo/src/testing
+@dir tinygo/src
+@dir tinygo/targets
+@dir tinygo
