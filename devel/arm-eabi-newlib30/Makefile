@@ -6,7 +6,7 @@ PORTVERSION=	3.0.20181220
 CATEGORIES=	devel
 DIST_SUBDIR=	arm
 PKGNAMEPREFIX=	${TARGET}-
-PKGNAMESUFFIX=	-nano
+#PKGNAMESUFFIX=	-nano
 
 MASTER_SITES=	https://developer.arm.com/-/media/Files/downloads/gnu-rm/8-2018q4/
 DISTNAME=	${ORIGINAL_PACKAGE_NAME}-src

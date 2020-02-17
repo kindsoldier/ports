@@ -3,17 +3,20 @@
 #
 PORTNAME=	gcc
 DIST_SUBDIR=	arm
-PORTVERSION=	8.2.20181220
+PORTVERSION=	7.3.20180627
 CATEGORIES=	devel
-MASTER_SITES=	https://developer.arm.com/-/media/Files/downloads/gnu-rm/8-2018q4/
+#MASTER_SITES=	https://developer.arm.com/-/media/Files/downloads/gnu-rm/8-2018q4/
+MASTER_SITES=	https://developer.arm.com/-/media/Files/downloads/gnu-rm/7-2018q2/
+
 DISTNAME=	${ORIGINAL_PACKAGE_NAME}-src
 
 CATEGORIES=	devel
 PKGNAMEPREFIX=	${TARGET}-
 
-GCC_VERSION=		8.2.1
-FULL_VERSION=		8-2018-q4-major
-ORIGINAL_TARGET=			arm-none-eabi
+GCC_VERSION=		7.3.1
+FULL_VERSION=		7-2018-q2-update
+
+ORIGINAL_TARGET=	arm-none-eabi
 ORIGINAL_PACKAGE_NAME=	gcc-${ORIGINAL_TARGET}-${FULL_VERSION}
 
 MAINTAINER= homeunix7@gmail.com
