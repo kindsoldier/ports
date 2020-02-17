@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	${TARGET}-
 DISTNAME=	gdb-${PORTVERSION}
 
 MAINTAINER=	joerg@FreeBSD.org
-COMMENT=	GNU GDB for the AVR target
+COMMENT=	GNU GDB for the ${TARGET} target
 
 USES=		gmake tar:xz
 LIB_DEPENDS=	libexpat.so:text/libexpat
