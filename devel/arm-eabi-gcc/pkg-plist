@@ -1,4 +1,6 @@
+bin/arm-eabi-c++
 bin/arm-eabi-cpp
+bin/arm-eabi-g++
 bin/arm-eabi-gcc
 bin/arm-eabi-gcc-ar
 bin/arm-eabi-gcc-nm
@@ -128,6 +130,11 @@ lib/gcc/arm-eabi/8.2.1/plugin/include/convert.h
 lib/gcc/arm-eabi/8.2.1/plugin/include/coretypes.h
 lib/gcc/arm-eabi/8.2.1/plugin/include/coverage.h
 lib/gcc/arm-eabi/8.2.1/plugin/include/cp/cp-tree.def
+lib/gcc/arm-eabi/8.2.1/plugin/include/cp/cp-tree.h
+lib/gcc/arm-eabi/8.2.1/plugin/include/cp/cxx-pretty-print.h
+lib/gcc/arm-eabi/8.2.1/plugin/include/cp/name-lookup.h
+lib/gcc/arm-eabi/8.2.1/plugin/include/cp/operators.def
+lib/gcc/arm-eabi/8.2.1/plugin/include/cp/type-utils.h
 lib/gcc/arm-eabi/8.2.1/plugin/include/cppbuiltin.h
 lib/gcc/arm-eabi/8.2.1/plugin/include/cppdefault.h
 lib/gcc/arm-eabi/8.2.1/plugin/include/cpplib.h
@@ -592,6 +599,7 @@ lib/libcc1.la
 lib/libcc1.so
 lib/libcc1.so.0
 libexec/gcc/arm-eabi/8.2.1/cc1
+libexec/gcc/arm-eabi/8.2.1/cc1plus
 libexec/gcc/arm-eabi/8.2.1/collect2
 libexec/gcc/arm-eabi/8.2.1/install-tools/fixinc.sh
 libexec/gcc/arm-eabi/8.2.1/install-tools/fixincl
@@ -604,6 +612,7 @@ libexec/gcc/arm-eabi/8.2.1/lto-wrapper
 libexec/gcc/arm-eabi/8.2.1/lto1
 libexec/gcc/arm-eabi/8.2.1/plugin/gengtype
 man/man1/arm-eabi-cpp.1.gz
+man/man1/arm-eabi-g++.1.gz
 man/man1/arm-eabi-gcc.1.gz
 man/man1/arm-eabi-gcov-dump.1.gz
 man/man1/arm-eabi-gcov-tool.1.gz

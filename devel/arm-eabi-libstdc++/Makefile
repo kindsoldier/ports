@@ -1,7 +1,7 @@
 #
 # $Id: Makefile 1285 2007-10-25 11:42:14Z root $
 #
-PORTNAME=	gcc
+PORTNAME=	libc++
 DIST_SUBDIR=	arm
 PORTVERSION=	8.2.1
 CATEGORIES=	devel
@@ -35,7 +35,10 @@ USES+=		gmake tar:bz2
 
 TARGET=		arm-eabi
 
-LANGUAGES=	c,c++
+LANGUAGES=	c++
+
+ALL_TARGET=	all-target-libstdc++-v3
+INSTALL_TARGET=	install-target-libstdc++-v3
 
 CONFIGURE_TARGET= #
 CONFIGURE_ARGS+= --target=${TARGET}
@@ -53,7 +56,11 @@ CXXFLAGS+=	-fbracket-depth=512 -Os
 CXXFLAGS+=	-Wno-error -fbracket-depth=512 -Wno-deprecated-register
 CFLAGS+=	-Wno-error -fbracket-depth=512 -Wno-deprecated-register
 
-CONFIGURE_ARGS+= --without-headers
+CONFIGURE_ARGS+= --with-headers
+CONFIGURE_ARGS+= --disable-shared
+CONFIGURE_ARGS+= --disable-threads
+CONFIGURE_ARGS+= --with-newlib
+
 
 CONFIGURE_ARGS+= --disable-bootstrap
 CONFIGURE_ARGS+= --without-nls
@@ -80,7 +87,7 @@ CONFIGURE_ARGS+= --with-multilib-list=rmprofile
 #CONFIGURE_ARGS+= --disable-decimal-float
 
 CONFIGURE_ENV+= ac_cv_path_SED=${LOCALBASE}/bin/gsed
-CONFIGURE_ARGS+= --disable-libstdcxx
+#CONFIGURE_ARGS+= --disable-libstdcxx
 
 
 PATCH_WRKSRC= ${WRKDIR}/${ORIGINAL_PACKAGE_NAME}/src
