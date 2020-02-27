@@ -2,7 +2,7 @@
 # $FreeBSD: head/lang/go/Makefile 470619 2018-05-22 14:32:09Z jlaffaye $
 
 PORTNAME=	go
-PORTVERSION=	1.14
+PORTVERSION=	1.13.7
 CATEGORIES=	lang
 MASTER_SITES=	https://golang.org/dl/
 DISTNAME=	go${PORTVERSION}.src
@@ -15,12 +15,11 @@ RUN_DEPENDS= bash:lang/bash
 
 USES=		shebangfix
 SHEBANG_LANG=	sh perl
+SHEBANG_FILES+=	misc/benchcmp
+SHEBANG_FILES+=	misc/nacl/go_nacl_*_exec
 SHEBANG_FILES+=	misc/wasm/go_js_wasm_exec
 SHEBANG_FILES+=	src/net/http/cgi/testdata/test.cgi
 SHEBANG_GLOB=	*.bash *.pl *.sh
-
-SHEBANG_GLOB=	*.bash *.pl *.sh
-
 
 sh_OLD_CMD=	/bin/bash "/usr/bin/env bash"
 sh_CMD=		${SH}
