@@ -1,0 +1,19 @@
+bin/gdb
+man/man1/gdb.1.gz
+share/gdb/syscalls/aarch64-linux.xml
+share/gdb/syscalls/amd64-linux.xml
+share/gdb/syscalls/arm-linux.xml
+share/gdb/syscalls/freebsd.xml
+share/gdb/syscalls/gdb-syscalls.dtd
+share/gdb/syscalls/i386-linux.xml
+share/gdb/syscalls/mips-n32-linux.xml
+share/gdb/syscalls/mips-n64-linux.xml
+share/gdb/syscalls/mips-o32-linux.xml
+share/gdb/syscalls/ppc-linux.xml
+share/gdb/syscalls/ppc64-linux.xml
+share/gdb/syscalls/s390-linux.xml
+share/gdb/syscalls/s390x-linux.xml
+share/gdb/syscalls/sparc-linux.xml
+share/gdb/syscalls/sparc64-linux.xml
+@dir share/gdb/syscalls
+@dir share/gdb
