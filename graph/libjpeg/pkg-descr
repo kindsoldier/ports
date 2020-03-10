@@ -1,20 +1,20 @@
-The Independent JPEG Group's JPEG software
-==========================================
+This is a drop-in replacement for the graphics/jpeg library. It does not
+include libturbojpeg.so (see graphics/libjpeg-turbo).
 
-README for release 6 of 2-Aug-95
-================================
+libjpeg-turbo is a high-speed version of libjpeg for x86 and x86-64 processors
+which uses SIMD instructions (MMX, SSE2, etc.) to accelerate baseline JPEG
+compression and decompression.
+libjpeg-turbo is generally 2-4x as fast as the unmodified version
+of libjpeg, all else being equal.
 
-This distribution contains the sixth public release of the Independent JPEG
-Group's free JPEG software.  You are welcome to redistribute this software and
-to use it for any purpose, subject to the conditions under LEGAL ISSUES, below.
+libjpeg-turbo was originally based on libjpeg/SIMD by Miyasaka Masaru,
+but the TigerVNC and VirtualGL projects made numerous enhancements to the codec,
+including improved support for Mac OS X, 64-bit support,
+support for 32-bit and big endian pixel formats (RGBA, ABGR, etc.),
+accelerated Huffman encoding/decoding, and various bug fixes.
+The goal was to produce a fully open source codec that could replace
+the partially closed source TurboJPEG/IPP codec used by VirtualGL and TurboVNC.
+libjpeg-turbo generally achieves 80-120% of the performance of TurboJPEG/IPP.
+It is faster in some areas but slower in others.
 
-Serious users of this software (particularly those incorporating it into
-larger programs) should contact IJG at jpeg-info@uunet.uu.net to be added to
-our electronic mailing list.  Mailing list members are notified of updates
-and have a chance to participate in technical discussions, etc.
-
-This software is the work of Tom Lane, Philip Gladstone, Luis Ortiz, Jim
-Boucher, Lee Crocker, Julian Minguillon, George Phillips, Davide Rossi,
-Ge' Weijers, and other members of the Independent JPEG Group.
-
-IJG is not affiliated with the official ISO JPEG standards committee.
+WWW: http://libjpeg-turbo.virtualgl.org/

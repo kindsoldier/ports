@@ -1,35 +1,30 @@
-#
-# $Id: Makefile 1465 2007-11-19 23:38:41Z root $
-#
+# Created by: Denis Podolskiy <bytestore@yandex.ru>
+# $FreeBSD: head/graphics/jpeg-turbo/Makefile 523792 2020-01-22 06:01:47Z antoine $
+
 PORTNAME=	jpeg
-PORTVERSION=	8.7
-CATEGORIES=	graphics devel
-MASTER_SITES=	http://www.ijg.org/files/
-DISTNAME=	${PORTNAME}src.v${PORTVERSION:R}d
-PKGNAMEPREFIX=	lib
-
-MAINTAINER=	onborodin@gmail.com
-COMMENT=	IJG's jpeg compression utilities
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}d
-GNU_CONFIGURE=	yes
-USES+=		gmake
-CONFIGURE_ARGS+= --enable-shared
-CONFIGURE_ARGS+= --enable-static
-INSTALLS_SHLIB=	yes
-
-ADDITIONAL_HEADER=	jinclude.h jpegint.h
-J_MAXMEM=128
-
-CONFIGURE_ARGS+=	--enable-maxmem=${J_MAXMEM}
+PORTVERSION=    8.${DISTVERSION}
+DISTVERSION=	2.0.4
+CATEGORIES=	graphics
+MASTER_SITES=	SF/lib${DISTNAME}/${PORTVERSION}
+DISTNAME=	lib${PORTNAME}-turbo-${DISTVERSION}
+PKGNAMEPREFIX=  lib
 
 
-post-install:
-.for header in ${ADDITIONAL_HEADER}
-	${INSTALL_DATA} ${WRKSRC}/${header} ${STAGEDIR}${PREFIX}/include/
-.endfor
 
+MAINTAINER=	portmgr@FreeBSD.org
+COMMENT?=	SIMD-accelerated JPEG codec which replaces libjpeg
+
+USES=		cmake gmake
+USE_LDCONFIG=	yes
+CMAKE_ON+=	WITH_JPEG8
+CMAKE_ARGS+=	WITH_TURBOJPEG=ON
+TEST_TARGET=	test
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == i386 || ${ARCH} == amd64
+BUILD_DEPENDS+=	nasm:devel/nasm
+.endif
 
 
 .include <bsd.port.mk>
-#EOF

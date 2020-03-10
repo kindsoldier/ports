@@ -1,2 +1,3 @@
-SHA256 (jpegsrc.v8d.tar.gz) = 00029b1473f0f0ea72fbca3230e8cb25797fbb27e58ae2e46bb8bf5a806fe0b3
-SIZE (jpegsrc.v8d.tar.gz) = 991456
+TIMESTAMP = 1579127392
+SHA256 (libjpeg-turbo-2.0.4.tar.gz) = 33dd8547efd5543639e890efbf2ef52d5a21df81faf41bb940657af916a23406
+SIZE (libjpeg-turbo-2.0.4.tar.gz) = 2161812
