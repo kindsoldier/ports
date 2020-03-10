@@ -2,7 +2,7 @@
 # $FreeBSD: head/print/harfbuzz/Makefile 491720 2019-01-31 13:51:49Z jbeich $
 
 PORTNAME=	harfbuzz
-PORTVERSION=	2.6.4 #2.3.1
+PORTVERSION=	2.3.1
 CATEGORIES=	print
 MASTER_SITES=	http://www.freedesktop.org/software/harfbuzz/release/
 PKGNAMEPREFIX=  lib
@@ -17,7 +17,7 @@ LIB_DEPENDS+=   libicui18n.so:devel/libicu
 
 
 USE_LDCONFIG=	yes
-USES=		compiler:c++11-lib pkgconfig tar:xz gmake
+USES=		compiler:c++11-lib pkgconfig tar:bzip2 gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-graphite2 --with-gobject=yes
 INSTALL_TARGET=	install-strip

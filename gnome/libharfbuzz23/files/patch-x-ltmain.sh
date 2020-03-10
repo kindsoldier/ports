@@ -1,6 +1,6 @@
---- ./ltmain.sh~	2019-05-07 20:34:02.000000000 +0200
-+++ ./ltmain.sh	2020-03-10 08:54:05.290410000 +0200
-@@ -8807,13 +8807,13 @@
+--- ./ltmain.sh.orig	2018-12-16 03:01:10.000000000 +0200
++++ ./ltmain.sh	2019-03-28 11:39:56.679903000 +0200
+@@ -8811,13 +8811,13 @@
  	  #
  	  case $version_type in
  	  # correct linux to gnu/linux during the next big refactor
@@ -16,7 +16,7 @@
  	    current=$number_major
  	    revision=$number_minor
  	    age=0
-@@ -8893,15 +8893,9 @@
+@@ -8900,15 +8900,9 @@
            esac
  	  ;;
  
