@@ -16,7 +16,7 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	dylex
 GH_PROJECT=	slack-libpurple
-GH_TAGNAME=	0179b2c
+GH_TAGNAME=	e6e5427 #0179b2c
 
 MAKE_ARGS=	CC="${CC}" SHELL="${LOCALBASE}/bin/bash"
 
