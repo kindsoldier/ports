@@ -61,11 +61,7 @@ CONFIGURE_ENV+=	LOCALBASE="${LOCALBASE}"
 CONFIGURE_ARGS+= --with-hardbooks=no
 CONFIGURE_ARGS+= --enable-gnome
 #CONFIGURE_ARGS+= --with-python
-CONFIGURE_ARGS+=	--disable-libemf
-
-
-PLIST_FILES+=	man/man1/dia.1.gz
-
+CONFIGURE_ARGS+= --disable-libemf
 
 post-patch:
 	${REINPLACE_CMD} -e 's|gconf-2.0|gconf|g' 	${WRKSRC}/configure

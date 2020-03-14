@@ -1949,7 +1949,7 @@ share/omf/dia/dia-C.omf
 share/omf/dia/dia-eu.omf
 share/omf/dia/dia-fr.omf
 share/omf/dia/dia-pl.omf
-@dir share/applications
+@dir lib/dia
 @dir share/dia/shapes/Assorted
 @dir share/dia/shapes/BPMN
 @dir share/dia/shapes/ChemEng
@@ -2003,7 +2003,6 @@ share/omf/dia/dia-pl.omf
 @dir share/gnome/help/dia/pl
 @dir share/gnome/help/dia
 @dir share/gnome/help
-@dir share/gnome
 @dir share/locale/am/LC_MESSAGES
 @dir share/locale/am
 @dir share/locale/ar/LC_MESSAGES
