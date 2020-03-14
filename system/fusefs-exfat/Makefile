@@ -12,7 +12,7 @@ COMMENT=	Full-featured exFAT FS implementation as a FUSE module
 
 #LIB_DEPENDS=	libublio.so:devel/libublio
 
-USES=		autoreconf fuse localbase pkgconfig
+USES=		autoreconf localbase pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	relan
 GNU_CONFIGURE=	yes

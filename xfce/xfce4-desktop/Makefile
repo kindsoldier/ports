@@ -2,7 +2,7 @@
 # $Id$
 #
 PORTNAME=	xfce4-desktop
-PORTVERSION=	4.12.3
+PORTVERSION=	4.12.5
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 DISTNAME=	xfdesktop-${PORTVERSION}
@@ -44,8 +44,6 @@ GNU_CONFIGURE=	yes
 USES+=		tar:bzip2
 USES+=		gmake
 USE_LDCONFIG=	yes
-
-PLIST_FILES+=	man/man1/xfdesktop.1.gz
 
 #CONFIGURE_ARGS+= --enable-panel-plugin
 CONFIGURE_ARGS+= --enable-desktop-menu

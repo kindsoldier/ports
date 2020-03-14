@@ -17,8 +17,8 @@ include/ntfs-3g/collate.h
 include/ntfs-3g/compat.h
 include/ntfs-3g/compress.h
 include/ntfs-3g/debug.h
-include/ntfs-3g/device.h
 include/ntfs-3g/device_io.h
+include/ntfs-3g/device.h
 include/ntfs-3g/dir.h
 include/ntfs-3g/ea.h
 include/ntfs-3g/efs.h
@@ -50,7 +50,6 @@ lib/libntfs-3g.a
 lib/libntfs-3g.la
 lib/libntfs-3g.so
 lib/libntfs-3g.so.88
-lib/pkgconfig/libntfs-3g.pc
 man/man8/mkntfs.8.gz
 man/man8/ntfs-3g.8.gz
 man/man8/ntfs-3g.probe.8.gz

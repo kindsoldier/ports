@@ -1,19 +1,36 @@
---- ./ltmain.sh.orig	2016-10-24 23:48:22.000000000 +0200
-+++ ./ltmain.sh	2017-02-19 10:02:19.604168000 +0200
-@@ -7414,14 +7414,9 @@
- 	  verstring="-compatibility_version $minor_current -current_version $minor_current.$revision"
+--- ./ltmain.sh.orig	2017-12-14 01:14:28.000000000 +0200
++++ ./ltmain.sh	2020-02-17 08:54:29.521079000 +0200
+@@ -8811,13 +8811,13 @@
+ 	  #
+ 	  case $version_type in
+ 	  # correct linux to gnu/linux during the next big refactor
+-	  darwin|freebsd-elf|linux|osf|windows|none)
++	  darwin|linux|osf|windows|none)
+ 	    func_arith $number_major + $number_minor
+ 	    current=$func_arith_result
+ 	    age=$number_minor
+ 	    revision=$number_revision
+ 	    ;;
+-	  freebsd-aout|qnx|sunos)
++	  freebsd*|qnx|sunos)
+ 	    current=$number_major
+ 	    revision=$number_minor
+ 	    age=0
+@@ -8900,15 +8900,9 @@
+           esac
  	  ;;
  
 -	freebsd-aout)
 +	freebsd*)
- 	  major=".$current"
--	  versuffix=".$current.$revision";
+ 	  major=.$current
+-	  versuffix=.$current.$revision
 -	  ;;
 -
 -	freebsd-elf)
--	  major=".$current"
--	  versuffix=".$current"
-+	  versuffix=".$current";
+-	  func_arith $current - $age
+-	  major=.$func_arith_result
+-	  versuffix=$major.$age.$revision
++	  versuffix=.$current
  	  ;;
  
  	irix | nonstopux)
