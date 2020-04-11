@@ -1,7 +1,7 @@
 # Created by: Gerrit Beine <gerrit.beine@gmx.de>
 # $FreeBSD: head/java/springframework/Makefile 518482 2019-11-26 21:46:12Z jkim $
 
-PORTNAME=	springframework
+PORTNAME=	spring-framework
 PORTVERSION=	5.2.5
 CATEGORIES=	java devel
 MASTER_SITES=	http://repo.springsource.org/libs-release-local/org/springframework/spring/${PORTVERSION}.RELEASE/
@@ -88,17 +88,19 @@ SOURCES+=	spring-websocket-sources.jar
 do-install:
 	${MKDIR} ${STAGEDIR}${JAVAJARDIR}
 	${MKDIR} ${STAGEDIR}${JAVASHAREDIR}
+#	${INSTALL_DATA} ${WRKSRC}/libs/*.jar ${STAGEDIR}${JAVAJARDIR}
+
 .for FILE in ${JAR_FILES}
 	${INSTALL_DATA} ${WRKSRC}/libs/${FILE:S/.jar/-${PORTVERSION}.RELEASE.jar/} \
-		${STAGEDIR}${JAVAJARDIR}/${FILE}
+		${STAGEDIR}${JAVAJARDIR}/${FILE:S/.jar/-${PORTVERSION}.jar/}
 .endfor
 .for FILE in ${SOURCES}
 	${INSTALL_DATA} ${WRKSRC}/libs/${FILE:S/-sources.jar/-${PORTVERSION}.RELEASE-sources.jar/} \
-		${STAGEDIR}${JAVAJARDIR}/${FILE}
+		${STAGEDIR}${JAVAJARDIR}/${FILE:S/-sources.jar/-${PORTVERSION}-sources.jar/}
 .endfor
 .for FILE in ${JAVADOC}
 	${INSTALL_DATA} ${WRKSRC}/libs/${FILE:S/-javadoc.jar/-${PORTVERSION}.RELEASE-javadoc.jar/} \
-		${STAGEDIR}${JAVAJARDIR}/${FILE}
+		${STAGEDIR}${JAVAJARDIR}/${FILE:S/-javadoc.jar/-${PORTVERSION}-javadoc.jar/}
 .endfor
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/license.txt ${STAGEDIR}${DOCSDIR}
