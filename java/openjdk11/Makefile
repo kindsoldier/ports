@@ -170,7 +170,7 @@ post-patch:
 		-e 's|%%ICONV_LIBS%%|${ICONV_LIBS}|' \
 		${WRKSRC}/make/autoconf/libraries.m4
 
-PLIST=	${PKGDIR}/plist.${ARCH}
+PLIST=	${PKGDIR}/pkg-plist.${ARCH}
 
 SUB_LIST+= PREFIX=${PREFIX}
 SUB_LIST+= PORTNAME=${PORTNAME}${PKGNAMESUFFIX}

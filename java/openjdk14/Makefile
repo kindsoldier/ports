@@ -1,8 +1,8 @@
-# $FreeBSD: head/java/openjdk12/Makefile 514683 2019-10-17 20:38:38Z glewis $
+# $FreeBSD: head/java/openjdk14/Makefile 528626 2020-03-18 03:33:51Z glewis $
 
 PORTNAME=	openjdk
 DISTVERSIONPREFIX=	jdk-
-DISTVERSION=	${JDK_MAJOR_VERSION}.${JDK_MINOR_VERSION}.${JDK_PATCH_VERSION}+${JDK_BUILD_NUMBER}-${BSD_JDK_VERSION}
+DISTVERSION=	${JDK_MAJOR_VERSION}+${JDK_BUILD_NUMBER}-${BSD_JDK_VERSION}
 CATEGORIES=	java devel
 PKGNAMESUFFIX?=	${JDK_MAJOR_VERSION}
 
@@ -10,8 +10,6 @@ MAINTAINER=	java@FreeBSD.org
 COMMENT=	Java Development Kit ${JDK_MAJOR_VERSION}
 
 ONLY_FOR_ARCHS=	amd64 i386 powerpc64
-
-USES=		compiler:features gmake 
 
 BUILD_DEPENDS+=	unzip:arch/unzip
 BUILD_DEPENDS+=	zip:arch/zip
@@ -36,11 +34,14 @@ LIB_DEPENDS+=	libXrandr.so:x11/libXrandr
 RUN_DEPENDS+=	javavm:java/javavmwrapper
 RUN_DEPENDS+=	xf-dejavu>0:xfont/xf-dejavu
 
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	battleblow
-GH_PROJECT=	openjdk-jdk12u
+GH_PROJECT=	jdk14u
 
 NO_CCACHE=	yes
+
+USES+=	gmake compiler:features pkgconfig
 
 _MAKE_JOBS=	#
 MAKE_ENV=	LANG="C" \
@@ -60,21 +61,16 @@ INSTALLDIR=	${PREFIX}/${PKGBASE}
 
 NOPRECIOUSMAKEVARS=	yes
 
-JDK_MAJOR_VERSION=	12
+JDK_MAJOR_VERSION=	14
 JDK_MINOR_VERSION=	0
-JDK_PATCH_VERSION=	2
-JDK_BUILD_NUMBER=	10
-BSD_JDK_VERSION=	3
+JDK_PATCH_VERSION=	0
+JDK_BUILD_NUMBER=	36
+BSD_JDK_VERSION=	1
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CC=${CC} \
 		CXX=${CXX} \
 		CPP=${CPP}
-
-CONFIGURE_ENV+= JPEG_CFLAGS="-I${LOCALBASE}/include"
-CONFIGURE_ENV+= JPEG_LIBS="-L${LOCALBASE}/lib -ljpeg"
-
-
 CONFIGURE_ARGS=	--with-boot-jdk=${BOOTSTRAPJDKDIR} \
 		--disable-ccache \
 		--disable-javac-server \
@@ -113,9 +109,7 @@ JDK_BUILD_TYPE=		release
 ONLY_FOR_ARCHS+=aarch64
 .endif
 
-BOOTSTRAP_JDKS=	${LOCALBASE}/openjdk12 \
-		${LOCALBASE}/openjdk11 \
-		${LOCALBASE}/bootstrap-openjdk11
+BOOTSTRAP_JDKS=	${LOCALBASE}/openjdk14 ${LOCALBASE}/openjdk13
 
 # do we have valid native jdk installed?
 .for BJDK in ${BOOTSTRAP_JDKS}
@@ -126,12 +120,13 @@ BOOTSTRAPJDKDIR=	${BJDK}
 
 # if no valid jdk found, set dependency
 .if !defined(BOOTSTRAPJDKDIR)
-BOOTSTRAPJDKDIR?=	${LOCALBASE}/bootstrap-openjdk11
-BUILD_DEPENDS+=		${BOOTSTRAPJDKDIR}/bin/javac:java/bootstrap-openjdk11
+BOOTSTRAPJDKDIR?=	${LOCALBASE}/openjdk13
+BUILD_DEPENDS+=		${BOOTSTRAPJDKDIR}/bin/javac:java/openjdk13
 .endif
 
 JDK_BUILD_JVM=	server
 
+#COMPILER_TYPE = clang
 MAKE_ENV+=		--with-toolchain-type=${COMPILER_TYPE}
 CONFIGURE_ARGS+=	--with-toolchain-type=${COMPILER_TYPE}
 
@@ -144,18 +139,27 @@ CONFIGURE_ARGS+=	--with-toolchain-type=${COMPILER_TYPE}
 MAKE_ENV+=	USE_CLANG=true
 #.endif
 
-.if ${ARCH} == aarch64
+.if ${ARCH} == aarch64 || ${ARCH} == powerpc64
 CONFIGURE_ARGS+=	--disable-warnings-as-errors \
 			--disable-dtrace
+.endif
+.if defined(PPC_ABI) && ${PPC_ABI} == ELFv2
+CONFIGURE_ARGS+=	--disable-precompiled-headers
 .endif
 .if ${ARCH} != amd64
 CONFIGURE_ARGS+=	--enable-aot=no
 .endif
+.if ${ARCH} == powerpc64 && ${OSREL:C/\.[0-9]//} == 12
+EXTRA_PATCHES=		${PATCHDIR}/extra-patch-src_hotspot_cpu_ppc_vm__version__ppc.hpp
+.endif
 
+#.if empty(ICONV_LIB)
 #ICONV_CFLAGS=	-DLIBICONV_PLUG
+#.else
 ICONV_CFLAGS=	-I${LOCALBASE}/include
 ICONV_LDFLAGS=	-L${LOCALBASE}/lib
-ICONV_LIBS=	-liconv
+ICONV_LIBS=	${ICONV_LIB}
+#.endif
 
 post-patch:
 	${FIND} ${WRKSRC} -name '*.orig' -delete
@@ -167,6 +171,17 @@ post-patch:
 		-e 's|%%ICONV_LDFLAGS%%|${ICONV_LDFLAGS}|' \
 		-e 's|%%ICONV_LIBS%%|${ICONV_LIBS}|' \
 		${WRKSRC}/make/autoconf/libraries.m4
+
+#do-install:
+#	${MKDIR} ${STAGEDIR}${INSTALLDIR}
+#	cd ${JDK_IMAGEDIR} && ${COPYTREE_SHARE} . ${STAGEDIR}${INSTALLDIR}
+#	cd ${STAGEDIR}${INSTALLDIR} && \
+#		${FIND} bin -type f -exec ${CHMOD} ${BINMODE} {} \;
+#	${CHMOD} ${BINMODE} ${STAGEDIR}${INSTALLDIR}/lib/jspawnhelper
+#	${ECHO} "@javavm ${INSTALLDIR}/bin/java" >> ${TMPPLIST}
+#	${FIND} ${STAGEDIR}${INSTALLDIR} -not -type d | ${SORT} | \
+#		${SED} -e 's|^${STAGEDIR}${PREFIX}/||' >> ${TMPPLIST}
+
 
 SUB_LIST+= PREFIX=${PREFIX}
 SUB_LIST+= PORTNAME=${PORTNAME}${PKGNAMESUFFIX}
@@ -183,6 +198,5 @@ do-install:
 	${INSTALL_DATA} ${WRKDIR}/man.conf \
 	    ${STAGEDIR}${PREFIX}/etc/man.d/${PORTNAME}${PKGNAMESUFFIX}.conf
 	cd ${STAGEDIR}${INSTALLDIR}/man/man1 && ${GZIP_CMD} *.1
-
 
 .include <bsd.port.post.mk>

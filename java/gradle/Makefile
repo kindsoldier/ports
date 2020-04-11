@@ -2,7 +2,7 @@
 # $FreeBSD: head/devel/gradle/Makefile 524011 2020-01-25 05:16:02Z tobik $
 
 PORTNAME=	gradle
-PORTVERSION=	6.3 #6.1.1
+PORTVERSION=	6.3
 CATEGORIES=	devel java
 MASTER_SITES=	https://downloads.gradle.org/distributions/
 EXTRACT_SUFX=	-bin.zip
