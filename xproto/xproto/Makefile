@@ -3,7 +3,7 @@
 # $URL: file:///usr2/svn/ports5/x11/xorg-xproto/Makefile $
 #
 PORTNAME= 	xproto
-PORTVERSION=	7.0.28
+PORTVERSION=	7.0.31
 X11_CATEGORY= 	proto
 MASTER_SITES+=	ftp://ftp.x.org/pub/individual/${X11_CATEGORY}/
 CATEGORIES=	x11
