@@ -12,6 +12,7 @@ COMMENT=	Project automation tool
 
 USES=		zip
 USE_JAVA=	yes
+JAVA_VERSION=   11+
 
 NO_ARCH=	yes
 NO_BUILD=	yes

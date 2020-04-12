@@ -5,7 +5,7 @@
 # Vadim Zhukov <zhuk@openbsd.org>
 
 PORTNAME=	intellij
-PORTVERSION=	2019.3.3
+PORTVERSION=	2020.1 #2019.3.4
 CATEGORIES=	java devel
 MASTER_SITES=	https://download-cf.jetbrains.com/idea/
 DISTNAME=	ideaIC-${PORTVERSION}-no-jbr
@@ -19,7 +19,7 @@ RUN_DEPENDS=	intellij-fsnotifier>0:java/intellij-fsnotifier
 USES=		python:run shebangfix
 
 USE_JAVA=	yes
-#JAVA_VERSION=	8+
+JAVA_VERSION=   11+
 
 SHEBANG_FILES=	bin/printenv.py bin/restart.py
 

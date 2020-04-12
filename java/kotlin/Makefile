@@ -17,6 +17,8 @@ WRKSRC=	${WRKDIR}/kotlinc
 
 USE_JAVA=	yes
 NO_BUILD=	yes
+JAVA_VERSION=   11+
+
 
 KOTLIN_BIN+=	kapt
 KOTLIN_BIN+=	kotlin

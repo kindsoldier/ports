@@ -13,6 +13,7 @@ COMMENT=	Java project management tool
 #RUN_DEPENDS=	mvn:devel/maven-wrapper
 
 USE_JAVA=	yes
+JAVA_VERSION=   11+
 
 CPE_PRODUCT=	maven
 CPE_VENDOR=	apache
