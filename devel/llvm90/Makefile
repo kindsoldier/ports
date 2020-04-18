@@ -42,11 +42,11 @@ CXXFLAGS+=	-DNDEBUG
 CONFIGURE_TARGET:=${ARCH:C/amd64/x86_64/:C/arm64/aarch64/}-pc-${OPSYS:tl}${OSREL}${TARGET_ABI}
 
 DISTFILES+=	cfe-${DISTVERSION}.src${EXTRACT_SUFX}
-#DISTFILES+=	clang-tools-extra-${DISTVERSION}.src${EXTRACT_SUFX}
+DISTFILES+=	clang-tools-extra-${DISTVERSION}.src${EXTRACT_SUFX}
 DISTFILES+=	lld-${DISTVERSION}.src${EXTRACT_SUFX}
 
 WRKSRC_CLANG= ${WRKDIR}/cfe-${PORTVERSION}.src
-#WRKSRC_EXTRA= ${WRKDIR}/clang-tools-extra-${PORTVERSION}.src
+WRKSRC_EXTRA= ${WRKDIR}/clang-tools-extra-${PORTVERSION}.src
 WRKSRC_LLD=   ${WRKDIR}/lld-${PORTVERSION}.src
 
 #NATIVE_BACKENDS=X86
@@ -54,7 +54,7 @@ WRKSRC_LLD=   ${WRKDIR}/lld-${PORTVERSION}.src
 
 post-extract:
 	${MV} ${WRKSRC_CLANG} ${PATCH_WRKSRC}/tools/clang
-#	${MV} ${WRKSRC_EXTRA} ${PATCH_WRKSRC}/tools/clang/tools/extra
+	${MV} ${WRKSRC_EXTRA} ${PATCH_WRKSRC}/tools/clang/tools/extra
 	${MV} ${WRKSRC_LLD} ${PATCH_WRKSRC}/tools/lld
 
 .include <bsd.port.mk>

@@ -1,5 +1,5 @@
---- llvm/cmake/modules/AddSphinxTarget.cmake.orig
-+++ llvm/cmake/modules/AddSphinxTarget.cmake
+--- cmake/modules/AddSphinxTarget.cmake.orig
++++ cmake/modules/AddSphinxTarget.cmake
 @@ -29,6 +29,8 @@
    endif()
  

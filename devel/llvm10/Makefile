@@ -1,29 +1,34 @@
 # $FreeBSD: head/devel/llvm80/Makefile 499184 2019-04-17 16:20:06Z brooks $
 
 PORTNAME=	llvm
-PORTVERSION=	${LLVM_MAJOR}.0.${SNAPDATE}
+DISTVERSION=	10.0.0
 CATEGORIES=	devel lang
+MASTER_SITES=	http://${PRE_}releases.llvm.org/${LLVM_RELEASE}/${RCDIR}
+DISTNAME=	${PORTNAME}-${DISTVERSION}.src
+DISTFILES=	${PORTNAME}-${DISTVERSION}.src${EXTRACT_SUFX}
 
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	LLVM and Clang
 
-USE_GITHUB=	yes
-GH_PROJECT=	llvm-project
-GH_ACCOUNT=	llvm
-GH_TAGNAME=	${LLVM_PROJECT_COMMIT}
-LLVM_MAJOR=	10
-LLVM_RELEASE=	${LLVM_MAJOR}.0.0
-SNAPDATE=	20200103
-LLVM_PROJECT_COMMIT=		add743b4348095c0d2e407c7a2b8a87a5f8194b0
+LLVM_RELEASE=	${DISTVERSION:C/rc.*//}
+RCDIR=		${DISTVERSION:S/${LLVM_RELEASE}//:C|(rc.*)|\1/|}
+PRE_=		${DISTVERSION:C/.*rc.*/pre/:N*[0-9]*}
 
-USES=		cmake gmake compiler:c++11-lib perl5 tar:xz shebangfix python:3.6,build
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}
+DATADIR=	${PREFIX}/share/${PORTNAME}
 
-SHEBANG_FILES=	llvm/utils/lit/lit.py \
-		llvm/utils/llvm-lit/llvm-lit.in \
-		llvm/tools/opt-viewer/optrecord.py \
-		llvm/tools/opt-viewer/opt-diff.py \
-		llvm/tools/opt-viewer/opt-stats.py \
-		llvm/tools/opt-viewer/opt-viewer.py
+USES=		cmake compiler:c++11-lib perl5 tar:xz shebangfix python:3.6,build
+
+SHEBANG_FILES=	utils/lit/lit.py utils/llvm-lit/llvm-lit.in \
+		tools/opt-viewer/optrecord.py \
+		tools/opt-viewer/opt-diff.py \
+		tools/opt-viewer/opt-stats.py \
+		tools/opt-viewer/opt-viewer.py
+
+SHEBANG_FILES+=	tools/clang/tools/extra/clang-include-fixer/find-all-symbols/tool/run-find-all-symbols.py \
+		tools/clang/tools/extra/clang-tidy/tool/clang-tidy-diff.py \
+		tools/clang/tools/extra/clang-tidy/tool/run-clang-tidy.py
+
 
 
 CMAKE_ARGS=	-DLLVM_BUILD_LLVM_DYLIB=ON 
@@ -33,7 +38,7 @@ CMAKE_ARGS+=	-DLLVM_DEFAULT_TARGET_TRIPLE=${CONFIGURE_TARGET}
 CMAKE_ARGS+=	-DLLVM_HOST_TRIPLE=${CONFIGURE_TARGET}
 CMAKE_ARGS+=	-DCMAKE_INSTALL_MANDIR:PATH="man"
 CMAKE_ARGS+=	-DLLVM_PARALLEL_LINK_JOBS=1
-
+CMAKE_ARGS+=	-DLLVM_ENABLE_Z3_SOLVER=OFF
 CFLAGS+=	-DNDEBUG
 CXXFLAGS+=	-DNDEBUG
 
@@ -41,13 +46,20 @@ CXXFLAGS+=	-DNDEBUG
 
 CONFIGURE_TARGET:=${ARCH:C/amd64/x86_64/:C/arm64/aarch64/}-pc-${OPSYS:tl}${OSREL}${TARGET_ABI}
 
-LLVM_ENABLE_PROJECTS+=	clang
-LLVM_ENABLE_PROJECTS+=	compiler-rt
-LLVM_ENABLE_PROJECTS+=	lld
+DISTFILES+=	clang-${DISTVERSION}.src${EXTRACT_SUFX}
+DISTFILES+=	clang-tools-extra-${DISTVERSION}.src${EXTRACT_SUFX}
+DISTFILES+=	lld-${DISTVERSION}.src${EXTRACT_SUFX}
 
-CMAKE_ARGS+=	-DLLVM_ENABLE_PROJECTS="${LLVM_ENABLE_PROJECTS:ts;}"
+WRKSRC_CLANG= ${WRKDIR}/clang-${PORTVERSION}.src
+WRKSRC_EXTRA= ${WRKDIR}/clang-tools-extra-${PORTVERSION}.src
+WRKSRC_LLD=   ${WRKDIR}/lld-${PORTVERSION}.src
 
-WRKSRC= ${WRKDIR}/llvm-project-${LLVM_PROJECT_COMMIT}
-CMAKE_SOURCE_PATH=	${WRKSRC}/llvm
+#NATIVE_BACKENDS=X86
+#CMAKE_ARGS+=	-DLLVM_TARGETS_TO_BUILD="${NATIVE_BACKENDS}"
+
+post-extract:
+	${MV} ${WRKSRC_CLANG} ${PATCH_WRKSRC}/tools/clang
+	${MV} ${WRKSRC_EXTRA} ${PATCH_WRKSRC}/tools/clang/tools/extra
+	${MV} ${WRKSRC_LLD} ${PATCH_WRKSRC}/tools/lld
 
 .include <bsd.port.mk>
