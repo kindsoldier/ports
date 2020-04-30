@@ -370,6 +370,8 @@ lib/go/misc/cgo/testcshared/testdata/main5.c
 lib/go/misc/cgo/testcshared/testdata/p/p.go
 lib/go/misc/cgo/testgodefs/testdata/anonunion.go
 lib/go/misc/cgo/testgodefs/testdata/fieldtypedef.go
+lib/go/misc/cgo/testgodefs/testdata/issue37479.go
+lib/go/misc/cgo/testgodefs/testdata/issue37621.go
 lib/go/misc/cgo/testgodefs/testdata/issue8478.go
 lib/go/misc/cgo/testgodefs/testdata/main.go
 lib/go/misc/cgo/testgodefs/testgodefs_test.go
@@ -509,6 +511,7 @@ lib/go/misc/swig/stdio/file.go
 lib/go/misc/swig/stdio/file.swig
 lib/go/misc/trace/README.md
 lib/go/misc/trace/trace_viewer_full.html
+lib/go/misc/trace/webcomponents.min.js
 lib/go/misc/wasm/go_js_wasm_exec
 lib/go/misc/wasm/wasm_exec.html
 lib/go/misc/wasm/wasm_exec.js
@@ -790,6 +793,7 @@ lib/go/pkg/freebsd_amd64/internal/poll.a
 lib/go/pkg/freebsd_amd64/internal/race.a
 lib/go/pkg/freebsd_amd64/internal/reflectlite.a
 lib/go/pkg/freebsd_amd64/internal/singleflight.a
+lib/go/pkg/freebsd_amd64/internal/syscall/execenv.a
 lib/go/pkg/freebsd_amd64/internal/syscall/unix.a
 lib/go/pkg/freebsd_amd64/internal/testenv.a
 lib/go/pkg/freebsd_amd64/internal/testlog.a
@@ -1999,6 +2003,7 @@ lib/go/src/cmd/go/testdata/script/mod_domain_root.txt
 lib/go/src/cmd/go/testdata/script/mod_dot.txt
 lib/go/src/cmd/go/testdata/script/mod_download_hash.txt
 lib/go/src/cmd/go/testdata/script/mod_download_json.txt
+lib/go/src/cmd/go/testdata/script/mod_download_partial.txt
 lib/go/src/cmd/go/testdata/script/mod_download_replace_file.txt
 lib/go/src/cmd/go/testdata/script/mod_download.txt
 lib/go/src/cmd/go/testdata/script/mod_edit_go.txt
@@ -2158,7 +2163,9 @@ lib/go/src/cmd/go/testdata/script/test_flag.txt
 lib/go/src/cmd/go/testdata/script/test_generated_main.txt
 lib/go/src/cmd/go/testdata/script/test_go111module_cache.txt
 lib/go/src/cmd/go/testdata/script/test_import_error_stack.txt
+lib/go/src/cmd/go/testdata/script/test_json_panic_exit.txt
 lib/go/src/cmd/go/testdata/script/test_main_archive.txt
+lib/go/src/cmd/go/testdata/script/test_main_panic.txt
 lib/go/src/cmd/go/testdata/script/test_main_twice.txt
 lib/go/src/cmd/go/testdata/script/test_match_no_tests_build_failure.txt
 lib/go/src/cmd/go/testdata/script/test_minus_n.txt
@@ -4575,6 +4582,8 @@ lib/go/src/internal/reflectlite/type.go
 lib/go/src/internal/reflectlite/value.go
 lib/go/src/internal/singleflight/singleflight_test.go
 lib/go/src/internal/singleflight/singleflight.go
+lib/go/src/internal/syscall/execenv/execenv_default.go
+lib/go/src/internal/syscall/execenv/execenv_windows.go
 lib/go/src/internal/syscall/unix/asm_aix_ppc64.s
 lib/go/src/internal/syscall/unix/asm_solaris.s
 lib/go/src/internal/syscall/unix/at_aix.go
@@ -5269,10 +5278,8 @@ lib/go/src/os/dir_plan9.go
 lib/go/src/os/dir_unix.go
 lib/go/src/os/dir_windows.go
 lib/go/src/os/dir.go
-lib/go/src/os/env_default.go
 lib/go/src/os/env_test.go
 lib/go/src/os/env_unix_test.go
-lib/go/src/os/env_windows.go
 lib/go/src/os/env.go
 lib/go/src/os/error_errno.go
 lib/go/src/os/error_plan9.go
@@ -8592,6 +8599,7 @@ lib/go/test/fixedbugs/issue36085.go
 lib/go/test/fixedbugs/issue36516.go
 lib/go/test/fixedbugs/issue36723.go
 lib/go/test/fixedbugs/issue3705.go
+lib/go/test/fixedbugs/issue37716.go
 lib/go/test/fixedbugs/issue3783.go
 lib/go/test/fixedbugs/issue3925.go
 lib/go/test/fixedbugs/issue4066.go
@@ -10066,6 +10074,7 @@ lib/go/VERSION
 @dir lib/go/src/internal/race
 @dir lib/go/src/internal/reflectlite
 @dir lib/go/src/internal/singleflight
+@dir lib/go/src/internal/syscall/execenv
 @dir lib/go/src/internal/syscall/unix
 @dir lib/go/src/internal/syscall/windows/registry
 @dir lib/go/src/internal/syscall/windows/sysdll
