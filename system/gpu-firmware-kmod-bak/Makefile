@@ -2,8 +2,7 @@
 # $FreeBSD: head/graphics/gpu-firmware-kmod/Makefile 514545 2019-10-15 16:23:05Z jmd $
 
 PORTNAME=	gpu-firmware-kmod
-#PORTVERSION=	g20191015
-PORTVERSION=	g20200130
+PORTVERSION=	g20191015
 CATEGORIES=	graphics
 
 MAINTAINER=	jmd@FreeBSD.org
@@ -11,17 +10,10 @@ COMMENT=	Firmware modules for the linuxkpi-based KMS components
 
 USES=		kmod uidfix
 
-#USE_GITHUB=	yes
-#GH_ACCOUNT=	FreeBSDDesktop
-#GH_PROJECT=	kms-firmware
-#GH_TAGNAME=	81315fa
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	FreeBSDDesktop
 GH_PROJECT=	kms-firmware
-GH_TAGNAME=	c9eb7f3
-
-
+GH_TAGNAME=	81315fa
 
 .include <bsd.port.pre.mk>
 

@@ -2,9 +2,7 @@
 # $FreeBSD: head/graphics/drm-fbsd12.0-kmod/Makefile 518003 2019-11-20 11:30:55Z zeising $
 
 PORTNAME=	drm-fbsd12-kmod
-#PORTVERSION=	4.16.g20191120
-PORTVERSION=	4.16.g20200221
-
+PORTVERSION=	4.16.g20191120
 CATEGORIES=	graphics
 
 MAINTAINER=	x11@FreeBSD.org
