@@ -44,7 +44,7 @@ do-install:
 	${INSTALL_MAN} ${FILESDIR}/phpstorm.1 ${STAGEDIR}${PREFIX}/man/man1
 	${INSTALL_DATA} ${WRKDIR}/phpstorm.desktop ${STAGEDIR}${PREFIX}/share/applications/
 # Use fsnotifier replacement provided by java/intellij-fsnotifier
-	${ECHO} "idea.filewatcher.executable.path=${PREFIX}/intellij/bin/fsnotifier" >> ${STAGEDIR}${DATADIR}/bin/idea.properties
+	${ECHO} "idea.filewatcher.executable.path=${PREFIX}/bin/fsnotifier" >> ${STAGEDIR}${DATADIR}/bin/idea.properties
 # Fix slow render
 	${ECHO} "-Dsun.java2d.xrender=false" >> ${STAGEDIR}${DATADIR}/bin/phpstorm.vmoptions
 	${ECHO} "-Dsun.java2d.xrender=false" >> ${STAGEDIR}${DATADIR}/bin/phpstorm64.vmoptions

@@ -2,7 +2,7 @@
 # $FreeBSD: head/devel/jetbrains-webstorm/Makefile 523937 2020-01-23 16:50:35Z pfg $
 
 PORTNAME=	webstorm
-PORTVERSION=	2019.3.2
+PORTVERSION=	2019.3.4
 CATEGORIES=	devel java
 MASTER_SITES=	https://download-cf.jetbrains.com/webstorm/
 PKGNAMEPREFIX=	jetbrains-
@@ -47,7 +47,7 @@ do-install:
 	${INSTALL_MAN} ${FILESDIR}/webstorm.1 ${STAGEDIR}${PREFIX}/man/man1
 	${INSTALL_DATA} ${WRKDIR}/webstorm.desktop ${STAGEDIR}${PREFIX}/share/applications/
 # Use fsnotifier replacement provided by java/intellij-fsnotifier
-	${ECHO} "idea.filewatcher.executable.path=${PREFIX}/intellij/bin/fsnotifier" >> ${STAGEDIR}${DATADIR}/bin/idea.properties
+	${ECHO} "idea.filewatcher.executable.path=${PREFIX}/bin/fsnotifier" >> ${STAGEDIR}${DATADIR}/bin/idea.properties
 # Fix slow render
 	${ECHO} "-Dsun.java2d.xrender=false" >> ${STAGEDIR}${DATADIR}/bin/webstorm.vmoptions
 	${ECHO} "-Dsun.java2d.xrender=false" >> ${STAGEDIR}${DATADIR}/bin/webstorm64.vmoptions
