@@ -17,7 +17,7 @@ GH_TAGNAME=	a04fbff6e21d58fea7a3ed2a6a21e53cbef4b7af
 
 USES=	compiler:c11
 
-IDEA_HOME=${PREFIX}/intellij
+IDEA_HOME=${PREFIX}
 PLIST_FILES=	${IDEA_HOME}/bin/fsnotifier
 
 do-install:
