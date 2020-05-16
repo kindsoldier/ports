@@ -2,11 +2,11 @@
 # $FreeBSD: head/net-im/purple-hangouts/Makefile 491156 2019-01-25 15:57:59Z swills $
 
 PORTNAME=	purple-hangouts
-PORTVERSION=	20181202
+PORTVERSION=	20190607
 CATEGORIES=	net-im
 MASTER_SITES=	https://bitbucket.org/EionRobb/${PORTNAME}/get/
 # Commit tag. Must be changed according with PORTVERSION.
-DISTNAME=	cccf2f62d439
+DISTNAME=	3f7d89bf9ce2
 
 MAINTAINER=	jjuanino@gmail.com
 COMMENT=	Hangouts plugin for libpurple
