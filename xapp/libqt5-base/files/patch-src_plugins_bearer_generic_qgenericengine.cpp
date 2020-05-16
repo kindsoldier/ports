@@ -1,6 +1,13 @@
---- ./src/plugins/bearer/generic/qgenericengine.cpp.orig	2019-01-28 19:11:52.000000000 +0200
-+++ ./src/plugins/bearer/generic/qgenericengine.cpp	2019-03-17 19:22:28.529272000 +0200
-@@ -82,7 +82,7 @@
+Determine suitable bearer. This code is basically the same
+as the Linux code, except out ioctl()s are named differently
+and we need an AF_LOCAL socket (this detail cribbed from ifconfig.c).
+If getting the HW address succeeds, assume it's Ethernet. Tested
+with two Ethernet cards and a vlan (all of which have a MAC reported
+by ifconfig).
+
+--- src/plugins/bearer/generic/qgenericengine.cpp.orig	2018-12-03 11:15:26 UTC
++++ src/plugins/bearer/generic/qgenericengine.cpp
+@@ -82,7 +82,7 @@ using namespace ABI::Windows::Networking::Connectivity
  // needed as interface is used as parameter name in qGetInterfaceType
  #undef interface
  
@@ -9,7 +16,7 @@
  #include <sys/socket.h>
  #include <sys/ioctl.h>
  #include <net/if.h>
-@@ -139,6 +139,23 @@
+@@ -139,6 +139,23 @@ static QNetworkConfiguration::BearerType qGetInterface
  
      if (result >= 0 && request.ifr_hwaddr.sa_family == ARPHRD_ETHER)
          return QNetworkConfiguration::BearerEthernet;
@@ -33,7 +40,7 @@
  #elif defined(Q_OS_WINRT)
      ComPtr<INetworkInformationStatics> networkInfoStatics;
      HRESULT hr = GetActivationFactory(HString::MakeReference(RuntimeClass_Windows_Networking_Connectivity_NetworkInformation).Get(), &networkInfoStatics);
-@@ -231,9 +248,11 @@
+@@ -231,9 +248,11 @@ static QNetworkConfiguration::BearerType qGetInterface
  QGenericEngine::QGenericEngine(QObject *parent)
  :   QBearerEngineImpl(parent)
  {

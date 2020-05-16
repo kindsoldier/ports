@@ -1,5 +1,17 @@
---- ./src/corelib/io/qlockfile_unix.cpp.orig	2019-01-28 19:11:52.000000000 +0200
-+++ ./src/corelib/io/qlockfile_unix.cpp	2019-03-17 19:22:28.513085000 +0200
+--- src/corelib/io/io.pri.orig  2018-02-08 18:24:48 UTC
++++ src/corelib/io/io.pri
+@@ -178,6 +178,9 @@ win32 {
+             SOURCES += \
+                 io/qstandardpaths_unix.cpp \
+                 io/qstorageinfo_unix.cpp
++            freebsd {
++                LIBS += -lkvm -lprocstat
++            }
+         }
+
+         linux|if(qnx:qtConfig(inotify)) {
+--- src/corelib/io/qlockfile_unix.cpp.orig      2018-02-08 18:24:48 UTC
++++ src/corelib/io/qlockfile_unix.cpp
 @@ -75,6 +75,8 @@
  #   include <sys/sysctl.h>
  # if !defined(Q_OS_NETBSD)
@@ -8,8 +20,8 @@
 +#   include <libprocstat.h>
  # endif
  #endif
- 
-@@ -246,23 +248,44 @@
+
+@@ -246,23 +248,44 @@ QString QLockFilePrivate::processNameByPid(qint64 pid)
      struct kinfo_proc kp;
      int mib[6] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, (int)pid, sizeof(struct kinfo_proc), 1 };
  # else
@@ -32,13 +44,13 @@
  # endif
 -    size_t len = sizeof(kp);
 -    u_int mib_len = sizeof(mib)/sizeof(u_int);
--
--    if (sysctl(mib, mib_len, &kp, &len, NULL, 0) < 0)
--        return QString();
 +    if (nameFromProcstat.isEmpty()) {
 +        size_t len = sizeof(kp);
 +        u_int mib_len = sizeof(mib)/sizeof(u_int);
- 
+
+-    if (sysctl(mib, mib_len, &kp, &len, NULL, 0) < 0)
+-        return QString();
+-
 +        if (sysctl(mib, mib_len, &kp, &len, NULL, 0) < 0)
 +            return QString();
 +    }
@@ -60,4 +72,3 @@
 +        name = QFile::decodeName(kp.ki_comm);
  # endif
      return name;
- 

@@ -15,7 +15,6 @@ LIB_DEPENDS+= libdbus.so:gnome/dbus
 
 LIB_DEPENDS+= libqtfontconfig.so:xapp/libqtfontconfig
 LIB_DEPENDS+= libqtfreetype.so:xapp/libqtfreetype2
-
 LIB_DEPENDS+= libpcre2-16.so:text/libpcre2
 
 LIB_DEPENDS+= libSM.so.6:x11/libSM
@@ -95,6 +94,8 @@ CONFIGURE_ARGS+= -qmldir ${PREFIX}/share/Qt5/qml
 CONFIGURE_ARGS+= -examplesdir ${PREFIX}/share/examples/Qt5
 CONFIGURE_ARGS+= -testsdir ${PREFIX}/share/tests/Qt5
 
+CONFIGURE_ARGS+= -system-harfbuzz
+
 CONFIGURE_ARGS+= -no-use-gold-linker
 CONFIGURE_ARGS+= -release -no-separate-debug-info
 CONFIGURE_ARGS+= -no-eglfs
@@ -110,7 +111,7 @@ CONFIGURE_ARGS+= -system-freetype
 CONFIGURE_ARGS+= -openssl-linked
 #CONFIGURE_ARGS+= -opengl es2
 
-CONFIGURE_ARGS+= -qt-harfbuzz
+#CONFIGURE_ARGS+= -qt-harfbuzz
 
 #CONFIGURE_ARGS+= -no-xcb #-system-xcb
 CONFIGURE_ARGS+= -system-pcre

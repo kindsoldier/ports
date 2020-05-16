@@ -1,5 +1,5 @@
---- ./src/network/ssl/qsslsocket_openssl_symbols.cpp.orig	2019-01-28 19:11:52.000000000 +0200
-+++ ./src/network/ssl/qsslsocket_openssl_symbols.cpp	2019-03-17 19:22:28.524206000 +0200
+--- src/network/ssl/qsslsocket_openssl_symbols.cpp.orig	2019-10-25 09:16:48.000000000 +0200
++++ src/network/ssl/qsslsocket_openssl_symbols.cpp	2019-11-01 20:03:08.715014000 +0100
 @@ -152,6 +152,14 @@
  DEFINEFUNC(int, EVP_CIPHER_CTX_reset, EVP_CIPHER_CTX *c, c, return 0, return)
  DEFINEFUNC(int, EVP_PKEY_base_id, EVP_PKEY *a, a, return NID_undef, return)
@@ -32,7 +32,7 @@
  DEFINEFUNC(SSL_CONF_CTX *, SSL_CONF_CTX_new, DUMMYARG, DUMMYARG, return nullptr, return);
  DEFINEFUNC(void, SSL_CONF_CTX_free, SSL_CONF_CTX *a, a, return ,return);
  DEFINEFUNC2(void, SSL_CONF_CTX_set_ssl_ctx, SSL_CONF_CTX *a, a, SSL_CTX *b, b, return, return);
-@@ -846,8 +855,8 @@
+@@ -839,8 +848,8 @@
  #endif
  #if defined(SHLIB_VERSION_NUMBER) && !defined(Q_OS_QNX) // on QNX, the libs are always libssl.so and libcrypto.so
      // first attempt: the canonical name is libssl.so.<SHLIB_VERSION_NUMBER>
@@ -43,18 +43,7 @@
      if (libcrypto->load() && libssl->load()) {
          // libssl.so.<SHLIB_VERSION_NUMBER> and libcrypto.so.<SHLIB_VERSION_NUMBER> found
          return pair;
-@@ -885,8 +894,8 @@
-     //  macOS's /usr/lib/libssl.dylib, /usr/lib/libcrypto.dylib will be picked up in the third
-     //    attempt, _after_ <bundle>/Contents/Frameworks has been searched.
-     //  iOS does not ship a system libssl.dylib, libcrypto.dylib in the first place.
--    libssl->setFileNameAndVersion(QLatin1String("ssl"), -1);
--    libcrypto->setFileNameAndVersion(QLatin1String("crypto"), -1);
-+    libssl->setFileNameAndVersion(QLatin1String("%%OPENSSLLIB%%/libssl"), -1);
-+    libcrypto->setFileNameAndVersion(QLatin1String("%%OPENSSLLIB%%/libcrypto"), -1);
-     if (libcrypto->load() && libssl->load()) {
-         // libssl.so.0 and libcrypto.so.0 found
-         return pair;
-@@ -970,12 +979,21 @@
+@@ -980,12 +989,21 @@
      RESOLVEFUNC(EVP_CIPHER_CTX_reset)
      RESOLVEFUNC(EVP_PKEY_base_id)
      RESOLVEFUNC(RSA_bits)
@@ -76,7 +65,7 @@
      RESOLVEFUNC(DH_get0_pqg)
      RESOLVEFUNC(SSL_CTX_set_options)
  #ifdef TLS1_3_VERSION
-@@ -1010,7 +1028,9 @@
+@@ -1024,7 +1042,9 @@
  
      RESOLVEFUNC(SSL_SESSION_get_ticket_lifetime_hint)
      RESOLVEFUNC(DH_bits)
@@ -86,7 +75,7 @@
  
  #if QT_CONFIG(dtls)
      RESOLVEFUNC(DTLSv1_listen)
-@@ -1246,7 +1266,7 @@
+@@ -1280,7 +1300,7 @@
      RESOLVEFUNC(SSL_CTX_use_RSAPrivateKey)
      RESOLVEFUNC(SSL_CTX_use_PrivateKey_file)
      RESOLVEFUNC(SSL_CTX_get_cert_store);
