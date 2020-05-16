@@ -8601,6 +8601,7 @@ lib/go/test/fixedbugs/issue36723.go
 lib/go/test/fixedbugs/issue3705.go
 lib/go/test/fixedbugs/issue37716.go
 lib/go/test/fixedbugs/issue3783.go
+lib/go/test/fixedbugs/issue38117.go
 lib/go/test/fixedbugs/issue3925.go
 lib/go/test/fixedbugs/issue4066.go
 lib/go/test/fixedbugs/issue4085a.go
