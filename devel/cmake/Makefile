@@ -1,7 +1,7 @@
 # Created by: Kyle Martin <mkm@ieee.org>
 # $FreeBSD: head/devel/cmake/Makefile 438884 2017-04-19 15:04:59Z tcberner $
 PORTNAME=	cmake
-DISTVERSION=	3.14.3
+DISTVERSION=	3.17.2
 CATEGORIES=	devel
 MASTER_SITES=	https://www.cmake.org/files/v${PORTVERSION:R}/
 
@@ -36,6 +36,8 @@ CONFIGURE_ARGS+= --system-zlib
 
 INSTALL_TARGET=	install/strip
 
+
+
 post-patch:
 	(${FIND} ${WRKSRC}/Modules -name "*.cmake" -print0; \
 		${FIND} ${WRKSRC}/Tests -name "CMakeLists.txt" -print0 ) | \
@@ -51,6 +53,17 @@ post-patch:
 		${WRKSRC}/Modules/FindDCMTK.cmake
 	${FIND} ${WRKSRC} -name "*.bak" -delete -o -name "*.orig" -delete
 
+
+pre-configure:
+	${CP} "${FILESDIR}/InitialCache.cmake" "${WRKSRC}/InitialCache.cmake"
+#	${REINPLACE_CMD} \
+#		-e 's/@@CPACK_OPTION_VALUE@@/ON/' \
+#		-e 's/@@CPACK_OPTION_COMMENT@@//' \
+#		"${WRKSRC}/InitialCache.cmake"
+	${REINPLACE_CMD} \
+		-e 's/@@CPACK_OPTION_VALUE@@/OFF/' \
+		-e 's/@@CPACK_OPTION_COMMENT@@/# /' \
+		"${WRKSRC}/InitialCache.cmake"
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/Auxiliary/cmake-mode.el ${STAGEDIR}${PREFIX}/share/emacs/site-lisp
