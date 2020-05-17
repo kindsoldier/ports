@@ -41,9 +41,6 @@ X264_COMMIT=	aaa9aa83a111ed6f1db253d5afa91c5fc844583f
 X264_GITVER=	${X264_COMMIT:C/^(.......).*$/\1/g}
 X264_SNAPSHOT=	20170626
 
-
-
-
 USES+=		gmake
 USES+=		tar:bzip2
 USE_LDCONFIG=	yes

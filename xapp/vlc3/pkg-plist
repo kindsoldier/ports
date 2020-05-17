@@ -1,6 +1,3 @@
-lib/vlc/plugins/codec/libfluidsynth_plugin.la
-lib/vlc/plugins/codec/libfluidsynth_plugin.so
-
 bin/cvlc
 bin/qvlc
 bin/rvlc
@@ -269,6 +266,8 @@ lib/vlc/plugins/codec/libfaad_plugin.la
 lib/vlc/plugins/codec/libfaad_plugin.so
 lib/vlc/plugins/codec/libflac_plugin.la
 lib/vlc/plugins/codec/libflac_plugin.so
+lib/vlc/plugins/codec/libfluidsynth_plugin.la
+lib/vlc/plugins/codec/libfluidsynth_plugin.so
 lib/vlc/plugins/codec/libg711_plugin.la
 lib/vlc/plugins/codec/libg711_plugin.so
 lib/vlc/plugins/codec/libjpeg_plugin.la
@@ -369,8 +368,6 @@ lib/vlc/plugins/demux/libcaf_plugin.la
 lib/vlc/plugins/demux/libcaf_plugin.so
 lib/vlc/plugins/demux/libdemux_cdg_plugin.la
 lib/vlc/plugins/demux/libdemux_cdg_plugin.so
-lib/vlc/plugins/demux/libdemux_chromecast_plugin.la
-lib/vlc/plugins/demux/libdemux_chromecast_plugin.so
 lib/vlc/plugins/demux/libdemux_stl_plugin.la
 lib/vlc/plugins/demux/libdemux_stl_plugin.so
 lib/vlc/plugins/demux/libdemuxdump_plugin.la
@@ -558,8 +555,6 @@ lib/vlc/plugins/spu/librss_plugin.la
 lib/vlc/plugins/spu/librss_plugin.so
 lib/vlc/plugins/spu/libsubsdelay_plugin.la
 lib/vlc/plugins/spu/libsubsdelay_plugin.so
-lib/vlc/plugins/stream_extractor/libarchive_plugin.la
-lib/vlc/plugins/stream_extractor/libarchive_plugin.so
 lib/vlc/plugins/stream_filter/libadf_plugin.la
 lib/vlc/plugins/stream_filter/libadf_plugin.so
 lib/vlc/plugins/stream_filter/libcache_block_plugin.la
@@ -582,8 +577,6 @@ lib/vlc/plugins/stream_out/libstream_out_autodel_plugin.la
 lib/vlc/plugins/stream_out/libstream_out_autodel_plugin.so
 lib/vlc/plugins/stream_out/libstream_out_bridge_plugin.la
 lib/vlc/plugins/stream_out/libstream_out_bridge_plugin.so
-lib/vlc/plugins/stream_out/libstream_out_chromecast_plugin.la
-lib/vlc/plugins/stream_out/libstream_out_chromecast_plugin.so
 lib/vlc/plugins/stream_out/libstream_out_cycle_plugin.la
 lib/vlc/plugins/stream_out/libstream_out_cycle_plugin.so
 lib/vlc/plugins/stream_out/libstream_out_delay_plugin.la
@@ -771,6 +764,7 @@ man/man1/rvlc.1.gz
 man/man1/vlc-wrapper.1.gz
 man/man1/vlc.1.gz
 share/applications/vlc.desktop
+share/doc/vlc/fortunes.txt
 share/icons/hicolor/128x128/apps/vlc-kb.png
 share/icons/hicolor/128x128/apps/vlc-xmas.png
 share/icons/hicolor/128x128/apps/vlc.png
@@ -885,6 +879,7 @@ share/vlc/utils/video-vlc-default.sh
 share/vlc/vlc.ico
 @dir include/vlc/plugins
 @dir include/vlc
+@dir lib/pkgconfig
 @dir lib/vlc/plugins/access
 @dir lib/vlc/plugins/access_output
 @dir lib/vlc/plugins/audio_filter
@@ -903,7 +898,6 @@ share/vlc/vlc.ico
 @dir lib/vlc/plugins/packetizer
 @dir lib/vlc/plugins/services_discovery
 @dir lib/vlc/plugins/spu
-@dir lib/vlc/plugins/stream_extractor
 @dir lib/vlc/plugins/stream_filter
 @dir lib/vlc/plugins/stream_out
 @dir lib/vlc/plugins/text_renderer
@@ -915,6 +909,11 @@ share/vlc/vlc.ico
 @dir lib/vlc/plugins/visualization
 @dir lib/vlc/plugins
 @dir lib/vlc
+@dir share/applications
+@dir share/doc/vlc/libvlc/QtPlayer
+@dir share/doc/vlc/libvlc
+@dir share/doc/vlc
+@dir share/doc
 @dir share/locale/ach/LC_MESSAGES
 @dir share/locale/ach
 @dir share/locale/af/LC_MESSAGES
@@ -1107,5 +1106,8 @@ share/vlc/vlc.ico
 @dir share/locale/zh_TW
 @dir share/locale/zu/LC_MESSAGES
 @dir share/locale/zu
+@dir share/locale
+@dir share/metainfo
 @dir share/vlc/utils
 @dir share/vlc
+@dir share

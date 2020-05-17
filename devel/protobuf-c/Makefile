@@ -2,7 +2,7 @@
 # $FreeBSD: head/devel/protobuf-c/Makefile 487272 2018-12-12 01:35:33Z gerald $
 
 PORTNAME=		protobuf-c
-PORTVERSION=		1.3.1
+PORTVERSION=		1.3.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=		devel
 
@@ -11,10 +11,12 @@ COMMENT=	Code generator and libraries to use Protocol Buffers from pure C
 
 LIB_DEPENDS=	libprotobuf.so:devel/libprotobuf
 
-USES=		autoreconf compiler:c++11-lang gmake libtool
+USES=		autoreconf compiler:c++11-lang gmake
 GNU_CONFIGURE=	yes
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
+
+CONFIGURE_ARGS+= --with-pkgconfigdir=${PREFIX}/lib/pkgconfig
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
