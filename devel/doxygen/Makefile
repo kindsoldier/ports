@@ -2,7 +2,7 @@
 # $FreeBSD: head/devel/doxygen/Makefile 459474 2018-01-19 21:28:34Z antoine $
 
 PORTNAME=	doxygen
-PORTVERSION=	1.8.14
+PORTVERSION=	1.8.15
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.stack.nl/pub/users/dimitri/ \
 		http://ftp.stack.nl/pub/users/dimitri/
@@ -11,14 +11,25 @@ EXTRACT_SUFX=	.src.tar.gz
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	Documentation system for C, C++, and other languages
 
-LIB_DEPENDS+=	libQtCore.so:xapp/libqt4
-LIB_DEPENDS+=	libQtGui.so:xapp/libqt4
+#LIB_DEPENDS+=	libQtCore.so:xapp/libqt4
+#LIB_DEPENDS+=	libQtGui.so:xapp/libqt4
+
+RUN_DEPENDS=	dot:graphics/graphviz
+
+LIB_DEPENDS+= libQt5Core.so:xapp/libqt5-base
+LIB_DEPENDS+= libQt5Gui.so:xapp/libqt5-base
+LIB_DEPENDS+= libQt5Widgets.so:xapp/libqt5-base
+LIB_DEPENDS+= libQt5Xml.so:xapp/libqt5-base
 
 
-USES=		cmake:outsource shebangfix # bison cmake:outsource,noninja python shebangfix
+#USES=		cmake shebangfix # bison cmake:outsource,noninja python shebangfix
+USES=		bison cmake:noninja compiler:c++11-lang iconv python shebangfix
+
 ALL_TARGET=	all
 CMAKE_ARGS+=	-DDOC_INSTALL_DIR:PATH=${DOCSDIR_REL}
+CMAKE_ARGS+=	-Dbuild_wizard:BOOLEAN=true
 
+RUN_DEPENDS=	dot:graph/graphviz
 MAKE_JOBS_UNSAFE=	yes
 
 EXTRACT_AFTER_ARGS=	--exclude '*/libmd5'

@@ -50,7 +50,7 @@ _FILES+= pedigree-perl/pedigree.pl
 
 do-build:
 	cd ${WRKDIR} && tar xzvpf ${LATEX_DISTFILE}
-	cd ${WRKDIR}/latex-base-20150101.2 && \
+	cd ${WRKDIR}/texlive-texmf-20150523 && \
 	    ${SETENV} TEXMF=. ${LOCALBASE}/bin/tex -ini unpack.ins
 #	    ${RM} README *.log *.aux *.pdf *.dtx *.ins *.txt *.ist *.fdd *.err
 
@@ -62,7 +62,7 @@ do-install:
 		--no-same-permission --no-same-owner \
 		-f ${TEXMF_DISTFILE}
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/texmf/tex/latex/base
-	cd ${WRKDIR}/latex-base-20150101.2 && ${PAX} -rw . \
+	cd ${WRKDIR}/texlive-texmf-20150523 && ${PAX} -rw . \
 	    ${STAGEDIR}${PREFIX}/share/texmf/tex/latex/base
 
 post-install:

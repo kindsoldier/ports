@@ -33,7 +33,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}acme>=${ACME_VERSION}:python/py-acme@${PY_FL
 BUILD_DEPENDS= ${RUN_DEPENDS}
 
 # Actually 2.7,3.3+
-USES=		python:3.6
+USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes

@@ -261,5 +261,7 @@ post-install:
 	cd ${STAGEDIR}${PREFIX}/bin && ${LN} -sf  xetex xelatex
 	cd ${STAGEDIR}${PREFIX}/bin && ${LN} -sf  xetex xelollipop
 
+#gsed -i -e 's,"PRIu64"," PRIu64 ",' work/texlive-20150521-source/texk/web2c/pdftoepdf.cc
+
 .include <bsd.port.mk>
 #EOF
