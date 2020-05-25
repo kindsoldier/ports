@@ -1,0 +1,22 @@
+# Created by: jessekempf@gmail.com
+# $FreeBSD: head/devel/py-daemon/Makefile 472884 2018-06-20 17:05:41Z mat $
+
+PORTNAME=	daemon
+PORTVERSION=	2.0.6
+CATEGORIES=	devel python
+MASTER_SITES=	CHEESESHOP
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	python-daemon-${PORTVERSION}
+
+MAINTAINER=	jessekempf@gmail.com
+COMMENT=	Well-behaved daemon framework for Python
+
+#BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docutils>=0:python/py-docutils@${PY_FLAVOR} \
+#		${PYTHON_PKGNAMEPREFIX}lockfile>=0.10:python/py-lockfile@${PY_FLAVOR}
+#RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+NO_ARCH=	yes
+USE_PYTHON=	autoplist concurrent distutils
+USES=		python
+
+.include <bsd.port.mk>
