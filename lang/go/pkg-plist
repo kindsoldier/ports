@@ -1501,6 +1501,8 @@ lib/go/src/cmd/doc/dirs.go
 lib/go/src/cmd/doc/doc_test.go
 lib/go/src/cmd/doc/main.go
 lib/go/src/cmd/doc/pkg.go
+lib/go/src/cmd/doc/testdata/merge/aa.go
+lib/go/src/cmd/doc/testdata/merge/bb.go
 lib/go/src/cmd/doc/testdata/nested/empty/empty.go
 lib/go/src/cmd/doc/testdata/nested/ignore.go
 lib/go/src/cmd/doc/testdata/nested/nested/real.go
@@ -9551,6 +9553,7 @@ lib/go/VERSION
 @dir lib/go/src/cmd/cover/testdata
 @dir lib/go/src/cmd/cover
 @dir lib/go/src/cmd/dist
+@dir lib/go/src/cmd/doc/testdata/merge
 @dir lib/go/src/cmd/doc/testdata/nested/empty
 @dir lib/go/src/cmd/doc/testdata/nested/nested
 @dir lib/go/src/cmd/doc/testdata/nested
