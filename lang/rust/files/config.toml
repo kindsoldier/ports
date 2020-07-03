@@ -12,6 +12,8 @@ python = "%PYTHON_CMD%"
 # Do we want to build docs?
 docs = %DOCS%
 
+verbose = 2
+
 [install]
 
 # Install location.

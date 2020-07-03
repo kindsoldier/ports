@@ -2,7 +2,7 @@
 # $FreeBSD: head/lang/rust/Makefile 520446 2019-12-19 16:14:48Z tobik $
 
 PORTNAME=	rust
-PORTVERSION=	1.40.0
+PORTVERSION=	1.44.1
 CATEGORIES=	lang
 MASTER_SITES+=	https://static.rust-lang.org/dist/:src
 MASTER_SITES+=	https://static.rust-lang.org/dist/:rust_bootstrap
@@ -15,15 +15,15 @@ MASTER_SITES+=	https://github.com/llvm/llvm-project/releases/download/llvmorg-${
 DISTNAME=	${PORTNAME}c-${PORTVERSION}-src
 
 DISTFILES=	${NIGHTLY_SUBDIR}${DISTNAME}${EXTRACT_SUFX}:src
-DISTFILES+=	${_RUSTC_BOOTSTRAP}${BOOTSTRAPS_SUFFIX}${EXTRACT_SUFX}:rust_bootstrap
-DISTFILES+=	${_RUST_STD_BOOTSTRAP}${BOOTSTRAPS_SUFFIX}${EXTRACT_SUFX}:rust_bootstrap
-DISTFILES+=	${_CARGO_BOOTSTRAP}${BOOTSTRAPS_SUFFIX}${EXTRACT_SUFX}:cargo_bootstrap
+DISTFILES+=	${X_RUSTC_BOOTSTRAP}${BOOTSTRAPS_SUFFIX}${EXTRACT_SUFX}:rust_bootstrap
+DISTFILES+=	${X_RUST_STD_BOOTSTRAP}${BOOTSTRAPS_SUFFIX}${EXTRACT_SUFX}:rust_bootstrap
+DISTFILES+=	${X_CARGO_BOOTSTRAP}${BOOTSTRAPS_SUFFIX}${EXTRACT_SUFX}:cargo_bootstrap
 DISTFILES+=	${DISTFILES_${ARCH}}
 
 DISTFILES_armv6=	compiler-rt-${COMPILER_RT_VERSION}.src.tar.xz:compiler_rt
 DISTFILES_armv7=	compiler-rt-${COMPILER_RT_VERSION}.src.tar.xz:compiler_rt
 DIST_SUBDIR=	rust
-EXTRACT_ONLY=	${DISTFILES:N*\:*bootstrap:C/:.*//}
+#EXTRACT_ONLY=	${DISTFILES:N*\:*bootstrap:C/:.*//}
 
 MAINTAINER=	rust@FreeBSD.org
 COMMENT=	Language with a focus on memory safety and concurrency
@@ -36,28 +36,41 @@ LIB_DEPENDS+=	libcurl.so:net/libcurl
 LIB_DEPENDS+=	libgit2.so:devel/libgit2
 LIB_DEPENDS+=	libssh2.so:net/libssh2
 
+
+MAKE_ENV+=	LIBGIT2_SYS_USE_PKG_CONFIG=1 LIBSSH2_SYS_USE_PKG_CONFIG=1 \
+
+
 USES=		pkgconfig python:3.3+,build ssl tar:xz
 
 PLIST_FILES=	lib/rustlib/components lib/rustlib/rust-installer-version
 
 # See WRKSRC/src/stage0.txt for the date and version values.
-BOOTSTRAPS_DATE?=		2019-11-07
-RUST_BOOTSTRAP_VERSION?=	1.39.0
-CARGO_BOOTSTRAP_VERSION?=	0.40.0
+#BOOTSTRAPS_DATE?=		2019-11-07
+#RUST_BOOTSTRAP_VERSION?=	1.39.0
+#CARGO_BOOTSTRAP_VERSION?=	0.40.0
 COMPILER_RT_VERSION?=		9.0.0
+
+BOOTSTRAPS_DATE=		2020-05-07
+RUST_BOOTSTRAP_VERSION=		1.43.1
+CARGO_BOOTSTRAP_VERSION=	0.44.0
+
 
 BOOTSTRAPS_SUFFIX=		${BOOTSTRAPS_SUFFIX_${ARCH}}
 CARGO_VENDOR_DIR=		${WRKSRC}/vendor
 
 # Rust's target arch string might be different from *BSD arch strings
-_RUST_ARCH_amd64=	x86_64
-_RUST_ARCH_i386=	i686
-_RUST_TARGET=		${_RUST_ARCH_${ARCH}:U${ARCH}}-unknown-${OPSYS:tl}
-_LLVM_TARGET=		${ARCH:C/armv.*/ARM/:S/aarch64/AArch64/:S/powerpc64/PowerPC/}
+X_RUST_ARCH_amd64=	x86_64
+X_RUST_ARCH_i386=	i686
+X_RUST_ARCH=	${ARCH:S/amd64/x86_64/:S/i386/i686/}
+X_RUST_TARGET=		${X_RUST_ARCH_${ARCH}:U${ARCH}}-unknown-${OPSYS:tl}
+X_LLVM_TARGET=		${ARCH:C/armv.*/ARM/:S/aarch64/AArch64/:S/powerpc64/PowerPC/}
 
-_RUSTC_BOOTSTRAP=	${BOOTSTRAPS_DATE}/rustc-${RUST_BOOTSTRAP_VERSION}-${_RUST_TARGET}
-_RUST_STD_BOOTSTRAP=	${BOOTSTRAPS_DATE}/rust-std-${RUST_BOOTSTRAP_VERSION}-${_RUST_TARGET}
-_CARGO_BOOTSTRAP=	${BOOTSTRAPS_DATE}/cargo-${CARGO_BOOTSTRAP_VERSION}-${_RUST_TARGET}
+X_RUSTC_BOOTSTRAP=	${BOOTSTRAPS_DATE}/rustc-${RUST_BOOTSTRAP_VERSION}-${X_RUST_TARGET}
+X_RUST_STD_BOOTSTRAP=	${BOOTSTRAPS_DATE}/rust-std-${RUST_BOOTSTRAP_VERSION}-${X_RUST_TARGET}
+X_CARGO_BOOTSTRAP=	${BOOTSTRAPS_DATE}/cargo-${CARGO_BOOTSTRAP_VERSION}-${X_RUST_TARGET}
+
+X_RUST_TARGETS=		${_RUST_TARGET}
+
 
 .include <bsd.port.pre.mk>
 
@@ -65,116 +78,143 @@ _CARGO_BOOTSTRAP=	${BOOTSTRAPS_DATE}/cargo-${CARGO_BOOTSTRAP_VERSION}-${_RUST_TA
 EXTRA_PATCHES+=	${PATCHDIR}/${ARCH}${BOOTSTRAPS_SUFFIX}
 .endif
 
-X_PY_ENV+=	HOME="${WRKDIR}"
-X_PY_ENV+=	LIBGIT2_SYS_USE_PKG_CONFIG=1
-X_PY_ENV+=	LIBSSH2_SYS_USE_PKG_CONFIG=1
-X_PY_ENV+=	OPENSSL_DIR="${OPENSSLBASE}"
-X_PY_CMD=	${PYTHON_CMD} ${WRKSRC}/x.py
+MAKE_ENV+=	HOME="${WRKDIR}"
+MAKE_ENV+=	LIBGIT2_SYS_USE_PKG_CONFIG=1
+MAKE_ENV+=	LIBSSH2_SYS_USE_PKG_CONFIG=1
+MAKE_ENV+=	OPENSSL_DIR="${OPENSSLBASE}"
 
-post-extract:
-.if ${ARCH} == armv6 || ${ARCH} == armv7
-	${LN} -sf ${WRKDIR}/compiler-rt-${COMPILER_RT_VERSION}.src ${WRKSRC}/src/llvm-project/compiler-rt
-.endif
+BUILD_COMMAND=	${PYTHON_CMD} ${WRKSRC}/x.py
+
+#post-extract:
+#.if ${ARCH} == armv6 || ${ARCH} == armv7
+#	${LN} -sf ${WRKDIR}/compiler-rt-${COMPILER_RT_VERSION}.src ${WRKSRC}/src/llvm-project/compiler-rt
+#.endif
+
+post-patch:
+#	${REINPLACE_CMD} 's,gdb,${LOCALBASE}/bin/gdb,' ${WRKSRC}/src/etc/rust-gdb
+#	${ECHO_MSG} "Canonical bootstrap date and version before patching:"
+#	${GREP} -E '^(date|rustc|cargo)' ${WRKSRC}/src/stage0.txt
+## If we override the versions and date of the bootstraps (for instance
+## on aarch64 where we provide our own bootstraps), we need to update
+## places where they are recorded.
+#	${REINPLACE_CMD} -e 's,^date:.*,date: ${BOOTSTRAPS_DATE},' \
+#		-e 's,^rustc:.*,rustc: ${RUST_BOOTSTRAP_VERSION},' \
+#		-e 's,^cargo:.*,cargo: ${CARGO_BOOTSTRAP_VERSION},' \
+#		${WRKSRC}/src/stage0.txt
+#	${ECHO_MSG} "Bootstrap date and version after patching:"
+#	${GREP} -E '^(date|rustc|cargo)' ${WRKSRC}/src/stage0.txt
+# Disable vendor checksums
+#	${REINPLACE_CMD} 's,"files":{[^}]*},"files":{},' ${CARGO_VENDOR_DIR}/*/.cargo-checksum.json
+
 
 post-patch:
 	${REINPLACE_CMD} 's,gdb,${LOCALBASE}/bin/gdb,' ${WRKSRC}/src/etc/rust-gdb
-	${ECHO_MSG} "Canonical bootstrap date and version before patching:"
-	${GREP} -E '^(date|rustc|cargo)' ${WRKSRC}/src/stage0.txt
-# If we override the versions and date of the bootstraps (for instance
-# on aarch64 where we provide our own bootstraps), we need to update
-# places where they are recorded.
-	${REINPLACE_CMD} -e 's,^date:.*,date: ${BOOTSTRAPS_DATE},' \
-		-e 's,^rustc:.*,rustc: ${RUST_BOOTSTRAP_VERSION},' \
-		-e 's,^cargo:.*,cargo: ${CARGO_BOOTSTRAP_VERSION},' \
-		${WRKSRC}/src/stage0.txt
-	${ECHO_MSG} "Bootstrap date and version after patching:"
-	${GREP} -E '^(date|rustc|cargo)' ${WRKSRC}/src/stage0.txt
-# Disable vendor checksums
-	${REINPLACE_CMD} 's,"files":{[^}]*},"files":{},' ${CARGO_VENDOR_DIR}/*/.cargo-checksum.json
+	${REINPLACE_CMD} 's,"files":{[^}]*},"files":{},' \
+		${CARGO_VENDOR_DIR}/*/.cargo-checksum.json
 
-post-patch-SOURCES-off:
-# Mimic tools in config.toml with just src excluded
-	${REINPLACE_CMD} -e 's/config.tools.*"src".*/false;/' ${WRKSRC}/src/bootstrap/install.rs
+#CCACHE_VALUE=	false
+#
+#do-configure:
+#	${SED} -E \
+#		-e 's,%PREFIX%,${PREFIX},' \
+#		-e 's,%SYSCONFDIR%,${PREFIX}/etc,' \
+#		-e 's,%MANDIR%,${MANPREFIX}/man,' \
+#		-e 's,%PYTHON_CMD%,${PYTHON_CMD},' \
+#		-e 's,%CHANNEL%,${PKGNAMESUFFIX:Ustable:S/^-//},' \
+#		-e 's,%TARGET%,${X_RUST_TARGET},' \
+#		-e 's,%CCACHE%,${CCACHE_VALUE},' \
+#		-e 's,%CC%,${CC},' \
+#		-e 's,%CXX%,${CXX},' \
+#		-e 's,%DOCS%,false,' \
+#		< ${FILESDIR}/config.toml > ${WRKSRC}/config.toml
+#
+# no need to build a crosscompiler for these targets
+#.if ${ARCH} == aarch64 || ${ARCH} == armv6 || ${ARCH} == armv7 || ${ARCH} == powerpc64
+#	${REINPLACE_CMD} -e 's,^#targets =.*,targets = "${X_LLVM_TARGET}",' \
+#		-e 's,^#experimental-targets =.*,experimental-targets = "",' \
+#		${WRKSRC}/config.toml
+#.endif
+#	${REINPLACE_CMD} -e 's,%CC%,${CC},g' \
+#		${WRKSRC}/src/librustc_llvm/build.rs \
+#		${WRKSRC}/src/bootstrap/native.rs
 
-CCACHE_VALUE=	false
+bootstrap:
+	cd ${WRKDIR}/cargo-${CARGO_BOOTSTRAP_VERSION}-${X_RUST_ARCH}-unknown-${OPSYS:tl} && \
+	    ${SH} install.sh --disable-ldconfig --prefix=${WRKDIR}/bootstrap --verbose
+	cd ${WRKDIR}/rust-std-${RUST_BOOTSTRAP_VERSION}-${X_RUST_ARCH}-unknown-${OPSYS:tl} && \
+	    ${SH} install.sh --disable-ldconfig --prefix=${WRKDIR}/bootstrap --verbose
+	cd ${WRKDIR}/rustc-${RUST_BOOTSTRAP_VERSION}-${X_RUST_ARCH}-unknown-${OPSYS:tl} && \
+	    ${SH} install.sh --disable-ldconfig --prefix=${WRKDIR}/bootstrap --verbose
+
+
 
 do-configure:
-	${SED} -E \
-		-e 's,%PREFIX%,${PREFIX},' \
-		-e 's,%SYSCONFDIR%,${PREFIX}/etc,' \
-		-e 's,%MANDIR%,${MANPREFIX}/man,' \
-		-e 's,%PYTHON_CMD%,${PYTHON_CMD},' \
-		-e 's,%CHANNEL%,${PKGNAMESUFFIX:Ustable:S/^-//},' \
-		-e 's,%TARGET%,${_RUST_TARGET},' \
-		-e 's,%CCACHE%,${CCACHE_VALUE},' \
-		-e 's,%CC%,${CC},' \
-		-e 's,%CXX%,${CXX},' \
-		-e 's,%DOCS%,false,' \
-		< ${FILESDIR}/config.toml \
-		> ${WRKSRC}/config.toml
-# no need to build a crosscompiler for these targets
-.if ${ARCH} == aarch64 || ${ARCH} == armv6 || ${ARCH} == armv7 || ${ARCH} == powerpc64
-	${REINPLACE_CMD} -e 's,^#targets =.*,targets = "${_LLVM_TARGET}",' \
-		-e 's,^#experimental-targets =.*,experimental-targets = "",' \
-		${WRKSRC}/config.toml
-.endif
-	${REINPLACE_CMD} -e 's,%CC%,${CC},g' \
+# Check that the running kernel has COMPAT_FREEBSD11 required by lang/rust post-ino64
+#	${SETENV} CC="${CC}" OPSYS="${OPSYS}" \
+#		OSVERSION="${OSVERSION}" WRKDIR="${WRKDIR}" \
+#		${SH} ${SCRIPTSDIR}/rust-compat11-canary.sh
+.for component in cargo rust-std rustc
+	cd ${WRKDIR}/${component}-*-${OPSYS:tl} && \
+		${SH} install.sh --disable-ldconfig --prefix=${WRKDIR}/bootstrap \
+		--verbose
+.endfor
+	${ECHO_CMD} '[build]' > ${WRKSRC}/config.toml
+	${ECHO_CMD} 'vendor=true' >> ${WRKSRC}/config.toml
+	${ECHO_CMD} 'extended=true' >> ${WRKSRC}/config.toml
+	${ECHO_CMD} 'python="${PYTHON_CMD}"' >> ${WRKSRC}/config.toml
+	${ECHO_CMD} 'docs=false' >> ${WRKSRC}/config.toml
+	${ECHO_CMD} 'verbose=2' >> ${WRKSRC}/config.toml
+
+	${ECHO_CMD} 'target=[${X_RUST_TARGETS:@.target.@"${.target.}"@:ts,}]' >> ${WRKSRC}/config.toml
+
+	${ECHO_CMD} 'cargo="${WRKDIR}/bootstrap/bin/cargo"' >> ${WRKSRC}/config.toml
+	${ECHO_CMD} 'rustc="${WRKDIR}/bootstrap/bin/rustc"' >> ${WRKSRC}/config.toml
+
+	${ECHO_CMD} '[install]' >> ${WRKSRC}/config.toml
+	${ECHO_CMD} 'prefix="${PREFIX}"' >> ${WRKSRC}/config.toml
+	${ECHO_CMD} 'sysconfdir="${PREFIX}/etc"' >> ${WRKSRC}/config.toml
+
+	${ECHO_CMD} '[rust]' >> ${WRKSRC}/config.toml
+	${ECHO_CMD} 'channel="stable"' >> ${WRKSRC}/config.toml
+	${ECHO_CMD} 'default-linker="${CC}"' >> ${WRKSRC}/config.toml
+	${ECHO_CMD} 'verbose-tests=true' >> ${WRKSRC}/config.toml
+	${ECHO_CMD} 'lld=false' >> ${WRKSRC}/config.toml
+	${ECHO_CMD} '[llvm]' >> ${WRKSRC}/config.toml
+	${ECHO_CMD} 'ccache=false' >> ${WRKSRC}/config.toml
+#	${ECHO_CMD} 'ninja=true' >> ${WRKSRC}/config.toml
+
+.for target in ${X_RUST_TARGETS}
+	${ECHO_CMD} '[target.${target}]' >> ${WRKSRC}/config.toml
+	${ECHO_CMD} 'ar="${AR}"' >> ${WRKSRC}/config.toml
+	${ECHO_CMD} 'cc="${CC}"' >> ${WRKSRC}/config.toml
+	${ECHO_CMD} 'cxx="${CXX}"' >> ${WRKSRC}/config.toml
+	${ECHO_CMD} 'linker="${CC}"' >> ${WRKSRC}/config.toml
+.endfor
+	${ECHO_CMD} '[dist]' >> ${WRKSRC}/config.toml
+	${ECHO_CMD} 'src-tarball=false' >> ${WRKSRC}/config.toml
+	${REINPLACE_CMD} 's,%CC%,${CC},g' \
 		${WRKSRC}/src/librustc_llvm/build.rs \
 		${WRKSRC}/src/bootstrap/native.rs
 
+
 do-build:
-	cd ${WRKSRC} && ${SETENV} ${X_PY_ENV} \
-		${X_PY_CMD} build --verbose --config ./config.toml --jobs ${MAKE_JOBS_NUMBER}
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
+		${BUILD_COMMAND} build --verbose --config ./config.toml --jobs ${MAKE_JOBS_NUMBER}
 
 do-install:
 	cd ${WRKSRC} && \
-	${SETENV} ${X_PY_ENV} \
-		DESTDIR=${STAGEDIR} \
-	${X_PY_CMD} 'install' --verbose --config ./config.toml --jobs ${MAKE_JOBS_NUMBER}
+	${SETENV} ${MAKE_ENV} DESTDIR=${STAGEDIR} \
+		${BUILD_COMMAND} 'install' --verbose --config ./config.toml --jobs ${MAKE_JOBS_NUMBER}
 
-# In post-install, we use the manifests generated during Rust install
-# to in turn generate the PLIST. We do that, instead of the regular
-# `pkg-plist`, because several libraries have a computed filename based
-# on the absolute path of the source files. As it is user-specific, we
-# can't know their filename in advance.
-#
-# Both rustc and Cargo components install the same README.md and LICENSE
-# files. The install process backs up the first copy to install the
-# second. Thus here, we need to remove those backups. We also need to
-# dedup the entries in the generated PLIST, because both components'
-# manifests list them.
-#
-# We fix manpage entries in the generated manifests because Rust
-# installs them uncompressed but the Ports framework compresses them.
 post-install:
-	for f in ${STAGEDIR}${PREFIX}/lib/rustlib/manifest-*; do \
-	    ${REINPLACE_CMD} -i '' -E \
-	        -e 's|:${STAGEDIR}|:|' \
-	        -e 's|(man/man[1-9]/.*\.[0-9])|\1.gz|' \
-	        "$$f"; \
-	    ${ECHO_CMD} "$${f#${STAGEDIR}}" >> ${TMPPLIST}; \
-	    ${AWK} '\
-	        /^file:/ { \
-	            file=$$0; \
-	            sub(/^file:/, "", file); \
-	            print file; \
-	        } \
-	        /^dir:/ { \
-	            dir=$$0; \
-	            sub(/^dir:/, "", dir); \
-	            system("find ${STAGEDIR}" dir " -type f | ${SED} -E -e \"s|${STAGEDIR}||\""); \
-	        }' \
-	        "$$f" >> ${TMPPLIST}; \
-	done
-	${RM} -r ${STAGEDIR}${PREFIX}/share/doc/rust/*.old
-	${SORT} -u < ${TMPPLIST} > ${TMPPLIST}.uniq
-	${MV} ${TMPPLIST}.uniq ${TMPPLIST}
-	${RM} \
-	    ${STAGEDIR}${PREFIX}/lib/rustlib/install.log \
-	    ${STAGEDIR}${PREFIX}/lib/rustlib/uninstall.sh
-# FIXME: Static libraries in lib/rustlib/*/lib/*.rlib are not stripped,
-# but they contain non-object files which make strip(1) unhappy.
-	@${FIND} ${STAGEDIR}${PREFIX}/bin -exec ${FILE} -i {} + | ${AWK} -F: \
-		'/executable|sharedlib/ { print $$1 }' | ${XARGS} ${STRIP_CMD}
+	${GZIP_CMD} ${STAGEDIR}${PREFIX}/share/man/man1/*.1
+	${RM} ${STAGEDIR}${PREFIX}/lib/rustlib/etc/*.py
+	cd ${STAGEDIR} && ${RM} -rf share/doc/rust/
+	${RM} ${STAGEDIR}${PREFIX}/lib/rustlib/install.log
+	${RM} ${STAGEDIR}${PREFIX}/lib/rustlib/manifest-*
+	${RM} ${STAGEDIR}${PREFIX}/lib/rustlib/uninstall.sh
+
+	${FIND} ${STAGEDIR}${PREFIX} -not -type d | \
+		${SED} -E -e 's,^${STAGEDIR}${PREFIX}/,,' >> ${TMPPLIST}
 
 .include <bsd.port.post.mk>
