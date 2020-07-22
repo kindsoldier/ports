@@ -10,7 +10,7 @@ PKGNAMESUFFIX=	53
 MAINTAINER=	russ.haley@gmail.com
 COMMENT=	Powerful, efficient, lightweight, embeddable scripting language
 
-LUA_VER=	#53
+LUA_VER=	5.3
 USE_LDCONFIG=	yes
 
 MAKE_ARGS=	__MAKE_CONF=${NONEXISTENT}
@@ -19,7 +19,7 @@ LUA_PREFIX=	${PREFIX}
 
 LUA_CMD=	lua${LUA_VER}
 LUAC_CMD=	luac${LUA_VER}
-LUA_INCDIR=	${LUA_PREFIX}/include/lua${LUA_VER}
+LUA_INCDIR=	${LUA_PREFIX}/include/lua/${LUA_VER}
 LUA_LIBDIR=	${LUA_PREFIX}/lib
 
 LUA_LIB_STATIC=	liblua${LUA_VER}.a
@@ -37,8 +37,8 @@ ALL_TARGET=bsd
 #CPPFLAGS=	-DLUA_USE_READLINE
 #LIBS=		-ledit
 
-#CPPFLAGS+=	-DLUA_USE_READLINE
-#LIBS+=		-lreadline -L${LOCALBASE}/lib
+CPPFLAGS+=	-DLUA_USE_READLINE
+LIBS+=		-lreadline -L${LOCALBASE}/lib
 CFLAGS+=	-fPIC -I${LOCALBASE}/include
 #NO_STRICT_ALIASING=yes
 MAKE_ARGS+= CC="${CC}"
@@ -74,11 +74,15 @@ SUB_LIST+= SONAME=lua${LUA_VER}
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${LUA_LIB_SHARED}
-	${MV} ${STAGEDIR}${PREFIX}/man/man1/lua.1 \
-		${STAGEDIR}${PREFIX}/man/man1/${LUA_CMD}.1
-	${MV} ${STAGEDIR}${PREFIX}/man/man1/luac.1 \
-		${STAGEDIR}${PREFIX}/man/man1/${LUAC_CMD}.1
-	${INSTALL_DATA} ${WRKDIR}/${LUA_PC_FILE} \
-		${STAGEDIR}${PREFIX}/lib/pkgconfig/
+	${INSTALL_DATA} ${STAGEDIR}${PREFIX}/man/man1/lua.1 ${STAGEDIR}${PREFIX}/man/man1/${LUA_CMD}.1
+	${INSTALL_DATA} ${STAGEDIR}${PREFIX}/man/man1/luac.1 ${STAGEDIR}${PREFIX}/man/man1/${LUAC_CMD}.1
+	cd ${STAGEDIR}${PREFIX}/man/man1 && ${LN} -sf lua${LUA_VER}.1 lua.1
+	cd ${STAGEDIR}${PREFIX}/man/man1 && ${LN} -sf luac${LUA_VER}.1 luac.1
+	${MKDIR} -p ${STAGEDIR}${PREFIX}/lib/pkgconfig
+	${INSTALL_DATA} ${WRKDIR}/${LUA_PC_FILE} ${STAGEDIR}${PREFIX}/lib/pkgconfig/
+	cd ${STAGEDIR}${PREFIX}/lib && ${LN} -sf liblua${LUA_VER}.so.0 liblua${LUA_VER}.so
+	cd ${STAGEDIR}${PREFIX}/bin && ${LN} -sf lua${LUA_VER} lua
+	cd ${STAGEDIR}${PREFIX}/bin && ${LN} -sf luac${LUA_VER} luac
+
 
 .include <bsd.port.mk>

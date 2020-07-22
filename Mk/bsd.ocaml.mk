@@ -64,7 +64,7 @@ OCAML_SITELIBDIR?=	${OCAML_LIBDIR}/site-lib
 #
 # OCaml compiler port dependency
 #
-OCAMLC_PORT?=		lang/ocaml
+OCAMLC_PORT?=		lang/ocaml410
 OCAMLC_DEPEND?=		${OCAMLC}:${OCAMLC_PORT}
 
 #

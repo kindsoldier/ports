@@ -2,7 +2,7 @@
 # $FreeBSD: head/net-im/telegram-purple/Makefile 517179 2019-11-10 05:58:18Z linimon $
 
 PORTNAME=	telegram-purple
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-im
 
@@ -13,12 +13,16 @@ BROKEN_armv6=		fails to link: undefined reference to 'backtrace'
 BROKEN_powerpc64=	fails to compile: Assertion failed: (get_int () == TLS_SCHEMA_V2), function parse_tlo_file, file generate.c, line 2832.
 BROKEN_sparc64=		fails to compile: assertion fails
 
-LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
-		libwebp.so:graphics/webp \
-		libpurple.so:net-im/libpurple \
-		libpng.so:graphics/png
+LIB_DEPENDS+= libffi.so:devel/libffi
+LIB_DEPENDS+= libgcrypt.so:crypto/libgcrypt
+LIB_DEPENDS+= libglib.so:devel/libglib
+LIB_DEPENDS+= libpurple.so:xapp/pidgin
+LIB_DEPENDS+= libxml2.so:text/libxml2
 
-USES=		gettext gmake pkgconfig
+LIB_DEPENDS+= libwebp.so:graph/libwebp
+LIB_DEPENDS+= libpng16.so:graph/libpng
+
+USES=		gmake pkgconfig
 
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -26,7 +30,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 USE_GITHUB=	yes
 GH_ACCOUNT=	majn
 GH_PROJECT=	tgl:tgl
-GH_TAGNAME?=	bec2e6d:tgl
+#GH_TAGNAME?=	bec2e6d:tgl
+GH_TAGNAME?=	cd7e3d7:tgl
 GH_SUBDIR=	tgl:tgl
 
 post-install:

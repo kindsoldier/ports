@@ -1,15 +1,12 @@
 # $FreeBSD: head/sysutils/vm-bhyve/Makefile 420337 2016-08-17 11:49:08Z amdmi3 $
 
 PORTNAME=	vm-bhyve
-PORTVERSION=	1.4.0
-DISTVERSIONPREFIX=v
+PORTVERSION=	1.4.2
+#DISTVERSIONPREFIX=v
 CATEGORIES=	sysutils
 
 MAINTAINER=	churchers@gmail.com
 COMMENT=	Management system for bhyve virtual machines
-
-#OPTIONS_DEFINE=	EXAMPLES
-#EXAMPLES_DESC=	Install example guest templates
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	churchers
