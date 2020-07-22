@@ -1,0 +1,43 @@
+lib/lua/5.3/posix/ctype.so
+lib/lua/5.3/posix/dirent.so
+lib/lua/5.3/posix/errno.so
+lib/lua/5.3/posix/fcntl.so
+lib/lua/5.3/posix/fnmatch.so
+lib/lua/5.3/posix/glob.so
+lib/lua/5.3/posix/grp.so
+lib/lua/5.3/posix/libgen.so
+lib/lua/5.3/posix/poll.so
+lib/lua/5.3/posix/pwd.so
+lib/lua/5.3/posix/sched.so
+lib/lua/5.3/posix/signal.so
+lib/lua/5.3/posix/stdio.so
+lib/lua/5.3/posix/stdlib.so
+lib/lua/5.3/posix/sys/msg.so
+lib/lua/5.3/posix/sys/resource.so
+lib/lua/5.3/posix/sys/socket.so
+lib/lua/5.3/posix/sys/stat.so
+lib/lua/5.3/posix/sys/statvfs.so
+lib/lua/5.3/posix/sys/time.so
+lib/lua/5.3/posix/sys/times.so
+lib/lua/5.3/posix/sys/utsname.so
+lib/lua/5.3/posix/sys/wait.so
+lib/lua/5.3/posix/syslog.so
+lib/lua/5.3/posix/termio.so
+lib/lua/5.3/posix/time.so
+lib/lua/5.3/posix/unistd.so
+lib/lua/5.3/posix/utime.so
+share/lua/5.3/posix/_base.lua
+share/lua/5.3/posix/_strict.lua
+share/lua/5.3/posix/compat.lua
+share/lua/5.3/posix/deprecated.lua
+share/lua/5.3/posix/init.lua
+share/lua/5.3/posix/sys.lua
+share/lua/5.3/posix/util.lua
+share/lua/5.3/posix/version.lua
+@dir lib/lua/5.3/posix/sys
+@dir lib/lua/5.3/posix
+@dir lib/lua/5.3
+@dir lib/lua
+@dir share/lua/5.3/posix
+@dir share/lua/5.3
+@dir share/lua

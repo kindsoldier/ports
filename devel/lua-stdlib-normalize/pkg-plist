@@ -1,0 +1,9 @@
+share/lua/5.3/std/normalize/_base.lua
+share/lua/5.3/std/normalize/_strict.lua
+share/lua/5.3/std/normalize/_typecheck.lua
+share/lua/5.3/std/normalize/init.lua
+share/lua/5.3/std/normalize/version.lua
+@dir share/lua/5.3/std/normalize
+@dir share/lua/5.3/std
+@dir share/lua/5.3
+@dir share/lua

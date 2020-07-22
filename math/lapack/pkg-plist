@@ -1,0 +1,5 @@
+lib/libblas.a
+lib/liblapack.a
+lib/libtmglib.a
+lib/pkgconfig/blas.pc
+lib/pkgconfig/lapack.pc

@@ -1,0 +1,20 @@
+lib/lua/5.3/mime/core.so
+lib/lua/5.3/socket/core.so
+lib/lua/5.3/socket/serial.so
+lib/lua/5.3/socket/unix.so
+share/lua/5.3/ltn12.lua
+share/lua/5.3/mime.lua
+share/lua/5.3/socket.lua
+share/lua/5.3/socket/ftp.lua
+share/lua/5.3/socket/headers.lua
+share/lua/5.3/socket/http.lua
+share/lua/5.3/socket/smtp.lua
+share/lua/5.3/socket/tp.lua
+share/lua/5.3/socket/url.lua
+@dir lib/lua/5.3/mime
+@dir lib/lua/5.3/socket
+@dir lib/lua/5.3
+@dir lib/lua
+@dir share/lua/5.3/socket
+@dir share/lua/5.3
+@dir share/lua
