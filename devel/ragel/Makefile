@@ -2,7 +2,7 @@
 # $FreeBSD: head/devel/ragel/Makefile 412346 2016-04-01 14:00:51Z mat $
 
 PORTNAME=	ragel
-PORTVERSION=	6.9
+PORTVERSION=	6.10
 CATEGORIES=	devel
 MASTER_SITES=	http://www.colm.net/files/${PORTNAME}/
 

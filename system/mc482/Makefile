@@ -2,7 +2,7 @@
 # $Id$
 #
 PORTNAME=	mc
-PORTVERSION=	4.8.24
+PORTVERSION=	4.8.25
 CATEGORIES=	misc shells
 MASTER_SITES+=	http://ftp.midnight-commander.org/
 MASTER_SITES+=	http://ftp.osuosl.org/pub/midnightcommander/
