@@ -2,7 +2,7 @@
 # $Id$
 #
 PORTNAME=	git
-DISTVERSION=	2.24.1
+DISTVERSION=	2.28.0
 CATEGORIES=	devel
 MASTER_SITES=	KERNEL_ORG/software/scm/git
 DISTFILES+=	${DISTNAME}${EXTRACT_SUFX}
@@ -25,6 +25,21 @@ CPPFLAGS+=	-isystem${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ENV+=	V=1
 
+#SHEBANG_FILES+=	*.perl */*.perl */*/*.perl */*.pl */*/*.pl */*/*/*.pl
+#SHEBANG_FILES+=	t/*/*/pre t/*/*/post t/Git-SVN/Utils/*.t
+#SHEBANG_FILES+=	git-p4.py
+#SHEBANG_FILES+=	contrib/hg-to-git/hg-to-git.py
+#SHEBANG_FILES+=	contrib/hooks/update-paranoid
+#SHEBANG_FILES+=	contrib/hooks/multimail/post-receive.example
+#SHEBANG_FILES+=	contrib/hooks/multimail/git_multimail.py
+#SHEBANG_FILES+=	contrib/hooks/multimail/migrate-mailhook-config
+#SHEBANG_FILES+=	contrib/fast-import/import-zips.py
+#SHEBANG_FILES+=	contrib/remote-helpers/git-remote-bzr
+#SHEBANG_FILES+=	contrib/remote-helpers/git-remote-hg
+#SHEBANG_FILES+=	contrib/credential/netrc/git-credential-netrc
+#SHEBANG_FILES+=	contrib/buildsystems/generate contrib/contacts/git-contacts
+#SHEBANG_FILES+=	contrib/svn-fe/svnrdump_sim.py
+
 SHEBANG_FILES+=	*.perl */*.perl */*/*.perl */*.pl */*/*.pl */*/*/*.pl
 SHEBANG_FILES+=	t/*/*/pre t/*/*/post t/Git-SVN/Utils/*.t
 SHEBANG_FILES+=	git-p4.py
@@ -36,9 +51,11 @@ SHEBANG_FILES+=	contrib/hooks/multimail/migrate-mailhook-config
 SHEBANG_FILES+=	contrib/fast-import/import-zips.py
 SHEBANG_FILES+=	contrib/remote-helpers/git-remote-bzr
 SHEBANG_FILES+=	contrib/remote-helpers/git-remote-hg
-SHEBANG_FILES+=	contrib/credential/netrc/git-credential-netrc
+SHEBANG_FILES+=	contrib/credential/netrc/git-credential-netrc.perl
 SHEBANG_FILES+=	contrib/buildsystems/generate contrib/contacts/git-contacts
 SHEBANG_FILES+=	contrib/svn-fe/svnrdump_sim.py
+SHEBANG_FILES+=	templates/hooks--fsmonitor-watchman.sample
+
 
 
 CONFIGURE_ARGS+= --enable-pthreads=-pthread ac_cv_header_libcharset_h=no
