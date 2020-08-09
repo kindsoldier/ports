@@ -1,0 +1,3 @@
+include/http_parser.h
+lib/libhttp_parser.so
+lib/libhttp_parser.so.2
