@@ -9,14 +9,25 @@ MASTER_SITES=	GNOME
 MAINTAINER=	onborodin@gmail.com
 COMMENT=	GTK Tag editor for audio files
 
-#LIB_DEPENDS+= glib.2:${PORTSDIR}/devel/libglib
-#LIB_DEPENDS+= gtk-x11.2:${PORTSDIR}/gnome/libgtk2
-#LIB_DEPENDS+= FLAC.10:${PORTSDIR}/media/libflac
-#LIB_DEPENDS+= id3tag.0:${PORTSDIR}/media/libid3tag
-#LIB_DEPENDS+= ogg.8:${PORTSDIR}/media/libogg
-#LIB_DEPENDS+= speex.6:${PORTSDIR}/media/libspeex
-#LIB_DEPENDS+= vorbis.4:${PORTSDIR}/media/libvorbis
-#LIB_DEPENDS+= wavpack.2:${PORTSDIR}/media/libwavpack
+LIB_DEPENDS+= libFLAC.so:media/libflac
+LIB_DEPENDS+= libid3.so:media/libid3lib
+LIB_DEPENDS+= libid3tag.so:media/libid3tag
+LIB_DEPENDS+= libogg.so:media/libogg
+LIB_DEPENDS+= libspeex.so:media/libspeex
+LIB_DEPENDS+= libtag.so:media/libtag
+LIB_DEPENDS+= libvorbis.so:media/libvorbis
+LIB_DEPENDS+= libvorbisfile.so:media/libvorbis
+LIB_DEPENDS+= libwavpack.so:media/libwavpack
+
+LIB_DEPENDS+= libatk.so:gnome/libatk
+LIB_DEPENDS+= libcairo.so:gnome/libcairo
+LIB_DEPENDS+= libgdk-pixbuf.so:gnome/libgdk-pixbuf
+LIB_DEPENDS+= libgdk-x11.so:gnome/libgtk2
+LIB_DEPENDS+= libgtk-x11.so:gnome/libgtk2
+LIB_DEPENDS+= libharfbuzz.so:gnome/libharfbuzz
+LIB_DEPENDS+= libpango.so:gnome/libpango
+LIB_DEPENDS+= libpangocairo.so:gnome/libpango
+LIB_DEPENDS+= libpangoft2.so:gnome/libpango
 
 
 USES+= gmake tar:xz

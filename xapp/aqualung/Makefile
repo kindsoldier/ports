@@ -59,7 +59,7 @@ CONFIGURE_ARGS+= --with-vorbisenc
 CONFIGURE_ARGS+= --with-wavpack
 
 CONFIGURE_ARGS+= --without-alsa
-CONFIGURE_ARGS+= --without-cdda
+CONFIGURE_ARGS+= --with-cdda
 CONFIGURE_ARGS+= --without-cddb
 CONFIGURE_ARGS+= --without-ifp
 CONFIGURE_ARGS+= --without-jack
