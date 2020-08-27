@@ -1,0 +1,411 @@
+bin/activemq
+bin/activemq-diag
+share/activemq/bin/activemq
+share/activemq/bin/activemq-diag
+share/activemq/bin/activemq.jar
+share/activemq/bin/wrapper.jar
+share/activemq/conf
+share/activemq/data
+share/activemq/lib/activemq-broker-5.15.7.jar
+share/activemq/lib/activemq-client-5.15.7.jar
+share/activemq/lib/activemq-console-5.15.7.jar
+share/activemq/lib/activemq-jaas-5.15.7.jar
+share/activemq/lib/activemq-kahadb-store-5.15.7.jar
+share/activemq/lib/activemq-openwire-legacy-5.15.7.jar
+share/activemq/lib/activemq-protobuf-1.1.jar
+share/activemq/lib/activemq-rar.txt
+share/activemq/lib/activemq-spring-5.15.7.jar
+share/activemq/lib/activemq-web-5.15.7.jar
+share/activemq/lib/camel/activemq-camel-5.15.7.jar
+share/activemq/lib/camel/camel-core-2.19.5.jar
+share/activemq/lib/camel/camel-jms-2.19.5.jar
+share/activemq/lib/camel/camel-spring-2.19.5.jar
+share/activemq/lib/extra/mqtt-client-1.14.jar
+share/activemq/lib/geronimo-j2ee-management_1.1_spec-1.0.1.jar
+share/activemq/lib/geronimo-jms_1.1_spec-1.1.1.jar
+share/activemq/lib/geronimo-jta_1.0.1B_spec-1.0.1.jar
+share/activemq/lib/hawtbuf-1.11.jar
+share/activemq/lib/jcl-over-slf4j-1.7.25.jar
+share/activemq/lib/optional/activeio-core-3.1.4.jar
+share/activemq/lib/optional/activemq-amqp-5.15.7.jar
+share/activemq/lib/optional/activemq-http-5.15.7.jar
+share/activemq/lib/optional/activemq-jdbc-store-5.15.7.jar
+share/activemq/lib/optional/activemq-jms-pool-5.15.7.jar
+share/activemq/lib/optional/activemq-leveldb-store-5.15.7.jar
+share/activemq/lib/optional/activemq-log4j-appender-5.15.7.jar
+share/activemq/lib/optional/activemq-mqtt-5.15.7.jar
+share/activemq/lib/optional/activemq-partition-5.15.7.jar
+share/activemq/lib/optional/activemq-pool-5.15.7.jar
+share/activemq/lib/optional/activemq-runtime-config-5.15.7.jar
+share/activemq/lib/optional/activemq-shiro-5.15.7.jar
+share/activemq/lib/optional/activemq-stomp-5.15.7.jar
+share/activemq/lib/optional/commons-beanutils-1.9.3.jar
+share/activemq/lib/optional/commons-codec-1.10.jar
+share/activemq/lib/optional/commons-collections-3.2.2.jar
+share/activemq/lib/optional/commons-dbcp2-2.1.1.jar
+share/activemq/lib/optional/commons-lang-2.6.jar
+share/activemq/lib/optional/commons-net-3.6.jar
+share/activemq/lib/optional/commons-pool2-2.4.2.jar
+share/activemq/lib/optional/geronimo-j2ee-connector_1.5_spec-2.0.0.jar
+share/activemq/lib/optional/guava-18.0.jar
+share/activemq/lib/optional/hawtbuf-proto-1.11.jar
+share/activemq/lib/optional/hawtdispatch-1.22.jar
+share/activemq/lib/optional/hawtdispatch-scala-2.11-1.22.jar
+share/activemq/lib/optional/hawtdispatch-transport-1.22.jar
+share/activemq/lib/optional/hawtjni-runtime-1.9.jar
+share/activemq/lib/optional/httpclient-4.5.6.jar
+share/activemq/lib/optional/httpcore-4.4.10.jar
+share/activemq/lib/optional/insight-log-core-1.2.0.Beta4.jar
+share/activemq/lib/optional/insight-log4j-1.2.0.Beta4.jar
+share/activemq/lib/optional/jackson-annotations-2.9.6.jar
+share/activemq/lib/optional/jackson-core-2.9.6.jar
+share/activemq/lib/optional/jackson-databind-2.9.6.jar
+share/activemq/lib/optional/jasypt-1.9.2.jar
+share/activemq/lib/optional/jasypt-spring31-1.9.2.jar
+share/activemq/lib/optional/jaxb2-basics-runtime-0.6.4.jar
+share/activemq/lib/optional/jettison-1.3.8.jar
+share/activemq/lib/optional/jmdns-3.4.1.jar
+share/activemq/lib/optional/leveldb-0.9.jar
+share/activemq/lib/optional/leveldb-api-0.9.jar
+share/activemq/lib/optional/leveldbjni-1.8.jar
+share/activemq/lib/optional/log4j-1.2.17.jar
+share/activemq/lib/optional/org.apache.servicemix.bundles.josql-1.5_5.jar
+share/activemq/lib/optional/org.linkedin.util-core-1.4.0.jar
+share/activemq/lib/optional/org.linkedin.zookeeper-impl-1.4.0.jar
+share/activemq/lib/optional/proton-j-0.29.0.jar
+share/activemq/lib/optional/scala-library-2.11.0.jar
+share/activemq/lib/optional/shiro-core-1.2.6.jar
+share/activemq/lib/optional/shiro-spring-1.2.6.jar
+share/activemq/lib/optional/slf4j-log4j12-1.7.25.jar
+share/activemq/lib/optional/snappy-0.2.jar
+share/activemq/lib/optional/snappy-java-1.1.2.jar
+share/activemq/lib/optional/spring-aop-4.3.18.RELEASE.jar
+share/activemq/lib/optional/spring-beans-4.3.18.RELEASE.jar
+share/activemq/lib/optional/spring-context-4.3.18.RELEASE.jar
+share/activemq/lib/optional/spring-core-4.3.18.RELEASE.jar
+share/activemq/lib/optional/spring-expression-4.3.11.RELEASE.jar
+share/activemq/lib/optional/spring-jms-4.3.18.RELEASE.jar
+share/activemq/lib/optional/spring-oxm-4.3.18.RELEASE.jar
+share/activemq/lib/optional/spring-tx-4.3.18.RELEASE.jar
+share/activemq/lib/optional/velocity-1.7.jar
+share/activemq/lib/optional/xbean-spring-4.2.jar
+share/activemq/lib/optional/xpp3-1.1.4c.jar
+share/activemq/lib/optional/xstream-1.4.10.jar
+share/activemq/lib/optional/zookeeper-3.4.6.jar
+share/activemq/lib/slf4j-api-1.7.25.jar
+share/activemq/lib/web/apache-el-8.0.33.jar
+share/activemq/lib/web/apache-jsp-8.0.33.jar
+share/activemq/lib/web/apache-jsp-9.2.25.v20180606.jar
+share/activemq/lib/web/apache-jstl-9.2.25.v20180606.jar
+share/activemq/lib/web/asm-5.0.4.jar
+share/activemq/lib/web/geronimo-annotation_1.0_spec-1.1.1.jar
+share/activemq/lib/web/jdom-1.0.jar
+share/activemq/lib/web/jetty-all-9.2.25.v20180606.jar
+share/activemq/lib/web/jolokia-core-1.6.0.jar
+share/activemq/lib/web/json-simple-1.1.1.jar
+share/activemq/lib/web/org.eclipse.jdt.core-3.8.2.v20130121.jar
+share/activemq/lib/web/rome-1.0.jar
+share/activemq/lib/web/spring-web-4.3.18.RELEASE.jar
+share/activemq/lib/web/spring-webmvc-4.3.18.RELEASE.jar
+share/activemq/lib/web/taglibs-standard-impl-1.2.5.jar
+share/activemq/lib/web/taglibs-standard-spec-1.2.5.jar
+share/activemq/lib/web/tomcat-servlet-api-8.0.53.jar
+share/activemq/lib/web/tomcat-websocket-api-8.0.53.jar
+
+share/activemq/lib/postgresql-42.2.14.jar
+
+share/activemq/webapps-demo/demo/chat.css
+share/activemq/webapps-demo/demo/chat.html
+share/activemq/webapps-demo/demo/images/activemq-logo.png
+share/activemq/webapps-demo/demo/images/asf-logo.png
+share/activemq/webapps-demo/demo/images/big-bullet.png
+share/activemq/webapps-demo/demo/images/black-footer-bottom.png
+share/activemq/webapps-demo/demo/images/black-footer-left.png
+share/activemq/webapps-demo/demo/images/black-footer-right.png
+share/activemq/webapps-demo/demo/images/bottom-red-bar.png
+share/activemq/webapps-demo/demo/images/checker-bg.png
+share/activemq/webapps-demo/demo/images/content-left.png
+share/activemq/webapps-demo/demo/images/content-right.png
+share/activemq/webapps-demo/demo/images/feed_atom.png
+share/activemq/webapps-demo/demo/images/feed_rss.png
+share/activemq/webapps-demo/demo/images/left-box-bottom.png
+share/activemq/webapps-demo/demo/images/left-box-right.png
+share/activemq/webapps-demo/demo/images/left-box-top.png
+share/activemq/webapps-demo/demo/images/oval-arrow.png
+share/activemq/webapps-demo/demo/images/right-box-bottom.png
+share/activemq/webapps-demo/demo/images/right-box-left.png
+share/activemq/webapps-demo/demo/images/right-box-top.png
+share/activemq/webapps-demo/demo/images/small-bullet-gray.png
+share/activemq/webapps-demo/demo/images/small-bullet-red.png
+share/activemq/webapps-demo/demo/images/spacer.gif
+share/activemq/webapps-demo/demo/images/top-red-bar.png
+share/activemq/webapps-demo/demo/images/white-header-left.png
+share/activemq/webapps-demo/demo/images/white-header-right.png
+share/activemq/webapps-demo/demo/images/white-header-top.png
+share/activemq/webapps-demo/demo/index.html
+share/activemq/webapps-demo/demo/js/amq_dojo_adapter.js
+share/activemq/webapps-demo/demo/js/amq_jquery_adapter.js
+share/activemq/webapps-demo/demo/js/amq_prototype_adapter.js
+share/activemq/webapps-demo/demo/js/amq.js
+share/activemq/webapps-demo/demo/js/chat.js
+share/activemq/webapps-demo/demo/js/common.js
+share/activemq/webapps-demo/demo/js/css.js
+share/activemq/webapps-demo/demo/js/dojo.js
+share/activemq/webapps-demo/demo/js/jquery-1.4.2.min.js
+share/activemq/webapps-demo/demo/js/mochi/__package__.js
+share/activemq/webapps-demo/demo/js/mochi/MochiKit.js
+share/activemq/webapps-demo/demo/js/plotkit/Base.js
+share/activemq/webapps-demo/demo/js/plotkit/Canvas.js
+share/activemq/webapps-demo/demo/js/plotkit/dummy.svg
+share/activemq/webapps-demo/demo/js/plotkit/iecanvas.htc
+share/activemq/webapps-demo/demo/js/plotkit/Layout.js
+share/activemq/webapps-demo/demo/js/plotkit/SVG.js
+share/activemq/webapps-demo/demo/js/plotkit/SweetCanvas.js
+share/activemq/webapps-demo/demo/js/plotkit/SweetSVG.js
+share/activemq/webapps-demo/demo/js/prettify.js
+share/activemq/webapps-demo/demo/js/prototype.js
+share/activemq/webapps-demo/demo/js/standardista-table-sorting.js
+share/activemq/webapps-demo/demo/META-INF/LICENSE
+share/activemq/webapps-demo/demo/META-INF/NOTICE
+share/activemq/webapps-demo/demo/mqtt/chat.css
+share/activemq/webapps-demo/demo/mqtt/chat.js
+share/activemq/webapps-demo/demo/mqtt/index.html
+share/activemq/webapps-demo/demo/mqtt/mqttws31.js
+share/activemq/webapps-demo/demo/portfolio/portfolio.html
+share/activemq/webapps-demo/demo/portfolio/portfolio.js
+share/activemq/webapps-demo/demo/send.html
+share/activemq/webapps-demo/demo/style.css
+share/activemq/webapps-demo/demo/styles/prettify.css
+share/activemq/webapps-demo/demo/styles/site.css
+share/activemq/webapps-demo/demo/styles/sorttable.css
+share/activemq/webapps-demo/demo/styles/type-settings.css
+share/activemq/webapps-demo/demo/test/amq_test.html
+share/activemq/webapps-demo/demo/test/assets/jsunittest.js
+share/activemq/webapps-demo/demo/test/assets/README
+share/activemq/webapps-demo/demo/test/assets/unittest.css
+share/activemq/webapps-demo/demo/WEB-INF/web.xml
+share/activemq/webapps-demo/demo/websocket/chat.css
+share/activemq/webapps-demo/demo/websocket/chat.js
+share/activemq/webapps-demo/demo/websocket/index.html
+share/activemq/webapps-demo/demo/websocket/stomp.js
+share/activemq/webapps/admin/403.html
+share/activemq/webapps/admin/404.html
+share/activemq/webapps/admin/500.html
+share/activemq/webapps/admin/browse.jsp
+share/activemq/webapps/admin/connection.jsp
+share/activemq/webapps/admin/connections.jsp
+share/activemq/webapps/admin/decorators/footer.jsp
+share/activemq/webapps/admin/decorators/head.jsp
+share/activemq/webapps/admin/decorators/header.jsp
+share/activemq/webapps/admin/graph.jsp
+share/activemq/webapps/admin/images/activemq-logo.png
+share/activemq/webapps/admin/images/asf-logo.png
+share/activemq/webapps/admin/images/big-bullet.png
+share/activemq/webapps/admin/images/black-footer-bottom.png
+share/activemq/webapps/admin/images/black-footer-left.png
+share/activemq/webapps/admin/images/black-footer-right.png
+share/activemq/webapps/admin/images/bottom-red-bar.png
+share/activemq/webapps/admin/images/checker-bg.png
+share/activemq/webapps/admin/images/content-left.png
+share/activemq/webapps/admin/images/content-right.png
+share/activemq/webapps/admin/images/feed_atom.png
+share/activemq/webapps/admin/images/feed_rss.png
+share/activemq/webapps/admin/images/left-box-bottom.png
+share/activemq/webapps/admin/images/left-box-right.png
+share/activemq/webapps/admin/images/left-box-top.png
+share/activemq/webapps/admin/images/oval-arrow.png
+share/activemq/webapps/admin/images/right-box-bottom.png
+share/activemq/webapps/admin/images/right-box-left.png
+share/activemq/webapps/admin/images/right-box-top.png
+share/activemq/webapps/admin/images/small-bullet-gray.png
+share/activemq/webapps/admin/images/small-bullet-red.png
+share/activemq/webapps/admin/images/spacer.gif
+share/activemq/webapps/admin/images/top-red-bar.png
+share/activemq/webapps/admin/images/white-header-left.png
+share/activemq/webapps/admin/images/white-header-right.png
+share/activemq/webapps/admin/images/white-header-top.png
+share/activemq/webapps/admin/index.jsp
+share/activemq/webapps/admin/js/common.js
+share/activemq/webapps/admin/js/css.js
+share/activemq/webapps/admin/js/mochi/__package__.js
+share/activemq/webapps/admin/js/mochi/MochiKit.js
+share/activemq/webapps/admin/js/plotkit/Base.js
+share/activemq/webapps/admin/js/plotkit/Canvas.js
+share/activemq/webapps/admin/js/plotkit/dummy.svg
+share/activemq/webapps/admin/js/plotkit/iecanvas.htc
+share/activemq/webapps/admin/js/plotkit/Layout.js
+share/activemq/webapps/admin/js/plotkit/SVG.js
+share/activemq/webapps/admin/js/plotkit/SweetCanvas.js
+share/activemq/webapps/admin/js/plotkit/SweetSVG.js
+share/activemq/webapps/admin/js/prettify.js
+share/activemq/webapps/admin/js/standardista-table-sorting.js
+share/activemq/webapps/admin/login.html
+share/activemq/webapps/admin/message.jsp
+share/activemq/webapps/admin/META-INF/LICENSE
+share/activemq/webapps/admin/META-INF/NOTICE
+share/activemq/webapps/admin/network.jsp
+share/activemq/webapps/admin/queueConsumers.jsp
+share/activemq/webapps/admin/queueGraph.jsp
+share/activemq/webapps/admin/queueProducers.jsp
+share/activemq/webapps/admin/queues.jsp
+share/activemq/webapps/admin/scheduled.jsp
+share/activemq/webapps/admin/send.jsp
+share/activemq/webapps/admin/slave.jsp
+share/activemq/webapps/admin/styles/prettify.css
+share/activemq/webapps/admin/styles/site.css
+share/activemq/webapps/admin/styles/sorttable.css
+share/activemq/webapps/admin/styles/type-settings.css
+share/activemq/webapps/admin/subscribers.jsp
+share/activemq/webapps/admin/test/dummy.jsp
+share/activemq/webapps/admin/test/index.jsp
+share/activemq/webapps/admin/test/systemProperties.jsp
+share/activemq/webapps/admin/topicProducers.jsp
+share/activemq/webapps/admin/topics.jsp
+share/activemq/webapps/admin/topicSubscribers.jsp
+share/activemq/webapps/admin/WEB-INF/classes/org/apache/activemq/web/config/OsgiConfiguration.class
+share/activemq/webapps/admin/WEB-INF/classes/org/apache/activemq/web/controller/CopyMessage.class
+share/activemq/webapps/admin/WEB-INF/classes/org/apache/activemq/web/controller/CreateDestination.class
+share/activemq/webapps/admin/WEB-INF/classes/org/apache/activemq/web/controller/CreateSubscriber.class
+share/activemq/webapps/admin/WEB-INF/classes/org/apache/activemq/web/controller/DeleteDestination.class
+share/activemq/webapps/admin/WEB-INF/classes/org/apache/activemq/web/controller/DeleteJob.class
+share/activemq/webapps/admin/WEB-INF/classes/org/apache/activemq/web/controller/DeleteMessage.class
+share/activemq/webapps/admin/WEB-INF/classes/org/apache/activemq/web/controller/DeleteSubscriber.class
+share/activemq/webapps/admin/WEB-INF/classes/org/apache/activemq/web/controller/MoveMessage.class
+share/activemq/webapps/admin/WEB-INF/classes/org/apache/activemq/web/controller/PurgeDestination.class
+share/activemq/webapps/admin/WEB-INF/classes/org/apache/activemq/web/controller/RetryMessage.class
+share/activemq/webapps/admin/WEB-INF/classes/org/apache/activemq/web/controller/SendMessage.class
+share/activemq/webapps/admin/WEB-INF/classes/org/apache/activemq/web/filter/ApplicationContextFilter.class
+share/activemq/webapps/admin/WEB-INF/classes/org/apache/activemq/web/filter/ApplicationContextFilter$1.class
+share/activemq/webapps/admin/WEB-INF/classes/org/apache/activemq/web/filter/ApplicationContextFilter$2.class
+share/activemq/webapps/admin/WEB-INF/classes/org/apache/activemq/web/handler/BindingBeanNameUrlHandlerMapping.class
+share/activemq/webapps/admin/WEB-INF/classes/org/apache/activemq/web/WebConsoleStarter.class
+share/activemq/webapps/admin/WEB-INF/classes/org/apache/activemq/web/WebConsoleStarter$OsgiUtil.class
+share/activemq/webapps/admin/WEB-INF/dispatcher-servlet.xml
+share/activemq/webapps/admin/WEB-INF/jspf/headertags.jspf
+share/activemq/webapps/admin/WEB-INF/tags/form/checkbox.tag
+share/activemq/webapps/admin/WEB-INF/tags/form/escape.tag
+share/activemq/webapps/admin/WEB-INF/tags/form/forEachMapEntry.tag
+share/activemq/webapps/admin/WEB-INF/tags/form/option.tag
+share/activemq/webapps/admin/WEB-INF/tags/form/short.tag
+share/activemq/webapps/admin/WEB-INF/tags/form/text.tag
+share/activemq/webapps/admin/WEB-INF/tags/form/tooltip.tag
+share/activemq/webapps/admin/WEB-INF/tags/form/uri.tag
+share/activemq/webapps/admin/WEB-INF/tags/jms/forEachConnection.tag
+share/activemq/webapps/admin/WEB-INF/tags/jms/forEachMessage.tag
+share/activemq/webapps/admin/WEB-INF/tags/jms/formatTimestamp.tag
+share/activemq/webapps/admin/WEB-INF/tags/jms/persistent.tag
+share/activemq/webapps/admin/WEB-INF/web.xml
+share/activemq/webapps/admin/WEB-INF/webconsole-default.xml
+share/activemq/webapps/admin/WEB-INF/webconsole-embedded.xml
+share/activemq/webapps/admin/WEB-INF/webconsole-invm.xml
+share/activemq/webapps/admin/WEB-INF/webconsole-jndi.xml
+share/activemq/webapps/admin/WEB-INF/webconsole-osgi.xml
+share/activemq/webapps/admin/WEB-INF/webconsole-properties.xml
+share/activemq/webapps/admin/WEB-INF/webconsole-query.xml
+share/activemq/webapps/admin/xml/queues.jsp
+share/activemq/webapps/admin/xml/subscribers.jsp
+share/activemq/webapps/admin/xml/topics.jsp
+share/activemq/webapps/api/WEB-INF/classes/jolokia-access.xml
+share/activemq/webapps/api/WEB-INF/web.xml
+share/activemq/webapps/favicon.ico
+share/activemq/webapps/images/activemq-logo.png
+share/activemq/webapps/images/asf-logo.png
+share/activemq/webapps/images/big-bullet.png
+share/activemq/webapps/images/black-footer-bottom.png
+share/activemq/webapps/images/black-footer-left.png
+share/activemq/webapps/images/black-footer-right.png
+share/activemq/webapps/images/bottom-red-bar.png
+share/activemq/webapps/images/checker-bg.png
+share/activemq/webapps/images/content-left.png
+share/activemq/webapps/images/content-right.png
+share/activemq/webapps/images/feed_atom.png
+share/activemq/webapps/images/feed_rss.png
+share/activemq/webapps/images/left-box-bottom.png
+share/activemq/webapps/images/left-box-right.png
+share/activemq/webapps/images/left-box-top.png
+share/activemq/webapps/images/oval-arrow.png
+share/activemq/webapps/images/right-box-bottom.png
+share/activemq/webapps/images/right-box-left.png
+share/activemq/webapps/images/right-box-top.png
+share/activemq/webapps/images/small-bullet-gray.png
+share/activemq/webapps/images/small-bullet-red.png
+share/activemq/webapps/images/spacer.gif
+share/activemq/webapps/images/top-red-bar.png
+share/activemq/webapps/images/white-header-left.png
+share/activemq/webapps/images/white-header-right.png
+share/activemq/webapps/images/white-header-top.png
+share/activemq/webapps/index.html
+share/activemq/webapps/styles/prettify.css
+share/activemq/webapps/styles/site.css
+share/activemq/webapps/styles/sorttable.css
+share/activemq/webapps/styles/type-settings.css
+share/examples/activemq/activemq.xml.sample
+share/examples/activemq/broker-localhost.cert.sample
+share/examples/activemq/broker.ks.sample
+share/examples/activemq/broker.ts.sample
+share/examples/activemq/client.ks.sample
+share/examples/activemq/client.ts.sample
+share/examples/activemq/credentials-enc.properties.sample
+share/examples/activemq/credentials.properties.sample
+share/examples/activemq/groups.properties.sample
+share/examples/activemq/java.security.sample
+share/examples/activemq/jetty-realm.properties.sample
+share/examples/activemq/jetty.xml.sample
+share/examples/activemq/jmx.access.sample
+share/examples/activemq/jmx.password.sample
+share/examples/activemq/log4j.properties.sample
+share/examples/activemq/logging.properties.sample
+share/examples/activemq/login.config.sample
+share/examples/activemq/users.properties.sample
+@dir share/activemq/bin
+@dir share/activemq/lib/camel
+@dir share/activemq/lib/extra
+@dir share/activemq/lib/optional
+@dir share/activemq/lib/web
+@dir share/activemq/lib
+@dir share/activemq/webapps/admin/decorators
+@dir share/activemq/webapps/admin/images
+@dir share/activemq/webapps/admin/js/mochi
+@dir share/activemq/webapps/admin/js/plotkit
+@dir share/activemq/webapps/admin/js
+@dir share/activemq/webapps/admin/META-INF
+@dir share/activemq/webapps/admin/styles
+@dir share/activemq/webapps/admin/test
+@dir share/activemq/webapps/admin/WEB-INF/classes/org/apache/activemq/web/config
+@dir share/activemq/webapps/admin/WEB-INF/classes/org/apache/activemq/web/controller
+@dir share/activemq/webapps/admin/WEB-INF/classes/org/apache/activemq/web/filter
+@dir share/activemq/webapps/admin/WEB-INF/classes/org/apache/activemq/web/handler
+@dir share/activemq/webapps/admin/WEB-INF/classes/org/apache/activemq/web
+@dir share/activemq/webapps/admin/WEB-INF/classes/org/apache/activemq
+@dir share/activemq/webapps/admin/WEB-INF/classes/org/apache
+@dir share/activemq/webapps/admin/WEB-INF/classes/org
+@dir share/activemq/webapps/admin/WEB-INF/classes
+@dir share/activemq/webapps/admin/WEB-INF/jspf
+@dir share/activemq/webapps/admin/WEB-INF/tags/form
+@dir share/activemq/webapps/admin/WEB-INF/tags/jms
+@dir share/activemq/webapps/admin/WEB-INF/tags
+@dir share/activemq/webapps/admin/WEB-INF
+@dir share/activemq/webapps/admin/xml
+@dir share/activemq/webapps/admin
+@dir share/activemq/webapps/api/WEB-INF/classes
+@dir share/activemq/webapps/api/WEB-INF
+@dir share/activemq/webapps/api
+@dir share/activemq/webapps/images
+@dir share/activemq/webapps/styles
+@dir share/activemq/webapps
+@dir share/activemq/webapps-demo/demo/images
+@dir share/activemq/webapps-demo/demo/js/mochi
+@dir share/activemq/webapps-demo/demo/js/plotkit
+@dir share/activemq/webapps-demo/demo/js
+@dir share/activemq/webapps-demo/demo/META-INF
+@dir share/activemq/webapps-demo/demo/mqtt
+@dir share/activemq/webapps-demo/demo/portfolio
+@dir share/activemq/webapps-demo/demo/styles
+@dir share/activemq/webapps-demo/demo/test/assets
+@dir share/activemq/webapps-demo/demo/test
+@dir share/activemq/webapps-demo/demo/WEB-INF
+@dir share/activemq/webapps-demo/demo/websocket
+@dir share/activemq/webapps-demo/demo
+@dir share/activemq/webapps-demo
+@dir share/activemq
+@dir share/examples/activemq
