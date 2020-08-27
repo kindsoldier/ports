@@ -1,3 +1,3 @@
-TIMESTAMP = 1595188764
-SHA256 (go1.14.5.src.tar.gz) = ca4c080c90735e56152ac52cd77ae57fe573d1debb1a58e03da9cc362440315c
-SIZE (go1.14.5.src.tar.gz) = 22533577
+TIMESTAMP = 1598518026
+SHA256 (go1.15.src.tar.gz) = 69438f7ed4f532154ffaf878f3dfd83747e7a00b70b3556eddabf7aaee28ac3a
+SIZE (go1.15.src.tar.gz) = 23002901

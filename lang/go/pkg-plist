@@ -7,6 +7,7 @@ lib/go/api/go1.11.txt
 lib/go/api/go1.12.txt
 lib/go/api/go1.13.txt
 lib/go/api/go1.14.txt
+lib/go/api/go1.15.txt
 lib/go/api/go1.2.txt
 lib/go/api/go1.3.txt
 lib/go/api/go1.4.txt
@@ -60,7 +61,6 @@ lib/go/doc/codewalk/pig.go
 lib/go/doc/codewalk/popout.png
 lib/go/doc/codewalk/sharemem.xml
 lib/go/doc/codewalk/urlpoll.go
-lib/go/doc/contrib.html
 lib/go/doc/contribute.html
 lib/go/doc/debugging_with_gdb.html
 lib/go/doc/diagnostics.html
@@ -80,6 +80,7 @@ lib/go/doc/go1.11.html
 lib/go/doc/go1.12.html
 lib/go/doc/go1.13.html
 lib/go/doc/go1.14.html
+lib/go/doc/go1.15.html
 lib/go/doc/go1.2.html
 lib/go/doc/go1.3.html
 lib/go/doc/go1.4.html
@@ -372,6 +373,8 @@ lib/go/misc/cgo/testgodefs/testdata/anonunion.go
 lib/go/misc/cgo/testgodefs/testdata/fieldtypedef.go
 lib/go/misc/cgo/testgodefs/testdata/issue37479.go
 lib/go/misc/cgo/testgodefs/testdata/issue37621.go
+lib/go/misc/cgo/testgodefs/testdata/issue38649.go
+lib/go/misc/cgo/testgodefs/testdata/issue39534.go
 lib/go/misc/cgo/testgodefs/testdata/issue8478.go
 lib/go/misc/cgo/testgodefs/testdata/main.go
 lib/go/misc/cgo/testgodefs/testgodefs_test.go
@@ -452,6 +455,8 @@ lib/go/misc/cgo/testshared/testdata/exe2/exe2.go
 lib/go/misc/cgo/testshared/testdata/exe3/exe3.go
 lib/go/misc/cgo/testshared/testdata/execgo/exe.go
 lib/go/misc/cgo/testshared/testdata/explicit/explicit.go
+lib/go/misc/cgo/testshared/testdata/gcdata/main/main.go
+lib/go/misc/cgo/testshared/testdata/gcdata/p/p.go
 lib/go/misc/cgo/testshared/testdata/global/main.go
 lib/go/misc/cgo/testshared/testdata/globallib/global.go
 lib/go/misc/cgo/testshared/testdata/iface_a/a.go
@@ -463,6 +468,8 @@ lib/go/misc/cgo/testshared/testdata/implicitcmd/implicitcmd.go
 lib/go/misc/cgo/testshared/testdata/issue25065/a.go
 lib/go/misc/cgo/testshared/testdata/issue30768/issue30768lib/lib.go
 lib/go/misc/cgo/testshared/testdata/issue30768/x_test.go
+lib/go/misc/cgo/testshared/testdata/issue39777/a/a.go
+lib/go/misc/cgo/testshared/testdata/issue39777/b/b.go
 lib/go/misc/cgo/testshared/testdata/trivial/trivial.go
 lib/go/misc/cgo/testsigfwd/main.go
 lib/go/misc/cgo/testso/noso_test.go
@@ -606,6 +613,7 @@ lib/go/pkg/freebsd_amd64/cmd/internal/test2json.a
 lib/go/pkg/freebsd_amd64/cmd/link/internal/amd64.a
 lib/go/pkg/freebsd_amd64/cmd/link/internal/arm.a
 lib/go/pkg/freebsd_amd64/cmd/link/internal/arm64.a
+lib/go/pkg/freebsd_amd64/cmd/link/internal/benchmark.a
 lib/go/pkg/freebsd_amd64/cmd/link/internal/ld.a
 lib/go/pkg/freebsd_amd64/cmd/link/internal/loadelf.a
 lib/go/pkg/freebsd_amd64/cmd/link/internal/loader.a
@@ -614,13 +622,30 @@ lib/go/pkg/freebsd_amd64/cmd/link/internal/loadpe.a
 lib/go/pkg/freebsd_amd64/cmd/link/internal/loadxcoff.a
 lib/go/pkg/freebsd_amd64/cmd/link/internal/mips.a
 lib/go/pkg/freebsd_amd64/cmd/link/internal/mips64.a
-lib/go/pkg/freebsd_amd64/cmd/link/internal/objfile.a
 lib/go/pkg/freebsd_amd64/cmd/link/internal/ppc64.a
 lib/go/pkg/freebsd_amd64/cmd/link/internal/riscv64.a
 lib/go/pkg/freebsd_amd64/cmd/link/internal/s390x.a
 lib/go/pkg/freebsd_amd64/cmd/link/internal/sym.a
 lib/go/pkg/freebsd_amd64/cmd/link/internal/wasm.a
 lib/go/pkg/freebsd_amd64/cmd/link/internal/x86.a
+lib/go/pkg/freebsd_amd64/cmd/oldlink/internal/amd64.a
+lib/go/pkg/freebsd_amd64/cmd/oldlink/internal/arm.a
+lib/go/pkg/freebsd_amd64/cmd/oldlink/internal/arm64.a
+lib/go/pkg/freebsd_amd64/cmd/oldlink/internal/ld.a
+lib/go/pkg/freebsd_amd64/cmd/oldlink/internal/loadelf.a
+lib/go/pkg/freebsd_amd64/cmd/oldlink/internal/loader.a
+lib/go/pkg/freebsd_amd64/cmd/oldlink/internal/loadmacho.a
+lib/go/pkg/freebsd_amd64/cmd/oldlink/internal/loadpe.a
+lib/go/pkg/freebsd_amd64/cmd/oldlink/internal/loadxcoff.a
+lib/go/pkg/freebsd_amd64/cmd/oldlink/internal/mips.a
+lib/go/pkg/freebsd_amd64/cmd/oldlink/internal/mips64.a
+lib/go/pkg/freebsd_amd64/cmd/oldlink/internal/objfile.a
+lib/go/pkg/freebsd_amd64/cmd/oldlink/internal/ppc64.a
+lib/go/pkg/freebsd_amd64/cmd/oldlink/internal/riscv64.a
+lib/go/pkg/freebsd_amd64/cmd/oldlink/internal/s390x.a
+lib/go/pkg/freebsd_amd64/cmd/oldlink/internal/sym.a
+lib/go/pkg/freebsd_amd64/cmd/oldlink/internal/wasm.a
+lib/go/pkg/freebsd_amd64/cmd/oldlink/internal/x86.a
 lib/go/pkg/freebsd_amd64/cmd/vendor/github.com/google/pprof/driver.a
 lib/go/pkg/freebsd_amd64/cmd/vendor/github.com/google/pprof/internal/binutils.a
 lib/go/pkg/freebsd_amd64/cmd/vendor/github.com/google/pprof/internal/driver.a
@@ -653,8 +678,8 @@ lib/go/pkg/freebsd_amd64/cmd/vendor/golang.org/x/mod/sumdb/dirhash.a
 lib/go/pkg/freebsd_amd64/cmd/vendor/golang.org/x/mod/sumdb/note.a
 lib/go/pkg/freebsd_amd64/cmd/vendor/golang.org/x/mod/sumdb/tlog.a
 lib/go/pkg/freebsd_amd64/cmd/vendor/golang.org/x/mod/zip.a
+lib/go/pkg/freebsd_amd64/cmd/vendor/golang.org/x/sys/internal/unsafeheader.a
 lib/go/pkg/freebsd_amd64/cmd/vendor/golang.org/x/sys/unix.a
-lib/go/pkg/freebsd_amd64/cmd/vendor/golang.org/x/sys/windows.a
 lib/go/pkg/freebsd_amd64/cmd/vendor/golang.org/x/tools/go/analysis.a
 lib/go/pkg/freebsd_amd64/cmd/vendor/golang.org/x/tools/go/analysis/internal/analysisflags.a
 lib/go/pkg/freebsd_amd64/cmd/vendor/golang.org/x/tools/go/analysis/internal/facts.a
@@ -669,6 +694,7 @@ lib/go/pkg/freebsd_amd64/cmd/vendor/golang.org/x/tools/go/analysis/passes/copylo
 lib/go/pkg/freebsd_amd64/cmd/vendor/golang.org/x/tools/go/analysis/passes/ctrlflow.a
 lib/go/pkg/freebsd_amd64/cmd/vendor/golang.org/x/tools/go/analysis/passes/errorsas.a
 lib/go/pkg/freebsd_amd64/cmd/vendor/golang.org/x/tools/go/analysis/passes/httpresponse.a
+lib/go/pkg/freebsd_amd64/cmd/vendor/golang.org/x/tools/go/analysis/passes/ifaceassert.a
 lib/go/pkg/freebsd_amd64/cmd/vendor/golang.org/x/tools/go/analysis/passes/inspect.a
 lib/go/pkg/freebsd_amd64/cmd/vendor/golang.org/x/tools/go/analysis/passes/internal/analysisutil.a
 lib/go/pkg/freebsd_amd64/cmd/vendor/golang.org/x/tools/go/analysis/passes/loopclosure.a
@@ -677,6 +703,7 @@ lib/go/pkg/freebsd_amd64/cmd/vendor/golang.org/x/tools/go/analysis/passes/nilfun
 lib/go/pkg/freebsd_amd64/cmd/vendor/golang.org/x/tools/go/analysis/passes/printf.a
 lib/go/pkg/freebsd_amd64/cmd/vendor/golang.org/x/tools/go/analysis/passes/shift.a
 lib/go/pkg/freebsd_amd64/cmd/vendor/golang.org/x/tools/go/analysis/passes/stdmethods.a
+lib/go/pkg/freebsd_amd64/cmd/vendor/golang.org/x/tools/go/analysis/passes/stringintconv.a
 lib/go/pkg/freebsd_amd64/cmd/vendor/golang.org/x/tools/go/analysis/passes/structtag.a
 lib/go/pkg/freebsd_amd64/cmd/vendor/golang.org/x/tools/go/analysis/passes/tests.a
 lib/go/pkg/freebsd_amd64/cmd/vendor/golang.org/x/tools/go/analysis/passes/unmarshal.a
@@ -689,6 +716,7 @@ lib/go/pkg/freebsd_amd64/cmd/vendor/golang.org/x/tools/go/ast/inspector.a
 lib/go/pkg/freebsd_amd64/cmd/vendor/golang.org/x/tools/go/cfg.a
 lib/go/pkg/freebsd_amd64/cmd/vendor/golang.org/x/tools/go/types/objectpath.a
 lib/go/pkg/freebsd_amd64/cmd/vendor/golang.org/x/tools/go/types/typeutil.a
+lib/go/pkg/freebsd_amd64/cmd/vendor/golang.org/x/tools/internal/analysisinternal.a
 lib/go/pkg/freebsd_amd64/cmd/vendor/golang.org/x/xerrors.a
 lib/go/pkg/freebsd_amd64/cmd/vendor/golang.org/x/xerrors/internal.a
 lib/go/pkg/freebsd_amd64/compress/bzip2.a
@@ -790,6 +818,7 @@ lib/go/pkg/freebsd_amd64/internal/nettrace.a
 lib/go/pkg/freebsd_amd64/internal/obscuretestdata.a
 lib/go/pkg/freebsd_amd64/internal/oserror.a
 lib/go/pkg/freebsd_amd64/internal/poll.a
+lib/go/pkg/freebsd_amd64/internal/profile.a
 lib/go/pkg/freebsd_amd64/internal/race.a
 lib/go/pkg/freebsd_amd64/internal/reflectlite.a
 lib/go/pkg/freebsd_amd64/internal/singleflight.a
@@ -798,6 +827,7 @@ lib/go/pkg/freebsd_amd64/internal/syscall/unix.a
 lib/go/pkg/freebsd_amd64/internal/testenv.a
 lib/go/pkg/freebsd_amd64/internal/testlog.a
 lib/go/pkg/freebsd_amd64/internal/trace.a
+lib/go/pkg/freebsd_amd64/internal/unsafeheader.a
 lib/go/pkg/freebsd_amd64/internal/xcoff.a
 lib/go/pkg/freebsd_amd64/io.a
 lib/go/pkg/freebsd_amd64/io/ioutil.a
@@ -846,7 +876,6 @@ lib/go/pkg/freebsd_amd64/runtime/internal/atomic.a
 lib/go/pkg/freebsd_amd64/runtime/internal/math.a
 lib/go/pkg/freebsd_amd64/runtime/internal/sys.a
 lib/go/pkg/freebsd_amd64/runtime/pprof.a
-lib/go/pkg/freebsd_amd64/runtime/pprof/internal/profile.a
 lib/go/pkg/freebsd_amd64/runtime/race.a
 lib/go/pkg/freebsd_amd64/runtime/trace.a
 lib/go/pkg/freebsd_amd64/sort.a
@@ -864,6 +893,7 @@ lib/go/pkg/freebsd_amd64/text/tabwriter.a
 lib/go/pkg/freebsd_amd64/text/template.a
 lib/go/pkg/freebsd_amd64/text/template/parse.a
 lib/go/pkg/freebsd_amd64/time.a
+lib/go/pkg/freebsd_amd64/time/tzdata.a
 lib/go/pkg/freebsd_amd64/unicode.a
 lib/go/pkg/freebsd_amd64/unicode/utf16.a
 lib/go/pkg/freebsd_amd64/unicode/utf8.a
@@ -903,6 +933,7 @@ lib/go/pkg/tool/freebsd_amd64/fix
 lib/go/pkg/tool/freebsd_amd64/link
 lib/go/pkg/tool/freebsd_amd64/nm
 lib/go/pkg/tool/freebsd_amd64/objdump
+lib/go/pkg/tool/freebsd_amd64/oldlink
 lib/go/pkg/tool/freebsd_amd64/pack
 lib/go/pkg/tool/freebsd_amd64/pprof
 lib/go/pkg/tool/freebsd_amd64/test2json
@@ -1052,6 +1083,7 @@ lib/go/src/cmd/asm/internal/arch/arm.go
 lib/go/src/cmd/asm/internal/arch/arm64.go
 lib/go/src/cmd/asm/internal/arch/mips.go
 lib/go/src/cmd/asm/internal/arch/ppc64.go
+lib/go/src/cmd/asm/internal/arch/riscv64.go
 lib/go/src/cmd/asm/internal/arch/s390x.go
 lib/go/src/cmd/asm/internal/asm/asm.go
 lib/go/src/cmd/asm/internal/asm/endtoend_test.go
@@ -1126,7 +1158,9 @@ lib/go/src/cmd/compile/internal/arm64/galign.go
 lib/go/src/cmd/compile/internal/arm64/ggen.go
 lib/go/src/cmd/compile/internal/arm64/ssa.go
 lib/go/src/cmd/compile/internal/gc/alg.go
+lib/go/src/cmd/compile/internal/gc/algkind_string.go
 lib/go/src/cmd/compile/internal/gc/align.go
+lib/go/src/cmd/compile/internal/gc/bench_test.go
 lib/go/src/cmd/compile/internal/gc/bexport.go
 lib/go/src/cmd/compile/internal/gc/bimport.go
 lib/go/src/cmd/compile/internal/gc/bitset.go
@@ -1229,6 +1263,7 @@ lib/go/src/cmd/compile/internal/gc/testdata/regalloc_test.go
 lib/go/src/cmd/compile/internal/gc/testdata/reproducible/issue20272.go
 lib/go/src/cmd/compile/internal/gc/testdata/reproducible/issue27013.go
 lib/go/src/cmd/compile/internal/gc/testdata/reproducible/issue30202.go
+lib/go/src/cmd/compile/internal/gc/testdata/reproducible/issue38068.go
 lib/go/src/cmd/compile/internal/gc/testdata/short_test.go
 lib/go/src/cmd/compile/internal/gc/testdata/slice_test.go
 lib/go/src/cmd/compile/internal/gc/testdata/sqrtConst_test.go
@@ -1267,6 +1302,7 @@ lib/go/src/cmd/compile/internal/riscv64/ssa.go
 lib/go/src/cmd/compile/internal/s390x/galign.go
 lib/go/src/cmd/compile/internal/s390x/ggen.go
 lib/go/src/cmd/compile/internal/s390x/ssa.go
+lib/go/src/cmd/compile/internal/ssa/addressingmodes.go
 lib/go/src/cmd/compile/internal/ssa/biasedsparsemap.go
 lib/go/src/cmd/compile/internal/ssa/block.go
 lib/go/src/cmd/compile/internal/ssa/branchelim_test.go
@@ -1292,8 +1328,12 @@ lib/go/src/cmd/compile/internal/ssa/dom_test.go
 lib/go/src/cmd/compile/internal/ssa/dom.go
 lib/go/src/cmd/compile/internal/ssa/export_test.go
 lib/go/src/cmd/compile/internal/ssa/flagalloc.go
+lib/go/src/cmd/compile/internal/ssa/flags_amd64_test.s
+lib/go/src/cmd/compile/internal/ssa/flags_arm64_test.s
+lib/go/src/cmd/compile/internal/ssa/flags_test.go
 lib/go/src/cmd/compile/internal/ssa/func_test.go
 lib/go/src/cmd/compile/internal/ssa/func.go
+lib/go/src/cmd/compile/internal/ssa/fuse_comparisons.go
 lib/go/src/cmd/compile/internal/ssa/fuse_test.go
 lib/go/src/cmd/compile/internal/ssa/fuse.go
 lib/go/src/cmd/compile/internal/ssa/gen/386.rules
@@ -1306,6 +1346,7 @@ lib/go/src/cmd/compile/internal/ssa/gen/ARM.rules
 lib/go/src/cmd/compile/internal/ssa/gen/ARM64.rules
 lib/go/src/cmd/compile/internal/ssa/gen/ARM64Ops.go
 lib/go/src/cmd/compile/internal/ssa/gen/ARMOps.go
+lib/go/src/cmd/compile/internal/ssa/gen/cover.bash
 lib/go/src/cmd/compile/internal/ssa/gen/dec.rules
 lib/go/src/cmd/compile/internal/ssa/gen/dec64.rules
 lib/go/src/cmd/compile/internal/ssa/gen/dec64Ops.go
@@ -1368,6 +1409,7 @@ lib/go/src/cmd/compile/internal/ssa/rewriteAMD64.go
 lib/go/src/cmd/compile/internal/ssa/rewriteAMD64splitload.go
 lib/go/src/cmd/compile/internal/ssa/rewriteARM.go
 lib/go/src/cmd/compile/internal/ssa/rewriteARM64.go
+lib/go/src/cmd/compile/internal/ssa/rewriteCond_test.go
 lib/go/src/cmd/compile/internal/ssa/rewritedec.go
 lib/go/src/cmd/compile/internal/ssa/rewritedec64.go
 lib/go/src/cmd/compile/internal/ssa/rewritedecArgs.go
@@ -1414,6 +1456,7 @@ lib/go/src/cmd/compile/internal/ssa/testdata/scopes.go
 lib/go/src/cmd/compile/internal/ssa/tighten.go
 lib/go/src/cmd/compile/internal/ssa/TODO
 lib/go/src/cmd/compile/internal/ssa/trim.go
+lib/go/src/cmd/compile/internal/ssa/tuple.go
 lib/go/src/cmd/compile/internal/ssa/value.go
 lib/go/src/cmd/compile/internal/ssa/writebarrier_test.go
 lib/go/src/cmd/compile/internal/ssa/writebarrier.go
@@ -1467,6 +1510,7 @@ lib/go/src/cmd/cover/cover.go
 lib/go/src/cmd/cover/doc.go
 lib/go/src/cmd/cover/func.go
 lib/go/src/cmd/cover/html.go
+lib/go/src/cmd/cover/pkgname_test.go
 lib/go/src/cmd/cover/profile.go
 lib/go/src/cmd/cover/testdata/directives.go
 lib/go/src/cmd/cover/testdata/html/html_test.go
@@ -1698,6 +1742,8 @@ lib/go/src/cmd/go/internal/modload/import.go
 lib/go/src/cmd/go/internal/modload/init.go
 lib/go/src/cmd/go/internal/modload/list.go
 lib/go/src/cmd/go/internal/modload/load.go
+lib/go/src/cmd/go/internal/modload/modfile.go
+lib/go/src/cmd/go/internal/modload/mvs.go
 lib/go/src/cmd/go/internal/modload/query_test.go
 lib/go/src/cmd/go/internal/modload/query.go
 lib/go/src/cmd/go/internal/modload/search.go
@@ -1705,6 +1751,7 @@ lib/go/src/cmd/go/internal/modload/stat_openfile.go
 lib/go/src/cmd/go/internal/modload/stat_unix.go
 lib/go/src/cmd/go/internal/modload/stat_windows.go
 lib/go/src/cmd/go/internal/modload/testgo.go
+lib/go/src/cmd/go/internal/modload/vendor.go
 lib/go/src/cmd/go/internal/mvs/mvs_test.go
 lib/go/src/cmd/go/internal/mvs/mvs.go
 lib/go/src/cmd/go/internal/par/work_test.go
@@ -1723,6 +1770,9 @@ lib/go/src/cmd/go/internal/search/search.go
 lib/go/src/cmd/go/internal/str/path.go
 lib/go/src/cmd/go/internal/str/str.go
 lib/go/src/cmd/go/internal/test/cover.go
+lib/go/src/cmd/go/internal/test/flagdefs_test.go
+lib/go/src/cmd/go/internal/test/flagdefs.go
+lib/go/src/cmd/go/internal/test/genflags.go
 lib/go/src/cmd/go/internal/test/test.go
 lib/go/src/cmd/go/internal/test/testflag.go
 lib/go/src/cmd/go/internal/tool/tool.go
@@ -1759,13 +1809,7 @@ lib/go/src/cmd/go/note_test.go
 lib/go/src/cmd/go/proxy_test.go
 lib/go/src/cmd/go/script_test.go
 lib/go/src/cmd/go/testdata/addmod.go
-lib/go/src/cmd/go/testdata/example1_test.go
-lib/go/src/cmd/go/testdata/example2_test.go
 lib/go/src/cmd/go/testdata/failssh/ssh
-lib/go/src/cmd/go/testdata/generate/test1.go
-lib/go/src/cmd/go/testdata/generate/test2.go
-lib/go/src/cmd/go/testdata/generate/test3.go
-lib/go/src/cmd/go/testdata/generate/test4.go
 lib/go/src/cmd/go/testdata/mod/example.com_badchain_a_v1.0.0.txt
 lib/go/src/cmd/go/testdata/mod/example.com_badchain_a_v1.1.0.txt
 lib/go/src/cmd/go/testdata/mod/example.com_badchain_b_v1.0.0.txt
@@ -1775,6 +1819,8 @@ lib/go/src/cmd/go/testdata/mod/example.com_badchain_c_v1.1.0.txt
 lib/go/src/cmd/go/testdata/mod/example.com_dotgo.go_v1.0.0.txt
 lib/go/src/cmd/go/testdata/mod/example.com_downgrade_v2_v2.0.1.txt
 lib/go/src/cmd/go/testdata/mod/example.com_downgrade_v2.0.0.txt
+lib/go/src/cmd/go/testdata/mod/example.com_incompatiblewithsub_v1.0.0.txt
+lib/go/src/cmd/go/testdata/mod/example.com_incompatiblewithsub_v2.0.0+incompatible.txt
 lib/go/src/cmd/go/testdata/mod/example.com_invalidpath_v1_v1.0.0.txt
 lib/go/src/cmd/go/testdata/mod/example.com_join_subpkg_v1.0.0.txt
 lib/go/src/cmd/go/testdata/mod/example.com_join_subpkg_v1.1.0.txt
@@ -1798,6 +1844,7 @@ lib/go/src/cmd/go/testdata/mod/example.com_printversion_v1.0.0.txt
 lib/go/src/cmd/go/testdata/mod/example.com_pseudoupgrade_v0.0.0-20190430073000-30950c05d534.txt
 lib/go/src/cmd/go/testdata/mod/example.com_pseudoupgrade_v0.1.0.txt
 lib/go/src/cmd/go/testdata/mod/example.com_pseudoupgrade_v0.1.1-0.20190429073117-b5426c86b553.txt
+lib/go/src/cmd/go/testdata/mod/example.com_quote_v1.5.2.txt
 lib/go/src/cmd/go/testdata/mod/example.com_split_subpkg_v1.1.0.txt
 lib/go/src/cmd/go/testdata/mod/example.com_split_v1.0.0.txt
 lib/go/src/cmd/go/testdata/mod/example.com_split_v1.1.0.txt
@@ -1884,65 +1931,119 @@ lib/go/src/cmd/go/testdata/modlegacy/src/new/sub/inner/x/x.go
 lib/go/src/cmd/go/testdata/modlegacy/src/new/sub/x/v1/y/y.go
 lib/go/src/cmd/go/testdata/modlegacy/src/old/p1/p1.go
 lib/go/src/cmd/go/testdata/modlegacy/src/old/p2/p2.go
-lib/go/src/cmd/go/testdata/norunexample/example_test.go
-lib/go/src/cmd/go/testdata/norunexample/test_test.go
-lib/go/src/cmd/go/testdata/print_goroot.go
-lib/go/src/cmd/go/testdata/rundir/sub/sub.go
-lib/go/src/cmd/go/testdata/rundir/x.go
 lib/go/src/cmd/go/testdata/savedir.go
 lib/go/src/cmd/go/testdata/script/bug.txt
 lib/go/src/cmd/go/testdata/script/build_acl_windows.txt
+lib/go/src/cmd/go/testdata/script/build_arm.txt
+lib/go/src/cmd/go/testdata/script/build_cache_arch_mode.txt
 lib/go/src/cmd/go/testdata/script/build_cache_compile.txt
 lib/go/src/cmd/go/testdata/script/build_cache_gomips.txt
 lib/go/src/cmd/go/testdata/script/build_cache_link.txt
 lib/go/src/cmd/go/testdata/script/build_cache_output.txt
 lib/go/src/cmd/go/testdata/script/build_cache_trimpath.txt
+lib/go/src/cmd/go/testdata/script/build_cd_gopath_different.txt
+lib/go/src/cmd/go/testdata/script/build_cgo_consistent_results.txt
+lib/go/src/cmd/go/testdata/script/build_dash_n_cgo.txt
+lib/go/src/cmd/go/testdata/script/build_dash_o_dev_null.txt
+lib/go/src/cmd/go/testdata/script/build_dash_x.txt
 lib/go/src/cmd/go/testdata/script/build_exe.txt
 lib/go/src/cmd/go/testdata/script/build_gcflags.txt
+lib/go/src/cmd/go/testdata/script/build_gopath_order.txt
 lib/go/src/cmd/go/testdata/script/build_GOTMPDIR.txt
 lib/go/src/cmd/go/testdata/script/build_i.txt
 lib/go/src/cmd/go/testdata/script/build_import_comment.txt
 lib/go/src/cmd/go/testdata/script/build_import_cycle.txt
+lib/go/src/cmd/go/testdata/script/build_internal.txt
+lib/go/src/cmd/go/testdata/script/build_issue6480.txt
+lib/go/src/cmd/go/testdata/script/build_link_x_import_path_escape.txt
 lib/go/src/cmd/go/testdata/script/build_multi_main.txt
+lib/go/src/cmd/go/testdata/script/build_n_cgo.txt
+lib/go/src/cmd/go/testdata/script/build_no_go.txt
 lib/go/src/cmd/go/testdata/script/build_nocache.txt
+lib/go/src/cmd/go/testdata/script/build_output.txt
+lib/go/src/cmd/go/testdata/script/build_package_not_stale_trailing_slash.txt
+lib/go/src/cmd/go/testdata/script/build_patterns_outside_gopath.txt
 lib/go/src/cmd/go/testdata/script/build_plugin_non_main.txt
 lib/go/src/cmd/go/testdata/script/build_relative_pkgdir.txt
 lib/go/src/cmd/go/testdata/script/build_relative_tmpdir.txt
 lib/go/src/cmd/go/testdata/script/build_runtime_gcflags.txt
+lib/go/src/cmd/go/testdata/script/build_tag_goexperiment.txt
+lib/go/src/cmd/go/testdata/script/build_tags_no_comma.txt
+lib/go/src/cmd/go/testdata/script/build_test_only.txt
+lib/go/src/cmd/go/testdata/script/build_trimpath_cgo.txt
 lib/go/src/cmd/go/testdata/script/build_trimpath.txt
+lib/go/src/cmd/go/testdata/script/build_unsupported_goos.txt
+lib/go/src/cmd/go/testdata/script/build_vendor.txt
 lib/go/src/cmd/go/testdata/script/cache_unix.txt
 lib/go/src/cmd/go/testdata/script/cache_vet.txt
 lib/go/src/cmd/go/testdata/script/cgo_asm_error.txt
+lib/go/src/cmd/go/testdata/script/cgo_bad_directives.txt
+lib/go/src/cmd/go/testdata/script/cgo_depends_on_syscall.txt
+lib/go/src/cmd/go/testdata/script/cgo_flag_contains_space.txt
 lib/go/src/cmd/go/testdata/script/cgo_syso_issue29253.txt
+lib/go/src/cmd/go/testdata/script/clean_cache_n.txt
 lib/go/src/cmd/go/testdata/script/clean_testcache.txt
 lib/go/src/cmd/go/testdata/script/cmd_import_error.txt
+lib/go/src/cmd/go/testdata/script/cover_asm.txt
 lib/go/src/cmd/go/testdata/script/cover_atomic_pkgall.txt
+lib/go/src/cmd/go/testdata/script/cover_blank_func_decl.txt
 lib/go/src/cmd/go/testdata/script/cover_cgo_extra_file.txt
 lib/go/src/cmd/go/testdata/script/cover_cgo_extra_test.txt
 lib/go/src/cmd/go/testdata/script/cover_cgo_xtest.txt
 lib/go/src/cmd/go/testdata/script/cover_cgo.txt
+lib/go/src/cmd/go/testdata/script/cover_dash_c.txt
+lib/go/src/cmd/go/testdata/script/cover_dep_loop.txt
+lib/go/src/cmd/go/testdata/script/cover_dot_import.txt
+lib/go/src/cmd/go/testdata/script/cover_error.txt
 lib/go/src/cmd/go/testdata/script/cover_import_main_loop.txt
 lib/go/src/cmd/go/testdata/script/cover_mod_empty.txt
 lib/go/src/cmd/go/testdata/script/cover_modes.txt
 lib/go/src/cmd/go/testdata/script/cover_pattern.txt
 lib/go/src/cmd/go/testdata/script/cover_pkgall_multiple_mains.txt
 lib/go/src/cmd/go/testdata/script/cover_pkgall_runtime.txt
+lib/go/src/cmd/go/testdata/script/cover_runs.txt
+lib/go/src/cmd/go/testdata/script/cover_statements.txt
+lib/go/src/cmd/go/testdata/script/cover_sync_atomic_import.txt
 lib/go/src/cmd/go/testdata/script/cpu_profile_twice.txt
 lib/go/src/cmd/go/testdata/script/devnull.txt
 lib/go/src/cmd/go/testdata/script/doc.txt
 lib/go/src/cmd/go/testdata/script/env_write.txt
 lib/go/src/cmd/go/testdata/script/fileline.txt
 lib/go/src/cmd/go/testdata/script/fmt_load_errors.txt
+lib/go/src/cmd/go/testdata/script/gccgo_link_c.txt
 lib/go/src/cmd/go/testdata/script/gccgo_m.txt
 lib/go/src/cmd/go/testdata/script/gccgo_mangle.txt
 lib/go/src/cmd/go/testdata/script/gcflags_patterns.txt
 lib/go/src/cmd/go/testdata/script/generate_bad_imports.txt
+lib/go/src/cmd/go/testdata/script/generate_env.txt
+lib/go/src/cmd/go/testdata/script/generate_invalid.txt
+lib/go/src/cmd/go/testdata/script/generate.txt
 lib/go/src/cmd/go/testdata/script/get_404_meta.txt
 lib/go/src/cmd/go/testdata/script/get_brace.txt
+lib/go/src/cmd/go/testdata/script/get_custom_domain_wildcard.txt
+lib/go/src/cmd/go/testdata/script/get_dash_t.txt
+lib/go/src/cmd/go/testdata/script/get_domain_root.txt
+lib/go/src/cmd/go/testdata/script/get_dot_slash_download.txt
 lib/go/src/cmd/go/testdata/script/get_dotfiles.txt
+lib/go/src/cmd/go/testdata/script/get_go_file.txt
+lib/go/src/cmd/go/testdata/script/get_goroot.txt
+lib/go/src/cmd/go/testdata/script/get_insecure_custom_domain.txt
 lib/go/src/cmd/go/testdata/script/get_insecure_redirect.txt
+lib/go/src/cmd/go/testdata/script/get_insecure_update.txt
+lib/go/src/cmd/go/testdata/script/get_insecure.txt
+lib/go/src/cmd/go/testdata/script/get_internal_wildcard.txt
+lib/go/src/cmd/go/testdata/script/get_issue11307.txt
+lib/go/src/cmd/go/testdata/script/get_non_pkg.txt
+lib/go/src/cmd/go/testdata/script/get_race.txt
+lib/go/src/cmd/go/testdata/script/get_test_only.txt
 lib/go/src/cmd/go/testdata/script/get_tilde.txt
 lib/go/src/cmd/go/testdata/script/get_unicode.txt
+lib/go/src/cmd/go/testdata/script/get_update_all.txt
+lib/go/src/cmd/go/testdata/script/get_update_unknown_protocol.txt
+lib/go/src/cmd/go/testdata/script/get_update_wildcard.txt
+lib/go/src/cmd/go/testdata/script/get_update.txt
+lib/go/src/cmd/go/testdata/script/get_vcs_error_message.txt
+lib/go/src/cmd/go/testdata/script/get_vendor.txt
 lib/go/src/cmd/go/testdata/script/get_with_git_trace.txt
 lib/go/src/cmd/go/testdata/script/goflags.txt
 lib/go/src/cmd/go/testdata/script/gopath_install.txt
@@ -1951,30 +2052,50 @@ lib/go/src/cmd/go/testdata/script/gopath_moved_repo.txt
 lib/go/src/cmd/go/testdata/script/gopath_paths.txt
 lib/go/src/cmd/go/testdata/script/gopath_std_vendor.txt
 lib/go/src/cmd/go/testdata/script/gopath_vendor_dup_err.txt
+lib/go/src/cmd/go/testdata/script/goroot_executable.txt
 lib/go/src/cmd/go/testdata/script/help.txt
+lib/go/src/cmd/go/testdata/script/import_cycle.txt
 lib/go/src/cmd/go/testdata/script/import_main.txt
+lib/go/src/cmd/go/testdata/script/install_cgo_excluded.txt
 lib/go/src/cmd/go/testdata/script/install_cleans_build.txt
 lib/go/src/cmd/go/testdata/script/install_cmd_gobin.txt
 lib/go/src/cmd/go/testdata/script/install_cross_gobin.txt
+lib/go/src/cmd/go/testdata/script/install_msan_and_race_require_cgo.txt
 lib/go/src/cmd/go/testdata/script/install_rebuild_gopath.txt
 lib/go/src/cmd/go/testdata/script/install_rebuild_removed.txt
+lib/go/src/cmd/go/testdata/script/install_relative_gobin_fail.txt
+lib/go/src/cmd/go/testdata/script/install_shadow_gopath.txt
+lib/go/src/cmd/go/testdata/script/issue36000.txt
 lib/go/src/cmd/go/testdata/script/link_syso_issue33139.txt
 lib/go/src/cmd/go/testdata/script/linkname.txt
 lib/go/src/cmd/go/testdata/script/list_ambiguous_path.txt
 lib/go/src/cmd/go/testdata/script/list_bad_import.txt
+lib/go/src/cmd/go/testdata/script/list_case_collision.txt
 lib/go/src/cmd/go/testdata/script/list_compiled_imports.txt
 lib/go/src/cmd/go/testdata/script/list_constraints.txt
+lib/go/src/cmd/go/testdata/script/list_dedup_packages.txt
+lib/go/src/cmd/go/testdata/script/list_err_stack.txt
 lib/go/src/cmd/go/testdata/script/list_find.txt
+lib/go/src/cmd/go/testdata/script/list_gofile_in_goroot.txt
 lib/go/src/cmd/go/testdata/script/list_importmap.txt
 lib/go/src/cmd/go/testdata/script/list_linkshared.txt
+lib/go/src/cmd/go/testdata/script/list_load_err.txt
 lib/go/src/cmd/go/testdata/script/list_parse_err.txt
+lib/go/src/cmd/go/testdata/script/list_permissions.txt
+lib/go/src/cmd/go/testdata/script/list_shadow.txt
 lib/go/src/cmd/go/testdata/script/list_split_main.txt
 lib/go/src/cmd/go/testdata/script/list_std.txt
+lib/go/src/cmd/go/testdata/script/list_symlink_internal.txt
+lib/go/src/cmd/go/testdata/script/list_symlink_vendor_issue14054.txt
+lib/go/src/cmd/go/testdata/script/list_symlink_vendor_issue15201.txt
+lib/go/src/cmd/go/testdata/script/list_symlink.txt
 lib/go/src/cmd/go/testdata/script/list_test_e.txt
 lib/go/src/cmd/go/testdata/script/list_test_err.txt
 lib/go/src/cmd/go/testdata/script/list_test_imports.txt
 lib/go/src/cmd/go/testdata/script/list_test_non_go_files.txt
+lib/go/src/cmd/go/testdata/script/list_test_simple.txt
 lib/go/src/cmd/go/testdata/script/list_wildcard_skip_nonmatching.txt
+lib/go/src/cmd/go/testdata/script/load_test_pkg_err.txt
 lib/go/src/cmd/go/testdata/script/mod_alt_goroot.txt
 lib/go/src/cmd/go/testdata/script/mod_ambiguous_import.txt
 lib/go/src/cmd/go/testdata/script/mod_auth.txt
@@ -1987,6 +2108,7 @@ lib/go/src/cmd/go/testdata/script/mod_cache_rw.txt
 lib/go/src/cmd/go/testdata/script/mod_case_cgo.txt
 lib/go/src/cmd/go/testdata/script/mod_case.txt
 lib/go/src/cmd/go/testdata/script/mod_clean_cache.txt
+lib/go/src/cmd/go/testdata/script/mod_concurrent_unzipinplace.txt
 lib/go/src/cmd/go/testdata/script/mod_concurrent.txt
 lib/go/src/cmd/go/testdata/script/mod_convert_dep.txt
 lib/go/src/cmd/go/testdata/script/mod_convert_git.txt
@@ -2003,6 +2125,7 @@ lib/go/src/cmd/go/testdata/script/mod_dir.txt
 lib/go/src/cmd/go/testdata/script/mod_doc.txt
 lib/go/src/cmd/go/testdata/script/mod_domain_root.txt
 lib/go/src/cmd/go/testdata/script/mod_dot.txt
+lib/go/src/cmd/go/testdata/script/mod_download_concurrent_read.txt
 lib/go/src/cmd/go/testdata/script/mod_download_hash.txt
 lib/go/src/cmd/go/testdata/script/mod_download_json.txt
 lib/go/src/cmd/go/testdata/script/mod_download_partial.txt
@@ -2020,11 +2143,13 @@ lib/go/src/cmd/go/testdata/script/mod_get_commit.txt
 lib/go/src/cmd/go/testdata/script/mod_get_direct.txt
 lib/go/src/cmd/go/testdata/script/mod_get_downgrade.txt
 lib/go/src/cmd/go/testdata/script/mod_get_fallback.txt
+lib/go/src/cmd/go/testdata/script/mod_get_go_file.txt
 lib/go/src/cmd/go/testdata/script/mod_get_hash.txt
 lib/go/src/cmd/go/testdata/script/mod_get_incompatible.txt
 lib/go/src/cmd/go/testdata/script/mod_get_indirect.txt
 lib/go/src/cmd/go/testdata/script/mod_get_insecure_redirect.txt
 lib/go/src/cmd/go/testdata/script/mod_get_latest_pseudo.txt
+lib/go/src/cmd/go/testdata/script/mod_get_legacy.txt
 lib/go/src/cmd/go/testdata/script/mod_get_local.txt
 lib/go/src/cmd/go/testdata/script/mod_get_main.txt
 lib/go/src/cmd/go/testdata/script/mod_get_major.txt
@@ -2032,6 +2157,7 @@ lib/go/src/cmd/go/testdata/script/mod_get_moved.txt
 lib/go/src/cmd/go/testdata/script/mod_get_newcycle.txt
 lib/go/src/cmd/go/testdata/script/mod_get_none.txt
 lib/go/src/cmd/go/testdata/script/mod_get_patterns.txt
+lib/go/src/cmd/go/testdata/script/mod_get_prefer_incompatible.txt
 lib/go/src/cmd/go/testdata/script/mod_get_private_vcs.txt
 lib/go/src/cmd/go/testdata/script/mod_get_pseudo_other_branch.txt
 lib/go/src/cmd/go/testdata/script/mod_get_pseudo_prefix.txt
@@ -2039,6 +2165,7 @@ lib/go/src/cmd/go/testdata/script/mod_get_pseudo.txt
 lib/go/src/cmd/go/testdata/script/mod_get_svn.txt
 lib/go/src/cmd/go/testdata/script/mod_get_tags.txt
 lib/go/src/cmd/go/testdata/script/mod_get_test.txt
+lib/go/src/cmd/go/testdata/script/mod_get_too_many_redirects.txt
 lib/go/src/cmd/go/testdata/script/mod_get_trailing_slash.txt
 lib/go/src/cmd/go/testdata/script/mod_get_upgrade_pseudo.txt
 lib/go/src/cmd/go/testdata/script/mod_get_upgrade.txt
@@ -2049,11 +2176,13 @@ lib/go/src/cmd/go/testdata/script/mod_go_version_mixed.txt
 lib/go/src/cmd/go/testdata/script/mod_go_version.txt
 lib/go/src/cmd/go/testdata/script/mod_gobuild_import.txt
 lib/go/src/cmd/go/testdata/script/mod_gofmt_invalid.txt
+lib/go/src/cmd/go/testdata/script/mod_gomodcache.txt
 lib/go/src/cmd/go/testdata/script/mod_gonoproxy.txt
 lib/go/src/cmd/go/testdata/script/mod_gopkg_unstable.txt
 lib/go/src/cmd/go/testdata/script/mod_goroot_errors.txt
 lib/go/src/cmd/go/testdata/script/mod_graph.txt
 lib/go/src/cmd/go/testdata/script/mod_help.txt
+lib/go/src/cmd/go/testdata/script/mod_import_cycle.txt
 lib/go/src/cmd/go/testdata/script/mod_import_mod.txt
 lib/go/src/cmd/go/testdata/script/mod_import_v1suffix.txt
 lib/go/src/cmd/go/testdata/script/mod_import.txt
@@ -2084,6 +2213,7 @@ lib/go/src/cmd/go/testdata/script/mod_list.txt
 lib/go/src/cmd/go/testdata/script/mod_load_badchain.txt
 lib/go/src/cmd/go/testdata/script/mod_load_badmod.txt
 lib/go/src/cmd/go/testdata/script/mod_load_badzip.txt
+lib/go/src/cmd/go/testdata/script/mod_load_replace_mismatch.txt
 lib/go/src/cmd/go/testdata/script/mod_local_replace.txt
 lib/go/src/cmd/go/testdata/script/mod_missing_repo.txt
 lib/go/src/cmd/go/testdata/script/mod_missingpkg_prerelease.txt
@@ -2120,6 +2250,7 @@ lib/go/src/cmd/go/testdata/script/mod_sumdb_golang.txt
 lib/go/src/cmd/go/testdata/script/mod_sumdb_proxy.txt
 lib/go/src/cmd/go/testdata/script/mod_sumdb.txt
 lib/go/src/cmd/go/testdata/script/mod_symlink.txt
+lib/go/src/cmd/go/testdata/script/mod_tagged_import_cycle.txt
 lib/go/src/cmd/go/testdata/script/mod_test_cached.txt
 lib/go/src/cmd/go/testdata/script/mod_test_files.txt
 lib/go/src/cmd/go/testdata/script/mod_test.txt
@@ -2136,6 +2267,7 @@ lib/go/src/cmd/go/testdata/script/mod_vendor_build.txt
 lib/go/src/cmd/go/testdata/script/mod_vendor_nodeps.txt
 lib/go/src/cmd/go/testdata/script/mod_vendor_replace.txt
 lib/go/src/cmd/go/testdata/script/mod_vendor_trimpath.txt
+lib/go/src/cmd/go/testdata/script/mod_vendor_unused_only.txt
 lib/go/src/cmd/go/testdata/script/mod_vendor_unused.txt
 lib/go/src/cmd/go/testdata/script/mod_vendor.txt
 lib/go/src/cmd/go/testdata/script/mod_verify.txt
@@ -2146,152 +2278,102 @@ lib/go/src/cmd/go/testdata/script/noncanonical_import.txt
 lib/go/src/cmd/go/testdata/script/pattern_syntax_error.txt
 lib/go/src/cmd/go/testdata/script/prevent_sys_unix_import.txt
 lib/go/src/cmd/go/testdata/script/README
+lib/go/src/cmd/go/testdata/script/run_dirs.txt
 lib/go/src/cmd/go/testdata/script/run_hello_pkg.txt
 lib/go/src/cmd/go/testdata/script/run_hello.txt
 lib/go/src/cmd/go/testdata/script/run_internal.txt
+lib/go/src/cmd/go/testdata/script/run_issue11709.txt
 lib/go/src/cmd/go/testdata/script/run_set_executable_name.txt
+lib/go/src/cmd/go/testdata/script/run_vendor.txt
 lib/go/src/cmd/go/testdata/script/run_wildcard.txt
 lib/go/src/cmd/go/testdata/script/script_wait.txt
 lib/go/src/cmd/go/testdata/script/std_vendor.txt
 lib/go/src/cmd/go/testdata/script/sum_readonly.txt
 lib/go/src/cmd/go/testdata/script/test_bad_example.txt
 lib/go/src/cmd/go/testdata/script/test_badtest.txt
+lib/go/src/cmd/go/testdata/script/test_benchmark_chatty_fail.txt
+lib/go/src/cmd/go/testdata/script/test_benchmark_chatty_success.txt
 lib/go/src/cmd/go/testdata/script/test_benchmark_fatal.txt
 lib/go/src/cmd/go/testdata/script/test_benchmark_labels.txt
+lib/go/src/cmd/go/testdata/script/test_benchmark_timeout.txt
+lib/go/src/cmd/go/testdata/script/test_build_failure.txt
 lib/go/src/cmd/go/testdata/script/test_cache_inputs.txt
+lib/go/src/cmd/go/testdata/script/test_chatty_fail.txt
+lib/go/src/cmd/go/testdata/script/test_chatty_parallel_fail.txt
+lib/go/src/cmd/go/testdata/script/test_chatty_parallel_success_sleepy.txt
+lib/go/src/cmd/go/testdata/script/test_chatty_parallel_success.txt
+lib/go/src/cmd/go/testdata/script/test_chatty_success.txt
 lib/go/src/cmd/go/testdata/script/test_compile_binary.txt
 lib/go/src/cmd/go/testdata/script/test_compile_tempfile.txt
+lib/go/src/cmd/go/testdata/script/test_deadline.txt
+lib/go/src/cmd/go/testdata/script/test_empty.txt
+lib/go/src/cmd/go/testdata/script/test_env_term.txt
+lib/go/src/cmd/go/testdata/script/test_fail_fast.txt
 lib/go/src/cmd/go/testdata/script/test_flag.txt
+lib/go/src/cmd/go/testdata/script/test_flags.txt
 lib/go/src/cmd/go/testdata/script/test_generated_main.txt
 lib/go/src/cmd/go/testdata/script/test_go111module_cache.txt
 lib/go/src/cmd/go/testdata/script/test_import_error_stack.txt
 lib/go/src/cmd/go/testdata/script/test_json_panic_exit.txt
+lib/go/src/cmd/go/testdata/script/test_json.txt
 lib/go/src/cmd/go/testdata/script/test_main_archive.txt
 lib/go/src/cmd/go/testdata/script/test_main_panic.txt
 lib/go/src/cmd/go/testdata/script/test_main_twice.txt
+lib/go/src/cmd/go/testdata/script/test_main.txt
+lib/go/src/cmd/go/testdata/script/test_match_benchmark_labels.txt
+lib/go/src/cmd/go/testdata/script/test_match_no_benchmarks.txt
+lib/go/src/cmd/go/testdata/script/test_match_no_subtests_failure.txt
+lib/go/src/cmd/go/testdata/script/test_match_no_subtests_parallel.txt
+lib/go/src/cmd/go/testdata/script/test_match_no_subtests.txt
 lib/go/src/cmd/go/testdata/script/test_match_no_tests_build_failure.txt
+lib/go/src/cmd/go/testdata/script/test_match_no_tests_with_subtests.txt
+lib/go/src/cmd/go/testdata/script/test_match_no_tests.txt
+lib/go/src/cmd/go/testdata/script/test_match_only_benchmarks.txt
+lib/go/src/cmd/go/testdata/script/test_match_only_example.txt
+lib/go/src/cmd/go/testdata/script/test_match_only_subtests_parallel.txt
+lib/go/src/cmd/go/testdata/script/test_match_only_subtests.txt
+lib/go/src/cmd/go/testdata/script/test_match_only_tests.txt
 lib/go/src/cmd/go/testdata/script/test_minus_n.txt
+lib/go/src/cmd/go/testdata/script/test_no_run_example.txt
 lib/go/src/cmd/go/testdata/script/test_no_tests.txt
+lib/go/src/cmd/go/testdata/script/test_parallel_number.txt
+lib/go/src/cmd/go/testdata/script/test_profile.txt
 lib/go/src/cmd/go/testdata/script/test_race_cover_mode_issue20435.txt
+lib/go/src/cmd/go/testdata/script/test_race_install_cgo.txt
+lib/go/src/cmd/go/testdata/script/test_race_install.txt
 lib/go/src/cmd/go/testdata/script/test_race.txt
 lib/go/src/cmd/go/testdata/script/test_rebuildall.txt
 lib/go/src/cmd/go/testdata/script/test_regexps.txt
+lib/go/src/cmd/go/testdata/script/test_relative_cmdline.txt
+lib/go/src/cmd/go/testdata/script/test_relative_import_dash_i.txt
+lib/go/src/cmd/go/testdata/script/test_relative_import.txt
+lib/go/src/cmd/go/testdata/script/test_source_order.txt
 lib/go/src/cmd/go/testdata/script/test_status.txt
 lib/go/src/cmd/go/testdata/script/test_syntax_error_says_fail.txt
 lib/go/src/cmd/go/testdata/script/test_timeout.txt
+lib/go/src/cmd/go/testdata/script/test_vendor.txt
+lib/go/src/cmd/go/testdata/script/test_vet.txt
+lib/go/src/cmd/go/testdata/script/test_write_profiles_on_timeout.txt
+lib/go/src/cmd/go/testdata/script/test_xtestonly_works.txt
 lib/go/src/cmd/go/testdata/script/vendor_complex.txt
+lib/go/src/cmd/go/testdata/script/vendor_gopath_issue11409.txt
+lib/go/src/cmd/go/testdata/script/vendor_import_missing.txt
+lib/go/src/cmd/go/testdata/script/vendor_import_wrong.txt
+lib/go/src/cmd/go/testdata/script/vendor_import.txt
+lib/go/src/cmd/go/testdata/script/vendor_issue12156.txt
+lib/go/src/cmd/go/testdata/script/vendor_list_issue11977.txt
+lib/go/src/cmd/go/testdata/script/vendor_resolve.txt
+lib/go/src/cmd/go/testdata/script/vendor_test_issue11864.txt
+lib/go/src/cmd/go/testdata/script/vendor_test_issue14613.txt
+lib/go/src/cmd/go/testdata/script/version_replace.txt
 lib/go/src/cmd/go/testdata/script/version.txt
 lib/go/src/cmd/go/testdata/script/vet_asm.txt
 lib/go/src/cmd/go/testdata/script/vet_deps.txt
 lib/go/src/cmd/go/testdata/script/vet_flags.txt
-lib/go/src/cmd/go/testdata/shadow/root1/src/foo/foo.go
-lib/go/src/cmd/go/testdata/shadow/root1/src/math/math.go
-lib/go/src/cmd/go/testdata/shadow/root2/src/foo/foo.go
-lib/go/src/cmd/go/testdata/src/cgotest/m.go
-lib/go/src/cmd/go/testdata/src/coverasm/p_test.go
-lib/go/src/cmd/go/testdata/src/coverasm/p.go
-lib/go/src/cmd/go/testdata/src/coverasm/p.s
-lib/go/src/cmd/go/testdata/src/coverbad/p_test.go
-lib/go/src/cmd/go/testdata/src/coverbad/p.go
-lib/go/src/cmd/go/testdata/src/coverbad/p1.go
-lib/go/src/cmd/go/testdata/src/coverdep/p_test.go
-lib/go/src/cmd/go/testdata/src/coverdep/p.go
-lib/go/src/cmd/go/testdata/src/coverdep/p1/p1.go
-lib/go/src/cmd/go/testdata/src/coverdep2/p1/p_test.go
-lib/go/src/cmd/go/testdata/src/coverdep2/p1/p.go
-lib/go/src/cmd/go/testdata/src/coverdep2/p2/p2.go
-lib/go/src/cmd/go/testdata/src/coverdot1/p.go
-lib/go/src/cmd/go/testdata/src/coverdot2/p_test.go
-lib/go/src/cmd/go/testdata/src/coverdot2/p.go
-lib/go/src/cmd/go/testdata/src/empty/pkg/pkg.go
-lib/go/src/cmd/go/testdata/src/empty/pkgtest/pkg.go
-lib/go/src/cmd/go/testdata/src/empty/pkgtest/test_test.go
-lib/go/src/cmd/go/testdata/src/empty/pkgtestxtest/pkg.go
-lib/go/src/cmd/go/testdata/src/empty/pkgtestxtest/test_test.go
-lib/go/src/cmd/go/testdata/src/empty/pkgtestxtest/xtest_test.go
-lib/go/src/cmd/go/testdata/src/empty/pkgxtest/pkg.go
-lib/go/src/cmd/go/testdata/src/empty/pkgxtest/xtest_test.go
-lib/go/src/cmd/go/testdata/src/empty/test/test_test.go
-lib/go/src/cmd/go/testdata/src/empty/testxtest/test_test.go
-lib/go/src/cmd/go/testdata/src/empty/testxtest/xtest_test.go
-lib/go/src/cmd/go/testdata/src/empty/xtest/xtest_test.go
-lib/go/src/cmd/go/testdata/src/exclude/empty/x.txt
-lib/go/src/cmd/go/testdata/src/exclude/ignore/_x.go
-lib/go/src/cmd/go/testdata/src/exclude/x_linux.go
-lib/go/src/cmd/go/testdata/src/exclude/x.go
-lib/go/src/cmd/go/testdata/src/failfast_test.go
-lib/go/src/cmd/go/testdata/src/hello/hello.go
-lib/go/src/cmd/go/testdata/src/my.pkg/main/main.go
-lib/go/src/cmd/go/testdata/src/my.pkg/pkg.go
-lib/go/src/cmd/go/testdata/src/skipper/skip_test.go
-lib/go/src/cmd/go/testdata/src/testlist/bench_test.go
-lib/go/src/cmd/go/testdata/src/testlist/example_test.go
-lib/go/src/cmd/go/testdata/src/testlist/test_test.go
-lib/go/src/cmd/go/testdata/src/vend/bad.go
-lib/go/src/cmd/go/testdata/src/vend/dir1/dir1.go
-lib/go/src/cmd/go/testdata/src/vend/good.go
-lib/go/src/cmd/go/testdata/src/vend/hello/hello_test.go
-lib/go/src/cmd/go/testdata/src/vend/hello/hello.go
-lib/go/src/cmd/go/testdata/src/vend/hello/hellox_test.go
-lib/go/src/cmd/go/testdata/src/vend/subdir/bad.go
-lib/go/src/cmd/go/testdata/src/vend/subdir/good.go
-lib/go/src/cmd/go/testdata/src/vend/vendor/p/p.go
-lib/go/src/cmd/go/testdata/src/vend/vendor/q/q.go
-lib/go/src/cmd/go/testdata/src/vend/vendor/strings/msg.go
-lib/go/src/cmd/go/testdata/src/vend/vendor/vend/dir1/dir2/dir2.go
-lib/go/src/cmd/go/testdata/src/vend/x/invalid/invalid.go
-lib/go/src/cmd/go/testdata/src/vend/x/vendor/p/p.go
-lib/go/src/cmd/go/testdata/src/vend/x/vendor/p/p/p.go
-lib/go/src/cmd/go/testdata/src/vend/x/vendor/r/r.go
-lib/go/src/cmd/go/testdata/src/vend/x/x.go
-lib/go/src/cmd/go/testdata/src/vetcycle/p.go
-lib/go/src/cmd/go/testdata/src/vetfail/p1/p1.go
-lib/go/src/cmd/go/testdata/src/vetfail/p2/p2_test.go
-lib/go/src/cmd/go/testdata/src/vetfail/p2/p2.go
-lib/go/src/cmd/go/testdata/src/vetpkg/a_test.go
-lib/go/src/cmd/go/testdata/src/vetpkg/b.go
-lib/go/src/cmd/go/testdata/src/vetpkg/c.go
-lib/go/src/cmd/go/testdata/src/xtestonly/f_test.go
-lib/go/src/cmd/go/testdata/src/xtestonly/f.go
-lib/go/src/cmd/go/testdata/standalone_benchmark_test.go
-lib/go/src/cmd/go/testdata/standalone_fail_sub_test.go
-lib/go/src/cmd/go/testdata/standalone_main_normal_test.go
-lib/go/src/cmd/go/testdata/standalone_main_wrong_test.go
-lib/go/src/cmd/go/testdata/standalone_parallel_sub_test.go
-lib/go/src/cmd/go/testdata/standalone_sub_test.go
-lib/go/src/cmd/go/testdata/standalone_test.go
-lib/go/src/cmd/go/testdata/standalone_testmain_flag_test.go
-lib/go/src/cmd/go/testdata/testcover/pkg1/a.go
-lib/go/src/cmd/go/testdata/testcover/pkg2/a_test.go
-lib/go/src/cmd/go/testdata/testcover/pkg2/a.go
-lib/go/src/cmd/go/testdata/testcover/pkg3/a_test.go
-lib/go/src/cmd/go/testdata/testcover/pkg3/a.go
-lib/go/src/cmd/go/testdata/testcover/pkg4/a_test.go
-lib/go/src/cmd/go/testdata/testcover/pkg4/a.go
-lib/go/src/cmd/go/testdata/testimport/p_test.go
-lib/go/src/cmd/go/testdata/testimport/p.go
-lib/go/src/cmd/go/testdata/testimport/p1/p1.go
-lib/go/src/cmd/go/testdata/testimport/p2/p2.go
-lib/go/src/cmd/go/testdata/testimport/x_test.go
-lib/go/src/cmd/go/testdata/testinternal/p.go
-lib/go/src/cmd/go/testdata/testinternal2/p.go
-lib/go/src/cmd/go/testdata/testinternal2/x/y/z/internal/w/w.go
-lib/go/src/cmd/go/testdata/testinternal3/t.go
-lib/go/src/cmd/go/testdata/testinternal4/src/p/p.go
-lib/go/src/cmd/go/testdata/testinternal4/src/q/internal/x/x.go
-lib/go/src/cmd/go/testdata/testinternal4/src/q/j/j.go
-lib/go/src/cmd/go/testdata/testonly/p_test.go
-lib/go/src/cmd/go/testdata/testonly2/t.go
+lib/go/src/cmd/go/testdata/script/vet_internal.txt
+lib/go/src/cmd/go/testdata/script/vet.txt
 lib/go/src/cmd/go/testdata/testterminal18153/terminal_test.go
-lib/go/src/cmd/go/testdata/testvendor/src/p/p.go
-lib/go/src/cmd/go/testdata/testvendor/src/q/vendor/x/x.go
-lib/go/src/cmd/go/testdata/testvendor/src/q/y/y.go
-lib/go/src/cmd/go/testdata/testvendor/src/q/z/z.go
-lib/go/src/cmd/go/testdata/testvendor2/src/p/p.go
-lib/go/src/cmd/go/testdata/testvendor2/vendor/x/x.go
-lib/go/src/cmd/go/testdata/timeoutbench_test.go
 lib/go/src/cmd/go/testdata/vendormod.txt
-lib/go/src/cmd/go/vendor_test.go
 lib/go/src/cmd/gofmt/doc.go
 lib/go/src/cmd/gofmt/gofmt_test.go
 lib/go/src/cmd/gofmt/gofmt.go
@@ -2389,7 +2471,9 @@ lib/go/src/cmd/internal/goobj2/builtin.go
 lib/go/src/cmd/internal/goobj2/builtinlist.go
 lib/go/src/cmd/internal/goobj2/funcinfo.go
 lib/go/src/cmd/internal/goobj2/mkbuiltin.go
+lib/go/src/cmd/internal/goobj2/objfile_test.go
 lib/go/src/cmd/internal/goobj2/objfile.go
+lib/go/src/cmd/internal/moddeps/moddeps_test.go
 lib/go/src/cmd/internal/obj/abi_string.go
 lib/go/src/cmd/internal/obj/addrtype_string.go
 lib/go/src/cmd/internal/obj/arm/a.out.go
@@ -2429,6 +2513,7 @@ lib/go/src/cmd/internal/obj/plist.go
 lib/go/src/cmd/internal/obj/ppc64/a.out.go
 lib/go/src/cmd/internal/obj/ppc64/anames.go
 lib/go/src/cmd/internal/obj/ppc64/anames9.go
+lib/go/src/cmd/internal/obj/ppc64/asm_test.go
 lib/go/src/cmd/internal/obj/ppc64/asm9.go
 lib/go/src/cmd/internal/obj/ppc64/doc.go
 lib/go/src/cmd/internal/obj/ppc64/list9.go
@@ -2439,6 +2524,8 @@ lib/go/src/cmd/internal/obj/riscv/cpu.go
 lib/go/src/cmd/internal/obj/riscv/inst.go
 lib/go/src/cmd/internal/obj/riscv/list.go
 lib/go/src/cmd/internal/obj/riscv/obj.go
+lib/go/src/cmd/internal/obj/riscv/testdata/testbranch/branch_test.go
+lib/go/src/cmd/internal/obj/riscv/testdata/testbranch/branch_test.s
 lib/go/src/cmd/internal/obj/s390x/a.out.go
 lib/go/src/cmd/internal/obj/s390x/anames.go
 lib/go/src/cmd/internal/obj/s390x/anamesz.go
@@ -2516,6 +2603,8 @@ lib/go/src/cmd/internal/test2json/testdata/issue23036.json
 lib/go/src/cmd/internal/test2json/testdata/issue23036.test
 lib/go/src/cmd/internal/test2json/testdata/issue23920.json
 lib/go/src/cmd/internal/test2json/testdata/issue23920.test
+lib/go/src/cmd/internal/test2json/testdata/issue29755.json
+lib/go/src/cmd/internal/test2json/testdata/issue29755.test
 lib/go/src/cmd/internal/test2json/testdata/panic.json
 lib/go/src/cmd/internal/test2json/testdata/panic.test
 lib/go/src/cmd/internal/test2json/testdata/smiley.json
@@ -2536,18 +2625,25 @@ lib/go/src/cmd/link/internal/arm/obj.go
 lib/go/src/cmd/link/internal/arm64/asm.go
 lib/go/src/cmd/link/internal/arm64/l.go
 lib/go/src/cmd/link/internal/arm64/obj.go
+lib/go/src/cmd/link/internal/benchmark/bench_test.go
+lib/go/src/cmd/link/internal/benchmark/bench.go
 lib/go/src/cmd/link/internal/ld/ar.go
 lib/go/src/cmd/link/internal/ld/config.go
 lib/go/src/cmd/link/internal/ld/data.go
+lib/go/src/cmd/link/internal/ld/data2.go
+lib/go/src/cmd/link/internal/ld/deadcode_test.go
 lib/go/src/cmd/link/internal/ld/deadcode.go
-lib/go/src/cmd/link/internal/ld/deadcode2.go
 lib/go/src/cmd/link/internal/ld/decodesym.go
 lib/go/src/cmd/link/internal/ld/dwarf_test.go
 lib/go/src/cmd/link/internal/ld/dwarf.go
+lib/go/src/cmd/link/internal/ld/dwarf2.go
 lib/go/src/cmd/link/internal/ld/elf_test.go
 lib/go/src/cmd/link/internal/ld/elf.go
+lib/go/src/cmd/link/internal/ld/elf2.go
+lib/go/src/cmd/link/internal/ld/errors.go
 lib/go/src/cmd/link/internal/ld/execarchive_noexec.go
 lib/go/src/cmd/link/internal/ld/execarchive.go
+lib/go/src/cmd/link/internal/ld/fallocate_test.go
 lib/go/src/cmd/link/internal/ld/go.go
 lib/go/src/cmd/link/internal/ld/issue33808_test.go
 lib/go/src/cmd/link/internal/ld/ld_test.go
@@ -2558,14 +2654,21 @@ lib/go/src/cmd/link/internal/ld/macho_combine_dwarf.go
 lib/go/src/cmd/link/internal/ld/macho.go
 lib/go/src/cmd/link/internal/ld/main.go
 lib/go/src/cmd/link/internal/ld/nooptcgolink_test.go
+lib/go/src/cmd/link/internal/ld/outbuf_darwin.go
+lib/go/src/cmd/link/internal/ld/outbuf_linux.go
 lib/go/src/cmd/link/internal/ld/outbuf_mmap.go
+lib/go/src/cmd/link/internal/ld/outbuf_nofallocate.go
 lib/go/src/cmd/link/internal/ld/outbuf_nommap.go
+lib/go/src/cmd/link/internal/ld/outbuf_test.go
 lib/go/src/cmd/link/internal/ld/outbuf_windows.go
 lib/go/src/cmd/link/internal/ld/outbuf.go
 lib/go/src/cmd/link/internal/ld/pcln.go
 lib/go/src/cmd/link/internal/ld/pe.go
 lib/go/src/cmd/link/internal/ld/sym.go
 lib/go/src/cmd/link/internal/ld/symtab.go
+lib/go/src/cmd/link/internal/ld/target.go
+lib/go/src/cmd/link/internal/ld/testdata/deadcode/reflectcall.go
+lib/go/src/cmd/link/internal/ld/testdata/deadcode/typedesc.go
 lib/go/src/cmd/link/internal/ld/testdata/httptest/main/main.go
 lib/go/src/cmd/link/internal/ld/testdata/issue10978/main.go
 lib/go/src/cmd/link/internal/ld/testdata/issue10978/main.s
@@ -2576,11 +2679,16 @@ lib/go/src/cmd/link/internal/ld/testdata/issue26237/main/main.go
 lib/go/src/cmd/link/internal/ld/testdata/issue32233/lib/lib.go
 lib/go/src/cmd/link/internal/ld/testdata/issue32233/lib/ObjC.m
 lib/go/src/cmd/link/internal/ld/testdata/issue32233/main/main.go
+lib/go/src/cmd/link/internal/ld/testdata/issue38192/main.go
+lib/go/src/cmd/link/internal/ld/testdata/issue38192/oneline.s
 lib/go/src/cmd/link/internal/ld/typelink.go
 lib/go/src/cmd/link/internal/ld/util.go
 lib/go/src/cmd/link/internal/ld/xcoff.go
+lib/go/src/cmd/link/internal/ld/xcoff2.go
 lib/go/src/cmd/link/internal/loadelf/ldelf.go
+lib/go/src/cmd/link/internal/loader/loader_test.go
 lib/go/src/cmd/link/internal/loader/loader.go
+lib/go/src/cmd/link/internal/loader/symbolbuilder.go
 lib/go/src/cmd/link/internal/loadmacho/ldmacho.go
 lib/go/src/cmd/link/internal/loadpe/ldpe.go
 lib/go/src/cmd/link/internal/loadxcoff/ldxcoff.go
@@ -2590,7 +2698,6 @@ lib/go/src/cmd/link/internal/mips/obj.go
 lib/go/src/cmd/link/internal/mips64/asm.go
 lib/go/src/cmd/link/internal/mips64/l.go
 lib/go/src/cmd/link/internal/mips64/obj.go
-lib/go/src/cmd/link/internal/objfile/objfile.go
 lib/go/src/cmd/link/internal/ppc64/asm.go
 lib/go/src/cmd/link/internal/ppc64/l.go
 lib/go/src/cmd/link/internal/ppc64/obj.go
@@ -2618,8 +2725,13 @@ lib/go/src/cmd/link/internal/x86/obj.go
 lib/go/src/cmd/link/link_test.go
 lib/go/src/cmd/link/linkbig_test.go
 lib/go/src/cmd/link/main.go
-lib/go/src/cmd/link/testdata/lib.go
-lib/go/src/cmd/link/testdata/main.m
+lib/go/src/cmd/link/testdata/testBuildFortvOS/lib.go
+lib/go/src/cmd/link/testdata/testBuildFortvOS/main.m
+lib/go/src/cmd/link/testdata/testIndexMismatch/a.go
+lib/go/src/cmd/link/testdata/testIndexMismatch/b.go
+lib/go/src/cmd/link/testdata/testIndexMismatch/main.go
+lib/go/src/cmd/link/testdata/testPErsrc/main.go
+lib/go/src/cmd/link/testdata/testPErsrc/rsrc.syso
 lib/go/src/cmd/nm/doc.go
 lib/go/src/cmd/nm/nm_cgo_test.go
 lib/go/src/cmd/nm/nm_test.go
@@ -2627,6 +2739,91 @@ lib/go/src/cmd/nm/nm.go
 lib/go/src/cmd/objdump/main.go
 lib/go/src/cmd/objdump/objdump_test.go
 lib/go/src/cmd/objdump/testdata/fmthello.go
+lib/go/src/cmd/oldlink/doc.go
+lib/go/src/cmd/oldlink/internal/amd64/asm.go
+lib/go/src/cmd/oldlink/internal/amd64/l.go
+lib/go/src/cmd/oldlink/internal/amd64/obj.go
+lib/go/src/cmd/oldlink/internal/arm/asm.go
+lib/go/src/cmd/oldlink/internal/arm/l.go
+lib/go/src/cmd/oldlink/internal/arm/obj.go
+lib/go/src/cmd/oldlink/internal/arm64/asm.go
+lib/go/src/cmd/oldlink/internal/arm64/l.go
+lib/go/src/cmd/oldlink/internal/arm64/obj.go
+lib/go/src/cmd/oldlink/internal/ld/ar.go
+lib/go/src/cmd/oldlink/internal/ld/config.go
+lib/go/src/cmd/oldlink/internal/ld/data.go
+lib/go/src/cmd/oldlink/internal/ld/deadcode.go
+lib/go/src/cmd/oldlink/internal/ld/deadcode2.go
+lib/go/src/cmd/oldlink/internal/ld/decodesym.go
+lib/go/src/cmd/oldlink/internal/ld/dwarf.go
+lib/go/src/cmd/oldlink/internal/ld/elf.go
+lib/go/src/cmd/oldlink/internal/ld/execarchive_noexec.go
+lib/go/src/cmd/oldlink/internal/ld/execarchive.go
+lib/go/src/cmd/oldlink/internal/ld/go.go
+lib/go/src/cmd/oldlink/internal/ld/ld.go
+lib/go/src/cmd/oldlink/internal/ld/lib.go
+lib/go/src/cmd/oldlink/internal/ld/link.go
+lib/go/src/cmd/oldlink/internal/ld/macho_combine_dwarf.go
+lib/go/src/cmd/oldlink/internal/ld/macho.go
+lib/go/src/cmd/oldlink/internal/ld/main.go
+lib/go/src/cmd/oldlink/internal/ld/outbuf_mmap.go
+lib/go/src/cmd/oldlink/internal/ld/outbuf_nommap.go
+lib/go/src/cmd/oldlink/internal/ld/outbuf_windows.go
+lib/go/src/cmd/oldlink/internal/ld/outbuf.go
+lib/go/src/cmd/oldlink/internal/ld/pcln.go
+lib/go/src/cmd/oldlink/internal/ld/pe.go
+lib/go/src/cmd/oldlink/internal/ld/sym.go
+lib/go/src/cmd/oldlink/internal/ld/symtab.go
+lib/go/src/cmd/oldlink/internal/ld/testdata/httptest/main/main.go
+lib/go/src/cmd/oldlink/internal/ld/testdata/issue10978/main.go
+lib/go/src/cmd/oldlink/internal/ld/testdata/issue10978/main.s
+lib/go/src/cmd/oldlink/internal/ld/testdata/issue25459/a/a.go
+lib/go/src/cmd/oldlink/internal/ld/testdata/issue25459/main/main.go
+lib/go/src/cmd/oldlink/internal/ld/testdata/issue26237/b.dir/b.go
+lib/go/src/cmd/oldlink/internal/ld/testdata/issue26237/main/main.go
+lib/go/src/cmd/oldlink/internal/ld/testdata/issue32233/lib/lib.go
+lib/go/src/cmd/oldlink/internal/ld/testdata/issue32233/lib/ObjC.m
+lib/go/src/cmd/oldlink/internal/ld/testdata/issue32233/main/main.go
+lib/go/src/cmd/oldlink/internal/ld/typelink.go
+lib/go/src/cmd/oldlink/internal/ld/util.go
+lib/go/src/cmd/oldlink/internal/ld/xcoff.go
+lib/go/src/cmd/oldlink/internal/loadelf/ldelf.go
+lib/go/src/cmd/oldlink/internal/loader/loader.go
+lib/go/src/cmd/oldlink/internal/loadmacho/ldmacho.go
+lib/go/src/cmd/oldlink/internal/loadpe/ldpe.go
+lib/go/src/cmd/oldlink/internal/loadxcoff/ldxcoff.go
+lib/go/src/cmd/oldlink/internal/mips/asm.go
+lib/go/src/cmd/oldlink/internal/mips/l.go
+lib/go/src/cmd/oldlink/internal/mips/obj.go
+lib/go/src/cmd/oldlink/internal/mips64/asm.go
+lib/go/src/cmd/oldlink/internal/mips64/l.go
+lib/go/src/cmd/oldlink/internal/mips64/obj.go
+lib/go/src/cmd/oldlink/internal/objfile/objfile.go
+lib/go/src/cmd/oldlink/internal/ppc64/asm.go
+lib/go/src/cmd/oldlink/internal/ppc64/l.go
+lib/go/src/cmd/oldlink/internal/ppc64/obj.go
+lib/go/src/cmd/oldlink/internal/riscv64/asm.go
+lib/go/src/cmd/oldlink/internal/riscv64/l.go
+lib/go/src/cmd/oldlink/internal/riscv64/obj.go
+lib/go/src/cmd/oldlink/internal/s390x/asm.go
+lib/go/src/cmd/oldlink/internal/s390x/l.go
+lib/go/src/cmd/oldlink/internal/s390x/obj.go
+lib/go/src/cmd/oldlink/internal/sym/attribute.go
+lib/go/src/cmd/oldlink/internal/sym/compilation_unit.go
+lib/go/src/cmd/oldlink/internal/sym/library.go
+lib/go/src/cmd/oldlink/internal/sym/reloc.go
+lib/go/src/cmd/oldlink/internal/sym/segment.go
+lib/go/src/cmd/oldlink/internal/sym/sizeof_test.go
+lib/go/src/cmd/oldlink/internal/sym/symbol.go
+lib/go/src/cmd/oldlink/internal/sym/symbols.go
+lib/go/src/cmd/oldlink/internal/sym/symkind_string.go
+lib/go/src/cmd/oldlink/internal/sym/symkind.go
+lib/go/src/cmd/oldlink/internal/wasm/asm.go
+lib/go/src/cmd/oldlink/internal/wasm/obj.go
+lib/go/src/cmd/oldlink/internal/x86/asm.go
+lib/go/src/cmd/oldlink/internal/x86/l.go
+lib/go/src/cmd/oldlink/internal/x86/obj.go
+lib/go/src/cmd/oldlink/main.go
 lib/go/src/cmd/pack/doc.go
 lib/go/src/cmd/pack/pack_test.go
 lib/go/src/cmd/pack/pack.go
@@ -2769,6 +2966,7 @@ lib/go/src/cmd/vendor/golang.org/x/mod/sumdb/tlog/tlog.go
 lib/go/src/cmd/vendor/golang.org/x/mod/zip/zip.go
 lib/go/src/cmd/vendor/golang.org/x/sys/AUTHORS
 lib/go/src/cmd/vendor/golang.org/x/sys/CONTRIBUTORS
+lib/go/src/cmd/vendor/golang.org/x/sys/internal/unsafeheader/unsafeheader.go
 lib/go/src/cmd/vendor/golang.org/x/sys/LICENSE
 lib/go/src/cmd/vendor/golang.org/x/sys/PATENTS
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/.gitignore
@@ -2820,9 +3018,11 @@ lib/go/src/cmd/vendor/golang.org/x/sys/unix/env_unix.go
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/errors_freebsd_386.go
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/errors_freebsd_amd64.go
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/errors_freebsd_arm.go
+lib/go/src/cmd/vendor/golang.org/x/sys/unix/errors_freebsd_arm64.go
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/fcntl_darwin.go
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/fcntl_linux_32bit.go
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/fcntl.go
+lib/go/src/cmd/vendor/golang.org/x/sys/unix/fdset.go
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/gccgo_c.c
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/gccgo_linux_amd64.go
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/gccgo.go
@@ -2833,19 +3033,29 @@ lib/go/src/cmd/vendor/golang.org/x/sys/unix/pagesize_unix.go
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/pledge_openbsd.go
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/race.go
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/race0.go
+lib/go/src/cmd/vendor/golang.org/x/sys/unix/readdirent_getdents.go
+lib/go/src/cmd/vendor/golang.org/x/sys/unix/readdirent_getdirentries.go
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/README.md
+lib/go/src/cmd/vendor/golang.org/x/sys/unix/sockcmsg_dragonfly.go
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/sockcmsg_linux.go
+lib/go/src/cmd/vendor/golang.org/x/sys/unix/sockcmsg_unix_other.go
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/sockcmsg_unix.go
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/str.go
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/syscall_aix_ppc.go
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/syscall_aix_ppc64.go
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/syscall_aix.go
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/syscall_bsd.go
+lib/go/src/cmd/vendor/golang.org/x/sys/unix/syscall_darwin_386.1_11.go
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/syscall_darwin_386.go
+lib/go/src/cmd/vendor/golang.org/x/sys/unix/syscall_darwin_amd64.1_11.go
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/syscall_darwin_amd64.go
+lib/go/src/cmd/vendor/golang.org/x/sys/unix/syscall_darwin_arm.1_11.go
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/syscall_darwin_arm.go
+lib/go/src/cmd/vendor/golang.org/x/sys/unix/syscall_darwin_arm64.1_11.go
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/syscall_darwin_arm64.go
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/syscall_darwin_libSystem.go
+lib/go/src/cmd/vendor/golang.org/x/sys/unix/syscall_darwin.1_12.go
+lib/go/src/cmd/vendor/golang.org/x/sys/unix/syscall_darwin.1_13.go
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/syscall_darwin.go
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/syscall_dragonfly_amd64.go
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/syscall_dragonfly.go
@@ -2854,6 +3064,7 @@ lib/go/src/cmd/vendor/golang.org/x/sys/unix/syscall_freebsd_amd64.go
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/syscall_freebsd_arm.go
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/syscall_freebsd_arm64.go
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/syscall_freebsd.go
+lib/go/src/cmd/vendor/golang.org/x/sys/unix/syscall_illumos.go
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/syscall_linux_386.go
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/syscall_linux_amd64_gc.go
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/syscall_linux_amd64.go
@@ -2913,6 +3124,7 @@ lib/go/src/cmd/vendor/golang.org/x/sys/unix/zerrors_linux_ppc64le.go
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/zerrors_linux_riscv64.go
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/zerrors_linux_s390x.go
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/zerrors_linux_sparc64.go
+lib/go/src/cmd/vendor/golang.org/x/sys/unix/zerrors_linux.go
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/zerrors_netbsd_386.go
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/zerrors_netbsd_amd64.go
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/zerrors_netbsd_arm.go
@@ -2922,24 +3134,33 @@ lib/go/src/cmd/vendor/golang.org/x/sys/unix/zerrors_openbsd_amd64.go
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/zerrors_openbsd_arm.go
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/zerrors_openbsd_arm64.go
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/zerrors_solaris_amd64.go
-lib/go/src/cmd/vendor/golang.org/x/sys/unix/zptrace386_linux.go
-lib/go/src/cmd/vendor/golang.org/x/sys/unix/zptracearm_linux.go
-lib/go/src/cmd/vendor/golang.org/x/sys/unix/zptracemips_linux.go
-lib/go/src/cmd/vendor/golang.org/x/sys/unix/zptracemipsle_linux.go
+lib/go/src/cmd/vendor/golang.org/x/sys/unix/zptrace_armnn_linux.go
+lib/go/src/cmd/vendor/golang.org/x/sys/unix/zptrace_linux_arm64.go
+lib/go/src/cmd/vendor/golang.org/x/sys/unix/zptrace_mipsnn_linux.go
+lib/go/src/cmd/vendor/golang.org/x/sys/unix/zptrace_mipsnnle_linux.go
+lib/go/src/cmd/vendor/golang.org/x/sys/unix/zptrace_x86_linux.go
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/zsyscall_aix_ppc.go
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/zsyscall_aix_ppc64_gc.go
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/zsyscall_aix_ppc64_gccgo.go
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/zsyscall_aix_ppc64.go
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/zsyscall_darwin_386.1_11.go
+lib/go/src/cmd/vendor/golang.org/x/sys/unix/zsyscall_darwin_386.1_13.go
+lib/go/src/cmd/vendor/golang.org/x/sys/unix/zsyscall_darwin_386.1_13.s
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/zsyscall_darwin_386.go
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/zsyscall_darwin_386.s
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/zsyscall_darwin_amd64.1_11.go
+lib/go/src/cmd/vendor/golang.org/x/sys/unix/zsyscall_darwin_amd64.1_13.go
+lib/go/src/cmd/vendor/golang.org/x/sys/unix/zsyscall_darwin_amd64.1_13.s
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/zsyscall_darwin_amd64.go
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/zsyscall_darwin_amd64.s
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/zsyscall_darwin_arm.1_11.go
+lib/go/src/cmd/vendor/golang.org/x/sys/unix/zsyscall_darwin_arm.1_13.go
+lib/go/src/cmd/vendor/golang.org/x/sys/unix/zsyscall_darwin_arm.1_13.s
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/zsyscall_darwin_arm.go
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/zsyscall_darwin_arm.s
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/zsyscall_darwin_arm64.1_11.go
+lib/go/src/cmd/vendor/golang.org/x/sys/unix/zsyscall_darwin_arm64.1_13.go
+lib/go/src/cmd/vendor/golang.org/x/sys/unix/zsyscall_darwin_arm64.1_13.s
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/zsyscall_darwin_arm64.go
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/zsyscall_darwin_arm64.s
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/zsyscall_dragonfly_amd64.go
@@ -2947,6 +3168,7 @@ lib/go/src/cmd/vendor/golang.org/x/sys/unix/zsyscall_freebsd_386.go
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/zsyscall_freebsd_amd64.go
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/zsyscall_freebsd_arm.go
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/zsyscall_freebsd_arm64.go
+lib/go/src/cmd/vendor/golang.org/x/sys/unix/zsyscall_illumos_amd64.go
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/zsyscall_linux_386.go
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/zsyscall_linux_amd64.go
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/zsyscall_linux_arm.go
@@ -2960,6 +3182,7 @@ lib/go/src/cmd/vendor/golang.org/x/sys/unix/zsyscall_linux_ppc64le.go
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/zsyscall_linux_riscv64.go
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/zsyscall_linux_s390x.go
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/zsyscall_linux_sparc64.go
+lib/go/src/cmd/vendor/golang.org/x/sys/unix/zsyscall_linux.go
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/zsyscall_netbsd_386.go
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/zsyscall_netbsd_amd64.go
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/zsyscall_netbsd_arm.go
@@ -3027,6 +3250,7 @@ lib/go/src/cmd/vendor/golang.org/x/sys/unix/ztypes_linux_ppc64le.go
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/ztypes_linux_riscv64.go
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/ztypes_linux_s390x.go
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/ztypes_linux_sparc64.go
+lib/go/src/cmd/vendor/golang.org/x/sys/unix/ztypes_linux.go
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/ztypes_netbsd_386.go
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/ztypes_netbsd_amd64.go
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/ztypes_netbsd_arm.go
@@ -3037,16 +3261,14 @@ lib/go/src/cmd/vendor/golang.org/x/sys/unix/ztypes_openbsd_arm.go
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/ztypes_openbsd_arm64.go
 lib/go/src/cmd/vendor/golang.org/x/sys/unix/ztypes_solaris_amd64.go
 lib/go/src/cmd/vendor/golang.org/x/sys/windows/aliases.go
-lib/go/src/cmd/vendor/golang.org/x/sys/windows/asm_windows_386.s
-lib/go/src/cmd/vendor/golang.org/x/sys/windows/asm_windows_amd64.s
-lib/go/src/cmd/vendor/golang.org/x/sys/windows/asm_windows_arm.s
 lib/go/src/cmd/vendor/golang.org/x/sys/windows/dll_windows.go
+lib/go/src/cmd/vendor/golang.org/x/sys/windows/empty.s
 lib/go/src/cmd/vendor/golang.org/x/sys/windows/env_windows.go
 lib/go/src/cmd/vendor/golang.org/x/sys/windows/eventlog.go
 lib/go/src/cmd/vendor/golang.org/x/sys/windows/exec_windows.go
 lib/go/src/cmd/vendor/golang.org/x/sys/windows/memory_windows.go
 lib/go/src/cmd/vendor/golang.org/x/sys/windows/mkerrors.bash
-lib/go/src/cmd/vendor/golang.org/x/sys/windows/mkerrors.go
+lib/go/src/cmd/vendor/golang.org/x/sys/windows/mkknownfolderids.bash
 lib/go/src/cmd/vendor/golang.org/x/sys/windows/mksyscall.go
 lib/go/src/cmd/vendor/golang.org/x/sys/windows/race.go
 lib/go/src/cmd/vendor/golang.org/x/sys/windows/race0.go
@@ -3060,6 +3282,7 @@ lib/go/src/cmd/vendor/golang.org/x/sys/windows/types_windows_amd64.go
 lib/go/src/cmd/vendor/golang.org/x/sys/windows/types_windows_arm.go
 lib/go/src/cmd/vendor/golang.org/x/sys/windows/types_windows.go
 lib/go/src/cmd/vendor/golang.org/x/sys/windows/zerrors_windows.go
+lib/go/src/cmd/vendor/golang.org/x/sys/windows/zknownfolderids_windows.go
 lib/go/src/cmd/vendor/golang.org/x/sys/windows/zsyscall_windows.go
 lib/go/src/cmd/vendor/golang.org/x/tools/AUTHORS
 lib/go/src/cmd/vendor/golang.org/x/tools/CONTRIBUTORS
@@ -3082,6 +3305,7 @@ lib/go/src/cmd/vendor/golang.org/x/tools/go/analysis/passes/copylock/copylock.go
 lib/go/src/cmd/vendor/golang.org/x/tools/go/analysis/passes/ctrlflow/ctrlflow.go
 lib/go/src/cmd/vendor/golang.org/x/tools/go/analysis/passes/errorsas/errorsas.go
 lib/go/src/cmd/vendor/golang.org/x/tools/go/analysis/passes/httpresponse/httpresponse.go
+lib/go/src/cmd/vendor/golang.org/x/tools/go/analysis/passes/ifaceassert/ifaceassert.go
 lib/go/src/cmd/vendor/golang.org/x/tools/go/analysis/passes/inspect/inspect.go
 lib/go/src/cmd/vendor/golang.org/x/tools/go/analysis/passes/internal/analysisutil/util.go
 lib/go/src/cmd/vendor/golang.org/x/tools/go/analysis/passes/loopclosure/loopclosure.go
@@ -3092,6 +3316,7 @@ lib/go/src/cmd/vendor/golang.org/x/tools/go/analysis/passes/printf/types.go
 lib/go/src/cmd/vendor/golang.org/x/tools/go/analysis/passes/shift/dead.go
 lib/go/src/cmd/vendor/golang.org/x/tools/go/analysis/passes/shift/shift.go
 lib/go/src/cmd/vendor/golang.org/x/tools/go/analysis/passes/stdmethods/stdmethods.go
+lib/go/src/cmd/vendor/golang.org/x/tools/go/analysis/passes/stringintconv/string.go
 lib/go/src/cmd/vendor/golang.org/x/tools/go/analysis/passes/structtag/structtag.go
 lib/go/src/cmd/vendor/golang.org/x/tools/go/analysis/passes/tests/tests.go
 lib/go/src/cmd/vendor/golang.org/x/tools/go/analysis/passes/unmarshal/unmarshal.go
@@ -3115,6 +3340,7 @@ lib/go/src/cmd/vendor/golang.org/x/tools/go/types/typeutil/imports.go
 lib/go/src/cmd/vendor/golang.org/x/tools/go/types/typeutil/map.go
 lib/go/src/cmd/vendor/golang.org/x/tools/go/types/typeutil/methodsetcache.go
 lib/go/src/cmd/vendor/golang.org/x/tools/go/types/typeutil/ui.go
+lib/go/src/cmd/vendor/golang.org/x/tools/internal/analysisinternal/analysis.go
 lib/go/src/cmd/vendor/golang.org/x/tools/LICENSE
 lib/go/src/cmd/vendor/golang.org/x/tools/PATENTS
 lib/go/src/cmd/vendor/golang.org/x/xerrors/adaptor.go
@@ -3331,8 +3557,13 @@ lib/go/src/crypto/des/des_test.go
 lib/go/src/crypto/des/example_test.go
 lib/go/src/crypto/dsa/dsa_test.go
 lib/go/src/crypto/dsa/dsa.go
+lib/go/src/crypto/ecdsa/ecdsa_noasm.go
+lib/go/src/crypto/ecdsa/ecdsa_s390x_test.go
+lib/go/src/crypto/ecdsa/ecdsa_s390x.go
+lib/go/src/crypto/ecdsa/ecdsa_s390x.s
 lib/go/src/crypto/ecdsa/ecdsa_test.go
 lib/go/src/crypto/ecdsa/ecdsa.go
+lib/go/src/crypto/ecdsa/equal_test.go
 lib/go/src/crypto/ecdsa/example_test.go
 lib/go/src/crypto/ecdsa/testdata/SigVer.rsp.bz2
 lib/go/src/crypto/ed25519/ed25519_test.go
@@ -3390,6 +3621,7 @@ lib/go/src/crypto/rand/util_test.go
 lib/go/src/crypto/rand/util.go
 lib/go/src/crypto/rc4/rc4_test.go
 lib/go/src/crypto/rc4/rc4.go
+lib/go/src/crypto/rsa/equal_test.go
 lib/go/src/crypto/rsa/example_test.go
 lib/go/src/crypto/rsa/pkcs1v15_test.go
 lib/go/src/crypto/rsa/pkcs1v15.go
@@ -3446,6 +3678,7 @@ lib/go/src/crypto/tls/alert.go
 lib/go/src/crypto/tls/auth_test.go
 lib/go/src/crypto/tls/auth.go
 lib/go/src/crypto/tls/cipher_suites.go
+lib/go/src/crypto/tls/common_string.go
 lib/go/src/crypto/tls/common.go
 lib/go/src/crypto/tls/conn_test.go
 lib/go/src/crypto/tls/conn.go
@@ -3464,6 +3697,7 @@ lib/go/src/crypto/tls/handshake_unix_test.go
 lib/go/src/crypto/tls/key_agreement.go
 lib/go/src/crypto/tls/key_schedule_test.go
 lib/go/src/crypto/tls/key_schedule.go
+lib/go/src/crypto/tls/link_test.go
 lib/go/src/crypto/tls/prf_test.go
 lib/go/src/crypto/tls/prf.go
 lib/go/src/crypto/tls/testdata/Client-TLSv10-ClientCert-ECDSA-ECDSA
@@ -3590,6 +3824,10 @@ lib/go/src/crypto/tls/tls_test.go
 lib/go/src/crypto/tls/tls.go
 lib/go/src/crypto/x509/cert_pool.go
 lib/go/src/crypto/x509/example_test.go
+lib/go/src/crypto/x509/internal/macos/corefoundation.go
+lib/go/src/crypto/x509/internal/macos/corefoundation.s
+lib/go/src/crypto/x509/internal/macos/security.go
+lib/go/src/crypto/x509/internal/macos/security.s
 lib/go/src/crypto/x509/name_constraints_test.go
 lib/go/src/crypto/x509/pem_decrypt_test.go
 lib/go/src/crypto/x509/pem_decrypt.go
@@ -3599,14 +3837,15 @@ lib/go/src/crypto/x509/pkcs8.go
 lib/go/src/crypto/x509/pkix/pkix.go
 lib/go/src/crypto/x509/root_aix.go
 lib/go/src/crypto/x509/root_bsd.go
-lib/go/src/crypto/x509/root_cgo_darwin.go
-lib/go/src/crypto/x509/root_darwin_arm_gen.go
-lib/go/src/crypto/x509/root_darwin_armx.go
+lib/go/src/crypto/x509/root_cgo_darwin_amd64.go
+lib/go/src/crypto/x509/root_darwin_amd64.go
+lib/go/src/crypto/x509/root_darwin_ios_gen.go
+lib/go/src/crypto/x509/root_darwin_ios.go
 lib/go/src/crypto/x509/root_darwin_test.go
-lib/go/src/crypto/x509/root_darwin.go
 lib/go/src/crypto/x509/root_js.go
 lib/go/src/crypto/x509/root_linux.go
-lib/go/src/crypto/x509/root_nocgo_darwin.go
+lib/go/src/crypto/x509/root_omit_test.go
+lib/go/src/crypto/x509/root_omit.go
 lib/go/src/crypto/x509/root_plan9.go
 lib/go/src/crypto/x509/root_solaris.go
 lib/go/src/crypto/x509/root_unix_test.go
@@ -4027,11 +4266,11 @@ lib/go/src/go/internal/gccgoimporter/testdata/pointer.gox
 lib/go/src/go/internal/gccgoimporter/testdata/time.gox
 lib/go/src/go/internal/gccgoimporter/testdata/unicode.gox
 lib/go/src/go/internal/gccgoimporter/testdata/v1reflect.gox
-lib/go/src/go/internal/gcimporter/bimport.go
 lib/go/src/go/internal/gcimporter/exportdata.go
 lib/go/src/go/internal/gcimporter/gcimporter_test.go
 lib/go/src/go/internal/gcimporter/gcimporter.go
 lib/go/src/go/internal/gcimporter/iimport.go
+lib/go/src/go/internal/gcimporter/support.go
 lib/go/src/go/internal/gcimporter/testdata/a.go
 lib/go/src/go/internal/gcimporter/testdata/b.go
 lib/go/src/go/internal/gcimporter/testdata/exports.go
@@ -4087,6 +4326,9 @@ lib/go/src/go/printer/testdata/empty.input
 lib/go/src/go/printer/testdata/expressions.golden
 lib/go/src/go/printer/testdata/expressions.input
 lib/go/src/go/printer/testdata/expressions.raw
+lib/go/src/go/printer/testdata/go2numbers.golden
+lib/go/src/go/printer/testdata/go2numbers.input
+lib/go/src/go/printer/testdata/go2numbers.norm
 lib/go/src/go/printer/testdata/linebreaks.golden
 lib/go/src/go/printer/testdata/linebreaks.input
 lib/go/src/go/printer/testdata/parser.go
@@ -4224,6 +4466,7 @@ lib/go/src/hash/example_test.go
 lib/go/src/hash/fnv/fnv_test.go
 lib/go/src/hash/fnv/fnv.go
 lib/go/src/hash/hash.go
+lib/go/src/hash/maphash/example_test.go
 lib/go/src/hash/maphash/maphash_test.go
 lib/go/src/hash/maphash/maphash.go
 lib/go/src/hash/maphash/smhasher_test.go
@@ -4252,14 +4495,20 @@ lib/go/src/html/template/escape_test.go
 lib/go/src/html/template/escape.go
 lib/go/src/html/template/example_test.go
 lib/go/src/html/template/examplefiles_test.go
+lib/go/src/html/template/exec_test.go
 lib/go/src/html/template/html_test.go
 lib/go/src/html/template/html.go
 lib/go/src/html/template/js_test.go
 lib/go/src/html/template/js.go
 lib/go/src/html/template/jsctx_string.go
+lib/go/src/html/template/multi_test.go
 lib/go/src/html/template/state_string.go
 lib/go/src/html/template/template_test.go
 lib/go/src/html/template/template.go
+lib/go/src/html/template/testdata/file1.tmpl
+lib/go/src/html/template/testdata/file2.tmpl
+lib/go/src/html/template/testdata/tmpl1.tmpl
+lib/go/src/html/template/testdata/tmpl2.tmpl
 lib/go/src/html/template/transition_test.go
 lib/go/src/html/template/transition.go
 lib/go/src/html/template/url_test.go
@@ -4495,8 +4744,7 @@ lib/go/src/internal/cpu/cpu_amd64.go
 lib/go/src/internal/cpu/cpu_arm.go
 lib/go/src/internal/cpu/cpu_arm64.go
 lib/go/src/internal/cpu/cpu_mips.go
-lib/go/src/internal/cpu/cpu_mips64.go
-lib/go/src/internal/cpu/cpu_mips64le.go
+lib/go/src/internal/cpu/cpu_mips64x.go
 lib/go/src/internal/cpu/cpu_mipsle.go
 lib/go/src/internal/cpu/cpu_no_init.go
 lib/go/src/internal/cpu/cpu_ppc64x.go
@@ -4522,6 +4770,7 @@ lib/go/src/internal/lazytemplate/lazytemplate.go
 lib/go/src/internal/nettrace/nettrace.go
 lib/go/src/internal/obscuretestdata/obscuretestdata.go
 lib/go/src/internal/oserror/errors.go
+lib/go/src/internal/poll/copy_file_range_linux.go
 lib/go/src/internal/poll/errno_unix.go
 lib/go/src/internal/poll/errno_windows.go
 lib/go/src/internal/poll/error_linux_test.go
@@ -4570,6 +4819,15 @@ lib/go/src/internal/poll/strconv.go
 lib/go/src/internal/poll/sys_cloexec.go
 lib/go/src/internal/poll/writev_test.go
 lib/go/src/internal/poll/writev.go
+lib/go/src/internal/profile/encode.go
+lib/go/src/internal/profile/filter.go
+lib/go/src/internal/profile/legacy_profile.go
+lib/go/src/internal/profile/merge.go
+lib/go/src/internal/profile/profile_test.go
+lib/go/src/internal/profile/profile.go
+lib/go/src/internal/profile/proto_test.go
+lib/go/src/internal/profile/proto.go
+lib/go/src/internal/profile/prune.go
 lib/go/src/internal/race/doc.go
 lib/go/src/internal/race/norace.go
 lib/go/src/internal/race/race.go
@@ -4602,22 +4860,23 @@ lib/go/src/internal/syscall/unix/at_sysnum_netbsd.go
 lib/go/src/internal/syscall/unix/at_sysnum_newfstatat_linux.go
 lib/go/src/internal/syscall/unix/at_sysnum_openbsd.go
 lib/go/src/internal/syscall/unix/at.go
+lib/go/src/internal/syscall/unix/copy_file_range_linux.go
 lib/go/src/internal/syscall/unix/fcntl_linux_32bit.go
 lib/go/src/internal/syscall/unix/getentropy_openbsd.go
 lib/go/src/internal/syscall/unix/getrandom_freebsd.go
-lib/go/src/internal/syscall/unix/getrandom_linux_386.go
-lib/go/src/internal/syscall/unix/getrandom_linux_amd64.go
-lib/go/src/internal/syscall/unix/getrandom_linux_arm.go
-lib/go/src/internal/syscall/unix/getrandom_linux_generic.go
-lib/go/src/internal/syscall/unix/getrandom_linux_mips64x.go
-lib/go/src/internal/syscall/unix/getrandom_linux_mipsx.go
-lib/go/src/internal/syscall/unix/getrandom_linux_ppc64x.go
-lib/go/src/internal/syscall/unix/getrandom_linux_s390x.go
 lib/go/src/internal/syscall/unix/getrandom_linux.go
 lib/go/src/internal/syscall/unix/ioctl_aix.go
 lib/go/src/internal/syscall/unix/nonblocking_js.go
 lib/go/src/internal/syscall/unix/nonblocking_libc.go
 lib/go/src/internal/syscall/unix/nonblocking.go
+lib/go/src/internal/syscall/unix/sysnum_linux_386.go
+lib/go/src/internal/syscall/unix/sysnum_linux_amd64.go
+lib/go/src/internal/syscall/unix/sysnum_linux_arm.go
+lib/go/src/internal/syscall/unix/sysnum_linux_generic.go
+lib/go/src/internal/syscall/unix/sysnum_linux_mips64x.go
+lib/go/src/internal/syscall/unix/sysnum_linux_mipsx.go
+lib/go/src/internal/syscall/unix/sysnum_linux_ppc64x.go
+lib/go/src/internal/syscall/unix/sysnum_linux_s390x.go
 lib/go/src/internal/syscall/windows/exec_windows_test.go
 lib/go/src/internal/syscall/windows/mksyscall.go
 lib/go/src/internal/syscall/windows/psapi_windows.go
@@ -4666,6 +4925,8 @@ lib/go/src/internal/trace/testdata/stress_start_stop_1_7_good
 lib/go/src/internal/trace/testdata/stress_start_stop_1_9_good
 lib/go/src/internal/trace/testdata/user_task_span_1_11_good
 lib/go/src/internal/trace/writer.go
+lib/go/src/internal/unsafeheader/unsafeheader_test.go
+lib/go/src/internal/unsafeheader/unsafeheader.go
 lib/go/src/internal/xcoff/ar_test.go
 lib/go/src/internal/xcoff/ar.go
 lib/go/src/internal/xcoff/file_test.go
@@ -4682,6 +4943,7 @@ lib/go/src/io/example_test.go
 lib/go/src/io/io_test.go
 lib/go/src/io/io.go
 lib/go/src/io/ioutil/example_test.go
+lib/go/src/io/ioutil/export_test.go
 lib/go/src/io/ioutil/ioutil_test.go
 lib/go/src/io/ioutil/ioutil.go
 lib/go/src/io/ioutil/tempfile_test.go
@@ -4736,6 +4998,7 @@ lib/go/src/math/big/arith_decl.go
 lib/go/src/math/big/arith_mips64x.s
 lib/go/src/math/big/arith_mipsx.s
 lib/go/src/math/big/arith_ppc64x.s
+lib/go/src/math/big/arith_riscv64.s
 lib/go/src/math/big/arith_s390x_test.go
 lib/go/src/math/big/arith_s390x.s
 lib/go/src/math/big/arith_test.go
@@ -4764,6 +5027,7 @@ lib/go/src/math/big/intconv_test.go
 lib/go/src/math/big/intconv.go
 lib/go/src/math/big/intmarsh_test.go
 lib/go/src/math/big/intmarsh.go
+lib/go/src/math/big/link_test.go
 lib/go/src/math/big/nat_test.go
 lib/go/src/math/big/nat.go
 lib/go/src/math/big/natconv_test.go
@@ -4797,6 +5061,7 @@ lib/go/src/math/cmplx/cmath_test.go
 lib/go/src/math/cmplx/conj.go
 lib/go/src/math/cmplx/example_test.go
 lib/go/src/math/cmplx/exp.go
+lib/go/src/math/cmplx/huge_test.go
 lib/go/src/math/cmplx/isinf.go
 lib/go/src/math/cmplx/isnan.go
 lib/go/src/math/cmplx/log.go
@@ -4812,6 +5077,7 @@ lib/go/src/math/copysign.go
 lib/go/src/math/cosh_s390x.s
 lib/go/src/math/dim_amd64.s
 lib/go/src/math/dim_arm64.s
+lib/go/src/math/dim_riscv64.s
 lib/go/src/math/dim_s390x.s
 lib/go/src/math/dim.go
 lib/go/src/math/erf_s390x.s
@@ -4896,6 +5162,7 @@ lib/go/src/math/sqrt_arm.s
 lib/go/src/math/sqrt_arm64.s
 lib/go/src/math/sqrt_mipsx.s
 lib/go/src/math/sqrt_ppc64x.s
+lib/go/src/math/sqrt_riscv64.s
 lib/go/src/math/sqrt_s390x.s
 lib/go/src/math/sqrt_wasm.s
 lib/go/src/math/sqrt.go
@@ -4987,6 +5254,7 @@ lib/go/src/net/error_windows.go
 lib/go/src/net/example_test.go
 lib/go/src/net/external_test.go
 lib/go/src/net/fd_plan9.go
+lib/go/src/net/fd_posix.go
 lib/go/src/net/fd_unix.go
 lib/go/src/net/fd_windows.go
 lib/go/src/net/file_plan9.go
@@ -5124,6 +5392,7 @@ lib/go/src/net/iprawsock_plan9.go
 lib/go/src/net/iprawsock_posix.go
 lib/go/src/net/iprawsock_test.go
 lib/go/src/net/iprawsock.go
+lib/go/src/net/ipsock_plan9_test.go
 lib/go/src/net/ipsock_plan9.go
 lib/go/src/net/ipsock_posix.go
 lib/go/src/net/ipsock_test.go
@@ -5299,6 +5568,7 @@ lib/go/src/os/exec.go
 lib/go/src/os/exec/bench_test.go
 lib/go/src/os/exec/env_test.go
 lib/go/src/os/exec/example_test.go
+lib/go/src/os/exec/exec_linux_test.go
 lib/go/src/os/exec/exec_plan9.go
 lib/go/src/os/exec/exec_posix_test.go
 lib/go/src/os/exec/exec_test.go
@@ -5313,6 +5583,7 @@ lib/go/src/os/exec/lp_unix_test.go
 lib/go/src/os/exec/lp_unix.go
 lib/go/src/os/exec/lp_windows_test.go
 lib/go/src/os/exec/lp_windows.go
+lib/go/src/os/exec/read3.go
 lib/go/src/os/executable_darwin.go
 lib/go/src/os/executable_freebsd.go
 lib/go/src/os/executable_path.go
@@ -5322,6 +5593,7 @@ lib/go/src/os/executable_solaris.go
 lib/go/src/os/executable_test.go
 lib/go/src/os/executable_windows.go
 lib/go/src/os/executable.go
+lib/go/src/os/export_linux_test.go
 lib/go/src/os/export_test.go
 lib/go/src/os/export_unix_test.go
 lib/go/src/os/export_windows_test.go
@@ -5349,6 +5621,9 @@ lib/go/src/os/pipe2_bsd.go
 lib/go/src/os/proc.go
 lib/go/src/os/rawconn_test.go
 lib/go/src/os/rawconn.go
+lib/go/src/os/readfrom_linux_test.go
+lib/go/src/os/readfrom_linux.go
+lib/go/src/os/readfrom_stub.go
 lib/go/src/os/removeall_at.go
 lib/go/src/os/removeall_noat.go
 lib/go/src/os/removeall_test.go
@@ -5389,6 +5664,9 @@ lib/go/src/os/sys_solaris.go
 lib/go/src/os/sys_unix.go
 lib/go/src/os/sys_windows.go
 lib/go/src/os/sys.go
+lib/go/src/os/testdata/issue37161/a
+lib/go/src/os/testdata/issue37161/b
+lib/go/src/os/testdata/issue37161/c
 lib/go/src/os/timeout_test.go
 lib/go/src/os/types_plan9.go
 lib/go/src/os/types_unix.go
@@ -5542,9 +5820,7 @@ lib/go/src/runtime/cgo/gcc_android.c
 lib/go/src/runtime/cgo/gcc_arm.S
 lib/go/src/runtime/cgo/gcc_arm64.S
 lib/go/src/runtime/cgo/gcc_context.c
-lib/go/src/runtime/cgo/gcc_darwin_386.c
 lib/go/src/runtime/cgo/gcc_darwin_amd64.c
-lib/go/src/runtime/cgo/gcc_darwin_arm.c
 lib/go/src/runtime/cgo/gcc_darwin_arm64.c
 lib/go/src/runtime/cgo/gcc_dragonfly_amd64.c
 lib/go/src/runtime/cgo/gcc_fatalf.c
@@ -5578,9 +5854,9 @@ lib/go/src/runtime/cgo/gcc_ppc64x.c
 lib/go/src/runtime/cgo/gcc_s390x.S
 lib/go/src/runtime/cgo/gcc_setenv.c
 lib/go/src/runtime/cgo/gcc_sigaction.c
-lib/go/src/runtime/cgo/gcc_signal_darwin_armx.c
+lib/go/src/runtime/cgo/gcc_signal_darwin_arm64.c
 lib/go/src/runtime/cgo/gcc_signal_darwin_lldb.c
-lib/go/src/runtime/cgo/gcc_signal2_darwin_armx.c
+lib/go/src/runtime/cgo/gcc_signal2_darwin_arm64.c
 lib/go/src/runtime/cgo/gcc_solaris_amd64.c
 lib/go/src/runtime/cgo/gcc_traceback.c
 lib/go/src/runtime/cgo/gcc_util.c
@@ -5594,9 +5870,8 @@ lib/go/src/runtime/cgo/netbsd.go
 lib/go/src/runtime/cgo/openbsd.go
 lib/go/src/runtime/cgo/setenv.go
 lib/go/src/runtime/cgo/sigaction.go
-lib/go/src/runtime/cgo/signal_darwin_arm.s
+lib/go/src/runtime/cgo/signal_darwin_arm64.go
 lib/go/src/runtime/cgo/signal_darwin_arm64.s
-lib/go/src/runtime/cgo/signal_darwin_armx.go
 lib/go/src/runtime/cgocall.go
 lib/go/src/runtime/cgocallback.go
 lib/go/src/runtime/cgocheck.go
@@ -5609,6 +5884,7 @@ lib/go/src/runtime/closure_test.go
 lib/go/src/runtime/compiler.go
 lib/go/src/runtime/complex_test.go
 lib/go/src/runtime/complex.go
+lib/go/src/runtime/conv_wasm_test.go
 lib/go/src/runtime/cpuflags_amd64.go
 lib/go/src/runtime/cpuflags.go
 lib/go/src/runtime/cpuprof.go
@@ -5636,9 +5912,7 @@ lib/go/src/runtime/defer_test.go
 lib/go/src/runtime/defs_aix_ppc64.go
 lib/go/src/runtime/defs_aix.go
 lib/go/src/runtime/defs_arm_linux.go
-lib/go/src/runtime/defs_darwin_386.go
 lib/go/src/runtime/defs_darwin_amd64.go
-lib/go/src/runtime/defs_darwin_arm.go
 lib/go/src/runtime/defs_darwin_arm64.go
 lib/go/src/runtime/defs_darwin.go
 lib/go/src/runtime/defs_dragonfly_amd64.go
@@ -5827,6 +6101,9 @@ lib/go/src/runtime/libfuzzer.go
 lib/go/src/runtime/lock_futex.go
 lib/go/src/runtime/lock_js.go
 lib/go/src/runtime/lock_sema.go
+lib/go/src/runtime/lockrank_off.go
+lib/go/src/runtime/lockrank_on.go
+lib/go/src/runtime/lockrank.go
 lib/go/src/runtime/Makefile
 lib/go/src/runtime/malloc_test.go
 lib/go/src/runtime/malloc.go
@@ -5906,6 +6183,7 @@ lib/go/src/runtime/msan.go
 lib/go/src/runtime/msan/msan.go
 lib/go/src/runtime/msan0.go
 lib/go/src/runtime/msize.go
+lib/go/src/runtime/mspanset.go
 lib/go/src/runtime/mstats.go
 lib/go/src/runtime/mwbbuf.go
 lib/go/src/runtime/nbpipe_fcntl_libc_test.go
@@ -5918,6 +6196,7 @@ lib/go/src/runtime/netpoll_aix.go
 lib/go/src/runtime/netpoll_epoll.go
 lib/go/src/runtime/netpoll_fake.go
 lib/go/src/runtime/netpoll_kqueue.go
+lib/go/src/runtime/netpoll_os_test.go
 lib/go/src/runtime/netpoll_solaris.go
 lib/go/src/runtime/netpoll_stub.go
 lib/go/src/runtime/netpoll_windows.go
@@ -5927,7 +6206,6 @@ lib/go/src/runtime/norace_test.go
 lib/go/src/runtime/numcpu_freebsd_test.go
 lib/go/src/runtime/os_aix.go
 lib/go/src/runtime/os_android.go
-lib/go/src/runtime/os_darwin_arm.go
 lib/go/src/runtime/os_darwin_arm64.go
 lib/go/src/runtime/os_darwin.go
 lib/go/src/runtime/os_dragonfly.go
@@ -5974,22 +6252,17 @@ lib/go/src/runtime/os2_plan9.go
 lib/go/src/runtime/os2_solaris.go
 lib/go/src/runtime/os3_plan9.go
 lib/go/src/runtime/os3_solaris.go
+lib/go/src/runtime/panic_test.go
 lib/go/src/runtime/panic.go
 lib/go/src/runtime/panic32.go
 lib/go/src/runtime/plugin.go
 lib/go/src/runtime/pprof/elf.go
-lib/go/src/runtime/pprof/internal/profile/encode.go
-lib/go/src/runtime/pprof/internal/profile/filter.go
-lib/go/src/runtime/pprof/internal/profile/legacy_profile.go
-lib/go/src/runtime/pprof/internal/profile/profile_test.go
-lib/go/src/runtime/pprof/internal/profile/profile.go
-lib/go/src/runtime/pprof/internal/profile/proto_test.go
-lib/go/src/runtime/pprof/internal/profile/proto.go
-lib/go/src/runtime/pprof/internal/profile/prune.go
 lib/go/src/runtime/pprof/label_test.go
 lib/go/src/runtime/pprof/label.go
 lib/go/src/runtime/pprof/map.go
 lib/go/src/runtime/pprof/mprof_test.go
+lib/go/src/runtime/pprof/pprof_norusage.go
+lib/go/src/runtime/pprof/pprof_rusage.go
 lib/go/src/runtime/pprof/pprof_test.go
 lib/go/src/runtime/pprof/pprof.go
 lib/go/src/runtime/pprof/proto_test.go
@@ -6044,6 +6317,7 @@ lib/go/src/runtime/race/race_windows_test.go
 lib/go/src/runtime/race/race.go
 lib/go/src/runtime/race/README
 lib/go/src/runtime/race/sched_test.go
+lib/go/src/runtime/race/syso_test.go
 lib/go/src/runtime/race/testdata/atomic_test.go
 lib/go/src/runtime/race/testdata/cgo_test_main.go
 lib/go/src/runtime/race/testdata/cgo_test.go
@@ -6075,9 +6349,7 @@ lib/go/src/runtime/rt0_android_386.s
 lib/go/src/runtime/rt0_android_amd64.s
 lib/go/src/runtime/rt0_android_arm.s
 lib/go/src/runtime/rt0_android_arm64.s
-lib/go/src/runtime/rt0_darwin_386.s
 lib/go/src/runtime/rt0_darwin_amd64.s
-lib/go/src/runtime/rt0_darwin_arm.s
 lib/go/src/runtime/rt0_darwin_arm64.s
 lib/go/src/runtime/rt0_dragonfly_amd64.s
 lib/go/src/runtime/rt0_freebsd_386.s
@@ -6133,9 +6405,7 @@ lib/go/src/runtime/signal_aix_ppc64.go
 lib/go/src/runtime/signal_amd64.go
 lib/go/src/runtime/signal_arm.go
 lib/go/src/runtime/signal_arm64.go
-lib/go/src/runtime/signal_darwin_386.go
 lib/go/src/runtime/signal_darwin_amd64.go
-lib/go/src/runtime/signal_darwin_arm.go
 lib/go/src/runtime/signal_darwin_arm64.go
 lib/go/src/runtime/signal_darwin.go
 lib/go/src/runtime/signal_dragonfly_amd64.go
@@ -6209,11 +6479,7 @@ lib/go/src/runtime/symtab.go
 lib/go/src/runtime/sys_aix_ppc64.s
 lib/go/src/runtime/sys_arm.go
 lib/go/src/runtime/sys_arm64.go
-lib/go/src/runtime/sys_darwin_32.go
-lib/go/src/runtime/sys_darwin_386.s
-lib/go/src/runtime/sys_darwin_64.go
 lib/go/src/runtime/sys_darwin_amd64.s
-lib/go/src/runtime/sys_darwin_arm.s
 lib/go/src/runtime/sys_darwin_arm64.s
 lib/go/src/runtime/sys_darwin.go
 lib/go/src/runtime/sys_dragonfly_amd64.s
@@ -6272,6 +6538,7 @@ lib/go/src/runtime/testdata/testprog/map.go
 lib/go/src/runtime/testdata/testprog/memprof.go
 lib/go/src/runtime/testdata/testprog/misc.go
 lib/go/src/runtime/testdata/testprog/numcpu_freebsd.go
+lib/go/src/runtime/testdata/testprog/panicprint.go
 lib/go/src/runtime/testdata/testprog/panicrace.go
 lib/go/src/runtime/testdata/testprog/preempt.go
 lib/go/src/runtime/testdata/testprog/signal.go
@@ -6295,6 +6562,7 @@ lib/go/src/runtime/testdata/testprogcgo/deadlock.go
 lib/go/src/runtime/testdata/testprogcgo/dll_windows.go
 lib/go/src/runtime/testdata/testprogcgo/dropm_stub.go
 lib/go/src/runtime/testdata/testprogcgo/dropm.go
+lib/go/src/runtime/testdata/testprogcgo/eintr.go
 lib/go/src/runtime/testdata/testprogcgo/exec.go
 lib/go/src/runtime/testdata/testprogcgo/lockosthread.c
 lib/go/src/runtime/testdata/testprogcgo/lockosthread.go
@@ -6303,6 +6571,7 @@ lib/go/src/runtime/testdata/testprogcgo/numgoroutine.go
 lib/go/src/runtime/testdata/testprogcgo/pprof.go
 lib/go/src/runtime/testdata/testprogcgo/raceprof.go
 lib/go/src/runtime/testdata/testprogcgo/racesig.go
+lib/go/src/runtime/testdata/testprogcgo/segv.go
 lib/go/src/runtime/testdata/testprogcgo/sigpanic.go
 lib/go/src/runtime/testdata/testprogcgo/sigstack.go
 lib/go/src/runtime/testdata/testprogcgo/stack_windows.go
@@ -6321,6 +6590,8 @@ lib/go/src/runtime/testdata/testprognet/signal.go
 lib/go/src/runtime/testdata/testprognet/signalexec.go
 lib/go/src/runtime/testdata/testwinlib/main.c
 lib/go/src/runtime/testdata/testwinlib/main.go
+lib/go/src/runtime/testdata/testwinlibsignal/dummy.go
+lib/go/src/runtime/testdata/testwinlibsignal/main.c
 lib/go/src/runtime/textflag.h
 lib/go/src/runtime/time_fake.go
 lib/go/src/runtime/time_nofake.go
@@ -6391,10 +6662,13 @@ lib/go/src/sort/sort.go
 lib/go/src/sort/zfuncversion.go
 lib/go/src/strconv/atob_test.go
 lib/go/src/strconv/atob.go
+lib/go/src/strconv/atoc_test.go
+lib/go/src/strconv/atoc.go
 lib/go/src/strconv/atof_test.go
 lib/go/src/strconv/atof.go
 lib/go/src/strconv/atoi_test.go
 lib/go/src/strconv/atoi.go
+lib/go/src/strconv/ctoa.go
 lib/go/src/strconv/decimal_test.go
 lib/go/src/strconv/decimal.go
 lib/go/src/strconv/doc.go
@@ -6452,14 +6726,14 @@ lib/go/src/sync/pool.go
 lib/go/src/sync/poolqueue.go
 lib/go/src/sync/runtime_sema_test.go
 lib/go/src/sync/runtime.go
+lib/go/src/sync/runtime2_lockrank.go
+lib/go/src/sync/runtime2.go
 lib/go/src/sync/rwmutex_test.go
 lib/go/src/sync/rwmutex.go
 lib/go/src/sync/waitgroup_test.go
 lib/go/src/sync/waitgroup.go
 lib/go/src/syscall/asm_aix_ppc64.s
-lib/go/src/syscall/asm_darwin_386.s
 lib/go/src/syscall/asm_darwin_amd64.s
-lib/go/src/syscall/asm_darwin_arm.s
 lib/go/src/syscall/asm_darwin_arm64.s
 lib/go/src/syscall/asm_freebsd_arm.s
 lib/go/src/syscall/asm_freebsd_arm64.s
@@ -6495,7 +6769,6 @@ lib/go/src/syscall/dirent.go
 lib/go/src/syscall/dll_windows.go
 lib/go/src/syscall/endian_big.go
 lib/go/src/syscall/endian_little.go
-lib/go/src/syscall/env_plan9.go
 lib/go/src/syscall/env_unix.go
 lib/go/src/syscall/env_windows.go
 lib/go/src/syscall/errors_plan9.go
@@ -6571,13 +6844,13 @@ lib/go/src/syscall/syscall_aix_ppc64.go
 lib/go/src/syscall/syscall_aix.go
 lib/go/src/syscall/syscall_bsd_test.go
 lib/go/src/syscall/syscall_bsd.go
-lib/go/src/syscall/syscall_darwin_386.go
 lib/go/src/syscall/syscall_darwin_amd64.go
-lib/go/src/syscall/syscall_darwin_arm.go
 lib/go/src/syscall/syscall_darwin_arm64.go
 lib/go/src/syscall/syscall_darwin.go
 lib/go/src/syscall/syscall_dragonfly_amd64.go
 lib/go/src/syscall/syscall_dragonfly.go
+lib/go/src/syscall/syscall_dup2_linux.go
+lib/go/src/syscall/syscall_dup3_linux.go
 lib/go/src/syscall/syscall_freebsd_386.go
 lib/go/src/syscall/syscall_freebsd_amd64.go
 lib/go/src/syscall/syscall_freebsd_arm.go
@@ -6637,9 +6910,7 @@ lib/go/src/syscall/types_windows_amd64.go
 lib/go/src/syscall/types_windows_arm.go
 lib/go/src/syscall/types_windows.go
 lib/go/src/syscall/zerrors_aix_ppc64.go
-lib/go/src/syscall/zerrors_darwin_386.go
 lib/go/src/syscall/zerrors_darwin_amd64.go
-lib/go/src/syscall/zerrors_darwin_arm.go
 lib/go/src/syscall/zerrors_darwin_arm64.go
 lib/go/src/syscall/zerrors_dragonfly_amd64.go
 lib/go/src/syscall/zerrors_freebsd_386.go
@@ -6671,12 +6942,8 @@ lib/go/src/syscall/zerrors_windows_386.go
 lib/go/src/syscall/zerrors_windows_amd64.go
 lib/go/src/syscall/zerrors_windows.go
 lib/go/src/syscall/zsyscall_aix_ppc64.go
-lib/go/src/syscall/zsyscall_darwin_386.go
-lib/go/src/syscall/zsyscall_darwin_386.s
 lib/go/src/syscall/zsyscall_darwin_amd64.go
 lib/go/src/syscall/zsyscall_darwin_amd64.s
-lib/go/src/syscall/zsyscall_darwin_arm.go
-lib/go/src/syscall/zsyscall_darwin_arm.s
 lib/go/src/syscall/zsyscall_darwin_arm64.go
 lib/go/src/syscall/zsyscall_darwin_arm64.s
 lib/go/src/syscall/zsyscall_dragonfly_amd64.go
@@ -6710,9 +6977,7 @@ lib/go/src/syscall/zsyscall_plan9_arm.go
 lib/go/src/syscall/zsyscall_solaris_amd64.go
 lib/go/src/syscall/zsyscall_windows.go
 lib/go/src/syscall/zsysctl_openbsd.go
-lib/go/src/syscall/zsysnum_darwin_386.go
 lib/go/src/syscall/zsysnum_darwin_amd64.go
-lib/go/src/syscall/zsysnum_darwin_arm.go
 lib/go/src/syscall/zsysnum_darwin_arm64.go
 lib/go/src/syscall/zsysnum_dragonfly_amd64.go
 lib/go/src/syscall/zsysnum_freebsd_386.go
@@ -6744,9 +7009,7 @@ lib/go/src/syscall/zsysnum_solaris_amd64.go
 lib/go/src/syscall/zsysnum_windows_386.go
 lib/go/src/syscall/zsysnum_windows_amd64.go
 lib/go/src/syscall/ztypes_aix_ppc64.go
-lib/go/src/syscall/ztypes_darwin_386.go
 lib/go/src/syscall/ztypes_darwin_amd64.go
-lib/go/src/syscall/ztypes_darwin_arm.go
 lib/go/src/syscall/ztypes_darwin_arm64.go
 lib/go/src/syscall/ztypes_dragonfly_amd64.go
 lib/go/src/syscall/ztypes_freebsd_386.go
@@ -6815,6 +7078,7 @@ lib/go/src/text/template/exec_test.go
 lib/go/src/text/template/exec.go
 lib/go/src/text/template/funcs.go
 lib/go/src/text/template/helper.go
+lib/go/src/text/template/link_test.go
 lib/go/src/text/template/multi_test.go
 lib/go/src/text/template/option.go
 lib/go/src/text/template/parse/lex_test.go
@@ -6827,6 +7091,7 @@ lib/go/src/text/template/testdata/file1.tmpl
 lib/go/src/text/template/testdata/file2.tmpl
 lib/go/src/text/template/testdata/tmpl1.tmpl
 lib/go/src/text/template/testdata/tmpl2.tmpl
+lib/go/src/time/embed.go
 lib/go/src/time/example_test.go
 lib/go/src/time/export_android_test.go
 lib/go/src/time/export_test.go
@@ -6845,6 +7110,10 @@ lib/go/src/time/tick_test.go
 lib/go/src/time/tick.go
 lib/go/src/time/time_test.go
 lib/go/src/time/time.go
+lib/go/src/time/tzdata_test.go
+lib/go/src/time/tzdata/generate_zipdata.go
+lib/go/src/time/tzdata/tzdata.go
+lib/go/src/time/tzdata/zipdata.go
 lib/go/src/time/zoneinfo_abbrs_windows.go
 lib/go/src/time/zoneinfo_android_test.go
 lib/go/src/time/zoneinfo_android.go
@@ -6912,12 +7181,10 @@ lib/go/src/vendor/golang.org/x/crypto/poly1305/poly1305.go
 lib/go/src/vendor/golang.org/x/crypto/poly1305/sum_amd64.go
 lib/go/src/vendor/golang.org/x/crypto/poly1305/sum_amd64.s
 lib/go/src/vendor/golang.org/x/crypto/poly1305/sum_generic.go
-lib/go/src/vendor/golang.org/x/crypto/poly1305/sum_noasm.go
 lib/go/src/vendor/golang.org/x/crypto/poly1305/sum_ppc64le.go
 lib/go/src/vendor/golang.org/x/crypto/poly1305/sum_ppc64le.s
 lib/go/src/vendor/golang.org/x/crypto/poly1305/sum_s390x.go
 lib/go/src/vendor/golang.org/x/crypto/poly1305/sum_s390x.s
-lib/go/src/vendor/golang.org/x/crypto/poly1305/sum_vmsl_s390x.s
 lib/go/src/vendor/golang.org/x/net/AUTHORS
 lib/go/src/vendor/golang.org/x/net/CONTRIBUTORS
 lib/go/src/vendor/golang.org/x/net/dns/dnsmessage/message.go
@@ -6988,12 +7255,19 @@ lib/go/src/vendor/golang.org/x/sys/cpu/asm_aix_ppc64.s
 lib/go/src/vendor/golang.org/x/sys/cpu/byteorder.go
 lib/go/src/vendor/golang.org/x/sys/cpu/cpu_aix_ppc64.go
 lib/go/src/vendor/golang.org/x/sys/cpu/cpu_arm.go
+lib/go/src/vendor/golang.org/x/sys/cpu/cpu_arm64.go
+lib/go/src/vendor/golang.org/x/sys/cpu/cpu_arm64.s
+lib/go/src/vendor/golang.org/x/sys/cpu/cpu_gc_arm64.go
 lib/go/src/vendor/golang.org/x/sys/cpu/cpu_gc_s390x.go
 lib/go/src/vendor/golang.org/x/sys/cpu/cpu_gc_x86.go
+lib/go/src/vendor/golang.org/x/sys/cpu/cpu_gccgo_arm64.go
 lib/go/src/vendor/golang.org/x/sys/cpu/cpu_gccgo_s390x.go
-lib/go/src/vendor/golang.org/x/sys/cpu/cpu_gccgo.c
-lib/go/src/vendor/golang.org/x/sys/cpu/cpu_gccgo.go
+lib/go/src/vendor/golang.org/x/sys/cpu/cpu_gccgo_x86.c
+lib/go/src/vendor/golang.org/x/sys/cpu/cpu_gccgo_x86.go
+lib/go/src/vendor/golang.org/x/sys/cpu/cpu_linux_arm.go
 lib/go/src/vendor/golang.org/x/sys/cpu/cpu_linux_arm64.go
+lib/go/src/vendor/golang.org/x/sys/cpu/cpu_linux_mips64x.go
+lib/go/src/vendor/golang.org/x/sys/cpu/cpu_linux_noinit.go
 lib/go/src/vendor/golang.org/x/sys/cpu/cpu_linux_ppc64x.go
 lib/go/src/vendor/golang.org/x/sys/cpu/cpu_linux_s390x.go
 lib/go/src/vendor/golang.org/x/sys/cpu/cpu_linux.go
@@ -7006,6 +7280,7 @@ lib/go/src/vendor/golang.org/x/sys/cpu/cpu_wasm.go
 lib/go/src/vendor/golang.org/x/sys/cpu/cpu_x86.go
 lib/go/src/vendor/golang.org/x/sys/cpu/cpu_x86.s
 lib/go/src/vendor/golang.org/x/sys/cpu/cpu.go
+lib/go/src/vendor/golang.org/x/sys/cpu/hwcap_linux.go
 lib/go/src/vendor/golang.org/x/sys/cpu/syscall_aix_ppc64_gc.go
 lib/go/src/vendor/golang.org/x/sys/LICENSE
 lib/go/src/vendor/golang.org/x/sys/PATENTS
@@ -7125,19 +7400,23 @@ lib/go/test/cmplx.go
 lib/go/test/cmplxdivide.c
 lib/go/test/cmplxdivide.go
 lib/go/test/cmplxdivide1.go
+lib/go/test/codegen/addrcalc.go
 lib/go/test/codegen/alloc.go
 lib/go/test/codegen/arithmetic.go
 lib/go/test/codegen/bitfield.go
 lib/go/test/codegen/bits.go
+lib/go/test/codegen/bool.go
 lib/go/test/codegen/compare_and_branch.go
 lib/go/test/codegen/comparisons.go
 lib/go/test/codegen/condmove.go
 lib/go/test/codegen/copy.go
 lib/go/test/codegen/floats.go
+lib/go/test/codegen/fuse.go
 lib/go/test/codegen/issue22703.go
 lib/go/test/codegen/issue25378.go
 lib/go/test/codegen/issue31618.go
 lib/go/test/codegen/issue33580.go
+lib/go/test/codegen/issue38554.go
 lib/go/test/codegen/mapaccess.go
 lib/go/test/codegen/maps.go
 lib/go/test/codegen/math.go
@@ -7147,9 +7426,13 @@ lib/go/test/codegen/memops.go
 lib/go/test/codegen/noextend.go
 lib/go/test/codegen/race.go
 lib/go/test/codegen/README
+lib/go/test/codegen/retpoline.go
 lib/go/test/codegen/rotate.go
 lib/go/test/codegen/shift.go
+lib/go/test/codegen/shortcircuit.go
 lib/go/test/codegen/slices.go
+lib/go/test/codegen/smallintiface.go
+lib/go/test/codegen/spectre.go
 lib/go/test/codegen/stack.go
 lib/go/test/codegen/strings.go
 lib/go/test/codegen/structs.go
@@ -7189,6 +7472,7 @@ lib/go/test/defernil.go
 lib/go/test/deferprint.go
 lib/go/test/deferprint.out
 lib/go/test/devirt.go
+lib/go/test/directive.go
 lib/go/test/divide.go
 lib/go/test/divmod.go
 lib/go/test/dwarf/dwarf.dir/main.go
@@ -7817,6 +8101,11 @@ lib/go/test/fixedbugs/bug505.go
 lib/go/test/fixedbugs/bug506.dir/a.go
 lib/go/test/fixedbugs/bug506.dir/main.go
 lib/go/test/fixedbugs/bug506.go
+lib/go/test/fixedbugs/bug507.dir/a.go
+lib/go/test/fixedbugs/bug507.dir/b.go
+lib/go/test/fixedbugs/bug507.dir/c.go
+lib/go/test/fixedbugs/bug507.go
+lib/go/test/fixedbugs/bug508.go
 lib/go/test/fixedbugs/gcc61204.go
 lib/go/test/fixedbugs/gcc61244.go
 lib/go/test/fixedbugs/gcc61246.go
@@ -8478,6 +8767,9 @@ lib/go/test/fixedbugs/issue30956.go
 lib/go/test/fixedbugs/issue30956.out
 lib/go/test/fixedbugs/issue30977.go
 lib/go/test/fixedbugs/issue31010.go
+lib/go/test/fixedbugs/issue31053.dir/f1.go
+lib/go/test/fixedbugs/issue31053.dir/main.go
+lib/go/test/fixedbugs/issue31053.go
 lib/go/test/fixedbugs/issue31060.go
 lib/go/test/fixedbugs/issue31252.dir/a.go
 lib/go/test/fixedbugs/issue31252.dir/b.go
@@ -8558,6 +8850,7 @@ lib/go/test/fixedbugs/issue33219.dir/c.go
 lib/go/test/fixedbugs/issue33219.go
 lib/go/test/fixedbugs/issue33275_run.go
 lib/go/test/fixedbugs/issue33275.go
+lib/go/test/fixedbugs/issue33308.go
 lib/go/test/fixedbugs/issue33355.go
 lib/go/test/fixedbugs/issue33386.go
 lib/go/test/fixedbugs/issue33438.go
@@ -8585,12 +8878,15 @@ lib/go/test/fixedbugs/issue34723.go
 lib/go/test/fixedbugs/issue34966.go
 lib/go/test/fixedbugs/issue34968.go
 lib/go/test/fixedbugs/issue35027.go
+lib/go/test/fixedbugs/issue35073.go
 lib/go/test/fixedbugs/issue35157.go
 lib/go/test/fixedbugs/issue35291.go
 lib/go/test/fixedbugs/issue35518.go
 lib/go/test/fixedbugs/issue3552.dir/one.go
 lib/go/test/fixedbugs/issue3552.dir/two.go
 lib/go/test/fixedbugs/issue3552.go
+lib/go/test/fixedbugs/issue35576.go
+lib/go/test/fixedbugs/issue35576.out
 lib/go/test/fixedbugs/issue35586.dir/a.go
 lib/go/test/fixedbugs/issue35586.dir/b.go
 lib/go/test/fixedbugs/issue35586.go
@@ -8598,13 +8894,34 @@ lib/go/test/fixedbugs/issue35652.go
 lib/go/test/fixedbugs/issue36085.dir/a.go
 lib/go/test/fixedbugs/issue36085.dir/b.go
 lib/go/test/fixedbugs/issue36085.go
+lib/go/test/fixedbugs/issue36259.go
+lib/go/test/fixedbugs/issue36437.go
 lib/go/test/fixedbugs/issue36516.go
+lib/go/test/fixedbugs/issue36705.go
 lib/go/test/fixedbugs/issue36723.go
 lib/go/test/fixedbugs/issue3705.go
+lib/go/test/fixedbugs/issue37246.go
+lib/go/test/fixedbugs/issue37513.dir/main.go
+lib/go/test/fixedbugs/issue37513.dir/sigill_amd64.s
+lib/go/test/fixedbugs/issue37513.go
 lib/go/test/fixedbugs/issue37716.go
+lib/go/test/fixedbugs/issue37753.go
 lib/go/test/fixedbugs/issue3783.go
+lib/go/test/fixedbugs/issue37975.go
+lib/go/test/fixedbugs/issue38093.go
 lib/go/test/fixedbugs/issue38117.go
+lib/go/test/fixedbugs/issue38356.go
+lib/go/test/fixedbugs/issue38359.go
+lib/go/test/fixedbugs/issue38496.go
+lib/go/test/fixedbugs/issue38690.go
+lib/go/test/fixedbugs/issue38746.go
+lib/go/test/fixedbugs/issue38916.go
 lib/go/test/fixedbugs/issue3925.go
+lib/go/test/fixedbugs/issue39459.go
+lib/go/test/fixedbugs/issue39472.go
+lib/go/test/fixedbugs/issue39541.go
+lib/go/test/fixedbugs/issue39651.go
+lib/go/test/fixedbugs/issue40367.go
 lib/go/test/fixedbugs/issue4066.go
 lib/go/test/fixedbugs/issue4085a.go
 lib/go/test/fixedbugs/issue4085b.go
@@ -8895,6 +9212,7 @@ lib/go/test/fixedbugs/issue8440.go
 lib/go/test/fixedbugs/issue8475.go
 lib/go/test/fixedbugs/issue8501.go
 lib/go/test/fixedbugs/issue8507.go
+lib/go/test/fixedbugs/issue8606.go
 lib/go/test/fixedbugs/issue8612.go
 lib/go/test/fixedbugs/issue8613.go
 lib/go/test/fixedbugs/issue8620.go
@@ -9087,6 +9405,7 @@ lib/go/test/loopbce.go
 lib/go/test/makechan.go
 lib/go/test/makemap.go
 lib/go/test/makenew.go
+lib/go/test/makeslice.go
 lib/go/test/mallocfin.go
 lib/go/test/map.go
 lib/go/test/map1.go
@@ -9145,6 +9464,8 @@ lib/go/test/reflectmethod1.go
 lib/go/test/reflectmethod2.go
 lib/go/test/reflectmethod3.go
 lib/go/test/reflectmethod4.go
+lib/go/test/reflectmethod5.go
+lib/go/test/reflectmethod6.go
 lib/go/test/rename.go
 lib/go/test/rename1.go
 lib/go/test/reorder.go
@@ -9235,6 +9556,7 @@ lib/go/test/undef.go
 lib/go/test/utf.go
 lib/go/test/varerr.go
 lib/go/test/varinit.go
+lib/go/test/winbatch.go
 lib/go/test/writebarrier.go
 lib/go/test/zerodivide.go
 lib/go/VERSION
@@ -9351,6 +9673,9 @@ lib/go/VERSION
 @dir lib/go/misc/cgo/testshared/testdata/exe3
 @dir lib/go/misc/cgo/testshared/testdata/execgo
 @dir lib/go/misc/cgo/testshared/testdata/explicit
+@dir lib/go/misc/cgo/testshared/testdata/gcdata/main
+@dir lib/go/misc/cgo/testshared/testdata/gcdata/p
+@dir lib/go/misc/cgo/testshared/testdata/gcdata
 @dir lib/go/misc/cgo/testshared/testdata/global
 @dir lib/go/misc/cgo/testshared/testdata/globallib
 @dir lib/go/misc/cgo/testshared/testdata/iface
@@ -9362,6 +9687,9 @@ lib/go/VERSION
 @dir lib/go/misc/cgo/testshared/testdata/issue25065
 @dir lib/go/misc/cgo/testshared/testdata/issue30768/issue30768lib
 @dir lib/go/misc/cgo/testshared/testdata/issue30768
+@dir lib/go/misc/cgo/testshared/testdata/issue39777/a
+@dir lib/go/misc/cgo/testshared/testdata/issue39777/b
+@dir lib/go/misc/cgo/testshared/testdata/issue39777
 @dir lib/go/misc/cgo/testshared/testdata/trivial
 @dir lib/go/misc/cgo/testshared/testdata
 @dir lib/go/misc/cgo/testshared
@@ -9397,6 +9725,8 @@ lib/go/VERSION
 @dir lib/go/pkg/freebsd_amd64/cmd/internal
 @dir lib/go/pkg/freebsd_amd64/cmd/link/internal
 @dir lib/go/pkg/freebsd_amd64/cmd/link
+@dir lib/go/pkg/freebsd_amd64/cmd/oldlink/internal
+@dir lib/go/pkg/freebsd_amd64/cmd/oldlink
 @dir lib/go/pkg/freebsd_amd64/cmd/vendor/github.com/google/pprof/internal
 @dir lib/go/pkg/freebsd_amd64/cmd/vendor/github.com/google/pprof/third_party
 @dir lib/go/pkg/freebsd_amd64/cmd/vendor/github.com/google/pprof
@@ -9415,6 +9745,7 @@ lib/go/VERSION
 @dir lib/go/pkg/freebsd_amd64/cmd/vendor/golang.org/x/mod/internal
 @dir lib/go/pkg/freebsd_amd64/cmd/vendor/golang.org/x/mod/sumdb
 @dir lib/go/pkg/freebsd_amd64/cmd/vendor/golang.org/x/mod
+@dir lib/go/pkg/freebsd_amd64/cmd/vendor/golang.org/x/sys/internal
 @dir lib/go/pkg/freebsd_amd64/cmd/vendor/golang.org/x/sys
 @dir lib/go/pkg/freebsd_amd64/cmd/vendor/golang.org/x/tools/go/analysis/internal
 @dir lib/go/pkg/freebsd_amd64/cmd/vendor/golang.org/x/tools/go/analysis/passes/internal
@@ -9423,6 +9754,7 @@ lib/go/VERSION
 @dir lib/go/pkg/freebsd_amd64/cmd/vendor/golang.org/x/tools/go/ast
 @dir lib/go/pkg/freebsd_amd64/cmd/vendor/golang.org/x/tools/go/types
 @dir lib/go/pkg/freebsd_amd64/cmd/vendor/golang.org/x/tools/go
+@dir lib/go/pkg/freebsd_amd64/cmd/vendor/golang.org/x/tools/internal
 @dir lib/go/pkg/freebsd_amd64/cmd/vendor/golang.org/x/tools
 @dir lib/go/pkg/freebsd_amd64/cmd/vendor/golang.org/x/xerrors
 @dir lib/go/pkg/freebsd_amd64/cmd/vendor/golang.org/x
@@ -9464,14 +9796,13 @@ lib/go/VERSION
 @dir lib/go/pkg/freebsd_amd64/path
 @dir lib/go/pkg/freebsd_amd64/regexp
 @dir lib/go/pkg/freebsd_amd64/runtime/internal
-@dir lib/go/pkg/freebsd_amd64/runtime/pprof/internal
-@dir lib/go/pkg/freebsd_amd64/runtime/pprof
 @dir lib/go/pkg/freebsd_amd64/runtime
 @dir lib/go/pkg/freebsd_amd64/sync
 @dir lib/go/pkg/freebsd_amd64/testing/internal
 @dir lib/go/pkg/freebsd_amd64/testing
 @dir lib/go/pkg/freebsd_amd64/text/template
 @dir lib/go/pkg/freebsd_amd64/text
+@dir lib/go/pkg/freebsd_amd64/time
 @dir lib/go/pkg/freebsd_amd64/unicode
 @dir lib/go/pkg/freebsd_amd64/vendor/golang.org/x/crypto/cryptobyte
 @dir lib/go/pkg/freebsd_amd64/vendor/golang.org/x/crypto/internal
@@ -9610,7 +9941,6 @@ lib/go/VERSION
 @dir lib/go/src/cmd/go/internal/work
 @dir lib/go/src/cmd/go/internal
 @dir lib/go/src/cmd/go/testdata/failssh
-@dir lib/go/src/cmd/go/testdata/generate
 @dir lib/go/src/cmd/go/testdata/mod
 @dir lib/go/src/cmd/go/testdata/modlegacy/src/new/p1
 @dir lib/go/src/cmd/go/testdata/modlegacy/src/new/p2
@@ -9626,107 +9956,8 @@ lib/go/VERSION
 @dir lib/go/src/cmd/go/testdata/modlegacy/src/old
 @dir lib/go/src/cmd/go/testdata/modlegacy/src
 @dir lib/go/src/cmd/go/testdata/modlegacy
-@dir lib/go/src/cmd/go/testdata/norunexample
-@dir lib/go/src/cmd/go/testdata/rundir/sub
-@dir lib/go/src/cmd/go/testdata/rundir
 @dir lib/go/src/cmd/go/testdata/script
-@dir lib/go/src/cmd/go/testdata/shadow/root1/src/foo
-@dir lib/go/src/cmd/go/testdata/shadow/root1/src/math
-@dir lib/go/src/cmd/go/testdata/shadow/root1/src
-@dir lib/go/src/cmd/go/testdata/shadow/root1
-@dir lib/go/src/cmd/go/testdata/shadow/root2/src/foo
-@dir lib/go/src/cmd/go/testdata/shadow/root2/src
-@dir lib/go/src/cmd/go/testdata/shadow/root2
-@dir lib/go/src/cmd/go/testdata/shadow
-@dir lib/go/src/cmd/go/testdata/src/cgotest
-@dir lib/go/src/cmd/go/testdata/src/coverasm
-@dir lib/go/src/cmd/go/testdata/src/coverbad
-@dir lib/go/src/cmd/go/testdata/src/coverdep/p1
-@dir lib/go/src/cmd/go/testdata/src/coverdep
-@dir lib/go/src/cmd/go/testdata/src/coverdep2/p1
-@dir lib/go/src/cmd/go/testdata/src/coverdep2/p2
-@dir lib/go/src/cmd/go/testdata/src/coverdep2
-@dir lib/go/src/cmd/go/testdata/src/coverdot1
-@dir lib/go/src/cmd/go/testdata/src/coverdot2
-@dir lib/go/src/cmd/go/testdata/src/empty/pkg
-@dir lib/go/src/cmd/go/testdata/src/empty/pkgtest
-@dir lib/go/src/cmd/go/testdata/src/empty/pkgtestxtest
-@dir lib/go/src/cmd/go/testdata/src/empty/pkgxtest
-@dir lib/go/src/cmd/go/testdata/src/empty/test
-@dir lib/go/src/cmd/go/testdata/src/empty/testxtest
-@dir lib/go/src/cmd/go/testdata/src/empty/xtest
-@dir lib/go/src/cmd/go/testdata/src/empty
-@dir lib/go/src/cmd/go/testdata/src/exclude/empty
-@dir lib/go/src/cmd/go/testdata/src/exclude/ignore
-@dir lib/go/src/cmd/go/testdata/src/exclude
-@dir lib/go/src/cmd/go/testdata/src/hello
-@dir lib/go/src/cmd/go/testdata/src/my.pkg/main
-@dir lib/go/src/cmd/go/testdata/src/my.pkg
-@dir lib/go/src/cmd/go/testdata/src/skipper
-@dir lib/go/src/cmd/go/testdata/src/testlist
-@dir lib/go/src/cmd/go/testdata/src/vend/dir1
-@dir lib/go/src/cmd/go/testdata/src/vend/hello
-@dir lib/go/src/cmd/go/testdata/src/vend/subdir
-@dir lib/go/src/cmd/go/testdata/src/vend/vendor/p
-@dir lib/go/src/cmd/go/testdata/src/vend/vendor/q
-@dir lib/go/src/cmd/go/testdata/src/vend/vendor/strings
-@dir lib/go/src/cmd/go/testdata/src/vend/vendor/vend/dir1/dir2
-@dir lib/go/src/cmd/go/testdata/src/vend/vendor/vend/dir1
-@dir lib/go/src/cmd/go/testdata/src/vend/vendor/vend
-@dir lib/go/src/cmd/go/testdata/src/vend/vendor
-@dir lib/go/src/cmd/go/testdata/src/vend/x/invalid
-@dir lib/go/src/cmd/go/testdata/src/vend/x/vendor/p/p
-@dir lib/go/src/cmd/go/testdata/src/vend/x/vendor/p
-@dir lib/go/src/cmd/go/testdata/src/vend/x/vendor/r
-@dir lib/go/src/cmd/go/testdata/src/vend/x/vendor
-@dir lib/go/src/cmd/go/testdata/src/vend/x
-@dir lib/go/src/cmd/go/testdata/src/vend
-@dir lib/go/src/cmd/go/testdata/src/vetcycle
-@dir lib/go/src/cmd/go/testdata/src/vetfail/p1
-@dir lib/go/src/cmd/go/testdata/src/vetfail/p2
-@dir lib/go/src/cmd/go/testdata/src/vetfail
-@dir lib/go/src/cmd/go/testdata/src/vetpkg
-@dir lib/go/src/cmd/go/testdata/src/xtestonly
-@dir lib/go/src/cmd/go/testdata/src
-@dir lib/go/src/cmd/go/testdata/testcover/pkg1
-@dir lib/go/src/cmd/go/testdata/testcover/pkg2
-@dir lib/go/src/cmd/go/testdata/testcover/pkg3
-@dir lib/go/src/cmd/go/testdata/testcover/pkg4
-@dir lib/go/src/cmd/go/testdata/testcover
-@dir lib/go/src/cmd/go/testdata/testimport/p1
-@dir lib/go/src/cmd/go/testdata/testimport/p2
-@dir lib/go/src/cmd/go/testdata/testimport
-@dir lib/go/src/cmd/go/testdata/testinternal
-@dir lib/go/src/cmd/go/testdata/testinternal2/x/y/z/internal/w
-@dir lib/go/src/cmd/go/testdata/testinternal2/x/y/z/internal
-@dir lib/go/src/cmd/go/testdata/testinternal2/x/y/z
-@dir lib/go/src/cmd/go/testdata/testinternal2/x/y
-@dir lib/go/src/cmd/go/testdata/testinternal2/x
-@dir lib/go/src/cmd/go/testdata/testinternal2
-@dir lib/go/src/cmd/go/testdata/testinternal3
-@dir lib/go/src/cmd/go/testdata/testinternal4/src/p
-@dir lib/go/src/cmd/go/testdata/testinternal4/src/q/internal/x
-@dir lib/go/src/cmd/go/testdata/testinternal4/src/q/internal
-@dir lib/go/src/cmd/go/testdata/testinternal4/src/q/j
-@dir lib/go/src/cmd/go/testdata/testinternal4/src/q
-@dir lib/go/src/cmd/go/testdata/testinternal4/src
-@dir lib/go/src/cmd/go/testdata/testinternal4
-@dir lib/go/src/cmd/go/testdata/testonly
-@dir lib/go/src/cmd/go/testdata/testonly2
 @dir lib/go/src/cmd/go/testdata/testterminal18153
-@dir lib/go/src/cmd/go/testdata/testvendor/src/p
-@dir lib/go/src/cmd/go/testdata/testvendor/src/q/vendor/x
-@dir lib/go/src/cmd/go/testdata/testvendor/src/q/vendor
-@dir lib/go/src/cmd/go/testdata/testvendor/src/q/y
-@dir lib/go/src/cmd/go/testdata/testvendor/src/q/z
-@dir lib/go/src/cmd/go/testdata/testvendor/src/q
-@dir lib/go/src/cmd/go/testdata/testvendor/src
-@dir lib/go/src/cmd/go/testdata/testvendor
-@dir lib/go/src/cmd/go/testdata/testvendor2/src/p
-@dir lib/go/src/cmd/go/testdata/testvendor2/src
-@dir lib/go/src/cmd/go/testdata/testvendor2/vendor/x
-@dir lib/go/src/cmd/go/testdata/testvendor2/vendor
-@dir lib/go/src/cmd/go/testdata/testvendor2
 @dir lib/go/src/cmd/go/testdata
 @dir lib/go/src/cmd/go
 @dir lib/go/src/cmd/gofmt/testdata
@@ -9743,10 +9974,13 @@ lib/go/VERSION
 @dir lib/go/src/cmd/internal/goobj/testdata
 @dir lib/go/src/cmd/internal/goobj
 @dir lib/go/src/cmd/internal/goobj2
+@dir lib/go/src/cmd/internal/moddeps
 @dir lib/go/src/cmd/internal/obj/arm
 @dir lib/go/src/cmd/internal/obj/arm64
 @dir lib/go/src/cmd/internal/obj/mips
 @dir lib/go/src/cmd/internal/obj/ppc64
+@dir lib/go/src/cmd/internal/obj/riscv/testdata/testbranch
+@dir lib/go/src/cmd/internal/obj/riscv/testdata
 @dir lib/go/src/cmd/internal/obj/riscv
 @dir lib/go/src/cmd/internal/obj/s390x
 @dir lib/go/src/cmd/internal/obj/wasm
@@ -9762,6 +9996,8 @@ lib/go/VERSION
 @dir lib/go/src/cmd/link/internal/amd64
 @dir lib/go/src/cmd/link/internal/arm
 @dir lib/go/src/cmd/link/internal/arm64
+@dir lib/go/src/cmd/link/internal/benchmark
+@dir lib/go/src/cmd/link/internal/ld/testdata/deadcode
 @dir lib/go/src/cmd/link/internal/ld/testdata/httptest/main
 @dir lib/go/src/cmd/link/internal/ld/testdata/httptest
 @dir lib/go/src/cmd/link/internal/ld/testdata/issue10978
@@ -9774,6 +10010,7 @@ lib/go/VERSION
 @dir lib/go/src/cmd/link/internal/ld/testdata/issue32233/lib
 @dir lib/go/src/cmd/link/internal/ld/testdata/issue32233/main
 @dir lib/go/src/cmd/link/internal/ld/testdata/issue32233
+@dir lib/go/src/cmd/link/internal/ld/testdata/issue38192
 @dir lib/go/src/cmd/link/internal/ld/testdata
 @dir lib/go/src/cmd/link/internal/ld
 @dir lib/go/src/cmd/link/internal/loadelf
@@ -9783,7 +10020,6 @@ lib/go/VERSION
 @dir lib/go/src/cmd/link/internal/loadxcoff
 @dir lib/go/src/cmd/link/internal/mips
 @dir lib/go/src/cmd/link/internal/mips64
-@dir lib/go/src/cmd/link/internal/objfile
 @dir lib/go/src/cmd/link/internal/ppc64
 @dir lib/go/src/cmd/link/internal/riscv64
 @dir lib/go/src/cmd/link/internal/s390x
@@ -9791,11 +10027,47 @@ lib/go/VERSION
 @dir lib/go/src/cmd/link/internal/wasm
 @dir lib/go/src/cmd/link/internal/x86
 @dir lib/go/src/cmd/link/internal
+@dir lib/go/src/cmd/link/testdata/testBuildFortvOS
+@dir lib/go/src/cmd/link/testdata/testIndexMismatch
+@dir lib/go/src/cmd/link/testdata/testPErsrc
 @dir lib/go/src/cmd/link/testdata
 @dir lib/go/src/cmd/link
 @dir lib/go/src/cmd/nm
 @dir lib/go/src/cmd/objdump/testdata
 @dir lib/go/src/cmd/objdump
+@dir lib/go/src/cmd/oldlink/internal/amd64
+@dir lib/go/src/cmd/oldlink/internal/arm
+@dir lib/go/src/cmd/oldlink/internal/arm64
+@dir lib/go/src/cmd/oldlink/internal/ld/testdata/httptest/main
+@dir lib/go/src/cmd/oldlink/internal/ld/testdata/httptest
+@dir lib/go/src/cmd/oldlink/internal/ld/testdata/issue10978
+@dir lib/go/src/cmd/oldlink/internal/ld/testdata/issue25459/a
+@dir lib/go/src/cmd/oldlink/internal/ld/testdata/issue25459/main
+@dir lib/go/src/cmd/oldlink/internal/ld/testdata/issue25459
+@dir lib/go/src/cmd/oldlink/internal/ld/testdata/issue26237/b.dir
+@dir lib/go/src/cmd/oldlink/internal/ld/testdata/issue26237/main
+@dir lib/go/src/cmd/oldlink/internal/ld/testdata/issue26237
+@dir lib/go/src/cmd/oldlink/internal/ld/testdata/issue32233/lib
+@dir lib/go/src/cmd/oldlink/internal/ld/testdata/issue32233/main
+@dir lib/go/src/cmd/oldlink/internal/ld/testdata/issue32233
+@dir lib/go/src/cmd/oldlink/internal/ld/testdata
+@dir lib/go/src/cmd/oldlink/internal/ld
+@dir lib/go/src/cmd/oldlink/internal/loadelf
+@dir lib/go/src/cmd/oldlink/internal/loader
+@dir lib/go/src/cmd/oldlink/internal/loadmacho
+@dir lib/go/src/cmd/oldlink/internal/loadpe
+@dir lib/go/src/cmd/oldlink/internal/loadxcoff
+@dir lib/go/src/cmd/oldlink/internal/mips
+@dir lib/go/src/cmd/oldlink/internal/mips64
+@dir lib/go/src/cmd/oldlink/internal/objfile
+@dir lib/go/src/cmd/oldlink/internal/ppc64
+@dir lib/go/src/cmd/oldlink/internal/riscv64
+@dir lib/go/src/cmd/oldlink/internal/s390x
+@dir lib/go/src/cmd/oldlink/internal/sym
+@dir lib/go/src/cmd/oldlink/internal/wasm
+@dir lib/go/src/cmd/oldlink/internal/x86
+@dir lib/go/src/cmd/oldlink/internal
+@dir lib/go/src/cmd/oldlink
 @dir lib/go/src/cmd/pack
 @dir lib/go/src/cmd/pprof
 @dir lib/go/src/cmd/test2json
@@ -9848,6 +10120,8 @@ lib/go/VERSION
 @dir lib/go/src/cmd/vendor/golang.org/x/mod/sumdb
 @dir lib/go/src/cmd/vendor/golang.org/x/mod/zip
 @dir lib/go/src/cmd/vendor/golang.org/x/mod
+@dir lib/go/src/cmd/vendor/golang.org/x/sys/internal/unsafeheader
+@dir lib/go/src/cmd/vendor/golang.org/x/sys/internal
 @dir lib/go/src/cmd/vendor/golang.org/x/sys/unix
 @dir lib/go/src/cmd/vendor/golang.org/x/sys/windows
 @dir lib/go/src/cmd/vendor/golang.org/x/sys
@@ -9865,6 +10139,7 @@ lib/go/VERSION
 @dir lib/go/src/cmd/vendor/golang.org/x/tools/go/analysis/passes/ctrlflow
 @dir lib/go/src/cmd/vendor/golang.org/x/tools/go/analysis/passes/errorsas
 @dir lib/go/src/cmd/vendor/golang.org/x/tools/go/analysis/passes/httpresponse
+@dir lib/go/src/cmd/vendor/golang.org/x/tools/go/analysis/passes/ifaceassert
 @dir lib/go/src/cmd/vendor/golang.org/x/tools/go/analysis/passes/inspect
 @dir lib/go/src/cmd/vendor/golang.org/x/tools/go/analysis/passes/internal/analysisutil
 @dir lib/go/src/cmd/vendor/golang.org/x/tools/go/analysis/passes/internal
@@ -9874,6 +10149,7 @@ lib/go/VERSION
 @dir lib/go/src/cmd/vendor/golang.org/x/tools/go/analysis/passes/printf
 @dir lib/go/src/cmd/vendor/golang.org/x/tools/go/analysis/passes/shift
 @dir lib/go/src/cmd/vendor/golang.org/x/tools/go/analysis/passes/stdmethods
+@dir lib/go/src/cmd/vendor/golang.org/x/tools/go/analysis/passes/stringintconv
 @dir lib/go/src/cmd/vendor/golang.org/x/tools/go/analysis/passes/structtag
 @dir lib/go/src/cmd/vendor/golang.org/x/tools/go/analysis/passes/tests
 @dir lib/go/src/cmd/vendor/golang.org/x/tools/go/analysis/passes/unmarshal
@@ -9891,6 +10167,8 @@ lib/go/VERSION
 @dir lib/go/src/cmd/vendor/golang.org/x/tools/go/types/typeutil
 @dir lib/go/src/cmd/vendor/golang.org/x/tools/go/types
 @dir lib/go/src/cmd/vendor/golang.org/x/tools/go
+@dir lib/go/src/cmd/vendor/golang.org/x/tools/internal/analysisinternal
+@dir lib/go/src/cmd/vendor/golang.org/x/tools/internal
 @dir lib/go/src/cmd/vendor/golang.org/x/tools
 @dir lib/go/src/cmd/vendor/golang.org/x/xerrors/internal
 @dir lib/go/src/cmd/vendor/golang.org/x/xerrors
@@ -9963,6 +10241,8 @@ lib/go/VERSION
 @dir lib/go/src/crypto/subtle
 @dir lib/go/src/crypto/tls/testdata
 @dir lib/go/src/crypto/tls
+@dir lib/go/src/crypto/x509/internal/macos
+@dir lib/go/src/crypto/x509/internal
 @dir lib/go/src/crypto/x509/pkix
 @dir lib/go/src/crypto/x509/testdata
 @dir lib/go/src/crypto/x509
@@ -10047,6 +10327,7 @@ lib/go/VERSION
 @dir lib/go/src/hash/fnv
 @dir lib/go/src/hash/maphash
 @dir lib/go/src/hash
+@dir lib/go/src/html/template/testdata
 @dir lib/go/src/html/template
 @dir lib/go/src/html
 @dir lib/go/src/image/color/palette
@@ -10075,6 +10356,7 @@ lib/go/VERSION
 @dir lib/go/src/internal/obscuretestdata
 @dir lib/go/src/internal/oserror
 @dir lib/go/src/internal/poll
+@dir lib/go/src/internal/profile
 @dir lib/go/src/internal/race
 @dir lib/go/src/internal/reflectlite
 @dir lib/go/src/internal/singleflight
@@ -10088,6 +10370,7 @@ lib/go/VERSION
 @dir lib/go/src/internal/testlog
 @dir lib/go/src/internal/trace/testdata
 @dir lib/go/src/internal/trace
+@dir lib/go/src/internal/unsafeheader
 @dir lib/go/src/internal/xcoff/testdata
 @dir lib/go/src/internal/xcoff
 @dir lib/go/src/internal
@@ -10131,6 +10414,8 @@ lib/go/VERSION
 @dir lib/go/src/os/signal/internal/pty
 @dir lib/go/src/os/signal/internal
 @dir lib/go/src/os/signal
+@dir lib/go/src/os/testdata/issue37161
+@dir lib/go/src/os/testdata
 @dir lib/go/src/os/user
 @dir lib/go/src/os
 @dir lib/go/src/path/filepath
@@ -10147,8 +10432,6 @@ lib/go/VERSION
 @dir lib/go/src/runtime/internal/sys
 @dir lib/go/src/runtime/internal
 @dir lib/go/src/runtime/msan
-@dir lib/go/src/runtime/pprof/internal/profile
-@dir lib/go/src/runtime/pprof/internal
 @dir lib/go/src/runtime/pprof/testdata/mappingtest
 @dir lib/go/src/runtime/pprof/testdata
 @dir lib/go/src/runtime/pprof
@@ -10160,6 +10443,7 @@ lib/go/VERSION
 @dir lib/go/src/runtime/testdata/testprogcgo
 @dir lib/go/src/runtime/testdata/testprognet
 @dir lib/go/src/runtime/testdata/testwinlib
+@dir lib/go/src/runtime/testdata/testwinlibsignal
 @dir lib/go/src/runtime/testdata
 @dir lib/go/src/runtime/trace
 @dir lib/go/src/runtime
@@ -10183,6 +10467,7 @@ lib/go/VERSION
 @dir lib/go/src/text/template/testdata
 @dir lib/go/src/text/template
 @dir lib/go/src/text
+@dir lib/go/src/time/tzdata
 @dir lib/go/src/time
 @dir lib/go/src/unicode/utf16
 @dir lib/go/src/unicode/utf8
@@ -10275,6 +10560,7 @@ lib/go/VERSION
 @dir lib/go/test/fixedbugs/bug492.dir
 @dir lib/go/test/fixedbugs/bug504.dir
 @dir lib/go/test/fixedbugs/bug506.dir
+@dir lib/go/test/fixedbugs/bug507.dir
 @dir lib/go/test/fixedbugs/gcc67968.dir
 @dir lib/go/test/fixedbugs/issue10066.dir
 @dir lib/go/test/fixedbugs/issue10219.dir
@@ -10331,6 +10617,7 @@ lib/go/VERSION
 @dir lib/go/test/fixedbugs/issue30862.dir
 @dir lib/go/test/fixedbugs/issue30907.dir
 @dir lib/go/test/fixedbugs/issue30908.dir
+@dir lib/go/test/fixedbugs/issue31053.dir
 @dir lib/go/test/fixedbugs/issue31252.dir
 @dir lib/go/test/fixedbugs/issue31636.dir
 @dir lib/go/test/fixedbugs/issue31637.dir
@@ -10351,6 +10638,7 @@ lib/go/VERSION
 @dir lib/go/test/fixedbugs/issue3552.dir
 @dir lib/go/test/fixedbugs/issue35586.dir
 @dir lib/go/test/fixedbugs/issue36085.dir
+@dir lib/go/test/fixedbugs/issue37513.dir
 @dir lib/go/test/fixedbugs/issue4252.dir
 @dir lib/go/test/fixedbugs/issue4326.dir
 @dir lib/go/test/fixedbugs/issue4370.dir
