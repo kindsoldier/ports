@@ -2,12 +2,12 @@
 # $Id$
 #
 PORTNAME=	libboost
-PORTVERSION=	1.71.0
+PORTVERSION=	1.72.0
 PORTVERSUFFIX=	${PORTVERSION:C/\.[0-9]+$//}
 DISTNAME=	boost_${PORTVERSION:S/./_/g}
 CATEGORIES=	devel
 MASTER_SITES=	https://dl.bintray.com/boostorg/release/${PORTVERSION}/source/
-PKGNAMESUFFIX=  71
+PKGNAMESUFFIX=  72
 
 COMMENT=	Free portable C++ libraries (without Boost.Python)
 MAINTAINER=	onborodin@gmail.com
@@ -15,7 +15,7 @@ MAINTAINER=	onborodin@gmail.com
 
 LIB_DEPENDS+= 	libicui18n.so:devel/libicu
 
-PREFIX=         ${LOCALBASE}/boost71
+PREFIX=         ${LOCALBASE}/boost72
 
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes

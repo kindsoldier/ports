@@ -17,7 +17,7 @@ CONFLICTS=	openal-soft-[0-9]*
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-CFLAGS+=	-Wno-return-type
+CFLAGS+=	-Wno-return-type -fPIC
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+= --enable-capture --disable-arts
 CONFIGURE_ARGS+= --disable-alsa

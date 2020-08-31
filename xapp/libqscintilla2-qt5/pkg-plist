@@ -1,0 +1,85 @@
+include/Qt5/Qsci/qsciabstractapis.h
+include/Qt5/Qsci/qsciapis.h
+include/Qt5/Qsci/qscicommand.h
+include/Qt5/Qsci/qscicommandset.h
+include/Qt5/Qsci/qscidocument.h
+include/Qt5/Qsci/qsciglobal.h
+include/Qt5/Qsci/qscilexer.h
+include/Qt5/Qsci/qscilexeravs.h
+include/Qt5/Qsci/qscilexerbash.h
+include/Qt5/Qsci/qscilexerbatch.h
+include/Qt5/Qsci/qscilexercmake.h
+include/Qt5/Qsci/qscilexercoffeescript.h
+include/Qt5/Qsci/qscilexercpp.h
+include/Qt5/Qsci/qscilexercsharp.h
+include/Qt5/Qsci/qscilexercss.h
+include/Qt5/Qsci/qscilexercustom.h
+include/Qt5/Qsci/qscilexerd.h
+include/Qt5/Qsci/qscilexerdiff.h
+include/Qt5/Qsci/qscilexeredifact.h
+include/Qt5/Qsci/qscilexerfortran.h
+include/Qt5/Qsci/qscilexerfortran77.h
+include/Qt5/Qsci/qscilexerhtml.h
+include/Qt5/Qsci/qscilexeridl.h
+include/Qt5/Qsci/qscilexerjava.h
+include/Qt5/Qsci/qscilexerjavascript.h
+include/Qt5/Qsci/qscilexerjson.h
+include/Qt5/Qsci/qscilexerlua.h
+include/Qt5/Qsci/qscilexermakefile.h
+include/Qt5/Qsci/qscilexermarkdown.h
+include/Qt5/Qsci/qscilexermatlab.h
+include/Qt5/Qsci/qscilexeroctave.h
+include/Qt5/Qsci/qscilexerpascal.h
+include/Qt5/Qsci/qscilexerperl.h
+include/Qt5/Qsci/qscilexerpo.h
+include/Qt5/Qsci/qscilexerpostscript.h
+include/Qt5/Qsci/qscilexerpov.h
+include/Qt5/Qsci/qscilexerproperties.h
+include/Qt5/Qsci/qscilexerpython.h
+include/Qt5/Qsci/qscilexerruby.h
+include/Qt5/Qsci/qscilexerspice.h
+include/Qt5/Qsci/qscilexersql.h
+include/Qt5/Qsci/qscilexertcl.h
+include/Qt5/Qsci/qscilexertex.h
+include/Qt5/Qsci/qscilexerverilog.h
+include/Qt5/Qsci/qscilexervhdl.h
+include/Qt5/Qsci/qscilexerxml.h
+include/Qt5/Qsci/qscilexeryaml.h
+include/Qt5/Qsci/qscimacro.h
+include/Qt5/Qsci/qsciprinter.h
+include/Qt5/Qsci/qsciscintilla.h
+include/Qt5/Qsci/qsciscintillabase.h
+include/Qt5/Qsci/qscistyle.h
+include/Qt5/Qsci/qscistyledtext.h
+lib/libqscintilla2_qt5.so
+lib/libqscintilla2_qt5.so.15
+libdata/ldconfig/qscintilla2-qt5
+share/Qt5/mkspecs/features/qscintilla2.prf
+share/Qt5/qsci/api/python/Python-2.4.api
+share/Qt5/qsci/api/python/Python-2.5.api
+share/Qt5/qsci/api/python/Python-2.6.api
+share/Qt5/qsci/api/python/Python-2.7.api
+share/Qt5/qsci/api/python/Python-3.1.api
+share/Qt5/qsci/api/python/Python-3.2.api
+share/Qt5/qsci/api/python/Python-3.3.api
+share/Qt5/qsci/api/python/Python-3.4.api
+share/Qt5/qsci/api/python/Python-3.5.api
+share/Qt5/qsci/api/python/Python-3.6.api
+share/Qt5/qsci/api/python/Python-3.7.api
+share/Qt5/qsci/api/python/Python-3.8.api
+share/Qt5/translations/qscintilla_cs.qm
+share/Qt5/translations/qscintilla_de.qm
+share/Qt5/translations/qscintilla_es.qm
+share/Qt5/translations/qscintilla_fr.qm
+share/Qt5/translations/qscintilla_pt_br.qm
+@dir include/Qt5/Qsci
+@dir include/Qt5
+@dir share/Qt5/mkspecs/features
+@dir share/Qt5/mkspecs
+@dir share/Qt5/qsci/api/python
+@dir share/Qt5/qsci/api
+@dir share/Qt5/qsci
+@dir share/Qt5/translations
+@dir share/Qt5
+@dir share
+@dir .
