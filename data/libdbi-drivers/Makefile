@@ -23,7 +23,7 @@ INSTALL_TARGET=	install-strip
 
 CONFIGURE_ARGS+= --without-mysql
 CONFIGURE_ARGS+= --with-pgsql
-CONFIGURE_ARGS+= --without-sqlite3
+CONFIGURE_ARGS+= --with-sqlite3
 CONFIGURE_ARGS+= --without-firebird
 CONFIGURE_ARGS+= --without-freetds
 CONFIGURE_ARGS+= --without-oracle

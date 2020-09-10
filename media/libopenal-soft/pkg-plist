@@ -1,0 +1,26 @@
+bin/alsoft-config
+bin/altonegen
+bin/openal-info
+etc/openal-soft/hrtf/Default HRTF.mhr
+etc/openal-soft/presets/3D7.1.ambdec
+etc/openal-soft/presets/hexagon.ambdec
+etc/openal-soft/presets/itu5.1-nocenter.ambdec
+etc/openal-soft/presets/itu5.1.ambdec
+etc/openal-soft/presets/presets.txt
+etc/openal-soft/presets/rectangle.ambdec
+etc/openal-soft/presets/square.ambdec
+include/AL/al.h
+include/AL/alc.h
+include/AL/alext.h
+include/AL/efx-creative.h
+include/AL/efx-presets.h
+include/AL/efx.h
+lib/cmake/OpenAL/OpenALConfig-release.cmake
+lib/cmake/OpenAL/OpenALConfig.cmake
+lib/libopenal.so
+lib/libopenal.so.1
+lib/pkgconfig/openal.pc
+@dir include/AL
+@dir include
+@dir lib/cmake/OpenAL
+@dir lib/cmake

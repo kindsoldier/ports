@@ -10,7 +10,7 @@ DISTNAME=	apache-maven-${DISTVERSION}-bin
 MAINTAINER=	jonc@chen.org.nz
 COMMENT=	Java project management tool
 
-#RUN_DEPENDS=	mvn:devel/maven-wrapper
+RUN_DEPENDS=	mvn:java/maven-wrapper
 
 USE_JAVA=	yes
 JAVA_VERSION=   11+
