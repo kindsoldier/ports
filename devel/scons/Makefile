@@ -11,7 +11,7 @@ COMMENT=	Build tool alternative to make
 
 RUN_DEPENDS=	gm4:text/gm4
 
-USES=		python:2.7
+USES=		python:3.8
 USE_PYTHON=	distutils ##autoplist
 
 PLIST_SUB+=	SCONS_VER=${PORTVERSION}

@@ -10,7 +10,7 @@ MAINTAINER=	rm@FreeBSD.org
 COMMENT=	Type Hints for Python
 
 NO_ARCH=	yes
-USES=		python:-3.4
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

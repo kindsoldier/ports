@@ -39,6 +39,8 @@ MAKE_ARGS+= --libc++
 MAKE_ARGS+= --runtime-hardening=on
 MAKE_ARGS+= --disable-warnings-as-errors
 MAKE_ARGS+= VERBOSE=on
+MAKE_ARGS+= AR=${PREFIX}/bin/gar
+
 
 MONGO_OWNER=	mongodb
 MONGO_OWNER_ID=	922

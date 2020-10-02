@@ -2,14 +2,14 @@
 
 PORTNAME=	yarn
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.19.1
+DISTVERSION=	1.22.4
 CATEGORIES=	www
 MASTER_SITES=	https://yarnpkg.com/downloads/${PORTVERSION}/
 
 MAINTAINER=	pizzamig@FreeBSD.org
 COMMENT=	Package manager for node, alternative to npm
 
-RUN_DEPENDS=	node>=10.0:lang/node13
+RUN_DEPENDS=	node>=10.0:lang/node14
 
 NO_ARCH=	yes
 NO_BUILD=	yes

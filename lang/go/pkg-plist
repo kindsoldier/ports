@@ -2314,6 +2314,8 @@ lib/go/src/cmd/go/testdata/script/test_flags.txt
 lib/go/src/cmd/go/testdata/script/test_generated_main.txt
 lib/go/src/cmd/go/testdata/script/test_go111module_cache.txt
 lib/go/src/cmd/go/testdata/script/test_import_error_stack.txt
+lib/go/src/cmd/go/testdata/script/test_json_exit.txt
+lib/go/src/cmd/go/testdata/script/test_json_interleaved.txt
 lib/go/src/cmd/go/testdata/script/test_json_panic_exit.txt
 lib/go/src/cmd/go/testdata/script/test_json.txt
 lib/go/src/cmd/go/testdata/script/test_main_archive.txt
@@ -2355,6 +2357,7 @@ lib/go/src/cmd/go/testdata/script/test_vendor.txt
 lib/go/src/cmd/go/testdata/script/test_vet.txt
 lib/go/src/cmd/go/testdata/script/test_write_profiles_on_timeout.txt
 lib/go/src/cmd/go/testdata/script/test_xtestonly_works.txt
+lib/go/src/cmd/go/testdata/script/testing_issue40908.txt
 lib/go/src/cmd/go/testdata/script/vendor_complex.txt
 lib/go/src/cmd/go/testdata/script/vendor_gopath_issue11409.txt
 lib/go/src/cmd/go/testdata/script/vendor_import_missing.txt
@@ -8923,8 +8926,10 @@ lib/go/test/fixedbugs/issue39541.go
 lib/go/test/fixedbugs/issue39651.go
 lib/go/test/fixedbugs/issue40367.go
 lib/go/test/fixedbugs/issue4066.go
+lib/go/test/fixedbugs/issue40746.go
 lib/go/test/fixedbugs/issue4085a.go
 lib/go/test/fixedbugs/issue4085b.go
+lib/go/test/fixedbugs/issue40917.go
 lib/go/test/fixedbugs/issue4097.go
 lib/go/test/fixedbugs/issue4099.go
 lib/go/test/fixedbugs/issue4162.go
