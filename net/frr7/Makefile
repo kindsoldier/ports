@@ -36,7 +36,7 @@ EXAMPLES_DIR= 	${PREFIX}/${EXAMPLES_SUBDIR}
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USES+=	autoreconf libtool gmake bison tar:xz readline compiler:c++11-lang
-USES+=	perl5 makeinfo python:2.7-3.6,build
+USES+=	perl5 makeinfo python:3.6+,build
 USE_PERL5=	build
 INSTALL_TARGET=	install-strip
 
