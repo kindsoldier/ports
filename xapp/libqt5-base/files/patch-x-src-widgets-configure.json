@@ -1,0 +1,11 @@
+--- ./src/widgets/configure.json.orig	2019-01-28 19:11:52.000000000 +0200
++++ ./src/widgets/configure.json	2019-03-17 19:22:28.533401000 +0200
+@@ -21,7 +21,7 @@
+         "gtk3": {
+             "label": "GTK+ >= 3.6",
+             "sources": [
+-                { "type": "pkgConfig", "args": "gtk+-3.0 >= 3.6" }
++                { "type": "pkgConfig", "args": "gtk+ >= 3.6" }
+             ]
+         }
+     },

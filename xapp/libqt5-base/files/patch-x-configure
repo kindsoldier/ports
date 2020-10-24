@@ -1,0 +1,12 @@
+--- ./configure.orig	2019-01-28 19:11:52.000000000 +0200
++++ ./configure	2019-03-17 13:46:10.483553000 +0200
+@@ -855,7 +855,7 @@
+ fi
+ 
+ if [ -n "$CFG_HOST_QT_TOOLS_PATH" ]; then
+-    "$CFG_HOST_QT_TOOLS_PATH/qmake" -qtconf "$QTCONFFILE" "$relpathMangled" -- "$@"
++    "$CFG_HOST_QT_TOOLS_PATH/qmake" -qtconf "$QTCONFFILE" "$relpathMangled" -- "$@"
+ else
+-    "$outpath/bin/qmake" "$relpathMangled" -- "$@"
++    "$outpath/bin/qmake" "$relpathMangled" -- "$@"
+ fi
