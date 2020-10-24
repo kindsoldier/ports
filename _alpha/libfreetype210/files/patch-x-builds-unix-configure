@@ -1,0 +1,20 @@
+--- ./builds/unix/configure.orig	2018-05-01 23:34:47.000000000 +0200
++++ ./builds/unix/configure	2019-03-30 22:49:46.389943000 +0200
+@@ -2501,7 +2501,7 @@
+ 
+ # Don't forget to update `docs/VERSIONS.TXT'!
+ 
+-version_info='23:2:17'
++version_info='13:0:13'
+ 
+ ft_version=`echo $version_info | tr : .`
+ 
+@@ -14727,7 +14727,7 @@
+                     -e 's/  *$//'   \
+                     -e 's/  */ /g'`
+ 
+-LIBSSTATIC_CONFIG="-lfreetype               \
++LIBSSTATIC_CONFIG="-lqtfreetype               \
+                    $zlib_libsstaticconf     \
+                    $bzip2_libsstaticconf    \
+                    $libpng_libsstaticconf   \
