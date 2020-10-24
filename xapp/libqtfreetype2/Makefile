@@ -2,7 +2,7 @@
 # $FreeBSD: head/print/freetype2/Makefile 435690 2017-03-08 15:26:28Z kwm $
 
 PORTNAME=	freetype2
-PORTVERSION=	2.9.1
+PORTVERSION=	2.10.2 #2.9.1
 CATEGORIES=	print
 MASTER_SITES+=	http://savannah.nongnu.org/download/freetype/
 MASTER_SITES+=	SF/freetype/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+\.[0-9]+).*/\1/}/
@@ -16,7 +16,7 @@ PKGNAMEPREFIX=  libqt
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Free and portable TrueType font rendering engine
 
-USES=		gmake tar:bzip2
+USES=		gmake tar:xz #bzip2
 MAKE_ENV=	TOP=""
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

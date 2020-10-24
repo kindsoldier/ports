@@ -12,6 +12,7 @@ include/qtfreetype2/freetype/ftbzip2.h
 include/qtfreetype2/freetype/ftcache.h
 include/qtfreetype2/freetype/ftchapters.h
 include/qtfreetype2/freetype/ftcid.h
+include/qtfreetype2/freetype/ftcolor.h
 include/qtfreetype2/freetype/ftdriver.h
 include/qtfreetype2/freetype/fterrdef.h
 include/qtfreetype2/freetype/fterrors.h
@@ -56,3 +57,4 @@ share/aclocal/qtfreetype2.m4
 @dir include/qtfreetype2/freetype/config
 @dir include/qtfreetype2/freetype
 @dir include/qtfreetype2
+@dir share/aclocal

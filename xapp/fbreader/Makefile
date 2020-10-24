@@ -12,6 +12,11 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Powerful e-book reader
 
+#USE_GITHUB=	yes
+#GH_ACCOUNT=	geometer
+#GH_PROJECT=	FBReader
+#DISTVERSIONSUFFIX=	-freebsdport
+
 LIB_DEPENDS+=	libsqlite3.so:data/sqlite3
 LIB_DEPENDS+=	libpng.so:graph/libpng
 LIB_DEPENDS+=	libexpat.so:text/libexpat
@@ -40,6 +45,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 CXX=	clang++
 MAKE_ARGS+= LD=clang++
 
+CFLAGS+= -funsigned-char
 CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/linebreak -I${LOCALBASE}/include/Qt4
 LDFLAGS=	-L${LOCALBASE}/lib
 MAKE_ENV+=	TARGET_ARCH=desktop

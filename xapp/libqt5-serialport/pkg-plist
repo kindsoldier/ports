@@ -1,13 +1,15 @@
-include/Qt5/QtSerialPort/5.12.1/QtSerialPort/private/qserialport_p.h
-include/Qt5/QtSerialPort/5.12.1/QtSerialPort/private/qserialportinfo_p.h
-include/Qt5/QtSerialPort/5.12.1/QtSerialPort/private/qtudev_p.h
-include/Qt5/QtSerialPort/5.12.1/QtSerialPort/private/qwinoverlappedionotifier_p.h
+include/Qt5/QtSerialPort/5.15.0/QtSerialPort/private/qserialport_p.h
+include/Qt5/QtSerialPort/5.15.0/QtSerialPort/private/qserialportinfo_p.h
+include/Qt5/QtSerialPort/5.15.0/QtSerialPort/private/qtntdll_p.h
+include/Qt5/QtSerialPort/5.15.0/QtSerialPort/private/qtserialport-config_p.h
+include/Qt5/QtSerialPort/5.15.0/QtSerialPort/private/qtudev_p.h
 include/Qt5/QtSerialPort/QSerialPort
 include/Qt5/QtSerialPort/qserialport.h
 include/Qt5/QtSerialPort/qserialportglobal.h
 include/Qt5/QtSerialPort/QSerialPortInfo
 include/Qt5/QtSerialPort/qserialportinfo.h
 include/Qt5/QtSerialPort/QtSerialPort
+include/Qt5/QtSerialPort/qtserialport-config.h
 include/Qt5/QtSerialPort/QtSerialPortDepends
 include/Qt5/QtSerialPort/QtSerialPortVersion
 include/Qt5/QtSerialPort/qtserialportversion.h
@@ -20,13 +22,12 @@ lib/libQt5SerialPort.so.5
 lib/pkgconfig/Qt5SerialPort.pc
 share/Qt5/mkspecs/modules/qt_lib_serialport_private.pri
 share/Qt5/mkspecs/modules/qt_lib_serialport.pri
-@dir include/Qt5/QtSerialPort/5.12.1/QtSerialPort/private
-@dir include/Qt5/QtSerialPort/5.12.1/QtSerialPort
-@dir include/Qt5/QtSerialPort/5.12.1
+@dir include/Qt5/QtSerialPort/5.15.0/QtSerialPort/private
+@dir include/Qt5/QtSerialPort/5.15.0/QtSerialPort
+@dir include/Qt5/QtSerialPort/5.15.0
 @dir include/Qt5/QtSerialPort
 @dir include/Qt5
 @dir lib/cmake/Qt5SerialPort
-@dir lib/cmake
 @dir share/Qt5/mkspecs/modules
 @dir share/Qt5/mkspecs
 @dir share/Qt5

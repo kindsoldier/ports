@@ -2,7 +2,7 @@
 # $Id: Makefile 1575 2008-07-31 07:53:53Z root $
 #
 PORTNAME=	postgresql
-PORTVERSION=	12.1
+PORTVERSION=	12.4
 CATEGORIES=	databases
 MASTER_SITES+=	http://ftp.postgresql.org/pub/%SUBDIR%/ 
 MASTER_SITES+=	http://ftp.de.postgresql.org/%SUBDIR%/ 

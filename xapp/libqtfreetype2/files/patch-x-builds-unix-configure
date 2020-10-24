@@ -4,7 +4,7 @@
  
  # Don't forget to update `docs/VERSIONS.TXT'!
  
--version_info='22:1:16'
+-version_info='23:2:17'
 +version_info='13:0:13'
  
  ft_version=`echo $version_info | tr : .`

@@ -5,7 +5,7 @@
 # $FreeBSD: head/Mk/bsd.local.mk 358214 2014-06-18 07:14:22Z bapt $
 #
 
-pl:
+_pl:
 	echo -n > ${PKGDIR}/pkg-plist.new
 	cd ${STAGEDIR}${PREFIX} &&  find -ds . -type d -empty -delete
 	cd ${STAGEDIR}${PREFIX} &&  find -ds . -type d -empty -delete
@@ -19,7 +19,7 @@ pl:
 	-cd ${STAGEDIR}${PREFIX} && find -ds ${DIR} -type d  | sed 's,^./,,' | sed 's,^,@dir ,'>> ${PKGDIR}/pkg-plist.new
 .endfor
 
-cf:	extract
+_cf:	extract
 	cd ${WRKSRC} && ./configure --help | sed -e 's,^,#,; s, --,CONFIGURE_ARGS+= --,' \
 	    > ${WRKDIR}/../configure.help
 
