@@ -1,6 +1,6 @@
 #
 # $Id: Makefile 1285 2007-10-25 11:42:14Z root $
-#
+#``
 PORTNAME=	gcc
 DIST_SUBDIR=	arm
 PORTVERSION=	8.2.1
