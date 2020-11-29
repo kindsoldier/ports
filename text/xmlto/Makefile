@@ -17,12 +17,12 @@ MAINTAINER=	onborodin@gmail.com
 COMMENT=	Front-end to an XSL toolchain
 
 BUILD_DEPENDS+=	${BASH_CMD}:lang/bash
-#		${GETOPT_CMD}:misc/getopt
-BUILD_DEPENDS+=		xmllint:text/libxml2
-BUILD_DEPENDS+=		xsltproc:text/libxslt
-#		${XSL_DIR}:textproc/docbook-xsl \
-#		paperconf:print/libpaper \
-#		w3m:www/w3m \
+BUILD_DEPENDS+=	${GETOPT_CMD}:system/getopt
+BUILD_DEPENDS+=	xmllint:text/libxml2
+BUILD_DEPENDS+=	xsltproc:text/libxslt
+#		${XSL_DIR}:textproc/docbook-xsl
+#		paperconf:print/libpaper
+#		w3m:www/w3m
 #		${LOCALBASE}/share/xml/docbook/4.2:textproc/docbook-xml
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 

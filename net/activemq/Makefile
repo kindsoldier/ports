@@ -29,7 +29,7 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 
 #USERS=		activemq
-#GROUPS=		activemq
+#GROUPS=	activemq
 
 do-install:
 	${RM} ${WRKSRC}/conf/log4j.properties.orig
