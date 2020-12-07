@@ -4,7 +4,7 @@
  
  #include "x264_config.h"
  
--#define X264_BUILD 148
+-#define X264_BUILD 161
 +#define X264_BUILD 142
  
  /* Application developers planning to link against a shared library version of

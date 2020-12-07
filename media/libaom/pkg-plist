@@ -1,0 +1,16 @@
+bin/aomdec
+bin/aomenc
+include/aom/aom_codec.h
+include/aom/aom_decoder.h
+include/aom/aom_encoder.h
+include/aom/aom_frame_buffer.h
+include/aom/aom_image.h
+include/aom/aom_integer.h
+include/aom/aom.h
+include/aom/aomcx.h
+include/aom/aomdx.h
+lib/libaom.a
+lib/libaom.so
+lib/libaom.so.2
+lib/pkgconfig/aom.pc
+@dir include/aom

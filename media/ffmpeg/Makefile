@@ -2,7 +2,7 @@
 # $Id$
 #
 PORTNAME=	ffmpeg
-PORTVERSION=	4.2.1
+PORTVERSION=	4.3.1
 CATEGORIES=	multimedia audio net
 MASTER_SITES=	http://ffmpeg.org/releases/
 
@@ -10,6 +10,61 @@ MAINTAINER=	onborodin@gmail.com
 COMMENT=	Realtime audio/video encoder/converter and streaming server
 
 BUILD_DEPENDS=	yasm:devel/yasm
+
+LIB_DEPENDS+= libX11.so:x11/libX11
+LIB_DEPENDS+= libXau.so:x11/libXau
+LIB_DEPENDS+= libXdmcp.so:x11/libXdmcp
+LIB_DEPENDS+= libXext.so:x11/libXext
+LIB_DEPENDS+= libXfixes.so:x11/libXfixes
+LIB_DEPENDS+= libXv.so:x11/libXv
+
+#LIB_DEPENDS+= libaom.so:media/libaom
+
+LIB_DEPENDS+= libdrm.so:system/libdrm
+
+LIB_DEPENDS+= libfreetype.so:graph/libfreetype2
+LIB_DEPENDS+= libgmp.so:math/libgmp
+LIB_DEPENDS+= libgnutls.so:crypto/libgnutls
+LIB_DEPENDS+= libgsm.so:media/libgsm
+LIB_DEPENDS+= libhogweed.so:crypto/libnettle
+LIB_DEPENDS+= libiconv.so:text/libiconv
+LIB_DEPENDS+= libidn2.so:net/libidn2
+
+LIB_DEPENDS+= libintl.so:devel/gettext
+LIB_DEPENDS+= libmodplug.so:media/libmodplug
+LIB_DEPENDS+= libmp3lame.so:media/lame
+
+LIB_DEPENDS+= libnettle.so:crypto/libnettle
+
+LIB_DEPENDS+= libogg.so:media/libogg
+LIB_DEPENDS+= libopencore-amrnb.so:media/libopencore-amr
+LIB_DEPENDS+= libopencore-amrwb.so:media/libopencore-amr
+LIB_DEPENDS+= libopus.so:media/libopus
+LIB_DEPENDS+= libp11-kit.so:crypto/libp11-kit
+LIB_DEPENDS+= libpng16.so:graph/libpng
+LIB_DEPENDS+= libpostproc.so:media/ffmpeg
+LIB_DEPENDS+= libspeex.so:media/libspeex
+LIB_DEPENDS+= libswresample.so:media/ffmpeg
+LIB_DEPENDS+= libswscale.so:media/ffmpeg
+LIB_DEPENDS+= libtasn1.so:crypto/libtasn1
+LIB_DEPENDS+= libtheoradec.so:media/libtheora
+LIB_DEPENDS+= libtheoraenc.so:media/libtheora
+LIB_DEPENDS+= libva-drm.so:media/libva
+LIB_DEPENDS+= libva-x11.so:media/libva
+LIB_DEPENDS+= libva.so:media/libva
+LIB_DEPENDS+= libvorbisenc.so:media/libvorbis
+LIB_DEPENDS+= libvorbis.so:media/libvorbis
+LIB_DEPENDS+= libwavpack.so:media/libwavpack
+LIB_DEPENDS+= libx264.so:media/libx264
+LIB_DEPENDS+= libx265.so:media/libx265
+
+LIB_DEPENDS+= libxcb-shape.so:x11/libxcb
+LIB_DEPENDS+= libxcb-shm.so:x11/libxcb
+LIB_DEPENDS+= libxcb-xfixes.so:x11/libxcb
+LIB_DEPENDS+= libxcb.so:x11/libxcb
+
+LIB_DEPENDS+= libxvidcore.so:media/libxvid
+
 
 LIB_DEPENDS+=	libgnutls.so:crypto/libgnutls
 LIB_DEPENDS+=	libintl.so:devel/gettext
@@ -42,6 +97,8 @@ LIB_DEPENDS+=	libopus.so:media/libopus
 
 LIB_DEPENDS+=	libX11.so:x11/libX11
 LIB_DEPENDS+=	libXv.so:x11/libXv
+
+LIB_DEPENDS+= libopenh264.so:media/libopenh264
 
 BUILD_DEPENDS+= ${PREFIX}/lib/pkgconfig/xau.pc:x11/libXau
 BUILD_DEPENDS+= ${PREFIX}/lib/pkgconfig/xdmcp.pc:x11/libXdmcp
@@ -102,6 +159,10 @@ CONFIGURE_ARGS+= --enable-libx265
 CONFIGURE_ARGS+= --enable-libxvid
 CONFIGURE_ARGS+= --enable-zlib
 
+CONFIGURE_ARGS+= --enable-libopenh264
+CONFIGURE_ARGS+= --disable-libaom
+
+
 CONFIGURE_ARGS+= --enable-version3
 CONFIGURE_ARGS+= --enable-gpl
 
@@ -111,6 +172,7 @@ CONFIGURE_ARGS+= --enable-libopus
 CONFIGURE_ARGS+= --enable-shared
 CONFIGURE_ARGS+= --enable-pic
 CONFIGURE_ARGS+= --disable-optimizations
+
 
 .include <bsd.port.pre.mk>
 
