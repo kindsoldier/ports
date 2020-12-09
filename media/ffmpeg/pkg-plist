@@ -1,4 +1,5 @@
 bin/ffmpeg
+bin/ffplay
 bin/ffprobe
 include/libavcodec/ac3_parser.h
 include/libavcodec/adts_parser.h
@@ -174,6 +175,8 @@ man/man1/ffmpeg-resampler.1.gz
 man/man1/ffmpeg-scaler.1.gz
 man/man1/ffmpeg-utils.1.gz
 man/man1/ffmpeg.1.gz
+man/man1/ffplay-all.1.gz
+man/man1/ffplay.1.gz
 man/man1/ffprobe-all.1.gz
 man/man1/ffprobe.1.gz
 man/man3/libavcodec.3.gz
