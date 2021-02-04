@@ -179,6 +179,7 @@ lib/go/LICENSE
 lib/go/misc/android/go_android_exec.go
 lib/go/misc/android/README
 lib/go/misc/arm/a
+lib/go/misc/cgo/errors/badsym_test.go
 lib/go/misc/cgo/errors/errors_test.go
 lib/go/misc/cgo/errors/ptr_test.go
 lib/go/misc/cgo/errors/testdata/err1.go
@@ -308,6 +309,8 @@ lib/go/misc/cgo/test/testdata/issue29563/weak2.c
 lib/go/misc/cgo/test/testdata/issue30527.go
 lib/go/misc/cgo/test/testdata/issue30527/a.go
 lib/go/misc/cgo/test/testdata/issue30527/b.go
+lib/go/misc/cgo/test/testdata/issue41761.go
+lib/go/misc/cgo/test/testdata/issue41761a/a.go
 lib/go/misc/cgo/test/testdata/issue8756.go
 lib/go/misc/cgo/test/testdata/issue8756/issue8756.go
 lib/go/misc/cgo/test/testdata/issue8828.go
@@ -809,6 +812,7 @@ lib/go/pkg/freebsd_amd64/index/suffixarray.a
 lib/go/pkg/freebsd_amd64/internal/bytealg.a
 lib/go/pkg/freebsd_amd64/internal/cfg.a
 lib/go/pkg/freebsd_amd64/internal/cpu.a
+lib/go/pkg/freebsd_amd64/internal/execabs.a
 lib/go/pkg/freebsd_amd64/internal/fmtsort.a
 lib/go/pkg/freebsd_amd64/internal/goroot.a
 lib/go/pkg/freebsd_amd64/internal/goversion.a
@@ -1980,6 +1984,7 @@ lib/go/src/cmd/go/testdata/script/cgo_asm_error.txt
 lib/go/src/cmd/go/testdata/script/cgo_bad_directives.txt
 lib/go/src/cmd/go/testdata/script/cgo_depends_on_syscall.txt
 lib/go/src/cmd/go/testdata/script/cgo_flag_contains_space.txt
+lib/go/src/cmd/go/testdata/script/cgo_path.txt
 lib/go/src/cmd/go/testdata/script/cgo_syso_issue29253.txt
 lib/go/src/cmd/go/testdata/script/clean_cache_n.txt
 lib/go/src/cmd/go/testdata/script/clean_testcache.txt
@@ -2066,6 +2071,7 @@ lib/go/src/cmd/go/testdata/script/install_rebuild_removed.txt
 lib/go/src/cmd/go/testdata/script/install_relative_gobin_fail.txt
 lib/go/src/cmd/go/testdata/script/install_shadow_gopath.txt
 lib/go/src/cmd/go/testdata/script/issue36000.txt
+lib/go/src/cmd/go/testdata/script/ldflag.txt
 lib/go/src/cmd/go/testdata/script/link_syso_issue33139.txt
 lib/go/src/cmd/go/testdata/script/linkname.txt
 lib/go/src/cmd/go/testdata/script/list_ambiguous_path.txt
@@ -2684,6 +2690,7 @@ lib/go/src/cmd/link/internal/ld/testdata/issue32233/lib/ObjC.m
 lib/go/src/cmd/link/internal/ld/testdata/issue32233/main/main.go
 lib/go/src/cmd/link/internal/ld/testdata/issue38192/main.go
 lib/go/src/cmd/link/internal/ld/testdata/issue38192/oneline.s
+lib/go/src/cmd/link/internal/ld/testdata/issue39757/issue39757main.go
 lib/go/src/cmd/link/internal/ld/typelink.go
 lib/go/src/cmd/link/internal/ld/util.go
 lib/go/src/cmd/link/internal/ld/xcoff.go
@@ -4762,6 +4769,8 @@ lib/go/src/internal/cpu/cpu_x86.go
 lib/go/src/internal/cpu/cpu_x86.s
 lib/go/src/internal/cpu/cpu.go
 lib/go/src/internal/cpu/export_test.go
+lib/go/src/internal/execabs/execabs_test.go
+lib/go/src/internal/execabs/execabs.go
 lib/go/src/internal/fmtsort/export_test.go
 lib/go/src/internal/fmtsort/sort_test.go
 lib/go/src/internal/fmtsort/sort.go
@@ -6012,6 +6021,7 @@ lib/go/src/runtime/internal/atomic/asm_mips64x.s
 lib/go/src/runtime/internal/atomic/asm_mipsx.s
 lib/go/src/runtime/internal/atomic/asm_ppc64x.s
 lib/go/src/runtime/internal/atomic/asm_s390x.s
+lib/go/src/runtime/internal/atomic/asm_wasm.s
 lib/go/src/runtime/internal/atomic/atomic_386.go
 lib/go/src/runtime/internal/atomic/atomic_amd64.go
 lib/go/src/runtime/internal/atomic/atomic_arm.go
@@ -6570,6 +6580,7 @@ lib/go/src/runtime/testdata/testprogcgo/exec.go
 lib/go/src/runtime/testdata/testprogcgo/lockosthread.c
 lib/go/src/runtime/testdata/testprogcgo/lockosthread.go
 lib/go/src/runtime/testdata/testprogcgo/main.go
+lib/go/src/runtime/testdata/testprogcgo/needmdeadlock.go
 lib/go/src/runtime/testdata/testprogcgo/numgoroutine.go
 lib/go/src/runtime/testdata/testprogcgo/pprof.go
 lib/go/src/runtime/testdata/testprogcgo/raceprof.go
@@ -8925,15 +8936,20 @@ lib/go/test/fixedbugs/issue39472.go
 lib/go/test/fixedbugs/issue39541.go
 lib/go/test/fixedbugs/issue39651.go
 lib/go/test/fixedbugs/issue40367.go
+lib/go/test/fixedbugs/issue40629.go
 lib/go/test/fixedbugs/issue4066.go
 lib/go/test/fixedbugs/issue40746.go
 lib/go/test/fixedbugs/issue4085a.go
 lib/go/test/fixedbugs/issue4085b.go
 lib/go/test/fixedbugs/issue40917.go
+lib/go/test/fixedbugs/issue40954.go
 lib/go/test/fixedbugs/issue4097.go
 lib/go/test/fixedbugs/issue4099.go
 lib/go/test/fixedbugs/issue4162.go
 lib/go/test/fixedbugs/issue4167.go
+lib/go/test/fixedbugs/issue41711.go
+lib/go/test/fixedbugs/issue42032.go
+lib/go/test/fixedbugs/issue42076.go
 lib/go/test/fixedbugs/issue4215.go
 lib/go/test/fixedbugs/issue4232.go
 lib/go/test/fixedbugs/issue4251.go
@@ -8941,6 +8957,7 @@ lib/go/test/fixedbugs/issue4252.dir/a.go
 lib/go/test/fixedbugs/issue4252.dir/main.go
 lib/go/test/fixedbugs/issue4252.go
 lib/go/test/fixedbugs/issue4264.go
+lib/go/test/fixedbugs/issue42753.go
 lib/go/test/fixedbugs/issue4283.go
 lib/go/test/fixedbugs/issue4313.go
 lib/go/test/fixedbugs/issue4316.go
@@ -9606,6 +9623,7 @@ lib/go/VERSION
 @dir lib/go/misc/cgo/test/testdata/issue27340
 @dir lib/go/misc/cgo/test/testdata/issue29563
 @dir lib/go/misc/cgo/test/testdata/issue30527
+@dir lib/go/misc/cgo/test/testdata/issue41761a
 @dir lib/go/misc/cgo/test/testdata/issue8756
 @dir lib/go/misc/cgo/test/testdata/issue8828
 @dir lib/go/misc/cgo/test/testdata/issue9026
@@ -10016,6 +10034,7 @@ lib/go/VERSION
 @dir lib/go/src/cmd/link/internal/ld/testdata/issue32233/main
 @dir lib/go/src/cmd/link/internal/ld/testdata/issue32233
 @dir lib/go/src/cmd/link/internal/ld/testdata/issue38192
+@dir lib/go/src/cmd/link/internal/ld/testdata/issue39757
 @dir lib/go/src/cmd/link/internal/ld/testdata
 @dir lib/go/src/cmd/link/internal/ld
 @dir lib/go/src/cmd/link/internal/loadelf
@@ -10352,6 +10371,7 @@ lib/go/VERSION
 @dir lib/go/src/internal/bytealg
 @dir lib/go/src/internal/cfg
 @dir lib/go/src/internal/cpu
+@dir lib/go/src/internal/execabs
 @dir lib/go/src/internal/fmtsort
 @dir lib/go/src/internal/goroot
 @dir lib/go/src/internal/goversion

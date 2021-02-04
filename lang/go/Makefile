@@ -2,7 +2,7 @@
 # $FreeBSD: head/lang/go/Makefile 470619 2018-05-22 14:32:09Z jlaffaye $
 
 PORTNAME=	go
-PORTVERSION=	1.15.2
+PORTVERSION=	1.15.7
 CATEGORIES=	lang
 MASTER_SITES=	https://golang.org/dl/
 DISTNAME=	go${PORTVERSION}.src
