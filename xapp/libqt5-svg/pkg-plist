@@ -1,11 +1,11 @@
-include/Qt5/QtSvg/5.15.0/QtSvg/private/qsvgfont_p.h
-include/Qt5/QtSvg/5.15.0/QtSvg/private/qsvggraphics_p.h
-include/Qt5/QtSvg/5.15.0/QtSvg/private/qsvghandler_p.h
-include/Qt5/QtSvg/5.15.0/QtSvg/private/qsvgnode_p.h
-include/Qt5/QtSvg/5.15.0/QtSvg/private/qsvgstructure_p.h
-include/Qt5/QtSvg/5.15.0/QtSvg/private/qsvgstyle_p.h
-include/Qt5/QtSvg/5.15.0/QtSvg/private/qsvgtinydocument_p.h
-include/Qt5/QtSvg/5.15.0/QtSvg/private/qtsvgglobal_p.h
+include/Qt5/QtSvg/5.15.2/QtSvg/private/qsvgfont_p.h
+include/Qt5/QtSvg/5.15.2/QtSvg/private/qsvggraphics_p.h
+include/Qt5/QtSvg/5.15.2/QtSvg/private/qsvghandler_p.h
+include/Qt5/QtSvg/5.15.2/QtSvg/private/qsvgnode_p.h
+include/Qt5/QtSvg/5.15.2/QtSvg/private/qsvgstructure_p.h
+include/Qt5/QtSvg/5.15.2/QtSvg/private/qsvgstyle_p.h
+include/Qt5/QtSvg/5.15.2/QtSvg/private/qsvgtinydocument_p.h
+include/Qt5/QtSvg/5.15.2/QtSvg/private/qtsvgglobal_p.h
 include/Qt5/QtSvg/QGraphicsSvgItem
 include/Qt5/QtSvg/qgraphicssvgitem.h
 include/Qt5/QtSvg/QSvgGenerator
@@ -32,15 +32,14 @@ lib/Qt5/plugins/iconengines/libqsvgicon.so
 lib/Qt5/plugins/imageformats/libqsvg.so
 share/Qt5/mkspecs/modules/qt_lib_svg_private.pri
 share/Qt5/mkspecs/modules/qt_lib_svg.pri
-@dir include/Qt5/QtSvg/5.15.0/QtSvg/private
-@dir include/Qt5/QtSvg/5.15.0/QtSvg
-@dir include/Qt5/QtSvg/5.15.0
+@dir include/Qt5/QtSvg/5.15.2/QtSvg/private
+@dir include/Qt5/QtSvg/5.15.2/QtSvg
+@dir include/Qt5/QtSvg/5.15.2
 @dir include/Qt5/QtSvg
 @dir include/Qt5
 @dir lib/cmake/Qt5Gui
 @dir lib/cmake/Qt5Svg
 @dir lib/cmake
-@dir lib/pkgconfig
 @dir lib/Qt5/plugins/iconengines
 @dir lib/Qt5/plugins/imageformats
 @dir lib/Qt5/plugins
