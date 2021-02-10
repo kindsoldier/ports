@@ -1,32 +1,35 @@
-#
-# $Id$
-#
+# $FreeBSD: head/ports-mgmt/pkg/Makefile 562140 2021-01-20 14:35:40Z manu $
+
 PORTNAME=	pkg
-DISTVERSION=	1.10.5
+DISTVERSION=	1.16.2
 _PKG_VERSION=	${DISTVERSION}
 CATEGORIES=	ports-mgmt
-MASTER_SITES+=	http://files.etoilebsd.net/${PORTNAME}/
-MASTER_SITES+=	LOCAL/portmgr
-MASTER_SITES+=	http://mirror.shatow.net/freebsd/${PORTNAME}/
 
 MAINTAINER=	pkg@FreeBSD.org
 COMMENT=	Package manager
 
-USE_LDCONFIG=	yes
-USES=		tar:xz
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-maintainer-mode
-INSTALL_TARGET=	install-strip
+USE_GITHUB=	yes
+GH_ACCOUNT=	freebsd
 
+USE_LDCONFIG=	${PREFIX}/lib/compat/pkg
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--mandir=${PREFIX}/man --prefix="${PREFIX}"
+CONFIGURE_ENV=	CC_FOR_BUILD="${CC}"
+
+# Use a submake as 'deinstall install' needs to reevaluate PKG_REGISTER
+# so that pkg-static is used from the wrkdir
 USE_SUBMAKE=	yes
 CFLAGS+=	-Wno-error
+PKG_DEPENDS=    #
+#LIBLZMA_LIBS=	-llzma
 
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-docs_pkg.8
+post-patch:
+#	${REINPLACE_CMD} -e "s|-llzma|${LIBLZMA_LIBS}|g" ${WRKSRC}/auto.def \
+#		${WRKSRC}/src/Makefile.autosetup ${WRKSRC}/tests/Makefile.autosetup
+	${REINPLACE_CMD} -e 's,libdata/pkgconfig,lib/pkgconfig,' ${WRKSRC}/auto.def
 
 post-install:
-	${MV} ${STAGEDIR}${PREFIX}/lib/libpkg_static.a ${STAGEDIR}${PREFIX}/lib/libpkg.a
-	${RM} ${STAGEDIR}${PREFIX}/lib/libpkg_static.la
-	${INSTALL} ${STAGEDIR}${PREFIX}/sbin/pkg-static ${STAGEDIR}${PREFIX}/sbin/pkg
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/compat/pkg
+
 
 .include <bsd.port.mk>
-#EOF
