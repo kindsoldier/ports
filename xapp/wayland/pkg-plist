@@ -11,16 +11,12 @@ include/wayland-server-protocol.h
 include/wayland-server.h
 include/wayland-util.h
 include/wayland-version.h
-lib/libwayland-client.la
 lib/libwayland-client.so
 lib/libwayland-client.so.3
-lib/libwayland-cursor.la
 lib/libwayland-cursor.so
 lib/libwayland-cursor.so.0
-lib/libwayland-egl.la
 lib/libwayland-egl.so
 lib/libwayland-egl.so.1
-lib/libwayland-server.la
 lib/libwayland-server.so
 lib/libwayland-server.so.1
 lib/pkgconfig/wayland-client.pc
@@ -33,5 +29,4 @@ share/aclocal/wayland-scanner.m4
 share/wayland/wayland-scanner.mk
 share/wayland/wayland.dtd
 share/wayland/wayland.xml
-@dir share/aclocal
 @dir share/wayland

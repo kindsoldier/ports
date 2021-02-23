@@ -13,7 +13,7 @@ COMMENT=	PostgreSQL database design and management system
 
 
 LIB_DEPENDS+=	libwx_baseu.so:xapp/libwxWidget
-USES+=	pgsql
+#USES+=	pgsql
 
 RUN_DEPENDS+=	gtk-update-icon-cache:gnome/libgtk2
 RUN_DEPENDS+=	update-desktop-database:xfce/desktop-file-utils

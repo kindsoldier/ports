@@ -1,7 +1,7 @@
 # $FreeBSD: head/graphics/wayland-protocols/Makefile 492698 2019-02-11 16:05:56Z zeising $
 
 PORTNAME=	wayland-protocols
-PORTVERSION=	1.17
+PORTVERSION=	1.20
 CATEGORIES=	graphics
 MASTER_SITES=	https://wayland.freedesktop.org/releases/
 
