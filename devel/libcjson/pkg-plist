@@ -1,0 +1,18 @@
+include/cjson/cJSON_Utils.h
+include/cjson/cJSON.h
+lib/cmake/cJSON/cjson_utils-release.cmake
+lib/cmake/cJSON/cjson_utils.cmake
+lib/cmake/cJSON/cjson-release.cmake
+lib/cmake/cJSON/cjson.cmake
+lib/cmake/cJSON/cJSONConfig.cmake
+lib/cmake/cJSON/cJSONConfigVersion.cmake
+lib/libcjson_utils.a
+lib/libcjson_utils.so
+lib/libcjson_utils.so.1
+lib/libcjson.a
+lib/libcjson.so
+lib/libcjson.so.1
+lib/pkgconfig/libcjson_utils.pc
+lib/pkgconfig/libcjson.pc
+@dir include/cjson
+@dir lib/cmake/cJSON

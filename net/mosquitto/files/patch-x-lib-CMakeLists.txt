@@ -1,0 +1,11 @@
+--- ./lib/CMakeLists.txt.orig	2021-03-09 16:00:58.798074000 +0200
++++ ./lib/CMakeLists.txt	2021-03-09 16:03:38.850145000 +0200
+@@ -92,7 +92,7 @@
+ 
+ set_target_properties(libmosquitto PROPERTIES
+ 	OUTPUT_NAME mosquitto
+-	VERSION ${VERSION}
++	VERSION 1
+ 	SOVERSION 1
+ )
+ 

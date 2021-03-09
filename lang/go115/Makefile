@@ -2,7 +2,7 @@
 # $FreeBSD: head/lang/go/Makefile 470619 2018-05-22 14:32:09Z jlaffaye $
 
 PORTNAME=	go
-PORTVERSION=	1.16
+PORTVERSION=	1.15.7
 CATEGORIES=	lang
 MASTER_SITES=	https://golang.org/dl/
 DISTNAME=	go${PORTVERSION}.src
@@ -29,8 +29,6 @@ WRKSRC=		${WRKDIR}/go
 ONLY_FOR_ARCHS=	i386 amd64 armv6 armv7 aarch64
 
 USE_LOCALE=en_US.UTF-8
-EXTRACT_CMD=	${SETENV} LC_ALL=en_US.UTF-8 ${TAR}
-
 
 post-patch:
 	cd ${WRKSRC} && ${FIND} . -name '*.orig' -delete
@@ -52,10 +50,6 @@ do-build:
 	    ${WRKSRC}/pkg/${OPSYS:tl}_${GOARCH}/cmd
 
 do-install:
-	cd ${WRKSRC} && \
-	    ${RM} -r .gitattributes .gitignore .github favicon.ico robots.txt \
-	    pkg/obj pkg/bootstrap pkg/${OPSYS:tl}_${GOARCH_${ARCH}}/cmd
-
 	${CP} -a ${WRKSRC} ${STAGEDIR}${PREFIX}/lib
 .for f in go gofmt
 	${LN} -sf ../lib/go/bin/${f} ${STAGEDIR}${PREFIX}/bin/${f}
