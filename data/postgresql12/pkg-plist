@@ -854,6 +854,7 @@ lib/postgresql/euc2004_sjis2004.so
 lib/postgresql/latin_and_mic.so
 lib/postgresql/latin2_and_win1250.so
 lib/postgresql/libpqwalreceiver.so
+lib/postgresql/pgcrypto.so
 lib/postgresql/pgoutput.so
 lib/postgresql/pgxs/config/install-sh
 lib/postgresql/pgxs/config/missing
@@ -864,6 +865,7 @@ lib/postgresql/pgxs/src/makefiles/pgxs.mk
 lib/postgresql/pgxs/src/nls-global.mk
 lib/postgresql/pgxs/src/test/regress/pg_regress
 lib/postgresql/plpgsql.so
+lib/postgresql/tablefunc.so
 lib/postgresql/utf8_and_ascii.so
 lib/postgresql/utf8_and_big5.so
 lib/postgresql/utf8_and_cyrillic.so
@@ -881,6 +883,7 @@ lib/postgresql/utf8_and_sjis.so
 lib/postgresql/utf8_and_sjis2004.so
 lib/postgresql/utf8_and_uhc.so
 lib/postgresql/utf8_and_win.so
+lib/postgresql/uuid-ossp.so
 man/man1/ecpg.1.gz
 man/man1/pg_archivecleanup.1.gz
 man/man1/pg_basebackup.1.gz
@@ -1171,9 +1174,22 @@ man/man7/VACUUM.7.gz
 man/man7/VALUES.7.gz
 man/man7/WITH.7.gz
 share/postgresql/errcodes.txt
+share/postgresql/extension/pgcrypto--1.0--1.1.sql
+share/postgresql/extension/pgcrypto--1.1--1.2.sql
+share/postgresql/extension/pgcrypto--1.2--1.3.sql
+share/postgresql/extension/pgcrypto--1.3.sql
+share/postgresql/extension/pgcrypto--unpackaged--1.0.sql
+share/postgresql/extension/pgcrypto.control
 share/postgresql/extension/plpgsql--1.0.sql
 share/postgresql/extension/plpgsql--unpackaged--1.0.sql
 share/postgresql/extension/plpgsql.control
+share/postgresql/extension/tablefunc--1.0.sql
+share/postgresql/extension/tablefunc--unpackaged--1.0.sql
+share/postgresql/extension/tablefunc.control
+share/postgresql/extension/uuid-ossp--1.0--1.1.sql
+share/postgresql/extension/uuid-ossp--1.1.sql
+share/postgresql/extension/uuid-ossp--unpackaged--1.0.sql
+share/postgresql/extension/uuid-ossp.control
 share/postgresql/information_schema.sql
 share/postgresql/locale/cs/LC_MESSAGES/ecpg-12.mo
 share/postgresql/locale/cs/LC_MESSAGES/ecpglib6-12.mo

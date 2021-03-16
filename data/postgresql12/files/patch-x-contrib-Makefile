@@ -5,7 +5,7 @@
  
  SUBDIRS = \
 +		oid2name	\
-+		vacuumlo
++		vacuumlo pgcrypto tablefunc uuid-ossp
 +
 +
 +NOSUBDIRS = \

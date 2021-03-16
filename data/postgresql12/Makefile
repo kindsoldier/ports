@@ -61,6 +61,7 @@ CONFIGURE_ARGS+= --enable-depend
 
 CONFIGURE_ARGS+= --without-ldap
 CONFIGURE_ARGS+= --with-openssl
+CONFIGURE_ARGS+= --with-uuid=bsd
 
 #CONFIGURE_ARGS+= --with-libedit-preferred
 #CFLAGS+=	-I/usr/include/edit
