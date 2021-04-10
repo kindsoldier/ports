@@ -2,7 +2,7 @@
 # $id$
 #
 PORTNAME=	geany-plugins
-PORTVERSION=	1.36
+PORTVERSION=	1.37
 CATEGORIES=	devel
 MASTER_SITES=	http://plugins.geany.org/geany-plugins/
 

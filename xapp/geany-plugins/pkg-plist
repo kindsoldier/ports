@@ -18,6 +18,8 @@ lib/geany/geanyminiscript.la
 lib/geany/geanyminiscript.so
 lib/geany/geanynumberedbookmarks.la
 lib/geany/geanynumberedbookmarks.so
+lib/geany/geanypg.la
+lib/geany/geanypg.so
 lib/geany/geanyprj.la
 lib/geany/geanyprj.so
 lib/geany/geanyvc.la
@@ -112,6 +114,11 @@ share/doc/geany-plugins/geanynumberedbookmarks/ChangeLog
 share/doc/geany-plugins/geanynumberedbookmarks/COPYING
 share/doc/geany-plugins/geanynumberedbookmarks/NEWS
 share/doc/geany-plugins/geanynumberedbookmarks/README
+share/doc/geany-plugins/geanypg/AUTHORS
+share/doc/geany-plugins/geanypg/ChangeLog
+share/doc/geany-plugins/geanypg/COPYING
+share/doc/geany-plugins/geanypg/NEWS
+share/doc/geany-plugins/geanypg/README
 share/doc/geany-plugins/geanyprj/AUTHORS
 share/doc/geany-plugins/geanyprj/ChangeLog
 share/doc/geany-plugins/geanyprj/COPYING
@@ -289,6 +296,7 @@ share/locale/zh_CN/LC_MESSAGES/geany-plugins.mo
 @dir share/doc/geany-plugins/geanymacro
 @dir share/doc/geany-plugins/geanyminiscript
 @dir share/doc/geany-plugins/geanynumberedbookmarks
+@dir share/doc/geany-plugins/geanypg
 @dir share/doc/geany-plugins/geanyprj
 @dir share/doc/geany-plugins/geanyvc
 @dir share/doc/geany-plugins/keyrecord
@@ -309,6 +317,7 @@ share/locale/zh_CN/LC_MESSAGES/geany-plugins.mo
 @dir share/doc/geany-plugins/vimode
 @dir share/doc/geany-plugins/xmlsnippets
 @dir share/doc/geany-plugins
+@dir share/doc
 @dir share/geany-plugins/debugger
 @dir share/geany-plugins/overview
 @dir share/geany-plugins/pohelper
@@ -348,3 +357,4 @@ share/locale/zh_CN/LC_MESSAGES/geany-plugins.mo
 @dir share/locale/tr
 @dir share/locale/zh_CN/LC_MESSAGES
 @dir share/locale/zh_CN
+@dir share/locale

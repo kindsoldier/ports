@@ -2,7 +2,7 @@
 # $Id$
 #
 PORTNAME=	geany
-PORTVERSION=	1.36
+PORTVERSION=	1.37.1
 CATEGORIES=	devel
 MASTER_SITES=	http://download.geany.org/ SF
 
@@ -29,6 +29,7 @@ MAN1=		geany.1
 
 CONFIGURE_ARGS+=--enable-vte
 #CONFIGURE_ARGS+=--disable-vte
+CONFIGURE_ARGS+= --enable-gtk2
 
 FILES= ${WRKSRC}/configure ${WRKSRC}/*.pc.in
 
