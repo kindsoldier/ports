@@ -73,6 +73,7 @@ libexec/git-core/git-fetch-pack
 libexec/git-core/git-filter-branch
 libexec/git-core/git-fmt-merge-msg
 libexec/git-core/git-for-each-ref
+libexec/git-core/git-for-each-repo
 libexec/git-core/git-format-patch
 libexec/git-core/git-fsck
 libexec/git-core/git-fsck-objects
@@ -96,6 +97,7 @@ libexec/git-core/git-ls-remote
 libexec/git-core/git-ls-tree
 libexec/git-core/git-mailinfo
 libexec/git-core/git-mailsplit
+libexec/git-core/git-maintenance
 libexec/git-core/git-merge
 libexec/git-core/git-merge-base
 libexec/git-core/git-merge-file
@@ -118,7 +120,6 @@ libexec/git-core/git-notes
 libexec/git-core/git-pack-objects
 libexec/git-core/git-pack-redundant
 libexec/git-core/git-pack-refs
-libexec/git-core/git-parse-remote
 libexec/git-core/git-patch-id
 libexec/git-core/git-prune
 libexec/git-core/git-prune-packed
@@ -138,7 +139,6 @@ libexec/git-core/git-remote-ftp
 libexec/git-core/git-remote-ftps
 libexec/git-core/git-remote-http
 libexec/git-core/git-remote-https
-libexec/git-core/git-remote-testsvn
 libexec/git-core/git-repack
 libexec/git-core/git-replace
 libexec/git-core/git-request-pull
@@ -188,7 +188,6 @@ libexec/git-core/git-worktree
 libexec/git-core/git-write-tree
 libexec/git-core/mergetools/araxis
 libexec/git-core/mergetools/bc
-libexec/git-core/mergetools/bc3
 libexec/git-core/mergetools/codecompare
 libexec/git-core/mergetools/deltawalker
 libexec/git-core/mergetools/diffmerge
@@ -198,19 +197,16 @@ libexec/git-core/mergetools/emerge
 libexec/git-core/mergetools/examdiff
 libexec/git-core/mergetools/guiffy
 libexec/git-core/mergetools/gvimdiff
-libexec/git-core/mergetools/gvimdiff2
-libexec/git-core/mergetools/gvimdiff3
 libexec/git-core/mergetools/kdiff3
 libexec/git-core/mergetools/kompare
 libexec/git-core/mergetools/meld
+libexec/git-core/mergetools/nvimdiff
 libexec/git-core/mergetools/opendiff
 libexec/git-core/mergetools/p4merge
 libexec/git-core/mergetools/smerge
 libexec/git-core/mergetools/tkdiff
 libexec/git-core/mergetools/tortoisemerge
 libexec/git-core/mergetools/vimdiff
-libexec/git-core/mergetools/vimdiff2
-libexec/git-core/mergetools/vimdiff3
 libexec/git-core/mergetools/winmerge
 libexec/git-core/mergetools/xxdiff
 man/man1/git-add.1.gz
@@ -263,6 +259,7 @@ man/man1/git-fetch.1.gz
 man/man1/git-filter-branch.1.gz
 man/man1/git-fmt-merge-msg.1.gz
 man/man1/git-for-each-ref.1.gz
+man/man1/git-for-each-repo.1.gz
 man/man1/git-format-patch.1.gz
 man/man1/git-fsck-objects.1.gz
 man/man1/git-fsck.1.gz
@@ -286,6 +283,7 @@ man/man1/git-ls-remote.1.gz
 man/man1/git-ls-tree.1.gz
 man/man1/git-mailinfo.1.gz
 man/man1/git-mailsplit.1.gz
+man/man1/git-maintenance.1.gz
 man/man1/git-merge-base.1.gz
 man/man1/git-merge-file.1.gz
 man/man1/git-merge-index.1.gz
@@ -304,7 +302,6 @@ man/man1/git-p4.1.gz
 man/man1/git-pack-objects.1.gz
 man/man1/git-pack-redundant.1.gz
 man/man1/git-pack-refs.1.gz
-man/man1/git-parse-remote.1.gz
 man/man1/git-patch-id.1.gz
 man/man1/git-prune-packed.1.gz
 man/man1/git-prune.1.gz
@@ -370,6 +367,7 @@ man/man1/gitweb.1.gz
 man/man5/gitattributes.5.gz
 man/man5/githooks.5.gz
 man/man5/gitignore.5.gz
+man/man5/gitmailmap.5.gz
 man/man5/gitmodules.5.gz
 man/man5/gitrepository-layout.5.gz
 man/man5/gitweb.conf.5.gz
@@ -388,6 +386,11 @@ man/man7/gitsubmodules.7.gz
 man/man7/gittutorial-2.7.gz
 man/man7/gittutorial.7.gz
 man/man7/gitworkflows.7.gz
+share/examples/git/gitweb/gitweb.cgi
+share/examples/git/gitweb/static/git-favicon.png
+share/examples/git/gitweb/static/git-logo.png
+share/examples/git/gitweb/static/gitweb.css
+share/examples/git/gitweb/static/gitweb.js
 share/git-core/templates/description
 share/git-core/templates/hooks/applypatch-msg.sample
 share/git-core/templates/hooks/commit-msg.sample
@@ -400,6 +403,7 @@ share/git-core/templates/hooks/pre-push.sample
 share/git-core/templates/hooks/pre-rebase.sample
 share/git-core/templates/hooks/pre-receive.sample
 share/git-core/templates/hooks/prepare-commit-msg.sample
+share/git-core/templates/hooks/push-to-checkout.sample
 share/git-core/templates/hooks/update.sample
 share/git-core/templates/info/exclude
 share/locale/bg/LC_MESSAGES/git.mo
@@ -408,9 +412,11 @@ share/locale/de/LC_MESSAGES/git.mo
 share/locale/el/LC_MESSAGES/git.mo
 share/locale/es/LC_MESSAGES/git.mo
 share/locale/fr/LC_MESSAGES/git.mo
+share/locale/id/LC_MESSAGES/git.mo
 share/locale/is/LC_MESSAGES/git.mo
 share/locale/it/LC_MESSAGES/git.mo
 share/locale/ko/LC_MESSAGES/git.mo
+share/locale/pl/LC_MESSAGES/git.mo
 share/locale/pt_PT/LC_MESSAGES/git.mo
 share/locale/ru/LC_MESSAGES/git.mo
 share/locale/sv/LC_MESSAGES/git.mo
@@ -418,6 +424,9 @@ share/locale/tr/LC_MESSAGES/git.mo
 share/locale/vi/LC_MESSAGES/git.mo
 share/locale/zh_CN/LC_MESSAGES/git.mo
 share/locale/zh_TW/LC_MESSAGES/git.mo
+@dir bin
+@dir etc/rc.d
+@dir etc
 @dir %%SITE_PERL%%/FromCPAN/Mail
 @dir %%SITE_PERL%%/FromCPAN
 @dir %%SITE_PERL%%/Git/LoadCPAN/Mail
@@ -428,6 +437,9 @@ share/locale/zh_TW/LC_MESSAGES/git.mo
 @dir %%SITE_PERL%%
 @dir libexec/git-core/mergetools
 @dir libexec/git-core
+@dir share/examples/git/gitweb/static
+@dir share/examples/git/gitweb
+@dir share/examples/git
 @dir share/git-core/templates/hooks
 @dir share/git-core/templates/info
 @dir share/git-core/templates
@@ -444,12 +456,16 @@ share/locale/zh_TW/LC_MESSAGES/git.mo
 @dir share/locale/es
 @dir share/locale/fr/LC_MESSAGES
 @dir share/locale/fr
+@dir share/locale/id/LC_MESSAGES
+@dir share/locale/id
 @dir share/locale/is/LC_MESSAGES
 @dir share/locale/is
 @dir share/locale/it/LC_MESSAGES
 @dir share/locale/it
 @dir share/locale/ko/LC_MESSAGES
 @dir share/locale/ko
+@dir share/locale/pl/LC_MESSAGES
+@dir share/locale/pl
 @dir share/locale/pt_PT/LC_MESSAGES
 @dir share/locale/pt_PT
 @dir share/locale/ru/LC_MESSAGES
@@ -464,4 +480,3 @@ share/locale/zh_TW/LC_MESSAGES/git.mo
 @dir share/locale/zh_CN
 @dir share/locale/zh_TW/LC_MESSAGES
 @dir share/locale/zh_TW
-@dir share/locale
