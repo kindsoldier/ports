@@ -50,22 +50,27 @@ LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}  -pthread
 CONFIGURE_ARGS+= --disable-dbus-build
 CONFIGURE_ARGS+= --disable-doc-build
 CONFIGURE_ARGS+= --disable-fax-build
-CONFIGURE_ARGS+= --enable-foomatic-drv-install
+
+CONFIGURE_ARGS+= --disable-foomatic-drv-install
 CONFIGURE_ARGS+= --disable-foomatic-rip-hplip-install
 CONFIGURE_ARGS+= --disable-gui-build
-CONFIGURE_ARGS+= --disable-hpcups-install
-CONFIGURE_ARGS+= --disable-network-build
+
+CONFIGURE_ARGS+= --enable-hpcups-install
+CONFIGURE_ARGS+= --enable-network-build
+
 CONFIGURE_ARGS+= --disable-qt4
 CONFIGURE_ARGS+= --disable-scan-build
 
 CONFIGURE_ARGS+= --enable-cups-drv-install
 CONFIGURE_ARGS+= --enable-cups-ppd-install
 
-CONFIGURE_ARGS+= --enable-foomatic-ppd-install
-CONFIGURE_ARGS+= --enable-hpijs-install
-CONFIGURE_ARGS+= --enable-hpijs-only-build
+CONFIGURE_ARGS+= --disable-foomatic-ppd-install
 
-#CONFIGURE_ARGS+= --enable-lite-build
+CONFIGURE_ARGS+= --disable-hpijs-install
+#CONFIGURE_ARGS+= --enable-hpijs-only-build
+#CONFIGURE_ARGS+= --enable-hpcups-only-build
+
+CONFIGURE_ARGS+= --enable-lite-build
 
 
 USES+= gmake

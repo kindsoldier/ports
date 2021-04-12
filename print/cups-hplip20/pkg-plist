@@ -1,5 +1,18 @@
-bin/hpijs
-share/cups/driver/hpijs.drv
+etc/hp/hplip.conf
+lib/libhpdiscovery.la
+lib/libhpdiscovery.so
+lib/libhpdiscovery.so.0
+lib/libhpip.la
+lib/libhpip.so
+lib/libhpip.so.0
+lib/libhpmud.la
+lib/libhpmud.so
+lib/libhpmud.so.0
+libexec/cups/backend/hp
+libexec/cups/filter/hpcups
+libexec/cups/filter/hpps
+libexec/cups/filter/pstotiff
+share/cups/driver/hpcups.drv
 share/cups/model/hplip/HP/apollo-2100.ppd.gz
 share/cups/model/hplip/HP/apollo-2150.ppd.gz
 share/cups/model/hplip/HP/apollo-2200.ppd.gz
@@ -1212,11 +1225,20 @@ share/cups/model/hplip/HP/hp-smart_tank_plus_570_series.ppd.gz
 share/cups/model/hplip/HP/hp-smart_tank_plus_650_series.ppd.gz
 share/cups/model/hplip/HP/hp-smart_tank_wireless_450_series.ppd.gz
 share/cups/model/hplip/HP/hp-tango.ppd.gz
+share/hal/fdi/preprobe/10osvendor/20-hplip-devices.fdi
 share/hplip/dat2drv
 share/hplip/locatedriver
+@dir etc/hp
+@dir libexec/cups/backend
+@dir libexec/cups/filter
+@dir libexec/cups
 @dir share/cups/driver
 @dir share/cups/model/hplip/HP
 @dir share/cups/model/hplip
 @dir share/cups/model
 @dir share/cups
+@dir share/hal/fdi/preprobe/10osvendor
+@dir share/hal/fdi/preprobe
+@dir share/hal/fdi
+@dir share/hal
 @dir share/hplip
