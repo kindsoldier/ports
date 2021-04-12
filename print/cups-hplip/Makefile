@@ -2,7 +2,7 @@
 # $Id$
 #
 PORTNAME=	hplip
-PORTVERSION=	3.10.6
+PORTVERSION=	3.20.6
 CATEGORIES=	print
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	cups-
@@ -50,30 +50,87 @@ LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}  -pthread
 CONFIGURE_ARGS+= --disable-dbus-build
 CONFIGURE_ARGS+= --disable-doc-build
 CONFIGURE_ARGS+= --disable-fax-build
-CONFIGURE_ARGS+= --enable-foomatic-drv-install
+
+CONFIGURE_ARGS+= --disable-foomatic-drv-install
 CONFIGURE_ARGS+= --disable-foomatic-rip-hplip-install
 CONFIGURE_ARGS+= --disable-gui-build
-CONFIGURE_ARGS+= --disable-hpcups-install
-CONFIGURE_ARGS+= --disable-network-build
+
+CONFIGURE_ARGS+= --enable-hpcups-install
+CONFIGURE_ARGS+= --enable-network-build
+
 CONFIGURE_ARGS+= --disable-qt4
 CONFIGURE_ARGS+= --disable-scan-build
 
 CONFIGURE_ARGS+= --enable-cups-drv-install
 CONFIGURE_ARGS+= --enable-cups-ppd-install
 
-CONFIGURE_ARGS+= --enable-foomatic-ppd-install
-CONFIGURE_ARGS+= --enable-hpijs-install
-CONFIGURE_ARGS+= --enable-hpijs-only-build
+CONFIGURE_ARGS+= --disable-foomatic-ppd-install
 
-#CONFIGURE_ARGS+= --enable-lite-build
+CONFIGURE_ARGS+= --disable-hpijs-install
+#CONFIGURE_ARGS+= --enable-hpijs-only-build
+#CONFIGURE_ARGS+= --enable-hpcups-only-build
+
+CONFIGURE_ARGS+= --enable-lite-build
 
 
-
+USES+= gmake
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
 
 post-patch:
+	${REINPLACE_CMD} -e 's|-ldld||g;' \
+		-e 's|-ldl||g' \
+		-e 's,-lusb-1.0,-lusb,g' \
+		-e 's,libusb-1.0/libusb.h,libusb.h,g' \
+		${WRKSRC}/configure \
+		${WRKSRC}/Makefile.in
+	${REINPLACE_CMD} -e '/[[:space:]]install-dist_rulesDATA/ s,install-dist_rulesDATA,,' \
+		-e '/[[:space:]]install-dist_rulessystemDATA/ s,install-dist_rulessystemDATA,,' \
+		${WRKSRC}/Makefile.in
+	${REINPLACE_CMD} -e 's,/etc/hp,${PREFIX}&,g' \
+		-e 's,/etc/cups,${LOCALBASE}&,g' \
+		-e 's,/etc/init.d,${LOCALBASE}/etc/rc.d,g' \
+		-e 's,/etc/sane.d,${LOCALBASE}&,g' \
+		-e 's,/usr/share,${LOCALBASE}/share,g' \
+		-e 's,/usr/include,${LOCALBASE}/include,g' \
+		${WRKSRC}/Makefile.in \
+		${WRKSRC}/base/codes.py \
+		${WRKSRC}/base/g.py \
+		${WRKSRC}/base/password.py \
+		${WRKSRC}/base/pkit.py \
+		${WRKSRC}/base/queues.py \
+		${WRKSRC}/base/services.py \
+		${WRKSRC}/base/utils.py \
+		${WRKSRC}/check.py \
+		${WRKSRC}/fax/backend/hpfax.py \
+		${WRKSRC}/fax/coverpages.py \
+		${WRKSRC}/fax/filters/pstotiff \
+		${WRKSRC}/hplip.list.in \
+		${WRKSRC}/installer/core_install.py \
+		${WRKSRC}/installer/dcheck.py \
+		${WRKSRC}/installer/pluginhandler.py \
+		${WRKSRC}/logcapture.py \
+		${WRKSRC}/prnt/cups.py \
+		${WRKSRC}/prnt/filters/hpps \
+		${WRKSRC}/prnt/hpcups/HPCupsFilter.cpp \
+		${WRKSRC}/prnt/hpijs/globals.cpp \
+		${WRKSRC}/prnt/hpijs/hpcupsfax.cpp \
+		${WRKSRC}/prnt/hpijs/hpijs.cpp \
+		${WRKSRC}/ui/devmgr4.py \
+		${WRKSRC}/ui4/devmgr5.py \
+		${WRKSRC}/ui5/devmgr5.py
+	${REINPLACE_CMD} -e 's/umask(0)/umask(0o022)/' \
+		-e 's/umask(0o111)/umask(0o133)/' \
+		${WRKSRC}/base/os_utils.py \
+		${WRKSRC}/base/validation.py \
+		${WRKSRC}/fax/backend/hpfax.py \
+		${WRKSRC}/hpdio.py \
+		${WRKSRC}/installer/pluginhandler.py
+
+
+
+_post-patch:
 	${REINPLACE_CMD} -e 's,-lpthread,${PTHREAD_LIBS},g' \
 		-e 's|-ldld||g; s|-ldl||g' \
 		${WRKSRC}/configure \
@@ -93,7 +150,7 @@ post-patch:
 	${REINPLACE_CMD} -e '/[[:space:]]install-docDATA/ s|install-docDATA||' \
 		${WRKSRC}/Makefile.in
 
-post-install:
+_post-install:
 #	${INSTALL_DATA} ${WRKSRC}/hplip-systray.desktop ${PREFIX}/etc/xdg/autostart/hplip-systray.desktop
 #	${MKDIR} ${PREFIX}/etc/hp
 #	${INSTALL_DATA} ${WRKSRC}/hplip.conf ${EXAMPLESDIR}/hplip.conf.sample
