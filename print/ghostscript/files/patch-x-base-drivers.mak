@@ -26,7 +26,7 @@
 +DEVICE_DEVS19=
 +DEVICE_DEVS20=
 +DEVICE_DEVS21=
-+#DEVICE_DEVS3+= $(DD)cups.dev
++DEVICE_DEVS3+= $(DD)cups.dev
 +DEVICE_DEVS19+= $(DD)display.dev
 +DEVICE_DEVS5+= $(DD)omni.dev
 +DEVICE_DEVS19+= $(DD)md2k.dev

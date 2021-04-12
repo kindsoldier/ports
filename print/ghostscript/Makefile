@@ -76,6 +76,8 @@ CONFIGURE_ARGS+=	--with-libpaper
 CONFIGURE_ARGS+=	--with-x
 CONFIGURE_ARGS+=	--disable-gtk
 CONFIGURE_ARGS+=	--with-drivers=""
+CONFIGURE_ARGS+=	--enable-cups
+
 CPPFLAGS+=	-DUPD_SIGNAL=0 -I.
 CPPFLAGS+=		-I${LOCALBASE}/include/libpng
 #CPPFLAGS+=		-I${WRKSRC}/openjpeg/libopenjpeg
@@ -98,7 +100,6 @@ FP6=	${LOCALBASE}/share/fonts/X11/TTF
 FONTPATH= "${FP1}:${FP2}:${FP3}:${FP4}:${FP5}:${FP6}"
 
 
-#CONFIGURE_ARGS+=	--enable-cups
 
 #ICONV_DEVS= oprp opvp
 #CONFIGURE_ARGS+=--with-libiconv=maybe
