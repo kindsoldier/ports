@@ -58,6 +58,8 @@ FILES+= ${WRKSRC}/configure
 FILES+= ${WRKSRC}/*/Makefile.in
 FILES+= ${WRKSRC}/*.pc.in
 
+LDFLAGS=	-L${LOCALBASE}/lib -linotify
+
 post-patch:
 	${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|' \
 		${WRKSRC}/man/*.*
