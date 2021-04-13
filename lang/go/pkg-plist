@@ -276,6 +276,9 @@ lib/go/misc/cgo/testplugin/testdata/issue25756/plugin/life.go
 lib/go/misc/cgo/testplugin/testdata/issue25756/plugin/life.h
 lib/go/misc/cgo/testplugin/testdata/method/main.go
 lib/go/misc/cgo/testplugin/testdata/method/plugin.go
+lib/go/misc/cgo/testplugin/testdata/method2/main.go
+lib/go/misc/cgo/testplugin/testdata/method2/p/p.go
+lib/go/misc/cgo/testplugin/testdata/method2/plugin.go
 lib/go/misc/cgo/testplugin/testdata/plugin1/plugin1.go
 lib/go/misc/cgo/testplugin/testdata/plugin2/plugin2.go
 lib/go/misc/cgo/testplugin/testdata/sub/plugin1/plugin1.go
@@ -2221,6 +2224,7 @@ lib/go/src/cmd/go/testdata/script/mod_replace_readonly.txt
 lib/go/src/cmd/go/testdata/script/mod_replace.txt
 lib/go/src/cmd/go/testdata/script/mod_require_exclude.txt
 lib/go/src/cmd/go/testdata/script/mod_retention.txt
+lib/go/src/cmd/go/testdata/script/mod_retract_fix_version.txt
 lib/go/src/cmd/go/testdata/script/mod_retract_incompatible.txt
 lib/go/src/cmd/go/testdata/script/mod_retract_pseudo_base.txt
 lib/go/src/cmd/go/testdata/script/mod_retract_rationale.txt
@@ -9147,6 +9151,10 @@ lib/go/test/fixedbugs/issue4396b.go
 lib/go/test/fixedbugs/issue4399.go
 lib/go/test/fixedbugs/issue4405.go
 lib/go/test/fixedbugs/issue4429.go
+lib/go/test/fixedbugs/issue44355.dir/a.go
+lib/go/test/fixedbugs/issue44355.dir/b.go
+lib/go/test/fixedbugs/issue44355.go
+lib/go/test/fixedbugs/issue44378.go
 lib/go/test/fixedbugs/issue4448.go
 lib/go/test/fixedbugs/issue4452.go
 lib/go/test/fixedbugs/issue4458.go
@@ -9840,6 +9848,8 @@ lib/go/VERSION
 @dir lib/go/misc/cgo/testplugin/testdata/issue25756/plugin
 @dir lib/go/misc/cgo/testplugin/testdata/issue25756
 @dir lib/go/misc/cgo/testplugin/testdata/method
+@dir lib/go/misc/cgo/testplugin/testdata/method2/p
+@dir lib/go/misc/cgo/testplugin/testdata/method2
 @dir lib/go/misc/cgo/testplugin/testdata/plugin1
 @dir lib/go/misc/cgo/testplugin/testdata/plugin2
 @dir lib/go/misc/cgo/testplugin/testdata/sub/plugin1
@@ -10846,6 +10856,7 @@ lib/go/VERSION
 @dir lib/go/test/fixedbugs/issue4326.dir
 @dir lib/go/test/fixedbugs/issue43551.dir
 @dir lib/go/test/fixedbugs/issue4370.dir
+@dir lib/go/test/fixedbugs/issue44355.dir
 @dir lib/go/test/fixedbugs/issue4510.dir
 @dir lib/go/test/fixedbugs/issue4590.dir
 @dir lib/go/test/fixedbugs/issue4879.dir
