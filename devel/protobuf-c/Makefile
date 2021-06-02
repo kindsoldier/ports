@@ -9,7 +9,7 @@ CATEGORIES=		devel
 MAINTAINER=	truckman@FreeBSD.org
 COMMENT=	Code generator and libraries to use Protocol Buffers from pure C
 
-LIB_DEPENDS=	libprotobuf.so:devel/libprotobuf
+LIB_DEPENDS=	libprotobuf.so:devel/protobuf
 
 USES=		autoreconf compiler:c++11-lang gmake
 GNU_CONFIGURE=	yes
