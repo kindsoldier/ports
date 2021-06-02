@@ -1,0 +1,24 @@
+--- ./lib/cpp/Makefile.in.orig	2021-02-05 01:08:14.000000000 +0200
++++ ./lib/cpp/Makefile.in	2021-06-02 11:42:36.426786000 +0200
+@@ -661,7 +661,7 @@
+ 	$(am__append_6)
+ pkgconfig_DATA = thrift.pc $(am__append_3) $(am__append_5) \
+ 	$(am__append_7)
+-libthrift_la_LDFLAGS = -release $(VERSION)
++libthrift_la_LDFLAGS = -version-info 14:0:14
+ libthrift_la_LIBADD = $(BOOST_LDFLAGS) $(OPENSSL_LDFLAGS) $(OPENSSL_LIBS)
+ AM_CXXFLAGS = -Wall -Wextra -pedantic
+ AM_CPPFLAGS = $(BOOST_CPPFLAGS) $(OPENSSL_INCLUDES) -I$(srcdir)/src -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS
+@@ -733,9 +733,9 @@
+ libthriftnb_la_CXXFLAGS = $(AM_CXXFLAGS)
+ libthriftz_la_CXXFLAGS = $(AM_CXXFLAGS)
+ libthriftqt5_la_CXXFLAGS = $(AM_CXXFLAGS)
+-libthriftnb_la_LDFLAGS = -release $(VERSION) $(BOOST_LDFLAGS)
+-libthriftz_la_LDFLAGS = -release $(VERSION) $(BOOST_LDFLAGS) $(ZLIB_LDFLAGS) $(ZLIB_LIBS)
+-libthriftqt5_la_LDFLAGS = -release $(VERSION) $(BOOST_LDFLAGS) $(QT5_LIBS)
++libthriftnb_la_LDFLAGS = -version-info 14:0:14 $(BOOST_LDFLAGS)
++libthriftz_la_LDFLAGS = -version-info 14:0:14 $(BOOST_LDFLAGS) $(ZLIB_LDFLAGS) $(ZLIB_LIBS)
++libthriftqt5_la_LDFLAGS = -version-info 14:0:14 $(BOOST_LDFLAGS) $(QT5_LIBS)
+ include_thriftdir = $(includedir)/thrift
+ include_thrift_HEADERS = \
+                          $(top_builddir)/config.h \
