@@ -11,8 +11,8 @@ COMMENT?=	Virtual Peer-to-Peer Currency Client (QT)
 
 LIB_DEPENDS=	libboost_date_time.so:devel/libboost64
 LIB_DEPENDS=	libqrencode.so:graph/libqrencode
-BUILD_DEPENDS+=	protoc:devel/libprotobuf
-LIB_DEPENDS+=	libprotobuf.so:devel/libprotobuf
+BUILD_DEPENDS+=	protoc:devel/protobuf
+LIB_DEPENDS+=	libprotobuf.so:devel/protobuf
 
 RUN_DEPENDS+=	gtk-update-icon-cache:gnome/libgtk2
 RUN_DEPENDS+=	update-desktop-database:xfce/desktop-file-utils

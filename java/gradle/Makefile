@@ -19,8 +19,8 @@ NO_BUILD=	yes
 
 SUB_FILES=	gradle
 SUB_LIST=	JAVA=${JAVA} PORTVERSION=${PORTVERSION}
-#PLIST_FILES=	bin/gradle
-#PORTDATA=	*
+PLIST_FILES=	bin/gradle
+PORTDATA=	*
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/gradle ${STAGEDIR}${PREFIX}/bin/gradle
