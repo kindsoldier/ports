@@ -274,6 +274,10 @@ lib/go/misc/cgo/testplugin/testdata/issue25756/main.go
 lib/go/misc/cgo/testplugin/testdata/issue25756/plugin/c-life.c
 lib/go/misc/cgo/testplugin/testdata/issue25756/plugin/life.go
 lib/go/misc/cgo/testplugin/testdata/issue25756/plugin/life.h
+lib/go/misc/cgo/testplugin/testdata/issue44956/base/base.go
+lib/go/misc/cgo/testplugin/testdata/issue44956/main.go
+lib/go/misc/cgo/testplugin/testdata/issue44956/plugin1.go
+lib/go/misc/cgo/testplugin/testdata/issue44956/plugin2.go
 lib/go/misc/cgo/testplugin/testdata/method/main.go
 lib/go/misc/cgo/testplugin/testdata/method/plugin.go
 lib/go/misc/cgo/testplugin/testdata/method2/main.go
@@ -883,6 +887,7 @@ lib/go/src/archive/zip/testdata/go-with-datadesc-sig.zip
 lib/go/src/archive/zip/testdata/gophercolor16x16.png
 lib/go/src/archive/zip/testdata/readme.notzip
 lib/go/src/archive/zip/testdata/readme.zip
+lib/go/src/archive/zip/testdata/subdir.zip
 lib/go/src/archive/zip/testdata/symlink.zip
 lib/go/src/archive/zip/testdata/test-trailing-junk.zip
 lib/go/src/archive/zip/testdata/test.zip
@@ -2107,6 +2112,7 @@ lib/go/src/cmd/go/testdata/script/mod_get_latest_pseudo.txt
 lib/go/src/cmd/go/testdata/script/mod_get_local.txt
 lib/go/src/cmd/go/testdata/script/mod_get_main.txt
 lib/go/src/cmd/go/testdata/script/mod_get_major.txt
+lib/go/src/cmd/go/testdata/script/mod_get_missing_ziphash.txt
 lib/go/src/cmd/go/testdata/script/mod_get_moved.txt
 lib/go/src/cmd/go/testdata/script/mod_get_newcycle.txt
 lib/go/src/cmd/go/testdata/script/mod_get_none.txt
@@ -2168,6 +2174,7 @@ lib/go/src/cmd/go/testdata/script/mod_init_tidy.txt
 lib/go/src/cmd/go/testdata/script/mod_install_pkg_version.txt
 lib/go/src/cmd/go/testdata/script/mod_install_versioned.txt
 lib/go/src/cmd/go/testdata/script/mod_internal.txt
+lib/go/src/cmd/go/testdata/script/mod_invalid_path_plus.txt
 lib/go/src/cmd/go/testdata/script/mod_invalid_path.txt
 lib/go/src/cmd/go/testdata/script/mod_invalid_version.txt
 lib/go/src/cmd/go/testdata/script/mod_issue35317.txt
@@ -2255,6 +2262,7 @@ lib/go/src/cmd/go/testdata/script/mod_tidy_old.txt
 lib/go/src/cmd/go/testdata/script/mod_tidy_quote.txt
 lib/go/src/cmd/go/testdata/script/mod_tidy_replace.txt
 lib/go/src/cmd/go/testdata/script/mod_tidy_sum.txt
+lib/go/src/cmd/go/testdata/script/mod_tidy_too_new.txt
 lib/go/src/cmd/go/testdata/script/mod_tidy.txt
 lib/go/src/cmd/go/testdata/script/mod_upgrade_patch.txt
 lib/go/src/cmd/go/testdata/script/mod_vcs_missing.txt
@@ -9165,6 +9173,7 @@ lib/go/test/fixedbugs/issue4495.go
 lib/go/test/fixedbugs/issue4510.dir/f1.go
 lib/go/test/fixedbugs/issue4510.dir/f2.go
 lib/go/test/fixedbugs/issue4510.go
+lib/go/test/fixedbugs/issue45175.go
 lib/go/test/fixedbugs/issue4517a.go
 lib/go/test/fixedbugs/issue4517b.go
 lib/go/test/fixedbugs/issue4517c.go
@@ -9847,6 +9856,8 @@ lib/go/VERSION
 @dir lib/go/misc/cgo/testplugin/testdata/issue24351
 @dir lib/go/misc/cgo/testplugin/testdata/issue25756/plugin
 @dir lib/go/misc/cgo/testplugin/testdata/issue25756
+@dir lib/go/misc/cgo/testplugin/testdata/issue44956/base
+@dir lib/go/misc/cgo/testplugin/testdata/issue44956
 @dir lib/go/misc/cgo/testplugin/testdata/method
 @dir lib/go/misc/cgo/testplugin/testdata/method2/p
 @dir lib/go/misc/cgo/testplugin/testdata/method2
