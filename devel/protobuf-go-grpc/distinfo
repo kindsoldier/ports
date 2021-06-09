@@ -1,0 +1,5 @@
+TIMESTAMP = 1622652214
+SHA256 (grpc-grpc-go-v1.38.0_GH0.tar.gz) = fd6a2e2ae9e810670fdb63d196275ddb171e7f99f3bb801a02dde973de2f557b
+SIZE (grpc-grpc-go-v1.38.0_GH0.tar.gz) = 1253222
+SHA256 (google-go-genproto-02b4e95_GH0.tar.gz) = 71421ee0c9af39492dad0c63736e0e3771ecd41066034f77472bd922208fcdfd
+SIZE (google-go-genproto-02b4e95_GH0.tar.gz) = 2091400
