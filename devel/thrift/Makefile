@@ -47,6 +47,9 @@ CONFIGURE_ARGS+= --without-haxe
 CONFIGURE_ARGS+= --without-netstd
 CONFIGURE_ARGS+= --without-d
 
+CONFIGURE_ARGS+= --with-cpp
+CONFIGURE_ARGS+= --with-boost=${LOCALBASE}/boost72
+
 #CMAKE_OFF+=	BUILD_CPP 
 CMAKE_OFF+=	BUILD_C_GLIB 
 CMAKE_OFF+=	BUILD_JAVA 

@@ -9193,6 +9193,9 @@ lib/go/test/fixedbugs/issue4618.go
 lib/go/test/fixedbugs/issue4620.go
 lib/go/test/fixedbugs/issue4654.go
 lib/go/test/fixedbugs/issue4663.go
+lib/go/test/fixedbugs/issue46653.dir/bad/bad.go
+lib/go/test/fixedbugs/issue46653.dir/main.go
+lib/go/test/fixedbugs/issue46653.go
 lib/go/test/fixedbugs/issue4667.go
 lib/go/test/fixedbugs/issue4734.go
 lib/go/test/fixedbugs/issue4748.go
@@ -10870,6 +10873,8 @@ lib/go/VERSION
 @dir lib/go/test/fixedbugs/issue44355.dir
 @dir lib/go/test/fixedbugs/issue4510.dir
 @dir lib/go/test/fixedbugs/issue4590.dir
+@dir lib/go/test/fixedbugs/issue46653.dir/bad
+@dir lib/go/test/fixedbugs/issue46653.dir
 @dir lib/go/test/fixedbugs/issue4879.dir
 @dir lib/go/test/fixedbugs/issue4932.dir
 @dir lib/go/test/fixedbugs/issue4964.dir

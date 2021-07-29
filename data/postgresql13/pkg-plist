@@ -1309,6 +1309,7 @@ share/postgresql/locale/ja/LC_MESSAGES/pg_rewind-13.mo
 share/postgresql/locale/ja/LC_MESSAGES/pg_test_fsync-13.mo
 share/postgresql/locale/ja/LC_MESSAGES/pg_test_timing-13.mo
 share/postgresql/locale/ja/LC_MESSAGES/pg_upgrade-13.mo
+share/postgresql/locale/ja/LC_MESSAGES/pg_verifybackup-13.mo
 share/postgresql/locale/ja/LC_MESSAGES/pg_waldump-13.mo
 share/postgresql/locale/ja/LC_MESSAGES/pgscripts-13.mo
 share/postgresql/locale/ja/LC_MESSAGES/plpgsql-13.mo
@@ -1344,7 +1345,16 @@ share/postgresql/locale/pl/LC_MESSAGES/pg_test_timing-13.mo
 share/postgresql/locale/pl/LC_MESSAGES/plpgsql-13.mo
 share/postgresql/locale/pt_BR/LC_MESSAGES/ecpg-13.mo
 share/postgresql/locale/pt_BR/LC_MESSAGES/ecpglib6-13.mo
+share/postgresql/locale/pt_BR/LC_MESSAGES/initdb-13.mo
+share/postgresql/locale/pt_BR/LC_MESSAGES/pg_archivecleanup-13.mo
+share/postgresql/locale/pt_BR/LC_MESSAGES/pg_checksums-13.mo
 share/postgresql/locale/pt_BR/LC_MESSAGES/pg_config-13.mo
+share/postgresql/locale/pt_BR/LC_MESSAGES/pg_controldata-13.mo
+share/postgresql/locale/pt_BR/LC_MESSAGES/pg_ctl-13.mo
+share/postgresql/locale/pt_BR/LC_MESSAGES/pg_resetwal-13.mo
+share/postgresql/locale/pt_BR/LC_MESSAGES/pg_test_fsync-13.mo
+share/postgresql/locale/pt_BR/LC_MESSAGES/pg_test_timing-13.mo
+share/postgresql/locale/pt_BR/LC_MESSAGES/pgscripts-13.mo
 share/postgresql/locale/pt_BR/LC_MESSAGES/plpgsql-13.mo
 share/postgresql/locale/ru/LC_MESSAGES/ecpg-13.mo
 share/postgresql/locale/ru/LC_MESSAGES/ecpglib6-13.mo
@@ -1599,4 +1609,3 @@ share/postgresql/tsearch_data/turkish.stop
 @dir share/postgresql/timezonesets
 @dir share/postgresql/tsearch_data
 @dir share/postgresql
-@dir share
