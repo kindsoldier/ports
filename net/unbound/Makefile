@@ -2,7 +2,7 @@
 # $Id$
 #
 PORTNAME=	unbound
-PORTVERSION=	1.11.0
+PORTVERSION=	1.13.1
 CATEGORIES=	dns
 MASTER_SITES=	http://unbound.net/downloads/
 
