@@ -866,11 +866,33 @@ share/sounds/purple/login.wav
 share/sounds/purple/logout.wav
 share/sounds/purple/receive.wav
 share/sounds/purple/send.wav
+@dir bin
 @dir include/libpurple/media
 @dir include/libpurple
 @dir include/pidgin
+@dir include
 @dir lib/pidgin
+@dir lib/pkgconfig
 @dir lib/purple
+@dir lib
+@dir man/man1
+@dir man
+@dir share/aclocal
+@dir share/applications
+@dir share/icons/hicolor/16x16/apps
+@dir share/icons/hicolor/16x16
+@dir share/icons/hicolor/22x22/apps
+@dir share/icons/hicolor/22x22
+@dir share/icons/hicolor/24x24/apps
+@dir share/icons/hicolor/24x24
+@dir share/icons/hicolor/32x32/apps
+@dir share/icons/hicolor/32x32
+@dir share/icons/hicolor/48x48/apps
+@dir share/icons/hicolor/48x48
+@dir share/icons/hicolor/scalable/apps
+@dir share/icons/hicolor/scalable
+@dir share/icons/hicolor
+@dir share/icons
 @dir share/locale/af/LC_MESSAGES
 @dir share/locale/af
 @dir share/locale/am/LC_MESSAGES
@@ -1116,3 +1138,5 @@ share/sounds/purple/send.wav
 @dir share/purple
 @dir share/sounds/purple
 @dir share/sounds
+@dir share
+@dir .

@@ -46,7 +46,6 @@ CONFIGURE_ARGS+= --disable-screensaver
 CONFIGURE_ARGS+= --disable-tcl
 CONFIGURE_ARGS+= --disable-tk
 CONFIGURE_ARGS+= --disable-vv
-CONFIGURE_ARGS+= --disable-gevolution
 CONFIGURE_ARGS+= --enable-avahi
 CONFIGURE_ARGS+= --enable-dbus
 CONFIGURE_ARGS+= --enable-gtkspell

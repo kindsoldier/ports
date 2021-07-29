@@ -1,4 +1,9 @@
 bin/pidgin
+bin/purple-client-example
+bin/purple-remote
+bin/purple-send
+bin/purple-send-async
+bin/purple-url-handler
 include/libpurple/account.h
 include/libpurple/accountopt.h
 include/libpurple/blist.h
@@ -10,7 +15,13 @@ include/libpurple/cmds.h
 include/libpurple/connection.h
 include/libpurple/conversation.h
 include/libpurple/core.h
+include/libpurple/dbus-bindings.h
+include/libpurple/dbus-define-api.h
 include/libpurple/dbus-maybe.h
+include/libpurple/dbus-purple.h
+include/libpurple/dbus-server.h
+include/libpurple/dbus-types.h
+include/libpurple/dbus-useful.h
 include/libpurple/debug.h
 include/libpurple/desktopitem.h
 include/libpurple/dnsquery.h
@@ -18,7 +29,6 @@ include/libpurple/dnssrv.h
 include/libpurple/eventloop.h
 include/libpurple/ft.h
 include/libpurple/gaim-compat.h
-include/libpurple/glibcompat.h
 include/libpurple/idle.h
 include/libpurple/imgstore.h
 include/libpurple/log.h
@@ -116,9 +126,12 @@ include/pidgin/minidialog.h
 include/pidgin/pidgin.h
 include/pidgin/pidginstock.h
 include/pidgin/pidgintooltip.h
+lib/libpurple-client.la
+lib/libpurple-client.so
+lib/libpurple-client.so.13
 lib/libpurple.la
 lib/libpurple.so
-lib/libpurple.so.14
+lib/libpurple.so.13
 lib/pidgin/convcolors.la
 lib/pidgin/convcolors.so
 lib/pidgin/extplacement.la
@@ -133,6 +146,8 @@ lib/pidgin/iconaway.la
 lib/pidgin/iconaway.so
 lib/pidgin/markerline.la
 lib/pidgin/markerline.so
+lib/pidgin/musicmessaging.la
+lib/pidgin/musicmessaging.so
 lib/pidgin/notify.la
 lib/pidgin/notify.so
 lib/pidgin/pidginrc.la
@@ -163,10 +178,14 @@ lib/purple/autoaccept.la
 lib/purple/autoaccept.so
 lib/purple/buddynote.la
 lib/purple/buddynote.so
+lib/purple/dbus-example.la
+lib/purple/dbus-example.so
 lib/purple/idle.la
 lib/purple/idle.so
 lib/purple/joinpart.la
 lib/purple/joinpart.so
+lib/purple/libaim.la
+lib/purple/libaim.so
 lib/purple/libbonjour.la
 lib/purple/libbonjour.so
 lib/purple/libgg.la
@@ -178,6 +197,9 @@ lib/purple/libjabber.so
 lib/purple/libjabber.so.0
 lib/purple/libnovell.la
 lib/purple/libnovell.so
+lib/purple/liboscar.la
+lib/purple/liboscar.so
+lib/purple/liboscar.so.0
 lib/purple/libsimple.la
 lib/purple/libsimple.so
 lib/purple/libxmpp.la
@@ -200,6 +222,7 @@ lib/purple/statenotify.la
 lib/purple/statenotify.so
 man/man1/pidgin.1.gz
 share/aclocal/purple.m4
+share/appdata/pidgin.appdata.xml
 share/applications/pidgin.desktop
 share/icons/hicolor/16x16/apps/pidgin.png
 share/icons/hicolor/22x22/apps/pidgin.png
@@ -209,7 +232,6 @@ share/icons/hicolor/48x48/apps/pidgin.png
 share/icons/hicolor/scalable/apps/pidgin.svg
 share/locale/af/LC_MESSAGES/pidgin.mo
 share/locale/am/LC_MESSAGES/pidgin.mo
-share/locale/ar_SA/LC_MESSAGES/pidgin.mo
 share/locale/ar/LC_MESSAGES/pidgin.mo
 share/locale/as/LC_MESSAGES/pidgin.mo
 share/locale/ast/LC_MESSAGES/pidgin.mo
@@ -302,7 +324,6 @@ share/locale/xh/LC_MESSAGES/pidgin.mo
 share/locale/zh_CN/LC_MESSAGES/pidgin.mo
 share/locale/zh_HK/LC_MESSAGES/pidgin.mo
 share/locale/zh_TW/LC_MESSAGES/pidgin.mo
-share/metainfo/pidgin.appdata.xml
 share/pixmaps/pidgin/animations/16/connect0.png
 share/pixmaps/pidgin/animations/16/connect1.png
 share/pixmaps/pidgin/animations/16/connect2.png
@@ -355,6 +376,7 @@ share/pixmaps/pidgin/arrow-right.xpm
 share/pixmaps/pidgin/arrow-up.xpm
 share/pixmaps/pidgin/buttons/edit.png
 share/pixmaps/pidgin/buttons/info.png
+share/pixmaps/pidgin/buttons/music.png
 share/pixmaps/pidgin/buttons/pause.png
 share/pixmaps/pidgin/dialogs/16/auth.png
 share/pixmaps/pidgin/dialogs/16/error.png
@@ -681,10 +703,12 @@ share/pixmaps/pidgin/emotes/small/wink.png
 share/pixmaps/pidgin/emotes/small/working.png
 share/pixmaps/pidgin/emotes/small/writing.png
 share/pixmaps/pidgin/logo.png
+share/pixmaps/pidgin/protocols/16/aim.png
 share/pixmaps/pidgin/protocols/16/bonjour.png
 share/pixmaps/pidgin/protocols/16/facebook.png
 share/pixmaps/pidgin/protocols/16/gadu-gadu.png
 share/pixmaps/pidgin/protocols/16/google-talk.png
+share/pixmaps/pidgin/protocols/16/icq.png
 share/pixmaps/pidgin/protocols/16/irc.png
 share/pixmaps/pidgin/protocols/16/jabber.png
 share/pixmaps/pidgin/protocols/16/meanwhile.png
@@ -692,10 +716,12 @@ share/pixmaps/pidgin/protocols/16/novell.png
 share/pixmaps/pidgin/protocols/16/silc.png
 share/pixmaps/pidgin/protocols/16/simple.png
 share/pixmaps/pidgin/protocols/16/zephyr.png
+share/pixmaps/pidgin/protocols/22/aim.png
 share/pixmaps/pidgin/protocols/22/bonjour.png
 share/pixmaps/pidgin/protocols/22/facebook.png
 share/pixmaps/pidgin/protocols/22/gadu-gadu.png
 share/pixmaps/pidgin/protocols/22/google-talk.png
+share/pixmaps/pidgin/protocols/22/icq.png
 share/pixmaps/pidgin/protocols/22/irc.png
 share/pixmaps/pidgin/protocols/22/jabber.png
 share/pixmaps/pidgin/protocols/22/meanwhile.png
@@ -703,9 +729,11 @@ share/pixmaps/pidgin/protocols/22/novell.png
 share/pixmaps/pidgin/protocols/22/silc.png
 share/pixmaps/pidgin/protocols/22/simple.png
 share/pixmaps/pidgin/protocols/22/zephyr.png
+share/pixmaps/pidgin/protocols/48/aim.png
 share/pixmaps/pidgin/protocols/48/bonjour.png
 share/pixmaps/pidgin/protocols/48/facebook.png
 share/pixmaps/pidgin/protocols/48/gadu-gadu.png
+share/pixmaps/pidgin/protocols/48/icq.png
 share/pixmaps/pidgin/protocols/48/irc.png
 share/pixmaps/pidgin/protocols/48/jabber.png
 share/pixmaps/pidgin/protocols/48/meanwhile.png
@@ -713,9 +741,11 @@ share/pixmaps/pidgin/protocols/48/novell.png
 share/pixmaps/pidgin/protocols/48/silc.png
 share/pixmaps/pidgin/protocols/48/simple.png
 share/pixmaps/pidgin/protocols/48/zephyr.png
+share/pixmaps/pidgin/protocols/scalable/aim.svg
 share/pixmaps/pidgin/protocols/scalable/bonjour.svg
 share/pixmaps/pidgin/protocols/scalable/gadu-gadu.svg
 share/pixmaps/pidgin/protocols/scalable/google-talk.svg
+share/pixmaps/pidgin/protocols/scalable/icq.svg
 share/pixmaps/pidgin/protocols/scalable/irc.svg
 share/pixmaps/pidgin/protocols/scalable/jabber.svg
 share/pixmaps/pidgin/protocols/scalable/meanwhile.svg
@@ -870,15 +900,17 @@ share/sounds/purple/send.wav
 @dir include/libpurple
 @dir include/pidgin
 @dir lib/pidgin
+@dir lib/pkgconfig
 @dir lib/purple
+@dir share/aclocal
+@dir share/appdata
+@dir share/applications
 @dir share/locale/af/LC_MESSAGES
 @dir share/locale/af
 @dir share/locale/am/LC_MESSAGES
 @dir share/locale/am
 @dir share/locale/ar/LC_MESSAGES
 @dir share/locale/ar
-@dir share/locale/ar_SA/LC_MESSAGES
-@dir share/locale/ar_SA
 @dir share/locale/as/LC_MESSAGES
 @dir share/locale/as
 @dir share/locale/ast/LC_MESSAGES
@@ -1062,7 +1094,6 @@ share/sounds/purple/send.wav
 @dir share/locale/zh_TW/LC_MESSAGES
 @dir share/locale/zh_TW
 @dir share/locale
-@dir share/metainfo
 @dir share/pixmaps/pidgin/animations/16
 @dir share/pixmaps/pidgin/animations
 @dir share/pixmaps/pidgin/buttons

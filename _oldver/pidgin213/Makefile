@@ -2,7 +2,7 @@
 # $Id$
 #
 PORTNAME=	pidgin
-PORTVERSION=	2.14.4
+PORTVERSION=	2.13.0
 CATEGORIES?=	net
 MASTER_SITES=	 http://downloads.sourceforge.net/project/pidgin/Pidgin/${PORTVERSION}/
 
@@ -46,7 +46,6 @@ CONFIGURE_ARGS+= --disable-screensaver
 CONFIGURE_ARGS+= --disable-tcl
 CONFIGURE_ARGS+= --disable-tk
 CONFIGURE_ARGS+= --disable-vv
-CONFIGURE_ARGS+= --disable-gevolution
 CONFIGURE_ARGS+= --enable-avahi
 CONFIGURE_ARGS+= --enable-dbus
 CONFIGURE_ARGS+= --enable-gtkspell
@@ -70,7 +69,6 @@ FILES+= ${WRKSRC}/pidgin/data/*.pc.in
 
 post-patch:
 	${REINPLACE_CMD} -e 's,gio-2.0,gio,g' 		${FILES}
-	${REINPLACE_CMD} -e 's,gio-unix-2.0,gio-unix,g' 		${FILES}
 	${REINPLACE_CMD} -e 's,glib-2.0,glib,g' 	${FILES}
 	${REINPLACE_CMD} -e 's,gmodule-2.0,gmodule,g' 	${FILES}
 	${REINPLACE_CMD} -e 's,gobject-2.0,gobject,g' 	${FILES}
