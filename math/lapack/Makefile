@@ -11,7 +11,8 @@ DIST_SUBDIR=	lapack
 MAINTAINER=	fortran@FreeBSD.org
 COMMENT=	A library of Fortran 77 subroutines for linear algebra
 
-USES=	gmake cmake gcc
+USES=	gmake cmake 
+CONFIGURE_ENV+= FFLAGS="-fPIC"
 
 WRKSRC=	 ${WRKDIR}/lapack-${PORTVERSION}
 

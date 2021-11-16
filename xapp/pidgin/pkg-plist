@@ -871,6 +871,8 @@ share/sounds/purple/send.wav
 @dir include/pidgin
 @dir lib/pidgin
 @dir lib/purple
+@dir share/aclocal
+@dir share/applications
 @dir share/locale/af/LC_MESSAGES
 @dir share/locale/af
 @dir share/locale/am/LC_MESSAGES
@@ -1061,8 +1063,6 @@ share/sounds/purple/send.wav
 @dir share/locale/zh_HK
 @dir share/locale/zh_TW/LC_MESSAGES
 @dir share/locale/zh_TW
-@dir share/locale
-@dir share/metainfo
 @dir share/pixmaps/pidgin/animations/16
 @dir share/pixmaps/pidgin/animations
 @dir share/pixmaps/pidgin/buttons

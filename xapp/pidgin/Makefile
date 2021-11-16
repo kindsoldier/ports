@@ -2,7 +2,7 @@
 # $Id$
 #
 PORTNAME=	pidgin
-PORTVERSION=	2.14.4
+PORTVERSION=	2.14.8
 CATEGORIES?=	net
 MASTER_SITES=	 http://downloads.sourceforge.net/project/pidgin/Pidgin/${PORTVERSION}/
 
