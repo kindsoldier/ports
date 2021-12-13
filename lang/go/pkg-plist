@@ -354,6 +354,8 @@ lib/go/misc/cgo/testshared/testdata/issue39777/b/b.go
 lib/go/misc/cgo/testshared/testdata/issue44031/a/a.go
 lib/go/misc/cgo/testshared/testdata/issue44031/b/b.go
 lib/go/misc/cgo/testshared/testdata/issue44031/main/main.go
+lib/go/misc/cgo/testshared/testdata/issue47837/a/a.go
+lib/go/misc/cgo/testshared/testdata/issue47837/main/main.go
 lib/go/misc/cgo/testshared/testdata/trivial/trivial.go
 lib/go/misc/cgo/testsigfwd/main.go
 lib/go/misc/cgo/testso/noso_test.go
@@ -2316,6 +2318,7 @@ lib/go/src/cmd/go/testdata/script/ldflag.txt
 lib/go/src/cmd/go/testdata/script/link_matching_actionid.txt
 lib/go/src/cmd/go/testdata/script/link_syso_issue33139.txt
 lib/go/src/cmd/go/testdata/script/linkname.txt
+lib/go/src/cmd/go/testdata/script/list_all_gobuild.txt
 lib/go/src/cmd/go/testdata/script/list_ambiguous_path.txt
 lib/go/src/cmd/go/testdata/script/list_bad_import.txt
 lib/go/src/cmd/go/testdata/script/list_case_collision.txt
@@ -4366,6 +4369,7 @@ lib/go/src/debug/macho/testdata/clang-amd64-darwin.obj.base64
 lib/go/src/debug/macho/testdata/fat-gcc-386-amd64-darwin-exec.base64
 lib/go/src/debug/macho/testdata/gcc-386-darwin-exec.base64
 lib/go/src/debug/macho/testdata/gcc-amd64-darwin-exec-debug.base64
+lib/go/src/debug/macho/testdata/gcc-amd64-darwin-exec-with-bad-dysym.base64
 lib/go/src/debug/macho/testdata/gcc-amd64-darwin-exec.base64
 lib/go/src/debug/macho/testdata/hello.c
 lib/go/src/debug/pe/file_cgo_test.go
@@ -10011,6 +10015,8 @@ lib/go/test/fixedbugs/issue48088.dir/b.go
 lib/go/test/fixedbugs/issue48088.go
 lib/go/test/fixedbugs/issue4813.go
 lib/go/test/fixedbugs/issue4847.go
+lib/go/test/fixedbugs/issue48473.go
+lib/go/test/fixedbugs/issue48476.go
 lib/go/test/fixedbugs/issue4879.dir/a.go
 lib/go/test/fixedbugs/issue4879.dir/b.go
 lib/go/test/fixedbugs/issue4879.go
@@ -10755,6 +10761,9 @@ lib/go/VERSION
 @dir lib/go/misc/cgo/testshared/testdata/issue44031/b
 @dir lib/go/misc/cgo/testshared/testdata/issue44031/main
 @dir lib/go/misc/cgo/testshared/testdata/issue44031
+@dir lib/go/misc/cgo/testshared/testdata/issue47837/a
+@dir lib/go/misc/cgo/testshared/testdata/issue47837/main
+@dir lib/go/misc/cgo/testshared/testdata/issue47837
 @dir lib/go/misc/cgo/testshared/testdata/trivial
 @dir lib/go/misc/cgo/testshared/testdata
 @dir lib/go/misc/cgo/testshared

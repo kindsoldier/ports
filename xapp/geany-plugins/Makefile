@@ -21,6 +21,9 @@ LIB_DEPENDS+=	libgdk-pixbuf.so:gnome/libgtk2
 LIB_DEPENDS+=	libgdk-x11.so:gnome/libgtk2
 LIB_DEPENDS+=	libgtk-x11.so:gnome/libgtk2
 
+LIB_DEPENDS+=	libgit2.so:devel/libgit2
+
+
 RUN_DEPENDS+=	gtk-update-icon-cache:gnome/libgtk2
 RUN_DEPENDS+=	update-desktop-database:xfce/desktop-file-utils
 

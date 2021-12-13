@@ -56,6 +56,8 @@ lib/geany/treebrowser.la
 lib/geany/treebrowser.so
 lib/geany/vimode.la
 lib/geany/vimode.so
+lib/geany/workbench.la
+lib/geany/workbench.so
 lib/geany/xmlsnippets.la
 lib/geany/xmlsnippets.so
 lib/libgeanypluginutils.la
@@ -223,6 +225,11 @@ share/doc/geany-plugins/vimode/ChangeLog
 share/doc/geany-plugins/vimode/COPYING
 share/doc/geany-plugins/vimode/NEWS
 share/doc/geany-plugins/vimode/README
+share/doc/geany-plugins/workbench/AUTHORS
+share/doc/geany-plugins/workbench/ChangeLog
+share/doc/geany-plugins/workbench/COPYING
+share/doc/geany-plugins/workbench/NEWS
+share/doc/geany-plugins/workbench/README
 share/doc/geany-plugins/xmlsnippets/AUTHORS
 share/doc/geany-plugins/xmlsnippets/ChangeLog
 share/doc/geany-plugins/xmlsnippets/COPYING
@@ -315,6 +322,7 @@ share/locale/zh_CN/LC_MESSAGES/geany-plugins.mo
 @dir share/doc/geany-plugins/tableconvert
 @dir share/doc/geany-plugins/treebrowser
 @dir share/doc/geany-plugins/vimode
+@dir share/doc/geany-plugins/workbench
 @dir share/doc/geany-plugins/xmlsnippets
 @dir share/doc/geany-plugins
 @dir share/doc

@@ -2,7 +2,7 @@
 # $Id$
 #
 PORTNAME=	vlc
-DISTVERSION=	3.0.12
+DISTVERSION=	3.0.16
 CATEGORIES=	multimedia audio net www
 MASTER_SITES+=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION:S/a$//}/
 MASTER_SITES+=	http://ftp.snt.utwente.nl/pub/software/videolan/${PORTNAME}/${DISTVERSION:S/a$//}/
