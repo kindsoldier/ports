@@ -1,0 +1,7 @@
+--- ./data/templates/fileheader.orig	2018-12-16 13:02:55.000000000 +0200
++++ ./data/templates/fileheader	2019-03-26 14:47:06.863703000 +0200
+@@ -1,4 +1,3 @@
+-{filename}
+ 
+ Copyright {year} {developer} <{mail}>
+ 
