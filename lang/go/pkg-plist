@@ -4983,6 +4983,7 @@ lib/go/src/go/types/testdata/fixedbugs/issue45635.go2
 lib/go/src/go/types/testdata/fixedbugs/issue45985.go2
 lib/go/src/go/types/testdata/fixedbugs/issue46403.src
 lib/go/src/go/types/testdata/fixedbugs/issue46404.go1
+lib/go/src/go/types/testdata/fixedbugs/issue48819.src
 lib/go/src/go/types/testdata/fixedbugs/issue6977.src
 lib/go/src/go/types/token_test.go
 lib/go/src/go/types/type.go
@@ -10014,6 +10015,7 @@ lib/go/test/fixedbugs/issue48088.dir/a.go
 lib/go/test/fixedbugs/issue48088.dir/b.go
 lib/go/test/fixedbugs/issue48088.go
 lib/go/test/fixedbugs/issue4813.go
+lib/go/test/fixedbugs/issue48289.go
 lib/go/test/fixedbugs/issue4847.go
 lib/go/test/fixedbugs/issue48473.go
 lib/go/test/fixedbugs/issue48476.go
@@ -10022,10 +10024,13 @@ lib/go/test/fixedbugs/issue4879.dir/b.go
 lib/go/test/fixedbugs/issue4879.go
 lib/go/test/fixedbugs/issue4909a.go
 lib/go/test/fixedbugs/issue4909b.go
+lib/go/test/fixedbugs/issue49122.go
+lib/go/test/fixedbugs/issue49249.go
 lib/go/test/fixedbugs/issue4932.dir/foo.go
 lib/go/test/fixedbugs/issue4932.dir/state.go
 lib/go/test/fixedbugs/issue4932.dir/state2.go
 lib/go/test/fixedbugs/issue4932.go
+lib/go/test/fixedbugs/issue49378.go
 lib/go/test/fixedbugs/issue4964.dir/a.go
 lib/go/test/fixedbugs/issue4964.dir/b.go
 lib/go/test/fixedbugs/issue4964.go
