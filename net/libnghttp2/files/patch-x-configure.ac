@@ -1,0 +1,11 @@
+--- ./configure.ac.orig	2022-02-01 05:24:48.158283000 +0200
++++ ./configure.ac	2022-02-01 05:26:00.421211000 +0200
+@@ -44,7 +44,7 @@
+ 
+ dnl See versioning rule:
+ dnl  https://www.gnu.org/software/libtool/manual/html_node/Updating-version-info.html
+-AC_SUBST(LT_CURRENT, 35)
++AC_SUBST(LT_CURRENT, 31)
+ AC_SUBST(LT_REVISION, 1)
+ AC_SUBST(LT_AGE, 21)
+ 
