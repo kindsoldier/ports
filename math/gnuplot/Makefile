@@ -1,14 +1,14 @@
 # $FreeBSD: head/math/gnuplot/Makefile 518826 2019-12-02 06:14:00Z glewis $
 
 PORTNAME=	gnuplot
-PORTVERSION=	5.2.8
+PORTVERSION=	5.4.1
 CATEGORIES=	math graphics
 MASTER_SITES=	SF
 
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT?=	Command-line driven graphing utility
 
-USES+=		compiler:c++11-lang iconv pkgconfig readline
+USES+=		compiler:c++11-lang pkgconfig readline
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 CONFIGURE_ARGS+= --with-readline=gnu
