@@ -10026,6 +10026,7 @@ lib/go/test/fixedbugs/issue4909a.go
 lib/go/test/fixedbugs/issue4909b.go
 lib/go/test/fixedbugs/issue49122.go
 lib/go/test/fixedbugs/issue49249.go
+lib/go/test/fixedbugs/issue49282.go
 lib/go/test/fixedbugs/issue4932.dir/foo.go
 lib/go/test/fixedbugs/issue4932.dir/state.go
 lib/go/test/fixedbugs/issue4932.dir/state2.go

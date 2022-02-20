@@ -2357,46 +2357,11 @@ share/octave/m/web/weboptions.m
 share/octave/m/web/webread.m
 share/octave/m/web/webwrite.m
 share/octave/site/m/startup/octaverc
-@dir bin
 @dir include/octave
-@dir include
 @dir lib/octave/6.3.0/oct/amd64-portbld-freebsd12.2
 @dir lib/octave/6.3.0/oct
 @dir lib/octave/6.3.0
 @dir lib/octave
-@dir lib/pkgconfig
-@dir lib
-@dir libdata/ldconfig
-@dir libdata
-@dir man/man1
-@dir man
-@dir share/applications
-@dir share/icons/hicolor/1024x1024/apps
-@dir share/icons/hicolor/1024x1024
-@dir share/icons/hicolor/128x128/apps
-@dir share/icons/hicolor/128x128
-@dir share/icons/hicolor/16x16/apps
-@dir share/icons/hicolor/16x16
-@dir share/icons/hicolor/22x22/apps
-@dir share/icons/hicolor/22x22
-@dir share/icons/hicolor/24x24/apps
-@dir share/icons/hicolor/24x24
-@dir share/icons/hicolor/256x256/apps
-@dir share/icons/hicolor/256x256
-@dir share/icons/hicolor/32x32/apps
-@dir share/icons/hicolor/32x32
-@dir share/icons/hicolor/48x48/apps
-@dir share/icons/hicolor/48x48
-@dir share/icons/hicolor/512x512/apps
-@dir share/icons/hicolor/512x512
-@dir share/icons/hicolor/64x64/apps
-@dir share/icons/hicolor/64x64
-@dir share/icons/hicolor/scalable/apps
-@dir share/icons/hicolor/scalable
-@dir share/icons/hicolor
-@dir share/icons
-@dir share/info
-@dir share/metainfo
 @dir share/octave/data
 @dir share/octave/doc
 @dir share/octave/etc/profiler
@@ -2580,5 +2545,3 @@ share/octave/site/m/startup/octaverc
 @dir share/octave/site/m
 @dir share/octave/site
 @dir share/octave
-@dir share
-@dir .
