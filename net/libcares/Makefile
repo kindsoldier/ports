@@ -2,7 +2,7 @@
 # $Id$
 #
 PORTNAME=	libcares
-PORTVERSION=	1.14.0
+PORTVERSION=	1.17.1
 CATEGORIES=	dns
 DISTNAME=	c-ares-${PORTVERSION}
 
@@ -26,8 +26,11 @@ PROGRAMS=	acountry adig ahost
 
 MAKE_JOBS_UNSAFE=	yes
 
-post-install:
-	${INSTALL_PROGRAM} ${PROGRAMS:S@^@${WRKSRC}/.libs/@} ${STAGEDIR}${PREFIX}/bin/
+post-patch:
+	${REINPLACE_CMD} -e 's,6:2:4,4:2:4,g' ${WRKSRC}/configure
+
+#post-install:
+#	${INSTALL_PROGRAM} ${PROGRAMS:S@^@${WRKSRC}/.libs/@} ${STAGEDIR}${PREFIX}/bin/
 
 .include <bsd.port.mk>
 #EOF
