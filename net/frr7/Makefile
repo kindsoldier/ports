@@ -41,9 +41,10 @@ USE_PERL5=	build
 INSTALL_TARGET=	install-strip
 
 LDFLAGS+= -L${LOCALBASE}/lib
-CFLAGS+= -I${LOCALBASE}/include
-CPPFLAGS+= -I${LOCALBASE}/include
+CFLAGS+= -fPIC -I${LOCALBASE}/include
+CPPFLAGS+= -fPIC -I${LOCALBASE}/include
 
+CONFIGURE_ARGS+= --disable-werror
 CONFIGURE_ARGS+= --disable-ldpd
 CONFIGURE_ARGS+= --disable-ospfapi
 CONFIGURE_ARGS+= --disable-ospfclient
@@ -135,6 +136,11 @@ SUB_LIST+= RC_SUBR=/etc/rc.subr
 #LIBTOOLIZE= ${LOCALBASE}/bin/libtoolize
 
 #USES+= libtool autoreconf
+
+post-patch:
+	${REINPLACE_CMD} -e 's,WERROR="-Werror",WERROR="",' ${WRKSRC}/configure.ac
+	${REINPLACE_CMD} -e 's,ax_pthread_extra_flags="-Werror",ax_pthread_extra_flags="",' ${WRKSRC}/m4/ax_pthread.m4
+
 
 #pre-configure:
 #	cd ${WRKSRC} && ${LIBTOOLIZE} --copy
