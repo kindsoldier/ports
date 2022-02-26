@@ -1,25 +1,16 @@
-sbin/openvpn
+include/openvpn-msg.h
 include/openvpn-plugin.h
-
 lib/openvpn/plugins/openvpn-plugin-auth-pam.la
 lib/openvpn/plugins/openvpn-plugin-auth-pam.so
 lib/openvpn/plugins/openvpn-plugin-down-root.la
 lib/openvpn/plugins/openvpn-plugin-down-root.so
-
-share/doc/openvpn/README.auth-pam
-share/doc/openvpn/README.down-root
-share/doc/openvpn/management-notes.txt
-
+man/man5/openvpn-examples.5.gz
+man/man8/openvpn.8.gz
+sbin/openvpn
+share/examples/openvpn/client.conf
+share/examples/openvpn/server.conf
+share/examples/openvpn/tls-home.conf
+share/examples/openvpn/tls-office.conf
 @dir lib/openvpn/plugins
 @dir lib/openvpn
-@dir share/doc/openvpn
-@dir share/doc
-
-%%EXAMPLESDIR%%/client.conf
-%%EXAMPLESDIR%%/server.conf
-%%EXAMPLESDIR%%/static-home.conf
-%%EXAMPLESDIR%%/static-office.conf
-%%EXAMPLESDIR%%/tls-home.conf
-%%EXAMPLESDIR%%/tls-office.conf
-@dir %%EXAMPLESDIR%%
-
+@dir share/examples/openvpn

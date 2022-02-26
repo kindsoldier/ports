@@ -2,7 +2,7 @@
 # $Id$
 #
 PORTNAME=	openvpn
-PORTVERSION=	2.4.9
+PORTVERSION=	2.5.5
 CATEGORIES=	security net
 #MASTER_SITES=	http://openvpn.net/release/
 MASTER_SITES+=	http://swupdate.openvpn.net/community/releases/
