@@ -2,13 +2,13 @@
 # $Id: Makefile 2316 2009-09-02 08:41:08Z root $
 #
 PORTNAME=	squid
-PORTVERSION=	4.9
+PORTVERSION=	5.4.1
 CATEGORIES=	net
-MASTER_SITES+=	http://www.squid-cache.org/Versions/v4/
-MASTER_SITES+=	http://www2.us.squid-cache.org/Versions/v4/
-MASTER_SITES+=	http://www1.at.squid-cache.org/Versions/v4/
-MASTER_SITES+=	http://www.eu.squid-cache.org/Versions/v4/
-MASTER_SITES+=	http://www1.jp.squid-cache.org/Versions/v4/
+MASTER_SITES+=	http://www.squid-cache.org/Versions/v5/
+MASTER_SITES+=	http://www2.us.squid-cache.org/Versions/v5/
+MASTER_SITES+=	http://www1.at.squid-cache.org/Versions/v5/
+MASTER_SITES+=	http://www.eu.squid-cache.org/Versions/v5/
+MASTER_SITES+=	http://www1.jp.squid-cache.org/Versions/v5/
 
 
 MAINTAINER= homeunix7@gmail.com
