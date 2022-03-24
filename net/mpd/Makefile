@@ -6,6 +6,7 @@ DISTVERSION=	5.9
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/Mpd5/Mpd-${PORTVERSION}
 DIST_SUBDIR=	mpd5
+PKGNAMESUFFIX=  5
 
 MAINTAINER=	onborodin@gmail.com
 COMMENT=	Multi-link PPP daemon based on netgraph(4)
