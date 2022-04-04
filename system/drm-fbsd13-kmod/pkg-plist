@@ -1,0 +1,6 @@
+/boot/modules/amdgpu.ko
+/boot/modules/drm.ko
+/boot/modules/i915kms.ko
+/boot/modules/linuxkpi_gplv2.ko
+/boot/modules/radeonkms.ko
+/boot/modules/ttm.ko
