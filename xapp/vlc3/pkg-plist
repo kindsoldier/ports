@@ -122,6 +122,8 @@ lib/vlc/plugins/access_output/libaccess_output_http_plugin.la
 lib/vlc/plugins/access_output/libaccess_output_http_plugin.so
 lib/vlc/plugins/access_output/libaccess_output_livehttp_plugin.la
 lib/vlc/plugins/access_output/libaccess_output_livehttp_plugin.so
+lib/vlc/plugins/access_output/libaccess_output_rist_plugin.la
+lib/vlc/plugins/access_output/libaccess_output_rist_plugin.so
 lib/vlc/plugins/access_output/libaccess_output_shout_plugin.la
 lib/vlc/plugins/access_output/libaccess_output_shout_plugin.so
 lib/vlc/plugins/access_output/libaccess_output_udp_plugin.la
@@ -156,6 +158,8 @@ lib/vlc/plugins/access/libidummy_plugin.la
 lib/vlc/plugins/access/libidummy_plugin.so
 lib/vlc/plugins/access/libimem_plugin.la
 lib/vlc/plugins/access/libimem_plugin.so
+lib/vlc/plugins/access/librist_plugin.la
+lib/vlc/plugins/access/librist_plugin.so
 lib/vlc/plugins/access/librtp_plugin.la
 lib/vlc/plugins/access/librtp_plugin.so
 lib/vlc/plugins/access/libsatip_plugin.la
@@ -244,6 +248,8 @@ lib/vlc/plugins/codec/libadpcm_plugin.la
 lib/vlc/plugins/codec/libadpcm_plugin.so
 lib/vlc/plugins/codec/libaes3_plugin.la
 lib/vlc/plugins/codec/libaes3_plugin.so
+lib/vlc/plugins/codec/libaom_plugin.la
+lib/vlc/plugins/codec/libaom_plugin.so
 lib/vlc/plugins/codec/libaraw_plugin.la
 lib/vlc/plugins/codec/libaraw_plugin.so
 lib/vlc/plugins/codec/libavcodec_plugin.la
@@ -368,6 +374,8 @@ lib/vlc/plugins/demux/libcaf_plugin.la
 lib/vlc/plugins/demux/libcaf_plugin.so
 lib/vlc/plugins/demux/libdemux_cdg_plugin.la
 lib/vlc/plugins/demux/libdemux_cdg_plugin.so
+lib/vlc/plugins/demux/libdemux_chromecast_plugin.la
+lib/vlc/plugins/demux/libdemux_chromecast_plugin.so
 lib/vlc/plugins/demux/libdemux_stl_plugin.la
 lib/vlc/plugins/demux/libdemux_stl_plugin.so
 lib/vlc/plugins/demux/libdemuxdump_plugin.la
@@ -577,6 +585,8 @@ lib/vlc/plugins/stream_out/libstream_out_autodel_plugin.la
 lib/vlc/plugins/stream_out/libstream_out_autodel_plugin.so
 lib/vlc/plugins/stream_out/libstream_out_bridge_plugin.la
 lib/vlc/plugins/stream_out/libstream_out_bridge_plugin.so
+lib/vlc/plugins/stream_out/libstream_out_chromecast_plugin.la
+lib/vlc/plugins/stream_out/libstream_out_chromecast_plugin.so
 lib/vlc/plugins/stream_out/libstream_out_cycle_plugin.la
 lib/vlc/plugins/stream_out/libstream_out_cycle_plugin.so
 lib/vlc/plugins/stream_out/libstream_out_delay_plugin.la
@@ -765,6 +775,15 @@ man/man1/vlc-wrapper.1.gz
 man/man1/vlc.1.gz
 share/applications/vlc.desktop
 share/doc/vlc/fortunes.txt
+share/doc/vlc/libvlc/gtk_player.c
+share/doc/vlc/libvlc/libvlc_DVD_ripper.c
+share/doc/vlc/libvlc/QtPlayer/LICENSE
+share/doc/vlc/libvlc/QtPlayer/main.cpp
+share/doc/vlc/libvlc/QtPlayer/player.cpp
+share/doc/vlc/libvlc/QtPlayer/player.h
+share/doc/vlc/libvlc/QtPlayer/QtVLC.pro
+share/doc/vlc/libvlc/vlc-thumb.c
+share/doc/vlc/libvlc/wx_player.cpp
 share/icons/hicolor/128x128/apps/vlc-kb.png
 share/icons/hicolor/128x128/apps/vlc-xmas.png
 share/icons/hicolor/128x128/apps/vlc.png
@@ -776,6 +795,10 @@ share/icons/hicolor/32x32/apps/vlc.png
 share/icons/hicolor/32x32/apps/vlc.xpm
 share/icons/hicolor/48x48/apps/vlc-xmas.png
 share/icons/hicolor/48x48/apps/vlc.png
+share/kde4/apps/solid/actions/vlc-openbd.desktop
+share/kde4/apps/solid/actions/vlc-opencda.desktop
+share/kde4/apps/solid/actions/vlc-opendvd.desktop
+share/kde4/apps/solid/actions/vlc-openvcd.desktop
 share/locale/ach/LC_MESSAGES/vlc.mo
 share/locale/af/LC_MESSAGES/vlc.mo
 share/locale/am_ET/LC_MESSAGES/vlc.mo
@@ -879,7 +902,6 @@ share/vlc/utils/video-vlc-default.sh
 share/vlc/vlc.ico
 @dir include/vlc/plugins
 @dir include/vlc
-@dir lib/pkgconfig
 @dir lib/vlc/plugins/access
 @dir lib/vlc/plugins/access_output
 @dir lib/vlc/plugins/audio_filter
@@ -909,11 +931,6 @@ share/vlc/vlc.ico
 @dir lib/vlc/plugins/visualization
 @dir lib/vlc/plugins
 @dir lib/vlc
-@dir share/applications
-@dir share/doc/vlc/libvlc/QtPlayer
-@dir share/doc/vlc/libvlc
-@dir share/doc/vlc
-@dir share/doc
 @dir share/locale/ach/LC_MESSAGES
 @dir share/locale/ach
 @dir share/locale/af/LC_MESSAGES
@@ -1106,8 +1123,5 @@ share/vlc/vlc.ico
 @dir share/locale/zh_TW
 @dir share/locale/zu/LC_MESSAGES
 @dir share/locale/zu
-@dir share/locale
-@dir share/metainfo
 @dir share/vlc/utils
 @dir share/vlc
-@dir share
