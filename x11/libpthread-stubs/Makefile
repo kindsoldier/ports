@@ -13,7 +13,7 @@ DIST_SUBDIR=	x11
 MAINTAINER=	onborodin@gmail.com
 COMMENT=	X.org X11R7 module
 
-BUILD_DEPENDS+=	pkg-config:devel/pkg-config
+#BUILD_DEPENDS+=	pkg-config:devel/pkg-config
 
 USES+=		tar:bzip2
 USES+=		gmake

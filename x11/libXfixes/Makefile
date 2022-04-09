@@ -12,10 +12,10 @@ DIST_SUBDIR=	x11
 MAINTAINER=	onborodin@gmail.com
 COMMENT=	X.org X11R7 module
 
-BUILD_DEPENDS+=	pkg-config:devel/pkg-config
-BUILD_DEPENDS+= xproto>=0:xproto/xproto
-BUILD_DEPENDS+= fixesproto>=0:xproto/fixesproto
-BUILD_DEPENDS+= xextproto>=0:xproto/xextproto
+#BUILD_DEPENDS+=	pkg-config:devel/pkg-config
+#BUILD_DEPENDS+= xproto>=0:xproto/xproto
+#BUILD_DEPENDS+= fixesproto>=0:xproto/fixesproto
+#BUILD_DEPENDS+= xextproto>=0:xproto/xextproto
 
 #BUILD_DEPENDS+= fixesproto>=0:xproto/fixesproto
 #BUILD_DEPENDS+= damageproto>=0:xproto/damageproto
@@ -27,7 +27,7 @@ LIB_DEPENDS+=	libX11.so:x11/libX11
 LIB_DEPENDS+=	libXau.so:x11/libXau
 LIB_DEPENDS+=	libXdmcp.so:x11/libXdmcp
 
-RUN_DEPENDS+= fixesproto>=0:xproto/fixesproto
+#RUN_DEPENDS+= fixesproto>=0:xproto/fixesproto
 
 
 USES+=		tar:bzip2

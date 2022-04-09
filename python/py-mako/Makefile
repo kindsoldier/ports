@@ -17,7 +17,8 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beaker>=1.1:python/py-beaker@${PY_FLAVOR} 
 		${PYTHON_PKGNAMEPREFIX}Babel>0:python/py-babel@${PY_FLAVOR}
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USES=		python
+USES=		python:2.7
+
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

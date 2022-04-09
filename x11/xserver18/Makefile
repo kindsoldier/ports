@@ -13,37 +13,37 @@ DIST_SUBDIR=	x11
 MAINTAINER=	onborodin@gmail.com
 COMMENT=	X.org X11R7 module
 
-BUILD_DEPENDS+=	glproto>=0:xproto/glproto
-BUILD_DEPENDS+=	pkg-config:devel/pkg-config
-BUILD_DEPENDS+=	bigreqsproto>=0:xproto/bigreqsproto
-BUILD_DEPENDS+=	compositeproto>=0:xproto/compositeproto
-BUILD_DEPENDS+=	damageproto>=0:xproto/damageproto
-BUILD_DEPENDS+=	dmxproto>=0:xproto/dmxproto
-BUILD_DEPENDS+=	dri2proto>=0:xproto/dri2proto
-BUILD_DEPENDS+=	fixesproto>=0:xproto/fixesproto
-BUILD_DEPENDS+=	fontcacheproto>=0:xproto/fontcacheproto
-BUILD_DEPENDS+=	fontsproto>=0:xproto/fontsproto
-BUILD_DEPENDS+=	inputproto>=0:xproto/inputproto
-BUILD_DEPENDS+=	kbproto>=0:xproto/kbproto
-BUILD_DEPENDS+=	presentproto>=0:xproto/presentproto
-BUILD_DEPENDS+=	printproto>=0:xproto/printproto
-BUILD_DEPENDS+=	randrproto>=0:xproto/randrproto
-BUILD_DEPENDS+=	recordproto>=0:xproto/recordproto
-BUILD_DEPENDS+=	renderproto>=0:xproto/renderproto
-BUILD_DEPENDS+=	resourceproto>=0:xproto/resourceproto
-BUILD_DEPENDS+=	scrnsaverproto>=0:xproto/scrnsaverproto
-BUILD_DEPENDS+=	trapproto>=0:xproto/trapproto
-BUILD_DEPENDS+=	videoproto>=0:xproto/videoproto
-BUILD_DEPENDS+=	xcb-proto>=0:xproto/xcb-proto
-BUILD_DEPENDS+=	xcmiscproto>=0:xproto/xcmiscproto
-BUILD_DEPENDS+=	xextproto>=0:xproto/xextproto
-BUILD_DEPENDS+=	xf86dgaproto>=0:xproto/xf86dgaproto
-BUILD_DEPENDS+=	xf86driproto>=0:xproto/xf86driproto
-BUILD_DEPENDS+=	xf86miscproto>=0:xproto/xf86miscproto
-BUILD_DEPENDS+=	xf86vidmodeproto>=0:xproto/xf86vidmodeproto
-BUILD_DEPENDS+=	xineramaproto>=0:xproto/xineramaproto
-BUILD_DEPENDS+=	xproto>=0:xproto/xproto
-BUILD_DEPENDS+=	xtransproto>=0:xproto/xtransproto
+#BUILD_DEPENDS+=	glproto>=0:xproto/glproto
+#BUILD_DEPENDS+=	pkg-config:devel/pkg-config
+#BUILD_DEPENDS+=	bigreqsproto>=0:xproto/bigreqsproto
+#BUILD_DEPENDS+=	compositeproto>=0:xproto/compositeproto
+#BUILD_DEPENDS+=	damageproto>=0:xproto/damageproto
+#BUILD_DEPENDS+=	dmxproto>=0:xproto/dmxproto
+#BUILD_DEPENDS+=	dri2proto>=0:xproto/dri2proto
+#BUILD_DEPENDS+=	fixesproto>=0:xproto/fixesproto
+#BUILD_DEPENDS+=	fontcacheproto>=0:xproto/fontcacheproto
+#BUILD_DEPENDS+=	fontsproto>=0:xproto/fontsproto
+#BUILD_DEPENDS+=	inputproto>=0:xproto/inputproto
+#BUILD_DEPENDS+=	kbproto>=0:xproto/kbproto
+#BUILD_DEPENDS+=	presentproto>=0:xproto/presentproto
+#BUILD_DEPENDS+=	printproto>=0:xproto/printproto
+#BUILD_DEPENDS+=	randrproto>=0:xproto/randrproto
+#BUILD_DEPENDS+=	recordproto>=0:xproto/recordproto
+#BUILD_DEPENDS+=	renderproto>=0:xproto/renderproto
+#BUILD_DEPENDS+=	resourceproto>=0:xproto/resourceproto
+#BUILD_DEPENDS+=	scrnsaverproto>=0:xproto/scrnsaverproto
+#BUILD_DEPENDS+=	trapproto>=0:xproto/trapproto
+#BUILD_DEPENDS+=	videoproto>=0:xproto/videoproto
+#BUILD_DEPENDS+=	xcb-proto>=0:xproto/xcb-proto
+#BUILD_DEPENDS+=	xcmiscproto>=0:xproto/xcmiscproto
+#BUILD_DEPENDS+=	xextproto>=0:xproto/xextproto
+#BUILD_DEPENDS+=	xf86dgaproto>=0:xproto/xf86dgaproto
+#BUILD_DEPENDS+=	xf86driproto>=0:xproto/xf86driproto
+#BUILD_DEPENDS+=	xf86miscproto>=0:xproto/xf86miscproto
+#BUILD_DEPENDS+=	xf86vidmodeproto>=0:xproto/xf86vidmodeproto
+#BUILD_DEPENDS+=	xineramaproto>=0:xproto/xineramaproto
+#BUILD_DEPENDS+=	xproto>=0:xproto/xproto
+#BUILD_DEPENDS+=	xtransproto>=0:xproto/xtransproto
 
 LIB_DEPENDS+=	libdmx.so:x11/libdmx
 
@@ -93,16 +93,16 @@ LIB_DEPENDS+=	libXxf86dga.so:x11/libXxf86dga
 LIB_DEPENDS+=	libXxf86misc.so:x11/libXxf86misc
 LIB_DEPENDS+=	libXxf86vm.so:x11/libXxf86vm
 
-RUN_DEPENDS+=	xcursor-themes>=0:xmisc/xcursor-themes
-RUN_DEPENDS+=	xfont-encodings>=0:xmisc/xfont-encodings
-RUN_DEPENDS+=	xkbcomp:xutil/xkbcomp
-RUN_DEPENDS+=	xkeyboard-config>=0:xmisc/xkeyboard-config
-RUN_DEPENDS+=	xf-font-alias>=0:xfont/xf-alias
+#RUN_DEPENDS+=	xcursor-themes>=0:xmisc/xcursor-themes
+#RUN_DEPENDS+=	xfont-encodings>=0:xmisc/xfont-encodings
+#RUN_DEPENDS+=	xkbcomp:xutil/xkbcomp
+#RUN_DEPENDS+=	xkeyboard-config>=0:xmisc/xkeyboard-config
+#RUN_DEPENDS+=	xf-font-alias>=0:xfont/xf-alias
 
-RUN_DEPENDS+=	xf-font-cursor-misc>=0:xfont/xf-cursor-misc
-RUN_DEPENDS+=	xf-font-misc-misc>=0:xfont/xf-misc-misc
+#RUN_DEPENDS+=	xf-font-cursor-misc>=0:xfont/xf-cursor-misc
+#RUN_DEPENDS+=	xf-font-misc-misc>=0:xfont/xf-misc-misc
 
-BUILD_DEPENDS+=	${RUN_DEPENDS}
+#BUILD_DEPENDS+=	${RUN_DEPENDS}
 
 ONLY_FOR_ARCHS= amd64
 
@@ -143,7 +143,7 @@ LIB_DEPENDS+=	libdrm.so:system/libdrm
 LIB_DEPENDS+=	libxcb-keysyms.so.1:x11/libxcb-util-keysyms
 
 
-BUILD_DEPENDS+=	libmesa>=0:graph/libmesa
+#BUILD_DEPENDS+=	libmesa>=0:graph/libmesa
 
 CONFIGURE_ARGS+= --enable-glx
 CONFIGURE_ARGS+= --enable-dri2

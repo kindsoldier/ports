@@ -2,8 +2,8 @@
 # $Id: Makefile 1301 2007-10-27 13:34:35Z root $
 # $URL: file:///usr2/svn/ports5/x11/libXfont/Makefile $
 #
-PORTNAME= 	libXfont
-PORTVERSION=	1.5.1
+PORTNAME= 	libXfont2
+PORTVERSION=	2.0.4
 X11_CATEGORY= 	lib
 MASTER_SITES+=	ftp://ftp.x.org/pub/individual/${X11_CATEGORY}/
 CATEGORIES=	x11
@@ -12,7 +12,7 @@ DIST_SUBDIR=	x11
 MAINTAINER=	onborodin@gmail.com
 COMMENT=	X.org X11R7 module
 
-#BUILD_DEPENDS+=	pkg-config:devel/pkg-config
+BUILD_DEPENDS+=	pkg-config:devel/pkg-config
 #BUILD_DEPENDS+= fontcacheproto>=0:xproto/fontcacheproto
 #BUILD_DEPENDS+= fontsproto>=0:xproto/fontsproto
 #BUILD_DEPENDS+= xproto>=0:xproto/xproto

@@ -12,9 +12,9 @@ DIST_SUBDIR=	x11
 MAINTAINER=	onborodin@gmail.com
 COMMENT=	X.org X11R7 module
 
-BUILD_DEPENDS+=	pkg-config:devel/pkg-config
-BUILD_DEPENDS+= xproto>=0:xproto/xproto
-RUN_DEPENDS+= xproto>=0:xproto/xproto
+#BUILD_DEPENDS+=	pkg-config:devel/pkg-config
+#BUILD_DEPENDS+= xproto>=0:xproto/xproto
+#RUN_DEPENDS+= xproto>=0:xproto/xproto
 
 USE_X_PREFIX=	yes
 USES+=		tar:bzip2

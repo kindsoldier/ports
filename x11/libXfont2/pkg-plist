@@ -1,0 +1,8 @@
+include/X11/fonts/libxfont2.h
+lib/libXfont2.a
+lib/libXfont2.la
+lib/libXfont2.so
+lib/libXfont2.so.2
+lib/pkgconfig/xfont2.pc
+@dir include/X11/fonts
+@dir include/X11

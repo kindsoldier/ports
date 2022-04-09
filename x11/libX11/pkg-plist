@@ -1,4 +1,5 @@
 include/X11/cursorfont.h
+include/X11/extensions/XKBgeom.h
 include/X11/ImUtil.h
 include/X11/Xcms.h
 include/X11/XKBlib.h
@@ -20,26 +21,6 @@ lib/libX11.so
 lib/libX11.so.6
 lib/pkgconfig/x11-xcb.pc
 lib/pkgconfig/x11.pc
-lib/X11/locale/common/ximcp.a
-lib/X11/locale/common/ximcp.la
-lib/X11/locale/common/ximcp.so
-lib/X11/locale/common/ximcp.so.2
-lib/X11/locale/common/xlcDef.a
-lib/X11/locale/common/xlcDef.la
-lib/X11/locale/common/xlcDef.so
-lib/X11/locale/common/xlcDef.so.2
-lib/X11/locale/common/xlcUTF8Load.a
-lib/X11/locale/common/xlcUTF8Load.la
-lib/X11/locale/common/xlcUTF8Load.so
-lib/X11/locale/common/xlcUTF8Load.so.2
-lib/X11/locale/common/xlibi18n.a
-lib/X11/locale/common/xlibi18n.la
-lib/X11/locale/common/xlibi18n.so
-lib/X11/locale/common/xlibi18n.so.2
-lib/X11/locale/common/xomGeneric.a
-lib/X11/locale/common/xomGeneric.la
-lib/X11/locale/common/xomGeneric.so
-lib/X11/locale/common/xomGeneric.so.2
 man/man3/AllPlanes.3.gz
 man/man3/BitmapBitOrder.3.gz
 man/man3/BitmapPad.3.gz
@@ -397,7 +378,7 @@ man/man3/XkbAllocGeometry.3.gz
 man/man3/XkbAllocGeomKeyAliases.3.gz
 man/man3/XkbAllocGeomKeys.3.gz
 man/man3/XkbAllocGeomOutlines.3.gz
-man/man3/XkbAllocGeomOverlayKey.3.gz
+man/man3/XkbAllocGeomOverlayKeys.3.gz
 man/man3/XkbAllocGeomOverlayRows.3.gz
 man/man3/XkbAllocGeomOverlays.3.gz
 man/man3/XkbAllocGeomPoints.3.gz
@@ -481,6 +462,7 @@ man/man3/XkbGetKeyTypes.3.gz
 man/man3/XkbGetKeyVirtualModMap.3.gz
 man/man3/XkbGetMap.3.gz
 man/man3/XkbGetNameChanges.3.gz
+man/man3/XkbGetNamedDeviceIndicator.3.gz
 man/man3/XkbGetNamedGeometry.3.gz
 man/man3/XkbGetNamedIndicator.3.gz
 man/man3/XkbGetNames.3.gz
@@ -561,6 +543,7 @@ man/man3/XkbSetIgnoreLockMods.3.gz
 man/man3/XkbSetIndicatorMap.3.gz
 man/man3/XkbSetMap.3.gz
 man/man3/XkbSetModActionVMods.3.gz
+man/man3/XkbSetNamedDeviceIndicator.3.gz
 man/man3/XkbSetNamedIndicator.3.gz
 man/man3/XkbSetNames.3.gz
 man/man3/XkbSetPtrActionX.3.gz
@@ -1051,10 +1034,8 @@ share/X11/locale/zh_TW/XI18N_OBJS
 share/X11/locale/zh_TW/XLC_LOCALE
 share/X11/Xcms.txt
 share/X11/XErrorDB
+@dir include/X11/extensions
 @dir include/X11
-@dir lib/X11/locale/common
-@dir lib/X11/locale
-@dir lib/X11
 @dir share/X11/locale/am_ET.UTF-8
 @dir share/X11/locale/armscii-8
 @dir share/X11/locale/C

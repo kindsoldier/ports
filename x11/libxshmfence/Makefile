@@ -12,10 +12,10 @@ DIST_SUBDIR=	x11
 MAINTAINER=	onborodin@gmail.com
 COMMENT=	X.org X11R7 module
 
-BUILD_DEPENDS+=	pkg-config:devel/pkg-config
-BUILD_DEPENDS+= xproto>=0:xproto/xproto
-BUILD_DEPENDS+= libX11>=0:x11/libX11
-BUILD_DEPENDS+= libSM>=0:x11/libSM
+#BUILD_DEPENDS+=	pkg-config:devel/pkg-config
+#BUILD_DEPENDS+= xproto>=0:xproto/xproto
+#BUILD_DEPENDS+= libX11>=0:x11/libX11
+#BUILD_DEPENDS+= libSM>=0:x11/libSM
 
 USES+=		tar:bzip2
 USES+=		gmake

@@ -12,14 +12,14 @@ DIST_SUBDIR=	x11
 MAINTAINER=	onborodin@gmail.com
 COMMENT=	X.org X11R7 module
 
-BUILD_DEPENDS+=	pkg-config:devel/pkg-config
-BUILD_DEPENDS+= xproto>=0:xproto/xproto
-BUILD_DEPENDS+= libX11>=0:x11/libX11
-BUILD_DEPENDS+= libXext>=0:x11/libXext
-BUILD_DEPENDS+= resourceproto>=0:xproto/resourceproto
+#BUILD_DEPENDS+=	pkg-config:devel/pkg-config
+#BUILD_DEPENDS+= xproto>=0:xproto/xproto
+#BUILD_DEPENDS+= libX11>=0:x11/libX11
+#BUILD_DEPENDS+= libXext>=0:x11/libXext
+#BUILD_DEPENDS+= resourceproto>=0:xproto/resourceproto
 
-BUILD_DEPENDS+= xextproto>=0:xproto/xextproto
-BUILD_DEPENDS+= xproto>=0:xproto/xproto
+#BUILD_DEPENDS+= xextproto>=0:xproto/xextproto
+#BUILD_DEPENDS+= xproto>=0:xproto/xproto
 
 
 LIB_DEPENDS+=	libX11.so:x11/libX11

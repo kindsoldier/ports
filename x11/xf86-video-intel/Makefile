@@ -14,17 +14,17 @@ COMMENT=	Driver for Intel integrated graphics chipsets
 ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	Intel integrated GPU only exists in Intel x86 processors/chipsets
 
-BUILD_DEPENDS+=	pkg-config:devel/pkg-config
-BUILD_DEPENDS+= fontsproto>=0:xproto/fontsproto
-BUILD_DEPENDS+= randrproto>=0:xproto/randrproto
-BUILD_DEPENDS+= renderproto>=0:xproto/renderproto
-BUILD_DEPENDS+= xextproto>=0:xproto/xextproto
-BUILD_DEPENDS+= xextproto>=0:xproto/xextproto
-BUILD_DEPENDS+= xineramaproto>=0:xproto/xineramaproto
-BUILD_DEPENDS+= xorg-server>=0:x11/xserver18
-BUILD_DEPENDS+= xproto>=0:xproto/xproto
-BUILD_DEPENDS+= libX11>=0:x11/libX11
-BUILD_DEPENDS+= libXvMC>=0:x11/libXvMC
+#BUILD_DEPENDS+=	pkg-config:devel/pkg-config
+#BUILD_DEPENDS+= fontsproto>=0:xproto/fontsproto
+#BUILD_DEPENDS+= randrproto>=0:xproto/randrproto
+#BUILD_DEPENDS+= renderproto>=0:xproto/renderproto
+#BUILD_DEPENDS+= xextproto>=0:xproto/xextproto
+#BUILD_DEPENDS+= xextproto>=0:xproto/xextproto
+#BUILD_DEPENDS+= xineramaproto>=0:xproto/xineramaproto
+#BUILD_DEPENDS+= xorg-server>=0:x11/xserver18
+#BUILD_DEPENDS+= xproto>=0:xproto/xproto
+#BUILD_DEPENDS+= libX11>=0:x11/libX11
+#BUILD_DEPENDS+= libXvMC>=0:x11/libXvMC
 #BUILD_DEPENDS+= ${RUN_DEPENDS}
 
 LIB_DEPENDS+=	libX11-xcb.so:x11/libX11

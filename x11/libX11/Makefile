@@ -3,7 +3,7 @@
 # $URL: file:///usr2/svn/ports5/x11/libX11/Makefile $
 #
 PORTNAME= 	libX11
-PORTVERSION=	1.6.5
+PORTVERSION=	1.6.12
 X11_CATEGORY= 	lib
 MASTER_SITES+=	ftp://ftp.x.org/pub/individual/${X11_CATEGORY}/
 CATEGORIES=	x11
@@ -13,24 +13,24 @@ DIST_SUBDIR=	x11
 MAINTAINER=	onborodin@gmail.com
 COMMENT=	X.org X11R7 module
 
-BUILD_DEPENDS+=	pkg-config:devel/pkg-config
-BUILD_DEPENDS+= xproto>=0:xproto/xproto
-BUILD_DEPENDS+= xextproto>=0:xproto/xextproto
-BUILD_DEPENDS+= xcmiscproto>=0:xproto/xcmiscproto
-BUILD_DEPENDS+= bigreqsproto>=0:xproto/bigreqsproto
-BUILD_DEPENDS+= kbproto>=0:xproto/kbproto
-BUILD_DEPENDS+= inputproto>=0:xproto/inputproto
-BUILD_DEPENDS+= libXau>=0:x11/libXau
-BUILD_DEPENDS+= libXdmcp>=0:x11/libXdmcp
-BUILD_DEPENDS+= xtransproto>=0:xproto/xtransproto
+#BUILD_DEPENDS+=	pkg-config:devel/pkg-config
+#BUILD_DEPENDS+= xproto>=0:xproto/xproto
+#BUILD_DEPENDS+= xextproto>=0:xproto/xextproto
+#BUILD_DEPENDS+= xcmiscproto>=0:xproto/xcmiscproto
+#BUILD_DEPENDS+= bigreqsproto>=0:xproto/bigreqsproto
+#BUILD_DEPENDS+= kbproto>=0:xproto/kbproto
+#BUILD_DEPENDS+= inputproto>=0:xproto/inputproto
+#BUILD_DEPENDS+= libXau>=0:x11/libXau
+#BUILD_DEPENDS+= libXdmcp>=0:x11/libXdmcp
+#BUILD_DEPENDS+= xtransproto>=0:xproto/xtransproto
 
 
 LIB_DEPENDS+=	libXau.so:x11/libXau
 LIB_DEPENDS+=	libXdmcp.so:x11/libXdmcp
 LIB_DEPENDS+=	libxcb.so:x11/libxcb
 
-RUN_DEPENDS+= kbproto>=0:xproto/kbproto
-RUN_DEPENDS+= xproto>=0:xproto/xproto
+#RUN_DEPENDS+= kbproto>=0:xproto/kbproto
+#RUN_DEPENDS+= xproto>=0:xproto/xproto
 
 
 USES+=		tar:bzip2
@@ -43,14 +43,22 @@ CFLAGS+=	-I${LOCALBASE}/include
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-CONFIGURE_ARGS+= --enable-loadable-i18n
-CONFIGURE_ARGS+= --enable-secure-rpc
+#CONFIGURE_ARGS+= --enable-loadable-i18n
+#CONFIGURE_ARGS+= --enable-secure-rpc
 
 CONFIGURE_ARGS+= --disable-specs 
 CONFIGURE_ARGS+= --enable-ipv6
 CONFIGURE_ARGS+= --without-xmlto 
 CONFIGURE_ARGS+= --without-xsltproc 
 
+CONFIGURE_ENV+=	ac_cv_path_PS2PDF=""
+INSTALL_TARGET=	install-strip
+
+post-patch:
+	@${REINPLACE_CMD} 's/test.*-traditional.*;/true;/' \
+		${WRKSRC}/configure
+	@${REINPLACE_CMD} '/^install-data-am:/,/^$$/ \
+		s/install-specDATA//' ${WRKSRC}/nls/Makefile.in
 
 
 

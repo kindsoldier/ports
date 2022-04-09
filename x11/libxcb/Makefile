@@ -12,16 +12,16 @@ DIST_SUBDIR=	x11
 MAINTAINER=	onborodin@gmail.com
 COMMENT=	X.org X11R7 module
 
-BUILD_DEPENDS+= python:lang/python27
-BUILD_DEPENDS+= xmllint:text/libxml2
-BUILD_DEPENDS+= xsltproc:text/libxslt
-BUILD_DEPENDS+=	pkg-config:devel/pkg-config
+#BUILD_DEPENDS+= python:lang/python27
+#BUILD_DEPENDS+= xmllint:text/libxml2
+#BUILD_DEPENDS+= xsltproc:text/libxslt
+#BUILD_DEPENDS+=	pkg-config:devel/pkg-config
 
-BUILD_DEPENDS+= xcb-proto>=0:xproto/xcb-proto
-BUILD_DEPENDS+= libpthread-stubs>=0:x11/libpthread-stubs
+#BUILD_DEPENDS+= xcb-proto>=0:xproto/xcb-proto
+#BUILD_DEPENDS+= libpthread-stubs>=0:x11/libpthread-stubs
 
-RUN_DEPENDS+= xcb-proto>=0:xproto/xcb-proto
-RUN_DEPENDS+= libpthread-stubs>=0:x11/libpthread-stubs
+#RUN_DEPENDS+= xcb-proto>=0:xproto/xcb-proto
+#RUN_DEPENDS+= libpthread-stubs>=0:x11/libpthread-stubs
 
 #BUILD_DEPENDS+=	glproto>=0:xproto/glproto
 #BUILD_DEPENDS+= bigreqsproto>=0:xproto/bigreqsproto
@@ -52,7 +52,7 @@ RUN_DEPENDS+= libpthread-stubs>=0:x11/libpthread-stubs
 #BUILD_DEPENDS+= xf86miscproto>=0:xproto/xf86miscproto
 #BUILD_DEPENDS+= xf86vidmodeproto>=0:xproto/xf86vidmodeproto
 #BUILD_DEPENDS+= xineramaproto>=0:xproto/xineramaproto
-BUILD_DEPENDS+= xproto>=0:xproto/xproto
+#BUILD_DEPENDS+= xproto>=0:xproto/xproto
 
 LIB_DEPENDS+=	libXau.so:x11/libXau
 LIB_DEPENDS+=	libXdmcp.so:x11/libXdmcp

@@ -12,17 +12,17 @@ DIST_SUBDIR=	x11
 MAINTAINER=	onborodin@gmail.com
 COMMENT=	X.org X11R7 module
 
-BUILD_DEPENDS+=	pkg-config:devel/pkg-config
-BUILD_DEPENDS+= fontcacheproto>=0:xproto/fontcacheproto
-BUILD_DEPENDS+= libX11>=0:x11/libX11
-BUILD_DEPENDS+= libXext>=0:x11/libXext
+#BUILD_DEPENDS+=	pkg-config:devel/pkg-config
+#BUILD_DEPENDS+= fontcacheproto>=0:xproto/fontcacheproto
+#BUILD_DEPENDS+= libX11>=0:x11/libX11
+#BUILD_DEPENDS+= libXext>=0:x11/libXext
 
 LIB_DEPENDS+=	libX11.so:x11/libX11
 LIB_DEPENDS+=	libXau.so:x11/libXau
 LIB_DEPENDS+=	libXdmcp.so:x11/libXdmcp
 LIB_DEPENDS+=	libXext.so:x11/libXext
 
-RUN_DEPENDS+= fontcacheproto>=0:xproto/fontcacheproto
+#RUN_DEPENDS+= fontcacheproto>=0:xproto/fontcacheproto
 
 
 USES+=		tar:bzip2

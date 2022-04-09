@@ -12,11 +12,11 @@ DIST_SUBDIR=	x11
 MAINTAINER=	onborodin@gmail.com
 COMMENT=	X.org X11R7 module
 
-BUILD_DEPENDS+=	pkg-config:devel/pkg-config
-BUILD_DEPENDS+= scrnsaverproto>=0:xproto/scrnsaverproto
+#BUILD_DEPENDS+=	pkg-config:devel/pkg-config
+#BUILD_DEPENDS+= scrnsaverproto>=0:xproto/scrnsaverproto
 
-BUILD_DEPENDS+= xextproto>=0:xproto/xextproto
-BUILD_DEPENDS+= xproto>=0:xproto/xproto
+#BUILD_DEPENDS+= xextproto>=0:xproto/xextproto
+#BUILD_DEPENDS+= xproto>=0:xproto/xproto
 
 
 #BUILD_DEPENDS+= libX11>=0:x11/libX11
@@ -29,7 +29,7 @@ LIB_DEPENDS+=	libXau.so:x11/libXau
 LIB_DEPENDS+=	libXdmcp.so:x11/libXdmcp
 LIB_DEPENDS+=	libXext.so:x11/libXext
 
-RUN_DEPENDS+= scrnsaverproto>=0:xproto/scrnsaverproto
+#RUN_DEPENDS+= scrnsaverproto>=0:xproto/scrnsaverproto
 
 
 USES+=		tar:bzip2

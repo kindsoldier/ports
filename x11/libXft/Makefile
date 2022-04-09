@@ -12,11 +12,11 @@ DIST_SUBDIR=	x11
 MAINTAINER=	onborodin@gmail.com
 COMMENT=	X.org X11R7 module
 
-BUILD_DEPENDS+=	pkg-config:devel/pkg-config
-BUILD_DEPENDS+= xproto>=0:xproto/xproto
-BUILD_DEPENDS+= libXrender>=0:x11/libXrender
-BUILD_DEPENDS+= libfontconfig>=0:x11/libfontconfig
-BUILD_DEPENDS+= renderproto>=0:xproto/renderproto
+#BUILD_DEPENDS+=	pkg-config:devel/pkg-config
+#BUILD_DEPENDS+= xproto>=0:xproto/xproto
+#BUILD_DEPENDS+= libXrender>=0:x11/libXrender
+#BUILD_DEPENDS+= libfontconfig>=0:x11/libfontconfig
+#BUILD_DEPENDS+= renderproto>=0:xproto/renderproto
 
 
 LIB_DEPENDS+=	libXau.so:x11/libXau
@@ -26,7 +26,7 @@ LIB_DEPENDS+=	libXrender.so:x11/libXrender
 LIB_DEPENDS+=	libfreetype.so:graph/libfreetype2
 LIB_DEPENDS+=	libfontconfig.so:x11/libfontconfig
 
-RUN_DEPENDS+= xproto>=0:xproto/xproto
+#RUN_DEPENDS+= xproto>=0:xproto/xproto
 
 
 USES+=		tar:bzip2

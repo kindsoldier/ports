@@ -12,18 +12,18 @@ DIST_SUBDIR=	x11
 MAINTAINER=	onborodin@gmail.com
 COMMENT=	X.org X11R7 module
 
-BUILD_DEPENDS+=	pkg-config:devel/pkg-config
+#BUILD_DEPENDS+=	pkg-config:devel/pkg-config
 
-BUILD_DEPENDS+= xproto>=0:xproto/xproto
-BUILD_DEPENDS+= randrproto>=0:xproto/randrproto
+#BUILD_DEPENDS+= xproto>=0:xproto/xproto
+#BUILD_DEPENDS+= randrproto>=0:xproto/randrproto
 
-BUILD_DEPENDS+= xextproto>=0:xproto/xextproto
-BUILD_DEPENDS+= renderproto>=0:xproto/renderproto
+#BUILD_DEPENDS+= xextproto>=0:xproto/xextproto
+#BUILD_DEPENDS+= renderproto>=0:xproto/renderproto
 
 
-BUILD_DEPENDS+= libX11>=0:x11/libX11
-BUILD_DEPENDS+= libXext>=0:x11/libXext
-BUILD_DEPENDS+= libXrender>=0:x11/libXrender
+#BUILD_DEPENDS+= libX11>=0:x11/libX11
+#BUILD_DEPENDS+= libXext>=0:x11/libXext
+#BUILD_DEPENDS+= libXrender>=0:x11/libXrender
 
 
 LIB_DEPENDS+=	libX11.so:x11/libX11
@@ -32,7 +32,7 @@ LIB_DEPENDS+=	libXdmcp.so:x11/libXdmcp
 LIB_DEPENDS+=	libXext.so:x11/libXext
 LIB_DEPENDS+=	libXrender.so:x11/libXrender
 
-RUN_DEPENDS+= randrproto>=0:xproto/randrproto
+#RUN_DEPENDS+= randrproto>=0:xproto/randrproto
 
 
 USES+=		tar:bzip2

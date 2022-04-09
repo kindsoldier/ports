@@ -13,9 +13,9 @@ PKGNAMEPREFIX=	lib
 MAINTAINER=	onborodin@gmail.com
 COMMENT=	Fontconfig is a library for font customization and configuration
 
-BUILD_DEPENDS+=	gperf:devel/gperf
+#BUILD_DEPENDS+=	gperf:devel/gperf
 
-BUILD_DEPENDS+=	pkg-config:devel/pkg-config
+#BUILD_DEPENDS+=	pkg-config:devel/pkg-config
 LIB_DEPENDS+=	libfreetype.so:graph/libfreetype2
 LIB_DEPENDS+=	libpng.so:graph/libpng
 LIB_DEPENDS+=	libexpat.so:text/libexpat

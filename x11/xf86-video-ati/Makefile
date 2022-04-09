@@ -12,16 +12,16 @@ DIST_SUBDIR=	x11
 MAINTAINER= homeunix7@gmail.com
 COMMENT=	X.org X11R7 module
 
-BUILD_DEPENDS+=	pkg-config:devel/pkg-config
-BUILD_DEPENDS+= xineramaproto>=0:xproto/xineramaproto
-BUILD_DEPENDS+= randrproto>=0:xproto/randrproto
-BUILD_DEPENDS+= renderproto>=0:xproto/renderproto
-BUILD_DEPENDS+= videoproto>=0:xproto/videoproto
-BUILD_DEPENDS+= xf86miscproto>=0:xproto/xf86miscproto
-BUILD_DEPENDS+= xextproto>=0:xproto/xextproto
-BUILD_DEPENDS+= xorg-server>=0:x11/xserver18
-BUILD_DEPENDS+= xproto>=0:xproto/xproto
-BUILD_DEPENDS+= fontsproto>=0:xproto/fontsproto
+#BUILD_DEPENDS+=	pkg-config:devel/pkg-config
+#BUILD_DEPENDS+= xineramaproto>=0:xproto/xineramaproto
+#BUILD_DEPENDS+= randrproto>=0:xproto/randrproto
+#BUILD_DEPENDS+= renderproto>=0:xproto/renderproto
+#BUILD_DEPENDS+= videoproto>=0:xproto/videoproto
+#BUILD_DEPENDS+= xf86miscproto>=0:xproto/xf86miscproto
+#BUILD_DEPENDS+= xextproto>=0:xproto/xextproto
+#BUILD_DEPENDS+= xorg-server>=0:x11/xserver18
+#BUILD_DEPENDS+= xproto>=0:xproto/xproto
+#BUILD_DEPENDS+= fontsproto>=0:xproto/fontsproto
 
 
 USES+=		tar:bzip2

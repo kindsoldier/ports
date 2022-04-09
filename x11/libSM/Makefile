@@ -12,9 +12,9 @@ DIST_SUBDIR=	x11
 MAINTAINER=	onborodin@gmail.com
 COMMENT=	X.org X11R7 module
 
-BUILD_DEPENDS+=	pkg-config:devel/pkg-config
-BUILD_DEPENDS+= libICE>=0:x11/libICE
-BUILD_DEPENDS+= xproto>=0:xproto/xproto
+#BUILD_DEPENDS+=	pkg-config:devel/pkg-config
+#BUILD_DEPENDS+= libICE>=0:x11/libICE
+#BUILD_DEPENDS+= xproto>=0:xproto/xproto
 
 LIB_DEPENDS+=	libICE.so:x11/libICE
 
