@@ -1,0 +1,11 @@
+--- ./nouveau/Makefile.in.orig	2018-10-16 16:49:16.000000000 +0200
++++ ./nouveau/Makefile.in	2022-04-08 16:19:24.374500000 +0200
+@@ -558,7 +558,7 @@
+ 	-I$(top_srcdir) \
+ 	$(PTHREADSTUBS_CFLAGS) \
+ 	-I$(top_srcdir)/include/drm \
+-	-DDEBUG
++	
+ 
+ libdrm_nouveau_la_LTLIBRARIES = libdrm_nouveau.la
+ libdrm_nouveau_ladir = $(libdir)
