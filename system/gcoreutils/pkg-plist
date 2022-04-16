@@ -3,6 +3,7 @@ bin/gb2sum
 bin/gbase32
 bin/gbase64
 bin/gbasename
+bin/gbasenc
 bin/gcat
 bin/gchcon
 bin/gchgrp
@@ -109,6 +110,7 @@ man/man1/gb2sum.1.gz
 man/man1/gbase32.1.gz
 man/man1/gbase64.1.gz
 man/man1/gbasename.1.gz
+man/man1/gbasenc.1.gz
 man/man1/gcat.1.gz
 man/man1/gchcon.1.gz
 man/man1/gchgrp.1.gz
@@ -209,6 +211,7 @@ man/man1/gwc.1.gz
 man/man1/gwho.1.gz
 man/man1/gwhoami.1.gz
 man/man1/gyes.1.gz
+share/info/coreutils.info
 share/locale/af/LC_MESSAGES/coreutils.mo
 share/locale/af/LC_TIME/coreutils.mo
 share/locale/be/LC_MESSAGES/coreutils.mo
