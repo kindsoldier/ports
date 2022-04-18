@@ -300,6 +300,9 @@ lib/go/misc/cgo/testplugin/testdata/method/plugin.go
 lib/go/misc/cgo/testplugin/testdata/method2/main.go
 lib/go/misc/cgo/testplugin/testdata/method2/p/p.go
 lib/go/misc/cgo/testplugin/testdata/method2/plugin.go
+lib/go/misc/cgo/testplugin/testdata/method3/main.go
+lib/go/misc/cgo/testplugin/testdata/method3/p/p.go
+lib/go/misc/cgo/testplugin/testdata/method3/plugin.go
 lib/go/misc/cgo/testplugin/testdata/plugin1/plugin1.go
 lib/go/misc/cgo/testplugin/testdata/plugin2/plugin2.go
 lib/go/misc/cgo/testplugin/testdata/sub/plugin1/plugin1.go
@@ -428,257 +431,257 @@ lib/go/misc/wasm/wasm_exec_node.js
 lib/go/misc/wasm/wasm_exec.html
 lib/go/misc/wasm/wasm_exec.js
 lib/go/PATENTS
-lib/go/pkg/freebsd_arm64/archive/tar.a
-lib/go/pkg/freebsd_arm64/archive/zip.a
-lib/go/pkg/freebsd_arm64/bufio.a
-lib/go/pkg/freebsd_arm64/bytes.a
-lib/go/pkg/freebsd_arm64/compress/bzip2.a
-lib/go/pkg/freebsd_arm64/compress/flate.a
-lib/go/pkg/freebsd_arm64/compress/gzip.a
-lib/go/pkg/freebsd_arm64/compress/lzw.a
-lib/go/pkg/freebsd_arm64/compress/zlib.a
-lib/go/pkg/freebsd_arm64/container/heap.a
-lib/go/pkg/freebsd_arm64/container/list.a
-lib/go/pkg/freebsd_arm64/container/ring.a
-lib/go/pkg/freebsd_arm64/context.a
-lib/go/pkg/freebsd_arm64/crypto.a
-lib/go/pkg/freebsd_arm64/crypto/aes.a
-lib/go/pkg/freebsd_arm64/crypto/cipher.a
-lib/go/pkg/freebsd_arm64/crypto/des.a
-lib/go/pkg/freebsd_arm64/crypto/dsa.a
-lib/go/pkg/freebsd_arm64/crypto/ecdsa.a
-lib/go/pkg/freebsd_arm64/crypto/ed25519.a
-lib/go/pkg/freebsd_arm64/crypto/ed25519/internal/edwards25519.a
-lib/go/pkg/freebsd_arm64/crypto/ed25519/internal/edwards25519/field.a
-lib/go/pkg/freebsd_arm64/crypto/elliptic.a
-lib/go/pkg/freebsd_arm64/crypto/elliptic/internal/fiat.a
-lib/go/pkg/freebsd_arm64/crypto/elliptic/internal/nistec.a
-lib/go/pkg/freebsd_arm64/crypto/hmac.a
-lib/go/pkg/freebsd_arm64/crypto/internal/randutil.a
-lib/go/pkg/freebsd_arm64/crypto/internal/subtle.a
-lib/go/pkg/freebsd_arm64/crypto/md5.a
-lib/go/pkg/freebsd_arm64/crypto/rand.a
-lib/go/pkg/freebsd_arm64/crypto/rc4.a
-lib/go/pkg/freebsd_arm64/crypto/rsa.a
-lib/go/pkg/freebsd_arm64/crypto/sha1.a
-lib/go/pkg/freebsd_arm64/crypto/sha256.a
-lib/go/pkg/freebsd_arm64/crypto/sha512.a
-lib/go/pkg/freebsd_arm64/crypto/subtle.a
-lib/go/pkg/freebsd_arm64/crypto/tls.a
-lib/go/pkg/freebsd_arm64/crypto/x509.a
-lib/go/pkg/freebsd_arm64/crypto/x509/pkix.a
-lib/go/pkg/freebsd_arm64/database/sql.a
-lib/go/pkg/freebsd_arm64/database/sql/driver.a
-lib/go/pkg/freebsd_arm64/debug/buildinfo.a
-lib/go/pkg/freebsd_arm64/debug/dwarf.a
-lib/go/pkg/freebsd_arm64/debug/elf.a
-lib/go/pkg/freebsd_arm64/debug/gosym.a
-lib/go/pkg/freebsd_arm64/debug/macho.a
-lib/go/pkg/freebsd_arm64/debug/pe.a
-lib/go/pkg/freebsd_arm64/debug/plan9obj.a
-lib/go/pkg/freebsd_arm64/embed.a
-lib/go/pkg/freebsd_arm64/encoding.a
-lib/go/pkg/freebsd_arm64/encoding/ascii85.a
-lib/go/pkg/freebsd_arm64/encoding/asn1.a
-lib/go/pkg/freebsd_arm64/encoding/base32.a
-lib/go/pkg/freebsd_arm64/encoding/base64.a
-lib/go/pkg/freebsd_arm64/encoding/binary.a
-lib/go/pkg/freebsd_arm64/encoding/csv.a
-lib/go/pkg/freebsd_arm64/encoding/gob.a
-lib/go/pkg/freebsd_arm64/encoding/hex.a
-lib/go/pkg/freebsd_arm64/encoding/json.a
-lib/go/pkg/freebsd_arm64/encoding/pem.a
-lib/go/pkg/freebsd_arm64/encoding/xml.a
-lib/go/pkg/freebsd_arm64/errors.a
-lib/go/pkg/freebsd_arm64/expvar.a
-lib/go/pkg/freebsd_arm64/flag.a
-lib/go/pkg/freebsd_arm64/fmt.a
-lib/go/pkg/freebsd_arm64/go/ast.a
-lib/go/pkg/freebsd_arm64/go/build.a
-lib/go/pkg/freebsd_arm64/go/build/constraint.a
-lib/go/pkg/freebsd_arm64/go/constant.a
-lib/go/pkg/freebsd_arm64/go/doc.a
-lib/go/pkg/freebsd_arm64/go/format.a
-lib/go/pkg/freebsd_arm64/go/importer.a
-lib/go/pkg/freebsd_arm64/go/internal/gccgoimporter.a
-lib/go/pkg/freebsd_arm64/go/internal/gcimporter.a
-lib/go/pkg/freebsd_arm64/go/internal/srcimporter.a
-lib/go/pkg/freebsd_arm64/go/internal/typeparams.a
-lib/go/pkg/freebsd_arm64/go/parser.a
-lib/go/pkg/freebsd_arm64/go/printer.a
-lib/go/pkg/freebsd_arm64/go/scanner.a
-lib/go/pkg/freebsd_arm64/go/token.a
-lib/go/pkg/freebsd_arm64/go/types.a
-lib/go/pkg/freebsd_arm64/hash.a
-lib/go/pkg/freebsd_arm64/hash/adler32.a
-lib/go/pkg/freebsd_arm64/hash/crc32.a
-lib/go/pkg/freebsd_arm64/hash/crc64.a
-lib/go/pkg/freebsd_arm64/hash/fnv.a
-lib/go/pkg/freebsd_arm64/hash/maphash.a
-lib/go/pkg/freebsd_arm64/html.a
-lib/go/pkg/freebsd_arm64/html/template.a
-lib/go/pkg/freebsd_arm64/image.a
-lib/go/pkg/freebsd_arm64/image/color.a
-lib/go/pkg/freebsd_arm64/image/color/palette.a
-lib/go/pkg/freebsd_arm64/image/draw.a
-lib/go/pkg/freebsd_arm64/image/gif.a
-lib/go/pkg/freebsd_arm64/image/internal/imageutil.a
-lib/go/pkg/freebsd_arm64/image/jpeg.a
-lib/go/pkg/freebsd_arm64/image/png.a
-lib/go/pkg/freebsd_arm64/index/suffixarray.a
-lib/go/pkg/freebsd_arm64/internal/abi.a
-lib/go/pkg/freebsd_arm64/internal/buildcfg.a
-lib/go/pkg/freebsd_arm64/internal/bytealg.a
-lib/go/pkg/freebsd_arm64/internal/cfg.a
-lib/go/pkg/freebsd_arm64/internal/cpu.a
-lib/go/pkg/freebsd_arm64/internal/execabs.a
-lib/go/pkg/freebsd_arm64/internal/fmtsort.a
-lib/go/pkg/freebsd_arm64/internal/fuzz.a
-lib/go/pkg/freebsd_arm64/internal/goarch.a
-lib/go/pkg/freebsd_arm64/internal/godebug.a
-lib/go/pkg/freebsd_arm64/internal/goexperiment.a
-lib/go/pkg/freebsd_arm64/internal/goos.a
-lib/go/pkg/freebsd_arm64/internal/goroot.a
-lib/go/pkg/freebsd_arm64/internal/goversion.a
-lib/go/pkg/freebsd_arm64/internal/intern.a
-lib/go/pkg/freebsd_arm64/internal/itoa.a
-lib/go/pkg/freebsd_arm64/internal/lazyregexp.a
-lib/go/pkg/freebsd_arm64/internal/lazytemplate.a
-lib/go/pkg/freebsd_arm64/internal/nettrace.a
-lib/go/pkg/freebsd_arm64/internal/obscuretestdata.a
-lib/go/pkg/freebsd_arm64/internal/oserror.a
-lib/go/pkg/freebsd_arm64/internal/poll.a
-lib/go/pkg/freebsd_arm64/internal/profile.a
-lib/go/pkg/freebsd_arm64/internal/race.a
-lib/go/pkg/freebsd_arm64/internal/reflectlite.a
-lib/go/pkg/freebsd_arm64/internal/singleflight.a
-lib/go/pkg/freebsd_arm64/internal/syscall/execenv.a
-lib/go/pkg/freebsd_arm64/internal/syscall/unix.a
-lib/go/pkg/freebsd_arm64/internal/sysinfo.a
-lib/go/pkg/freebsd_arm64/internal/testenv.a
-lib/go/pkg/freebsd_arm64/internal/testlog.a
-lib/go/pkg/freebsd_arm64/internal/trace.a
-lib/go/pkg/freebsd_arm64/internal/unsafeheader.a
-lib/go/pkg/freebsd_arm64/internal/xcoff.a
-lib/go/pkg/freebsd_arm64/io.a
-lib/go/pkg/freebsd_arm64/io/fs.a
-lib/go/pkg/freebsd_arm64/io/ioutil.a
-lib/go/pkg/freebsd_arm64/log.a
-lib/go/pkg/freebsd_arm64/log/syslog.a
-lib/go/pkg/freebsd_arm64/math.a
-lib/go/pkg/freebsd_arm64/math/big.a
-lib/go/pkg/freebsd_arm64/math/bits.a
-lib/go/pkg/freebsd_arm64/math/cmplx.a
-lib/go/pkg/freebsd_arm64/math/rand.a
-lib/go/pkg/freebsd_arm64/mime.a
-lib/go/pkg/freebsd_arm64/mime/multipart.a
-lib/go/pkg/freebsd_arm64/mime/quotedprintable.a
-lib/go/pkg/freebsd_arm64/net.a
-lib/go/pkg/freebsd_arm64/net/http.a
-lib/go/pkg/freebsd_arm64/net/http/cgi.a
-lib/go/pkg/freebsd_arm64/net/http/cookiejar.a
-lib/go/pkg/freebsd_arm64/net/http/fcgi.a
-lib/go/pkg/freebsd_arm64/net/http/httptest.a
-lib/go/pkg/freebsd_arm64/net/http/httptrace.a
-lib/go/pkg/freebsd_arm64/net/http/httputil.a
-lib/go/pkg/freebsd_arm64/net/http/internal.a
-lib/go/pkg/freebsd_arm64/net/http/internal/ascii.a
-lib/go/pkg/freebsd_arm64/net/http/internal/testcert.a
-lib/go/pkg/freebsd_arm64/net/http/pprof.a
-lib/go/pkg/freebsd_arm64/net/internal/socktest.a
-lib/go/pkg/freebsd_arm64/net/mail.a
-lib/go/pkg/freebsd_arm64/net/netip.a
-lib/go/pkg/freebsd_arm64/net/rpc.a
-lib/go/pkg/freebsd_arm64/net/rpc/jsonrpc.a
-lib/go/pkg/freebsd_arm64/net/smtp.a
-lib/go/pkg/freebsd_arm64/net/textproto.a
-lib/go/pkg/freebsd_arm64/net/url.a
-lib/go/pkg/freebsd_arm64/os.a
-lib/go/pkg/freebsd_arm64/os/exec.a
-lib/go/pkg/freebsd_arm64/os/exec/internal/fdtest.a
-lib/go/pkg/freebsd_arm64/os/signal.a
-lib/go/pkg/freebsd_arm64/os/signal/internal/pty.a
-lib/go/pkg/freebsd_arm64/os/user.a
-lib/go/pkg/freebsd_arm64/path.a
-lib/go/pkg/freebsd_arm64/path/filepath.a
-lib/go/pkg/freebsd_arm64/plugin.a
-lib/go/pkg/freebsd_arm64/reflect.a
-lib/go/pkg/freebsd_arm64/reflect/internal/example1.a
-lib/go/pkg/freebsd_arm64/reflect/internal/example2.a
-lib/go/pkg/freebsd_arm64/regexp.a
-lib/go/pkg/freebsd_arm64/regexp/syntax.a
-lib/go/pkg/freebsd_arm64/runtime.a
-lib/go/pkg/freebsd_arm64/runtime/cgo.a
-lib/go/pkg/freebsd_arm64/runtime/debug.a
-lib/go/pkg/freebsd_arm64/runtime/internal/atomic.a
-lib/go/pkg/freebsd_arm64/runtime/internal/math.a
-lib/go/pkg/freebsd_arm64/runtime/internal/sys.a
-lib/go/pkg/freebsd_arm64/runtime/metrics.a
-lib/go/pkg/freebsd_arm64/runtime/pprof.a
-lib/go/pkg/freebsd_arm64/runtime/race.a
-lib/go/pkg/freebsd_arm64/runtime/trace.a
-lib/go/pkg/freebsd_arm64/sort.a
-lib/go/pkg/freebsd_arm64/strconv.a
-lib/go/pkg/freebsd_arm64/strings.a
-lib/go/pkg/freebsd_arm64/sync.a
-lib/go/pkg/freebsd_arm64/sync/atomic.a
-lib/go/pkg/freebsd_arm64/syscall.a
-lib/go/pkg/freebsd_arm64/testing.a
-lib/go/pkg/freebsd_arm64/testing/fstest.a
-lib/go/pkg/freebsd_arm64/testing/internal/testdeps.a
-lib/go/pkg/freebsd_arm64/testing/iotest.a
-lib/go/pkg/freebsd_arm64/testing/quick.a
-lib/go/pkg/freebsd_arm64/text/scanner.a
-lib/go/pkg/freebsd_arm64/text/tabwriter.a
-lib/go/pkg/freebsd_arm64/text/template.a
-lib/go/pkg/freebsd_arm64/text/template/parse.a
-lib/go/pkg/freebsd_arm64/time.a
-lib/go/pkg/freebsd_arm64/time/tzdata.a
-lib/go/pkg/freebsd_arm64/unicode.a
-lib/go/pkg/freebsd_arm64/unicode/utf16.a
-lib/go/pkg/freebsd_arm64/unicode/utf8.a
-lib/go/pkg/freebsd_arm64/vendor/golang.org/x/crypto/chacha20.a
-lib/go/pkg/freebsd_arm64/vendor/golang.org/x/crypto/chacha20poly1305.a
-lib/go/pkg/freebsd_arm64/vendor/golang.org/x/crypto/cryptobyte.a
-lib/go/pkg/freebsd_arm64/vendor/golang.org/x/crypto/cryptobyte/asn1.a
-lib/go/pkg/freebsd_arm64/vendor/golang.org/x/crypto/curve25519.a
-lib/go/pkg/freebsd_arm64/vendor/golang.org/x/crypto/curve25519/internal/field.a
-lib/go/pkg/freebsd_arm64/vendor/golang.org/x/crypto/hkdf.a
-lib/go/pkg/freebsd_arm64/vendor/golang.org/x/crypto/internal/poly1305.a
-lib/go/pkg/freebsd_arm64/vendor/golang.org/x/crypto/internal/subtle.a
-lib/go/pkg/freebsd_arm64/vendor/golang.org/x/net/dns/dnsmessage.a
-lib/go/pkg/freebsd_arm64/vendor/golang.org/x/net/http/httpguts.a
-lib/go/pkg/freebsd_arm64/vendor/golang.org/x/net/http/httpproxy.a
-lib/go/pkg/freebsd_arm64/vendor/golang.org/x/net/http2/hpack.a
-lib/go/pkg/freebsd_arm64/vendor/golang.org/x/net/idna.a
-lib/go/pkg/freebsd_arm64/vendor/golang.org/x/net/nettest.a
-lib/go/pkg/freebsd_arm64/vendor/golang.org/x/net/route.a
-lib/go/pkg/freebsd_arm64/vendor/golang.org/x/sys/cpu.a
-lib/go/pkg/freebsd_arm64/vendor/golang.org/x/text/secure/bidirule.a
-lib/go/pkg/freebsd_arm64/vendor/golang.org/x/text/transform.a
-lib/go/pkg/freebsd_arm64/vendor/golang.org/x/text/unicode/bidi.a
-lib/go/pkg/freebsd_arm64/vendor/golang.org/x/text/unicode/norm.a
+lib/go/pkg/freebsd_amd64/archive/tar.a
+lib/go/pkg/freebsd_amd64/archive/zip.a
+lib/go/pkg/freebsd_amd64/bufio.a
+lib/go/pkg/freebsd_amd64/bytes.a
+lib/go/pkg/freebsd_amd64/compress/bzip2.a
+lib/go/pkg/freebsd_amd64/compress/flate.a
+lib/go/pkg/freebsd_amd64/compress/gzip.a
+lib/go/pkg/freebsd_amd64/compress/lzw.a
+lib/go/pkg/freebsd_amd64/compress/zlib.a
+lib/go/pkg/freebsd_amd64/container/heap.a
+lib/go/pkg/freebsd_amd64/container/list.a
+lib/go/pkg/freebsd_amd64/container/ring.a
+lib/go/pkg/freebsd_amd64/context.a
+lib/go/pkg/freebsd_amd64/crypto.a
+lib/go/pkg/freebsd_amd64/crypto/aes.a
+lib/go/pkg/freebsd_amd64/crypto/cipher.a
+lib/go/pkg/freebsd_amd64/crypto/des.a
+lib/go/pkg/freebsd_amd64/crypto/dsa.a
+lib/go/pkg/freebsd_amd64/crypto/ecdsa.a
+lib/go/pkg/freebsd_amd64/crypto/ed25519.a
+lib/go/pkg/freebsd_amd64/crypto/ed25519/internal/edwards25519.a
+lib/go/pkg/freebsd_amd64/crypto/ed25519/internal/edwards25519/field.a
+lib/go/pkg/freebsd_amd64/crypto/elliptic.a
+lib/go/pkg/freebsd_amd64/crypto/elliptic/internal/fiat.a
+lib/go/pkg/freebsd_amd64/crypto/elliptic/internal/nistec.a
+lib/go/pkg/freebsd_amd64/crypto/hmac.a
+lib/go/pkg/freebsd_amd64/crypto/internal/randutil.a
+lib/go/pkg/freebsd_amd64/crypto/internal/subtle.a
+lib/go/pkg/freebsd_amd64/crypto/md5.a
+lib/go/pkg/freebsd_amd64/crypto/rand.a
+lib/go/pkg/freebsd_amd64/crypto/rc4.a
+lib/go/pkg/freebsd_amd64/crypto/rsa.a
+lib/go/pkg/freebsd_amd64/crypto/sha1.a
+lib/go/pkg/freebsd_amd64/crypto/sha256.a
+lib/go/pkg/freebsd_amd64/crypto/sha512.a
+lib/go/pkg/freebsd_amd64/crypto/subtle.a
+lib/go/pkg/freebsd_amd64/crypto/tls.a
+lib/go/pkg/freebsd_amd64/crypto/x509.a
+lib/go/pkg/freebsd_amd64/crypto/x509/pkix.a
+lib/go/pkg/freebsd_amd64/database/sql.a
+lib/go/pkg/freebsd_amd64/database/sql/driver.a
+lib/go/pkg/freebsd_amd64/debug/buildinfo.a
+lib/go/pkg/freebsd_amd64/debug/dwarf.a
+lib/go/pkg/freebsd_amd64/debug/elf.a
+lib/go/pkg/freebsd_amd64/debug/gosym.a
+lib/go/pkg/freebsd_amd64/debug/macho.a
+lib/go/pkg/freebsd_amd64/debug/pe.a
+lib/go/pkg/freebsd_amd64/debug/plan9obj.a
+lib/go/pkg/freebsd_amd64/embed.a
+lib/go/pkg/freebsd_amd64/encoding.a
+lib/go/pkg/freebsd_amd64/encoding/ascii85.a
+lib/go/pkg/freebsd_amd64/encoding/asn1.a
+lib/go/pkg/freebsd_amd64/encoding/base32.a
+lib/go/pkg/freebsd_amd64/encoding/base64.a
+lib/go/pkg/freebsd_amd64/encoding/binary.a
+lib/go/pkg/freebsd_amd64/encoding/csv.a
+lib/go/pkg/freebsd_amd64/encoding/gob.a
+lib/go/pkg/freebsd_amd64/encoding/hex.a
+lib/go/pkg/freebsd_amd64/encoding/json.a
+lib/go/pkg/freebsd_amd64/encoding/pem.a
+lib/go/pkg/freebsd_amd64/encoding/xml.a
+lib/go/pkg/freebsd_amd64/errors.a
+lib/go/pkg/freebsd_amd64/expvar.a
+lib/go/pkg/freebsd_amd64/flag.a
+lib/go/pkg/freebsd_amd64/fmt.a
+lib/go/pkg/freebsd_amd64/go/ast.a
+lib/go/pkg/freebsd_amd64/go/build.a
+lib/go/pkg/freebsd_amd64/go/build/constraint.a
+lib/go/pkg/freebsd_amd64/go/constant.a
+lib/go/pkg/freebsd_amd64/go/doc.a
+lib/go/pkg/freebsd_amd64/go/format.a
+lib/go/pkg/freebsd_amd64/go/importer.a
+lib/go/pkg/freebsd_amd64/go/internal/gccgoimporter.a
+lib/go/pkg/freebsd_amd64/go/internal/gcimporter.a
+lib/go/pkg/freebsd_amd64/go/internal/srcimporter.a
+lib/go/pkg/freebsd_amd64/go/internal/typeparams.a
+lib/go/pkg/freebsd_amd64/go/parser.a
+lib/go/pkg/freebsd_amd64/go/printer.a
+lib/go/pkg/freebsd_amd64/go/scanner.a
+lib/go/pkg/freebsd_amd64/go/token.a
+lib/go/pkg/freebsd_amd64/go/types.a
+lib/go/pkg/freebsd_amd64/hash.a
+lib/go/pkg/freebsd_amd64/hash/adler32.a
+lib/go/pkg/freebsd_amd64/hash/crc32.a
+lib/go/pkg/freebsd_amd64/hash/crc64.a
+lib/go/pkg/freebsd_amd64/hash/fnv.a
+lib/go/pkg/freebsd_amd64/hash/maphash.a
+lib/go/pkg/freebsd_amd64/html.a
+lib/go/pkg/freebsd_amd64/html/template.a
+lib/go/pkg/freebsd_amd64/image.a
+lib/go/pkg/freebsd_amd64/image/color.a
+lib/go/pkg/freebsd_amd64/image/color/palette.a
+lib/go/pkg/freebsd_amd64/image/draw.a
+lib/go/pkg/freebsd_amd64/image/gif.a
+lib/go/pkg/freebsd_amd64/image/internal/imageutil.a
+lib/go/pkg/freebsd_amd64/image/jpeg.a
+lib/go/pkg/freebsd_amd64/image/png.a
+lib/go/pkg/freebsd_amd64/index/suffixarray.a
+lib/go/pkg/freebsd_amd64/internal/abi.a
+lib/go/pkg/freebsd_amd64/internal/buildcfg.a
+lib/go/pkg/freebsd_amd64/internal/bytealg.a
+lib/go/pkg/freebsd_amd64/internal/cfg.a
+lib/go/pkg/freebsd_amd64/internal/cpu.a
+lib/go/pkg/freebsd_amd64/internal/execabs.a
+lib/go/pkg/freebsd_amd64/internal/fmtsort.a
+lib/go/pkg/freebsd_amd64/internal/fuzz.a
+lib/go/pkg/freebsd_amd64/internal/goarch.a
+lib/go/pkg/freebsd_amd64/internal/godebug.a
+lib/go/pkg/freebsd_amd64/internal/goexperiment.a
+lib/go/pkg/freebsd_amd64/internal/goos.a
+lib/go/pkg/freebsd_amd64/internal/goroot.a
+lib/go/pkg/freebsd_amd64/internal/goversion.a
+lib/go/pkg/freebsd_amd64/internal/intern.a
+lib/go/pkg/freebsd_amd64/internal/itoa.a
+lib/go/pkg/freebsd_amd64/internal/lazyregexp.a
+lib/go/pkg/freebsd_amd64/internal/lazytemplate.a
+lib/go/pkg/freebsd_amd64/internal/nettrace.a
+lib/go/pkg/freebsd_amd64/internal/obscuretestdata.a
+lib/go/pkg/freebsd_amd64/internal/oserror.a
+lib/go/pkg/freebsd_amd64/internal/poll.a
+lib/go/pkg/freebsd_amd64/internal/profile.a
+lib/go/pkg/freebsd_amd64/internal/race.a
+lib/go/pkg/freebsd_amd64/internal/reflectlite.a
+lib/go/pkg/freebsd_amd64/internal/singleflight.a
+lib/go/pkg/freebsd_amd64/internal/syscall/execenv.a
+lib/go/pkg/freebsd_amd64/internal/syscall/unix.a
+lib/go/pkg/freebsd_amd64/internal/sysinfo.a
+lib/go/pkg/freebsd_amd64/internal/testenv.a
+lib/go/pkg/freebsd_amd64/internal/testlog.a
+lib/go/pkg/freebsd_amd64/internal/trace.a
+lib/go/pkg/freebsd_amd64/internal/unsafeheader.a
+lib/go/pkg/freebsd_amd64/internal/xcoff.a
+lib/go/pkg/freebsd_amd64/io.a
+lib/go/pkg/freebsd_amd64/io/fs.a
+lib/go/pkg/freebsd_amd64/io/ioutil.a
+lib/go/pkg/freebsd_amd64/log.a
+lib/go/pkg/freebsd_amd64/log/syslog.a
+lib/go/pkg/freebsd_amd64/math.a
+lib/go/pkg/freebsd_amd64/math/big.a
+lib/go/pkg/freebsd_amd64/math/bits.a
+lib/go/pkg/freebsd_amd64/math/cmplx.a
+lib/go/pkg/freebsd_amd64/math/rand.a
+lib/go/pkg/freebsd_amd64/mime.a
+lib/go/pkg/freebsd_amd64/mime/multipart.a
+lib/go/pkg/freebsd_amd64/mime/quotedprintable.a
+lib/go/pkg/freebsd_amd64/net.a
+lib/go/pkg/freebsd_amd64/net/http.a
+lib/go/pkg/freebsd_amd64/net/http/cgi.a
+lib/go/pkg/freebsd_amd64/net/http/cookiejar.a
+lib/go/pkg/freebsd_amd64/net/http/fcgi.a
+lib/go/pkg/freebsd_amd64/net/http/httptest.a
+lib/go/pkg/freebsd_amd64/net/http/httptrace.a
+lib/go/pkg/freebsd_amd64/net/http/httputil.a
+lib/go/pkg/freebsd_amd64/net/http/internal.a
+lib/go/pkg/freebsd_amd64/net/http/internal/ascii.a
+lib/go/pkg/freebsd_amd64/net/http/internal/testcert.a
+lib/go/pkg/freebsd_amd64/net/http/pprof.a
+lib/go/pkg/freebsd_amd64/net/internal/socktest.a
+lib/go/pkg/freebsd_amd64/net/mail.a
+lib/go/pkg/freebsd_amd64/net/netip.a
+lib/go/pkg/freebsd_amd64/net/rpc.a
+lib/go/pkg/freebsd_amd64/net/rpc/jsonrpc.a
+lib/go/pkg/freebsd_amd64/net/smtp.a
+lib/go/pkg/freebsd_amd64/net/textproto.a
+lib/go/pkg/freebsd_amd64/net/url.a
+lib/go/pkg/freebsd_amd64/os.a
+lib/go/pkg/freebsd_amd64/os/exec.a
+lib/go/pkg/freebsd_amd64/os/exec/internal/fdtest.a
+lib/go/pkg/freebsd_amd64/os/signal.a
+lib/go/pkg/freebsd_amd64/os/signal/internal/pty.a
+lib/go/pkg/freebsd_amd64/os/user.a
+lib/go/pkg/freebsd_amd64/path.a
+lib/go/pkg/freebsd_amd64/path/filepath.a
+lib/go/pkg/freebsd_amd64/plugin.a
+lib/go/pkg/freebsd_amd64/reflect.a
+lib/go/pkg/freebsd_amd64/reflect/internal/example1.a
+lib/go/pkg/freebsd_amd64/reflect/internal/example2.a
+lib/go/pkg/freebsd_amd64/regexp.a
+lib/go/pkg/freebsd_amd64/regexp/syntax.a
+lib/go/pkg/freebsd_amd64/runtime.a
+lib/go/pkg/freebsd_amd64/runtime/cgo.a
+lib/go/pkg/freebsd_amd64/runtime/debug.a
+lib/go/pkg/freebsd_amd64/runtime/internal/atomic.a
+lib/go/pkg/freebsd_amd64/runtime/internal/math.a
+lib/go/pkg/freebsd_amd64/runtime/internal/sys.a
+lib/go/pkg/freebsd_amd64/runtime/metrics.a
+lib/go/pkg/freebsd_amd64/runtime/pprof.a
+lib/go/pkg/freebsd_amd64/runtime/race.a
+lib/go/pkg/freebsd_amd64/runtime/trace.a
+lib/go/pkg/freebsd_amd64/sort.a
+lib/go/pkg/freebsd_amd64/strconv.a
+lib/go/pkg/freebsd_amd64/strings.a
+lib/go/pkg/freebsd_amd64/sync.a
+lib/go/pkg/freebsd_amd64/sync/atomic.a
+lib/go/pkg/freebsd_amd64/syscall.a
+lib/go/pkg/freebsd_amd64/testing.a
+lib/go/pkg/freebsd_amd64/testing/fstest.a
+lib/go/pkg/freebsd_amd64/testing/internal/testdeps.a
+lib/go/pkg/freebsd_amd64/testing/iotest.a
+lib/go/pkg/freebsd_amd64/testing/quick.a
+lib/go/pkg/freebsd_amd64/text/scanner.a
+lib/go/pkg/freebsd_amd64/text/tabwriter.a
+lib/go/pkg/freebsd_amd64/text/template.a
+lib/go/pkg/freebsd_amd64/text/template/parse.a
+lib/go/pkg/freebsd_amd64/time.a
+lib/go/pkg/freebsd_amd64/time/tzdata.a
+lib/go/pkg/freebsd_amd64/unicode.a
+lib/go/pkg/freebsd_amd64/unicode/utf16.a
+lib/go/pkg/freebsd_amd64/unicode/utf8.a
+lib/go/pkg/freebsd_amd64/vendor/golang.org/x/crypto/chacha20.a
+lib/go/pkg/freebsd_amd64/vendor/golang.org/x/crypto/chacha20poly1305.a
+lib/go/pkg/freebsd_amd64/vendor/golang.org/x/crypto/cryptobyte.a
+lib/go/pkg/freebsd_amd64/vendor/golang.org/x/crypto/cryptobyte/asn1.a
+lib/go/pkg/freebsd_amd64/vendor/golang.org/x/crypto/curve25519.a
+lib/go/pkg/freebsd_amd64/vendor/golang.org/x/crypto/curve25519/internal/field.a
+lib/go/pkg/freebsd_amd64/vendor/golang.org/x/crypto/hkdf.a
+lib/go/pkg/freebsd_amd64/vendor/golang.org/x/crypto/internal/poly1305.a
+lib/go/pkg/freebsd_amd64/vendor/golang.org/x/crypto/internal/subtle.a
+lib/go/pkg/freebsd_amd64/vendor/golang.org/x/net/dns/dnsmessage.a
+lib/go/pkg/freebsd_amd64/vendor/golang.org/x/net/http/httpguts.a
+lib/go/pkg/freebsd_amd64/vendor/golang.org/x/net/http/httpproxy.a
+lib/go/pkg/freebsd_amd64/vendor/golang.org/x/net/http2/hpack.a
+lib/go/pkg/freebsd_amd64/vendor/golang.org/x/net/idna.a
+lib/go/pkg/freebsd_amd64/vendor/golang.org/x/net/nettest.a
+lib/go/pkg/freebsd_amd64/vendor/golang.org/x/net/route.a
+lib/go/pkg/freebsd_amd64/vendor/golang.org/x/sys/cpu.a
+lib/go/pkg/freebsd_amd64/vendor/golang.org/x/text/secure/bidirule.a
+lib/go/pkg/freebsd_amd64/vendor/golang.org/x/text/transform.a
+lib/go/pkg/freebsd_amd64/vendor/golang.org/x/text/unicode/bidi.a
+lib/go/pkg/freebsd_amd64/vendor/golang.org/x/text/unicode/norm.a
 lib/go/pkg/include/asm_ppc64x.h
 lib/go/pkg/include/funcdata.h
 lib/go/pkg/include/textflag.h
-lib/go/pkg/tool/freebsd_arm64/addr2line
-lib/go/pkg/tool/freebsd_arm64/api
-lib/go/pkg/tool/freebsd_arm64/asm
-lib/go/pkg/tool/freebsd_arm64/buildid
-lib/go/pkg/tool/freebsd_arm64/cgo
-lib/go/pkg/tool/freebsd_arm64/compile
-lib/go/pkg/tool/freebsd_arm64/cover
-lib/go/pkg/tool/freebsd_arm64/dist
-lib/go/pkg/tool/freebsd_arm64/doc
-lib/go/pkg/tool/freebsd_arm64/fix
-lib/go/pkg/tool/freebsd_arm64/link
-lib/go/pkg/tool/freebsd_arm64/nm
-lib/go/pkg/tool/freebsd_arm64/objdump
-lib/go/pkg/tool/freebsd_arm64/pack
-lib/go/pkg/tool/freebsd_arm64/pprof
-lib/go/pkg/tool/freebsd_arm64/test2json
-lib/go/pkg/tool/freebsd_arm64/trace
-lib/go/pkg/tool/freebsd_arm64/vet
+lib/go/pkg/tool/freebsd_amd64/addr2line
+lib/go/pkg/tool/freebsd_amd64/api
+lib/go/pkg/tool/freebsd_amd64/asm
+lib/go/pkg/tool/freebsd_amd64/buildid
+lib/go/pkg/tool/freebsd_amd64/cgo
+lib/go/pkg/tool/freebsd_amd64/compile
+lib/go/pkg/tool/freebsd_amd64/cover
+lib/go/pkg/tool/freebsd_amd64/dist
+lib/go/pkg/tool/freebsd_amd64/doc
+lib/go/pkg/tool/freebsd_amd64/fix
+lib/go/pkg/tool/freebsd_amd64/link
+lib/go/pkg/tool/freebsd_amd64/nm
+lib/go/pkg/tool/freebsd_amd64/objdump
+lib/go/pkg/tool/freebsd_amd64/pack
+lib/go/pkg/tool/freebsd_amd64/pprof
+lib/go/pkg/tool/freebsd_amd64/test2json
+lib/go/pkg/tool/freebsd_amd64/trace
+lib/go/pkg/tool/freebsd_amd64/vet
 lib/go/README.md
 lib/go/SECURITY.md
 lib/go/src/all.bash
@@ -1646,6 +1649,8 @@ lib/go/src/cmd/compile/internal/types2/testdata/fixedbugs/issue51472.go2
 lib/go/src/cmd/compile/internal/types2/testdata/fixedbugs/issue51509.go
 lib/go/src/cmd/compile/internal/types2/testdata/fixedbugs/issue51578.go2
 lib/go/src/cmd/compile/internal/types2/testdata/fixedbugs/issue51593.go2
+lib/go/src/cmd/compile/internal/types2/testdata/fixedbugs/issue51607.go2
+lib/go/src/cmd/compile/internal/types2/testdata/fixedbugs/issue51658.go2
 lib/go/src/cmd/compile/internal/types2/testdata/fixedbugs/issue6977.src
 lib/go/src/cmd/compile/internal/types2/testdata/manual.go2
 lib/go/src/cmd/compile/internal/types2/testdata/spec/assignability.go2
@@ -2705,6 +2710,7 @@ lib/go/src/cmd/go/testdata/script/test_benchmark_fatal.txt
 lib/go/src/cmd/go/testdata/script/test_benchmark_labels.txt
 lib/go/src/cmd/go/testdata/script/test_benchmark_timeout.txt
 lib/go/src/cmd/go/testdata/script/test_build_failure.txt
+lib/go/src/cmd/go/testdata/script/test_buildvcs.txt
 lib/go/src/cmd/go/testdata/script/test_cache_inputs.txt
 lib/go/src/cmd/go/testdata/script/test_chatty_fail.txt
 lib/go/src/cmd/go/testdata/script/test_chatty_parallel_fail.txt
@@ -2860,6 +2866,7 @@ lib/go/src/cmd/go/testdata/script/work_use_deleted.txt
 lib/go/src/cmd/go/testdata/script/work_use_dot.txt
 lib/go/src/cmd/go/testdata/script/work_use_issue50958.txt
 lib/go/src/cmd/go/testdata/script/work_use_noargs.txt
+lib/go/src/cmd/go/testdata/script/work_use_only_dirs.txt
 lib/go/src/cmd/go/testdata/script/work_use.txt
 lib/go/src/cmd/go/testdata/script/work_vet.txt
 lib/go/src/cmd/go/testdata/script/work_why_download_graph.txt
@@ -5271,6 +5278,8 @@ lib/go/src/go/types/testdata/fixedbugs/issue51472.go2
 lib/go/src/go/types/testdata/fixedbugs/issue51509.go
 lib/go/src/go/types/testdata/fixedbugs/issue51578.go2
 lib/go/src/go/types/testdata/fixedbugs/issue51593.go2
+lib/go/src/go/types/testdata/fixedbugs/issue51658.go2
+lib/go/src/go/types/testdata/fixedbugs/issue52031.go
 lib/go/src/go/types/testdata/fixedbugs/issue6977.src
 lib/go/src/go/types/testdata/manual.go2
 lib/go/src/go/types/testdata/spec/assignability.go2
@@ -10547,6 +10556,7 @@ lib/go/test/fixedbugs/issue51437.go
 lib/go/test/fixedbugs/issue51531.go
 lib/go/test/fixedbugs/issue5162.go
 lib/go/test/fixedbugs/issue5172.go
+lib/go/test/fixedbugs/issue51839.go
 lib/go/test/fixedbugs/issue5231.go
 lib/go/test/fixedbugs/issue5244.go
 lib/go/test/fixedbugs/issue5259.dir/bug.go
@@ -11392,6 +11402,12 @@ lib/go/test/typeparam/issue51423.dir/b.go
 lib/go/test/typeparam/issue51423.go
 lib/go/test/typeparam/issue51522a.go
 lib/go/test/typeparam/issue51522b.go
+lib/go/test/typeparam/issue51733.go
+lib/go/test/typeparam/issue51765.go
+lib/go/test/typeparam/issue51836.dir/a.go
+lib/go/test/typeparam/issue51836.dir/aa.go
+lib/go/test/typeparam/issue51836.dir/p.go
+lib/go/test/typeparam/issue51836.go
 lib/go/test/typeparam/list.go
 lib/go/test/typeparam/list2.go
 lib/go/test/typeparam/listimp.dir/a.go
@@ -11420,6 +11436,7 @@ lib/go/test/typeparam/mdempsky/12.dir/a.go
 lib/go/test/typeparam/mdempsky/12.dir/main.go
 lib/go/test/typeparam/mdempsky/12.go
 lib/go/test/typeparam/mdempsky/13.go
+lib/go/test/typeparam/mdempsky/13b.go
 lib/go/test/typeparam/mdempsky/14.go
 lib/go/test/typeparam/mdempsky/15.go
 lib/go/test/typeparam/mdempsky/2.go
@@ -11629,6 +11646,8 @@ lib/go/VERSION
 @dir lib/go/misc/cgo/testplugin/testdata/method
 @dir lib/go/misc/cgo/testplugin/testdata/method2/p
 @dir lib/go/misc/cgo/testplugin/testdata/method2
+@dir lib/go/misc/cgo/testplugin/testdata/method3/p
+@dir lib/go/misc/cgo/testplugin/testdata/method3
 @dir lib/go/misc/cgo/testplugin/testdata/plugin1
 @dir lib/go/misc/cgo/testplugin/testdata/plugin2
 @dir lib/go/misc/cgo/testplugin/testdata/sub/plugin1
@@ -11693,78 +11712,78 @@ lib/go/VERSION
 @dir lib/go/misc/trace
 @dir lib/go/misc/wasm
 @dir lib/go/misc
-@dir lib/go/pkg/freebsd_arm64/archive
-@dir lib/go/pkg/freebsd_arm64/compress
-@dir lib/go/pkg/freebsd_arm64/container
-@dir lib/go/pkg/freebsd_arm64/crypto/ed25519/internal/edwards25519
-@dir lib/go/pkg/freebsd_arm64/crypto/ed25519/internal
-@dir lib/go/pkg/freebsd_arm64/crypto/ed25519
-@dir lib/go/pkg/freebsd_arm64/crypto/elliptic/internal
-@dir lib/go/pkg/freebsd_arm64/crypto/elliptic
-@dir lib/go/pkg/freebsd_arm64/crypto/internal
-@dir lib/go/pkg/freebsd_arm64/crypto/x509
-@dir lib/go/pkg/freebsd_arm64/crypto
-@dir lib/go/pkg/freebsd_arm64/database/sql
-@dir lib/go/pkg/freebsd_arm64/database
-@dir lib/go/pkg/freebsd_arm64/debug
-@dir lib/go/pkg/freebsd_arm64/encoding
-@dir lib/go/pkg/freebsd_arm64/go/build
-@dir lib/go/pkg/freebsd_arm64/go/internal
-@dir lib/go/pkg/freebsd_arm64/go
-@dir lib/go/pkg/freebsd_arm64/hash
-@dir lib/go/pkg/freebsd_arm64/html
-@dir lib/go/pkg/freebsd_arm64/image/color
-@dir lib/go/pkg/freebsd_arm64/image/internal
-@dir lib/go/pkg/freebsd_arm64/image
-@dir lib/go/pkg/freebsd_arm64/index
-@dir lib/go/pkg/freebsd_arm64/internal/syscall
-@dir lib/go/pkg/freebsd_arm64/internal
-@dir lib/go/pkg/freebsd_arm64/io
-@dir lib/go/pkg/freebsd_arm64/log
-@dir lib/go/pkg/freebsd_arm64/math
-@dir lib/go/pkg/freebsd_arm64/mime
-@dir lib/go/pkg/freebsd_arm64/net/http/internal
-@dir lib/go/pkg/freebsd_arm64/net/http
-@dir lib/go/pkg/freebsd_arm64/net/internal
-@dir lib/go/pkg/freebsd_arm64/net/rpc
-@dir lib/go/pkg/freebsd_arm64/net
-@dir lib/go/pkg/freebsd_arm64/os/exec/internal
-@dir lib/go/pkg/freebsd_arm64/os/exec
-@dir lib/go/pkg/freebsd_arm64/os/signal/internal
-@dir lib/go/pkg/freebsd_arm64/os/signal
-@dir lib/go/pkg/freebsd_arm64/os
-@dir lib/go/pkg/freebsd_arm64/path
-@dir lib/go/pkg/freebsd_arm64/reflect/internal
-@dir lib/go/pkg/freebsd_arm64/reflect
-@dir lib/go/pkg/freebsd_arm64/regexp
-@dir lib/go/pkg/freebsd_arm64/runtime/internal
-@dir lib/go/pkg/freebsd_arm64/runtime
-@dir lib/go/pkg/freebsd_arm64/sync
-@dir lib/go/pkg/freebsd_arm64/testing/internal
-@dir lib/go/pkg/freebsd_arm64/testing
-@dir lib/go/pkg/freebsd_arm64/text/template
-@dir lib/go/pkg/freebsd_arm64/text
-@dir lib/go/pkg/freebsd_arm64/time
-@dir lib/go/pkg/freebsd_arm64/unicode
-@dir lib/go/pkg/freebsd_arm64/vendor/golang.org/x/crypto/cryptobyte
-@dir lib/go/pkg/freebsd_arm64/vendor/golang.org/x/crypto/curve25519/internal
-@dir lib/go/pkg/freebsd_arm64/vendor/golang.org/x/crypto/curve25519
-@dir lib/go/pkg/freebsd_arm64/vendor/golang.org/x/crypto/internal
-@dir lib/go/pkg/freebsd_arm64/vendor/golang.org/x/crypto
-@dir lib/go/pkg/freebsd_arm64/vendor/golang.org/x/net/dns
-@dir lib/go/pkg/freebsd_arm64/vendor/golang.org/x/net/http
-@dir lib/go/pkg/freebsd_arm64/vendor/golang.org/x/net/http2
-@dir lib/go/pkg/freebsd_arm64/vendor/golang.org/x/net
-@dir lib/go/pkg/freebsd_arm64/vendor/golang.org/x/sys
-@dir lib/go/pkg/freebsd_arm64/vendor/golang.org/x/text/secure
-@dir lib/go/pkg/freebsd_arm64/vendor/golang.org/x/text/unicode
-@dir lib/go/pkg/freebsd_arm64/vendor/golang.org/x/text
-@dir lib/go/pkg/freebsd_arm64/vendor/golang.org/x
-@dir lib/go/pkg/freebsd_arm64/vendor/golang.org
-@dir lib/go/pkg/freebsd_arm64/vendor
-@dir lib/go/pkg/freebsd_arm64
+@dir lib/go/pkg/freebsd_amd64/archive
+@dir lib/go/pkg/freebsd_amd64/compress
+@dir lib/go/pkg/freebsd_amd64/container
+@dir lib/go/pkg/freebsd_amd64/crypto/ed25519/internal/edwards25519
+@dir lib/go/pkg/freebsd_amd64/crypto/ed25519/internal
+@dir lib/go/pkg/freebsd_amd64/crypto/ed25519
+@dir lib/go/pkg/freebsd_amd64/crypto/elliptic/internal
+@dir lib/go/pkg/freebsd_amd64/crypto/elliptic
+@dir lib/go/pkg/freebsd_amd64/crypto/internal
+@dir lib/go/pkg/freebsd_amd64/crypto/x509
+@dir lib/go/pkg/freebsd_amd64/crypto
+@dir lib/go/pkg/freebsd_amd64/database/sql
+@dir lib/go/pkg/freebsd_amd64/database
+@dir lib/go/pkg/freebsd_amd64/debug
+@dir lib/go/pkg/freebsd_amd64/encoding
+@dir lib/go/pkg/freebsd_amd64/go/build
+@dir lib/go/pkg/freebsd_amd64/go/internal
+@dir lib/go/pkg/freebsd_amd64/go
+@dir lib/go/pkg/freebsd_amd64/hash
+@dir lib/go/pkg/freebsd_amd64/html
+@dir lib/go/pkg/freebsd_amd64/image/color
+@dir lib/go/pkg/freebsd_amd64/image/internal
+@dir lib/go/pkg/freebsd_amd64/image
+@dir lib/go/pkg/freebsd_amd64/index
+@dir lib/go/pkg/freebsd_amd64/internal/syscall
+@dir lib/go/pkg/freebsd_amd64/internal
+@dir lib/go/pkg/freebsd_amd64/io
+@dir lib/go/pkg/freebsd_amd64/log
+@dir lib/go/pkg/freebsd_amd64/math
+@dir lib/go/pkg/freebsd_amd64/mime
+@dir lib/go/pkg/freebsd_amd64/net/http/internal
+@dir lib/go/pkg/freebsd_amd64/net/http
+@dir lib/go/pkg/freebsd_amd64/net/internal
+@dir lib/go/pkg/freebsd_amd64/net/rpc
+@dir lib/go/pkg/freebsd_amd64/net
+@dir lib/go/pkg/freebsd_amd64/os/exec/internal
+@dir lib/go/pkg/freebsd_amd64/os/exec
+@dir lib/go/pkg/freebsd_amd64/os/signal/internal
+@dir lib/go/pkg/freebsd_amd64/os/signal
+@dir lib/go/pkg/freebsd_amd64/os
+@dir lib/go/pkg/freebsd_amd64/path
+@dir lib/go/pkg/freebsd_amd64/reflect/internal
+@dir lib/go/pkg/freebsd_amd64/reflect
+@dir lib/go/pkg/freebsd_amd64/regexp
+@dir lib/go/pkg/freebsd_amd64/runtime/internal
+@dir lib/go/pkg/freebsd_amd64/runtime
+@dir lib/go/pkg/freebsd_amd64/sync
+@dir lib/go/pkg/freebsd_amd64/testing/internal
+@dir lib/go/pkg/freebsd_amd64/testing
+@dir lib/go/pkg/freebsd_amd64/text/template
+@dir lib/go/pkg/freebsd_amd64/text
+@dir lib/go/pkg/freebsd_amd64/time
+@dir lib/go/pkg/freebsd_amd64/unicode
+@dir lib/go/pkg/freebsd_amd64/vendor/golang.org/x/crypto/cryptobyte
+@dir lib/go/pkg/freebsd_amd64/vendor/golang.org/x/crypto/curve25519/internal
+@dir lib/go/pkg/freebsd_amd64/vendor/golang.org/x/crypto/curve25519
+@dir lib/go/pkg/freebsd_amd64/vendor/golang.org/x/crypto/internal
+@dir lib/go/pkg/freebsd_amd64/vendor/golang.org/x/crypto
+@dir lib/go/pkg/freebsd_amd64/vendor/golang.org/x/net/dns
+@dir lib/go/pkg/freebsd_amd64/vendor/golang.org/x/net/http
+@dir lib/go/pkg/freebsd_amd64/vendor/golang.org/x/net/http2
+@dir lib/go/pkg/freebsd_amd64/vendor/golang.org/x/net
+@dir lib/go/pkg/freebsd_amd64/vendor/golang.org/x/sys
+@dir lib/go/pkg/freebsd_amd64/vendor/golang.org/x/text/secure
+@dir lib/go/pkg/freebsd_amd64/vendor/golang.org/x/text/unicode
+@dir lib/go/pkg/freebsd_amd64/vendor/golang.org/x/text
+@dir lib/go/pkg/freebsd_amd64/vendor/golang.org/x
+@dir lib/go/pkg/freebsd_amd64/vendor/golang.org
+@dir lib/go/pkg/freebsd_amd64/vendor
+@dir lib/go/pkg/freebsd_amd64
 @dir lib/go/pkg/include
-@dir lib/go/pkg/tool/freebsd_arm64
+@dir lib/go/pkg/tool/freebsd_amd64
 @dir lib/go/pkg/tool
 @dir lib/go/pkg
 @dir lib/go/src/archive/tar/testdata
@@ -12813,6 +12832,7 @@ lib/go/VERSION
 @dir lib/go/test/typeparam/issue51250a.dir
 @dir lib/go/test/typeparam/issue51367.dir
 @dir lib/go/test/typeparam/issue51423.dir
+@dir lib/go/test/typeparam/issue51836.dir
 @dir lib/go/test/typeparam/listimp.dir
 @dir lib/go/test/typeparam/listimp2.dir
 @dir lib/go/test/typeparam/mapimp.dir
