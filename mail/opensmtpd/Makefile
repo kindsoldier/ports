@@ -2,7 +2,9 @@
 # $Id$
 #
 PORTNAME=	opensmtpd
-PORTVERSION=	5.9.2p1
+PORTVERSION=	6.8.0
+DISTVERSIONSUFFIX=	p2
+
 CATEGORIES=	mail
 #MASTER_SITES+=	http://www.opensmtpd.org/archives/
 MASTER_SITES+=	http://distfiles.pirateparty.in/ashish/
@@ -48,7 +50,7 @@ CONFIGURE_ARGS+= --without-openssl-header-check
 #CONFIGURE_ARGS+= --with-table-passwd
 #CONFIGURE_ARGS+= --with-table-postgres
 #CONFIGURE_ARGS+= --with-table-passwd
-#CONFIGURE_ARGS+=	--with-experimental-filter-dkim-signer
+#CONFIGURE_ARGS+= --with-experimental-filter-dkim-signer
 
 
 SUB_LIST+=	OWNER=${OWNER}
