@@ -1,2 +1,15 @@
 man/man8/nginx.8.gz
 sbin/nginx
+share/examples/nginx/50x.html
+share/examples/nginx/fastcgi_params
+share/examples/nginx/fastcgi.conf
+share/examples/nginx/index.html
+share/examples/nginx/koi-utf
+share/examples/nginx/koi-win
+share/examples/nginx/mime.types
+share/examples/nginx/nginx.conf
+share/examples/nginx/scgi_params
+share/examples/nginx/uwsgi_params
+share/examples/nginx/win-utf
+@dir share/examples/nginx
+@dir share/examples
