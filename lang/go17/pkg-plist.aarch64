@@ -254,6 +254,7 @@ lib/go/misc/cgo/testplugin/overlaydir_test.go
 lib/go/misc/cgo/testplugin/plugin_test.go
 lib/go/misc/cgo/testplugin/testdata/checkdwarf/main.go
 lib/go/misc/cgo/testplugin/testdata/common/common.go
+lib/go/misc/cgo/testplugin/testdata/forkexec/main.go
 lib/go/misc/cgo/testplugin/testdata/host/host.go
 lib/go/misc/cgo/testplugin/testdata/iface_a/a.go
 lib/go/misc/cgo/testplugin/testdata/iface_b/b.go
@@ -4025,6 +4026,7 @@ lib/go/src/crypto/x509/internal/macos/corefoundation.s
 lib/go/src/crypto/x509/internal/macos/security.go
 lib/go/src/crypto/x509/internal/macos/security.s
 lib/go/src/crypto/x509/name_constraints_test.go
+lib/go/src/crypto/x509/parser_test.go
 lib/go/src/crypto/x509/parser.go
 lib/go/src/crypto/x509/pem_decrypt_test.go
 lib/go/src/crypto/x509/pem_decrypt.go
@@ -6229,6 +6231,7 @@ lib/go/src/regexp/testdata/README
 lib/go/src/regexp/testdata/repetition.dat
 lib/go/src/regexp/testdata/testregex.c
 lib/go/src/run.bash
+lib/go/src/run.bash.bak
 lib/go/src/run.bat
 lib/go/src/run.rc
 lib/go/src/runtime/abi_test.go
@@ -9830,10 +9833,13 @@ lib/go/test/fixedbugs/issue4964.dir/b.go
 lib/go/test/fixedbugs/issue4964.go
 lib/go/test/fixedbugs/issue5002.go
 lib/go/test/fixedbugs/issue5056.go
+lib/go/test/fixedbugs/issue50671.go
+lib/go/test/fixedbugs/issue50854.go
 lib/go/test/fixedbugs/issue5089.go
 lib/go/test/fixedbugs/issue5105.dir/a.go
 lib/go/test/fixedbugs/issue5105.dir/b.go
 lib/go/test/fixedbugs/issue5105.go
+lib/go/test/fixedbugs/issue51101.go
 lib/go/test/fixedbugs/issue5125.dir/bug.go
 lib/go/test/fixedbugs/issue5125.dir/main.go
 lib/go/test/fixedbugs/issue5125.go
@@ -10499,6 +10505,7 @@ lib/go/VERSION
 @dir lib/go/misc/cgo/testplugin/altpath
 @dir lib/go/misc/cgo/testplugin/testdata/checkdwarf
 @dir lib/go/misc/cgo/testplugin/testdata/common
+@dir lib/go/misc/cgo/testplugin/testdata/forkexec
 @dir lib/go/misc/cgo/testplugin/testdata/host
 @dir lib/go/misc/cgo/testplugin/testdata/iface
 @dir lib/go/misc/cgo/testplugin/testdata/iface_a
