@@ -104,7 +104,7 @@ USES+=		gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+= --mandir=${PREFIX}/man
 
-CPPFLAGS+=	 -I${LOCALBASE}/include -I${LOCALBASE}/include/pixman
+CPPFLAGS+=	 -I${LOCALBASE}/include -I${LOCALBASE}/include/pixman -fcommon
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 CONFIGURE_ENV+= SHA1_LIB="-lcrypto" 

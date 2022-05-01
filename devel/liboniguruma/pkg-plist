@@ -1,0 +1,7 @@
+bin/onig-config
+include/oniggnu.h
+include/onigposix.h
+include/oniguruma.h
+lib/libonig.so
+lib/libonig.so.7
+lib/pkgconfig/oniguruma.pc

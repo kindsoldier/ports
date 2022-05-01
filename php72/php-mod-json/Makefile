@@ -55,8 +55,8 @@ post-install:
 	cd ${STAGEDIR}${PREFIX} && ${FIND} lib/php -type f >>  ${TMPPLIST}
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/php
 	cd ${STAGEDIR}${PREFIX} && ${FIND} include/php -type f >>  ${TMPPLIST}
-	cd ${STAGEDIR}${PREFIX} && ${FIND} -ds lib/php -type d | ${SED} -e 's,^,@dirrm ,' >>  ${TMPPLIST}
-	cd ${STAGEDIR}${PREFIX} && ${FIND} -ds include/php -type d | ${SED} -e 's,^,@dirrm ,' >>  ${TMPPLIST}
+	cd ${STAGEDIR}${PREFIX} && ${FIND} -ds lib/php -type d | ${SED} -e 's,^,@dir ,' >>  ${TMPPLIST}
+	cd ${STAGEDIR}${PREFIX} && ${FIND} -ds include/php -type d | ${SED} -e 's,^,@dir ,' >>  ${TMPPLIST}
 
 .include <bsd.port.mk>
 #EOF
