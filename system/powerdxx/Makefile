@@ -7,7 +7,7 @@ CATEGORIES=	sysutils
 MAINTAINER=	kami@FreeBSD.org
 COMMENT=	CPU clock speed/frequency daemon
 
-USES=		compiler:c++14-lang
+USES=		compiler:c++17-lang
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	lonkamikaze
@@ -16,6 +16,6 @@ GH_TUPLE=	lonkamikaze:powerdxx:43c0db7:powerdxx/gh-pages
 USE_LDCONFIG=	yes
 MAKE_ARGS=	DOCSDIR="${DOCSDIR}"
 
-CXXFLAGS+=	-Wno-error=sign-compare
+#CXXFLAGS+=	-Wno-error=sign-compare
 
 .include <bsd.port.mk>
