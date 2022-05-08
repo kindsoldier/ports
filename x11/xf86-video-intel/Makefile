@@ -54,9 +54,11 @@ USES+=		autoreconf gmake
 GNU_CONFIGURE=	yes
 USES+=		tar:bzip2
 
-CONFIGURE_ARGS+=	--disable-udev
-CONFIGURE_ARGS=	--with-default-accel=sna
+CONFIGURE_ARGS+= --disable-udev
+CONFIGURE_ARGS+= --with-default-accel=sna
 CONFIGURE_ARGS+= --mandir=${PREFIX}/man
+
+CFLAGS+=         -fno-common
 
 post-patch:
 	${REINPLACE_CMD} -e 's,pixman-1,pixman,g' ${WRKSRC}/configure.ac

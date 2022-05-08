@@ -2,7 +2,7 @@
 # $FreeBSD: head/security/p5-Crypt-OpenSSL-ECDSA/Makefile 427389 2016-11-29 18:46:21Z mat $
 
 PORTNAME=	Crypt-OpenSSL-ECDSA
-PORTVERSION=	0.08
+PORTVERSION=	0.10
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,7 @@ BUILD_DEPENDS=	p5-Crypt-OpenSSL-EC>=0.05:perl/p5-Crypt-OpenSSL-EC
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
-USE_PERL5=	5.18+ configure
+USE_PERL5=	configure
 CFLAGS+=	-I${OPENSSLINC}
 
 post-install:

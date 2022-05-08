@@ -1222,9 +1222,6 @@ etc/man.d/perl.conf
 %%PERL_LIB%%/pod/perl5281delta.pod
 %%PERL_LIB%%/pod/perl5282delta.pod
 %%PERL_LIB%%/pod/perl5300delta.pod
-%%PERL_LIB%%/pod/perl5301delta.pod
-%%PERL_LIB%%/pod/perl5302delta.pod
-%%PERL_LIB%%/pod/perl5303delta.pod
 %%PERL_LIB%%/pod/perl561delta.pod
 %%PERL_LIB%%/pod/perl56delta.pod
 %%PERL_LIB%%/pod/perl581delta.pod
@@ -2264,9 +2261,6 @@ etc/man.d/perl.conf
 %%MAN1%%/perl5281delta.1.gz
 %%MAN1%%/perl5282delta.1.gz
 %%MAN1%%/perl5300delta.1.gz
-%%MAN1%%/perl5301delta.1.gz
-%%MAN1%%/perl5302delta.1.gz
-%%MAN1%%/perl5303delta.1.gz
 %%MAN1%%/perl561delta.1.gz
 %%MAN1%%/perl56delta.1.gz
 %%MAN1%%/perl581delta.1.gz
@@ -2617,6 +2611,7 @@ etc/man.d/perl.conf
 @dir %%ARCH_LIB%%/Unicode/Collate
 @dir %%ARCH_LIB%%/Unicode
 @dir %%ARCH_LIB%%
+@dir %%MAN3%%
 @dir %%PERL_LIB%%/man
 @dir %%PERL_LIB%%/Math/BigFloat
 @dir %%PERL_LIB%%/Math/BigInt
@@ -2755,3 +2750,4 @@ etc/man.d/perl.conf
 @dir %%SITE_PERL%%/mach/sys
 @dir %%SITE_PERL%%/mach
 @dir %%SITE_PERL%%
+@dir lib/perl5

@@ -2,7 +2,7 @@
 # $FreeBSD: head/www/p5-Mojolicious/Makefile 433779 2017-02-10 00:13:51Z adamw $
 
 PORTNAME=	Mojolicious
-PORTVERSION=	7.94
+PORTVERSION=	9.25
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-

@@ -2,7 +2,7 @@
 # $FreeBSD: head/security/p5-Crypt-OpenSSL-CA/Makefile 427389 2016-11-29 18:46:21Z mat $
 
 PORTNAME=	Crypt-OpenSSL-CA
-PORTVERSION=	0.24
+PORTVERSION=	0.91
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-

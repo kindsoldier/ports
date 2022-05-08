@@ -2,7 +2,7 @@
 # $FreeBSD: head/www/p5-Mojolicious-Plugin-Authentication/Makefile 412351 2016-04-01 14:33:55Z mat $
 
 PORTNAME=	Mojolicious-Plugin-Authentication
-PORTVERSION=	1.32
+PORTVERSION=	1.37
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-

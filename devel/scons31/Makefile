@@ -13,7 +13,7 @@ COMMENT=	Build tool alternative to make
 RUN_DEPENDS=	gm4:text/gm4
 
 USES=		python:3.5+ shebangfix
-USE_PYTHON=	concurrent distutils
+USE_PYTHON=	concurrent distutils 
 
 NO_ARCH=	yes
 

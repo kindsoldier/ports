@@ -1,4 +1,3 @@
-info/autoconf-archive.info
 share/aclocal/ax_absolute_header.m4
 share/aclocal/ax_ac_append_to_file.m4
 share/aclocal/ax_ac_print_to_file.m4

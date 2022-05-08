@@ -2,7 +2,7 @@
 # $FreeBSD: head/devel/p5-Params-Util/Makefile 401663 2015-11-15 03:04:12Z sunpoet $
 
 PORTNAME=	Params-Util
-PORTVERSION=	1.07
+PORTVERSION=	1.102
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-

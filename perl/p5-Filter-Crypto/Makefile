@@ -2,7 +2,7 @@
 # $FreeBSD: head/security/p5-Filter-Crypto/Makefile 436247 2017-03-15 14:45:30Z mat $
 
 PORTNAME=	Filter-Crypto
-PORTVERSION=	2.07
+PORTVERSION=	2.09
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
