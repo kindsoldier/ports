@@ -2,7 +2,7 @@
 # $FreeBSD: head/lang/go/Makefile 470619 2018-05-22 14:32:09Z jlaffaye $
 
 PORTNAME=	go
-PORTVERSION=	1.17.8
+PORTVERSION=	1.17.9
 CATEGORIES=	lang
 MASTER_SITES=	https://golang.org/dl/
 MASTER_SITES+=	https://github.com/dmgk/go-bootstrap/releases/download/${BOOTSTRAP_TAG}/:bootstrap
@@ -13,7 +13,7 @@ DISTFILES+=     go-${OPSYS:tl}-${GOARCH}${GOARM}-${BOOTSTRAP_TAG}.tar.xz:bootstr
 .include <bsd.port.pre.mk>
 
 
-BOOTSTRAP_TAG=	go1.14
+BOOTSTRAP_TAG=	go1.17.9
 
 
 .if ${ARCH} == amd64

@@ -290,6 +290,9 @@ lib/go/misc/cgo/testplugin/testdata/method/plugin.go
 lib/go/misc/cgo/testplugin/testdata/method2/main.go
 lib/go/misc/cgo/testplugin/testdata/method2/p/p.go
 lib/go/misc/cgo/testplugin/testdata/method2/plugin.go
+lib/go/misc/cgo/testplugin/testdata/method3/main.go
+lib/go/misc/cgo/testplugin/testdata/method3/p/p.go
+lib/go/misc/cgo/testplugin/testdata/method3/plugin.go
 lib/go/misc/cgo/testplugin/testdata/plugin1/plugin1.go
 lib/go/misc/cgo/testplugin/testdata/plugin2/plugin2.go
 lib/go/misc/cgo/testplugin/testdata/sub/plugin1/plugin1.go
@@ -10527,6 +10530,8 @@ lib/go/VERSION
 @dir lib/go/misc/cgo/testplugin/testdata/method
 @dir lib/go/misc/cgo/testplugin/testdata/method2/p
 @dir lib/go/misc/cgo/testplugin/testdata/method2
+@dir lib/go/misc/cgo/testplugin/testdata/method3/p
+@dir lib/go/misc/cgo/testplugin/testdata/method3
 @dir lib/go/misc/cgo/testplugin/testdata/plugin1
 @dir lib/go/misc/cgo/testplugin/testdata/plugin2
 @dir lib/go/misc/cgo/testplugin/testdata/sub/plugin1

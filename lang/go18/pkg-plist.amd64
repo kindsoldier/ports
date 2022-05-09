@@ -300,6 +300,9 @@ lib/go/misc/cgo/testplugin/testdata/method/plugin.go
 lib/go/misc/cgo/testplugin/testdata/method2/main.go
 lib/go/misc/cgo/testplugin/testdata/method2/p/p.go
 lib/go/misc/cgo/testplugin/testdata/method2/plugin.go
+lib/go/misc/cgo/testplugin/testdata/method3/main.go
+lib/go/misc/cgo/testplugin/testdata/method3/p/p.go
+lib/go/misc/cgo/testplugin/testdata/method3/plugin.go
 lib/go/misc/cgo/testplugin/testdata/plugin1/plugin1.go
 lib/go/misc/cgo/testplugin/testdata/plugin2/plugin2.go
 lib/go/misc/cgo/testplugin/testdata/sub/plugin1/plugin1.go
@@ -1646,6 +1649,8 @@ lib/go/src/cmd/compile/internal/types2/testdata/fixedbugs/issue51472.go2
 lib/go/src/cmd/compile/internal/types2/testdata/fixedbugs/issue51509.go
 lib/go/src/cmd/compile/internal/types2/testdata/fixedbugs/issue51578.go2
 lib/go/src/cmd/compile/internal/types2/testdata/fixedbugs/issue51593.go2
+lib/go/src/cmd/compile/internal/types2/testdata/fixedbugs/issue51607.go2
+lib/go/src/cmd/compile/internal/types2/testdata/fixedbugs/issue51658.go2
 lib/go/src/cmd/compile/internal/types2/testdata/fixedbugs/issue6977.src
 lib/go/src/cmd/compile/internal/types2/testdata/manual.go2
 lib/go/src/cmd/compile/internal/types2/testdata/spec/assignability.go2
@@ -2705,6 +2710,7 @@ lib/go/src/cmd/go/testdata/script/test_benchmark_fatal.txt
 lib/go/src/cmd/go/testdata/script/test_benchmark_labels.txt
 lib/go/src/cmd/go/testdata/script/test_benchmark_timeout.txt
 lib/go/src/cmd/go/testdata/script/test_build_failure.txt
+lib/go/src/cmd/go/testdata/script/test_buildvcs.txt
 lib/go/src/cmd/go/testdata/script/test_cache_inputs.txt
 lib/go/src/cmd/go/testdata/script/test_chatty_fail.txt
 lib/go/src/cmd/go/testdata/script/test_chatty_parallel_fail.txt
@@ -2860,6 +2866,7 @@ lib/go/src/cmd/go/testdata/script/work_use_deleted.txt
 lib/go/src/cmd/go/testdata/script/work_use_dot.txt
 lib/go/src/cmd/go/testdata/script/work_use_issue50958.txt
 lib/go/src/cmd/go/testdata/script/work_use_noargs.txt
+lib/go/src/cmd/go/testdata/script/work_use_only_dirs.txt
 lib/go/src/cmd/go/testdata/script/work_use.txt
 lib/go/src/cmd/go/testdata/script/work_vet.txt
 lib/go/src/cmd/go/testdata/script/work_why_download_graph.txt
@@ -5271,6 +5278,8 @@ lib/go/src/go/types/testdata/fixedbugs/issue51472.go2
 lib/go/src/go/types/testdata/fixedbugs/issue51509.go
 lib/go/src/go/types/testdata/fixedbugs/issue51578.go2
 lib/go/src/go/types/testdata/fixedbugs/issue51593.go2
+lib/go/src/go/types/testdata/fixedbugs/issue51658.go2
+lib/go/src/go/types/testdata/fixedbugs/issue52031.go
 lib/go/src/go/types/testdata/fixedbugs/issue6977.src
 lib/go/src/go/types/testdata/manual.go2
 lib/go/src/go/types/testdata/spec/assignability.go2
@@ -10547,6 +10556,7 @@ lib/go/test/fixedbugs/issue51437.go
 lib/go/test/fixedbugs/issue51531.go
 lib/go/test/fixedbugs/issue5162.go
 lib/go/test/fixedbugs/issue5172.go
+lib/go/test/fixedbugs/issue51839.go
 lib/go/test/fixedbugs/issue5231.go
 lib/go/test/fixedbugs/issue5244.go
 lib/go/test/fixedbugs/issue5259.dir/bug.go
@@ -11392,6 +11402,12 @@ lib/go/test/typeparam/issue51423.dir/b.go
 lib/go/test/typeparam/issue51423.go
 lib/go/test/typeparam/issue51522a.go
 lib/go/test/typeparam/issue51522b.go
+lib/go/test/typeparam/issue51733.go
+lib/go/test/typeparam/issue51765.go
+lib/go/test/typeparam/issue51836.dir/a.go
+lib/go/test/typeparam/issue51836.dir/aa.go
+lib/go/test/typeparam/issue51836.dir/p.go
+lib/go/test/typeparam/issue51836.go
 lib/go/test/typeparam/list.go
 lib/go/test/typeparam/list2.go
 lib/go/test/typeparam/listimp.dir/a.go
@@ -11420,6 +11436,7 @@ lib/go/test/typeparam/mdempsky/12.dir/a.go
 lib/go/test/typeparam/mdempsky/12.dir/main.go
 lib/go/test/typeparam/mdempsky/12.go
 lib/go/test/typeparam/mdempsky/13.go
+lib/go/test/typeparam/mdempsky/13b.go
 lib/go/test/typeparam/mdempsky/14.go
 lib/go/test/typeparam/mdempsky/15.go
 lib/go/test/typeparam/mdempsky/2.go
@@ -11629,6 +11646,8 @@ lib/go/VERSION
 @dir lib/go/misc/cgo/testplugin/testdata/method
 @dir lib/go/misc/cgo/testplugin/testdata/method2/p
 @dir lib/go/misc/cgo/testplugin/testdata/method2
+@dir lib/go/misc/cgo/testplugin/testdata/method3/p
+@dir lib/go/misc/cgo/testplugin/testdata/method3
 @dir lib/go/misc/cgo/testplugin/testdata/plugin1
 @dir lib/go/misc/cgo/testplugin/testdata/plugin2
 @dir lib/go/misc/cgo/testplugin/testdata/sub/plugin1
@@ -12813,6 +12832,7 @@ lib/go/VERSION
 @dir lib/go/test/typeparam/issue51250a.dir
 @dir lib/go/test/typeparam/issue51367.dir
 @dir lib/go/test/typeparam/issue51423.dir
+@dir lib/go/test/typeparam/issue51836.dir
 @dir lib/go/test/typeparam/listimp.dir
 @dir lib/go/test/typeparam/listimp2.dir
 @dir lib/go/test/typeparam/mapimp.dir
