@@ -1651,6 +1651,7 @@ lib/go/src/cmd/compile/internal/types2/testdata/fixedbugs/issue51578.go2
 lib/go/src/cmd/compile/internal/types2/testdata/fixedbugs/issue51593.go2
 lib/go/src/cmd/compile/internal/types2/testdata/fixedbugs/issue51607.go2
 lib/go/src/cmd/compile/internal/types2/testdata/fixedbugs/issue51658.go2
+lib/go/src/cmd/compile/internal/types2/testdata/fixedbugs/issue52529.go2
 lib/go/src/cmd/compile/internal/types2/testdata/fixedbugs/issue6977.src
 lib/go/src/cmd/compile/internal/types2/testdata/manual.go2
 lib/go/src/cmd/compile/internal/types2/testdata/spec/assignability.go2
@@ -2194,6 +2195,7 @@ lib/go/src/cmd/go/testdata/script/badgo.txt
 lib/go/src/cmd/go/testdata/script/bug.txt
 lib/go/src/cmd/go/testdata/script/build_acl_windows.txt
 lib/go/src/cmd/go/testdata/script/build_arm.txt
+lib/go/src/cmd/go/testdata/script/build_buildvcs_auto.txt
 lib/go/src/cmd/go/testdata/script/build_cache_arch_mode.txt
 lib/go/src/cmd/go/testdata/script/build_cache_compile.txt
 lib/go/src/cmd/go/testdata/script/build_cache_disabled.txt
@@ -2618,6 +2620,7 @@ lib/go/src/cmd/go/testdata/script/mod_retract_rename.txt
 lib/go/src/cmd/go/testdata/script/mod_retract_replace.txt
 lib/go/src/cmd/go/testdata/script/mod_retract_versions.txt
 lib/go/src/cmd/go/testdata/script/mod_retract.txt
+lib/go/src/cmd/go/testdata/script/mod_run_issue52331.txt
 lib/go/src/cmd/go/testdata/script/mod_run_nonmain.txt
 lib/go/src/cmd/go/testdata/script/mod_run_path.txt
 lib/go/src/cmd/go/testdata/script/mod_run_pkg_version.txt
@@ -5280,6 +5283,7 @@ lib/go/src/go/types/testdata/fixedbugs/issue51578.go2
 lib/go/src/go/types/testdata/fixedbugs/issue51593.go2
 lib/go/src/go/types/testdata/fixedbugs/issue51658.go2
 lib/go/src/go/types/testdata/fixedbugs/issue52031.go
+lib/go/src/go/types/testdata/fixedbugs/issue52529.go2
 lib/go/src/go/types/testdata/fixedbugs/issue6977.src
 lib/go/src/go/types/testdata/manual.go2
 lib/go/src/go/types/testdata/spec/assignability.go2
@@ -7084,8 +7088,8 @@ lib/go/src/runtime/example_test.go
 lib/go/src/runtime/export_aix_test.go
 lib/go/src/runtime/export_arm_test.go
 lib/go/src/runtime/export_darwin_test.go
-lib/go/src/runtime/export_debug_regabiargs_off_test.go
-lib/go/src/runtime/export_debug_regabiargs_on_test.go
+lib/go/src/runtime/export_debug_amd64_test.go
+lib/go/src/runtime/export_debug_arm64_test.go
 lib/go/src/runtime/export_debug_test.go
 lib/go/src/runtime/export_debuglog_test.go
 lib/go/src/runtime/export_linux_test.go
@@ -10558,6 +10562,7 @@ lib/go/test/fixedbugs/issue5162.go
 lib/go/test/fixedbugs/issue5172.go
 lib/go/test/fixedbugs/issue51839.go
 lib/go/test/fixedbugs/issue5231.go
+lib/go/test/fixedbugs/issue52438.go
 lib/go/test/fixedbugs/issue5244.go
 lib/go/test/fixedbugs/issue5259.dir/bug.go
 lib/go/test/fixedbugs/issue5259.dir/main.go
@@ -10565,6 +10570,7 @@ lib/go/test/fixedbugs/issue5259.go
 lib/go/test/fixedbugs/issue5260.dir/a.go
 lib/go/test/fixedbugs/issue5260.dir/b.go
 lib/go/test/fixedbugs/issue5260.go
+lib/go/test/fixedbugs/issue52612.go
 lib/go/test/fixedbugs/issue5291.dir/pkg1.go
 lib/go/test/fixedbugs/issue5291.dir/prog.go
 lib/go/test/fixedbugs/issue5291.go
@@ -11402,12 +11408,18 @@ lib/go/test/typeparam/issue51423.dir/b.go
 lib/go/test/typeparam/issue51423.go
 lib/go/test/typeparam/issue51522a.go
 lib/go/test/typeparam/issue51522b.go
+lib/go/test/typeparam/issue51700.go
 lib/go/test/typeparam/issue51733.go
 lib/go/test/typeparam/issue51765.go
 lib/go/test/typeparam/issue51836.dir/a.go
 lib/go/test/typeparam/issue51836.dir/aa.go
 lib/go/test/typeparam/issue51836.dir/p.go
 lib/go/test/typeparam/issue51836.go
+lib/go/test/typeparam/issue52026.go
+lib/go/test/typeparam/issue52117.dir/a.go
+lib/go/test/typeparam/issue52117.dir/b.go
+lib/go/test/typeparam/issue52117.go
+lib/go/test/typeparam/issue52228.go
 lib/go/test/typeparam/list.go
 lib/go/test/typeparam/list2.go
 lib/go/test/typeparam/listimp.dir/a.go
@@ -12833,6 +12845,7 @@ lib/go/VERSION
 @dir lib/go/test/typeparam/issue51367.dir
 @dir lib/go/test/typeparam/issue51423.dir
 @dir lib/go/test/typeparam/issue51836.dir
+@dir lib/go/test/typeparam/issue52117.dir
 @dir lib/go/test/typeparam/listimp.dir
 @dir lib/go/test/typeparam/listimp2.dir
 @dir lib/go/test/typeparam/mapimp.dir
