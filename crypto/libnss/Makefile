@@ -2,7 +2,7 @@
 # $FreeBSD: head/security/nss/Makefile 439231 2017-04-23 16:11:22Z jbeich $
 
 PORTNAME=	nss
-PORTVERSION=	3.47.1
+PORTVERSION=	3.78
 CATEGORIES=	security
 MASTER_SITES=	MOZILLA/security/${PORTNAME}/releases/${DISTNAME:tu:C/[-.]/_/g}_RTM/src
 PKGNAMEPREFIX=  lib
@@ -69,9 +69,15 @@ INSTALL_BINS+=	vfyserv
 MAKE_ENV+=	BUILD_OPT=1
 BINS=		${DIST}/${OPSYS}${OSREL}_OPT.OBJ
 
+#.if ${OPSYS} == FreeBSD && ${ARCH} == amd64
+#CC+=	-B${LOCALBASE}/bin
+#.endif
+
 .if ${OPSYS} == FreeBSD && ${ARCH} == amd64
+USE_BINUTILS=	# intel-gcm.s
 CC+=	-B${LOCALBASE}/bin
 .endif
+
 
 check regression-test test:
 	cd ${WRKSRC}/tests;	\

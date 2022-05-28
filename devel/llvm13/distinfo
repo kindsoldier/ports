@@ -1,0 +1,9 @@
+TIMESTAMP = 1653156614
+SHA256 (llvm-project-13.0.1.src.tar.xz) = 326335a830f2e32d06d0a36393b5455d17dc73e0bd1211065227ee014f92cbf8
+SIZE (llvm-project-13.0.1.src.tar.xz) = 97584928
+SHA256 (clang-13.0.1.src.tar.xz) = 787a9e2d99f5c8720aa1773e4be009461cd30d3bd40fdd24591e473467c917c9
+SIZE (clang-13.0.1.src.tar.xz) = 17847584
+SHA256 (clang-tools-extra-13.0.1.src.tar.xz) = cc2bc8598848513fa2257a270083e986fd61048347eccf1d801926ea709392d0
+SIZE (clang-tools-extra-13.0.1.src.tar.xz) = 2740348
+SHA256 (lld-13.0.1.src.tar.xz) = 666af745e8bf7b680533b4d18b7a31dc7cab575b1e6e4d261922bbafd9644cfb
+SIZE (lld-13.0.1.src.tar.xz) = 1473868

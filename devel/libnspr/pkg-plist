@@ -89,4 +89,3 @@ share/aclocal/nspr.m4
 @dir include/nspr/obsolete
 @dir include/nspr/private
 @dir include/nspr
-@dir share/aclocal

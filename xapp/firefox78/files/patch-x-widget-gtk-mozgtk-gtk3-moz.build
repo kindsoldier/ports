@@ -1,0 +1,12 @@
+--- ./widget/gtk/mozgtk/gtk3/moz.build.orig	2021-09-28 12:05:02.000000000 +0200
++++ ./widget/gtk/mozgtk/gtk3/moz.build	2022-05-28 12:18:46.798333000 +0200
+@@ -32,7 +32,7 @@
+ OS_LIBS += [f for f in CONFIG['MOZ_GTK3_LIBS'] if f.startswith('-L')]
+ OS_LIBS += no_as_needed
+ OS_LIBS += [
+-    'gtk-3',
+-    'gdk-3',
++    'gtk3',
++    'gdk3',
+ ]
+ OS_LIBS += as_needed

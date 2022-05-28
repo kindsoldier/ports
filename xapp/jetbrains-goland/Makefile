@@ -1,7 +1,7 @@
 # $FreeBSD: head/devel/jetbrains-goland/Makefile 531401 2020-04-11 06:10:11Z tcberner $
 
 PORTNAME=	goland
-PORTVERSION=	2020.1
+PORTVERSION=	2022.1.1
 CATEGORIES=	devel java
 MASTER_SITES=	https://download-cf.jetbrains.com/go/
 PKGNAMEPREFIX=	jetbrains-
@@ -18,7 +18,7 @@ USES=		python:run shebangfix
 USE_JAVA=	yes
 JAVA_VERSION=	11+
 
-SHEBANG_FILES=	bin/printenv.py bin/restart.py
+SHEBANG_FILES=	bin/restart.py
 
 NO_ARCH=	yes
 NO_BUILD=	yes
