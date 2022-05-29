@@ -2,7 +2,7 @@
 # $Id$
 #
 PORTNAME=	perl
-PORTVERSION=	5.34.1
+PORTVERSION=	5.36.0
 CATEGORIES=	lang devel perl5
 MASTER_SITES+=	CPAN
 MASTER_SITES+= ${MASTER_SITE_LOCAL:S/$/:local/}
@@ -13,13 +13,12 @@ DIST_SUBDIR=	perl
 MAINTAINER=	onborodin@gmail.com
 COMMENT=	Practical Extraction and Report Language
 
-CONFLICTS=	perl-5.6.* perl-5.8.* perl-threaded-5.8.* perl-5.10.* perl-threaded-5.10.*
-
-USES+=		tar:xz 
+USES+=		tar:xz
 
 
 PERL_VERSION=	${PORTVERSION:R}
 PERL_ARCH=	mach
+LIB_PERL=       libperl${PORTVERSION:R:R}
 
 MANDIRS+= ${PREFIX}/lib/perl5/${PERL_VERSION}/man/man3/
 
@@ -28,7 +27,6 @@ _ARCH_LIB_REL=${_PERL_LIB_REL}/${PERL_ARCH}
 
 MAN1_REL= man/man1
 MAN3_REL= ${_PERL_LIB_REL}/man/man3
-
 SITE_PERL_REL=	lib/perl5/site_perl
 SITE_ARCH_REL=	${SITE_PERL_REL}/${PERL_ARCH}
 SITE_PERL=	${PREFIX}/${SITE_PERL_REL}
@@ -39,41 +37,39 @@ SITE_MAN3=	${PREFIX}/${SITE_MAN3_REL}
 SITE_MAN1=	${PREFIX}/${SITE_MAN1_REL}
 
 CONFIGURE_ENV+=	UNAME_v="$$(uname -v | sed 'y/=/ /')"
-
 HAS_CONFIGURE=	yes
+
 CONFIGURE_SCRIPT= Configure
 CONFIGURE_ARGS= -sde -Dprefix=${PREFIX} \
-           -Darchlib=${PREFIX}/${_ARCH_LIB_REL} \
-           -Dprivlib=${PREFIX}/${_PERL_LIB_REL} \
-           -Dman3dir=${PREFIX}/${MAN3_REL} \
-           -Dman1dir=${PREFIX}/${MAN1_REL} \
-           -Dsitearch=${SITE_ARCH} \
-           -Dsitelib=${SITE_PERL} \
-           -Dsiteman1dir=${SITE_MAN1} \
-           -Dsiteman3dir=${SITE_MAN3} \
-           -Dscriptdir=${PREFIX}/bin \
-           -Ui_malloc \
-           -Ui_iconv \
-           -Uinstallusrbinperl \
-           -Dcc="${CC}" \
-           -Duseshrplib \
-           -Dusenm=n \
-           -Doptimize="${CFLAGS}" \
-           -Dusemymalloc=n \
-           -Dusethreads=y \
-           -Ui_gdbm \
-           -Duse64bitint \
-           -Dinc_version_list=none \
-           -Accflags='-DUSE_THREAD_SAFE_LOCALE' \
-           -Dinc_version_list=none \
-        -Ddefault_inc_excludes_dot=n
+        -Darchlib=${PREFIX}/${_ARCH_LIB_REL} \
+        -Dprivlib=${PREFIX}/${_PERL_LIB_REL} \
+        -Dman3dir=${PREFIX}/${MAN3_REL} \
+        -Dman1dir=${PREFIX}/${MAN1_REL} \
+        -Dsitearch=${SITE_ARCH} \
+        -Dsitelib=${SITE_PERL} \
+        -Dsiteman1dir=${SITE_MAN1} \
+        -Dsiteman3dir=${SITE_MAN3} \
+        -Dscriptdir=${PREFIX}/bin \
+        -Ui_malloc \
+        -Ui_iconv \
+        -Uinstallusrbinperl \
+        -Dcc="${CC}" \
+        -Duseshrplib \
+        -Dinc_version_list=none \
+        -Dusenm=n \
+        -Doptimize="${CFLAGS}" \
+        -Dusemymalloc=n \
+        -Dusethreads=y \
+        -Ui_gdbm \
+        -Duse64bitint \
+        -Dinc_version_list=none \
+        -Ddefault_inc_excludes_dot=n \
+        -Dusemultiplicity=y \
 
-#           -Dusemultiplicity=y \
 
-#CONFIGURE_ARGS+= \
-#	-Alddlflags='-L${WRKSRC} -L${PREFIX}/${_ARCH_LIB_REL}/CORE' \
-#	-Dshrpldflags='-L${WRKSRC} -L${PREFIX}/${_ARCH_LIB_REL}/CORE'
-
+CONFIGURE_ARGS+= \
+	-Alddlflags='-L${WRKSRC} -L${PREFIX}/${_ARCH_LIB_REL}/CORE' \
+	-Dshrpldflags='-L${WRKSRC} -L${PREFIX}/${_ARCH_LIB_REL}/CORE'
 
 LOCALE_CLEANUP+= LANG=""
 LOCALE_CLEANUP+= LC_ALL=""
@@ -114,16 +110,6 @@ SUB_LIST+= PORTNAME=${PORTNAME}${PKGNAMESUFFIX}
 SUB_LIST+= ${PLIST_SUB}
 SUB_FILES+= perl-man.conf
 
-#post-extract:
-#	${LN} -s libperl.so.${PERL_VERSION} ${WRKSRC}/libperl.so
-#	${LN} -s libperl.so.${PERL_VERSION} ${WRKSRC}/libperl.so.${PERL_VER}
-
-post-patch:
-	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
-		${WRKSRC}/Configure ${WRKSRC}/hints/freebsd.sh
-#	${REINPLACE_CMD} -e '/do_installprivlib = 0 if .versiononly/d; \
-#		/^if.*nopods.*versiononly || /s/.*/if (1) {/' \
-#		${WRKSRC}/installperl
 
 post-install:
 	${RM} -f ${STAGEDIR}/${PREFIX}/bin/perl${PERL_VERSION}
@@ -132,7 +118,7 @@ post-install:
 	${MKDIR} ${STAGEDIR}/${PREFIX}/${SITE_ARCH_REL}
 	cd /usr/include && LD_LIBRARY_PATH=${STAGEDIR}${PREFIX}/${_ARCH_LIB_REL}:${WRKSRC} \
 	PERL5LIB=${STAGEDIR}${PREFIX}/${_ARCH_LIB_REL}:${STAGEDIR}${PREFIX}/${_PERL_LIB_REL}  \
-               ${WRKSRC}/perl ${STAGEDIR}/${PREFIX}/bin/h2ph -d \
+	    ${WRKSRC}/perl ${STAGEDIR}/${PREFIX}/bin/h2ph -d \
 	    ${STAGEDIR}/${PREFIX}/${SITE_ARCH_REL} *.h machine/*.h sys/*.h
 	cd ${STAGEDIR}/${PREFIX} && ${FIND} ${SITE_ARCH_REL} -name '*.ph' >> ${TMPPLIST}
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/man.d

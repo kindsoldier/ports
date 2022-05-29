@@ -9,6 +9,7 @@ bin/json_pp
 bin/libnetcfg
 bin/perl
 bin/perl5
+bin/perl5.36.0
 bin/perlbug
 bin/perldoc
 bin/perlivp
@@ -20,13 +21,13 @@ bin/pod2man
 bin/pod2text
 bin/pod2usage
 bin/podchecker
-bin/podselect
 bin/prove
 bin/ptar
 bin/ptardiff
 bin/ptargrep
 bin/shasum
 bin/splain
+bin/streamzip
 bin/xsubpp
 bin/zipdetails
 etc/man.d/perl.conf
@@ -56,10 +57,12 @@ etc/man.d/perl.conf
 %%PERL_LIB%%/B/Op_private.pm
 %%PERL_LIB%%/base.pm
 %%PERL_LIB%%/Benchmark.pm
+%%PERL_LIB%%/bigfloat.pm
 %%PERL_LIB%%/bigint.pm
 %%PERL_LIB%%/bignum.pm
 %%PERL_LIB%%/bigrat.pm
 %%PERL_LIB%%/blib.pm
+%%PERL_LIB%%/builtin.pm
 %%PERL_LIB%%/bytes_heavy.pl
 %%PERL_LIB%%/bytes.pm
 %%PERL_LIB%%/Carp.pm
@@ -201,6 +204,7 @@ etc/man.d/perl.conf
 %%PERL_LIB%%/ExtUtils/MM_MacOS.pm
 %%PERL_LIB%%/ExtUtils/MM_NW5.pm
 %%PERL_LIB%%/ExtUtils/MM_OS2.pm
+%%PERL_LIB%%/ExtUtils/MM_OS390.pm
 %%PERL_LIB%%/ExtUtils/MM_QNX.pm
 %%PERL_LIB%%/ExtUtils/MM_Unix.pm
 %%PERL_LIB%%/ExtUtils/MM_UWIN.pm
@@ -217,6 +221,7 @@ etc/man.d/perl.conf
 %%PERL_LIB%%/ExtUtils/ParseXS/CountLines.pm
 %%PERL_LIB%%/ExtUtils/ParseXS/Eval.pm
 %%PERL_LIB%%/ExtUtils/ParseXS/Utilities.pm
+%%PERL_LIB%%/ExtUtils/PL2Bat.pm
 %%PERL_LIB%%/ExtUtils/testlib.pm
 %%PERL_LIB%%/ExtUtils/typemap
 %%PERL_LIB%%/ExtUtils/Typemaps.pm
@@ -343,7 +348,6 @@ etc/man.d/perl.conf
 %%ARCH_LIB%%/auto/Sys/Syslog/Syslog.so
 %%ARCH_LIB%%/auto/threads/shared/shared.so
 %%ARCH_LIB%%/auto/threads/threads.so
-%%ARCH_LIB%%/auto/Tie/Hash/NamedCapture/NamedCapture.so
 %%ARCH_LIB%%/auto/Time/HiRes/HiRes.so
 %%ARCH_LIB%%/auto/Time/Piece/Piece.so
 %%ARCH_LIB%%/auto/Unicode/Collate/Collate.so
@@ -366,7 +370,6 @@ etc/man.d/perl.conf
 %%ARCH_LIB%%/CORE/cop.h
 %%ARCH_LIB%%/CORE/cv.h
 %%ARCH_LIB%%/CORE/dosish.h
-%%ARCH_LIB%%/CORE/dquote_inline.h
 %%ARCH_LIB%%/CORE/ebcdic_tables.h
 %%ARCH_LIB%%/CORE/embed.h
 %%ARCH_LIB%%/CORE/embedvar.h
@@ -406,6 +409,7 @@ etc/man.d/perl.conf
 %%ARCH_LIB%%/CORE/patchlevel.h
 %%ARCH_LIB%%/CORE/perl_inc_macro.h
 %%ARCH_LIB%%/CORE/perl_langinfo.h
+%%ARCH_LIB%%/CORE/perl_siphash.h
 %%ARCH_LIB%%/CORE/perl.h
 %%ARCH_LIB%%/CORE/perlapi.h
 %%ARCH_LIB%%/CORE/perlio.h
@@ -423,7 +427,7 @@ etc/man.d/perl.conf
 %%ARCH_LIB%%/CORE/regnodes.h
 %%ARCH_LIB%%/CORE/sbox32_hash.h
 %%ARCH_LIB%%/CORE/scope.h
-%%ARCH_LIB%%/CORE/stadtx_hash.h
+%%ARCH_LIB%%/CORE/sv_inline.h
 %%ARCH_LIB%%/CORE/sv.h
 %%ARCH_LIB%%/CORE/thread.h
 %%ARCH_LIB%%/CORE/time64_config.h
@@ -533,7 +537,6 @@ etc/man.d/perl.conf
 %%ARCH_LIB%%/Sys/Syslog.pm
 %%ARCH_LIB%%/threads.pm
 %%ARCH_LIB%%/threads/shared.pm
-%%ARCH_LIB%%/Tie/Hash/NamedCapture.pm
 %%ARCH_LIB%%/Time/HiRes.pm
 %%ARCH_LIB%%/Time/Piece.pm
 %%ARCH_LIB%%/Time/Seconds.pm
@@ -570,10 +573,12 @@ etc/man.d/perl.conf
 %%MAN3%%/B.3.gz
 %%MAN3%%/base.3.gz
 %%MAN3%%/Benchmark.3.gz
+%%MAN3%%/bigfloat.3.gz
 %%MAN3%%/bigint.3.gz
 %%MAN3%%/bignum.3.gz
 %%MAN3%%/bigrat.3.gz
 %%MAN3%%/blib.3.gz
+%%MAN3%%/builtin.3.gz
 %%MAN3%%/bytes.3.gz
 %%MAN3%%/Carp.3.gz
 %%MAN3%%/charnames.3.gz
@@ -701,6 +706,7 @@ etc/man.d/perl.conf
 %%MAN3%%/ExtUtils::MM_MacOS.3.gz
 %%MAN3%%/ExtUtils::MM_NW5.3.gz
 %%MAN3%%/ExtUtils::MM_OS2.3.gz
+%%MAN3%%/ExtUtils::MM_OS390.3.gz
 %%MAN3%%/ExtUtils::MM_QNX.3.gz
 %%MAN3%%/ExtUtils::MM_Unix.3.gz
 %%MAN3%%/ExtUtils::MM_UWIN.3.gz
@@ -715,13 +721,13 @@ etc/man.d/perl.conf
 %%MAN3%%/ExtUtils::ParseXS::Eval.3.gz
 %%MAN3%%/ExtUtils::ParseXS::Utilities.3.gz
 %%MAN3%%/ExtUtils::ParseXS.3.gz
+%%MAN3%%/ExtUtils::PL2Bat.3.gz
 %%MAN3%%/ExtUtils::testlib.3.gz
 %%MAN3%%/ExtUtils::Typemaps::Cmd.3.gz
 %%MAN3%%/ExtUtils::Typemaps::InputMap.3.gz
 %%MAN3%%/ExtUtils::Typemaps::OutputMap.3.gz
 %%MAN3%%/ExtUtils::Typemaps::Type.3.gz
 %%MAN3%%/ExtUtils::Typemaps.3.gz
-%%MAN3%%/ExtUtils::XSSymSet.3.gz
 %%MAN3%%/Fatal.3.gz
 %%MAN3%%/Fcntl.3.gz
 %%MAN3%%/feature.3.gz
@@ -875,13 +881,10 @@ etc/man.d/perl.conf
 %%MAN3%%/PerlIO.3.gz
 %%MAN3%%/Pod::Checker.3.gz
 %%MAN3%%/Pod::Escapes.3.gz
-%%MAN3%%/Pod::Find.3.gz
+%%MAN3%%/Pod::Html::Util.3.gz
 %%MAN3%%/Pod::Html.3.gz
-%%MAN3%%/Pod::InputObjects.3.gz
 %%MAN3%%/Pod::Man.3.gz
 %%MAN3%%/Pod::ParseLink.3.gz
-%%MAN3%%/Pod::Parser.3.gz
-%%MAN3%%/Pod::ParseUtils.3.gz
 %%MAN3%%/Pod::Perldoc::BaseTo.3.gz
 %%MAN3%%/Pod::Perldoc::GetOptsOO.3.gz
 %%MAN3%%/Pod::Perldoc::ToANSI.3.gz
@@ -895,14 +898,13 @@ etc/man.d/perl.conf
 %%MAN3%%/Pod::Perldoc::ToTk.3.gz
 %%MAN3%%/Pod::Perldoc::ToXml.3.gz
 %%MAN3%%/Pod::Perldoc.3.gz
-%%MAN3%%/Pod::PlainText.3.gz
-%%MAN3%%/Pod::Select.3.gz
 %%MAN3%%/Pod::Simple::Checker.3.gz
 %%MAN3%%/Pod::Simple::Debug.3.gz
 %%MAN3%%/Pod::Simple::DumpAsText.3.gz
 %%MAN3%%/Pod::Simple::DumpAsXML.3.gz
 %%MAN3%%/Pod::Simple::HTML.3.gz
 %%MAN3%%/Pod::Simple::HTMLBatch.3.gz
+%%MAN3%%/Pod::Simple::JustPod.3.gz
 %%MAN3%%/Pod::Simple::LinkSection.3.gz
 %%MAN3%%/Pod::Simple::Methody.3.gz
 %%MAN3%%/Pod::Simple::PullParser.3.gz
@@ -1009,6 +1011,10 @@ etc/man.d/perl.conf
 %%MAN3%%/Test2::API::Breakage.3.gz
 %%MAN3%%/Test2::API::Context.3.gz
 %%MAN3%%/Test2::API::Instance.3.gz
+%%MAN3%%/Test2::API::InterceptResult::Event.3.gz
+%%MAN3%%/Test2::API::InterceptResult::Hub.3.gz
+%%MAN3%%/Test2::API::InterceptResult::Squasher.3.gz
+%%MAN3%%/Test2::API::InterceptResult.3.gz
 %%MAN3%%/Test2::API::Stack.3.gz
 %%MAN3%%/Test2::API.3.gz
 %%MAN3%%/Test2::Event::Bail.3.gz
@@ -1096,6 +1102,7 @@ etc/man.d/perl.conf
 %%MAN3%%/Unicode::Collate.3.gz
 %%MAN3%%/Unicode::Normalize.3.gz
 %%MAN3%%/Unicode::UCD.3.gz
+%%MAN3%%/unicore::Name.3.gz
 %%MAN3%%/UNIVERSAL.3.gz
 %%MAN3%%/User::grent.3.gz
 %%MAN3%%/User::pwent.3.gz
@@ -1114,6 +1121,7 @@ etc/man.d/perl.conf
 %%PERL_LIB%%/Math/BigInt/Lib.pm
 %%PERL_LIB%%/Math/BigInt/Trace.pm
 %%PERL_LIB%%/Math/BigRat.pm
+%%PERL_LIB%%/Math/BigRat/Trace.pm
 %%PERL_LIB%%/Math/Complex.pm
 %%PERL_LIB%%/Math/Trig.pm
 %%PERL_LIB%%/Memoize.pm
@@ -1168,14 +1176,11 @@ etc/man.d/perl.conf
 %%PERL_LIB%%/PerlIO/via/QuotedPrint.pm
 %%PERL_LIB%%/Pod/Checker.pm
 %%PERL_LIB%%/Pod/Escapes.pm
-%%PERL_LIB%%/Pod/Find.pm
 %%PERL_LIB%%/Pod/Functions.pm
 %%PERL_LIB%%/Pod/Html.pm
-%%PERL_LIB%%/Pod/InputObjects.pm
+%%PERL_LIB%%/Pod/Html/Util.pm
 %%PERL_LIB%%/Pod/Man.pm
 %%PERL_LIB%%/Pod/ParseLink.pm
-%%PERL_LIB%%/Pod/Parser.pm
-%%PERL_LIB%%/Pod/ParseUtils.pm
 %%PERL_LIB%%/pod/perl.pod
 %%PERL_LIB%%/pod/perl5004delta.pod
 %%PERL_LIB%%/pod/perl5005delta.pod
@@ -1221,7 +1226,16 @@ etc/man.d/perl.conf
 %%PERL_LIB%%/pod/perl5280delta.pod
 %%PERL_LIB%%/pod/perl5281delta.pod
 %%PERL_LIB%%/pod/perl5282delta.pod
+%%PERL_LIB%%/pod/perl5283delta.pod
 %%PERL_LIB%%/pod/perl5300delta.pod
+%%PERL_LIB%%/pod/perl5301delta.pod
+%%PERL_LIB%%/pod/perl5302delta.pod
+%%PERL_LIB%%/pod/perl5303delta.pod
+%%PERL_LIB%%/pod/perl5320delta.pod
+%%PERL_LIB%%/pod/perl5321delta.pod
+%%PERL_LIB%%/pod/perl5340delta.pod
+%%PERL_LIB%%/pod/perl5341delta.pod
+%%PERL_LIB%%/pod/perl5360delta.pod
 %%PERL_LIB%%/pod/perl561delta.pod
 %%PERL_LIB%%/pod/perl56delta.pod
 %%PERL_LIB%%/pod/perl581delta.pod
@@ -1245,7 +1259,6 @@ etc/man.d/perl.conf
 %%PERL_LIB%%/pod/perlbot.pod
 %%PERL_LIB%%/pod/perlbs2000.pod
 %%PERL_LIB%%/pod/perlcall.pod
-%%PERL_LIB%%/pod/perlce.pod
 %%PERL_LIB%%/pod/perlcheat.pod
 %%PERL_LIB%%/pod/perlclib.pod
 %%PERL_LIB%%/pod/perlcn.pod
@@ -1273,7 +1286,7 @@ etc/man.d/perl.conf
 %%PERL_LIB%%/Pod/Perldoc/ToText.pm
 %%PERL_LIB%%/Pod/Perldoc/ToTk.pm
 %%PERL_LIB%%/Pod/Perldoc/ToXml.pm
-%%PERL_LIB%%/pod/perldos.pod
+%%PERL_LIB%%/pod/perldocstyle.pod
 %%PERL_LIB%%/pod/perldsc.pod
 %%PERL_LIB%%/pod/perldtrace.pod
 %%PERL_LIB%%/pod/perlebcdic.pod
@@ -1296,6 +1309,7 @@ etc/man.d/perl.conf
 %%PERL_LIB%%/pod/perlfunc.pod
 %%PERL_LIB%%/pod/perlgit.pod
 %%PERL_LIB%%/pod/perlglossary.pod
+%%PERL_LIB%%/pod/perlgov.pod
 %%PERL_LIB%%/pod/perlgpl.pod
 %%PERL_LIB%%/pod/perlguts.pod
 %%PERL_LIB%%/pod/perlhack.pod
@@ -1317,14 +1331,12 @@ etc/man.d/perl.conf
 %%PERL_LIB%%/pod/perllinux.pod
 %%PERL_LIB%%/pod/perllocale.pod
 %%PERL_LIB%%/pod/perllol.pod
-%%PERL_LIB%%/pod/perlmacos.pod
 %%PERL_LIB%%/pod/perlmacosx.pod
 %%PERL_LIB%%/pod/perlmod.pod
 %%PERL_LIB%%/pod/perlmodinstall.pod
 %%PERL_LIB%%/pod/perlmodlib.pod
 %%PERL_LIB%%/pod/perlmodstyle.pod
 %%PERL_LIB%%/pod/perlmroapi.pod
-%%PERL_LIB%%/pod/perlnetware.pod
 %%PERL_LIB%%/pod/perlnewmod.pod
 %%PERL_LIB%%/pod/perlnumber.pod
 %%PERL_LIB%%/pod/perlobj.pod
@@ -1359,11 +1371,11 @@ etc/man.d/perl.conf
 %%PERL_LIB%%/pod/perlriscos.pod
 %%PERL_LIB%%/pod/perlrun.pod
 %%PERL_LIB%%/pod/perlsec.pod
+%%PERL_LIB%%/pod/perlsecpolicy.pod
 %%PERL_LIB%%/pod/perlsolaris.pod
 %%PERL_LIB%%/pod/perlsource.pod
 %%PERL_LIB%%/pod/perlstyle.pod
 %%PERL_LIB%%/pod/perlsub.pod
-%%PERL_LIB%%/pod/perlsymbian.pod
 %%PERL_LIB%%/pod/perlsyn.pod
 %%PERL_LIB%%/pod/perlsynology.pod
 %%PERL_LIB%%/pod/perlthrtut.pod
@@ -1389,8 +1401,6 @@ etc/man.d/perl.conf
 %%PERL_LIB%%/pod/perlxs.pod
 %%PERL_LIB%%/pod/perlxstut.pod
 %%PERL_LIB%%/pod/perlxstypemap.pod
-%%PERL_LIB%%/Pod/PlainText.pm
-%%PERL_LIB%%/Pod/Select.pm
 %%PERL_LIB%%/Pod/Simple.pm
 %%PERL_LIB%%/Pod/Simple.pod
 %%PERL_LIB%%/Pod/Simple/BlackBox.pm
@@ -1401,6 +1411,7 @@ etc/man.d/perl.conf
 %%PERL_LIB%%/Pod/Simple/HTML.pm
 %%PERL_LIB%%/Pod/Simple/HTMLBatch.pm
 %%PERL_LIB%%/Pod/Simple/HTMLLegacy.pm
+%%PERL_LIB%%/Pod/Simple/JustPod.pm
 %%PERL_LIB%%/Pod/Simple/LinkSection.pm
 %%PERL_LIB%%/Pod/Simple/Methody.pm
 %%PERL_LIB%%/Pod/Simple/Progress.pm
@@ -1505,6 +1516,11 @@ etc/man.d/perl.conf
 %%PERL_LIB%%/Test2/API/Breakage.pm
 %%PERL_LIB%%/Test2/API/Context.pm
 %%PERL_LIB%%/Test2/API/Instance.pm
+%%PERL_LIB%%/Test2/API/InterceptResult.pm
+%%PERL_LIB%%/Test2/API/InterceptResult/Event.pm
+%%PERL_LIB%%/Test2/API/InterceptResult/Facet.pm
+%%PERL_LIB%%/Test2/API/InterceptResult/Hub.pm
+%%PERL_LIB%%/Test2/API/InterceptResult/Squasher.pm
 %%PERL_LIB%%/Test2/API/Stack.pm
 %%PERL_LIB%%/Test2/Event.pm
 %%PERL_LIB%%/Test2/Event/Bail.pm
@@ -1564,6 +1580,7 @@ etc/man.d/perl.conf
 %%PERL_LIB%%/Tie/File.pm
 %%PERL_LIB%%/Tie/Handle.pm
 %%PERL_LIB%%/Tie/Hash.pm
+%%PERL_LIB%%/Tie/Hash/NamedCapture.pm
 %%PERL_LIB%%/Tie/Memoize.pm
 %%PERL_LIB%%/Tie/RefHash.pm
 %%PERL_LIB%%/Tie/Scalar.pm
@@ -1673,12 +1690,13 @@ etc/man.d/perl.conf
 %%PERL_LIB%%/unicore/Blocks.txt
 %%PERL_LIB%%/unicore/CombiningClass.pl
 %%PERL_LIB%%/unicore/Decomposition.pl
-%%PERL_LIB%%/unicore/Heavy.pl
 %%PERL_LIB%%/unicore/lib/Age/NA.pl
 %%PERL_LIB%%/unicore/lib/Age/V100.pl
 %%PERL_LIB%%/unicore/lib/Age/V11.pl
 %%PERL_LIB%%/unicore/lib/Age/V110.pl
 %%PERL_LIB%%/unicore/lib/Age/V120.pl
+%%PERL_LIB%%/unicore/lib/Age/V130.pl
+%%PERL_LIB%%/unicore/lib/Age/V140.pl
 %%PERL_LIB%%/unicore/lib/Age/V20.pl
 %%PERL_LIB%%/unicore/lib/Age/V30.pl
 %%PERL_LIB%%/unicore/lib/Age/V31.pl
@@ -1757,7 +1775,12 @@ etc/man.d/perl.conf
 %%PERL_LIB%%/unicore/lib/Ea/N.pl
 %%PERL_LIB%%/unicore/lib/Ea/Na.pl
 %%PERL_LIB%%/unicore/lib/Ea/W.pl
+%%PERL_LIB%%/unicore/lib/EBase/Y.pl
+%%PERL_LIB%%/unicore/lib/EComp/Y.pl
+%%PERL_LIB%%/unicore/lib/Emoji/Y.pl
+%%PERL_LIB%%/unicore/lib/EPres/Y.pl
 %%PERL_LIB%%/unicore/lib/Ext/Y.pl
+%%PERL_LIB%%/unicore/lib/ExtPict/Y.pl
 %%PERL_LIB%%/unicore/lib/Gc/C.pl
 %%PERL_LIB%%/unicore/lib/Gc/Cf.pl
 %%PERL_LIB%%/unicore/lib/Gc/Cn.pl
@@ -1805,10 +1828,25 @@ etc/man.d/perl.conf
 %%PERL_LIB%%/unicore/lib/IDC/Y.pl
 %%PERL_LIB%%/unicore/lib/Ideo/Y.pl
 %%PERL_LIB%%/unicore/lib/IDS/Y.pl
+%%PERL_LIB%%/unicore/lib/IdStatus/Allowed.pl
+%%PERL_LIB%%/unicore/lib/IdStatus/Restrict.pl
+%%PERL_LIB%%/unicore/lib/IdType/DefaultI.pl
+%%PERL_LIB%%/unicore/lib/IdType/Exclusio.pl
+%%PERL_LIB%%/unicore/lib/IdType/Inclusio.pl
+%%PERL_LIB%%/unicore/lib/IdType/LimitedU.pl
+%%PERL_LIB%%/unicore/lib/IdType/NotChara.pl
+%%PERL_LIB%%/unicore/lib/IdType/NotNFKC.pl
+%%PERL_LIB%%/unicore/lib/IdType/NotXID.pl
+%%PERL_LIB%%/unicore/lib/IdType/Obsolete.pl
+%%PERL_LIB%%/unicore/lib/IdType/Recommen.pl
+%%PERL_LIB%%/unicore/lib/IdType/Technica.pl
+%%PERL_LIB%%/unicore/lib/IdType/Uncommon.pl
 %%PERL_LIB%%/unicore/lib/In/10_0.pl
 %%PERL_LIB%%/unicore/lib/In/11_0.pl
 %%PERL_LIB%%/unicore/lib/In/12_0.pl
 %%PERL_LIB%%/unicore/lib/In/12_1.pl
+%%PERL_LIB%%/unicore/lib/In/13_0.pl
+%%PERL_LIB%%/unicore/lib/In/14_0.pl
 %%PERL_LIB%%/unicore/lib/In/2_0.pl
 %%PERL_LIB%%/unicore/lib/In/2_1.pl
 %%PERL_LIB%%/unicore/lib/In/3_0.pl
@@ -1827,6 +1865,7 @@ etc/man.d/perl.conf
 %%PERL_LIB%%/unicore/lib/In/8_0.pl
 %%PERL_LIB%%/unicore/lib/In/9_0.pl
 %%PERL_LIB%%/unicore/lib/InPC/Bottom.pl
+%%PERL_LIB%%/unicore/lib/InPC/BottomAn.pl
 %%PERL_LIB%%/unicore/lib/InPC/Left.pl
 %%PERL_LIB%%/unicore/lib/InPC/LeftAndR.pl
 %%PERL_LIB%%/unicore/lib/InPC/NA.pl
@@ -1847,6 +1886,7 @@ etc/man.d/perl.conf
 %%PERL_LIB%%/unicore/lib/InSC/Consona5.pl
 %%PERL_LIB%%/unicore/lib/InSC/Consona6.pl
 %%PERL_LIB%%/unicore/lib/InSC/Consona7.pl
+%%PERL_LIB%%/unicore/lib/InSC/Consona8.pl
 %%PERL_LIB%%/unicore/lib/InSC/Consonan.pl
 %%PERL_LIB%%/unicore/lib/InSC/Invisibl.pl
 %%PERL_LIB%%/unicore/lib/InSC/Nukta.pl
@@ -1872,10 +1912,12 @@ etc/man.d/perl.conf
 %%PERL_LIB%%/unicore/lib/Jg/Kaf.pl
 %%PERL_LIB%%/unicore/lib/Jg/Lam.pl
 %%PERL_LIB%%/unicore/lib/Jg/NoJoinin.pl
+%%PERL_LIB%%/unicore/lib/Jg/Noon.pl
 %%PERL_LIB%%/unicore/lib/Jg/Qaf.pl
 %%PERL_LIB%%/unicore/lib/Jg/Reh.pl
 %%PERL_LIB%%/unicore/lib/Jg/Sad.pl
 %%PERL_LIB%%/unicore/lib/Jg/Seen.pl
+%%PERL_LIB%%/unicore/lib/Jg/Tah.pl
 %%PERL_LIB%%/unicore/lib/Jg/Waw.pl
 %%PERL_LIB%%/unicore/lib/Jg/Yeh.pl
 %%PERL_LIB%%/unicore/lib/Jt/C.pl
@@ -1891,7 +1933,6 @@ etc/man.d/perl.conf
 %%PERL_LIB%%/unicore/lib/Lb/CJ.pl
 %%PERL_LIB%%/unicore/lib/Lb/CL.pl
 %%PERL_LIB%%/unicore/lib/Lb/CM.pl
-%%PERL_LIB%%/unicore/lib/Lb/EB.pl
 %%PERL_LIB%%/unicore/lib/Lb/EX.pl
 %%PERL_LIB%%/unicore/lib/Lb/GL.pl
 %%PERL_LIB%%/unicore/lib/Lb/ID.pl
@@ -1993,7 +2034,6 @@ etc/man.d/perl.conf
 %%PERL_LIB%%/unicore/lib/Perl/_PerlIDS.pl
 %%PERL_LIB%%/unicore/lib/Perl/_PerlIsI.pl
 %%PERL_LIB%%/unicore/lib/Perl/_PerlNch.pl
-%%PERL_LIB%%/unicore/lib/Perl/_PerlNon.pl
 %%PERL_LIB%%/unicore/lib/Perl/_PerlPat.pl
 %%PERL_LIB%%/unicore/lib/Perl/_PerlPr2.pl
 %%PERL_LIB%%/unicore/lib/Perl/_PerlPro.pl
@@ -2023,7 +2063,6 @@ etc/man.d/perl.conf
 %%PERL_LIB%%/unicore/lib/SB/UP.pl
 %%PERL_LIB%%/unicore/lib/SB/XX.pl
 %%PERL_LIB%%/unicore/lib/Sc/Arab.pl
-%%PERL_LIB%%/unicore/lib/Sc/Armn.pl
 %%PERL_LIB%%/unicore/lib/Sc/Beng.pl
 %%PERL_LIB%%/unicore/lib/Sc/Cprt.pl
 %%PERL_LIB%%/unicore/lib/Sc/Cyrl.pl
@@ -2067,6 +2106,7 @@ etc/man.d/perl.conf
 %%PERL_LIB%%/unicore/lib/Scx/Cprt.pl
 %%PERL_LIB%%/unicore/lib/Scx/Cyrl.pl
 %%PERL_LIB%%/unicore/lib/Scx/Deva.pl
+%%PERL_LIB%%/unicore/lib/Scx/Diak.pl
 %%PERL_LIB%%/unicore/lib/Scx/Dupl.pl
 %%PERL_LIB%%/unicore/lib/Scx/Ethi.pl
 %%PERL_LIB%%/unicore/lib/Scx/Geor.pl
@@ -2100,6 +2140,7 @@ etc/man.d/perl.conf
 %%PERL_LIB%%/unicore/lib/Scx/Mult.pl
 %%PERL_LIB%%/unicore/lib/Scx/Mymr.pl
 %%PERL_LIB%%/unicore/lib/Scx/Nand.pl
+%%PERL_LIB%%/unicore/lib/Scx/Nko.pl
 %%PERL_LIB%%/unicore/lib/Scx/Orya.pl
 %%PERL_LIB%%/unicore/lib/Scx/Phlp.pl
 %%PERL_LIB%%/unicore/lib/Scx/Rohg.pl
@@ -2111,11 +2152,14 @@ etc/man.d/perl.conf
 %%PERL_LIB%%/unicore/lib/Scx/Takr.pl
 %%PERL_LIB%%/unicore/lib/Scx/Talu.pl
 %%PERL_LIB%%/unicore/lib/Scx/Taml.pl
+%%PERL_LIB%%/unicore/lib/Scx/Tang.pl
 %%PERL_LIB%%/unicore/lib/Scx/Telu.pl
 %%PERL_LIB%%/unicore/lib/Scx/Thaa.pl
 %%PERL_LIB%%/unicore/lib/Scx/Tibt.pl
 %%PERL_LIB%%/unicore/lib/Scx/Tirh.pl
+%%PERL_LIB%%/unicore/lib/Scx/Vith.pl
 %%PERL_LIB%%/unicore/lib/Scx/Xsux.pl
+%%PERL_LIB%%/unicore/lib/Scx/Yezi.pl
 %%PERL_LIB%%/unicore/lib/Scx/Yi.pl
 %%PERL_LIB%%/unicore/lib/Scx/Zinh.pl
 %%PERL_LIB%%/unicore/lib/Scx/Zyyy.pl
@@ -2129,6 +2173,7 @@ etc/man.d/perl.conf
 %%PERL_LIB%%/unicore/lib/Vo/Tr.pl
 %%PERL_LIB%%/unicore/lib/Vo/Tu.pl
 %%PERL_LIB%%/unicore/lib/Vo/U.pl
+%%PERL_LIB%%/unicore/lib/VS/Y.pl
 %%PERL_LIB%%/unicore/lib/WB/EX.pl
 %%PERL_LIB%%/unicore/lib/WB/Extend.pl
 %%PERL_LIB%%/unicore/lib/WB/FO.pl
@@ -2155,13 +2200,13 @@ etc/man.d/perl.conf
 %%PERL_LIB%%/unicore/To/Bpb.pl
 %%PERL_LIB%%/unicore/To/Bpt.pl
 %%PERL_LIB%%/unicore/To/Cf.pl
-%%PERL_LIB%%/unicore/To/Digit.pl
 %%PERL_LIB%%/unicore/To/Ea.pl
 %%PERL_LIB%%/unicore/To/EqUIdeo.pl
-%%PERL_LIB%%/unicore/To/Fold.pl
 %%PERL_LIB%%/unicore/To/Gc.pl
 %%PERL_LIB%%/unicore/To/GCB.pl
 %%PERL_LIB%%/unicore/To/Hst.pl
+%%PERL_LIB%%/unicore/To/Identif2.pl
+%%PERL_LIB%%/unicore/To/Identifi.pl
 %%PERL_LIB%%/unicore/To/InPC.pl
 %%PERL_LIB%%/unicore/To/InSC.pl
 %%PERL_LIB%%/unicore/To/Isc.pl
@@ -2169,7 +2214,6 @@ etc/man.d/perl.conf
 %%PERL_LIB%%/unicore/To/Jt.pl
 %%PERL_LIB%%/unicore/To/Lb.pl
 %%PERL_LIB%%/unicore/To/Lc.pl
-%%PERL_LIB%%/unicore/To/Lower.pl
 %%PERL_LIB%%/unicore/To/Na1.pl
 %%PERL_LIB%%/unicore/To/NameAlia.pl
 %%PERL_LIB%%/unicore/To/NFCQC.pl
@@ -2184,9 +2228,7 @@ etc/man.d/perl.conf
 %%PERL_LIB%%/unicore/To/Sc.pl
 %%PERL_LIB%%/unicore/To/Scx.pl
 %%PERL_LIB%%/unicore/To/Tc.pl
-%%PERL_LIB%%/unicore/To/Title.pl
 %%PERL_LIB%%/unicore/To/Uc.pl
-%%PERL_LIB%%/unicore/To/Upper.pl
 %%PERL_LIB%%/unicore/To/Vo.pl
 %%PERL_LIB%%/unicore/To/WB.pl
 %%PERL_LIB%%/unicore/UCD.pl
@@ -2195,7 +2237,6 @@ etc/man.d/perl.conf
 %%PERL_LIB%%/UNIVERSAL.pm
 %%PERL_LIB%%/User/grent.pm
 %%PERL_LIB%%/User/pwent.pm
-%%PERL_LIB%%/utf8_heavy.pl
 %%PERL_LIB%%/utf8.pm
 %%PERL_LIB%%/vars.pm
 %%PERL_LIB%%/version.pm
@@ -2260,7 +2301,16 @@ etc/man.d/perl.conf
 %%MAN1%%/perl5280delta.1.gz
 %%MAN1%%/perl5281delta.1.gz
 %%MAN1%%/perl5282delta.1.gz
+%%MAN1%%/perl5283delta.1.gz
 %%MAN1%%/perl5300delta.1.gz
+%%MAN1%%/perl5301delta.1.gz
+%%MAN1%%/perl5302delta.1.gz
+%%MAN1%%/perl5303delta.1.gz
+%%MAN1%%/perl5320delta.1.gz
+%%MAN1%%/perl5321delta.1.gz
+%%MAN1%%/perl5340delta.1.gz
+%%MAN1%%/perl5341delta.1.gz
+%%MAN1%%/perl5360delta.1.gz
 %%MAN1%%/perl561delta.1.gz
 %%MAN1%%/perl56delta.1.gz
 %%MAN1%%/perl581delta.1.gz
@@ -2285,7 +2335,6 @@ etc/man.d/perl.conf
 %%MAN1%%/perlbs2000.1.gz
 %%MAN1%%/perlbug.1.gz
 %%MAN1%%/perlcall.1.gz
-%%MAN1%%/perlce.1.gz
 %%MAN1%%/perlcheat.1.gz
 %%MAN1%%/perlclib.1.gz
 %%MAN1%%/perlcn.1.gz
@@ -2300,7 +2349,7 @@ etc/man.d/perl.conf
 %%MAN1%%/perldeprecation.1.gz
 %%MAN1%%/perldiag.1.gz
 %%MAN1%%/perldoc.1.gz
-%%MAN1%%/perldos.1.gz
+%%MAN1%%/perldocstyle.1.gz
 %%MAN1%%/perldsc.1.gz
 %%MAN1%%/perldtrace.1.gz
 %%MAN1%%/perlebcdic.1.gz
@@ -2323,6 +2372,7 @@ etc/man.d/perl.conf
 %%MAN1%%/perlfunc.1.gz
 %%MAN1%%/perlgit.1.gz
 %%MAN1%%/perlglossary.1.gz
+%%MAN1%%/perlgov.1.gz
 %%MAN1%%/perlgpl.1.gz
 %%MAN1%%/perlguts.1.gz
 %%MAN1%%/perlhack.1.gz
@@ -2345,14 +2395,12 @@ etc/man.d/perl.conf
 %%MAN1%%/perllinux.1.gz
 %%MAN1%%/perllocale.1.gz
 %%MAN1%%/perllol.1.gz
-%%MAN1%%/perlmacos.1.gz
 %%MAN1%%/perlmacosx.1.gz
 %%MAN1%%/perlmod.1.gz
 %%MAN1%%/perlmodinstall.1.gz
 %%MAN1%%/perlmodlib.1.gz
 %%MAN1%%/perlmodstyle.1.gz
 %%MAN1%%/perlmroapi.1.gz
-%%MAN1%%/perlnetware.1.gz
 %%MAN1%%/perlnewmod.1.gz
 %%MAN1%%/perlnumber.1.gz
 %%MAN1%%/perlobj.1.gz
@@ -2387,11 +2435,11 @@ etc/man.d/perl.conf
 %%MAN1%%/perlriscos.1.gz
 %%MAN1%%/perlrun.1.gz
 %%MAN1%%/perlsec.1.gz
+%%MAN1%%/perlsecpolicy.1.gz
 %%MAN1%%/perlsolaris.1.gz
 %%MAN1%%/perlsource.1.gz
 %%MAN1%%/perlstyle.1.gz
 %%MAN1%%/perlsub.1.gz
-%%MAN1%%/perlsymbian.1.gz
 %%MAN1%%/perlsyn.1.gz
 %%MAN1%%/perlsynology.1.gz
 %%MAN1%%/perlthanks.1.gz
@@ -2425,13 +2473,13 @@ etc/man.d/perl.conf
 %%MAN1%%/pod2text.1.gz
 %%MAN1%%/pod2usage.1.gz
 %%MAN1%%/podchecker.1.gz
-%%MAN1%%/podselect.1.gz
 %%MAN1%%/prove.1.gz
 %%MAN1%%/ptar.1.gz
 %%MAN1%%/ptardiff.1.gz
 %%MAN1%%/ptargrep.1.gz
 %%MAN1%%/shasum.1.gz
 %%MAN1%%/splain.1.gz
+%%MAN1%%/streamzip.1.gz
 %%MAN1%%/xsubpp.1.gz
 %%MAN1%%/zipdetails.1.gz
 @dir %%PERL_LIB%%/App/Prove/State/Result
@@ -2561,9 +2609,6 @@ etc/man.d/perl.conf
 @dir %%ARCH_LIB%%/auto/Sys
 @dir %%ARCH_LIB%%/auto/threads/shared
 @dir %%ARCH_LIB%%/auto/threads
-@dir %%ARCH_LIB%%/auto/Tie/Hash/NamedCapture
-@dir %%ARCH_LIB%%/auto/Tie/Hash
-@dir %%ARCH_LIB%%/auto/Tie
 @dir %%ARCH_LIB%%/auto/Time/HiRes
 @dir %%ARCH_LIB%%/auto/Time/Piece
 @dir %%ARCH_LIB%%/auto/Time
@@ -2605,16 +2650,14 @@ etc/man.d/perl.conf
 @dir %%ARCH_LIB%%/Sub
 @dir %%ARCH_LIB%%/Sys
 @dir %%ARCH_LIB%%/threads
-@dir %%ARCH_LIB%%/Tie/Hash
-@dir %%ARCH_LIB%%/Tie
 @dir %%ARCH_LIB%%/Time
 @dir %%ARCH_LIB%%/Unicode/Collate
 @dir %%ARCH_LIB%%/Unicode
 @dir %%ARCH_LIB%%
-@dir %%MAN3%%
 @dir %%PERL_LIB%%/man
 @dir %%PERL_LIB%%/Math/BigFloat
 @dir %%PERL_LIB%%/Math/BigInt
+@dir %%PERL_LIB%%/Math/BigRat
 @dir %%PERL_LIB%%/Math
 @dir %%PERL_LIB%%/Memoize
 @dir %%PERL_LIB%%/Module/CoreList
@@ -2630,6 +2673,7 @@ etc/man.d/perl.conf
 @dir %%PERL_LIB%%/PerlIO/via
 @dir %%PERL_LIB%%/PerlIO
 @dir %%PERL_LIB%%/pod
+@dir %%PERL_LIB%%/Pod/Html
 @dir %%PERL_LIB%%/Pod/Perldoc
 @dir %%PERL_LIB%%/Pod/Simple
 @dir %%PERL_LIB%%/Pod/Text
@@ -2653,6 +2697,7 @@ etc/man.d/perl.conf
 @dir %%PERL_LIB%%/Test/Tester
 @dir %%PERL_LIB%%/Test/use
 @dir %%PERL_LIB%%/Test
+@dir %%PERL_LIB%%/Test2/API/InterceptResult
 @dir %%PERL_LIB%%/Test2/API
 @dir %%PERL_LIB%%/Test2/Event/TAP
 @dir %%PERL_LIB%%/Test2/Event
@@ -2668,6 +2713,7 @@ etc/man.d/perl.conf
 @dir %%PERL_LIB%%/Test2
 @dir %%PERL_LIB%%/Text
 @dir %%PERL_LIB%%/Thread
+@dir %%PERL_LIB%%/Tie/Hash
 @dir %%PERL_LIB%%/Tie
 @dir %%PERL_LIB%%/Time
 @dir %%PERL_LIB%%/Unicode/Collate/CJK
@@ -2698,7 +2744,12 @@ etc/man.d/perl.conf
 @dir %%PERL_LIB%%/unicore/lib/Dia
 @dir %%PERL_LIB%%/unicore/lib/Dt
 @dir %%PERL_LIB%%/unicore/lib/Ea
+@dir %%PERL_LIB%%/unicore/lib/EBase
+@dir %%PERL_LIB%%/unicore/lib/EComp
+@dir %%PERL_LIB%%/unicore/lib/Emoji
+@dir %%PERL_LIB%%/unicore/lib/EPres
 @dir %%PERL_LIB%%/unicore/lib/Ext
+@dir %%PERL_LIB%%/unicore/lib/ExtPict
 @dir %%PERL_LIB%%/unicore/lib/Gc
 @dir %%PERL_LIB%%/unicore/lib/GCB
 @dir %%PERL_LIB%%/unicore/lib/GrBase
@@ -2709,6 +2760,8 @@ etc/man.d/perl.conf
 @dir %%PERL_LIB%%/unicore/lib/IDC
 @dir %%PERL_LIB%%/unicore/lib/Ideo
 @dir %%PERL_LIB%%/unicore/lib/IDS
+@dir %%PERL_LIB%%/unicore/lib/IdStatus
+@dir %%PERL_LIB%%/unicore/lib/IdType
 @dir %%PERL_LIB%%/unicore/lib/In
 @dir %%PERL_LIB%%/unicore/lib/InPC
 @dir %%PERL_LIB%%/unicore/lib/InSC
@@ -2736,6 +2789,7 @@ etc/man.d/perl.conf
 @dir %%PERL_LIB%%/unicore/lib/UIdeo
 @dir %%PERL_LIB%%/unicore/lib/Upper
 @dir %%PERL_LIB%%/unicore/lib/Vo
+@dir %%PERL_LIB%%/unicore/lib/VS
 @dir %%PERL_LIB%%/unicore/lib/WB
 @dir %%PERL_LIB%%/unicore/lib/XIDC
 @dir %%PERL_LIB%%/unicore/lib/XIDS
@@ -2750,4 +2804,3 @@ etc/man.d/perl.conf
 @dir %%SITE_PERL%%/mach/sys
 @dir %%SITE_PERL%%/mach
 @dir %%SITE_PERL%%
-@dir lib/perl5

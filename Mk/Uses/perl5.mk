@@ -59,6 +59,9 @@ PERL5_DEPEND=	perl>=5.28
 .    elif ${PERL5_DEFAULT} == 5.30
 #.include "${PORTSDIR}/lang/perl5.30/version.mk"
 PERL_PORT=	perl530
+.    elif ${PERL5_DEFAULT} == 5.36
+#.include "${PORTSDIR}/lang/perl5.36/version.mk"
+PERL_PORT=	perl530
 PERL5_DEPEND=	perl>=5.30
 
 .    elif ${PERL5_DEFAULT} == devel
