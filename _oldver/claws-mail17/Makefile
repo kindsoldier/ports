@@ -2,7 +2,7 @@
 # $Id$
 #
 PORTNAME=	claws-mail
-PORTVERSION=	3.19.0
+PORTVERSION=	3.17.4
 CATEGORIES=	mail news
 MASTER_SITES=	http://www.claws-mail.org/download.php?file=releases/
 

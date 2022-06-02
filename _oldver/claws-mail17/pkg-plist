@@ -161,7 +161,6 @@ include/claws-mail/mutt.h
 include/claws-mail/news_gtk.h
 include/claws-mail/news.h
 include/claws-mail/noticeview.h
-include/claws-mail/oauth2.h
 include/claws-mail/partial_download.h
 include/claws-mail/password_gtk.h
 include/claws-mail/password.h
@@ -252,8 +251,6 @@ lib/claws-mail/plugins/fancy.la
 lib/claws-mail/plugins/fancy.so
 lib/claws-mail/plugins/fetchinfo.la
 lib/claws-mail/plugins/fetchinfo.so
-lib/claws-mail/plugins/keyword_warner.la
-lib/claws-mail/plugins/keyword_warner.so
 lib/claws-mail/plugins/libravatar.la
 lib/claws-mail/plugins/libravatar.so
 lib/claws-mail/plugins/mailmbox.la
@@ -292,7 +289,6 @@ share/locale/ca/LC_MESSAGES/claws-mail.mo
 share/locale/cs/LC_MESSAGES/claws-mail.mo
 share/locale/da/LC_MESSAGES/claws-mail.mo
 share/locale/de/LC_MESSAGES/claws-mail.mo
-share/locale/el_GR/LC_MESSAGES/claws-mail.mo
 share/locale/en_GB/LC_MESSAGES/claws-mail.mo
 share/locale/es/LC_MESSAGES/claws-mail.mo
 share/locale/fi/LC_MESSAGES/claws-mail.mo
@@ -329,8 +325,6 @@ share/locale/zh_TW/LC_MESSAGES/claws-mail.mo
 @dir share/locale/da
 @dir share/locale/de/LC_MESSAGES
 @dir share/locale/de
-@dir share/locale/el_GR/LC_MESSAGES
-@dir share/locale/el_GR
 @dir share/locale/en_GB/LC_MESSAGES
 @dir share/locale/en_GB
 @dir share/locale/es/LC_MESSAGES
@@ -369,4 +363,3 @@ share/locale/zh_TW/LC_MESSAGES/claws-mail.mo
 @dir share/locale/tr
 @dir share/locale/zh_TW/LC_MESSAGES
 @dir share/locale/zh_TW
-@dir share/locale
