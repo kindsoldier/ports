@@ -2432,6 +2432,7 @@ lib/go/src/cmd/go/testdata/script/mod_doc.txt
 lib/go/src/cmd/go/testdata/script/mod_domain_root.txt
 lib/go/src/cmd/go/testdata/script/mod_dot.txt
 lib/go/src/cmd/go/testdata/script/mod_download_concurrent_read.txt
+lib/go/src/cmd/go/testdata/script/mod_download_git_decorate_full.txt
 lib/go/src/cmd/go/testdata/script/mod_download_hash.txt
 lib/go/src/cmd/go/testdata/script/mod_download_insecure_redirect.txt
 lib/go/src/cmd/go/testdata/script/mod_download_json.txt
@@ -10561,6 +10562,9 @@ lib/go/test/fixedbugs/issue51531.go
 lib/go/test/fixedbugs/issue5162.go
 lib/go/test/fixedbugs/issue5172.go
 lib/go/test/fixedbugs/issue51839.go
+lib/go/test/fixedbugs/issue52279.dir/lib.go
+lib/go/test/fixedbugs/issue52279.dir/main.go
+lib/go/test/fixedbugs/issue52279.go
 lib/go/test/fixedbugs/issue5231.go
 lib/go/test/fixedbugs/issue52438.go
 lib/go/test/fixedbugs/issue5244.go
@@ -10574,7 +10578,12 @@ lib/go/test/fixedbugs/issue52612.go
 lib/go/test/fixedbugs/issue5291.dir/pkg1.go
 lib/go/test/fixedbugs/issue5291.dir/prog.go
 lib/go/test/fixedbugs/issue5291.go
+lib/go/test/fixedbugs/issue53137.dir/main.go
+lib/go/test/fixedbugs/issue53137.go
+lib/go/test/fixedbugs/issue53454.go
 lib/go/test/fixedbugs/issue5358.go
+lib/go/test/fixedbugs/issue53600.go
+lib/go/test/fixedbugs/issue53600.out
 lib/go/test/fixedbugs/issue5373.go
 lib/go/test/fixedbugs/issue5470.dir/a.go
 lib/go/test/fixedbugs/issue5470.dir/b.go
@@ -11415,11 +11424,16 @@ lib/go/test/typeparam/issue51836.dir/a.go
 lib/go/test/typeparam/issue51836.dir/aa.go
 lib/go/test/typeparam/issue51836.dir/p.go
 lib/go/test/typeparam/issue51836.go
+lib/go/test/typeparam/issue51840.go
 lib/go/test/typeparam/issue52026.go
 lib/go/test/typeparam/issue52117.dir/a.go
 lib/go/test/typeparam/issue52117.dir/b.go
 lib/go/test/typeparam/issue52117.go
 lib/go/test/typeparam/issue52228.go
+lib/go/test/typeparam/issue52241.go
+lib/go/test/typeparam/issue53309.go
+lib/go/test/typeparam/issue53419.go
+lib/go/test/typeparam/issue53477.go
 lib/go/test/typeparam/list.go
 lib/go/test/typeparam/list2.go
 lib/go/test/typeparam/listimp.dir/a.go
@@ -12759,9 +12773,11 @@ lib/go/VERSION
 @dir lib/go/test/fixedbugs/issue4964.dir
 @dir lib/go/test/fixedbugs/issue5105.dir
 @dir lib/go/test/fixedbugs/issue5125.dir
+@dir lib/go/test/fixedbugs/issue52279.dir
 @dir lib/go/test/fixedbugs/issue5259.dir
 @dir lib/go/test/fixedbugs/issue5260.dir
 @dir lib/go/test/fixedbugs/issue5291.dir
+@dir lib/go/test/fixedbugs/issue53137.dir
 @dir lib/go/test/fixedbugs/issue5470.dir
 @dir lib/go/test/fixedbugs/issue5614.dir
 @dir lib/go/test/fixedbugs/issue5755.dir
