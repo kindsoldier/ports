@@ -2,7 +2,7 @@
 # $FreeBSD: head/devel/openocd/Makefile 446854 2017-07-28 21:45:20Z jkim $
 
 PORTNAME=	openocd
-PORTVERSION=	0.10.0
+PORTVERSION=	0.11.0
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
