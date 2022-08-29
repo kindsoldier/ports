@@ -2,7 +2,7 @@
 # $Id$
 #
 PORTNAME=	binutils
-PORTVERSION=	2.33.1
+PORTVERSION=	2.37
 CATEGORIES=	devel
 MASTER_SITES=	http://ftp.gnu.org/gnu/binutils/
 PKGNAMEPREFIX=	${TARGET}-
@@ -13,7 +13,7 @@ COMMENT=	GNU binary tools for ${TARGET:U}
 LIB_DEPENDS+=	libgmp.so:math/libgmp
 LIB_DEPENDS+=	libmpfr.so:math/libmpfr
 
-TARGET=arm-eabi
+TARGET= 	arm-eabi
 
 CONFIGURE_TARGET=#
 USES+=		gmake tar:xz
@@ -38,6 +38,20 @@ PLIST_SUB+= VERSION=${PORTVERSION}
 .if (${OSVERSION} > 1100000)
 BUILD_DEPENDS+= makeinfo:system/texinfo
 .endif
+
+BINS= ar as ld nm objcopy objdump ranlib readelf strip
+
+COMPAT_TARGET1= arm-none-eabi
+COMPAT_TARGET2= arm-nuttx-eabi
+
+post-install:
+	for bin in ${BINS}; do \
+	    cd ${STAGEDIR}${PREFIX}/bin && ${LN} -sf ${TARGET}-$${bin} ${COMPAT_TARGET1}-$${bin}; \
+	done
+	for bin in ${BINS}; do \
+	    cd ${STAGEDIR}${PREFIX}/bin && ${LN} -sf ${TARGET}-$${bin} ${COMPAT_TARGET2}-$${bin}; \
+	done
+
 
 .include <bsd.port.post.mk>
 #EOF

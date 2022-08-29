@@ -1,20 +1,16 @@
 #
 # $Id: Makefile 1285 2007-10-25 11:42:14Z root $
-#``
+#
 PORTNAME=	gcc
 DIST_SUBDIR=	arm
-PORTVERSION=	8.2.1
+PORTVERSION=	${GCC_VERSION}
 CATEGORIES=	devel
-MASTER_SITES=	https://developer.arm.com/-/media/Files/downloads/gnu-rm/8-2018q4/
-DISTNAME=	${ORIGINAL_PACKAGE_NAME}-src
+MASTER_SITES+=	http://ftp.gnu.org/gnu/${PORTNAME}/${PORTNAME}-${PORTVERSION}/
 
 CATEGORIES=	devel
 PKGNAMEPREFIX=	${TARGET}-
 
-GCC_VERSION=		8.2.1
-FULL_VERSION=		8-2018-q4-major
-ORIGINAL_TARGET=			arm-none-eabi
-ORIGINAL_PACKAGE_NAME=	gcc-${ORIGINAL_TARGET}-${FULL_VERSION}
+GCC_VERSION=		10.4.0
 
 MAINTAINER= homeunix7@gmail.com
 COMMENT=	GNU Compiler Collection for bare metal arm cross-development
@@ -31,7 +27,7 @@ BUILD_DEPENDS+=	${TARGET}-as:devel/${TARGET}-binutils
 
 
 GNU_CONFIGURE=	yes
-USES+=		gmake tar:bz2
+USES+=		gmake tar:xz
 
 TARGET=		arm-eabi
 
@@ -73,31 +69,32 @@ CONFIGURE_ARGS+= --disable-libquadmath
 CONFIGURE_ARGS+= --disable-libssp
 CONFIGURE_ARGS+= --disable-libstdcxx-pch
 CONFIGURE_ARGS+= --disable-threads
-CONFIGURE_ARGS+=  --disable-tls
+CONFIGURE_ARGS+= --disable-tls
 
 CONFIGURE_ARGS+= --enable-multilib
 CONFIGURE_ARGS+= --with-multilib-list=rmprofile
-#CONFIGURE_ARGS+= --disable-decimal-float
 
 CONFIGURE_ENV+= ac_cv_path_SED=${LOCALBASE}/bin/gsed
 CONFIGURE_ARGS+= --disable-libstdcxx
+CONFIGURE_ARGS+= --with-newlib
 
+CONFIGURE_ARGS+= --disable-decimal-float
+CONFIGURE_ARGS+= --disable-libffi
+CONFIGURE_ARGS+= --disable-libgomp
+CONFIGURE_ARGS+= --disable-libmudflap
+CONFIGURE_ARGS+= --disable-libquadmath
+CONFIGURE_ARGS+= --disable-libssp
+CONFIGURE_ARGS+= --disable-libstdcxx-pch
+CONFIGURE_ARGS+= --disable-threads
+CONFIGURE_ARGS+= --disable-tls
 
-PATCH_WRKSRC= ${WRKDIR}/${ORIGINAL_PACKAGE_NAME}/src
-PATCH_STRIP= -p1
-
-SRCDIR=	${WRKDIR}/${ORIGINAL_PACKAGE_NAME}/src
-WRKSRC= ${WRKDIR}/${ORIGINAL_PACKAGE_NAME}/src/gcc
+PATCH_STRIP= -p2
 
 CONFIGURE_WRKSRC=  ${WRKSRC}/build
 BUILD_WRKSRC=	   ${WRKSRC}/build
 INSTALL_WRKSRC=	   ${WRKSRC}/build
 
 CONFIGURE_SCRIPT= ../configure
-
-post-extract:
-	${TAR} -xf ${SRCDIR}/gcc.tar.bz2 -C ${SRCDIR}
-	${MKDIR} ${WRKSRC}/build
 
 post-patch:
 	${REINPLACE_CMD} -e 's,-g -O2,-O,' ${WRKSRC}/configure ${WRKSRC}/*/configure
@@ -113,11 +110,26 @@ pre-configure:
 	${MKDIR} ${WRKSRC}
 	${FIND} ${WRKSRC} -name 'config.cache' | ${XARGS} ${RM} -v
 
+BINS= c++ cpp g++ gcc
+
+COMPAT_TARGET1= arm-none-eabi
+COMPAT_TARGET2= arm-nuttx-eabi
+
+post-install:
+	for bin in ${BINS}; do \
+	    cd ${STAGEDIR}${PREFIX}/bin && ${LN} -sf ${TARGET}-$${bin} ${COMPAT_TARGET1}-$${bin}; \
+	done
+	for bin in ${BINS}; do \
+	    cd ${STAGEDIR}${PREFIX}/bin && ${LN} -sf ${TARGET}-$${bin} ${COMPAT_TARGET2}-$${bin}; \
+	done
+
+
 .include <bsd.port.pre.mk>
 
 .if (${OSVERSION} > 1100000)
 BUILD_DEPENDS+= makeinfo:system/texinfo
 .endif
+
 
 .include <bsd.port.post.mk>
 #EOF

@@ -1,23 +1,20 @@
 # $FreeBSD: head/devel/libopencm3/Makefile 459105 2018-01-15 17:47:48Z lev $
 
 PORTNAME=	libopencm3
-PORTVERSION=    2020.01.12 #  20190415 #20180731
+PORTVERSION=    2020.01.12
 DISTNAME=       ${PORTNAME}-${PORTVERSION}
 CATEGORIES=	devel
-PKGNAMEPREFIX=  arm-eabi-
+PKGNAMEPREFIX=  ${TARGET}-
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Cortex-M0/M3/M4 runtime library
 
-BUILD_DEPENDS+= arm-eabi-gcc:devel/arm-eabi-gcc
+BUILD_DEPENDS+= ${TARGET}-gcc:devel/${TARGET}-gcc
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	libopencm3
 
-#GH_TAGNAME= 0d5e51a8 #20180704
-#GH_TAGNAME= ddc7ab8c #20180731
-#GH_TAGNAME= bdc38ee #20190415
-GH_TAGNAME= 7daa6f1 #2020.01.12
+GH_TAGNAME= 7daa6f1 
 
 USES=		gmake python:2.7,build shebangfix
 

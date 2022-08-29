@@ -5,10 +5,8 @@ PORTNAME=	gcc
 PORTVERSION=	9.2.0
 DIST_SUBDIR=	gnu
 MASTER_SITES+=	http://ftp.gnu.org/gnu/${PORTNAME}/${PORTNAME}-${PORTVERSION}/
-#MASTER_SITES+=	GCC/snapshots/9-20190504/${DIST_VERSION}
 MASTER_SITES+=	ftp://ftp.fu-berlin.de/unix/languages/gcc/snapshots/9-20190504/
 CATEGORIES=	devel
-#DISTVERSION=    9-20190504
 
 MAINTAINER=	onborodin@gmail.com
 COMMENT=	GNU C Compiler v${PORTVERSION}
