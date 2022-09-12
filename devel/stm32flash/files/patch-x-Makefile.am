@@ -1,0 +1,10 @@
+--- ./Makefile.am.orig	2021-09-05 13:11:40.000000000 +0200
++++ ./Makefile.am	2022-07-31 15:23:15.685984000 +0200
+@@ -55,5 +55,7 @@
+ all:
+ 
+ 
++man1_MANS = stm32flash.1
++
+ .PHONY: all
+ .SILENT: all

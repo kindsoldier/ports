@@ -32,7 +32,7 @@ CONFIGURE_ARGS+= --enable-multilib
 ##CONFIGURE_ARGS+= --disable-newlib-supplied-syscalls
 
 #CONFIGURE_ARGS+= --enable-newlib-io-long-long
-#CONFIGURE_ARGS+= --enable-newlib-io-c99-formats
+CONFIGURE_ARGS+= --enable-newlib-io-c99-formats
 #CONFIGURE_ARGS+= --enable-newlib-register-fini
 #CONFIGURE_ARGS+= --enable-newlib-retargetable-locking
 #CONFIGURE_ARGS+= --disable-newlib-supplied-syscalls
@@ -46,9 +46,9 @@ CONFIGURE_ARGS+= --disable-newlib-wide-orient
 CONFIGURE_ARGS+= --disable-nls
 CONFIGURE_ARGS+= --enable-lite-exit
 CONFIGURE_ARGS+= --enable-newlib-global-atexit
-CONFIGURE_ARGS+= --enable-newlib-nano-formatted-io
-CONFIGURE_ARGS+= --enable-newlib-nano-malloc
-CONFIGURE_ARGS+= --enable-newlib-reent-small
+#CONFIGURE_ARGS+= --enable-newlib-nano-formatted-io
+#CONFIGURE_ARGS+= --enable-newlib-nano-malloc
+#CONFIGURE_ARGS+= --enable-newlib-reent-small
 CONFIGURE_ARGS+= --enable-newlib-retargetable-locking
 
 #post-extract:
