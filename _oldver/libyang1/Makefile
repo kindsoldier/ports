@@ -1,11 +1,10 @@
 # $FreeBSD: head/net/libyang/Makefile 507372 2019-07-26 20:46:53Z gerald $
 
 PORTNAME=	libyang
-PORTVERSION=	2.0.194
+PORTVERSION=	1.0.240
 DISTVERSIONPREFIX=	v
 #DISTVERSIONSUFFIX=	-r4
 CATEGORIES=	net
-#PKGNAMESUFFIX=  2
 
 MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	YANG data modeling language library
@@ -18,9 +17,6 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	CESNET
 
-#CMAKE_ARGS+=	-DENABLE_LYD_PRIV=ON
-
-post-install:
-	${GZIP_CMD} ${STAGEDIR}${PREFIX}/share/man/man?/*.1
+CMAKE_ARGS+=	-DENABLE_LYD_PRIV=ON
 
 .include <bsd.port.mk>

@@ -16,6 +16,8 @@ include/rtrlib/transport/transport.h
 lib/librtr.so
 lib/librtr.so.0
 lib/pkgconfig/rtrlib.pc
+man/man1/rpki-rov.1.gz
+man/man1/rtrclient.1.gz
 @dir include/rtrlib/lib
 @dir include/rtrlib/pfx/trie
 @dir include/rtrlib/pfx
