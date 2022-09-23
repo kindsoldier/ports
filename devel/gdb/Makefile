@@ -18,10 +18,7 @@ LIB_DEPENDS+= libreadline.so:devel/libreadline
 NOT_FOR_ARCHS=	sparc64
 
 USES=		compiler:c++11-lang cpe gmake libtool pkgconfig tar:xz
-USES+=	iconv
-USES+=	readline:port
-USES+=	iconv:wchar_t
-USE_PYTHON=	flavors py3kplist
+#USE_PYTHON=	flavors py3kplist
 
 EXCLUDE=	dejagnu expect sim texinfo intl
 EXTRACT_AFTER_ARGS=	${EXCLUDE:S/^/--exclude /}
@@ -70,12 +67,10 @@ post-patch:
 		${WRKSRC}/gdb/version.in
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/gdb/gdb \
-		${STAGEDIR}${PREFIX}/bin/gdb
-	${INSTALL_MAN} ${WRKSRC}/gdb/doc/gdb.1 \
-		${STAGEDIR}${MAN1PREFIX}/man/man1/gdb.1
+	${INSTALL_PROGRAM} ${WRKSRC}/gdb/gdb ${STAGEDIR}${PREFIX}/bin/gdb
+	${INSTALL_MAN} ${WRKSRC}/gdb/doc/gdb.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/gdb.1
 	cd ${WRKSRC}/gdb/data-directory ; \
-		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install-syscalls
+	${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install-syscalls
 
 
 .include <bsd.port.post.mk>
