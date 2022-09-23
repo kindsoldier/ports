@@ -1,23 +1,30 @@
 bin/yanglint
 bin/yangre
+include/libyang/config.h
+include/libyang/context.h
 include/libyang/dict.h
-include/libyang/extensions.h
+include/libyang/in.h
 include/libyang/libyang.h
+include/libyang/log.h
+include/libyang/out.h
+include/libyang/parser_data.h
+include/libyang/parser_schema.h
+include/libyang/plugins_exts_compile.h
+include/libyang/plugins_exts_print.h
+include/libyang/plugins_exts.h
+include/libyang/plugins_types.h
+include/libyang/plugins.h
+include/libyang/printer_data.h
+include/libyang/printer_schema.h
+include/libyang/set.h
 include/libyang/tree_data.h
+include/libyang/tree_edit.h
 include/libyang/tree_schema.h
-include/libyang/user_types.h
-include/libyang/xml.h
+include/libyang/tree.h
+include/libyang/version.h
 lib/libyang.so
-lib/libyang.so.1
-lib/libyang/extensions/metadata.so
-lib/libyang/extensions/nacm.so
-lib/libyang/extensions/yangdata.so
-lib/libyang/user_types/user_inet_types.so
-lib/libyang/user_types/user_yang_types.so
+lib/libyang.so.2
 lib/pkgconfig/libyang.pc
-man/man1/yanglint.1.gz
-man/man1/yangre.1.gz
+share/man/man1/yanglint.1.gz
+share/man/man1/yangre.1.gz
 @dir include/libyang
-@dir lib/libyang/extensions
-@dir lib/libyang/user_types
-@dir lib/libyang

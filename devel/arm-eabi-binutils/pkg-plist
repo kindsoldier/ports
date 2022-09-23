@@ -64,12 +64,10 @@ bin/arm-nuttx-eabi-objdump
 bin/arm-nuttx-eabi-ranlib
 bin/arm-nuttx-eabi-readelf
 bin/arm-nuttx-eabi-strip
-lib/bfd-plugins/libdep.a
 man/man1/arm-eabi-addr2line.1.gz
 man/man1/arm-eabi-ar.1.gz
 man/man1/arm-eabi-as.1.gz
 man/man1/arm-eabi-c++filt.1.gz
-man/man1/arm-eabi-dlltool.1.gz
 man/man1/arm-eabi-elfedit.1.gz
 man/man1/arm-eabi-gprof.1.gz
 man/man1/arm-eabi-ld.1.gz
@@ -81,15 +79,7 @@ man/man1/arm-eabi-readelf.1.gz
 man/man1/arm-eabi-size.1.gz
 man/man1/arm-eabi-strings.1.gz
 man/man1/arm-eabi-strip.1.gz
-man/man1/arm-eabi-windmc.1.gz
-man/man1/arm-eabi-windres.1.gz
-share/info/as.info
-share/info/bfd.info
-share/info/binutils.info
-share/info/gprof.info
-share/info/ld.info
 @dir arm-eabi/bin
 @dir arm-eabi/lib/ldscripts
 @dir arm-eabi/lib
 @dir arm-eabi
-@dir lib/bfd-plugins
