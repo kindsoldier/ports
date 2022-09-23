@@ -1,34 +1,7 @@
 bin/node
 include/node/common.gypi
 include/node/config.gypi
-include/node/cppgc/allocation.h
 include/node/cppgc/common.h
-include/node/cppgc/custom-space.h
-include/node/cppgc/default-platform.h
-include/node/cppgc/garbage-collected.h
-include/node/cppgc/heap.h
-include/node/cppgc/internal/api-constants.h
-include/node/cppgc/internal/atomic-entry-flag.h
-include/node/cppgc/internal/caged-heap-local-data.h
-include/node/cppgc/internal/compiler-specific.h
-include/node/cppgc/internal/finalizer-trait.h
-include/node/cppgc/internal/gc-info.h
-include/node/cppgc/internal/logging.h
-include/node/cppgc/internal/persistent-node.h
-include/node/cppgc/internal/pointer-policies.h
-include/node/cppgc/internal/prefinalizer-handler.h
-include/node/cppgc/internal/process-heap.h
-include/node/cppgc/internal/write-barrier.h
-include/node/cppgc/liveness-broker.h
-include/node/cppgc/macros.h
-include/node/cppgc/member.h
-include/node/cppgc/persistent.h
-include/node/cppgc/platform.h
-include/node/cppgc/prefinalizer.h
-include/node/cppgc/source-location.h
-include/node/cppgc/trace-trait.h
-include/node/cppgc/type-traits.h
-include/node/cppgc/visitor.h
 include/node/js_native_api_types.h
 include/node/js_native_api.h
 include/node/libplatform/libplatform-export.h
@@ -237,19 +210,10 @@ include/node/openssl/archs/linux-ppc64le/no-asm/crypto/include/internal/dso_conf
 include/node/openssl/archs/linux-ppc64le/no-asm/include/openssl/opensslconf.h
 include/node/openssl/archs/linux-ppc64le/no-asm/include/progs.h
 include/node/openssl/archs/linux-x32/asm_avx2/crypto/buildinf.h
-include/node/openssl/archs/linux-x32/asm_avx2/crypto/include/internal/bn_conf.h
-include/node/openssl/archs/linux-x32/asm_avx2/crypto/include/internal/dso_conf.h
-include/node/openssl/archs/linux-x32/asm_avx2/include/openssl/opensslconf.h
 include/node/openssl/archs/linux-x32/asm_avx2/include/progs.h
 include/node/openssl/archs/linux-x32/asm/crypto/buildinf.h
-include/node/openssl/archs/linux-x32/asm/crypto/include/internal/bn_conf.h
-include/node/openssl/archs/linux-x32/asm/crypto/include/internal/dso_conf.h
-include/node/openssl/archs/linux-x32/asm/include/openssl/opensslconf.h
 include/node/openssl/archs/linux-x32/asm/include/progs.h
 include/node/openssl/archs/linux-x32/no-asm/crypto/buildinf.h
-include/node/openssl/archs/linux-x32/no-asm/crypto/include/internal/bn_conf.h
-include/node/openssl/archs/linux-x32/no-asm/crypto/include/internal/dso_conf.h
-include/node/openssl/archs/linux-x32/no-asm/include/openssl/opensslconf.h
 include/node/openssl/archs/linux-x32/no-asm/include/progs.h
 include/node/openssl/archs/linux-x86_64/asm_avx2/crypto/buildinf.h
 include/node/openssl/archs/linux-x86_64/asm_avx2/crypto/include/internal/bn_conf.h
@@ -296,6 +260,11 @@ include/node/openssl/archs/linux64-mips64/no-asm/crypto/include/internal/bn_conf
 include/node/openssl/archs/linux64-mips64/no-asm/crypto/include/internal/dso_conf.h
 include/node/openssl/archs/linux64-mips64/no-asm/include/openssl/opensslconf.h
 include/node/openssl/archs/linux64-mips64/no-asm/include/progs.h
+include/node/openssl/archs/linux64-riscv64/no-asm/crypto/buildinf.h
+include/node/openssl/archs/linux64-riscv64/no-asm/crypto/include/internal/bn_conf.h
+include/node/openssl/archs/linux64-riscv64/no-asm/crypto/include/internal/dso_conf.h
+include/node/openssl/archs/linux64-riscv64/no-asm/include/openssl/opensslconf.h
+include/node/openssl/archs/linux64-riscv64/no-asm/include/progs.h
 include/node/openssl/archs/linux64-s390x/asm_avx2/crypto/buildinf.h
 include/node/openssl/archs/linux64-s390x/asm_avx2/crypto/include/internal/bn_conf.h
 include/node/openssl/archs/linux64-s390x/asm_avx2/crypto/include/internal/dso_conf.h
@@ -376,12 +345,18 @@ include/node/openssl/archs/VC-WIN64A/no-asm/crypto/include/internal/bn_conf.h
 include/node/openssl/archs/VC-WIN64A/no-asm/crypto/include/internal/dso_conf.h
 include/node/openssl/archs/VC-WIN64A/no-asm/include/openssl/opensslconf.h
 include/node/openssl/archs/VC-WIN64A/no-asm/include/progs.h
+include/node/openssl/asn1_asm.h
 include/node/openssl/asn1_mac.h
+include/node/openssl/asn1_no-asm.h
 include/node/openssl/asn1.h
 include/node/openssl/asn1err.h
+include/node/openssl/asn1t_asm.h
+include/node/openssl/asn1t_no-asm.h
 include/node/openssl/asn1t.h
 include/node/openssl/async.h
 include/node/openssl/asyncerr.h
+include/node/openssl/bio_asm.h
+include/node/openssl/bio_no-asm.h
 include/node/openssl/bio.h
 include/node/openssl/bioerr.h
 include/node/openssl/blowfish.h
@@ -395,15 +370,29 @@ include/node/openssl/buffererr.h
 include/node/openssl/camellia.h
 include/node/openssl/cast.h
 include/node/openssl/cmac.h
+include/node/openssl/cmp_asm.h
+include/node/openssl/cmp_no-asm.h
+include/node/openssl/cms_asm.h
+include/node/openssl/cms_no-asm.h
 include/node/openssl/cms.h
 include/node/openssl/cmserr.h
 include/node/openssl/comp.h
 include/node/openssl/comperr.h
 include/node/openssl/conf_api.h
+include/node/openssl/conf_asm.h
+include/node/openssl/conf_no-asm.h
 include/node/openssl/conf.h
 include/node/openssl/conferr.h
+include/node/openssl/configuration_asm.h
+include/node/openssl/configuration_no-asm.h
+include/node/openssl/crmf_asm.h
+include/node/openssl/crmf_no-asm.h
+include/node/openssl/crypto_asm.h
+include/node/openssl/crypto_no-asm.h
 include/node/openssl/crypto.h
 include/node/openssl/cryptoerr.h
+include/node/openssl/ct_asm.h
+include/node/openssl/ct_no-asm.h
 include/node/openssl/ct.h
 include/node/openssl/cterr.h
 include/node/openssl/des.h
@@ -423,13 +412,21 @@ include/node/openssl/ecdsa.h
 include/node/openssl/ecerr.h
 include/node/openssl/engine.h
 include/node/openssl/engineerr.h
+include/node/openssl/err_asm.h
+include/node/openssl/err_no-asm.h
 include/node/openssl/err.h
+include/node/openssl/ess_asm.h
+include/node/openssl/ess_no-asm.h
 include/node/openssl/evp.h
 include/node/openssl/evperr.h
+include/node/openssl/fipskey_asm.h
+include/node/openssl/fipskey_no-asm.h
 include/node/openssl/hmac.h
 include/node/openssl/idea.h
 include/node/openssl/kdf.h
 include/node/openssl/kdferr.h
+include/node/openssl/lhash_asm.h
+include/node/openssl/lhash_no-asm.h
 include/node/openssl/lhash.h
 include/node/openssl/md2.h
 include/node/openssl/md4.h
@@ -439,18 +436,26 @@ include/node/openssl/modes.h
 include/node/openssl/obj_mac.h
 include/node/openssl/objects.h
 include/node/openssl/objectserr.h
+include/node/openssl/ocsp_asm.h
+include/node/openssl/ocsp_no-asm.h
 include/node/openssl/ocsp.h
 include/node/openssl/ocsperr.h
 include/node/openssl/opensslconf_asm.h
 include/node/openssl/opensslconf_no-asm.h
 include/node/openssl/opensslconf.h
+include/node/openssl/opensslv_asm.h
+include/node/openssl/opensslv_no-asm.h
 include/node/openssl/opensslv.h
 include/node/openssl/ossl_typ.h
 include/node/openssl/pem.h
 include/node/openssl/pem2.h
 include/node/openssl/pemerr.h
+include/node/openssl/pkcs12_asm.h
+include/node/openssl/pkcs12_no-asm.h
 include/node/openssl/pkcs12.h
 include/node/openssl/pkcs12err.h
+include/node/openssl/pkcs7_asm.h
+include/node/openssl/pkcs7_no-asm.h
 include/node/openssl/pkcs7.h
 include/node/openssl/pkcs7err.h
 include/node/openssl/rand_drbg.h
@@ -462,11 +467,17 @@ include/node/openssl/rc5.h
 include/node/openssl/ripemd.h
 include/node/openssl/rsa.h
 include/node/openssl/rsaerr.h
+include/node/openssl/safestack_asm.h
+include/node/openssl/safestack_no-asm.h
 include/node/openssl/safestack.h
 include/node/openssl/seed.h
 include/node/openssl/sha.h
+include/node/openssl/srp_asm.h
+include/node/openssl/srp_no-asm.h
 include/node/openssl/srp.h
 include/node/openssl/srtp.h
+include/node/openssl/ssl_asm.h
+include/node/openssl/ssl_no-asm.h
 include/node/openssl/ssl.h
 include/node/openssl/ssl2.h
 include/node/openssl/ssl3.h
@@ -479,31 +490,30 @@ include/node/openssl/tls1.h
 include/node/openssl/ts.h
 include/node/openssl/tserr.h
 include/node/openssl/txt_db.h
+include/node/openssl/ui_asm.h
+include/node/openssl/ui_no-asm.h
 include/node/openssl/ui.h
 include/node/openssl/uierr.h
 include/node/openssl/whrlpool.h
+include/node/openssl/x509_asm.h
+include/node/openssl/x509_no-asm.h
+include/node/openssl/x509_vfy_asm.h
+include/node/openssl/x509_vfy_no-asm.h
 include/node/openssl/x509_vfy.h
 include/node/openssl/x509.h
 include/node/openssl/x509err.h
+include/node/openssl/x509v3_asm.h
+include/node/openssl/x509v3_no-asm.h
 include/node/openssl/x509v3.h
 include/node/openssl/x509v3err.h
-include/node/v8-cppgc.h
-include/node/v8-fast-api-calls.h
 include/node/v8-internal.h
-include/node/v8-metrics.h
 include/node/v8-platform.h
 include/node/v8-profiler.h
-include/node/v8-util.h
-include/node/v8-value-serializer-version.h
-include/node/v8-version-string.h
 include/node/v8-version.h
-include/node/v8-wasm-trap-handler-posix.h
-include/node/v8-wasm-trap-handler-win.h
 include/node/v8.h
 include/node/v8config.h
 man/man1/node.1.gz
 share/systemtap/tapset/node.stp
-@dir include/node/cppgc/internal
 @dir include/node/cppgc
 @dir include/node/libplatform
 @dir include/node/openssl/archs/aix-gcc/asm/crypto/include/internal
@@ -753,22 +763,13 @@ share/systemtap/tapset/node.stp
 @dir include/node/openssl/archs/linux-ppc64le/no-asm/include
 @dir include/node/openssl/archs/linux-ppc64le/no-asm
 @dir include/node/openssl/archs/linux-ppc64le
-@dir include/node/openssl/archs/linux-x32/asm/crypto/include/internal
-@dir include/node/openssl/archs/linux-x32/asm/crypto/include
 @dir include/node/openssl/archs/linux-x32/asm/crypto
-@dir include/node/openssl/archs/linux-x32/asm/include/openssl
 @dir include/node/openssl/archs/linux-x32/asm/include
 @dir include/node/openssl/archs/linux-x32/asm
-@dir include/node/openssl/archs/linux-x32/asm_avx2/crypto/include/internal
-@dir include/node/openssl/archs/linux-x32/asm_avx2/crypto/include
 @dir include/node/openssl/archs/linux-x32/asm_avx2/crypto
-@dir include/node/openssl/archs/linux-x32/asm_avx2/include/openssl
 @dir include/node/openssl/archs/linux-x32/asm_avx2/include
 @dir include/node/openssl/archs/linux-x32/asm_avx2
-@dir include/node/openssl/archs/linux-x32/no-asm/crypto/include/internal
-@dir include/node/openssl/archs/linux-x32/no-asm/crypto/include
 @dir include/node/openssl/archs/linux-x32/no-asm/crypto
-@dir include/node/openssl/archs/linux-x32/no-asm/include/openssl
 @dir include/node/openssl/archs/linux-x32/no-asm/include
 @dir include/node/openssl/archs/linux-x32/no-asm
 @dir include/node/openssl/archs/linux-x32
@@ -829,6 +830,13 @@ share/systemtap/tapset/node.stp
 @dir include/node/openssl/archs/linux64-mips64/no-asm/include
 @dir include/node/openssl/archs/linux64-mips64/no-asm
 @dir include/node/openssl/archs/linux64-mips64
+@dir include/node/openssl/archs/linux64-riscv64/no-asm/crypto/include/internal
+@dir include/node/openssl/archs/linux64-riscv64/no-asm/crypto/include
+@dir include/node/openssl/archs/linux64-riscv64/no-asm/crypto
+@dir include/node/openssl/archs/linux64-riscv64/no-asm/include/openssl
+@dir include/node/openssl/archs/linux64-riscv64/no-asm/include
+@dir include/node/openssl/archs/linux64-riscv64/no-asm
+@dir include/node/openssl/archs/linux64-riscv64
 @dir include/node/openssl/archs/linux64-s390x/asm/crypto/include/internal
 @dir include/node/openssl/archs/linux64-s390x/asm/crypto/include
 @dir include/node/openssl/archs/linux64-s390x/asm/crypto
@@ -934,5 +942,6 @@ share/systemtap/tapset/node.stp
 @dir include/node/openssl/archs
 @dir include/node/openssl
 @dir include/node
+@dir man/man1
 @dir share/systemtap/tapset
 @dir share/systemtap

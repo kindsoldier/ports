@@ -21,7 +21,7 @@ GNU_CONFIGURE=	yes
 CFLAGS+=	-I${WRKSRC}/include -I${LOCALBASE}/include
 CPPFLAGS+=	-I${WRKSRC}/include -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS+= --target=${TARGET}
+CONFIGURE_ARGS= --target=${TARGET}
 CONFIGURE_ARGS+= --with-system-zlib
 CONFIGURE_ARGS+= --disable-werror
 CONFIGURE_ARGS+= --with-gmp=${LOCALBASE}
