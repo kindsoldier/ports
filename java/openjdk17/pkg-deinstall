@@ -10,7 +10,7 @@ case $2 in
     DEINSTALL)
 	;;
     POST-DEINSTALL)
-	${LOCALBASE}/bin/unregistervm ${PREFIX}/openjdk14/bin/java
+	${LOCALBASE}/bin/unregistervm ${PREFIX}/openjdk17/bin/java
 	;;
 esac
 #EOF

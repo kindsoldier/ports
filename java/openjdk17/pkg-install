@@ -9,7 +9,7 @@ case $2 in
     PRE-INSTALL)
 	;;
     POST-INSTALL)
-	${LOCALBASE}/bin/registervm ${PREFIX}/openjdk14/bin/java
+	${LOCALBASE}/bin/registervm ${PREFIX}/openjdk17/bin/java
 	;;
 esac
 #EOF
