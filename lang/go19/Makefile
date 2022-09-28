@@ -12,6 +12,7 @@ DISTFILES+=     go-${OPSYS:tl}-${GOARCH}${GOARM}-${BOOTSTRAP_TAG}.tar.xz:bootstr
 
 .include <bsd.port.pre.mk>
 
+DISTINFO_FILE = ${MASTERDIR}/distinfo.${ARCH}
 
 BOOTSTRAP_TAG=	go1.17.9
 
@@ -50,19 +51,24 @@ sh_CMD=		"/usr/bin/env bash"
 WRKSRC=		${WRKDIR}/go
 ONLY_FOR_ARCHS=	i386 amd64 armv6 armv7 aarch64
 
-USE_LOCALE=en_US.UTF-8
+USE_LOCALE=	en_US.UTF-8
 EXTRACT_CMD=	${SETENV} LC_ALL=en_US.UTF-8 ${TAR}
 
 post-patch:
 	cd ${WRKSRC} && ${FIND} . -name '*.orig' -delete
+	${REINPLACE_CMD} -e 's|type -ap |type |' ${WRKSRC}/src/make.bash
 	${REINPLACE_CMD} -e 's|^if ulimit -T|false \&\& &|' ${WRKSRC}/src/run.bash
 
+
 PLIST= pkg-plist.${ARCH}
+
+#GOROOT_BOOTSTRAP=${WRKDIR}/go-${OPSYS:tl}-${GOARCH}${GOARM}-bootstrap
+GOROOT_BOOTSTRAP=${LOCALBASE}/lib/go
 
 do-build:
 	cd ${WRKSRC}/src ; ${SETENV} \
 		XDG_CACHE_HOME=${WRKDIR} \
-		GOROOT_BOOTSTRAP=${WRKDIR}/go-${OPSYS:tl}-${GOARCH}${GOARM}-bootstrap \
+		GOROOT_BOOTSTRAP=${GOROOT_BOOTSTRAP} \
 		GOROOT=${WRKSRC} \
 		GOROOT_FINAL=${PREFIX}/go \
 		GOBIN= \
@@ -71,7 +77,7 @@ do-build:
 		GO386=${GO386} \
 		GOARM=${GOARM} \
 		CC=${CC} \
-		${LOCALBASE}/bin/bash make.bash -v
+		${LOCALBASE}/bin/bash -x make.bash -v
 #		${SH} make.bash -v
 	${RM} -r ${WRKSRC}/pkg/obj \
 	    ${WRKSRC}/pkg/bootstrap \
