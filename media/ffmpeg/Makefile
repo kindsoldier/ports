@@ -13,7 +13,7 @@ BUILD_DEPENDS=	yasm:devel/yasm
 
 LIB_DEPENDS+= libSDL2.so:devel/libSDL2
 
-LIB_DEPENDS+= libdrm.so:system/libdrm
+#LIB_DEPENDS+= libdrm.so:system/libdrm
 LIB_DEPENDS+= libfreetype.so:graph/libfreetype2
 LIB_DEPENDS+= libgmp.so:math/libgmp
 LIB_DEPENDS+= libgnutls.so:crypto/libgnutls

@@ -21,6 +21,6 @@ GH_ACCOUNT=	CESNET
 #CMAKE_ARGS+=	-DENABLE_LYD_PRIV=ON
 
 post-install:
-	${GZIP_CMD} ${STAGEDIR}${PREFIX}/share/man/man?/*.1
+	${GZIP_CMD} ${STAGEDIR}${PREFIX}//man/man?/*.1
 
 .include <bsd.port.mk>
