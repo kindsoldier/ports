@@ -1,0 +1,28 @@
+#!/bin/sh
+#
+# PROVIDE: nfcapd3
+# REQUIRE: DAEMON
+#
+. /etc/rc.subr
+
+#instance=3
+
+name="nfcapd3"
+rcvar="nfcapd3_enable"
+command="/usr/local/sbin/nfcapd"
+pidfile="/var/run/nfcapd3.pid"
+procname="${command}"
+#command_args=" -D -P ${pidfile}"
+required_dirs="/var/run"
+#required_vars="${name}_interfaces ${name}_netflow_host ${name}_netflow_port"
+
+load_rc_config $name
+
+# /var/db/nfdump2 -S 8 -p 9998 -P /var/run/nfcapd2.pid
+
+: ${nfcapd3_enable="NO"}
+: ${nfcapd3_flags="-D -p 9998 -l /var/db/nfdump3 -P /var/run/nfcapd3.pid -S 8  "}
+
+
+run_rc_command "$1"
+#EOF

@@ -1,0 +1,16 @@
+%%EXAMPLESDIR%%/system.conf.sample
+sbin/dahdi_cfg
+sbin/dahdi_maint
+sbin/dahdi_monitor
+sbin/dahdi_scan
+sbin/dahdi_speed
+sbin/dahdi_test
+sbin/dahdi_tool
+sbin/fxotune
+
+include/dahdi/tonezone.h
+
+lib/libtonezone.a
+lib/libtonezone.so
+lib/libtonezone.so.2
+@dirrm include/dahdi

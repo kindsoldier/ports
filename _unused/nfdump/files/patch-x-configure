@@ -1,0 +1,20 @@
+--- ./configure.orig	2014-11-17 20:50:10.000000000 +0200
++++ ./configure	2015-02-26 10:46:17.000000000 +0200
+@@ -4944,7 +4944,7 @@
+ 
+ 
+ # Check whether --enable-nfprofile was given.
+-if test "${enable_nfprofile+set}" = set; then :
++if test "x${enable_nfprofile}" = xyes; then :
+   enableval=$enable_nfprofile;
+ 	{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for rrd_update in -lrrd" >&5
+ $as_echo_n "checking for rrd_update in -lrrd... " >&6; }
+@@ -5068,7 +5068,7 @@
+ 
+ 
+ # Check whether --enable-nftrack was given.
+-if test "${enable_nftrack+set}" = set; then :
++if test "x${enable_nftrack}" = xyes; then :
+   enableval=$enable_nftrack;
+ 	{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for rrd_update in -lrrd" >&5
+ $as_echo_n "checking for rrd_update in -lrrd... " >&6; }

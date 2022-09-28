@@ -1,0 +1,15 @@
+libexec/nagios/check_snmp_boostedge
+libexec/nagios/check_snmp_cpfw
+libexec/nagios/check_snmp_css
+libexec/nagios/check_snmp_css_main
+libexec/nagios/check_snmp_env
+libexec/nagios/check_snmp_int
+libexec/nagios/check_snmp_linkproof_nhr
+libexec/nagios/check_snmp_load
+libexec/nagios/check_snmp_mem
+libexec/nagios/check_snmp_nsbox
+libexec/nagios/check_snmp_process
+libexec/nagios/check_snmp_storage
+libexec/nagios/check_snmp_vrrp
+libexec/nagios/check_snmp_win
+@dir libexec/nagios

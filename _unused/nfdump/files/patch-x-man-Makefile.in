@@ -1,0 +1,13 @@
+--- ./man/Makefile.in.orig	2014-11-17 20:50:11.000000000 +0200
++++ ./man/Makefile.in	2015-02-26 10:57:15.000000000 +0200
+@@ -235,8 +235,8 @@
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-dist_man_MANS = ft2nfdump.1 nfcapd.1 nfdump.1 nfexpire.1 nfprofile.1 nfreplay.1 nfanon.1 \
+-	sfcapd.1
++dist_man_MANS = nfcapd.1 nfdump.1 nfexpire.1  nfreplay.1 nfanon.1
++#ft2nfdump.1 sfcapd.1 nfprofile.1
+ 
+ all: all-am
+ 

@@ -1,0 +1,4 @@
+bin/spine
+man/man1/spine.1.gz
+share/examples/spine/spine.conf.sample
+@dir share/examples/spine
