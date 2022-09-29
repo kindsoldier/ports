@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	quake3-
 CATEGORIES=	games
 DIST_SUBDIR=	quake3
 
-MASTER_SITES+=	http://files.theabyss.ru/quake3:pak0
+#MASTER_SITES+=	http://files.theabyss.ru/quake3:pak0
 MASTER_SITES+=	http://www.teamclick.org/ronin/quake3/baseq3/:pak0
 MASTER_SITES+=	http://game.pioneernet.ru/dl/q3/files/pk3/:pak0
 MASTER_SITES+=	http://ftp.muse-gaming.org/baseq3/:pak0
