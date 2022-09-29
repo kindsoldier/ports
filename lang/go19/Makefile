@@ -62,23 +62,39 @@ post-patch:
 
 PLIST= pkg-plist.${ARCH}
 
-#GOROOT_BOOTSTRAP=${WRKDIR}/go-${OPSYS:tl}-${GOARCH}${GOARM}-bootstrap
-GOROOT_BOOTSTRAP=${LOCALBASE}/lib/go
+GOROOT_BOOTSTRAP=${WRKDIR}/go-${OPSYS:tl}-${GOARCH}${GOARM}-bootstrap
+#GOROOT_BOOTSTRAP=${LOCALBASE}/lib/go
 
 do-build:
+#	cd ${WRKSRC}/src ; ${SETENV} \
+#		XDG_CACHE_HOME=${WRKDIR} \
+#		GOROOT_BOOTSTRAP=${GOROOT_BOOTSTRAP} \
+#		GOROOT=${WRKSRC} \
+#		GOROOT_FINAL=${PREFIX}/go \
+#		GOBIN= \
+#		GOOS=${OPSYS:tl} \
+#		GOARCH=${GOARCH} \
+#		GO386=${GO386} \
+#		GOARM=${GOARM} \
+#		CC=${CC} \
+#		${LOCALBASE}/bin/bash make.bash -v
+
 	cd ${WRKSRC}/src ; ${SETENV} \
 		XDG_CACHE_HOME=${WRKDIR} \
 		GOROOT_BOOTSTRAP=${GOROOT_BOOTSTRAP} \
 		GOROOT=${WRKSRC} \
 		GOROOT_FINAL=${PREFIX}/go \
-		GOBIN= \
+		GOBIN=${GOROOT_BOOTSTRAP}/bin/go \
 		GOOS=${OPSYS:tl} \
 		GOARCH=${GOARCH} \
 		GO386=${GO386} \
 		GOARM=${GOARM} \
 		CC=${CC} \
-		${LOCALBASE}/bin/bash -x make.bash -v
-#		${SH} make.bash -v
+		GOMEMLIMIT=256KiB GOGC=50 \
+		${LOCALBASE}/bin/bash make.bash -v
+
+
+
 	${RM} -r ${WRKSRC}/pkg/obj \
 	    ${WRKSRC}/pkg/bootstrap \
 	    ${WRKSRC}/pkg/${OPSYS:tl}_${GOARCH}/cmd

@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	emacs
 DIST_SUBDIR=	gnu
 DISTFILES=	${PORTNAME}-${PORTVERSION}${PORTSUBVERION}${EXTRACT_SUFX}
 
-PKGNAMESUFFIX=  -no-x
+PKGNAMESUFFIX=  -nox
 
 MAINTAINER=	onborodin@gmail.com
 COMMENT=	GNU editing macros
@@ -17,7 +17,7 @@ COMMENT=	GNU editing macros
 
 LIB_DEPENDS+= libxml2.so:text/libxml2
 LIB_DEPENDS+= libiconv.so:text/libiconv
-LIB_DEPENDS+= libsysinfo.so:system/libsysinfo
+#LIB_DEPENDS+= libsysinfo.so:system/libsysinfo
 
 #LIB_DEPENDS+=	libgdk-x11.so:gnome/libgtk2
 #LIB_DEPENDS+=	libgtk-x11.so:gnome/libgtk2
@@ -33,31 +33,41 @@ CONFIGURE_ARGS+= --infodir=${PREFIX}/info
 CONFIGURE_ARGS+= --mandir=${PREFIX}/man
 CFLAGS+=	-I${LOCALBASE}/include
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lsysinfo
+LDFLAGS+=	-L${LOCALBASE}/lib -lgmp
 
 CONFIGURE_ARGS+= --without-dbus
 CONFIGURE_ARGS+= --without-gconf
 CONFIGURE_ARGS+= --without-gnutls
 CONFIGURE_ARGS+= --without-imagemagick
 
-CONFIGURE_ARGS+= --without-libotf
-CONFIGURE_ARGS+= --without-rsvg
-CONFIGURE_ARGS+= --without-xft
-CONFIGURE_ARGS+= --without-xml2
-
-.include <bsd.port.pre.mk>
-
 CONFIGURE_ARGS+= --without-x
-CONFIGURE_ARGS+= --without-xpm
-CONFIGURE_ARGS+= --without-jpeg
-CONFIGURE_ARGS+= --without-tiff
+
+CONFIGURE_ARGS+= --with-sound=no
+CONFIGURE_ARGS+= --with-x-toolkit=no
+CONFIGURE_ARGS+= --without-cairo
+CONFIGURE_ARGS+= --without-dbus
 CONFIGURE_ARGS+= --without-gif
-CONFIGURE_ARGS+= --without-png
-CONFIGURE_ARGS+= --without-xim
+CONFIGURE_ARGS+= --without-gsettings
+CONFIGURE_ARGS+= --without-imagemagick
+CONFIGURE_ARGS+= --without-jpeg
 CONFIGURE_ARGS+= --without-lcms2
+CONFIGURE_ARGS+= --without-libotf
+CONFIGURE_ARGS+= --without-m17n-flt
+CONFIGURE_ARGS+= --without-png
+CONFIGURE_ARGS+= --without-rsvg
+CONFIGURE_ARGS+= --without-tiff
+CONFIGURE_ARGS+= --without-toolkit-scroll-bars
+CONFIGURE_ARGS+= --without-xft
+CONFIGURE_ARGS+= --without-xim
+CONFIGURE_ARGS+= --without-xml2
+CONFIGURE_ARGS+= --without-xpm
+CONFIGURE_ARGS+= --without-xwidgets
+
 
 #CONFIGURE_ARGS+= --without-toolkit-scroll-bars
 #CONFIGURE_ENV=  ac_cv_header_sys_sysinfo_h=no
+CONFIGURE_ENV=	ac_cv_header_sys_sysinfo_h=no
+
 MANCOMPRESSED=	yes
 
 STRIP=	#
@@ -123,6 +133,8 @@ INFO+= woman
 PLIST_SUB+= VERSION=${PORTVERSION} 
 PLIST_SUB+= TARGET=${CONFIGURE_TARGET}
 
+PLIST=      ${PKGDIR}/pkg-plist.${ARCH}
+
 FILES= ${WRKSRC}/configure
 
 post-patch:
@@ -138,18 +150,11 @@ post-patch:
 	${REINPLACE_CMD} -e 's|librsvg-2.0|librsvg|g' 	${FILES}
 
 
-#	${REINPLACE_CMD} -e 's|gconf-2.0|gconf|g' 	${FILES}
-#	${REINPLACE_CMD} -e 's|gdk-pixbuf-2.0|gdk-pixbuf|g' ${FILES}
-#	${REINPLACE_CMD} -e 's|gnome-vfs-2.0|gnome-vfs|g' ${FILES}
-#	${REINPLACE_CMD} -e 's|libart-2.0|libart|g' 	${FILES}
-#	${REINPLACE_CMD} -e 's|libgnome-2.0|libgnome|g' ${FILES}
-#	${REINPLACE_CMD} -e 's|libIDL-2.0|libIDL|g' 	${FILES}
-
-
 post-install:
 	cd ${STAGEDIR}${PREFIX}/bin && ${RM} emacs && ${MV} emacs-${PORTVERSION} emacs
 
 
-.include <bsd.port.post.mk>
+
+.include <bsd.port.mk>
 
 #EOF
