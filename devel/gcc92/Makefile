@@ -2,7 +2,7 @@
 # $Id: Makefile 1285 2007-10-25 11:42:14Z root $
 #
 PORTNAME=	gcc
-PORTVERSION=	10.4.0
+PORTVERSION=	9.2.0
 DIST_SUBDIR=	gnu
 MASTER_SITES+=	http://ftp.gnu.org/gnu/${PORTNAME}/${PORTNAME}-${PORTVERSION}/
 MASTER_SITES+=	ftp://ftp.fu-berlin.de/unix/languages/gcc/snapshots/9-20190504/
@@ -27,7 +27,6 @@ CONFIGURE_TARGET= ${TARGET}
 USES+=		tar:xz
 GNU_CONFIGURE=	yes
 USES+=		gmake
-PATCH_STRIP= -p2
 
 .include <bsd.port.pre.mk>
 
@@ -39,7 +38,6 @@ USE_LDCONFIG=	${TARGLIB}
 CFLAGS+= 	-fPIC -I${LOCALBASE}/include
 CXXFLAGS+=	-fPIC -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-
 
 TARGLIB=	${PREFIX}/lib/gcc/${PORTVERSION}
 
