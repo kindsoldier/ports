@@ -140,7 +140,6 @@ include/python3.8/warnings.h
 include/python3.8/weakrefobject.h
 lib/libpython3.8.so
 lib/libpython3.8.so.1
-lib/libpython3.so
 lib/pkgconfig/python-3.8-embed.pc
 lib/pkgconfig/python-3.8.pc
 lib/python3.8/__future__.py
