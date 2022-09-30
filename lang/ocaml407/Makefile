@@ -3,7 +3,7 @@
 # for committer: bump PORTREVISION for math/facile whenever ocaml gets updated
 
 PORTNAME=	ocaml
-PORTVERSION=	4.05.0
+PORTVERSION=	4.07.1
 CATEGORIES=	lang
 MASTER_SITES+=	http://caml.inria.fr/pub/distrib/${DISTNAME:R}/ GENTOO
 MASTER_SITES+=  http://caml.inria.fr/pub/distrib/${DISTNAME:R}/:docs
@@ -13,7 +13,7 @@ MAINTAINER=	michipili@gmail.com
 COMMENT=	Objective Caml compiler and programming environment
 
 
-BROKEN_aarch64=	Does not build: sh: as: not found
+#BROKEN_aarch64=	Does not build: sh: as: not found
 BROKEN_sparc64=	No rule to make target 'none.o', needed by 'libasmrun.a'
 BROKEN_mips64=	No ASM support
 BROKEN_mips=	No ASM support
@@ -54,15 +54,14 @@ post-patch:
 	${REINPLACE_CMD} \
 		-e '\|MKLIB=|s|ar rc|${AR} rc|' \
 		-e '\|RANLIB|s|ranlib|${RANLIB}|' \
-		-e '\|bytecclinkopts=|s|""|"${LDFLAGS}"|' \
-		-e "\|nativecclinkopts=|s|''|\"${LDFLAGS:C/-Wl,//}\"|" \
+		-e '\|^ldflags=|s|""|"${LDFLAGS}"|' \
 		${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's,$$(ARCH),$$(SYSTEM_ARCH),' \
 		${WRKSRC}/Makefile ${WRKSRC}/Makefile.tools \
 		${WRKSRC}/asmrun/Makefile \
+		${WRKSRC}/ocamltest/Makefile \
 		${WRKSRC}/otherlibs/systhreads/Makefile \
-		${WRKSRC}/testsuite/makefiles/Makefile.common \
-		${WRKSRC}/testsuite/tests/asmcomp/Makefile
+		${WRKSRC}/testsuite/tests/asmgen/Makefile
 
 post-configure:
 	${REINPLACE_CMD} -E \
