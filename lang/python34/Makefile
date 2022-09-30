@@ -17,6 +17,11 @@ COMMENT=	An interpreted object-oriented programming language
 
 #LIB_DEPENDS+=	libsqlite3.so:data/sqlite3
 LIB_DEPENDS+=	libexpat.so:text/libexpat
+LIB_DEPENDS+=	libintl.so:devel/gettext
+
+
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib -lintl
 
 
 USES+=		tar:xz

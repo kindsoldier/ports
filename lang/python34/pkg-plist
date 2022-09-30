@@ -1763,6 +1763,7 @@ lib/python3.4/idlelib/Icons/minusnode.gif
 lib/python3.4/idlelib/Icons/openfolder.gif
 lib/python3.4/idlelib/Icons/plusnode.gif
 lib/python3.4/idlelib/Icons/python.gif
+lib/python3.4/idlelib/Icons/tk.gif
 lib/python3.4/idlelib/idle_test/__init__.py
 lib/python3.4/idlelib/idle_test/__pycache__/__init__.cpython-34.pyc
 lib/python3.4/idlelib/idle_test/__pycache__/__init__.cpython-34.pyo
@@ -1770,6 +1771,8 @@ lib/python3.4/idlelib/idle_test/__pycache__/htest.cpython-34.pyc
 lib/python3.4/idlelib/idle_test/__pycache__/htest.cpython-34.pyo
 lib/python3.4/idlelib/idle_test/__pycache__/mock_idle.cpython-34.pyc
 lib/python3.4/idlelib/idle_test/__pycache__/mock_idle.cpython-34.pyo
+lib/python3.4/idlelib/idle_test/__pycache__/mock_tk.cpython-34.pyc
+lib/python3.4/idlelib/idle_test/__pycache__/mock_tk.cpython-34.pyo
 lib/python3.4/idlelib/idle_test/__pycache__/test_autocomplete.cpython-34.pyc
 lib/python3.4/idlelib/idle_test/__pycache__/test_autocomplete.cpython-34.pyo
 lib/python3.4/idlelib/idle_test/__pycache__/test_autoexpand.cpython-34.pyc
@@ -1814,6 +1817,7 @@ lib/python3.4/idlelib/idle_test/__pycache__/test_widgetredir.cpython-34.pyc
 lib/python3.4/idlelib/idle_test/__pycache__/test_widgetredir.cpython-34.pyo
 lib/python3.4/idlelib/idle_test/htest.py
 lib/python3.4/idlelib/idle_test/mock_idle.py
+lib/python3.4/idlelib/idle_test/mock_tk.py
 lib/python3.4/idlelib/idle_test/README.txt
 lib/python3.4/idlelib/idle_test/test_autocomplete.py
 lib/python3.4/idlelib/idle_test/test_autoexpand.py
@@ -2953,6 +2957,8 @@ lib/python3.4/test/__pycache__/test_multiprocessing_spawn.cpython-34.pyc
 lib/python3.4/test/__pycache__/test_multiprocessing_spawn.cpython-34.pyo
 lib/python3.4/test/__pycache__/test_netrc.cpython-34.pyc
 lib/python3.4/test/__pycache__/test_netrc.cpython-34.pyo
+lib/python3.4/test/__pycache__/test_nis.cpython-34.pyc
+lib/python3.4/test/__pycache__/test_nis.cpython-34.pyo
 lib/python3.4/test/__pycache__/test_nntplib.cpython-34.pyc
 lib/python3.4/test/__pycache__/test_nntplib.cpython-34.pyo
 lib/python3.4/test/__pycache__/test_normalization.cpython-34.pyc
@@ -3207,6 +3213,8 @@ lib/python3.4/test/__pycache__/test_timeit.cpython-34.pyc
 lib/python3.4/test/__pycache__/test_timeit.cpython-34.pyo
 lib/python3.4/test/__pycache__/test_timeout.cpython-34.pyc
 lib/python3.4/test/__pycache__/test_timeout.cpython-34.pyo
+lib/python3.4/test/__pycache__/test_tk.cpython-34.pyc
+lib/python3.4/test/__pycache__/test_tk.cpython-34.pyo
 lib/python3.4/test/__pycache__/test_tokenize.cpython-34.pyc
 lib/python3.4/test/__pycache__/test_tokenize.cpython-34.pyo
 lib/python3.4/test/__pycache__/test_trace.cpython-34.pyc
@@ -4277,6 +4285,7 @@ lib/python3.4/test/test_multiprocessing_forkserver.py
 lib/python3.4/test/test_multiprocessing_main_handling.py
 lib/python3.4/test/test_multiprocessing_spawn.py
 lib/python3.4/test/test_netrc.py
+lib/python3.4/test/test_nis.py
 lib/python3.4/test/test_nntplib.py
 lib/python3.4/test/test_normalization.py
 lib/python3.4/test/test_ntpath.py
@@ -4404,6 +4413,7 @@ lib/python3.4/test/test_threadsignals.py
 lib/python3.4/test/test_time.py
 lib/python3.4/test/test_timeit.py
 lib/python3.4/test/test_timeout.py
+lib/python3.4/test/test_tk.py
 lib/python3.4/test/test_tokenize.py
 lib/python3.4/test/test_trace.py
 lib/python3.4/test/test_traceback.py
@@ -4486,6 +4496,106 @@ lib/python3.4/textwrap.py
 lib/python3.4/this.py
 lib/python3.4/threading.py
 lib/python3.4/timeit.py
+lib/python3.4/tkinter/__init__.py
+lib/python3.4/tkinter/__main__.py
+lib/python3.4/tkinter/__pycache__/__init__.cpython-34.pyc
+lib/python3.4/tkinter/__pycache__/__init__.cpython-34.pyo
+lib/python3.4/tkinter/__pycache__/__main__.cpython-34.pyc
+lib/python3.4/tkinter/__pycache__/__main__.cpython-34.pyo
+lib/python3.4/tkinter/__pycache__/_fix.cpython-34.pyc
+lib/python3.4/tkinter/__pycache__/_fix.cpython-34.pyo
+lib/python3.4/tkinter/__pycache__/colorchooser.cpython-34.pyc
+lib/python3.4/tkinter/__pycache__/colorchooser.cpython-34.pyo
+lib/python3.4/tkinter/__pycache__/commondialog.cpython-34.pyc
+lib/python3.4/tkinter/__pycache__/commondialog.cpython-34.pyo
+lib/python3.4/tkinter/__pycache__/constants.cpython-34.pyc
+lib/python3.4/tkinter/__pycache__/constants.cpython-34.pyo
+lib/python3.4/tkinter/__pycache__/dialog.cpython-34.pyc
+lib/python3.4/tkinter/__pycache__/dialog.cpython-34.pyo
+lib/python3.4/tkinter/__pycache__/dnd.cpython-34.pyc
+lib/python3.4/tkinter/__pycache__/dnd.cpython-34.pyo
+lib/python3.4/tkinter/__pycache__/filedialog.cpython-34.pyc
+lib/python3.4/tkinter/__pycache__/filedialog.cpython-34.pyo
+lib/python3.4/tkinter/__pycache__/font.cpython-34.pyc
+lib/python3.4/tkinter/__pycache__/font.cpython-34.pyo
+lib/python3.4/tkinter/__pycache__/messagebox.cpython-34.pyc
+lib/python3.4/tkinter/__pycache__/messagebox.cpython-34.pyo
+lib/python3.4/tkinter/__pycache__/scrolledtext.cpython-34.pyc
+lib/python3.4/tkinter/__pycache__/scrolledtext.cpython-34.pyo
+lib/python3.4/tkinter/__pycache__/simpledialog.cpython-34.pyc
+lib/python3.4/tkinter/__pycache__/simpledialog.cpython-34.pyo
+lib/python3.4/tkinter/__pycache__/tix.cpython-34.pyc
+lib/python3.4/tkinter/__pycache__/tix.cpython-34.pyo
+lib/python3.4/tkinter/__pycache__/ttk.cpython-34.pyc
+lib/python3.4/tkinter/__pycache__/ttk.cpython-34.pyo
+lib/python3.4/tkinter/_fix.py
+lib/python3.4/tkinter/colorchooser.py
+lib/python3.4/tkinter/commondialog.py
+lib/python3.4/tkinter/constants.py
+lib/python3.4/tkinter/dialog.py
+lib/python3.4/tkinter/dnd.py
+lib/python3.4/tkinter/filedialog.py
+lib/python3.4/tkinter/font.py
+lib/python3.4/tkinter/messagebox.py
+lib/python3.4/tkinter/scrolledtext.py
+lib/python3.4/tkinter/simpledialog.py
+lib/python3.4/tkinter/test/__init__.py
+lib/python3.4/tkinter/test/__pycache__/__init__.cpython-34.pyc
+lib/python3.4/tkinter/test/__pycache__/__init__.cpython-34.pyo
+lib/python3.4/tkinter/test/__pycache__/runtktests.cpython-34.pyc
+lib/python3.4/tkinter/test/__pycache__/runtktests.cpython-34.pyo
+lib/python3.4/tkinter/test/__pycache__/support.cpython-34.pyc
+lib/python3.4/tkinter/test/__pycache__/support.cpython-34.pyo
+lib/python3.4/tkinter/test/__pycache__/widget_tests.cpython-34.pyc
+lib/python3.4/tkinter/test/__pycache__/widget_tests.cpython-34.pyo
+lib/python3.4/tkinter/test/README
+lib/python3.4/tkinter/test/runtktests.py
+lib/python3.4/tkinter/test/support.py
+lib/python3.4/tkinter/test/test_tkinter/__init__.py
+lib/python3.4/tkinter/test/test_tkinter/__pycache__/__init__.cpython-34.pyc
+lib/python3.4/tkinter/test/test_tkinter/__pycache__/__init__.cpython-34.pyo
+lib/python3.4/tkinter/test/test_tkinter/__pycache__/test_font.cpython-34.pyc
+lib/python3.4/tkinter/test/test_tkinter/__pycache__/test_font.cpython-34.pyo
+lib/python3.4/tkinter/test/test_tkinter/__pycache__/test_geometry_managers.cpython-34.pyc
+lib/python3.4/tkinter/test/test_tkinter/__pycache__/test_geometry_managers.cpython-34.pyo
+lib/python3.4/tkinter/test/test_tkinter/__pycache__/test_images.cpython-34.pyc
+lib/python3.4/tkinter/test/test_tkinter/__pycache__/test_images.cpython-34.pyo
+lib/python3.4/tkinter/test/test_tkinter/__pycache__/test_loadtk.cpython-34.pyc
+lib/python3.4/tkinter/test/test_tkinter/__pycache__/test_loadtk.cpython-34.pyo
+lib/python3.4/tkinter/test/test_tkinter/__pycache__/test_misc.cpython-34.pyc
+lib/python3.4/tkinter/test/test_tkinter/__pycache__/test_misc.cpython-34.pyo
+lib/python3.4/tkinter/test/test_tkinter/__pycache__/test_text.cpython-34.pyc
+lib/python3.4/tkinter/test/test_tkinter/__pycache__/test_text.cpython-34.pyo
+lib/python3.4/tkinter/test/test_tkinter/__pycache__/test_variables.cpython-34.pyc
+lib/python3.4/tkinter/test/test_tkinter/__pycache__/test_variables.cpython-34.pyo
+lib/python3.4/tkinter/test/test_tkinter/__pycache__/test_widgets.cpython-34.pyc
+lib/python3.4/tkinter/test/test_tkinter/__pycache__/test_widgets.cpython-34.pyo
+lib/python3.4/tkinter/test/test_tkinter/test_font.py
+lib/python3.4/tkinter/test/test_tkinter/test_geometry_managers.py
+lib/python3.4/tkinter/test/test_tkinter/test_images.py
+lib/python3.4/tkinter/test/test_tkinter/test_loadtk.py
+lib/python3.4/tkinter/test/test_tkinter/test_misc.py
+lib/python3.4/tkinter/test/test_tkinter/test_text.py
+lib/python3.4/tkinter/test/test_tkinter/test_variables.py
+lib/python3.4/tkinter/test/test_tkinter/test_widgets.py
+lib/python3.4/tkinter/test/test_ttk/__init__.py
+lib/python3.4/tkinter/test/test_ttk/__pycache__/__init__.cpython-34.pyc
+lib/python3.4/tkinter/test/test_ttk/__pycache__/__init__.cpython-34.pyo
+lib/python3.4/tkinter/test/test_ttk/__pycache__/test_extensions.cpython-34.pyc
+lib/python3.4/tkinter/test/test_ttk/__pycache__/test_extensions.cpython-34.pyo
+lib/python3.4/tkinter/test/test_ttk/__pycache__/test_functions.cpython-34.pyc
+lib/python3.4/tkinter/test/test_ttk/__pycache__/test_functions.cpython-34.pyo
+lib/python3.4/tkinter/test/test_ttk/__pycache__/test_style.cpython-34.pyc
+lib/python3.4/tkinter/test/test_ttk/__pycache__/test_style.cpython-34.pyo
+lib/python3.4/tkinter/test/test_ttk/__pycache__/test_widgets.cpython-34.pyc
+lib/python3.4/tkinter/test/test_ttk/__pycache__/test_widgets.cpython-34.pyo
+lib/python3.4/tkinter/test/test_ttk/test_extensions.py
+lib/python3.4/tkinter/test/test_ttk/test_functions.py
+lib/python3.4/tkinter/test/test_ttk/test_style.py
+lib/python3.4/tkinter/test/test_ttk/test_widgets.py
+lib/python3.4/tkinter/test/widget_tests.py
+lib/python3.4/tkinter/tix.py
+lib/python3.4/tkinter/ttk.py
 lib/python3.4/token.py
 lib/python3.4/tokenize.py
 lib/python3.4/trace.py
@@ -4798,9 +4908,7 @@ lib/python3.4/xmlrpc/client.py
 lib/python3.4/xmlrpc/server.py
 lib/python3.4/zipfile.py
 man/man1/python3.4.1.gz
-@dir bin
 @dir include/python3.4m
-@dir include
 @dir lib/pkgconfig
 @dir lib/python3.4/__pycache__
 @dir lib/python3.4/asyncio/__pycache__
@@ -4942,6 +5050,14 @@ man/man1/python3.4.1.gz
 @dir lib/python3.4/test/tracedmodules
 @dir lib/python3.4/test/xmltestdata
 @dir lib/python3.4/test
+@dir lib/python3.4/tkinter/__pycache__
+@dir lib/python3.4/tkinter/test/__pycache__
+@dir lib/python3.4/tkinter/test/test_tkinter/__pycache__
+@dir lib/python3.4/tkinter/test/test_tkinter
+@dir lib/python3.4/tkinter/test/test_ttk/__pycache__
+@dir lib/python3.4/tkinter/test/test_ttk
+@dir lib/python3.4/tkinter/test
+@dir lib/python3.4/tkinter
 @dir lib/python3.4/turtledemo/__pycache__
 @dir lib/python3.4/turtledemo
 @dir lib/python3.4/unittest/__pycache__

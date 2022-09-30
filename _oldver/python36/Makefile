@@ -17,13 +17,13 @@ COMMENT=	An interpreted object-oriented programming language
 
 #LIB_DEPENDS+=	libsqlite3.so:data/sqlite3
 LIB_DEPENDS+=	libexpat.so:text/libexpat
+LIB_DEPENDS+=	libintl.so:devel/gettext
 
-###PREFIX= ${LOCALBASE}/python
 
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
-USES+=		autoreconf gmake tar:xz
+USES+=		gmake tar:xz
 
 CONFIGURE_ENV=	OPT="${CFLAGS}" SVNVERSION="echo freebsd"
 MAKE_ENV=	VPATH="${PYTHON_WRKSRC}"
@@ -40,6 +40,10 @@ CONFIGURE_ARGS+= --mandir=${PREFIX}/man
 CPPFLAGS=	-pthread
 LDFLAGS+=	-pthread
 
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib -lintl
+
+
 DISABLED_EXTENSIONS=	_sqlite3 _tkinter _gdbm nis
 CONFIGURE_ARGS+=	--without-ensurepip
 CONFIGURE_ENV+=		OPT="" DISABLED_EXTENSIONS="${DISABLED_EXTENSIONS}"
@@ -53,7 +57,7 @@ PLIST_SUB+= OSMAJOR=${OSVERSION:C/([0-9]*)[0-9]{5}/\1/}
 PLIST_SUB+= TARGET=freebsd${OSVERSION_MAJOR}
 
 post-patch:
-	${REINPLACE_CMD} -e 's,SOVERSION=1.0,SOVERSION=1,' ${WRKSRC}/configure.ac
+	${REINPLACE_CMD} -e '/SOVERSION/s,1.0,1,' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
 #EOF

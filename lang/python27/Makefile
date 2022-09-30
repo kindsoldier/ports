@@ -86,7 +86,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 #TARGET=		arm-freebsd
 #.endif
 
-PLIST=	${PKGDIR}/pkg-plist.${ARCH}
+#PLIST=	${PKGDIR}/pkg-plist.${ARCH}
 
 post-install:
 	cd ${WRKSRC} && ${GMAKE} DESTDIR=${STAGEDIR} altbininstall

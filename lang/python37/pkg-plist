@@ -49,6 +49,7 @@ include/python3.7m/internal/hamt.h
 include/python3.7m/internal/hash.h
 include/python3.7m/internal/import.h
 include/python3.7m/internal/mem.h
+include/python3.7m/internal/pycore_long.h
 include/python3.7m/internal/pygetopt.h
 include/python3.7m/internal/pystate.h
 include/python3.7m/internal/warnings.h
@@ -119,6 +120,7 @@ include/python3.7m/warnings.h
 include/python3.7m/weakrefobject.h
 lib/libpython3.7m.so
 lib/libpython3.7m.so.1
+lib/libpython3.so
 lib/pkgconfig/python-3.7.pc
 lib/pkgconfig/python-3.7m.pc
 lib/python3.7/__future__.py
@@ -2138,8 +2140,8 @@ lib/python3.7/ensurepip/__pycache__/__main__.cpython-37.pyc
 lib/python3.7/ensurepip/__pycache__/_uninstall.cpython-37.opt-1.pyc
 lib/python3.7/ensurepip/__pycache__/_uninstall.cpython-37.opt-2.pyc
 lib/python3.7/ensurepip/__pycache__/_uninstall.cpython-37.pyc
-lib/python3.7/ensurepip/_bundled/pip-19.0.3-py2.py3-none-any.whl
-lib/python3.7/ensurepip/_bundled/setuptools-40.8.0-py2.py3-none-any.whl
+lib/python3.7/ensurepip/_bundled/pip-22.0.4-py3-none-any.whl
+lib/python3.7/ensurepip/_bundled/setuptools-47.1.0-py3-none-any.whl
 lib/python3.7/ensurepip/_uninstall.py
 lib/python3.7/enum.py
 lib/python3.7/filecmp.py
@@ -2255,6 +2257,9 @@ lib/python3.7/idlelib/__pycache__/editor.cpython-37.pyc
 lib/python3.7/idlelib/__pycache__/filelist.cpython-37.opt-1.pyc
 lib/python3.7/idlelib/__pycache__/filelist.cpython-37.opt-2.pyc
 lib/python3.7/idlelib/__pycache__/filelist.cpython-37.pyc
+lib/python3.7/idlelib/__pycache__/format.cpython-37.opt-1.pyc
+lib/python3.7/idlelib/__pycache__/format.cpython-37.opt-2.pyc
+lib/python3.7/idlelib/__pycache__/format.cpython-37.pyc
 lib/python3.7/idlelib/__pycache__/grep.cpython-37.opt-1.pyc
 lib/python3.7/idlelib/__pycache__/grep.cpython-37.opt-2.pyc
 lib/python3.7/idlelib/__pycache__/grep.cpython-37.pyc
@@ -2288,9 +2293,6 @@ lib/python3.7/idlelib/__pycache__/multicall.cpython-37.pyc
 lib/python3.7/idlelib/__pycache__/outwin.cpython-37.opt-1.pyc
 lib/python3.7/idlelib/__pycache__/outwin.cpython-37.opt-2.pyc
 lib/python3.7/idlelib/__pycache__/outwin.cpython-37.pyc
-lib/python3.7/idlelib/__pycache__/paragraph.cpython-37.opt-1.pyc
-lib/python3.7/idlelib/__pycache__/paragraph.cpython-37.opt-2.pyc
-lib/python3.7/idlelib/__pycache__/paragraph.cpython-37.pyc
 lib/python3.7/idlelib/__pycache__/parenmatch.cpython-37.opt-1.pyc
 lib/python3.7/idlelib/__pycache__/parenmatch.cpython-37.opt-2.pyc
 lib/python3.7/idlelib/__pycache__/parenmatch.cpython-37.pyc
@@ -2318,9 +2320,6 @@ lib/python3.7/idlelib/__pycache__/replace.cpython-37.pyc
 lib/python3.7/idlelib/__pycache__/rpc.cpython-37.opt-1.pyc
 lib/python3.7/idlelib/__pycache__/rpc.cpython-37.opt-2.pyc
 lib/python3.7/idlelib/__pycache__/rpc.cpython-37.pyc
-lib/python3.7/idlelib/__pycache__/rstrip.cpython-37.opt-1.pyc
-lib/python3.7/idlelib/__pycache__/rstrip.cpython-37.opt-2.pyc
-lib/python3.7/idlelib/__pycache__/rstrip.cpython-37.pyc
 lib/python3.7/idlelib/__pycache__/run.cpython-37.opt-1.pyc
 lib/python3.7/idlelib/__pycache__/run.cpython-37.opt-2.pyc
 lib/python3.7/idlelib/__pycache__/run.cpython-37.pyc
@@ -2339,6 +2338,9 @@ lib/python3.7/idlelib/__pycache__/searchbase.cpython-37.pyc
 lib/python3.7/idlelib/__pycache__/searchengine.cpython-37.opt-1.pyc
 lib/python3.7/idlelib/__pycache__/searchengine.cpython-37.opt-2.pyc
 lib/python3.7/idlelib/__pycache__/searchengine.cpython-37.pyc
+lib/python3.7/idlelib/__pycache__/sidebar.cpython-37.opt-1.pyc
+lib/python3.7/idlelib/__pycache__/sidebar.cpython-37.opt-2.pyc
+lib/python3.7/idlelib/__pycache__/sidebar.cpython-37.pyc
 lib/python3.7/idlelib/__pycache__/squeezer.cpython-37.opt-1.pyc
 lib/python3.7/idlelib/__pycache__/squeezer.cpython-37.opt-2.pyc
 lib/python3.7/idlelib/__pycache__/squeezer.cpython-37.pyc
@@ -2395,6 +2397,7 @@ lib/python3.7/idlelib/dynoption.py
 lib/python3.7/idlelib/editor.py
 lib/python3.7/idlelib/extend.txt
 lib/python3.7/idlelib/filelist.py
+lib/python3.7/idlelib/format.py
 lib/python3.7/idlelib/grep.py
 lib/python3.7/idlelib/help_about.py
 lib/python3.7/idlelib/help.html
@@ -2405,16 +2408,18 @@ lib/python3.7/idlelib/hyperparser.py
 lib/python3.7/idlelib/Icons/folder.gif
 lib/python3.7/idlelib/Icons/idle_16.gif
 lib/python3.7/idlelib/Icons/idle_16.png
+lib/python3.7/idlelib/Icons/idle_256.png
 lib/python3.7/idlelib/Icons/idle_32.gif
 lib/python3.7/idlelib/Icons/idle_32.png
 lib/python3.7/idlelib/Icons/idle_48.gif
 lib/python3.7/idlelib/Icons/idle_48.png
-lib/python3.7/idlelib/Icons/idle.icns
 lib/python3.7/idlelib/Icons/idle.ico
 lib/python3.7/idlelib/Icons/minusnode.gif
 lib/python3.7/idlelib/Icons/openfolder.gif
 lib/python3.7/idlelib/Icons/plusnode.gif
 lib/python3.7/idlelib/Icons/python.gif
+lib/python3.7/idlelib/Icons/README.txt
+lib/python3.7/idlelib/Icons/tk.gif
 lib/python3.7/idlelib/idle_test/__init__.py
 lib/python3.7/idlelib/idle_test/__pycache__/__init__.cpython-37.opt-1.pyc
 lib/python3.7/idlelib/idle_test/__pycache__/__init__.cpython-37.opt-2.pyc
@@ -2425,6 +2430,9 @@ lib/python3.7/idlelib/idle_test/__pycache__/htest.cpython-37.pyc
 lib/python3.7/idlelib/idle_test/__pycache__/mock_idle.cpython-37.opt-1.pyc
 lib/python3.7/idlelib/idle_test/__pycache__/mock_idle.cpython-37.opt-2.pyc
 lib/python3.7/idlelib/idle_test/__pycache__/mock_idle.cpython-37.pyc
+lib/python3.7/idlelib/idle_test/__pycache__/mock_tk.cpython-37.opt-1.pyc
+lib/python3.7/idlelib/idle_test/__pycache__/mock_tk.cpython-37.opt-2.pyc
+lib/python3.7/idlelib/idle_test/__pycache__/mock_tk.cpython-37.pyc
 lib/python3.7/idlelib/idle_test/__pycache__/template.cpython-37.opt-1.pyc
 lib/python3.7/idlelib/idle_test/__pycache__/template.cpython-37.opt-2.pyc
 lib/python3.7/idlelib/idle_test/__pycache__/template.cpython-37.pyc
@@ -2485,6 +2493,9 @@ lib/python3.7/idlelib/idle_test/__pycache__/test_editor.cpython-37.pyc
 lib/python3.7/idlelib/idle_test/__pycache__/test_filelist.cpython-37.opt-1.pyc
 lib/python3.7/idlelib/idle_test/__pycache__/test_filelist.cpython-37.opt-2.pyc
 lib/python3.7/idlelib/idle_test/__pycache__/test_filelist.cpython-37.pyc
+lib/python3.7/idlelib/idle_test/__pycache__/test_format.cpython-37.opt-1.pyc
+lib/python3.7/idlelib/idle_test/__pycache__/test_format.cpython-37.opt-2.pyc
+lib/python3.7/idlelib/idle_test/__pycache__/test_format.cpython-37.pyc
 lib/python3.7/idlelib/idle_test/__pycache__/test_grep.cpython-37.opt-1.pyc
 lib/python3.7/idlelib/idle_test/__pycache__/test_grep.cpython-37.opt-2.pyc
 lib/python3.7/idlelib/idle_test/__pycache__/test_grep.cpython-37.pyc
@@ -2515,9 +2526,6 @@ lib/python3.7/idlelib/idle_test/__pycache__/test_multicall.cpython-37.pyc
 lib/python3.7/idlelib/idle_test/__pycache__/test_outwin.cpython-37.opt-1.pyc
 lib/python3.7/idlelib/idle_test/__pycache__/test_outwin.cpython-37.opt-2.pyc
 lib/python3.7/idlelib/idle_test/__pycache__/test_outwin.cpython-37.pyc
-lib/python3.7/idlelib/idle_test/__pycache__/test_paragraph.cpython-37.opt-1.pyc
-lib/python3.7/idlelib/idle_test/__pycache__/test_paragraph.cpython-37.opt-2.pyc
-lib/python3.7/idlelib/idle_test/__pycache__/test_paragraph.cpython-37.pyc
 lib/python3.7/idlelib/idle_test/__pycache__/test_parenmatch.cpython-37.opt-1.pyc
 lib/python3.7/idlelib/idle_test/__pycache__/test_parenmatch.cpython-37.opt-2.pyc
 lib/python3.7/idlelib/idle_test/__pycache__/test_parenmatch.cpython-37.pyc
@@ -2545,9 +2553,6 @@ lib/python3.7/idlelib/idle_test/__pycache__/test_replace.cpython-37.pyc
 lib/python3.7/idlelib/idle_test/__pycache__/test_rpc.cpython-37.opt-1.pyc
 lib/python3.7/idlelib/idle_test/__pycache__/test_rpc.cpython-37.opt-2.pyc
 lib/python3.7/idlelib/idle_test/__pycache__/test_rpc.cpython-37.pyc
-lib/python3.7/idlelib/idle_test/__pycache__/test_rstrip.cpython-37.opt-1.pyc
-lib/python3.7/idlelib/idle_test/__pycache__/test_rstrip.cpython-37.opt-2.pyc
-lib/python3.7/idlelib/idle_test/__pycache__/test_rstrip.cpython-37.pyc
 lib/python3.7/idlelib/idle_test/__pycache__/test_run.cpython-37.opt-1.pyc
 lib/python3.7/idlelib/idle_test/__pycache__/test_run.cpython-37.opt-2.pyc
 lib/python3.7/idlelib/idle_test/__pycache__/test_run.cpython-37.pyc
@@ -2566,6 +2571,9 @@ lib/python3.7/idlelib/idle_test/__pycache__/test_searchbase.cpython-37.pyc
 lib/python3.7/idlelib/idle_test/__pycache__/test_searchengine.cpython-37.opt-1.pyc
 lib/python3.7/idlelib/idle_test/__pycache__/test_searchengine.cpython-37.opt-2.pyc
 lib/python3.7/idlelib/idle_test/__pycache__/test_searchengine.cpython-37.pyc
+lib/python3.7/idlelib/idle_test/__pycache__/test_sidebar.cpython-37.opt-1.pyc
+lib/python3.7/idlelib/idle_test/__pycache__/test_sidebar.cpython-37.opt-2.pyc
+lib/python3.7/idlelib/idle_test/__pycache__/test_sidebar.cpython-37.pyc
 lib/python3.7/idlelib/idle_test/__pycache__/test_squeezer.cpython-37.opt-1.pyc
 lib/python3.7/idlelib/idle_test/__pycache__/test_squeezer.cpython-37.opt-2.pyc
 lib/python3.7/idlelib/idle_test/__pycache__/test_squeezer.cpython-37.pyc
@@ -2601,6 +2609,7 @@ lib/python3.7/idlelib/idle_test/__pycache__/test_zoomheight.cpython-37.opt-2.pyc
 lib/python3.7/idlelib/idle_test/__pycache__/test_zoomheight.cpython-37.pyc
 lib/python3.7/idlelib/idle_test/htest.py
 lib/python3.7/idlelib/idle_test/mock_idle.py
+lib/python3.7/idlelib/idle_test/mock_tk.py
 lib/python3.7/idlelib/idle_test/README.txt
 lib/python3.7/idlelib/idle_test/template.py
 lib/python3.7/idlelib/idle_test/test_autocomplete_w.py
@@ -2622,6 +2631,7 @@ lib/python3.7/idlelib/idle_test/test_delegator.py
 lib/python3.7/idlelib/idle_test/test_editmenu.py
 lib/python3.7/idlelib/idle_test/test_editor.py
 lib/python3.7/idlelib/idle_test/test_filelist.py
+lib/python3.7/idlelib/idle_test/test_format.py
 lib/python3.7/idlelib/idle_test/test_grep.py
 lib/python3.7/idlelib/idle_test/test_help_about.py
 lib/python3.7/idlelib/idle_test/test_help.py
@@ -2632,7 +2642,6 @@ lib/python3.7/idlelib/idle_test/test_macosx.py
 lib/python3.7/idlelib/idle_test/test_mainmenu.py
 lib/python3.7/idlelib/idle_test/test_multicall.py
 lib/python3.7/idlelib/idle_test/test_outwin.py
-lib/python3.7/idlelib/idle_test/test_paragraph.py
 lib/python3.7/idlelib/idle_test/test_parenmatch.py
 lib/python3.7/idlelib/idle_test/test_pathbrowser.py
 lib/python3.7/idlelib/idle_test/test_percolator.py
@@ -2642,13 +2651,13 @@ lib/python3.7/idlelib/idle_test/test_query.py
 lib/python3.7/idlelib/idle_test/test_redirector.py
 lib/python3.7/idlelib/idle_test/test_replace.py
 lib/python3.7/idlelib/idle_test/test_rpc.py
-lib/python3.7/idlelib/idle_test/test_rstrip.py
 lib/python3.7/idlelib/idle_test/test_run.py
 lib/python3.7/idlelib/idle_test/test_runscript.py
 lib/python3.7/idlelib/idle_test/test_scrolledlist.py
 lib/python3.7/idlelib/idle_test/test_search.py
 lib/python3.7/idlelib/idle_test/test_searchbase.py
 lib/python3.7/idlelib/idle_test/test_searchengine.py
+lib/python3.7/idlelib/idle_test/test_sidebar.py
 lib/python3.7/idlelib/idle_test/test_squeezer.py
 lib/python3.7/idlelib/idle_test/test_stackviewer.py
 lib/python3.7/idlelib/idle_test/test_statusbar.py
@@ -2670,7 +2679,6 @@ lib/python3.7/idlelib/multicall.py
 lib/python3.7/idlelib/NEWS.txt
 lib/python3.7/idlelib/NEWS2x.txt
 lib/python3.7/idlelib/outwin.py
-lib/python3.7/idlelib/paragraph.py
 lib/python3.7/idlelib/parenmatch.py
 lib/python3.7/idlelib/pathbrowser.py
 lib/python3.7/idlelib/percolator.py
@@ -2681,13 +2689,13 @@ lib/python3.7/idlelib/README.txt
 lib/python3.7/idlelib/redirector.py
 lib/python3.7/idlelib/replace.py
 lib/python3.7/idlelib/rpc.py
-lib/python3.7/idlelib/rstrip.py
 lib/python3.7/idlelib/run.py
 lib/python3.7/idlelib/runscript.py
 lib/python3.7/idlelib/scrolledlist.py
 lib/python3.7/idlelib/search.py
 lib/python3.7/idlelib/searchbase.py
 lib/python3.7/idlelib/searchengine.py
+lib/python3.7/idlelib/sidebar.py
 lib/python3.7/idlelib/squeezer.py
 lib/python3.7/idlelib/stackviewer.py
 lib/python3.7/idlelib/statusbar.py
@@ -3072,11 +3080,11 @@ lib/python3.7/lib2to3/fixes/fix_xrange.py
 lib/python3.7/lib2to3/fixes/fix_xreadlines.py
 lib/python3.7/lib2to3/fixes/fix_zip.py
 lib/python3.7/lib2to3/Grammar.txt
-lib/python3.7/lib2to3/Grammar3.7.4.final.0.pickle
+lib/python3.7/lib2to3/Grammar3.7.14.final.0.pickle
 lib/python3.7/lib2to3/main.py
 lib/python3.7/lib2to3/patcomp.py
 lib/python3.7/lib2to3/PatternGrammar.txt
-lib/python3.7/lib2to3/PatternGrammar3.7.4.final.0.pickle
+lib/python3.7/lib2to3/PatternGrammar3.7.14.final.0.pickle
 lib/python3.7/lib2to3/pgen2/__init__.py
 lib/python3.7/lib2to3/pgen2/__pycache__/__init__.cpython-37.opt-1.pyc
 lib/python3.7/lib2to3/pgen2/__pycache__/__init__.cpython-37.opt-2.pyc
@@ -3471,6 +3479,9 @@ lib/python3.7/test/__pycache__/dataclass_module_2_str.cpython-37.pyc
 lib/python3.7/test/__pycache__/dataclass_module_2.cpython-37.opt-1.pyc
 lib/python3.7/test/__pycache__/dataclass_module_2.cpython-37.opt-2.pyc
 lib/python3.7/test/__pycache__/dataclass_module_2.cpython-37.pyc
+lib/python3.7/test/__pycache__/dataclass_textanno.cpython-37.opt-1.pyc
+lib/python3.7/test/__pycache__/dataclass_textanno.cpython-37.opt-2.pyc
+lib/python3.7/test/__pycache__/dataclass_textanno.cpython-37.pyc
 lib/python3.7/test/__pycache__/datetimetester.cpython-37.opt-1.pyc
 lib/python3.7/test/__pycache__/datetimetester.cpython-37.opt-2.pyc
 lib/python3.7/test/__pycache__/datetimetester.cpython-37.pyc
@@ -4266,6 +4277,9 @@ lib/python3.7/test/__pycache__/test_multiprocessing_spawn.cpython-37.pyc
 lib/python3.7/test/__pycache__/test_netrc.cpython-37.opt-1.pyc
 lib/python3.7/test/__pycache__/test_netrc.cpython-37.opt-2.pyc
 lib/python3.7/test/__pycache__/test_netrc.cpython-37.pyc
+lib/python3.7/test/__pycache__/test_nis.cpython-37.opt-1.pyc
+lib/python3.7/test/__pycache__/test_nis.cpython-37.opt-2.pyc
+lib/python3.7/test/__pycache__/test_nis.cpython-37.pyc
 lib/python3.7/test/__pycache__/test_nntplib.cpython-37.opt-1.pyc
 lib/python3.7/test/__pycache__/test_nntplib.cpython-37.opt-2.pyc
 lib/python3.7/test/__pycache__/test_nntplib.cpython-37.pyc
@@ -4638,6 +4652,9 @@ lib/python3.7/test/__pycache__/test_timeout.cpython-37.pyc
 lib/python3.7/test/__pycache__/test_tix.cpython-37.opt-1.pyc
 lib/python3.7/test/__pycache__/test_tix.cpython-37.opt-2.pyc
 lib/python3.7/test/__pycache__/test_tix.cpython-37.pyc
+lib/python3.7/test/__pycache__/test_tk.cpython-37.opt-1.pyc
+lib/python3.7/test/__pycache__/test_tk.cpython-37.opt-2.pyc
+lib/python3.7/test/__pycache__/test_tk.cpython-37.pyc
 lib/python3.7/test/__pycache__/test_tokenize.cpython-37.opt-1.pyc
 lib/python3.7/test/__pycache__/test_tokenize.cpython-37.opt-2.pyc
 lib/python3.7/test/__pycache__/test_tokenize.cpython-37.pyc
@@ -4650,6 +4667,12 @@ lib/python3.7/test/__pycache__/test_traceback.cpython-37.pyc
 lib/python3.7/test/__pycache__/test_tracemalloc.cpython-37.opt-1.pyc
 lib/python3.7/test/__pycache__/test_tracemalloc.cpython-37.opt-2.pyc
 lib/python3.7/test/__pycache__/test_tracemalloc.cpython-37.pyc
+lib/python3.7/test/__pycache__/test_ttk_guionly.cpython-37.opt-1.pyc
+lib/python3.7/test/__pycache__/test_ttk_guionly.cpython-37.opt-2.pyc
+lib/python3.7/test/__pycache__/test_ttk_guionly.cpython-37.pyc
+lib/python3.7/test/__pycache__/test_ttk_textonly.cpython-37.opt-1.pyc
+lib/python3.7/test/__pycache__/test_ttk_textonly.cpython-37.opt-2.pyc
+lib/python3.7/test/__pycache__/test_ttk_textonly.cpython-37.pyc
 lib/python3.7/test/__pycache__/test_tuple.cpython-37.opt-1.pyc
 lib/python3.7/test/__pycache__/test_tuple.cpython-37.opt-2.pyc
 lib/python3.7/test/__pycache__/test_tuple.cpython-37.pyc
@@ -4926,6 +4949,7 @@ lib/python3.7/test/dataclass_module_1_str.py
 lib/python3.7/test/dataclass_module_1.py
 lib/python3.7/test/dataclass_module_2_str.py
 lib/python3.7/test/dataclass_module_2.py
+lib/python3.7/test/dataclass_textanno.py
 lib/python3.7/test/datetimetester.py
 lib/python3.7/test/decimaltestdata/abs.decTest
 lib/python3.7/test/decimaltestdata/add.decTest
@@ -5223,6 +5247,7 @@ lib/python3.7/test/randv2_32.pck
 lib/python3.7/test/randv2_64.pck
 lib/python3.7/test/randv3.pck
 lib/python3.7/test/re_tests.py
+lib/python3.7/test/recursion.tar
 lib/python3.7/test/regrtest.py
 lib/python3.7/test/relimport.py
 lib/python3.7/test/reperf.py
@@ -6165,6 +6190,7 @@ lib/python3.7/test/test_multiprocessing_forkserver.py
 lib/python3.7/test/test_multiprocessing_main_handling.py
 lib/python3.7/test/test_multiprocessing_spawn.py
 lib/python3.7/test/test_netrc.py
+lib/python3.7/test/test_nis.py
 lib/python3.7/test/test_nntplib.py
 lib/python3.7/test/test_normalization.py
 lib/python3.7/test/test_ntpath.py
@@ -6289,6 +6315,7 @@ lib/python3.7/test/test_time.py
 lib/python3.7/test/test_timeit.py
 lib/python3.7/test/test_timeout.py
 lib/python3.7/test/test_tix.py
+lib/python3.7/test/test_tk.py
 lib/python3.7/test/test_tokenize.py
 lib/python3.7/test/test_tools/__init__.py
 lib/python3.7/test/test_tools/__main__.py
@@ -6341,6 +6368,8 @@ lib/python3.7/test/test_tools/test_unparse.py
 lib/python3.7/test/test_trace.py
 lib/python3.7/test/test_traceback.py
 lib/python3.7/test/test_tracemalloc.py
+lib/python3.7/test/test_ttk_guionly.py
+lib/python3.7/test/test_ttk_textonly.py
 lib/python3.7/test/test_tuple.py
 lib/python3.7/test/test_turtle.py
 lib/python3.7/test/test_typechecks.py
@@ -6444,6 +6473,135 @@ lib/python3.7/textwrap.py
 lib/python3.7/this.py
 lib/python3.7/threading.py
 lib/python3.7/timeit.py
+lib/python3.7/tkinter/__init__.py
+lib/python3.7/tkinter/__main__.py
+lib/python3.7/tkinter/__pycache__/__init__.cpython-37.opt-1.pyc
+lib/python3.7/tkinter/__pycache__/__init__.cpython-37.opt-2.pyc
+lib/python3.7/tkinter/__pycache__/__init__.cpython-37.pyc
+lib/python3.7/tkinter/__pycache__/__main__.cpython-37.opt-1.pyc
+lib/python3.7/tkinter/__pycache__/__main__.cpython-37.opt-2.pyc
+lib/python3.7/tkinter/__pycache__/__main__.cpython-37.pyc
+lib/python3.7/tkinter/__pycache__/colorchooser.cpython-37.opt-1.pyc
+lib/python3.7/tkinter/__pycache__/colorchooser.cpython-37.opt-2.pyc
+lib/python3.7/tkinter/__pycache__/colorchooser.cpython-37.pyc
+lib/python3.7/tkinter/__pycache__/commondialog.cpython-37.opt-1.pyc
+lib/python3.7/tkinter/__pycache__/commondialog.cpython-37.opt-2.pyc
+lib/python3.7/tkinter/__pycache__/commondialog.cpython-37.pyc
+lib/python3.7/tkinter/__pycache__/constants.cpython-37.opt-1.pyc
+lib/python3.7/tkinter/__pycache__/constants.cpython-37.opt-2.pyc
+lib/python3.7/tkinter/__pycache__/constants.cpython-37.pyc
+lib/python3.7/tkinter/__pycache__/dialog.cpython-37.opt-1.pyc
+lib/python3.7/tkinter/__pycache__/dialog.cpython-37.opt-2.pyc
+lib/python3.7/tkinter/__pycache__/dialog.cpython-37.pyc
+lib/python3.7/tkinter/__pycache__/dnd.cpython-37.opt-1.pyc
+lib/python3.7/tkinter/__pycache__/dnd.cpython-37.opt-2.pyc
+lib/python3.7/tkinter/__pycache__/dnd.cpython-37.pyc
+lib/python3.7/tkinter/__pycache__/filedialog.cpython-37.opt-1.pyc
+lib/python3.7/tkinter/__pycache__/filedialog.cpython-37.opt-2.pyc
+lib/python3.7/tkinter/__pycache__/filedialog.cpython-37.pyc
+lib/python3.7/tkinter/__pycache__/font.cpython-37.opt-1.pyc
+lib/python3.7/tkinter/__pycache__/font.cpython-37.opt-2.pyc
+lib/python3.7/tkinter/__pycache__/font.cpython-37.pyc
+lib/python3.7/tkinter/__pycache__/messagebox.cpython-37.opt-1.pyc
+lib/python3.7/tkinter/__pycache__/messagebox.cpython-37.opt-2.pyc
+lib/python3.7/tkinter/__pycache__/messagebox.cpython-37.pyc
+lib/python3.7/tkinter/__pycache__/scrolledtext.cpython-37.opt-1.pyc
+lib/python3.7/tkinter/__pycache__/scrolledtext.cpython-37.opt-2.pyc
+lib/python3.7/tkinter/__pycache__/scrolledtext.cpython-37.pyc
+lib/python3.7/tkinter/__pycache__/simpledialog.cpython-37.opt-1.pyc
+lib/python3.7/tkinter/__pycache__/simpledialog.cpython-37.opt-2.pyc
+lib/python3.7/tkinter/__pycache__/simpledialog.cpython-37.pyc
+lib/python3.7/tkinter/__pycache__/tix.cpython-37.opt-1.pyc
+lib/python3.7/tkinter/__pycache__/tix.cpython-37.opt-2.pyc
+lib/python3.7/tkinter/__pycache__/tix.cpython-37.pyc
+lib/python3.7/tkinter/__pycache__/ttk.cpython-37.opt-1.pyc
+lib/python3.7/tkinter/__pycache__/ttk.cpython-37.opt-2.pyc
+lib/python3.7/tkinter/__pycache__/ttk.cpython-37.pyc
+lib/python3.7/tkinter/colorchooser.py
+lib/python3.7/tkinter/commondialog.py
+lib/python3.7/tkinter/constants.py
+lib/python3.7/tkinter/dialog.py
+lib/python3.7/tkinter/dnd.py
+lib/python3.7/tkinter/filedialog.py
+lib/python3.7/tkinter/font.py
+lib/python3.7/tkinter/messagebox.py
+lib/python3.7/tkinter/scrolledtext.py
+lib/python3.7/tkinter/simpledialog.py
+lib/python3.7/tkinter/test/__init__.py
+lib/python3.7/tkinter/test/__pycache__/__init__.cpython-37.opt-1.pyc
+lib/python3.7/tkinter/test/__pycache__/__init__.cpython-37.opt-2.pyc
+lib/python3.7/tkinter/test/__pycache__/__init__.cpython-37.pyc
+lib/python3.7/tkinter/test/__pycache__/runtktests.cpython-37.opt-1.pyc
+lib/python3.7/tkinter/test/__pycache__/runtktests.cpython-37.opt-2.pyc
+lib/python3.7/tkinter/test/__pycache__/runtktests.cpython-37.pyc
+lib/python3.7/tkinter/test/__pycache__/support.cpython-37.opt-1.pyc
+lib/python3.7/tkinter/test/__pycache__/support.cpython-37.opt-2.pyc
+lib/python3.7/tkinter/test/__pycache__/support.cpython-37.pyc
+lib/python3.7/tkinter/test/__pycache__/widget_tests.cpython-37.opt-1.pyc
+lib/python3.7/tkinter/test/__pycache__/widget_tests.cpython-37.opt-2.pyc
+lib/python3.7/tkinter/test/__pycache__/widget_tests.cpython-37.pyc
+lib/python3.7/tkinter/test/README
+lib/python3.7/tkinter/test/runtktests.py
+lib/python3.7/tkinter/test/support.py
+lib/python3.7/tkinter/test/test_tkinter/__init__.py
+lib/python3.7/tkinter/test/test_tkinter/__pycache__/__init__.cpython-37.opt-1.pyc
+lib/python3.7/tkinter/test/test_tkinter/__pycache__/__init__.cpython-37.opt-2.pyc
+lib/python3.7/tkinter/test/test_tkinter/__pycache__/__init__.cpython-37.pyc
+lib/python3.7/tkinter/test/test_tkinter/__pycache__/test_font.cpython-37.opt-1.pyc
+lib/python3.7/tkinter/test/test_tkinter/__pycache__/test_font.cpython-37.opt-2.pyc
+lib/python3.7/tkinter/test/test_tkinter/__pycache__/test_font.cpython-37.pyc
+lib/python3.7/tkinter/test/test_tkinter/__pycache__/test_geometry_managers.cpython-37.opt-1.pyc
+lib/python3.7/tkinter/test/test_tkinter/__pycache__/test_geometry_managers.cpython-37.opt-2.pyc
+lib/python3.7/tkinter/test/test_tkinter/__pycache__/test_geometry_managers.cpython-37.pyc
+lib/python3.7/tkinter/test/test_tkinter/__pycache__/test_images.cpython-37.opt-1.pyc
+lib/python3.7/tkinter/test/test_tkinter/__pycache__/test_images.cpython-37.opt-2.pyc
+lib/python3.7/tkinter/test/test_tkinter/__pycache__/test_images.cpython-37.pyc
+lib/python3.7/tkinter/test/test_tkinter/__pycache__/test_loadtk.cpython-37.opt-1.pyc
+lib/python3.7/tkinter/test/test_tkinter/__pycache__/test_loadtk.cpython-37.opt-2.pyc
+lib/python3.7/tkinter/test/test_tkinter/__pycache__/test_loadtk.cpython-37.pyc
+lib/python3.7/tkinter/test/test_tkinter/__pycache__/test_misc.cpython-37.opt-1.pyc
+lib/python3.7/tkinter/test/test_tkinter/__pycache__/test_misc.cpython-37.opt-2.pyc
+lib/python3.7/tkinter/test/test_tkinter/__pycache__/test_misc.cpython-37.pyc
+lib/python3.7/tkinter/test/test_tkinter/__pycache__/test_text.cpython-37.opt-1.pyc
+lib/python3.7/tkinter/test/test_tkinter/__pycache__/test_text.cpython-37.opt-2.pyc
+lib/python3.7/tkinter/test/test_tkinter/__pycache__/test_text.cpython-37.pyc
+lib/python3.7/tkinter/test/test_tkinter/__pycache__/test_variables.cpython-37.opt-1.pyc
+lib/python3.7/tkinter/test/test_tkinter/__pycache__/test_variables.cpython-37.opt-2.pyc
+lib/python3.7/tkinter/test/test_tkinter/__pycache__/test_variables.cpython-37.pyc
+lib/python3.7/tkinter/test/test_tkinter/__pycache__/test_widgets.cpython-37.opt-1.pyc
+lib/python3.7/tkinter/test/test_tkinter/__pycache__/test_widgets.cpython-37.opt-2.pyc
+lib/python3.7/tkinter/test/test_tkinter/__pycache__/test_widgets.cpython-37.pyc
+lib/python3.7/tkinter/test/test_tkinter/test_font.py
+lib/python3.7/tkinter/test/test_tkinter/test_geometry_managers.py
+lib/python3.7/tkinter/test/test_tkinter/test_images.py
+lib/python3.7/tkinter/test/test_tkinter/test_loadtk.py
+lib/python3.7/tkinter/test/test_tkinter/test_misc.py
+lib/python3.7/tkinter/test/test_tkinter/test_text.py
+lib/python3.7/tkinter/test/test_tkinter/test_variables.py
+lib/python3.7/tkinter/test/test_tkinter/test_widgets.py
+lib/python3.7/tkinter/test/test_ttk/__init__.py
+lib/python3.7/tkinter/test/test_ttk/__pycache__/__init__.cpython-37.opt-1.pyc
+lib/python3.7/tkinter/test/test_ttk/__pycache__/__init__.cpython-37.opt-2.pyc
+lib/python3.7/tkinter/test/test_ttk/__pycache__/__init__.cpython-37.pyc
+lib/python3.7/tkinter/test/test_ttk/__pycache__/test_extensions.cpython-37.opt-1.pyc
+lib/python3.7/tkinter/test/test_ttk/__pycache__/test_extensions.cpython-37.opt-2.pyc
+lib/python3.7/tkinter/test/test_ttk/__pycache__/test_extensions.cpython-37.pyc
+lib/python3.7/tkinter/test/test_ttk/__pycache__/test_functions.cpython-37.opt-1.pyc
+lib/python3.7/tkinter/test/test_ttk/__pycache__/test_functions.cpython-37.opt-2.pyc
+lib/python3.7/tkinter/test/test_ttk/__pycache__/test_functions.cpython-37.pyc
+lib/python3.7/tkinter/test/test_ttk/__pycache__/test_style.cpython-37.opt-1.pyc
+lib/python3.7/tkinter/test/test_ttk/__pycache__/test_style.cpython-37.opt-2.pyc
+lib/python3.7/tkinter/test/test_ttk/__pycache__/test_style.cpython-37.pyc
+lib/python3.7/tkinter/test/test_ttk/__pycache__/test_widgets.cpython-37.opt-1.pyc
+lib/python3.7/tkinter/test/test_ttk/__pycache__/test_widgets.cpython-37.opt-2.pyc
+lib/python3.7/tkinter/test/test_ttk/__pycache__/test_widgets.cpython-37.pyc
+lib/python3.7/tkinter/test/test_ttk/test_extensions.py
+lib/python3.7/tkinter/test/test_ttk/test_functions.py
+lib/python3.7/tkinter/test/test_ttk/test_style.py
+lib/python3.7/tkinter/test/test_ttk/test_widgets.py
+lib/python3.7/tkinter/test/widget_tests.py
+lib/python3.7/tkinter/tix.py
+lib/python3.7/tkinter/ttk.py
 lib/python3.7/token.py
 lib/python3.7/tokenize.py
 lib/python3.7/trace.py
@@ -7047,6 +7205,14 @@ man/man1/python3.7.1.gz
 @dir lib/python3.7/test/tracedmodules
 @dir lib/python3.7/test/xmltestdata
 @dir lib/python3.7/test
+@dir lib/python3.7/tkinter/__pycache__
+@dir lib/python3.7/tkinter/test/__pycache__
+@dir lib/python3.7/tkinter/test/test_tkinter/__pycache__
+@dir lib/python3.7/tkinter/test/test_tkinter
+@dir lib/python3.7/tkinter/test/test_ttk/__pycache__
+@dir lib/python3.7/tkinter/test/test_ttk
+@dir lib/python3.7/tkinter/test
+@dir lib/python3.7/tkinter
 @dir lib/python3.7/turtledemo/__pycache__
 @dir lib/python3.7/turtledemo
 @dir lib/python3.7/unittest/__pycache__
