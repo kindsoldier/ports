@@ -2,18 +2,19 @@
 # $FreeBSD: head/shells/bash/Makefile 499556 2019-04-21 18:27:08Z ehaupt $
 
 PORTNAME=		bash
-PORTVERSION=		5.0.${PATCHLEVEL:S/^0//g}
-PATCHLEVEL=		7
+PORTVERSION=		5.2
+#PORTVERSION=            5.0.${PATCHLEVEL:S/^0//g}
+#PATCHLEVEL=		7
 CATEGORIES=		shells
 MASTER_SITES=		GNU
-DISTNAME=		${PORTNAME}-${PORTVERSION:R}
+#DISTNAME=		${PORTNAME}-${PORTVERSION:R}
 DIST_SUBDIR=		${PORTNAME}
 EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
 
-PATCH_SITES=		GNU/${PORTNAME}/${DISTNAME}-patches/
-PATCHFILES!=		/usr/bin/jot -s " " -w \
-			${PORTNAME}${PORTVERSION:R:S/.//g}-%03d \
-			${PATCHLEVEL} 1 ${PATCHLEVEL}
+#PATCH_SITES=		GNU/${PORTNAME}/${DISTNAME}-patches/
+#PATCHFILES!=		/usr/bin/jot -s " " -w \
+#			${PORTNAME}${PORTVERSION:R:S/.//g}-%03d \
+#			${PATCHLEVEL} 1 ${PATCHLEVEL}
 
 LIB_DEPENDS+=	libiconv.so:text/libiconv
 LIB_DEPENDS+=	libintl.so:devel/gettext
@@ -21,7 +22,7 @@ LIB_DEPENDS+=	libintl.so:devel/gettext
 MAINTAINER= ehaupt@FreeBSD.org
 COMMENT= GNU Project's Bourne Again SHell
 
-USES=			pathfix gmake
+USES=			pathfix make
 GNU_CONFIGURE=		yes
 
 
