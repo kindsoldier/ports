@@ -30,9 +30,7 @@ COMMENT=	PHP Scripting Language (Apache Module and CLI)
 BUILD_DEPENDS+=	php:lang/php${PORTVERSION:R:S/.//g}
 #RUN_DEPENDS
 #BUILD_DEPENDS+= ${RUN_DEPENDS}
-LIB_DEPENDS+= libmcrypt.so:crypto/libmcrypt
-###LIB_DEPENDS+= libmhash.so:crypto/libmhash
-
+#LIB_DEPENDS+= libxml2.so:text/libxml2
 
 
 EXTRACT_AFTER_ARGS=	${DISTNAME}/ext/${MODULE_NAME}
@@ -44,8 +42,9 @@ USES+=		tar:xz gmake
 GNU_CONFIGURE= 	yes
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/php
 LDFLAGS=	-L${LOCALBASE}/lib
+CONFIGURE_ARGS+= --with-libxml-dir=${LOCALBASE}
 
-MODULE_NAME=	mcrypt
+MODULE_NAME=	sodium
 DESTDIRNAME=	INSTALL_ROOT
 #EXTDIR
 #INCLUDEDIR
@@ -57,9 +56,9 @@ post-install:
 	${RM} -f  ${TMPPLIST}
 	cd ${STAGEDIR}${PREFIX} && ${FIND} lib/php -type f >>  ${TMPPLIST}
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/php
-	cd ${STAGEDIR}${PREFIX} && ${FIND} include/php -type f >>  ${TMPPLIST}
+#	cd ${STAGEDIR}${PREFIX} && ${FIND} include/php -type f >>  ${TMPPLIST}
 	cd ${STAGEDIR}${PREFIX} && ${FIND} -ds lib/php -type d | ${SED} -e 's,^,@dir ,' >>  ${TMPPLIST}
-	cd ${STAGEDIR}${PREFIX} && ${FIND} -ds include/php -type d | ${SED} -e 's,^,@dir ,' >>  ${TMPPLIST}
+#	cd ${STAGEDIR}${PREFIX} && ${FIND} -ds include/php -type d | ${SED} -e 's,^,@dir ,' >>  ${TMPPLIST}
 
 .include <bsd.port.mk>
 #EOF
