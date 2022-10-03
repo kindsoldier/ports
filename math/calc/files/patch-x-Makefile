@@ -1,0 +1,11 @@
+--- ./Makefile~	2022-09-17 17:04:25.328630000 +0200
++++ ./Makefile	2022-09-22 23:49:16.482922000 +0200
+@@ -1309,7 +1309,7 @@
+ 
+ # The default calc versions
+ #
+-VERSION= 2.14.1.0
++VERSION= 2
+ 
+ # Names of shared libraries with versions
+ #
