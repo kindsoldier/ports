@@ -120,7 +120,6 @@ include/python3.7m/warnings.h
 include/python3.7m/weakrefobject.h
 lib/libpython3.7m.so
 lib/libpython3.7m.so.1
-lib/libpython3.so
 lib/pkgconfig/python-3.7.pc
 lib/pkgconfig/python-3.7m.pc
 lib/python3.7/__future__.py

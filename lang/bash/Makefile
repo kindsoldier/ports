@@ -22,7 +22,7 @@ LIB_DEPENDS+=	libintl.so:devel/gettext
 MAINTAINER= ehaupt@FreeBSD.org
 COMMENT= GNU Project's Bourne Again SHell
 
-USES=			pathfix make
+USES=			pathfix
 GNU_CONFIGURE=		yes
 
 
