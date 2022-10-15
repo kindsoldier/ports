@@ -90,7 +90,7 @@ do-build:
 		GO386=${GO386} \
 		GOARM=${GOARM} \
 		CC=${CC} \
-		GOMEMLIMIT=256KiB GOGC=50 \
+		GOMEMLIMIT=256KiB GOGC=30 \
 		${LOCALBASE}/bin/bash make.bash -v
 
 
