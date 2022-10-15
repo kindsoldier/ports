@@ -741,6 +741,7 @@ lib/go/src/archive/tar/testdata/issue12435.tar
 lib/go/src/archive/tar/testdata/neg-size.tar
 lib/go/src/archive/tar/testdata/nil-uid.tar
 lib/go/src/archive/tar/testdata/pax-bad-hdr-file.tar
+lib/go/src/archive/tar/testdata/pax-bad-hdr-large.tar.bz2
 lib/go/src/archive/tar/testdata/pax-bad-mtime-file.tar
 lib/go/src/archive/tar/testdata/pax-global-records.tar
 lib/go/src/archive/tar/testdata/pax-multi-hdrs.tar
@@ -6316,6 +6317,7 @@ lib/go/src/log/syslog/syslog_test.go
 lib/go/src/log/syslog/syslog_unix.go
 lib/go/src/log/syslog/syslog.go
 lib/go/src/make.bash
+lib/go/src/make.bash.bak
 lib/go/src/make.bat
 lib/go/src/Make.dist
 lib/go/src/make.rc
@@ -11011,7 +11013,11 @@ lib/go/test/fixedbugs/issue54638.go
 lib/go/test/fixedbugs/issue5470.dir/a.go
 lib/go/test/fixedbugs/issue5470.dir/b.go
 lib/go/test/fixedbugs/issue5470.go
+lib/go/test/fixedbugs/issue54911.go
 lib/go/test/fixedbugs/issue5493.go
+lib/go/test/fixedbugs/issue54991.go
+lib/go/test/fixedbugs/issue55122.go
+lib/go/test/fixedbugs/issue55122b.go
 lib/go/test/fixedbugs/issue5515.go
 lib/go/test/fixedbugs/issue5581.go
 lib/go/test/fixedbugs/issue5607.go
@@ -11867,6 +11873,7 @@ lib/go/test/typeparam/issue53419.go
 lib/go/test/typeparam/issue53477.go
 lib/go/test/typeparam/issue53762.go
 lib/go/test/typeparam/issue54135.go
+lib/go/test/typeparam/issue54225.go
 lib/go/test/typeparam/issue54302.dir/a.go
 lib/go/test/typeparam/issue54302.dir/main.go
 lib/go/test/typeparam/issue54302.go
