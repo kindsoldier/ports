@@ -2,7 +2,7 @@
 # $Id$
 #
 PORTNAME=	git
-DISTVERSION=	2.31.1 #2.28.0
+DISTVERSION=	2.38.1
 CATEGORIES=	devel
 MASTER_SITES=	KERNEL_ORG/software/scm/git
 DISTFILES+=	${DISTNAME}${EXTRACT_SUFX}
@@ -17,6 +17,16 @@ LIB_DEPENDS+=	libintl.so:devel/gettext
 LIB_DEPENDS+=	libcurl.so:net/libcurl
 LIB_DEPENDS+=	libexpat.so:text/libexpat
 
+PATCH_SITES=	https://gitlab.com/gitlab-org/gitaly/-/raw/master/_support/git-patches/v2.37.1.gl1/
+PATCHFILES=	0001-refs-extract-packed_refs_delete_refs-to-allow-contro.patch \
+		0002-refs-allow-passing-flags-when-beginning-transactions.patch \
+		0003-refs-allow-skipping-the-reference-transaction-hook.patch \
+		0004-refs-demonstrate-excessive-execution-of-the-referenc.patch \
+		0005-refs-do-not-execute-reference-transaction-hook-on-pa.patch \
+		0006-refs-skip-hooks-when-deleting-uncovered-packed-refs.patch
+PATCH_DIST_STRIP=	-p1
+
+
 
 GNU_CONFIGURE=	yes
 USES=		gmake shebangfix tar:xz perl5
@@ -25,20 +35,17 @@ CPPFLAGS+=	-isystem${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ENV+=	V=1
 
-SHEBANG_FILES+=	*.perl */*.perl */*/*.perl */*.pl */*/*.pl */*/*/*.pl
-SHEBANG_FILES+=	t/*/*/pre t/*/*/post t/Git-SVN/Utils/*.t
-SHEBANG_FILES+=	git-p4.py
-SHEBANG_FILES+=	contrib/hg-to-git/hg-to-git.py
-SHEBANG_FILES+=	contrib/hooks/update-paranoid
-SHEBANG_FILES+=	contrib/hooks/multimail/post-receive.example
-SHEBANG_FILES+=	contrib/hooks/multimail/git_multimail.py
-SHEBANG_FILES+=	contrib/hooks/multimail/migrate-mailhook-config
-SHEBANG_FILES+=	contrib/fast-import/import-zips.py
-SHEBANG_FILES+=	contrib/remote-helpers/git-remote-bzr
-SHEBANG_FILES+=	contrib/remote-helpers/git-remote-hg
-SHEBANG_FILES+=	contrib/credential/netrc/git-credential-netrc.perl
-SHEBANG_FILES+=	contrib/buildsystems/generate contrib/contacts/git-contacts
-SHEBANG_FILES+=	templates/hooks--fsmonitor-watchman.sample
+SHEBANG_FILES=	*.perl */*.perl */*/*.perl */*.pl */*/*.pl */*/*/*.pl \
+		t/*/*/pre t/*/*/post t/Git-SVN/Utils/*.t \
+		git-p4.py \
+		contrib/hg-to-git/hg-to-git.py \
+		contrib/hooks/update-paranoid \
+		contrib/fast-import/import-zips.py \
+		contrib/remote-helpers/git-remote-bzr \
+		contrib/remote-helpers/git-remote-hg \
+		contrib/credential/netrc/git-credential-netrc.perl \
+		contrib/buildsystems/generate contrib/contacts/git-contacts \
+		templates/hooks--fsmonitor-watchman.sample
 
 
 
