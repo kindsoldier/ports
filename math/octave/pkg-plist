@@ -757,19 +757,19 @@ lib/octave/6.3.0/liboctave.so.8
 lib/octave/6.3.0/liboctinterp.la
 lib/octave/6.3.0/liboctinterp.so
 lib/octave/6.3.0/liboctinterp.so.9
-lib/octave/6.3.0/oct/amd64-portbld-freebsd12.2/__delaunayn__.oct
-lib/octave/6.3.0/oct/amd64-portbld-freebsd12.2/__fltk_uigetfile__.oct
-lib/octave/6.3.0/oct/amd64-portbld-freebsd12.2/__glpk__.oct
-lib/octave/6.3.0/oct/amd64-portbld-freebsd12.2/__init_fltk__.oct
-lib/octave/6.3.0/oct/amd64-portbld-freebsd12.2/__init_gnuplot__.oct
-lib/octave/6.3.0/oct/amd64-portbld-freebsd12.2/__ode15__.oct
-lib/octave/6.3.0/oct/amd64-portbld-freebsd12.2/__voronoi__.oct
-lib/octave/6.3.0/oct/amd64-portbld-freebsd12.2/audiodevinfo.oct
-lib/octave/6.3.0/oct/amd64-portbld-freebsd12.2/audioread.oct
-lib/octave/6.3.0/oct/amd64-portbld-freebsd12.2/convhulln.oct
-lib/octave/6.3.0/oct/amd64-portbld-freebsd12.2/fftw.oct
-lib/octave/6.3.0/oct/amd64-portbld-freebsd12.2/gzip.oct
-lib/octave/6.3.0/oct/amd64-portbld-freebsd12.2/PKG_ADD
+lib/octave/6.3.0/oct/amd64-portbld-freebsd12.3/__delaunayn__.oct
+lib/octave/6.3.0/oct/amd64-portbld-freebsd12.3/__fltk_uigetfile__.oct
+lib/octave/6.3.0/oct/amd64-portbld-freebsd12.3/__glpk__.oct
+lib/octave/6.3.0/oct/amd64-portbld-freebsd12.3/__init_fltk__.oct
+lib/octave/6.3.0/oct/amd64-portbld-freebsd12.3/__init_gnuplot__.oct
+lib/octave/6.3.0/oct/amd64-portbld-freebsd12.3/__ode15__.oct
+lib/octave/6.3.0/oct/amd64-portbld-freebsd12.3/__voronoi__.oct
+lib/octave/6.3.0/oct/amd64-portbld-freebsd12.3/audiodevinfo.oct
+lib/octave/6.3.0/oct/amd64-portbld-freebsd12.3/audioread.oct
+lib/octave/6.3.0/oct/amd64-portbld-freebsd12.3/convhulln.oct
+lib/octave/6.3.0/oct/amd64-portbld-freebsd12.3/fftw.oct
+lib/octave/6.3.0/oct/amd64-portbld-freebsd12.3/gzip.oct
+lib/octave/6.3.0/oct/amd64-portbld-freebsd12.3/PKG_ADD
 lib/pkgconfig/octave.pc
 lib/pkgconfig/octinterp.pc
 libdata/ldconfig/octave
@@ -789,7 +789,6 @@ share/icons/hicolor/48x48/apps/octave.png
 share/icons/hicolor/512x512/apps/octave.png
 share/icons/hicolor/64x64/apps/octave.png
 share/icons/hicolor/scalable/apps/octave.svg
-share/info/dir
 share/info/liboctave.info
 share/info/octave.info
 share/info/octave.info-1
@@ -2358,12 +2357,9 @@ share/octave/m/web/webread.m
 share/octave/m/web/webwrite.m
 share/octave/site/m/startup/octaverc
 @dir include/octave
-@dir lib/octave/6.3.0/oct/amd64-portbld-freebsd12.2
+@dir lib/octave/6.3.0/oct/amd64-portbld-freebsd12.3
 @dir lib/octave/6.3.0/oct
 @dir lib/octave/6.3.0
-@dir lib/octave
-@dir share/octave/data
-@dir share/octave/doc
 @dir share/octave/etc/profiler
 @dir share/octave/etc/tests/fixed/@cell
 @dir share/octave/etc/tests/fixed/@char

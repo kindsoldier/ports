@@ -12,7 +12,7 @@ MAINTAINER=	fortran@FreeBSD.org
 COMMENT=	A library of Fortran 77 subroutines for linear algebra
 
 USES=	gmake cmake 
-CONFIGURE_ENV+= FFLAGS="-fPIC"
+CONFIGURE_ENV+= FFLAGS="-fPIC -fallow-argument-mismatch"
 
 WRKSRC=	 ${WRKDIR}/lapack-${PORTVERSION}
 
