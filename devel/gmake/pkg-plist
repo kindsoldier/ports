@@ -4,6 +4,7 @@ man/man1/gmake.1.gz
 share/info/make.info
 share/info/make.info-1
 share/info/make.info-2
+share/info/make.info-3
 share/locale/be/LC_MESSAGES/make.mo
 share/locale/bg/LC_MESSAGES/make.mo
 share/locale/cs/LC_MESSAGES/make.mo
@@ -25,6 +26,7 @@ share/locale/nl/LC_MESSAGES/make.mo
 share/locale/pl/LC_MESSAGES/make.mo
 share/locale/pt_BR/LC_MESSAGES/make.mo
 share/locale/pt/LC_MESSAGES/make.mo
+share/locale/ro/LC_MESSAGES/make.mo
 share/locale/ru/LC_MESSAGES/make.mo
 share/locale/sr/LC_MESSAGES/make.mo
 share/locale/sv/LC_MESSAGES/make.mo
@@ -75,6 +77,8 @@ share/locale/zh_TW/LC_MESSAGES/make.mo
 @dir share/locale/pt
 @dir share/locale/pt_BR/LC_MESSAGES
 @dir share/locale/pt_BR
+@dir share/locale/ro/LC_MESSAGES
+@dir share/locale/ro
 @dir share/locale/ru/LC_MESSAGES
 @dir share/locale/ru
 @dir share/locale/sr/LC_MESSAGES
@@ -91,3 +95,4 @@ share/locale/zh_TW/LC_MESSAGES/make.mo
 @dir share/locale/zh_CN
 @dir share/locale/zh_TW/LC_MESSAGES
 @dir share/locale/zh_TW
+@dir share/locale
