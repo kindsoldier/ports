@@ -9,7 +9,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Build tool alternative to make
 WWW=		https://scons.org/
 
-USES=		python:3.6+
+USES=		python:3.8+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
