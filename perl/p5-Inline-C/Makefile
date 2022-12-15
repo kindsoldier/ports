@@ -25,8 +25,8 @@ USES=		perl5
 .include <bsd.port.pre.mk>
 
 #.if ${PERL_LEVEL} < 502200
-#BUILD_DEPENDS+=	p5-ExtUtils-MakeMaker>=7.00:devel/p5-ExtUtils-MakeMaker
-#RUN_DEPENDS+=	p5-ExtUtils-MakeMaker>=7.00:devel/p5-ExtUtils-MakeMaker
+#BUILD_DEPENDS+=	p5-ExtUtils-MakeMaker>=7.00:perl/p5-ExtUtils-MakeMaker
+#RUN_DEPENDS+=	p5-ExtUtils-MakeMaker>=7.00:perl/p5-ExtUtils-MakeMaker
 #.endif
 
 .include <bsd.port.post.mk>

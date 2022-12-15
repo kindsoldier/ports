@@ -12,7 +12,7 @@ COMMENT?=	MySQL driver for the Perl5 Database Interface (DBI)
 
 BUILD_DEPENDS=	p5-DBI>=1.08:perl/p5-DBI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-#TEST_DEPENDS=	p5-Test-Deep>=0:devel/p5-Test-Deep
+#TEST_DEPENDS=	p5-Test-Deep>=0:perl/p5-Test-Deep
 #LIB_DEPENDS+=	libmysqlclient.so:data/mariadb
 
 
