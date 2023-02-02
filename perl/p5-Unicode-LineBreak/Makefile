@@ -26,7 +26,7 @@ CONFIGURE_ARGS=	--with-bundled-sombok
 
 #THAI_DESC=	Thai word segmentation support through libthai
 #THAI_USES=	pkgconfig
-#THAI_LIB_DEPENDS=	libthai.so:devel/libthai
+#THAI_LIB_DEPENDS=	libthai.so:perl/libthai
 #THAI_CONFIGURE_OFF=	--disable-libthai
 
 post-install:

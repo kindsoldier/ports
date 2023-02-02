@@ -18,7 +18,7 @@ BUILD_DEPENDS+=	p5-NetAddr-IP>=4:perl/p5-NetAddr-IP
 BUILD_DEPENDS+=	p5-URI>=1.13:perl/p5-URI
 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-#TEST_DEPENDS=	p5-Test-Pod>=1:devel/p5-Test-Pod
+#TEST_DEPENDS=	p5-Test-Pod>=1:perl/p5-Test-Pod
 
 CONFLICTS_INSTALL=	p5-Mail-SPF-Query-[0-9]*
 

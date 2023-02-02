@@ -16,7 +16,7 @@ BUILD_DEPENDS=	p5-File-Slurp-Tiny>=0:perl/p5-File-Slurp-Tiny \
 		p5-XML-Compile-Cache>=1.03:perl/p5-XML-Compile-Cache \
 		p5-libwww>=6.08:perl/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-#TEST_DEPENDS=	p5-XML-Compile-Tester>=0.90:devel/p5-XML-Compile-Tester
+#TEST_DEPENDS=	p5-XML-Compile-Tester>=0.90:perl/p5-XML-Compile-Tester
 
 NO_ARCH=	yes
 USES=		perl5

@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	svysh.fbsd@gmail.com
 COMMENT=	Lightweight regexp-based XML parser
 
-#TEST_DEPENDS=	p5-Test-Requires>=0.06:devel/p5-Test-Requires \
+#TEST_DEPENDS=	p5-Test-Requires>=0.06:perl/p5-Test-Requires \
 #		p5-XMLRPC-Lite>=0:net/p5-XMLRPC-Lite
 
 USES=		perl5

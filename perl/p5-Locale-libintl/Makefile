@@ -14,7 +14,7 @@ COMMENT=	Internationalization library for Perl
 USES=		perl5
 USE_PERL5=	configure
 
-LIB_DEPENDS+=	libintl.so:devel/gettext
+LIB_DEPENDS+=	libintl.so:perl/gettext
 CFLAGS+= -I${LOCALBASE}/include
 
 post-configure:

@@ -21,8 +21,8 @@ BUILD_DEPENDS+=	p5-XML-Parser>=2.23:perl/p5-XML-Parser
 BUILD_DEPENDS+=	p5-XML-Parser-Lite>=0:perl/p5-XML-Parser-Lite
 BUILD_DEPENDS+=	p5-libwww>=0:perl/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-#TEST_DEPENDS=	p5-Test-Warn>=0:devel/p5-Test-Warn
-#		p5-Test-XML>=0:devel/p5-Test-XML
+#TEST_DEPENDS=	p5-Test-Warn>=0:perl/p5-Test-Warn
+#		p5-Test-XML>=0:perl/p5-Test-XML
 
 CONFLICTS_INSTALL=	p5-SOAP-Lite-0.60* p5-SOAP-[0-9]*
 

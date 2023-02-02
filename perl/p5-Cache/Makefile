@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl Cache interface
 
-#p5-File-NFSLock>=1.2:devel/p5-File-NFSLock \
+#p5-File-NFSLock>=1.2:perl/p5-File-NFSLock \
 RUN_DEPENDS=	p5-Heap>=0.01:perl/p5-Heap \
 		p5-IO-String>=1.02:perl/p5-IO-String \
 		p5-TimeDate>=2.24:perl/p5-TimeDate

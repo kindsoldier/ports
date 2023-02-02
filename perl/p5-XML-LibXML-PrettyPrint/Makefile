@@ -13,7 +13,7 @@ COMMENT=	Add pleasant whitespace to a DOM tree
 BUILD_DEPENDS=	p5-Exporter-Tiny>=0:perl/p5-Exporter-Tiny \
 		p5-XML-LibXML>=1.62:perl/p5-XML-LibXML
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-#TEST_DEPENDS=	p5-Test-Warnings>=0:devel/p5-Test-Warnings
+#TEST_DEPENDS=	p5-Test-Warnings>=0:perl/p5-Test-Warnings
 
 NO_ARCH=	yes
 USE_PERL5=	configure

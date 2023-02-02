@@ -15,7 +15,7 @@ COMMENT=	Set of perl5 modules for MIME
 BUILD_DEPENDS+=	p5-Convert-BinHex>=0:perl/p5-Convert-BinHex
 BUILD_DEPENDS+=	p5-Mail-Tools>=1.05:perl/p5-Mail-Tools
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-#TEST_DEPENDS=	p5-Test-Deep>=0:devel/p5-Test-Deep
+#TEST_DEPENDS=	p5-Test-Deep>=0:perl/p5-Test-Deep
 
 NO_ARCH=	yes
 USES=		perl5
