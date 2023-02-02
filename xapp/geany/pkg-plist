@@ -152,6 +152,8 @@ share/geany/templates/files/file.html
 share/geany/templates/files/file.js
 share/geany/templates/files/file.jsx
 share/geany/templates/files/file.php
+share/geany/templates/files/file.pl
+share/geany/templates/files/file.pm
 share/geany/templates/files/file.rb
 share/geany/templates/files/file.tex
 share/geany/templates/files/main.c
@@ -348,3 +350,4 @@ share/locale/zh_TW/LC_MESSAGES/geany.mo
 @dir share/locale/zh_CN
 @dir share/locale/zh_TW/LC_MESSAGES
 @dir share/locale/zh_TW
+@dir share/locale

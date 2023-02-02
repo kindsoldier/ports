@@ -1,7 +1,8 @@
---- ./data/templates/fileheader.orig	2018-12-16 13:02:55.000000000 +0200
-+++ ./data/templates/fileheader	2019-03-26 14:47:06.863703000 +0200
-@@ -1,4 +1,3 @@
+--- ./data/templates/fileheader.orig	2020-11-08 19:14:52.000000000 +0200
++++ ./data/templates/fileheader	2022-12-12 19:59:44.874477000 +0200
+@@ -1,5 +1,3 @@
 -{filename}
  
  Copyright {year} {developer} <{mail}>
  
+-{gpl}

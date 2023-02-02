@@ -575,6 +575,7 @@ lib/go/pkg/freebsd_amd64/internal/poll.a
 lib/go/pkg/freebsd_amd64/internal/profile.a
 lib/go/pkg/freebsd_amd64/internal/race.a
 lib/go/pkg/freebsd_amd64/internal/reflectlite.a
+lib/go/pkg/freebsd_amd64/internal/safefilepath.a
 lib/go/pkg/freebsd_amd64/internal/singleflight.a
 lib/go/pkg/freebsd_amd64/internal/syscall/execenv.a
 lib/go/pkg/freebsd_amd64/internal/syscall/unix.a
@@ -1321,6 +1322,7 @@ lib/go/src/cmd/compile/internal/test/issue50182_test.go
 lib/go/src/cmd/compile/internal/test/lang_test.go
 lib/go/src/cmd/compile/internal/test/logic_test.go
 lib/go/src/cmd/compile/internal/test/mulconst_test.go
+lib/go/src/cmd/compile/internal/test/race.go
 lib/go/src/cmd/compile/internal/test/README
 lib/go/src/cmd/compile/internal/test/reproduciblebuilds_test.go
 lib/go/src/cmd/compile/internal/test/shift_test.go
@@ -6159,6 +6161,10 @@ lib/go/src/internal/reflectlite/swapper.go
 lib/go/src/internal/reflectlite/tostring_test.go
 lib/go/src/internal/reflectlite/type.go
 lib/go/src/internal/reflectlite/value.go
+lib/go/src/internal/safefilepath/path_other.go
+lib/go/src/internal/safefilepath/path_test.go
+lib/go/src/internal/safefilepath/path_windows.go
+lib/go/src/internal/safefilepath/path.go
 lib/go/src/internal/singleflight/singleflight_test.go
 lib/go/src/internal/singleflight/singleflight.go
 lib/go/src/internal/syscall/execenv/execenv_default.go
@@ -11020,12 +11026,15 @@ lib/go/test/fixedbugs/issue55122.go
 lib/go/test/fixedbugs/issue55122b.go
 lib/go/test/fixedbugs/issue5515.go
 lib/go/test/fixedbugs/issue5581.go
+lib/go/test/fixedbugs/issue55889.go
 lib/go/test/fixedbugs/issue5607.go
 lib/go/test/fixedbugs/issue5609.go
+lib/go/test/fixedbugs/issue56105.go
 lib/go/test/fixedbugs/issue5614.dir/rethinkgo.go
 lib/go/test/fixedbugs/issue5614.dir/x.go
 lib/go/test/fixedbugs/issue5614.dir/y.go
 lib/go/test/fixedbugs/issue5614.go
+lib/go/test/fixedbugs/issue56141.go
 lib/go/test/fixedbugs/issue5698.go
 lib/go/test/fixedbugs/issue5704.go
 lib/go/test/fixedbugs/issue5753.go
@@ -12886,6 +12895,7 @@ lib/go/VERSION
 @dir lib/go/src/internal/profile
 @dir lib/go/src/internal/race
 @dir lib/go/src/internal/reflectlite
+@dir lib/go/src/internal/safefilepath
 @dir lib/go/src/internal/singleflight
 @dir lib/go/src/internal/syscall/execenv
 @dir lib/go/src/internal/syscall/unix

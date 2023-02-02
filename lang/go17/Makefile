@@ -12,6 +12,8 @@ DISTFILES+=     go-${OPSYS:tl}-${GOARCH}${GOARM}-${BOOTSTRAP_TAG}.tar.xz:bootstr
 
 .include <bsd.port.pre.mk>
 
+DISTINFO_FILE = ${MASTERDIR}/distinfo.${ARCH}
+
 
 BOOTSTRAP_TAG=	go1.17.9
 
