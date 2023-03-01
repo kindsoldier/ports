@@ -62,8 +62,8 @@ post-patch:
 
 PLIST= pkg-plist.${ARCH}
 
-GOROOT_BOOTSTRAP=${WRKDIR}/go-${OPSYS:tl}-${GOARCH}${GOARM}-bootstrap
-#GOROOT_BOOTSTRAP=${LOCALBASE}/lib/go
+#GOROOT_BOOTSTRAP=${WRKDIR}/go-${OPSYS:tl}-${GOARCH}${GOARM}-bootstrap
+GOROOT_BOOTSTRAP=${LOCALBASE}/lib/go
 
 do-build:
 #	cd ${WRKSRC}/src ; ${SETENV} \
@@ -90,7 +90,7 @@ do-build:
 		GO386=${GO386} \
 		GOARM=${GOARM} \
 		CC=${CC} \
-		GOMEMLIMIT=256KiB GOGC=30 \
+		GOMEMLIMIT=256KiB GOGC=20 \
 		${LOCALBASE}/bin/bash make.bash -v
 
 
