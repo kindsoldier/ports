@@ -137,7 +137,7 @@ share/mc/etc/mc/edit.indent.rc
 share/mc/etc/mc/filehighlight.ini
 share/mc/etc/mc/mc.default.keymap
 share/mc/etc/mc/mc.emacs.keymap
-share/mc/etc/mc/mc.ext
+share/mc/etc/mc/mc.ext.ini
 share/mc/etc/mc/mc.keymap
 share/mc/etc/mc/mc.menu
 share/mc/etc/mc/mcedit.menu
@@ -163,7 +163,6 @@ share/mc/hints/mc.hint.ca
 share/mc/hints/mc.hint.cs
 share/mc/hints/mc.hint.da
 share/mc/hints/mc.hint.de
-share/mc/hints/mc.hint.de_CH
 share/mc/hints/mc.hint.el
 share/mc/hints/mc.hint.en_GB
 share/mc/hints/mc.hint.eo
@@ -172,13 +171,11 @@ share/mc/hints/mc.hint.et
 share/mc/hints/mc.hint.eu
 share/mc/hints/mc.hint.fa
 share/mc/hints/mc.hint.fr
-share/mc/hints/mc.hint.fr_CA
 share/mc/hints/mc.hint.ga
 share/mc/hints/mc.hint.gl
 share/mc/hints/mc.hint.hu
 share/mc/hints/mc.hint.id
 share/mc/hints/mc.hint.it
-share/mc/hints/mc.hint.it_IT
 share/mc/hints/mc.hint.ja
 share/mc/hints/mc.hint.ko
 share/mc/hints/mc.hint.lt
@@ -192,10 +189,8 @@ share/mc/hints/mc.hint.ru
 share/mc/hints/mc.hint.sk
 share/mc/hints/mc.hint.sr
 share/mc/hints/mc.hint.sv
-share/mc/hints/mc.hint.sv_SE
 share/mc/hints/mc.hint.tr
 share/mc/hints/mc.hint.uk
-share/mc/hints/mc.hint.zh
 share/mc/hints/mc.hint.zh_CN
 share/mc/hints/mc.hint.zh_TW
 share/mc/mc.charsets
@@ -294,6 +289,7 @@ share/mc/syntax/php.syntax
 share/mc/syntax/PKGBUILD.syntax
 share/mc/syntax/po.syntax
 share/mc/syntax/povray.syntax
+share/mc/syntax/privoxy.syntax
 share/mc/syntax/procmail.syntax
 share/mc/syntax/properties.syntax
 share/mc/syntax/protobuf.syntax
@@ -315,6 +311,7 @@ share/mc/syntax/Syntax
 share/mc/syntax/syntax.syntax
 share/mc/syntax/tcl.syntax
 share/mc/syntax/texinfo.syntax
+share/mc/syntax/toml.syntax
 share/mc/syntax/ts.syntax
 share/mc/syntax/tt.syntax
 share/mc/syntax/unknown.syntax
@@ -326,11 +323,11 @@ share/mc/syntax/yaml.syntax
 share/mc/syntax/yum-repo.syntax
 share/mc/syntax/yxx.syntax
 share/pixmaps/mc.png
-@dir bin
 @dir libexec/mc/ext.d
 @dir libexec/mc/extfs.d
 @dir libexec/mc/fish
 @dir libexec/mc
+@dir share/applications
 @dir share/locale/af/LC_MESSAGES
 @dir share/locale/af
 @dir share/locale/ar/LC_MESSAGES
@@ -461,3 +458,4 @@ share/pixmaps/mc.png
 @dir share/mc/skins
 @dir share/mc/syntax
 @dir share/mc
+@dir share/pixmaps

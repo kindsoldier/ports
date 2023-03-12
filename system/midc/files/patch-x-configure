@@ -1,11 +1,11 @@
---- ./configure~	2019-12-27 07:04:55.202790000 +0200
-+++ ./configure	2019-12-27 07:06:14.940483000 +0200
-@@ -18918,7 +18918,7 @@
- }
+--- ./configure~	2023-02-05 09:18:01.322227000 +0200
++++ ./configure	2023-02-05 09:19:23.965030000 +0200
+@@ -21563,7 +21563,7 @@
  _ACEOF
- if ac_fn_c_try_link "$LINENO"; then :
+ if ac_fn_c_try_link "$LINENO"
+ then :
 -  ac_cv_lib_ICE_IceConnectionNumber=yes
 +  ac_cv_lib_ICE_IceConnectionNumber=no
- else
+ else $as_nop
    ac_cv_lib_ICE_IceConnectionNumber=no
  fi

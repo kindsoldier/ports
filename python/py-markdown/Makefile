@@ -1,18 +1,16 @@
-# Created by: Graham Todd <gtodd@bellanet.org>
-# $FreeBSD: head/textproc/py-markdown/Makefile 472884 2018-06-20 17:05:41Z mat $
-
 PORTNAME=	markdown
-PORTVERSION=	2.6.11
+PORTVERSION=	3.3.7
 CATEGORIES=	textproc python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Markdown-${PORTVERSION}
 
-MAINTAINER=	koobs@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python implementation of Markdown
+WWW=		https://github.com/Python-Markdown/markdown
 
-USES=		python
-USE_PYTHON=	distutils concurrent autoplist
+USES=		python:3.6+
+USE_PYTHON=	autoplist concurrent distutils 
 
 NO_ARCH=	yes
 

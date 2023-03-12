@@ -1,24 +1,25 @@
-# $FreeBSD: head/devel/py-setuptools/Makefile 492575 2019-02-10 00:08:37Z sunpoet $
-
 PORTNAME=	setuptools
-PORTVERSION=	40.8.0
+PORTVERSION=	63.1.0
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DIST_SUBDIR=	python
 
+# note: before committing to this port, contact portmgr to arrange for an
+# experimental ports run.  Untested commits may be backed out at portmgr's
+# discretion.
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Python packages installer
+WWW=		https://pypi.org/project/setuptools/
 
+USES=		cpe python:3.7+
+USE_PYTHON=	allflavors autoplist concurrent distutils
 
+CPE_VENDOR=	python
+
+MAKE_ENV+=	SETUPTOOLS_DISABLE_VERSIONED_EASY_INSTALL_SCRIPT=1
 NO_ARCH=	yes
-USES=		python zip
-USE_PYTHON=	autoplist concurrent distutils allflavors
-
 PYDISTUTILS_SETUP=	${PYSETUP}
-
-CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}distribute-[0-9]*@${PY_FLAVOR}
-MAKE_ENV+=		SETUPTOOLS_DISABLE_VERSIONED_EASY_INSTALL_SCRIPT=1
 
 PLIST_FILES=	"@sample %%PYTHON_SITELIBDIR%%/easy-install.pth.dist %%PYTHON_SITELIBDIR%%/easy-install.pth"
 
@@ -31,15 +32,13 @@ SUB_LIST+=	PYTHON_VER=${PYTHON_VER}
 
 # These create dependency loops in redports/poudriere, because setuptools
 # is currently an explicit BUILD & RUN dependency in Uses/python.mk.
-#TEST_DEPENDS=  ${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}@${PY_FLAVOR}
-#.if ${PYTHON_REL} < 3300
-#TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock@${PY_FLAVOR}@${PY_FLAVOR}
-#.endif
+#TEST_DEPENDS=  ${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
+# pkg install -y py38-pytest py38-mock py38-pytest-fixture-config py38-pytest-virtualenv py38-paver
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/easy-install.pth.dist ${STAGEDIR}${PYTHON_SITELIBDIR}/
 
 do-test:
-	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
+	cd ${WRKSRC} && ${PYTHON_CMD} -m pytest -v -rs
 
 .include <bsd.port.post.mk>
