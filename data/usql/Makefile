@@ -2,7 +2,7 @@
 
 PORTNAME=	usql
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.8
+DISTVERSION=	0.12.13
 CATEGORIES=	databases
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,9 +10,8 @@ COMMENT=	Universal command-line interface for SQL databases
 
 USES=		go:modules
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	xo
-GO_BUILDFLAGS+=  -tags 'postgres mysql vertica sqlite3 clickhouse'
+GO_MODULE=	github.com/xo/usql
+#GO_BUILDFLAGS+=  -tags 'postgres mysql vertica sqlite3 clickhouse'
 
 PLIST_FILES=	bin/usql
 
