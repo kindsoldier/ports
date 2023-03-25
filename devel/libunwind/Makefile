@@ -11,7 +11,7 @@ WWW=		https://www.nongnu.org/libunwind/
 
 ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386 powerpc64 powerpc64le
 
-USES=		compiler:c11 cpe libtool pathfix pkgconfig
+USES=		compiler:c11  pathfix pkgconfig
 
 CONFIGURE_ARGS=	--disable-cxx-exceptions \
 		--disable-unwind-header \
