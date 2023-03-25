@@ -1,6 +1,15 @@
---- SConstruct.orig	2022-08-05 16:21:29 UTC
-+++ SConstruct
-@@ -1342,9 +1342,9 @@ if has_option('variables-help'):
+--- ./SConstruct.orig	2023-03-12 12:48:43.117440000 +0200
++++ ./SConstruct	2023-03-12 21:44:25.473028000 +0200
+@@ -295,7 +295,7 @@
+ )
+ 
+ experimental_optimizations = [
+-    'O3',
++    'O',
+     'builtin-memcmp',
+     'fnsi',
+     'nofp',
+@@ -1343,9 +1343,9 @@
      print(env_vars.GenerateHelpText(env))
      Exit(0)
  
@@ -11,9 +20,9 @@
 +#if unknown_vars:
 +#    env.FatalError("Unknown variables specified: {0}", ", ".join(list(unknown_vars.keys())))
  
- if get_option('install-action') != 'default' and get_option('ninja') != "disabled":
-     env.FatalError("Cannot use non-default install actions when generating Ninja.")
-@@ -2427,13 +2427,12 @@ if env.TargetOSIs('posix'):
+ install_actions.setup(env, get_option('install-action'))
+ 
+@@ -2435,13 +2435,12 @@
              # If runtime hardening is requested, then build anything
              # destined for an executable with the necessary flags for PIE.
              env.AppendUnique(
@@ -28,7 +37,16 @@
                           "-Wall",
                           "-Wsign-compare",
                           "-Wno-unknown-pragmas",
-@@ -2600,8 +2599,12 @@ if not env.TargetOSIs('windows', 'macOS') and (env.Too
+@@ -2566,7 +2565,7 @@
+         )
+ 
+     if optBuild and not optBuildForSize:
+-        env.Append( CCFLAGS=["-O3" if "O3" in selected_experimental_optimizations else "-O2"] )
++        env.Append( CCFLAGS=["-O" if "O3" in selected_experimental_optimizations else "-O"] )
+     elif optBuild and optBuildForSize:
+         env.Append( CCFLAGS=["-Os"] )
+     else:
+@@ -2608,8 +2607,12 @@
      # setting it for both C and C++ by setting both of CFLAGS and
      # CXXFLAGS.
  

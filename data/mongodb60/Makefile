@@ -47,6 +47,8 @@ USE_RC_SUBR=	mongod
 SHEBANG_FILES=	buildscripts/scons.py
 python_OLD_CMD=	@python_interpreter@
 
+MAKE_JOBS_NUMBER=1
+
 MAKE_ARGS=	--cxx-std=17 \
 		--disable-warnings-as-errors \
 		--libc++ \
@@ -59,6 +61,7 @@ MAKE_ARGS=	--cxx-std=17 \
 		--use-system-yaml \
 		--use-system-zlib \
 		--use-system-zstd \
+                --server-js=off \
 		-j${MAKE_JOBS_NUMBER} \
 		AR=llvm-ar \
 		MONGO_VERSION=${DISTVERSION} \
@@ -69,7 +72,7 @@ CONFLICTS_INSTALL=	mongodb[0-9][0-9]
 USERS=		mongodb
 GROUPS=		mongodb
 
-MAKE_ARGS+=	--lto=on
+MAKE_ARGS+=	--lto=off
 MAKE_ARGS+=	--ssl
 
 .include <bsd.port.pre.mk>

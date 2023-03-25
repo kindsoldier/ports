@@ -2753,7 +2753,9 @@ lib/go/src/cmd/internal/buildid/testdata/a.pe.base64
 lib/go/src/cmd/internal/buildid/testdata/p.a.base64
 lib/go/src/cmd/internal/codesign/codesign.go
 lib/go/src/cmd/internal/cov/mreader.go
+lib/go/src/cmd/internal/cov/read_test.go
 lib/go/src/cmd/internal/cov/readcovdata.go
+lib/go/src/cmd/internal/cov/testdata/small.go
 lib/go/src/cmd/internal/dwarf/dwarf_defs.go
 lib/go/src/cmd/internal/dwarf/dwarf_test.go
 lib/go/src/cmd/internal/dwarf/dwarf.go
@@ -11001,8 +11003,12 @@ lib/go/test/fixedbugs/issue5809.go
 lib/go/test/fixedbugs/issue5820.go
 lib/go/test/fixedbugs/issue58293.go
 lib/go/test/fixedbugs/issue58325.go
+lib/go/test/fixedbugs/issue58341.go
 lib/go/test/fixedbugs/issue5841.go
 lib/go/test/fixedbugs/issue5856.go
+lib/go/test/fixedbugs/issue58563.dir/a.go
+lib/go/test/fixedbugs/issue58563.dir/main.go
+lib/go/test/fixedbugs/issue58563.go
 lib/go/test/fixedbugs/issue5910.dir/a.go
 lib/go/test/fixedbugs/issue5910.dir/main.go
 lib/go/test/fixedbugs/issue5910.go
@@ -11848,6 +11854,7 @@ lib/go/test/typeparam/issue54535.go
 lib/go/test/typeparam/issue54537.go
 lib/go/test/typeparam/issue54765.go
 lib/go/test/typeparam/issue55101.go
+lib/go/test/typeparam/issue58513.go
 lib/go/test/typeparam/list.go
 lib/go/test/typeparam/list2.go
 lib/go/test/typeparam/listimp.dir/a.go
@@ -12366,6 +12373,7 @@ lib/go/VERSION
 @dir lib/go/src/cmd/internal/buildid/testdata
 @dir lib/go/src/cmd/internal/buildid
 @dir lib/go/src/cmd/internal/codesign
+@dir lib/go/src/cmd/internal/cov/testdata
 @dir lib/go/src/cmd/internal/cov
 @dir lib/go/src/cmd/internal/dwarf
 @dir lib/go/src/cmd/internal/edit
@@ -13202,6 +13210,7 @@ lib/go/VERSION
 @dir lib/go/test/fixedbugs/issue56280.dir
 @dir lib/go/test/fixedbugs/issue56778.dir
 @dir lib/go/test/fixedbugs/issue5755.dir
+@dir lib/go/test/fixedbugs/issue58563.dir
 @dir lib/go/test/fixedbugs/issue5910.dir
 @dir lib/go/test/fixedbugs/issue5957.dir
 @dir lib/go/test/fixedbugs/issue6295.dir
