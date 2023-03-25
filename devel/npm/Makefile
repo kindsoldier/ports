@@ -2,7 +2,7 @@
 # $FreeBSD: head/www/npm/Makefile 454516 2017-11-20 04:30:31Z sunpoet $
 
 PORTNAME=	npm
-PORTVERSION=	8.19.1
+PORTVERSION=	9.5.0
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/sunpoet
 
@@ -15,7 +15,7 @@ RUN_DEPENDS+=	node>=8:lang/node16
 NO_ARCH=	yes
 NO_BUILD=	yes
 REINPLACE_ARGS=	-i ''
-USES=		python:2.7,run shebangfix tar:xz
+USES=		python:3.7+,run shebangfix tar:xz
 #SHEBANG_GLOB=	*.py
 #SHEBANG_FILES=	lib/node_modules/npm/node_modules/node-gyp/gyp/samples/samples
 

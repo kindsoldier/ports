@@ -1,0 +1,175 @@
+#gmake[1]: Entering directory '/usr/ports/graph/libfreetype2new/work/freetype-2.12.1'
+#
+#FreeType build systemCONFIGURE_ARGS+= -- automatic system detection
+#
+#The following settings are used:
+#
+#  platform                    unix
+#  compiler                    cc
+#  configuration directory     ./builds/unix
+#  configuration rules         ./builds/unix/unix.mk
+#
+#If this does not correspond to your system or settings please remove the file
+#`config.mk' from this directory then read the INSTALL file for help.
+#
+#Otherwise, simply type `gmake' again to build the library,
+#or `gmake refdoc' to build the API reference (this needs Python >= 3.5).
+#
+#cd builds/unix; \
+#        ./configure  '--help'
+#`configure' configures FreeType 2.12.1 to adapt to many kinds of systems.
+#
+#Usage: ./configure [OPTION]... [VAR=VALUE]...
+#
+#To assign environment variables (e.g., CC, CFLAGS...), specify them as
+#VAR=VALUE.  See below for descriptions of some of the useful variables.
+#
+#Defaults for the options are specified in brackets.
+#
+#Configuration:
+#  -h,CONFIGURE_ARGS+= --help              display this help and exit
+#     CONFIGURE_ARGS+= --help=short        display options specific to this package
+#     CONFIGURE_ARGS+= --help=recursive    display the short help of all the included packages
+#  -V,CONFIGURE_ARGS+= --version           display version information and exit
+#  -q,CONFIGURE_ARGS+= --quiet, --silent   do not print `checking ...' messages
+#     CONFIGURE_ARGS+= --cache-file=FILE   cache test results in FILE [disabled]
+#  -C,CONFIGURE_ARGS+= --config-cache      alias for `--cache-file=config.cache'
+#  -n,CONFIGURE_ARGS+= --no-create         do not create output files
+#     CONFIGURE_ARGS+= --srcdir=DIR        find the sources in DIR [configure dir or `..']
+#
+#Installation directories:
+# CONFIGURE_ARGS+= --prefix=PREFIX         install architecture-independent files in PREFIX
+#                          [/usr/local]
+# CONFIGURE_ARGS+= --exec-prefix=EPREFIX   install architecture-dependent files in EPREFIX
+#                          [PREFIX]
+#
+#By default, `make install' will install all the files in
+#`/usr/local/bin', `/usr/local/lib' etc.  You can specify
+#an installation prefix other than `/usr/local' using `--prefix',
+#for instance `--prefix=$HOME'.
+#
+#For better control, use the options below.
+#
+#Fine tuning of the installation directories:
+# CONFIGURE_ARGS+= --bindir=DIR            user executables [EPREFIX/bin]
+# CONFIGURE_ARGS+= --sbindir=DIR           system admin executables [EPREFIX/sbin]
+# CONFIGURE_ARGS+= --libexecdir=DIR        program executables [EPREFIX/libexec]
+# CONFIGURE_ARGS+= --sysconfdir=DIR        read-only single-machine data [PREFIX/etc]
+# CONFIGURE_ARGS+= --sharedstatedir=DIR    modifiable architecture-independent data [PREFIX/com]
+# CONFIGURE_ARGS+= --localstatedir=DIR     modifiable single-machine data [PREFIX/var]
+# CONFIGURE_ARGS+= --runstatedir=DIR       modifiable per-process data [LOCALSTATEDIR/run]
+# CONFIGURE_ARGS+= --libdir=DIR            object code libraries [EPREFIX/lib]
+# CONFIGURE_ARGS+= --includedir=DIR        C header files [PREFIX/include]
+# CONFIGURE_ARGS+= --oldincludedir=DIR     C header files for non-gcc [/usr/include]
+# CONFIGURE_ARGS+= --datarootdir=DIR       read-only arch.-independent data root [PREFIX/share]
+# CONFIGURE_ARGS+= --datadir=DIR           read-only architecture-independent data [DATAROOTDIR]
+# CONFIGURE_ARGS+= --infodir=DIR           info documentation [DATAROOTDIR/info]
+# CONFIGURE_ARGS+= --localedir=DIR         locale-dependent data [DATAROOTDIR/locale]
+# CONFIGURE_ARGS+= --mandir=DIR            man documentation [DATAROOTDIR/man]
+# CONFIGURE_ARGS+= --docdir=DIR            documentation root [DATAROOTDIR/doc/freetype]
+# CONFIGURE_ARGS+= --htmldir=DIR           html documentation [DOCDIR]
+# CONFIGURE_ARGS+= --dvidir=DIR            dvi documentation [DOCDIR]
+# CONFIGURE_ARGS+= --pdfdir=DIR            pdf documentation [DOCDIR]
+# CONFIGURE_ARGS+= --psdir=DIR             ps documentation [DOCDIR]
+#
+#System types:
+# CONFIGURE_ARGS+= --build=BUILD     configure for building on BUILD [guessed]
+# CONFIGURE_ARGS+= --host=HOST       cross-compile to build programs to run on HOST [BUILD]
+# CONFIGURE_ARGS+= --target=TARGET   configure for building compilers for TARGET [HOST]
+#
+#Optional Features:
+# CONFIGURE_ARGS+= --disable-option-checking  ignore unrecognized --enable/--with options
+# CONFIGURE_ARGS+= --disable-FEATURE       do not include FEATURE (same as --enable-FEATURE=no)
+# CONFIGURE_ARGS+= --enable-FEATURE[=ARG]  include FEATURE [ARG=yes]
+# CONFIGURE_ARGS+= --enable-shared[=PKGS]  build shared libraries [default=yes]
+# CONFIGURE_ARGS+= --enable-static[=PKGS]  build static libraries [default=yes]
+# CONFIGURE_ARGS+= --enable-fast-install[=PKGS]
+#                          optimize for fast installation [default=yes]
+# CONFIGURE_ARGS+= --disable-libtool-lock  avoid locking (might break parallel builds)
+# CONFIGURE_ARGS+= --enable-freetype-config
+#                          install freetype-config
+# CONFIGURE_ARGS+= --disable-largefile     omit support for large files
+# CONFIGURE_ARGS+= --disable-mmap          do not check mmap() and do not use
+#
+#Optional Packages:
+# CONFIGURE_ARGS+= --with-PACKAGE[=ARG]    use PACKAGE [ARG=yes]
+# CONFIGURE_ARGS+= --without-PACKAGE       do not use PACKAGE (same as --with-PACKAGE=no)
+# CONFIGURE_ARGS+= --with-pic[=PKGS]       try to use only PIC/non-PIC objects [default=use
+#                          both]
+# CONFIGURE_ARGS+= --with-aix-soname=aix|svr4|both
+#                          shared library versioning (aka "SONAME") variant to
+#                          provide on AIX, [default=aix].
+# CONFIGURE_ARGS+= --with-gnu-ld           assume the C compiler uses GNU ld [default=no]
+# CONFIGURE_ARGS+= --with-sysroot[=DIR]    Search for dependent libraries within DIR (or the
+#                          compiler's sysroot if not specified).
+# CONFIGURE_ARGS+= --with-zlib=[yes|no|auto]
+#                          use system zlib instead of internal library
+#                          [default=auto]
+# CONFIGURE_ARGS+= --with-bzip2=[yes|no|auto]
+#                          support bzip2 compressed fonts [default=auto]
+# CONFIGURE_ARGS+= --with-png=[yes|no|auto]
+#                          support png compressed OpenType embedded bitmaps
+#                          [default=auto]
+CONFIGURE_ARGS+= --with-harfbuzz
+=[yes|no|auto]
+#                          improve auto-hinting of OpenType fonts
+#                          [default=auto]
+# CONFIGURE_ARGS+= --with-brotli=[yes|no|auto]
+#                          support decompression of WOFF2 streams
+#                          [default=auto]
+# CONFIGURE_ARGS+= --with-librsvg=[yes|no|auto]
+#                          support OpenType SVG fonts in FreeType demo programs
+#                          [default=auto]
+# CONFIGURE_ARGS+= --with-old-mac-fonts    allow Mac resource-based fonts to be used
+# CONFIGURE_ARGS+= --with-fsspec           use obsolete FSSpec API of MacOS, if available
+#                          (default=yes)
+# CONFIGURE_ARGS+= --with-fsref            use Carbon FSRef API of MacOS, if available
+#                          (default=yes)
+# CONFIGURE_ARGS+= --with-quickdraw-toolbox
+#                          use MacOS QuickDraw in ToolBox, if available
+#                          (default=yes)
+# CONFIGURE_ARGS+= --with-quickdraw-carbon use MacOS QuickDraw in Carbon, if available
+#                          (default=yes)
+# CONFIGURE_ARGS+= --with-ats              use AppleTypeService, if available (default=yes)
+#
+#Some influential environment variables:
+#  CC          C compiler command
+#  CFLAGS      C compiler flags
+#  LDFLAGS     linker flags, e.g. -L<lib dir> if you have libraries in a
+#              nonstandard directory <lib dir>
+#  LIBS        libraries to pass to the linker, e.g. -l<library>
+#  CPPFLAGS    (Objective) C/C++ preprocessor flags, e.g. -I<include dir> if
+#              you have headers in a nonstandard directory <include dir>
+#  CPP         C preprocessor
+#  PKG_CONFIG  path to pkg-config utility
+#  PKG_CONFIG_PATH
+#              directories to add to pkg-config's search path
+#  PKG_CONFIG_LIBDIR
+#              path overriding pkg-config's built-in search path
+#  LT_SYS_LIBRARY_PATH
+#              User-defined run-time library search path.
+#  ZLIB_CFLAGS C compiler flags for ZLIB, overriding pkg-config
+#  ZLIB_LIBS   linker flags for ZLIB, overriding pkg-config
+#  BZIP2_CFLAGS
+#              C compiler flags for BZIP2, overriding pkg-config
+#  BZIP2_LIBS  linker flags for BZIP2, overriding pkg-config
+#  LIBPNG_CFLAGS
+#              C compiler flags for LIBPNG, overriding pkg-config
+#  LIBPNG_LIBS linker flags for LIBPNG, overriding pkg-config
+#  HARFBUZZ_CFLAGS
+#              C compiler flags for HARFBUZZ, overriding pkg-config
+#  HARFBUZZ_LIBS
+#              linker flags for HARFBUZZ, overriding pkg-config
+#  BROTLI_CFLAGS
+#              C compiler flags for BROTLI, overriding pkg-config
+#  BROTLI_LIBS linker flags for BROTLI, overriding pkg-config
+#  LIBRSVG_CFLAGS
+#              C compiler flags for LIBRSVG, overriding pkg-config
+#  LIBRSVG_LIBS
+#              linker flags for LIBRSVG, overriding pkg-config
+#
+#Use these variables to override the choices made by `configure' or to help
+#it to find libraries and programs with nonstandard names/locations.
+#
+#Report bugs to <freetype@nongnu.org>.
+#gmake[1]: Leaving directory '/usr/ports/graph/libfreetype2new/work/freetype-2.12.1'
