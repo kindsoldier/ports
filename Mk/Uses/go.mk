@@ -118,7 +118,7 @@ GO_GOSUMDB?=	sum.golang.org
 
 # Read-only variables
 
-GO_CMD=		${LOCALBASE}/bin/go${GO_SUFFIX}
+GO_CMD=		${LOCALBASE}/bin/go
 GO_WRKDIR_BIN=	${WRKDIR}/bin
 GO_ENV+=	CGO_ENABLED=${CGO_ENABLED} \
 		CGO_CFLAGS="${CGO_CFLAGS}" \

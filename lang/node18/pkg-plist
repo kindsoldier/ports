@@ -2272,7 +2272,6 @@ include/node/v8-weak-callback-info.h
 include/node/v8.h
 include/node/v8config.h
 man/man1/node.1.gz
-share/systemtap/tapset/node.stp
 @dir include/node/cppgc
 @dir include/node/libplatform
 @dir include/node/openssl/archs/aix64-gcc-as/asm/crypto
@@ -2802,5 +2801,3 @@ share/systemtap/tapset/node.stp
 @dir include/node/openssl/archs
 @dir include/node/openssl
 @dir include/node
-@dir share/systemtap/tapset
-@dir share/systemtap

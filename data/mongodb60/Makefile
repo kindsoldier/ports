@@ -14,22 +14,23 @@ WWW=		https://docs.mongodb.com/v6.0/
 ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	only ported to amd64, aarch64, and powerpc64le on FreeBSD; upstream supports arm64, ppc64le, s390x, and x86-64
 
-#BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cheetah3>0:devel/py-cheetah3@${PY_FLAVOR} \
-#		${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR} \
-#		${PYTHON_PKGNAMEPREFIX}psutil>0:sysutils/py-psutil@${PY_FLAVOR} \
-#		${PYTHON_PKGNAMEPREFIX}pymongo>0:databases/py-pymongo@${PY_FLAVOR} \
-#		${PYTHON_PKGNAMEPREFIX}yaml>=3.11:devel/py-yaml@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cheetah3>0:python/py-cheetah3@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}packaging>0:python/py-packaging@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}psutil>0:python/py-psutil@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pymongo>0:python/py-pymongo@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}yaml>=3.11:python/py-yaml@${PY_FLAVOR}
+
 # build depends used while running ${WRKSRC}/src/third_party/mozjs/gen-config.sh
-#BUILD_DEPENDS+=	autoconf2.13:devel/autoconf2.13 \
-#		gsed:textproc/gsed
-#LIB_DEPENDS=	libcurl.so:ftp/curl \
-#		libicuuc.so:devel/icu \
-#		libpcre.so:devel/pcre \
-#		libsnappy.so:archivers/snappy \
-#		libstemmer.so:textproc/snowballstemmer \
-#		libunwind.so:devel/libunwind \
-#		libyaml-cpp.so:devel/yaml-cpp \
-#		libzstd.so:archivers/zstd
+BUILD_DEPENDS+=	autoconf213:devel/autoconf213 gsed:text/gsed
+
+LIB_DEPENDS=	libcurl.so:net/libcurl \
+		libicuuc.so:devel/libicu \
+		libpcre.so:text/libpcre \
+		libsnappy.so:arch/libsnappy \
+		libstemmer.so:text/libsnowballstemmer \
+		libunwind.so:devel/libunwind \
+		libyaml-cpp.so:text/libyaml-cpp \
+		libzstd.so:arch/libzstd
 
 USES=		compiler:c++17-lang cpe python:build scons shebangfix
 # gmake is used while running ${WRKSRC}/src/third_party/mozjs/gen-config.sh
@@ -47,12 +48,12 @@ USE_RC_SUBR=	mongod
 SHEBANG_FILES=	buildscripts/scons.py
 python_OLD_CMD=	@python_interpreter@
 
-MAKE_JOBS_NUMBER=1
+CFLAGS=-O
+CXXFLAGS=-O
 
 MAKE_ARGS=	--cxx-std=17 \
-		--disable-warnings-as-errors \
 		--libc++ \
-		--runtime-hardening=on \
+		--disable-warnings-as-errors \
 		--use-system-icu \
 		--use-system-libunwind \
 		--use-system-pcre \
@@ -61,19 +62,16 @@ MAKE_ARGS=	--cxx-std=17 \
 		--use-system-yaml \
 		--use-system-zlib \
 		--use-system-zstd \
-                --server-js=off \
 		-j${MAKE_JOBS_NUMBER} \
-		AR=llvm-ar \
 		MONGO_VERSION=${DISTVERSION} \
+		AR=gar \
 		VERBOSE=on
 
-CONFLICTS_INSTALL=	mongodb[0-9][0-9]
 
-USERS=		mongodb
-GROUPS=		mongodb
-
-MAKE_ARGS+=	--lto=off
-MAKE_ARGS+=	--ssl
+#MAKE_ARGS+=	--experimental-optimization="-sandybridge"
+#MAKE_ARGS+=	--opt=off
+#MAKE_ARGS+=	--lto=off
+#MAKE_ARGS+=	--ssl
 
 .include <bsd.port.pre.mk>
 
@@ -81,7 +79,7 @@ MAKE_ARGS+=	--ssl
 IGNORE=		does not compile on 12.3, libc++ too old
 .endif
 
-ALL_TARGET=	install-core
+ALL_TARGET=	install-devcore #install-all
 
 # This ports is only following the Major Release.
 # https://docs.mongodb.com/manual/reference/versioning/
@@ -96,6 +94,23 @@ MOZJS_ARCH=	ppc64le
 .elif ${ARCH} == aarch64
 MOZJS_ARCH=	${ARCH}
 .endif
+
+USE_RC_SUBR=	mongod
+
+MONGO_OWNER=	mongodb
+MONGO_OWNER_ID=	922
+MONGO_GROUP=	mongodb
+MONGO_GROUP_ID=	922
+
+SUB_LIST+= MONGO_OWNER=${MONGO_OWNER}
+SUB_LIST+= MONGO_GROUP=${MONGO_GROUP}
+SUB_LIST+= MONGO_OWNER_ID=${MONGO_OWNER_ID}
+SUB_LIST+= MONGO_GROUP_ID=${MONGO_GROUP_ID}
+
+PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
+PKGINSTALL=	${WRKDIR}/pkg-install
+
+SUB_FILES= pkg-install pkg-deinstall
 
 post-patch:
 	${RM} -rf ${WRKSRC}/src/third_party/icu4c-*
@@ -120,11 +135,8 @@ do-install:
 .for f in mongod mongos
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${f}
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/rpm/mongod.conf ${STAGEDIR}${PREFIX}/etc/mongodb.conf.sample
-#	${MKDIR} ${STAGEDIR}${DOCSDIR}
-#.for doc in LICENSE-Community.txt MPL-2 README THIRD-PARTY-NOTICES
-#	${MV} ${STAGEDIR}${PREFIX}/${doc} ${STAGEDIR}${DOCSDIR}/
-#.endfor
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/rpm/mongod.conf ${STAGEDIR}${EXAMPLESDIR}/mongodb.conf.sample
 	${RM} ${STAGEDIR}${PREFIX}/bin/resmoke.py
 
 .include <bsd.port.post.mk>

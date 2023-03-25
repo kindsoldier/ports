@@ -1,5 +1,5 @@
---- ./SConstruct.orig	2023-03-12 12:48:43.117440000 +0200
-+++ ./SConstruct	2023-03-12 21:44:25.473028000 +0200
+--- ./SConstruct.orig	2023-03-25 16:50:11.568918000 +0200
++++ ./SConstruct	2023-03-25 16:53:05.980989000 +0200
 @@ -295,7 +295,7 @@
  )
  
@@ -9,6 +9,15 @@
      'builtin-memcmp',
      'fnsi',
      'nofp',
+@@ -313,7 +313,7 @@
+     action="append",
+     choices=experimental_optimization_choices,
+     const=experimental_optimization_choices[0],
+-    default=['+sandybridge'],
++    default=[''],
+     help='Enable experimental optimizations',
+     nargs='?',
+     type='choice'
 @@ -1343,9 +1343,9 @@
      print(env_vars.GenerateHelpText(env))
      Exit(0)
