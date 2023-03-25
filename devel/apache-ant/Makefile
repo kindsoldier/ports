@@ -2,7 +2,7 @@
 # $Id$
 #
 PORTNAME=	apache-ant
-PORTVERSION=	1.9.7
+PORTVERSION=	1.10.6
 CATEGORIES=	devel java
 MASTER_SITES=	APACHE/ant/binaries/:bin LOCAL/hq:man
 DISTFILES=	${ANT_DISTFILE}:bin \

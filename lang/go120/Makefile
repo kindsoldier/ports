@@ -9,7 +9,6 @@ MASTER_SITES+=	https://github.com/dmgk/go-bootstrap/releases/download/${BOOTSTRA
 MASTER_SITES+=	LOCAL/dmgk:bootstrap
 DISTFILES=      go${PORTVERSION}.src.tar.gz
 DISTFILES+=     go-${OPSYS:tl}-${GOARCH}${GOARM}-${BOOTSTRAP_TAG}.tar.xz:bootstrap
-PKGNAMESUFFIX=  120
 
 .include <bsd.port.pre.mk>
 

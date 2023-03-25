@@ -11,8 +11,6 @@ man/man1/autom4te.1.gz
 man/man1/autoreconf.1.gz
 man/man1/autoscan.1.gz
 man/man1/autoupdate.1.gz
-man/man1/config.guess.1.gz
-man/man1/config.sub.1.gz
 man/man1/ifnames.1.gz
 share/autoconf/autoconf/autoconf.m4
 share/autoconf/autoconf/autoconf.m4f
@@ -33,11 +31,13 @@ share/autoconf/autoconf/oldnames.m4
 share/autoconf/autoconf/programs.m4
 share/autoconf/autoconf/specific.m4
 share/autoconf/autoconf/status.m4
+share/autoconf/autoconf/trailer.m4
 share/autoconf/autoconf/types.m4
 share/autoconf/autom4te.cfg
 share/autoconf/Autom4te/C4che.pm
 share/autoconf/Autom4te/ChannelDefs.pm
 share/autoconf/Autom4te/Channels.pm
+share/autoconf/Autom4te/Config.pm
 share/autoconf/Autom4te/Configure_ac.pm
 share/autoconf/Autom4te/FileUtils.pm
 share/autoconf/Autom4te/General.pm
@@ -49,6 +49,9 @@ share/autoconf/autotest/autotest.m4
 share/autoconf/autotest/autotest.m4f
 share/autoconf/autotest/general.m4
 share/autoconf/autotest/specific.m4
+share/autoconf/build-aux/config.guess
+share/autoconf/build-aux/config.sub
+share/autoconf/build-aux/install-sh
 share/autoconf/INSTALL
 share/autoconf/m4sugar/foreach.m4
 share/autoconf/m4sugar/m4sh.m4
@@ -56,11 +59,12 @@ share/autoconf/m4sugar/m4sh.m4f
 share/autoconf/m4sugar/m4sugar.m4
 share/autoconf/m4sugar/m4sugar.m4f
 share/autoconf/m4sugar/version.m4
+share/info/autoconf.info
+share/info/dir
 @dir share/autoconf/autoconf
 @dir share/autoconf/Autom4te
 @dir share/autoconf/autoscan
 @dir share/autoconf/autotest
+@dir share/autoconf/build-aux
 @dir share/autoconf/m4sugar
 @dir share/autoconf
-@dir share/emacs/site-lisp
-@dir share/emacs
