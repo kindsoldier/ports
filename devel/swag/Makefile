@@ -1,18 +1,47 @@
-PORTNAME=	swagger
+PORTNAME=	swag
 DISTNAME=       goswagger
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.8.10
+DISTVERSION=	1.8.11
 CATEGORIES=	devel
 
 MAINTAINER=	dmgk@FreeBSD.org
-COMMENT=	Swagger 2.0 implementation for Go
-WWW=		https://goswagger.io/
+COMMENT=	Swag for Go
+WWW=		https://github.com/swaggo/swag
 
 USES=		go:modules
 
 GO_MODULE=	github.com/swaggo/swag
 GO_TARGET=	./cmd/swag
 
+GH_TUPLE=       \
+        KyleBanks:depth:v1.2.1:kylebanks_depth/vendor/github.com/KyleBanks/depth \
+        PuerkitoBio:purell:v1.1.1:puerkitobio_purell/vendor/github.com/PuerkitoBio/purell \
+        PuerkitoBio:urlesc:de5bf2ad4578:puerkitobio_urlesc/vendor/github.com/PuerkitoBio/urlesc \
+        cpuguy83:go-md2man:f79a8a8ca69d:cpuguy83_go_md2man_v2/vendor/github.com/cpuguy83/go-md2man/v2 \
+        davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
+        ghodss:yaml:v1.0.0:ghodss_yaml/vendor/github.com/ghodss/yaml \
+        go-openapi:jsonpointer:v0.19.5:go_openapi_jsonpointer/vendor/github.com/go-openapi/jsonpointer \
+        go-openapi:jsonreference:v0.19.6:go_openapi_jsonreference/vendor/github.com/go-openapi/jsonreference \
+        go-openapi:spec:v0.20.4:go_openapi_spec/vendor/github.com/go-openapi/spec \
+        go-openapi:swag:v0.19.15:go_openapi_swag/vendor/github.com/go-openapi/swag \
+        go-yaml:yaml:eeeca48fe776:go_yaml_yaml_1/vendor/gopkg.in/yaml.v3 \
+        go-yaml:yaml:v2.4.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
+        golang:net:a158d28d115b:golang_net/vendor/golang.org/x/net \
+        golang:sys:8c9f86f7a55f:golang_sys/vendor/golang.org/x/sys \
+        golang:text:v0.3.7:golang_text/vendor/golang.org/x/text \
+        golang:tools:v0.1.12:golang_tools/vendor/golang.org/x/tools \
+        josharian:intern:v1.0.0:josharian_intern/vendor/github.com/josharian/intern \
+        mailru:easyjson:v0.7.6:mailru_easyjson/vendor/github.com/mailru/easyjson \
+        pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
+        russross:blackfriday:v2.0.1:russross_blackfriday_v2/vendor/github.com/russross/blackfriday/v2 \
+        shurcooL:sanitized_anchor_name:v1.0.0:shurcool_sanitized_anchor_name/vendor/github.com/shurcooL/sanitized_anchor_name \
+        stretchr:testify:v1.7.0:stretchr_testify/vendor/github.com/stretchr/testify \
+        urfave:cli:v2.3.0:urfave_cli_v2/vendor/github.com/urfave/cli/v2
+
+
 PLIST_FILES=	bin/swag
+
+pre-build:
+	cd ${WRKSRC} && go mod vendor
 
 .include <bsd.port.mk>
