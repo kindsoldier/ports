@@ -14,7 +14,7 @@ DISTFILES+=     go-${OPSYS:tl}-${GOARCH}${GOARM}-${BOOTSTRAP_TAG}.tar.xz:bootstr
 
 DISTINFO_FILE = ${MASTERDIR}/distinfo.${ARCH}
 
-BOOTSTRAP_TAG=	go1.17.9
+BOOTSTRAP_TAG=	go1.20
 
 
 .if ${ARCH} == amd64
