@@ -1,3 +1,6 @@
 bin/mongod
 bin/mongos
+etc/rc.d/mongod
 share/examples/mongodb/mongodb.conf.sample
+@dir share/examples/mongodb
+@dir share/examples
