@@ -1,0 +1,3 @@
+sbin/gitea
+share/examples/gitea/app.ini.sample
+@dir share/examples/gitea
