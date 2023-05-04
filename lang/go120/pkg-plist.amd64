@@ -399,6 +399,7 @@ lib/go/misc/cgo/testshared/testdata/issue44031/b/b.go
 lib/go/misc/cgo/testshared/testdata/issue44031/main/main.go
 lib/go/misc/cgo/testshared/testdata/issue47837/a/a.go
 lib/go/misc/cgo/testshared/testdata/issue47837/main/main.go
+lib/go/misc/cgo/testshared/testdata/issue58966/main.go
 lib/go/misc/cgo/testshared/testdata/trivial/trivial.go
 lib/go/misc/cgo/testso/noso_test.go
 lib/go/misc/cgo/testso/overlaydir_test.go
@@ -1897,6 +1898,7 @@ lib/go/src/cmd/go/testdata/script/build_import_comment.txt
 lib/go/src/cmd/go/testdata/script/build_import_cycle.txt
 lib/go/src/cmd/go/testdata/script/build_internal.txt
 lib/go/src/cmd/go/testdata/script/build_issue48319.txt
+lib/go/src/cmd/go/testdata/script/build_issue59571.txt
 lib/go/src/cmd/go/testdata/script/build_issue6480.txt
 lib/go/src/cmd/go/testdata/script/build_link_x_import_path_escape.txt
 lib/go/src/cmd/go/testdata/script/build_multi_main.txt
@@ -1933,6 +1935,7 @@ lib/go/src/cmd/go/testdata/script/cgo_path_space.txt
 lib/go/src/cmd/go/testdata/script/cgo_path.txt
 lib/go/src/cmd/go/testdata/script/cgo_stale_precompiled.txt
 lib/go/src/cmd/go/testdata/script/cgo_stale.txt
+lib/go/src/cmd/go/testdata/script/cgo_suspect_flag_force_external.txt
 lib/go/src/cmd/go/testdata/script/cgo_syso_issue29253.txt
 lib/go/src/cmd/go/testdata/script/cgo_undef.txt
 lib/go/src/cmd/go/testdata/script/chdir.txt
@@ -6871,10 +6874,6 @@ lib/go/src/os/readfrom_stub.go
 lib/go/src/os/removeall_at.go
 lib/go/src/os/removeall_noat.go
 lib/go/src/os/removeall_test.go
-lib/go/src/os/rlimit_darwin.go
-lib/go/src/os/rlimit_stub.go
-lib/go/src/os/rlimit_test.go
-lib/go/src/os/rlimit.go
 lib/go/src/os/signal/doc.go
 lib/go/src/os/signal/example_test.go
 lib/go/src/os/signal/example_unix_test.go
@@ -8233,6 +8232,7 @@ lib/go/src/syscall/exec_windows_test.go
 lib/go/src/syscall/exec_windows.go
 lib/go/src/syscall/export_darwin_test.go
 lib/go/src/syscall/export_linux_test.go
+lib/go/src/syscall/export_rlimit_test.go
 lib/go/src/syscall/export_unix_test.go
 lib/go/src/syscall/export_windows_test.go
 lib/go/src/syscall/flock_aix.go
@@ -8272,6 +8272,10 @@ lib/go/src/syscall/netlink_linux.go
 lib/go/src/syscall/ptrace_darwin.go
 lib/go/src/syscall/ptrace_ios.go
 lib/go/src/syscall/pwd_plan9.go
+lib/go/src/syscall/rlimit_darwin.go
+lib/go/src/syscall/rlimit_stub.go
+lib/go/src/syscall/rlimit_test.go
+lib/go/src/syscall/rlimit.go
 lib/go/src/syscall/route_bsd.go
 lib/go/src/syscall/route_darwin.go
 lib/go/src/syscall/route_dragonfly.go
@@ -11012,10 +11016,16 @@ lib/go/test/fixedbugs/issue58563.go
 lib/go/test/fixedbugs/issue5910.dir/a.go
 lib/go/test/fixedbugs/issue5910.dir/main.go
 lib/go/test/fixedbugs/issue5910.go
+lib/go/test/fixedbugs/issue59293.go
+lib/go/test/fixedbugs/issue59334.go
+lib/go/test/fixedbugs/issue59367.go
+lib/go/test/fixedbugs/issue59378.go
 lib/go/test/fixedbugs/issue5957.dir/a.go
 lib/go/test/fixedbugs/issue5957.dir/b.go
 lib/go/test/fixedbugs/issue5957.dir/c.go
 lib/go/test/fixedbugs/issue5957.go
+lib/go/test/fixedbugs/issue59572.go
+lib/go/test/fixedbugs/issue59572.out
 lib/go/test/fixedbugs/issue5963.go
 lib/go/test/fixedbugs/issue6004.go
 lib/go/test/fixedbugs/issue6036.go
@@ -12155,6 +12165,7 @@ lib/go/VERSION
 @dir lib/go/misc/cgo/testshared/testdata/issue47837/a
 @dir lib/go/misc/cgo/testshared/testdata/issue47837/main
 @dir lib/go/misc/cgo/testshared/testdata/issue47837
+@dir lib/go/misc/cgo/testshared/testdata/issue58966
 @dir lib/go/misc/cgo/testshared/testdata/trivial
 @dir lib/go/misc/cgo/testshared/testdata
 @dir lib/go/misc/cgo/testshared
