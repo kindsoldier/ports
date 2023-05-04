@@ -1,0 +1,4 @@
+bin/helm
+share/bash-completion/completions/helm
+@dir share/bash-completion/completions
+@dir share/bash-completion
