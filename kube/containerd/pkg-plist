@@ -1,0 +1,4 @@
+bin/containerd
+bin/containerd-shim
+bin/containerd-stress
+bin/ctr
