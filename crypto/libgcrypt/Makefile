@@ -3,7 +3,7 @@
 # $URL: file:///usr2/svn/ports5/crypto/libgcrypt/Makefile $
 #
 PORTNAME=	libgcrypt
-PORTVERSION=	1.6.1
+PORTVERSION=	1.9.4
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	libgcrypt

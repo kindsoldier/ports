@@ -3,4 +3,6 @@ include/assuan.h
 lib/libassuan.la
 lib/libassuan.so
 lib/libassuan.so.4
+lib/pkgconfig/libassuan.pc
 share/aclocal/libassuan.m4
+share/info/assuan.info

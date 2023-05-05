@@ -2,7 +2,7 @@
 # $Id$
 #
 PORTNAME=	gpgme
-PORTVERSION=	1.5.1
+PORTVERSION=	1.20.0
 CATEGORIES=	security
 MASTER_SITES=	GNUPG/gpgme
 

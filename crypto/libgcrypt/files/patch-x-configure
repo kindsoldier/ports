@@ -1,0 +1,15 @@
+--- ./configure~	2021-08-22 18:00:26.000000000 +0200
++++ ./configure	2023-05-05 13:11:00.660667000 +0200
+@@ -2688,9 +2688,9 @@
+ #   (Interfaces removed:    CURRENT++, AGE=0, REVISION=0)
+ #   (Interfaces added:      CURRENT++, AGE++, REVISION=0)
+ #   (No interfaces changed:                   REVISION++)
+-LIBGCRYPT_LT_CURRENT=23
+-LIBGCRYPT_LT_AGE=3
+-LIBGCRYPT_LT_REVISION=4
++LIBGCRYPT_LT_CURRENT=20
++LIBGCRYPT_LT_AGE=20
++LIBGCRYPT_LT_REVISION=0
+ ################################################
+ 
+ 

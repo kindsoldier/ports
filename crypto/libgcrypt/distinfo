@@ -1,2 +1,3 @@
-SHA256 (libgcrypt-1.6.1.tar.bz2) = a1c3efea69f8ffe769f488b300ce190eeeb0c30de24a53f1c1b6e4202fdc2070
-SIZE (libgcrypt-1.6.1.tar.bz2) = 2470885
+TIMESTAMP = 1683284364
+SHA256 (libgcrypt-1.9.4.tar.bz2) = ea849c83a72454e3ed4267697e8ca03390aee972ab421e7df69dfe42b65caaf7
+SIZE (libgcrypt-1.9.4.tar.bz2) = 3239704

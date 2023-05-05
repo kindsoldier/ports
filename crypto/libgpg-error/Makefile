@@ -3,7 +3,7 @@
 # $URL: file:///usr2/svn/ports5/crypto/libgpg-error/Makefile $
 #
 PORTNAME=	libgpg-error
-PORTVERSION=	1.17
+PORTVERSION=	1.47
 CATEGORIES=	security devel
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -25,6 +25,8 @@ CONFIGURE_ARGS+= --disable-languages
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS+= --infodir=${PREFIX}/info
 CONFIGURE_ARGS+= --mandir=${PREFIX}/man
+CONFIGURE_ARGS+=         --enable-static=yes \
+                        --enable-install-gpg-error-config 
 
 .include <bsd.port.mk>
 #EOF

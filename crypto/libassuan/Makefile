@@ -2,7 +2,7 @@
 # $Id$
 #
 PORTNAME=	libassuan
-PORTVERSION=	2.1.3
+PORTVERSION=	2.5.5
 CATEGORIES=	security devel
 MASTER_SITES=	GNUPG/${PORTNAME}
 

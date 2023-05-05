@@ -1,0 +1,15 @@
+--- ./configure~	2021-03-22 14:11:16.000000000 +0200
++++ ./configure	2023-05-05 12:47:28.224684000 +0200
+@@ -2444,9 +2444,9 @@
+ #   (Interfaces added:			AGE++)
+ #   (Interfaces removed/changed:	AGE=0)
+ #
+-LIBASSUAN_LT_CURRENT=8
+-LIBASSUAN_LT_AGE=8
+-LIBASSUAN_LT_REVISION=5
++LIBASSUAN_LT_CURRENT=4
++LIBASSUAN_LT_AGE=4
++LIBASSUAN_LT_REVISION=0
+ 
+ # If the API is changed in an incompatible way: increment the next counter.
+ LIBASSUAN_CONFIG_API_VERSION=2

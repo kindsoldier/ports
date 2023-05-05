@@ -1,0 +1,13 @@
+--- ./configure~	2023-05-05 12:41:51.278992000 +0200
++++ ./configure	2023-05-05 12:51:45.672880000 +0200
+@@ -2919,8 +2919,8 @@
+ #   (Interfaces added:			AGE++)
+ #   (Interfaces removed:		AGE=0)
+ #
+-LIBGPGME_LT_CURRENT=40
+-LIBGPGME_LT_AGE=29
++LIBGPGME_LT_CURRENT=24
++LIBGPGME_LT_AGE=24
+ LIBGPGME_LT_REVISION=0
+ 
+ # If there is an ABI break in gpgmepp or qgpgme also bump the

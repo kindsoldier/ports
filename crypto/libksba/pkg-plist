@@ -4,4 +4,6 @@ lib/libksba.a
 lib/libksba.la
 lib/libksba.so
 lib/libksba.so.19
+lib/pkgconfig/ksba.pc
 share/aclocal/ksba.m4
+share/info/ksba.info

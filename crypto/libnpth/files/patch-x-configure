@@ -1,0 +1,15 @@
+--- ./configure~	2018-07-16 09:33:37.000000000 +0200
++++ ./configure	2023-05-05 13:23:47.954412000 +0200
+@@ -2310,9 +2310,9 @@
+ #   (Interfaces added:			AGE++)
+ #   (Interfaces removed:		AGE=0)
+ #
+-LIBNPTH_LT_CURRENT=1
+-LIBNPTH_LT_AGE=1
+-LIBNPTH_LT_REVISION=2
++LIBNPTH_LT_CURRENT=0
++LIBNPTH_LT_AGE=0
++LIBNPTH_LT_REVISION=0
+ ################################################
+ 
+ 
