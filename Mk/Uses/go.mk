@@ -135,7 +135,7 @@ GO_MODCACHE=	file://${GO_GOPATH}/pkg/mod/cache/download
 GO_WRKSRC=	${WRKSRC}
 GO_ENV+=	GOPATH="${GO_GOPATH}" \
 		GOBIN="${GO_WRKDIR_BIN}" \
-		GO111MODULE=on \
+		GO111MODULE=auto \
 		GOFLAGS=-modcacherw \
 		GOSUMDB=${GO_GOSUMDB}
 .    if defined(GO_MODULE)
@@ -163,7 +163,7 @@ GO_GOPATH=	${WRKDIR}
 GO_WRKSRC=	${WRKDIR}/src/${GO_PKGNAME}
 GO_ENV+=	GOPATH="${GO_GOPATH}" \
 		GOBIN="" \
-		GO111MODULE=off
+		GO111MODULE=auto
 .  endif
 
 BUILD_DEPENDS+=	${GO_CMD}:${GO_PORT}
@@ -220,7 +220,7 @@ do-build:
 		pkg=$$(${ECHO_CMD} $${t} | \
 			${SED} -Ee 's/^([^:]*).*$$/\1/' -e 's/^${PORTNAME}$$/./'); \
 		${ECHO_MSG} "===>  Building $${out} from $${pkg}"; \
-		${SETENV} ${MAKE_ENV} ${GO_ENV} GOMAXPROCS=${MAKE_JOBS_NUMBER} GOPROXY=off ${GO_CMD} build ${GO_BUILDFLAGS} \
+		${SETENV} ${MAKE_ENV} ${GO_ENV} GOMAXPROCS=${MAKE_JOBS_NUMBER} GOPROXY=${GO_GOPROXY} ${GO_CMD} build ${GO_BUILDFLAGS} \
 			-o ${GO_WRKDIR_BIN}/$${out} \
 			$${pkg}; \
 	done)

@@ -1,5 +1,9 @@
-TIMESTAMP = 1532443980
-SHA256 (golang-protobuf-v1.1.0_GH0.tar.gz) = c086490e7b116b73b7e3e6058eae997576d0523ad8f1b2ec2b698887e62b14a8
-SIZE (golang-protobuf-v1.1.0_GH0.tar.gz) = 324733
-SHA256 (google-go-genproto-02b4e95_GH0.tar.gz) = 71421ee0c9af39492dad0c63736e0e3771ecd41066034f77472bd922208fcdfd
-SIZE (google-go-genproto-02b4e95_GH0.tar.gz) = 2091400
+TIMESTAMP = 1685103025
+SHA256 (protocolbuffers-protobuf-go-v1.30.0_GH0.tar.gz) = 3279a16ec3bdd7c53fe1599134de298ed90d9f3b6ec1c1eb5f3b76ba5aaa9f0c
+SIZE (protocolbuffers-protobuf-go-v1.30.0_GH0.tar.gz) = 1298988
+SHA256 (golang-protobuf-v1.5.0_GH0.tar.gz) = 10bbe0880bb400a63944409f685c55a3f65adf4360caab0cae068c699a9c07fa
+SIZE (golang-protobuf-v1.5.0_GH0.tar.gz) = 171512
+SHA256 (golang-xerrors-9bdfabe68543_GH0.tar.gz) = 54bb4d99e6cba2e3e5331d064f46640cc01a0e630ee6a684ae810bd94a7e4eb7
+SIZE (golang-xerrors-9bdfabe68543_GH0.tar.gz) = 13657
+SHA256 (google-go-cmp-v0.5.5_GH0.tar.gz) = 8f1a0041f484812ae219e7548a13d5269c947cfcdea6031d40cdc85cd0663b3e
+SIZE (google-go-cmp-v0.5.5_GH0.tar.gz) = 102358

@@ -2,9 +2,9 @@
 # $FreeBSD: head/devel/protobuf/Makefile 497411 2019-03-31 13:41:02Z sunpoet $
 
 PORTNAME=	protobuf
-PORTVERSION=	3.14.0
+PORTVERSION=	3.21.12
 CATEGORIES=	devel
-MASTER_SITES=<->https://github.com/protocolbuffers/protobuf/releases/download/v${PORTVERSION}/
+MASTER_SITES=	https://github.com/protocolbuffers/protobuf/releases/download/v${PORTVERSION:R:E}.${PORTVERSION:E}/
 DISTVERSIONPREFIX=	cpp-
 
 
