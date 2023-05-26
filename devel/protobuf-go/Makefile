@@ -24,6 +24,4 @@ GH_TUPLE=	golang:protobuf:v1.5.0:golang_protobuf/vendor/github.com/golang/protob
 
 GO_TARGET=	./cmd/protoc-gen-go
 
-MAKE_ENV+= GO111MODULE=auto
-
 .include <bsd.port.mk>
