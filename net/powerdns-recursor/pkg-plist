@@ -1,0 +1,6 @@
+bin/rec_control
+man/man1/pdns_recursor.1.gz
+man/man1/rec_control.1.gz
+sbin/pdns_recursor
+share/examples/recursor/recursor.conf.example
+@dir share/examples/recursor
