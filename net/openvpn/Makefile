@@ -2,7 +2,7 @@
 # $Id$
 #
 PORTNAME=	openvpn
-PORTVERSION=	2.5.5
+PORTVERSION=	2.6.6
 CATEGORIES=	security net
 #MASTER_SITES=	http://openvpn.net/release/
 MASTER_SITES+=	http://swupdate.openvpn.net/community/releases/
@@ -13,7 +13,7 @@ COMMENT=	Secure IP/Ethernet tunnel daemon
 
 LIB_DEPENDS+=	liblzo2.so:arch/liblzo2
 
-USES+=		tar:xz
+
 GNU_CONFIGURE=	yes
 USES+=		gmake
 CONFIGURE_ARGS+= --enable-password-save

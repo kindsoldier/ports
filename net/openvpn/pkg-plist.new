@@ -1,0 +1,39 @@
+etc/rc.d/openvpn
+include/openvpn-msg.h
+include/openvpn-plugin.h
+lib/openvpn/plugins/openvpn-plugin-auth-pam.la
+lib/openvpn/plugins/openvpn-plugin-auth-pam.so
+lib/openvpn/plugins/openvpn-plugin-down-root.la
+lib/openvpn/plugins/openvpn-plugin-down-root.so
+man/man5/openvpn-examples.5.gz
+man/man8/openvpn.8.gz
+sbin/openvpn
+share/doc/openvpn/Changes.rst
+share/doc/openvpn/COPYING
+share/doc/openvpn/COPYRIGHT.GPL
+share/doc/openvpn/gui-notes.txt
+share/doc/openvpn/management-notes.txt
+share/doc/openvpn/README
+share/doc/openvpn/README.auth-pam
+share/doc/openvpn/README.down-root
+share/doc/openvpn/README.mbedtls
+share/examples/openvpn/client.conf
+share/examples/openvpn/server.conf
+share/examples/openvpn/tls-home.conf
+share/examples/openvpn/tls-office.conf
+@dir etc/rc.d
+@dir etc
+@dir include
+@dir lib/openvpn/plugins
+@dir lib/openvpn
+@dir lib
+@dir man/man5
+@dir man/man8
+@dir man
+@dir sbin
+@dir share/doc/openvpn
+@dir share/doc
+@dir share/examples/openvpn
+@dir share/examples
+@dir share
+@dir .
