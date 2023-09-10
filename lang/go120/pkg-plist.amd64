@@ -1884,6 +1884,7 @@ lib/go/src/cmd/go/testdata/script/build_cd_gopath_different.txt
 lib/go/src/cmd/go/testdata/script/build_cgo_consistent_results.txt
 lib/go/src/cmd/go/testdata/script/build_cgo_error.txt
 lib/go/src/cmd/go/testdata/script/build_concurrent_backend.txt
+lib/go/src/cmd/go/testdata/script/build_cwd_newline.txt
 lib/go/src/cmd/go/testdata/script/build_darwin_cc_arch.txt
 lib/go/src/cmd/go/testdata/script/build_dash_n_cgo.txt
 lib/go/src/cmd/go/testdata/script/build_dash_o_dev_null.txt
@@ -1989,6 +1990,7 @@ lib/go/src/cmd/go/testdata/script/fileline.txt
 lib/go/src/cmd/go/testdata/script/fmt_load_errors.txt
 lib/go/src/cmd/go/testdata/script/fsys_walk.txt
 lib/go/src/cmd/go/testdata/script/gccgo_link_c.txt
+lib/go/src/cmd/go/testdata/script/gccgo_link_ldflags.txt
 lib/go/src/cmd/go/testdata/script/gccgo_m.txt
 lib/go/src/cmd/go/testdata/script/gccgo_mangle.txt
 lib/go/src/cmd/go/testdata/script/gcflags_patterns.txt
@@ -2073,6 +2075,7 @@ lib/go/src/cmd/go/testdata/script/list_compiled_imports.txt
 lib/go/src/cmd/go/testdata/script/list_compiler_output.txt
 lib/go/src/cmd/go/testdata/script/list_constraints.txt
 lib/go/src/cmd/go/testdata/script/list_dedup_packages.txt
+lib/go/src/cmd/go/testdata/script/list_empty_import.txt
 lib/go/src/cmd/go/testdata/script/list_err_cycle.txt
 lib/go/src/cmd/go/testdata/script/list_err_stack.txt
 lib/go/src/cmd/go/testdata/script/list_export_e.txt
@@ -2353,6 +2356,7 @@ lib/go/src/cmd/go/testdata/script/mod_stale.txt
 lib/go/src/cmd/go/testdata/script/mod_std_vendor.txt
 lib/go/src/cmd/go/testdata/script/mod_string_alias.txt
 lib/go/src/cmd/go/testdata/script/mod_sum_ambiguous.txt
+lib/go/src/cmd/go/testdata/script/mod_sum_issue56222.txt
 lib/go/src/cmd/go/testdata/script/mod_sum_lookup.txt
 lib/go/src/cmd/go/testdata/script/mod_sum_readonly.txt
 lib/go/src/cmd/go/testdata/script/mod_sum_replaced.txt
@@ -2381,6 +2385,7 @@ lib/go/src/cmd/go/testdata/script/mod_tidy_downgrade_ambiguous.txt
 lib/go/src/cmd/go/testdata/script/mod_tidy_duplicates.txt
 lib/go/src/cmd/go/testdata/script/mod_tidy_error.txt
 lib/go/src/cmd/go/testdata/script/mod_tidy_indirect.txt
+lib/go/src/cmd/go/testdata/script/mod_tidy_issue60313.txt
 lib/go/src/cmd/go/testdata/script/mod_tidy_lazy_self.txt
 lib/go/src/cmd/go/testdata/script/mod_tidy_newroot.txt
 lib/go/src/cmd/go/testdata/script/mod_tidy_old.txt
@@ -6456,6 +6461,7 @@ lib/go/src/net/fd_windows.go
 lib/go/src/net/file_plan9.go
 lib/go/src/net/file_stub.go
 lib/go/src/net/file_test.go
+lib/go/src/net/file_unix_test.go
 lib/go/src/net/file_unix.go
 lib/go/src/net/file_windows.go
 lib/go/src/net/file.go
@@ -7314,10 +7320,8 @@ lib/go/src/runtime/export_debug_test.go
 lib/go/src/runtime/export_debuglog_test.go
 lib/go/src/runtime/export_linux_test.go
 lib/go/src/runtime/export_mmap_test.go
-lib/go/src/runtime/export_openbsd_test.go
 lib/go/src/runtime/export_pipe_test.go
 lib/go/src/runtime/export_pipe2_test.go
-lib/go/src/runtime/export_solaris_test.go
 lib/go/src/runtime/export_test.go
 lib/go/src/runtime/export_unix_test.go
 lib/go/src/runtime/export_unix2_test.go
@@ -7524,8 +7528,6 @@ lib/go/src/runtime/msize.go
 lib/go/src/runtime/mspanset.go
 lib/go/src/runtime/mstats.go
 lib/go/src/runtime/mwbbuf.go
-lib/go/src/runtime/nbpipe_fcntl_libc_test.go
-lib/go/src/runtime/nbpipe_fcntl_unix_test.go
 lib/go/src/runtime/nbpipe_pipe_test.go
 lib/go/src/runtime/nbpipe_pipe.go
 lib/go/src/runtime/nbpipe_pipe2.go
@@ -7771,6 +7773,12 @@ lib/go/src/runtime/runtime1.go
 lib/go/src/runtime/runtime2.go
 lib/go/src/runtime/rwmutex_test.go
 lib/go/src/runtime/rwmutex.go
+lib/go/src/runtime/security_aix.go
+lib/go/src/runtime/security_issetugid.go
+lib/go/src/runtime/security_linux.go
+lib/go/src/runtime/security_nonunix.go
+lib/go/src/runtime/security_test.go
+lib/go/src/runtime/security_unix.go
 lib/go/src/runtime/select.go
 lib/go/src/runtime/sema_test.go
 lib/go/src/runtime/sema.go
@@ -8001,6 +8009,7 @@ lib/go/src/runtime/testdata/testprognet/main.go
 lib/go/src/runtime/testdata/testprognet/net.go
 lib/go/src/runtime/testdata/testprognet/signal.go
 lib/go/src/runtime/testdata/testprognet/signalexec.go
+lib/go/src/runtime/testdata/testsuid/main.go
 lib/go/src/runtime/testdata/testwinlib/main.c
 lib/go/src/runtime/testdata/testwinlib/main.go
 lib/go/src/runtime/testdata/testwinlibsignal/dummy.go
@@ -8008,6 +8017,8 @@ lib/go/src/runtime/testdata/testwinlibsignal/main.c
 lib/go/src/runtime/testdata/testwinlibthrow/main.go
 lib/go/src/runtime/testdata/testwinlibthrow/veh.c
 lib/go/src/runtime/testdata/testwinsignal/main.go
+lib/go/src/runtime/testdata/testwintls/main.c
+lib/go/src/runtime/testdata/testwintls/main.go
 lib/go/src/runtime/textflag.h
 lib/go/src/runtime/time_fake.go
 lib/go/src/runtime/time_linux_amd64.s
@@ -11030,6 +11041,7 @@ lib/go/test/fixedbugs/issue5963.go
 lib/go/test/fixedbugs/issue6004.go
 lib/go/test/fixedbugs/issue6036.go
 lib/go/test/fixedbugs/issue6055.go
+lib/go/test/fixedbugs/issue60601.go
 lib/go/test/fixedbugs/issue6131.go
 lib/go/test/fixedbugs/issue6140.go
 lib/go/test/fixedbugs/issue6247.go
@@ -12954,10 +12966,12 @@ lib/go/VERSION
 @dir lib/go/src/runtime/testdata/testprogcgo/windows
 @dir lib/go/src/runtime/testdata/testprogcgo
 @dir lib/go/src/runtime/testdata/testprognet
+@dir lib/go/src/runtime/testdata/testsuid
 @dir lib/go/src/runtime/testdata/testwinlib
 @dir lib/go/src/runtime/testdata/testwinlibsignal
 @dir lib/go/src/runtime/testdata/testwinlibthrow
 @dir lib/go/src/runtime/testdata/testwinsignal
+@dir lib/go/src/runtime/testdata/testwintls
 @dir lib/go/src/runtime/testdata
 @dir lib/go/src/runtime/trace
 @dir lib/go/src/runtime
