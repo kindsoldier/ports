@@ -2,7 +2,7 @@
 # $FreeBSD: head/lang/go/Makefile 470619 2018-05-22 14:32:09Z jlaffaye $
 
 PORTNAME=	go
-PORTVERSION=	1.20.6
+PORTVERSION=	1.20.11
 CATEGORIES=	lang
 MASTER_SITES=	https://golang.org/dl/
 MASTER_SITES+=	https://github.com/dmgk/go-bootstrap/releases/download/${BOOTSTRAP_TAG}/:bootstrap
