@@ -110,6 +110,7 @@ include/frr/srv6.h
 include/frr/stream.h
 include/frr/systemd.h
 include/frr/table.h
+include/frr/tc.h
 include/frr/termtable.h
 include/frr/thread.h
 include/frr/trace.h
