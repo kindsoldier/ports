@@ -9,7 +9,7 @@ bin/json_pp
 bin/libnetcfg
 bin/perl
 bin/perl5
-bin/perl5.36.0
+bin/perl5.36.3
 bin/perlbug
 bin/perldoc
 bin/perlivp
@@ -1235,7 +1235,12 @@ etc/man.d/perl.conf
 %%PERL_LIB%%/pod/perl5321delta.pod
 %%PERL_LIB%%/pod/perl5340delta.pod
 %%PERL_LIB%%/pod/perl5341delta.pod
+%%PERL_LIB%%/pod/perl5342delta.pod
+%%PERL_LIB%%/pod/perl5343delta.pod
 %%PERL_LIB%%/pod/perl5360delta.pod
+%%PERL_LIB%%/pod/perl5361delta.pod
+%%PERL_LIB%%/pod/perl5362delta.pod
+%%PERL_LIB%%/pod/perl5363delta.pod
 %%PERL_LIB%%/pod/perl561delta.pod
 %%PERL_LIB%%/pod/perl56delta.pod
 %%PERL_LIB%%/pod/perl581delta.pod
@@ -2310,7 +2315,12 @@ etc/man.d/perl.conf
 %%MAN1%%/perl5321delta.1.gz
 %%MAN1%%/perl5340delta.1.gz
 %%MAN1%%/perl5341delta.1.gz
+%%MAN1%%/perl5342delta.1.gz
+%%MAN1%%/perl5343delta.1.gz
 %%MAN1%%/perl5360delta.1.gz
+%%MAN1%%/perl5361delta.1.gz
+%%MAN1%%/perl5362delta.1.gz
+%%MAN1%%/perl5363delta.1.gz
 %%MAN1%%/perl561delta.1.gz
 %%MAN1%%/perl56delta.1.gz
 %%MAN1%%/perl581delta.1.gz
@@ -2654,6 +2664,7 @@ etc/man.d/perl.conf
 @dir %%ARCH_LIB%%/Unicode/Collate
 @dir %%ARCH_LIB%%/Unicode
 @dir %%ARCH_LIB%%
+@dir %%MAN3%%
 @dir %%PERL_LIB%%/man
 @dir %%PERL_LIB%%/Math/BigFloat
 @dir %%PERL_LIB%%/Math/BigInt
