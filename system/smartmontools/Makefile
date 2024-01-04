@@ -2,7 +2,7 @@
 # $Id$
 #
 PORTNAME=	smartmontools
-PORTVERSION=	7.2
+PORTVERSION=	7.4
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 

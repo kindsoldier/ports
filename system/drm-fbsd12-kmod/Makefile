@@ -30,9 +30,9 @@ GH_TAGNAME=	drm_v4.16-fbsd12
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && (${OSVERSION} < 1200058 || ${OSVERSION} > 1300000)
-IGNORE=		only supported on FreeBSD 12.
-.endif
+#.if ${OPSYS} == FreeBSD && (${OSVERSION} < 1200058 || ${OSVERSION} > 1300000)
+#IGNORE=		only supported on FreeBSD 12.
+#.endif
 
 PLIST=	${PKGDIR}/pkg-plist.${ARCH}
 
