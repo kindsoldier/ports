@@ -2198,9 +2198,10 @@ _PKGMESSAGES+=	${PKGMESSAGE}
 TMPPLIST?=	${WRKDIR}/.PLIST.mktmp
 
 .if defined(PKG_NOCOMPRESS)
-PKG_SUFX?=		.tar
+PKG_SUFX?=		.pkg
 .else
-PKG_SUFX?=		.txz
+#PKG_SUFX?=		.txz
+PKG_SUFX?=		.pkg
 .endif
 # where pkg(8) stores its data
 PKG_DBDIR?=		/var/db/pkg

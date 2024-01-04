@@ -1,6 +1,6 @@
-TIMESTAMP = 1685103025
-SHA256 (protocolbuffers-protobuf-go-v1.30.0_GH0.tar.gz) = 3279a16ec3bdd7c53fe1599134de298ed90d9f3b6ec1c1eb5f3b76ba5aaa9f0c
-SIZE (protocolbuffers-protobuf-go-v1.30.0_GH0.tar.gz) = 1298988
+TIMESTAMP = 1690968086
+SHA256 (protocolbuffers-protobuf-go-v1.31.0_GH0.tar.gz) = 96d670e9bae145ff2dd0f48a3693edb1f45ec3ee56d5f50a5f01cc7e060314bc
+SIZE (protocolbuffers-protobuf-go-v1.31.0_GH0.tar.gz) = 1311732
 SHA256 (golang-protobuf-v1.5.0_GH0.tar.gz) = 10bbe0880bb400a63944409f685c55a3f65adf4360caab0cae068c699a9c07fa
 SIZE (golang-protobuf-v1.5.0_GH0.tar.gz) = 171512
 SHA256 (golang-xerrors-9bdfabe68543_GH0.tar.gz) = 54bb4d99e6cba2e3e5331d064f46640cc01a0e630ee6a684ae810bd94a7e4eb7
