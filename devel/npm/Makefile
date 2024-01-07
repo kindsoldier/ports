@@ -2,7 +2,7 @@
 # $FreeBSD: head/www/npm/Makefile 454516 2017-11-20 04:30:31Z sunpoet $
 
 PORTNAME=	npm
-PORTVERSION=	9.5.0
+PORTVERSION=	9.7.2
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/sunpoet
 
@@ -10,7 +10,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Node package manager
 
 RUN_DEPENDS=	gmake:devel/gmake
-RUN_DEPENDS+=	node>=8:lang/node16
+RUN_DEPENDS+=	node>=8:lang/node18
 
 NO_ARCH=	yes
 NO_BUILD=	yes
