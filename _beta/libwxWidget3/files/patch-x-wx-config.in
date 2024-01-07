@@ -1,0 +1,49 @@
+--- ./wx-config.in.orig	2018-03-07 19:21:58.000000000 +0200
++++ ./wx-config.in	2019-02-26 20:50:45.879113000 +0200
+@@ -999,8 +999,8 @@
+     IFS=':'
+     _user_prefix=${input_option_exec_prefix:-$input_option_prefix}
+ 
+-    for _util in "${input_option_utility}-@WX_RELEASE@@WX_FLAVOUR@" \
+-                 "${input_option_utility}-@WX_RELEASE@"             \
++    for _util in "${input_option_utility}WX_FLAVOUR@" \
++                 "${input_option_utility}"             \
+                  "${input_option_utility}"
+     do
+         for p in ${_user_prefix:+$_user_prefix/bin} $bindir $PATH; do
+@@ -1113,7 +1113,7 @@
+             _libname="@WX_LIBRARY_BASENAME_GUI@"
+         fi
+         [ $lib = base ] || _libname="${_libname}_$lib"
+-        _libname="${_libname}-@WX_RELEASE@$_target"
++        _libname="${_libname}$_target"
+ 
+         if is_static; then
+             _wxlibs="$_wxlibs ${libdir}/lib${_libname}.a"
+@@ -1172,7 +1172,7 @@
+             _libname="@WX_LIBRARY_BASENAME_GUI@"
+         fi
+         [ $lib = base ] || _libname="${_libname}_$lib"
+-        _libname="${_libname}-@WX_RELEASE@$_target"
++        _libname="${_libname}$_target"
+ 
+         _wxlibs="$_wxlibs ${libdir}/lib${_libname}.a"
+     done
+@@ -1283,7 +1283,7 @@
+ [ "$using_gui" = "yes" ] || _gui_cppflags="-DwxUSE_GUI=0"
+ 
+ if is_installed; then
+-    _include_cppflags="-I${includedir}/wx-@WX_RELEASE@@WX_FLAVOUR@"
++    _include_cppflags="-I${includedir}/wx@WX_FLAVOUR@"
+ else
+     _include_cppflags="-I${includedir}"
+ fi
+@@ -1367,7 +1367,7 @@
+         # as it is more universally accepted.
+         if is_installed; then
+             echo "@RESCOMP@ --include-dir" \
+-                           "${includedir}/wx-@WX_RELEASE@@WX_FLAVOUR@" \
++                           "${includedir}/wx@WX_FLAVOUR@" \
+                            "@WXCONFIG_RESFLAGS@"
+         else
+             echo "@RESCOMP@ --include-dir ${includedir}" \

@@ -1,0 +1,337 @@
+lib/geany/addons.la
+lib/geany/addons.so
+lib/geany/autoclose.la
+lib/geany/autoclose.so
+lib/geany/automark.la
+lib/geany/automark.so
+lib/geany/codenav.la
+lib/geany/codenav.so
+lib/geany/commander.la
+lib/geany/commander.so
+lib/geany/defineformat.la
+lib/geany/defineformat.so
+lib/geany/geanyctags.la
+lib/geany/geanyctags.so
+lib/geany/geanydoc.la
+lib/geany/geanydoc.so
+lib/geany/geanyextrasel.la
+lib/geany/geanyextrasel.so
+lib/geany/geanyinsertnum.la
+lib/geany/geanyinsertnum.so
+lib/geany/geanymacro.la
+lib/geany/geanymacro.so
+lib/geany/geanyminiscript.la
+lib/geany/geanyminiscript.so
+lib/geany/geanynumberedbookmarks.la
+lib/geany/geanynumberedbookmarks.so
+lib/geany/geanypg.la
+lib/geany/geanypg.so
+lib/geany/geanyprj.la
+lib/geany/geanyprj.so
+lib/geany/geanyvc.la
+lib/geany/geanyvc.so
+lib/geany/keyrecord.la
+lib/geany/keyrecord.so
+lib/geany/latex.la
+lib/geany/latex.so
+lib/geany/lineoperations.la
+lib/geany/lineoperations.so
+lib/geany/lipsum.la
+lib/geany/lipsum.so
+lib/geany/overview.la
+lib/geany/overview.so
+lib/geany/pairtaghighlighter.la
+lib/geany/pairtaghighlighter.so
+lib/geany/pohelper.la
+lib/geany/pohelper.so
+lib/geany/pretty-printer.la
+lib/geany/pretty-printer.so
+lib/geany/projectorganizer.la
+lib/geany/projectorganizer.so
+lib/geany/sendmail.la
+lib/geany/sendmail.so
+lib/geany/shiftcolumn.la
+lib/geany/shiftcolumn.so
+lib/geany/spellcheck.la
+lib/geany/spellcheck.so
+lib/geany/tableconvert.la
+lib/geany/tableconvert.so
+lib/geany/treebrowser.la
+lib/geany/treebrowser.so
+lib/geany/vimode.la
+lib/geany/vimode.so
+lib/geany/xmlsnippets.la
+lib/geany/xmlsnippets.so
+lib/libgeanypluginutils.la
+lib/libgeanypluginutils.so
+lib/libgeanypluginutils.so.0
+share/doc/geany-plugins/addons/AUTHORS
+share/doc/geany-plugins/addons/ChangeLog
+share/doc/geany-plugins/addons/COPYING
+share/doc/geany-plugins/addons/NEWS
+share/doc/geany-plugins/addons/README
+share/doc/geany-plugins/AUTHORS
+share/doc/geany-plugins/autoclose/AUTHORS
+share/doc/geany-plugins/autoclose/ChangeLog
+share/doc/geany-plugins/autoclose/COPYING
+share/doc/geany-plugins/autoclose/NEWS
+share/doc/geany-plugins/autoclose/README
+share/doc/geany-plugins/automark/AUTHORS
+share/doc/geany-plugins/automark/ChangeLog
+share/doc/geany-plugins/automark/COPYING
+share/doc/geany-plugins/automark/NEWS
+share/doc/geany-plugins/automark/README
+share/doc/geany-plugins/ChangeLog
+share/doc/geany-plugins/codenav/AUTHORS
+share/doc/geany-plugins/codenav/ChangeLog
+share/doc/geany-plugins/codenav/COPYING
+share/doc/geany-plugins/codenav/NEWS
+share/doc/geany-plugins/codenav/README
+share/doc/geany-plugins/commander/AUTHORS
+share/doc/geany-plugins/commander/ChangeLog
+share/doc/geany-plugins/commander/COPYING
+share/doc/geany-plugins/commander/NEWS
+share/doc/geany-plugins/commander/README
+share/doc/geany-plugins/COPYING
+share/doc/geany-plugins/defineformat/AUTHORS
+share/doc/geany-plugins/defineformat/ChangeLog
+share/doc/geany-plugins/defineformat/COPYING
+share/doc/geany-plugins/defineformat/NEWS
+share/doc/geany-plugins/defineformat/README
+share/doc/geany-plugins/geanyctags/AUTHORS
+share/doc/geany-plugins/geanyctags/ChangeLog
+share/doc/geany-plugins/geanyctags/COPYING
+share/doc/geany-plugins/geanyctags/NEWS
+share/doc/geany-plugins/geanyctags/README
+share/doc/geany-plugins/geanydoc/AUTHORS
+share/doc/geany-plugins/geanydoc/ChangeLog
+share/doc/geany-plugins/geanydoc/COPYING
+share/doc/geany-plugins/geanydoc/NEWS
+share/doc/geany-plugins/geanydoc/README
+share/doc/geany-plugins/geanyextrasel/AUTHORS
+share/doc/geany-plugins/geanyextrasel/ChangeLog
+share/doc/geany-plugins/geanyextrasel/COPYING
+share/doc/geany-plugins/geanyextrasel/NEWS
+share/doc/geany-plugins/geanyextrasel/README
+share/doc/geany-plugins/geanyinsertnum/AUTHORS
+share/doc/geany-plugins/geanyinsertnum/ChangeLog
+share/doc/geany-plugins/geanyinsertnum/COPYING
+share/doc/geany-plugins/geanyinsertnum/NEWS
+share/doc/geany-plugins/geanyinsertnum/README
+share/doc/geany-plugins/geanymacro/AUTHORS
+share/doc/geany-plugins/geanymacro/ChangeLog
+share/doc/geany-plugins/geanymacro/COPYING
+share/doc/geany-plugins/geanymacro/NEWS
+share/doc/geany-plugins/geanymacro/README
+share/doc/geany-plugins/geanyminiscript/AUTHORS
+share/doc/geany-plugins/geanyminiscript/ChangeLog
+share/doc/geany-plugins/geanyminiscript/COPYING
+share/doc/geany-plugins/geanyminiscript/NEWS
+share/doc/geany-plugins/geanyminiscript/README
+share/doc/geany-plugins/geanynumberedbookmarks/AUTHORS
+share/doc/geany-plugins/geanynumberedbookmarks/ChangeLog
+share/doc/geany-plugins/geanynumberedbookmarks/COPYING
+share/doc/geany-plugins/geanynumberedbookmarks/NEWS
+share/doc/geany-plugins/geanynumberedbookmarks/README
+share/doc/geany-plugins/geanypg/AUTHORS
+share/doc/geany-plugins/geanypg/ChangeLog
+share/doc/geany-plugins/geanypg/COPYING
+share/doc/geany-plugins/geanypg/NEWS
+share/doc/geany-plugins/geanypg/README
+share/doc/geany-plugins/geanyprj/AUTHORS
+share/doc/geany-plugins/geanyprj/ChangeLog
+share/doc/geany-plugins/geanyprj/COPYING
+share/doc/geany-plugins/geanyprj/NEWS
+share/doc/geany-plugins/geanyprj/README
+share/doc/geany-plugins/geanyvc/AUTHORS
+share/doc/geany-plugins/geanyvc/ChangeLog
+share/doc/geany-plugins/geanyvc/COPYING
+share/doc/geany-plugins/geanyvc/NEWS
+share/doc/geany-plugins/geanyvc/README
+share/doc/geany-plugins/keyrecord/AUTHORS
+share/doc/geany-plugins/keyrecord/ChangeLog
+share/doc/geany-plugins/keyrecord/COPYING
+share/doc/geany-plugins/keyrecord/NEWS
+share/doc/geany-plugins/keyrecord/README
+share/doc/geany-plugins/latex/AUTHORS
+share/doc/geany-plugins/latex/bibtex_reference.png
+share/doc/geany-plugins/latex/ChangeLog
+share/doc/geany-plugins/latex/COPYING
+share/doc/geany-plugins/latex/insert_environment.png
+share/doc/geany-plugins/latex/insert_label.png
+share/doc/geany-plugins/latex/insert_reference.png
+share/doc/geany-plugins/latex/insert_usepackage.png
+share/doc/geany-plugins/latex/latex.css
+share/doc/geany-plugins/latex/latex.html
+share/doc/geany-plugins/latex/latex.pdf
+share/doc/geany-plugins/latex/latex.tex
+share/doc/geany-plugins/latex/latex2.html
+share/doc/geany-plugins/latex/latex3.html
+share/doc/geany-plugins/latex/latex4.html
+share/doc/geany-plugins/latex/latexwizard.png
+share/doc/geany-plugins/latex/NEWS
+share/doc/geany-plugins/latex/plugin_manager.png
+share/doc/geany-plugins/latex/README
+share/doc/geany-plugins/latex/toolbar.png
+share/doc/geany-plugins/lineoperations/AUTHORS
+share/doc/geany-plugins/lineoperations/ChangeLog
+share/doc/geany-plugins/lineoperations/COPYING
+share/doc/geany-plugins/lineoperations/NEWS
+share/doc/geany-plugins/lineoperations/README
+share/doc/geany-plugins/lipsum/AUTHORS
+share/doc/geany-plugins/lipsum/ChangeLog
+share/doc/geany-plugins/lipsum/COPYING
+share/doc/geany-plugins/lipsum/NEWS
+share/doc/geany-plugins/lipsum/README
+share/doc/geany-plugins/NEWS
+share/doc/geany-plugins/overview/AUTHORS
+share/doc/geany-plugins/overview/ChangeLog
+share/doc/geany-plugins/overview/COPYING
+share/doc/geany-plugins/overview/NEWS
+share/doc/geany-plugins/overview/README
+share/doc/geany-plugins/pairtaghighlighter/AUTHORS
+share/doc/geany-plugins/pairtaghighlighter/ChangeLog
+share/doc/geany-plugins/pairtaghighlighter/COPYING
+share/doc/geany-plugins/pairtaghighlighter/NEWS
+share/doc/geany-plugins/pairtaghighlighter/README
+share/doc/geany-plugins/pohelper/AUTHORS
+share/doc/geany-plugins/pohelper/ChangeLog
+share/doc/geany-plugins/pohelper/COPYING
+share/doc/geany-plugins/pohelper/NEWS
+share/doc/geany-plugins/pohelper/README
+share/doc/geany-plugins/projectorganizer/AUTHORS
+share/doc/geany-plugins/projectorganizer/ChangeLog
+share/doc/geany-plugins/projectorganizer/COPYING
+share/doc/geany-plugins/projectorganizer/NEWS
+share/doc/geany-plugins/projectorganizer/README
+share/doc/geany-plugins/README
+share/doc/geany-plugins/sendmail/AUTHORS
+share/doc/geany-plugins/sendmail/ChangeLog
+share/doc/geany-plugins/sendmail/COPYING
+share/doc/geany-plugins/sendmail/NEWS
+share/doc/geany-plugins/sendmail/README
+share/doc/geany-plugins/shiftcolumn/AUTHORS
+share/doc/geany-plugins/shiftcolumn/ChangeLog
+share/doc/geany-plugins/shiftcolumn/COPYING
+share/doc/geany-plugins/shiftcolumn/NEWS
+share/doc/geany-plugins/shiftcolumn/README
+share/doc/geany-plugins/spellcheck/AUTHORS
+share/doc/geany-plugins/spellcheck/ChangeLog
+share/doc/geany-plugins/spellcheck/COPYING
+share/doc/geany-plugins/spellcheck/NEWS
+share/doc/geany-plugins/spellcheck/README
+share/doc/geany-plugins/tableconvert/AUTHORS
+share/doc/geany-plugins/tableconvert/ChangeLog
+share/doc/geany-plugins/tableconvert/COPYING
+share/doc/geany-plugins/tableconvert/NEWS
+share/doc/geany-plugins/tableconvert/README
+share/doc/geany-plugins/treebrowser/AUTHORS
+share/doc/geany-plugins/treebrowser/ChangeLog
+share/doc/geany-plugins/treebrowser/COPYING
+share/doc/geany-plugins/treebrowser/NEWS
+share/doc/geany-plugins/treebrowser/README
+share/doc/geany-plugins/vimode/AUTHORS
+share/doc/geany-plugins/vimode/ChangeLog
+share/doc/geany-plugins/vimode/COPYING
+share/doc/geany-plugins/vimode/NEWS
+share/doc/geany-plugins/vimode/README
+share/doc/geany-plugins/xmlsnippets/AUTHORS
+share/doc/geany-plugins/xmlsnippets/ChangeLog
+share/doc/geany-plugins/xmlsnippets/COPYING
+share/doc/geany-plugins/xmlsnippets/NEWS
+share/doc/geany-plugins/xmlsnippets/README
+share/geany-plugins/overview/prefs.ui
+share/geany-plugins/pohelper/menus.ui
+share/geany-plugins/pohelper/stats.ui
+share/locale/be/LC_MESSAGES/geany-plugins.mo
+share/locale/ca/LC_MESSAGES/geany-plugins.mo
+share/locale/da/LC_MESSAGES/geany-plugins.mo
+share/locale/de/LC_MESSAGES/geany-plugins.mo
+share/locale/el/LC_MESSAGES/geany-plugins.mo
+share/locale/es/LC_MESSAGES/geany-plugins.mo
+share/locale/fr/LC_MESSAGES/geany-plugins.mo
+share/locale/gl/LC_MESSAGES/geany-plugins.mo
+share/locale/it/LC_MESSAGES/geany-plugins.mo
+share/locale/ja/LC_MESSAGES/geany-plugins.mo
+share/locale/kk/LC_MESSAGES/geany-plugins.mo
+share/locale/nl/LC_MESSAGES/geany-plugins.mo
+share/locale/pt_BR/LC_MESSAGES/geany-plugins.mo
+share/locale/pt/LC_MESSAGES/geany-plugins.mo
+share/locale/ru/LC_MESSAGES/geany-plugins.mo
+share/locale/tr/LC_MESSAGES/geany-plugins.mo
+share/locale/uk/LC_MESSAGES/geany-plugins.mo
+share/locale/zh_CN/LC_MESSAGES/geany-plugins.mo
+@dir lib/geany
+@dir share/doc/geany-plugins/addons
+@dir share/doc/geany-plugins/autoclose
+@dir share/doc/geany-plugins/automark
+@dir share/doc/geany-plugins/codenav
+@dir share/doc/geany-plugins/commander
+@dir share/doc/geany-plugins/defineformat
+@dir share/doc/geany-plugins/geanyctags
+@dir share/doc/geany-plugins/geanydoc
+@dir share/doc/geany-plugins/geanyextrasel
+@dir share/doc/geany-plugins/geanyinsertnum
+@dir share/doc/geany-plugins/geanymacro
+@dir share/doc/geany-plugins/geanyminiscript
+@dir share/doc/geany-plugins/geanynumberedbookmarks
+@dir share/doc/geany-plugins/geanypg
+@dir share/doc/geany-plugins/geanyprj
+@dir share/doc/geany-plugins/geanyvc
+@dir share/doc/geany-plugins/keyrecord
+@dir share/doc/geany-plugins/latex
+@dir share/doc/geany-plugins/lineoperations
+@dir share/doc/geany-plugins/lipsum
+@dir share/doc/geany-plugins/overview
+@dir share/doc/geany-plugins/pairtaghighlighter
+@dir share/doc/geany-plugins/pohelper
+@dir share/doc/geany-plugins/projectorganizer
+@dir share/doc/geany-plugins/sendmail
+@dir share/doc/geany-plugins/shiftcolumn
+@dir share/doc/geany-plugins/spellcheck
+@dir share/doc/geany-plugins/tableconvert
+@dir share/doc/geany-plugins/treebrowser
+@dir share/doc/geany-plugins/vimode
+@dir share/doc/geany-plugins/xmlsnippets
+@dir share/doc/geany-plugins
+@dir share/doc
+@dir share/geany-plugins/overview
+@dir share/geany-plugins/pohelper
+@dir share/geany-plugins
+@dir share/locale/be/LC_MESSAGES
+@dir share/locale/be
+@dir share/locale/ca/LC_MESSAGES
+@dir share/locale/ca
+@dir share/locale/da/LC_MESSAGES
+@dir share/locale/da
+@dir share/locale/de/LC_MESSAGES
+@dir share/locale/de
+@dir share/locale/el/LC_MESSAGES
+@dir share/locale/el
+@dir share/locale/es/LC_MESSAGES
+@dir share/locale/es
+@dir share/locale/fr/LC_MESSAGES
+@dir share/locale/fr
+@dir share/locale/gl/LC_MESSAGES
+@dir share/locale/gl
+@dir share/locale/it/LC_MESSAGES
+@dir share/locale/it
+@dir share/locale/ja/LC_MESSAGES
+@dir share/locale/ja
+@dir share/locale/kk/LC_MESSAGES
+@dir share/locale/kk
+@dir share/locale/nl/LC_MESSAGES
+@dir share/locale/nl
+@dir share/locale/pt/LC_MESSAGES
+@dir share/locale/pt
+@dir share/locale/pt_BR/LC_MESSAGES
+@dir share/locale/pt_BR
+@dir share/locale/ru/LC_MESSAGES
+@dir share/locale/ru
+@dir share/locale/tr/LC_MESSAGES
+@dir share/locale/tr
+@dir share/locale/uk/LC_MESSAGES
+@dir share/locale/uk
+@dir share/locale/zh_CN/LC_MESSAGES
+@dir share/locale/zh_CN
+@dir share/locale

@@ -1,0 +1,1170 @@
+bin/zabbix_get
+bin/zabbix_sender
+etc/rc.d/zabbix_agentd
+etc/rc.d/zabbix_server
+etc/zabbix_agentd.conf.sample
+etc/zabbix_server.conf.sample
+man/man1/zabbix_get.1.gz
+man/man1/zabbix_sender.1.gz
+man/man8/zabbix_agentd.8.gz
+man/man8/zabbix_server.8.gz
+sbin/zabbix_agentd
+sbin/zabbix_server
+share/zabbix/server/database/mysql/data.sql
+share/zabbix/server/database/mysql/images.sql
+share/zabbix/server/database/mysql/schema.sql
+share/zabbix/server/database/postgresql/data.sql
+share/zabbix/server/database/postgresql/images.sql
+share/zabbix/server/database/postgresql/schema.sql
+share/zabbix/server/database/postgresql/timescaledb.sql
+www/zabbix/actionconf.php
+www/zabbix/adm.gui.php
+www/zabbix/adm.housekeeper.php
+www/zabbix/adm.iconmapping.php
+www/zabbix/adm.images.php
+www/zabbix/adm.macros.php
+www/zabbix/adm.other.php
+www/zabbix/adm.regexps.php
+www/zabbix/adm.triggerdisplayoptions.php
+www/zabbix/adm.triggerseverities.php
+www/zabbix/adm.valuemapping.php
+www/zabbix/adm.workingtime.php
+www/zabbix/api_jsonrpc.php
+www/zabbix/app/.htaccess
+www/zabbix/app/controllers/CControllerAcknowledgeCreate.php
+www/zabbix/app/controllers/CControllerAcknowledgeEdit.php
+www/zabbix/app/controllers/CControllerAuthenticationEdit.php
+www/zabbix/app/controllers/CControllerAuthenticationUpdate.php
+www/zabbix/app/controllers/CControllerAutoregEdit.php
+www/zabbix/app/controllers/CControllerAutoregUpdate.php
+www/zabbix/app/controllers/CControllerDashboardAbstract.php
+www/zabbix/app/controllers/CControllerDashboardDelete.php
+www/zabbix/app/controllers/CControllerDashboardList.php
+www/zabbix/app/controllers/CControllerDashboardPropertiesCheck.php
+www/zabbix/app/controllers/CControllerDashboardPropertiesEdit.php
+www/zabbix/app/controllers/CControllerDashboardShareEdit.php
+www/zabbix/app/controllers/CControllerDashboardShareUpdate.php
+www/zabbix/app/controllers/CControllerDashboardUpdate.php
+www/zabbix/app/controllers/CControllerDashboardView.php
+www/zabbix/app/controllers/CControllerDashboardWidgetCheck.php
+www/zabbix/app/controllers/CControllerDashboardWidgetConfigure.php
+www/zabbix/app/controllers/CControllerDashboardWidgetEdit.php
+www/zabbix/app/controllers/CControllerDashboardWidgetRfRate.php
+www/zabbix/app/controllers/CControllerDiscoveryView.php
+www/zabbix/app/controllers/CControllerExportXml.php
+www/zabbix/app/controllers/CControllerFavouriteCreate.php
+www/zabbix/app/controllers/CControllerFavouriteDelete.php
+www/zabbix/app/controllers/CControllerMapView.php
+www/zabbix/app/controllers/CControllerMediatypeCreate.php
+www/zabbix/app/controllers/CControllerMediatypeDelete.php
+www/zabbix/app/controllers/CControllerMediatypeDisable.php
+www/zabbix/app/controllers/CControllerMediatypeEdit.php
+www/zabbix/app/controllers/CControllerMediatypeEnable.php
+www/zabbix/app/controllers/CControllerMediatypeList.php
+www/zabbix/app/controllers/CControllerMediatypeUpdate.php
+www/zabbix/app/controllers/CControllerMenuPopup.php
+www/zabbix/app/controllers/CControllerNotificationsGet.php
+www/zabbix/app/controllers/CControllerNotificationsMute.php
+www/zabbix/app/controllers/CControllerNotificationsRead.php
+www/zabbix/app/controllers/CControllerPopupGeneric.php
+www/zabbix/app/controllers/CControllerPopupHttpStep.php
+www/zabbix/app/controllers/CControllerPopupMedia.php
+www/zabbix/app/controllers/CControllerPopupMediatypeTestEdit.php
+www/zabbix/app/controllers/CControllerPopupMediatypeTestSend.php
+www/zabbix/app/controllers/CControllerPopupPreprocTest.php
+www/zabbix/app/controllers/CControllerPopupPreprocTestEdit.php
+www/zabbix/app/controllers/CControllerPopupPreprocTestSend.php
+www/zabbix/app/controllers/CControllerPopupScriptExec.php
+www/zabbix/app/controllers/CControllerPopupServices.php
+www/zabbix/app/controllers/CControllerPopupTestTriggerExpr.php
+www/zabbix/app/controllers/CControllerPopupTriggerExpr.php
+www/zabbix/app/controllers/CControllerPopupTriggerWizard.php
+www/zabbix/app/controllers/CControllerProblemView.php
+www/zabbix/app/controllers/CControllerProfileUpdate.php
+www/zabbix/app/controllers/CControllerProxyCreate.php
+www/zabbix/app/controllers/CControllerProxyDelete.php
+www/zabbix/app/controllers/CControllerProxyEdit.php
+www/zabbix/app/controllers/CControllerProxyHostDisable.php
+www/zabbix/app/controllers/CControllerProxyHostEnable.php
+www/zabbix/app/controllers/CControllerProxyList.php
+www/zabbix/app/controllers/CControllerProxyUpdate.php
+www/zabbix/app/controllers/CControllerReportServices.php
+www/zabbix/app/controllers/CControllerReportStatus.php
+www/zabbix/app/controllers/CControllerScriptCreate.php
+www/zabbix/app/controllers/CControllerScriptDelete.php
+www/zabbix/app/controllers/CControllerScriptEdit.php
+www/zabbix/app/controllers/CControllerScriptList.php
+www/zabbix/app/controllers/CControllerScriptUpdate.php
+www/zabbix/app/controllers/CControllerSearch.php
+www/zabbix/app/controllers/CControllerSystemWarning.php
+www/zabbix/app/controllers/CControllerTimeSelectorUpdate.php
+www/zabbix/app/controllers/CControllerUserCreate.php
+www/zabbix/app/controllers/CControllerUserDelete.php
+www/zabbix/app/controllers/CControllerUserEdit.php
+www/zabbix/app/controllers/CControllerUserEditGeneral.php
+www/zabbix/app/controllers/CControllerUserList.php
+www/zabbix/app/controllers/CControllerUserProfileEdit.php
+www/zabbix/app/controllers/CControllerUserProfileUpdate.php
+www/zabbix/app/controllers/CControllerUserUnblock.php
+www/zabbix/app/controllers/CControllerUserUpdate.php
+www/zabbix/app/controllers/CControllerUserUpdateGeneral.php
+www/zabbix/app/controllers/CControllerWebView.php
+www/zabbix/app/controllers/CControllerWidget.php
+www/zabbix/app/controllers/CControllerWidgetActionLogView.php
+www/zabbix/app/controllers/CControllerWidgetClockView.php
+www/zabbix/app/controllers/CControllerWidgetDataOverView.php
+www/zabbix/app/controllers/CControllerWidgetDiscoveryView.php
+www/zabbix/app/controllers/CControllerWidgetFavGraphsView.php
+www/zabbix/app/controllers/CControllerWidgetFavMapsView.php
+www/zabbix/app/controllers/CControllerWidgetFavScreensView.php
+www/zabbix/app/controllers/CControllerWidgetGraphView.php
+www/zabbix/app/controllers/CControllerWidgetHostAvailView.php
+www/zabbix/app/controllers/CControllerWidgetIterator.php
+www/zabbix/app/controllers/CControllerWidgetIteratorGraphPrototypeView.php
+www/zabbix/app/controllers/CControllerWidgetMapView.php
+www/zabbix/app/controllers/CControllerWidgetNavTreeItemEdit.php
+www/zabbix/app/controllers/CControllerWidgetNavTreeItemUpdate.php
+www/zabbix/app/controllers/CControllerWidgetNavTreeView.php
+www/zabbix/app/controllers/CControllerWidgetPlainTextView.php
+www/zabbix/app/controllers/CControllerWidgetProblemHostsView.php
+www/zabbix/app/controllers/CControllerWidgetProblemsBySvView.php
+www/zabbix/app/controllers/CControllerWidgetProblemsView.php
+www/zabbix/app/controllers/CControllerWidgetSvgGraphView.php
+www/zabbix/app/controllers/CControllerWidgetSystemInfoView.php
+www/zabbix/app/controllers/CControllerWidgetTrigOverView.php
+www/zabbix/app/controllers/CControllerWidgetUrlView.php
+www/zabbix/app/controllers/CControllerWidgetWebView.php
+www/zabbix/app/views/administration.authentication.edit.js.php
+www/zabbix/app/views/administration.authentication.edit.php
+www/zabbix/app/views/administration.autoreg.edit.js.php
+www/zabbix/app/views/administration.autoreg.edit.php
+www/zabbix/app/views/administration.mediatype.edit.js.php
+www/zabbix/app/views/administration.mediatype.edit.php
+www/zabbix/app/views/administration.mediatype.list.php
+www/zabbix/app/views/administration.proxy.edit.js.php
+www/zabbix/app/views/administration.proxy.edit.php
+www/zabbix/app/views/administration.proxy.list.php
+www/zabbix/app/views/administration.script.edit.js.php
+www/zabbix/app/views/administration.script.edit.php
+www/zabbix/app/views/administration.script.list.php
+www/zabbix/app/views/administration.user.edit.common.js.php
+www/zabbix/app/views/administration.user.edit.js.php
+www/zabbix/app/views/administration.user.edit.php
+www/zabbix/app/views/administration.user.list.php
+www/zabbix/app/views/administration.userprofile.edit.js.php
+www/zabbix/app/views/dashboard.properties.edit.php
+www/zabbix/app/views/dashboard.sharing.edit.php
+www/zabbix/app/views/layout.csv.php
+www/zabbix/app/views/layout.htmlpage.footer.php
+www/zabbix/app/views/layout.htmlpage.header.php
+www/zabbix/app/views/layout.htmlpage.menu.php
+www/zabbix/app/views/layout.htmlpage.php
+www/zabbix/app/views/layout.javascript.php
+www/zabbix/app/views/layout.json.php
+www/zabbix/app/views/layout.warning.php
+www/zabbix/app/views/layout.widget.php
+www/zabbix/app/views/layout.xml.php
+www/zabbix/app/views/monitoring.acknowledge.edit.js.php
+www/zabbix/app/views/monitoring.acknowledge.edit.php
+www/zabbix/app/views/monitoring.dashboard.breadcrumbs.php
+www/zabbix/app/views/monitoring.dashboard.list.php
+www/zabbix/app/views/monitoring.dashboard.view.js.php
+www/zabbix/app/views/monitoring.dashboard.view.php
+www/zabbix/app/views/monitoring.dashboard.widget.edit.php
+www/zabbix/app/views/monitoring.discovery.view.php
+www/zabbix/app/views/monitoring.map.view.php
+www/zabbix/app/views/monitoring.problem.view.js.php
+www/zabbix/app/views/monitoring.problem.view.php
+www/zabbix/app/views/monitoring.web.view.php
+www/zabbix/app/views/monitoring.widget.actionlog.view.php
+www/zabbix/app/views/monitoring.widget.clock.view.php
+www/zabbix/app/views/monitoring.widget.dataover.view.php
+www/zabbix/app/views/monitoring.widget.discovery.view.php
+www/zabbix/app/views/monitoring.widget.favgraphs.view.php
+www/zabbix/app/views/monitoring.widget.favmaps.view.php
+www/zabbix/app/views/monitoring.widget.favscreens.view.php
+www/zabbix/app/views/monitoring.widget.graph.view.php
+www/zabbix/app/views/monitoring.widget.hostavail.view.php
+www/zabbix/app/views/monitoring.widget.map.view.php
+www/zabbix/app/views/monitoring.widget.navtree.view.php
+www/zabbix/app/views/monitoring.widget.plaintext.view.php
+www/zabbix/app/views/monitoring.widget.problemhosts.view.php
+www/zabbix/app/views/monitoring.widget.problems.view.php
+www/zabbix/app/views/monitoring.widget.problemsbysv.view.php
+www/zabbix/app/views/monitoring.widget.svggraph.view.php
+www/zabbix/app/views/monitoring.widget.systeminfo.view.php
+www/zabbix/app/views/monitoring.widget.trigover.view.php
+www/zabbix/app/views/monitoring.widget.url.view.php
+www/zabbix/app/views/monitoring.widget.web.view.php
+www/zabbix/app/views/popup.generic.php
+www/zabbix/app/views/popup.httpstep.php
+www/zabbix/app/views/popup.media.js.php
+www/zabbix/app/views/popup.media.php
+www/zabbix/app/views/popup.mediatypetest.edit.js.php
+www/zabbix/app/views/popup.mediatypetest.edit.php
+www/zabbix/app/views/popup.preproctestedit.view.js.php
+www/zabbix/app/views/popup.preproctestedit.view.php
+www/zabbix/app/views/popup.scriptexec.php
+www/zabbix/app/views/popup.services.php
+www/zabbix/app/views/popup.testtriggerexpr.php
+www/zabbix/app/views/popup.triggerexpr.php
+www/zabbix/app/views/popup.triggerwizard.js.php
+www/zabbix/app/views/popup.triggerwizard.php
+www/zabbix/app/views/report.services.php
+www/zabbix/app/views/report.status.php
+www/zabbix/app/views/search.php
+www/zabbix/app/views/system.warning.php
+www/zabbix/applications.php
+www/zabbix/assets/fonts/DejaVuSans.ttf
+www/zabbix/assets/img/apple-touch-icon-120x120-precomposed.png
+www/zabbix/assets/img/apple-touch-icon-152x152-precomposed.png
+www/zabbix/assets/img/apple-touch-icon-180x180-precomposed.png
+www/zabbix/assets/img/apple-touch-icon-76x76-precomposed.png
+www/zabbix/assets/img/browser-sprite.png
+www/zabbix/assets/img/icon-sprite.svg
+www/zabbix/assets/img/ms-tile-144x144.png
+www/zabbix/assets/img/touch-icon-192x192.png
+www/zabbix/assets/styles/blue-theme.css
+www/zabbix/assets/styles/dark-theme.css
+www/zabbix/assets/styles/hc-dark.css
+www/zabbix/assets/styles/hc-light.css
+www/zabbix/audio/alarm_average.mp3
+www/zabbix/audio/alarm_disaster.mp3
+www/zabbix/audio/alarm_high.mp3
+www/zabbix/audio/alarm_information.mp3
+www/zabbix/audio/alarm_ok.mp3
+www/zabbix/audio/alarm_warning.mp3
+www/zabbix/audio/no_sound.mp3
+www/zabbix/auditacts.php
+www/zabbix/auditlogs.php
+www/zabbix/browserwarning.php
+www/zabbix/chart.php
+www/zabbix/chart2.php
+www/zabbix/chart3.php
+www/zabbix/chart4.php
+www/zabbix/chart5.php
+www/zabbix/chart6.php
+www/zabbix/chart7.php
+www/zabbix/charts.php
+www/zabbix/conf.import.php
+www/zabbix/conf/.htaccess
+www/zabbix/conf/maintenance.inc.php
+www/zabbix/conf/zabbix.conf.php.example
+www/zabbix/correlation.php
+www/zabbix/disc_prototypes.php
+www/zabbix/discoveryconf.php
+www/zabbix/favicon.ico
+www/zabbix/graphs.php
+www/zabbix/history.php
+www/zabbix/host_discovery.php
+www/zabbix/host_prototypes.php
+www/zabbix/host_screen.php
+www/zabbix/hostgroups.php
+www/zabbix/hostinventories.php
+www/zabbix/hostinventoriesoverview.php
+www/zabbix/hosts.php
+www/zabbix/httpconf.php
+www/zabbix/httpdetails.php
+www/zabbix/image.php
+www/zabbix/imgstore.php
+www/zabbix/include/.htaccess
+www/zabbix/include/actions.inc.php
+www/zabbix/include/audit.inc.php
+www/zabbix/include/blocks.inc.php
+www/zabbix/include/classes/api/API.php
+www/zabbix/include/classes/api/APIException.php
+www/zabbix/include/classes/api/CApiClientResponse.php
+www/zabbix/include/classes/api/CApiService.php
+www/zabbix/include/classes/api/CApiServiceFactory.php
+www/zabbix/include/classes/api/CAudit.php
+www/zabbix/include/classes/api/clients/CApiClient.php
+www/zabbix/include/classes/api/clients/CLocalApiClient.php
+www/zabbix/include/classes/api/CRelationMap.php
+www/zabbix/include/classes/api/helpers/CApiTagHelper.php
+www/zabbix/include/classes/api/managers/CApplicationManager.php
+www/zabbix/include/classes/api/managers/CGraphManager.php
+www/zabbix/include/classes/api/managers/CGraphPrototypeManager.php
+www/zabbix/include/classes/api/managers/CHistoryManager.php
+www/zabbix/include/classes/api/managers/CHttpTestManager.php
+www/zabbix/include/classes/api/managers/CItemManager.php
+www/zabbix/include/classes/api/managers/CItemPrototypeManager.php
+www/zabbix/include/classes/api/managers/CTriggerManager.php
+www/zabbix/include/classes/api/managers/CTriggerPrototypeManager.php
+www/zabbix/include/classes/api/services/CAction.php
+www/zabbix/include/classes/api/services/CAlert.php
+www/zabbix/include/classes/api/services/CAPIInfo.php
+www/zabbix/include/classes/api/services/CApplication.php
+www/zabbix/include/classes/api/services/CAutoregistration.php
+www/zabbix/include/classes/api/services/CConfiguration.php
+www/zabbix/include/classes/api/services/CCorrelation.php
+www/zabbix/include/classes/api/services/CDashboard.php
+www/zabbix/include/classes/api/services/CDCheck.php
+www/zabbix/include/classes/api/services/CDHost.php
+www/zabbix/include/classes/api/services/CDiscoveryRule.php
+www/zabbix/include/classes/api/services/CDRule.php
+www/zabbix/include/classes/api/services/CDService.php
+www/zabbix/include/classes/api/services/CEvent.php
+www/zabbix/include/classes/api/services/CGraph.php
+www/zabbix/include/classes/api/services/CGraphGeneral.php
+www/zabbix/include/classes/api/services/CGraphItem.php
+www/zabbix/include/classes/api/services/CGraphPrototype.php
+www/zabbix/include/classes/api/services/CHistory.php
+www/zabbix/include/classes/api/services/CHost.php
+www/zabbix/include/classes/api/services/CHostBase.php
+www/zabbix/include/classes/api/services/CHostGeneral.php
+www/zabbix/include/classes/api/services/CHostGroup.php
+www/zabbix/include/classes/api/services/CHostInterface.php
+www/zabbix/include/classes/api/services/CHostPrototype.php
+www/zabbix/include/classes/api/services/CHttpTest.php
+www/zabbix/include/classes/api/services/CIconMap.php
+www/zabbix/include/classes/api/services/CImage.php
+www/zabbix/include/classes/api/services/CItem.php
+www/zabbix/include/classes/api/services/CItemGeneral.php
+www/zabbix/include/classes/api/services/CItemPrototype.php
+www/zabbix/include/classes/api/services/CMaintenance.php
+www/zabbix/include/classes/api/services/CMap.php
+www/zabbix/include/classes/api/services/CMapElement.php
+www/zabbix/include/classes/api/services/CMediatype.php
+www/zabbix/include/classes/api/services/CProblem.php
+www/zabbix/include/classes/api/services/CProxy.php
+www/zabbix/include/classes/api/services/CScreen.php
+www/zabbix/include/classes/api/services/CScreenItem.php
+www/zabbix/include/classes/api/services/CScript.php
+www/zabbix/include/classes/api/services/CService.php
+www/zabbix/include/classes/api/services/CTask.php
+www/zabbix/include/classes/api/services/CTemplate.php
+www/zabbix/include/classes/api/services/CTemplateScreen.php
+www/zabbix/include/classes/api/services/CTemplateScreenItem.php
+www/zabbix/include/classes/api/services/CTrend.php
+www/zabbix/include/classes/api/services/CTrigger.php
+www/zabbix/include/classes/api/services/CTriggerGeneral.php
+www/zabbix/include/classes/api/services/CTriggerPrototype.php
+www/zabbix/include/classes/api/services/CUser.php
+www/zabbix/include/classes/api/services/CUserGroup.php
+www/zabbix/include/classes/api/services/CUserMacro.php
+www/zabbix/include/classes/api/services/CValueMap.php
+www/zabbix/include/classes/api/wrappers/CApiWrapper.php
+www/zabbix/include/classes/api/wrappers/CFrontendApiWrapper.php
+www/zabbix/include/classes/core/CAjaxResponse.php
+www/zabbix/include/classes/core/CAutoloader.php
+www/zabbix/include/classes/core/CConfigFile.php
+www/zabbix/include/classes/core/CHttpRequest.php
+www/zabbix/include/classes/core/CJsonRpc.php
+www/zabbix/include/classes/core/ConfigFileException.php
+www/zabbix/include/classes/core/CRegistryFactory.php
+www/zabbix/include/classes/core/CSession.php
+www/zabbix/include/classes/core/Manager.php
+www/zabbix/include/classes/core/Z.php
+www/zabbix/include/classes/core/ZBase.php
+www/zabbix/include/classes/db/DB.php
+www/zabbix/include/classes/db/Db2DbBackend.php
+www/zabbix/include/classes/db/DbBackend.php
+www/zabbix/include/classes/db/DBException.php
+www/zabbix/include/classes/db/MysqlDbBackend.php
+www/zabbix/include/classes/db/OracleDbBackend.php
+www/zabbix/include/classes/db/PostgresqlDbBackend.php
+www/zabbix/include/classes/debug/CProfiler.php
+www/zabbix/include/classes/export/CConfigurationExport.php
+www/zabbix/include/classes/export/CConfigurationExportBuilder.php
+www/zabbix/include/classes/export/CConfigurationExportException.php
+www/zabbix/include/classes/export/writers/CExportWriter.php
+www/zabbix/include/classes/export/writers/CExportWriterFactory.php
+www/zabbix/include/classes/export/writers/CJsonExportWriter.php
+www/zabbix/include/classes/export/writers/CXmlExportWriter.php
+www/zabbix/include/classes/graph/CSvgGraph.php
+www/zabbix/include/classes/graphdraw/CGraphDraw.php
+www/zabbix/include/classes/graphdraw/CLineGraphDraw.php
+www/zabbix/include/classes/graphdraw/CPieGraphDraw.php
+www/zabbix/include/classes/helpers/CArrayHelper.php
+www/zabbix/include/classes/helpers/CBrandHelper.php
+www/zabbix/include/classes/helpers/CConditionHelper.php
+www/zabbix/include/classes/helpers/CElasticsearchHelper.php
+www/zabbix/include/classes/helpers/CHtml.php
+www/zabbix/include/classes/helpers/CJs.php
+www/zabbix/include/classes/helpers/CMapHelper.php
+www/zabbix/include/classes/helpers/CMenuPopupHelper.php
+www/zabbix/include/classes/helpers/CSvgGraphHelper.php
+www/zabbix/include/classes/helpers/CUploadFile.php
+www/zabbix/include/classes/helpers/CViewHelper.php
+www/zabbix/include/classes/html/CActionButtonList.php
+www/zabbix/include/classes/html/CArea.php
+www/zabbix/include/classes/html/CAreaMap.php
+www/zabbix/include/classes/html/CButton.php
+www/zabbix/include/classes/html/CButtonCancel.php
+www/zabbix/include/classes/html/CButtonDelete.php
+www/zabbix/include/classes/html/CButtonQMessage.php
+www/zabbix/include/classes/html/CCheckBox.php
+www/zabbix/include/classes/html/CCheckBoxList.php
+www/zabbix/include/classes/html/CClock.php
+www/zabbix/include/classes/html/CCol.php
+www/zabbix/include/classes/html/CColHeader.php
+www/zabbix/include/classes/html/CCollapsibleUiWidget.php
+www/zabbix/include/classes/html/CColor.php
+www/zabbix/include/classes/html/CComboBox.php
+www/zabbix/include/classes/html/CComboItem.php
+www/zabbix/include/classes/html/CDashboardWidgetMap.php
+www/zabbix/include/classes/html/CDateSelector.php
+www/zabbix/include/classes/html/CDiv.php
+www/zabbix/include/classes/html/CFile.php
+www/zabbix/include/classes/html/CFilter.php
+www/zabbix/include/classes/html/CForm.php
+www/zabbix/include/classes/html/CFormList.php
+www/zabbix/include/classes/html/CHorList.php
+www/zabbix/include/classes/html/CIFrame.php
+www/zabbix/include/classes/html/CImageTextTable.php
+www/zabbix/include/classes/html/CImg.php
+www/zabbix/include/classes/html/CInput.php
+www/zabbix/include/classes/html/CJsScript.php
+www/zabbix/include/classes/html/CLabel.php
+www/zabbix/include/classes/html/CLink.php
+www/zabbix/include/classes/html/CLinkAction.php
+www/zabbix/include/classes/html/CList.php
+www/zabbix/include/classes/html/CListBox.php
+www/zabbix/include/classes/html/CListItem.php
+www/zabbix/include/classes/html/CMultilineInput.php
+www/zabbix/include/classes/html/CMultiSelect.php
+www/zabbix/include/classes/html/CNavigationTree.php
+www/zabbix/include/classes/html/CNumericBox.php
+www/zabbix/include/classes/html/CObject.php
+www/zabbix/include/classes/html/CParam.php
+www/zabbix/include/classes/html/CPassBox.php
+www/zabbix/include/classes/html/CPatternSelect.php
+www/zabbix/include/classes/html/CPre.php
+www/zabbix/include/classes/html/CRadioButtonList.php
+www/zabbix/include/classes/html/CRangeControl.php
+www/zabbix/include/classes/html/CRedirectButton.php
+www/zabbix/include/classes/html/CRow.php
+www/zabbix/include/classes/html/CRowHeader.php
+www/zabbix/include/classes/html/CSeverity.php
+www/zabbix/include/classes/html/CSimpleButton.php
+www/zabbix/include/classes/html/CSpan.php
+www/zabbix/include/classes/html/CSubmit.php
+www/zabbix/include/classes/html/CSubmitButton.php
+www/zabbix/include/classes/html/CSup.php
+www/zabbix/include/classes/html/CTable.php
+www/zabbix/include/classes/html/CTableInfo.php
+www/zabbix/include/classes/html/CTabView.php
+www/zabbix/include/classes/html/CTag.php
+www/zabbix/include/classes/html/CTextArea.php
+www/zabbix/include/classes/html/CTextAreaFlexible.php
+www/zabbix/include/classes/html/CTextBox.php
+www/zabbix/include/classes/html/CTriggersInfo.php
+www/zabbix/include/classes/html/CUiWidget.php
+www/zabbix/include/classes/html/CVar.php
+www/zabbix/include/classes/html/CVisibilityBox.php
+www/zabbix/include/classes/html/CWarning.php
+www/zabbix/include/classes/html/interfaces/CButtonInterface.php
+www/zabbix/include/classes/html/pageheader/CPageHeader.php
+www/zabbix/include/classes/html/svg/CSvg.php
+www/zabbix/include/classes/html/svg/CSvgCircle.php
+www/zabbix/include/classes/html/svg/CSvgGraphAnnotation.php
+www/zabbix/include/classes/html/svg/CSvgGraphArea.php
+www/zabbix/include/classes/html/svg/CSvgGraphAxis.php
+www/zabbix/include/classes/html/svg/CSvgGraphBar.php
+www/zabbix/include/classes/html/svg/CSvgGraphGrid.php
+www/zabbix/include/classes/html/svg/CSvgGraphLegend.php
+www/zabbix/include/classes/html/svg/CSvgGraphLine.php
+www/zabbix/include/classes/html/svg/CSvgGraphLineGroup.php
+www/zabbix/include/classes/html/svg/CSvgGraphPoints.php
+www/zabbix/include/classes/html/svg/CSvgGroup.php
+www/zabbix/include/classes/html/svg/CSvgLine.php
+www/zabbix/include/classes/html/svg/CSvgPath.php
+www/zabbix/include/classes/html/svg/CSvgPolygon.php
+www/zabbix/include/classes/html/svg/CSvgRect.php
+www/zabbix/include/classes/html/svg/CSvgTag.php
+www/zabbix/include/classes/html/svg/CSvgText.php
+www/zabbix/include/classes/html/widget/CWidget.php
+www/zabbix/include/classes/import/CConfigurationImport.php
+www/zabbix/include/classes/import/CImportDataAdapter.php
+www/zabbix/include/classes/import/CImportedObjectContainer.php
+www/zabbix/include/classes/import/CImportReferencer.php
+www/zabbix/include/classes/import/converters/C10ImportConverter.php
+www/zabbix/include/classes/import/converters/C10ItemKeyConverter.php
+www/zabbix/include/classes/import/converters/C10TriggerConverter.php
+www/zabbix/include/classes/import/converters/C20ImportConverter.php
+www/zabbix/include/classes/import/converters/C20ItemKeyConverter.php
+www/zabbix/include/classes/import/converters/C20TriggerConverter.php
+www/zabbix/include/classes/import/converters/C30ImportConverter.php
+www/zabbix/include/classes/import/converters/C32ImportConverter.php
+www/zabbix/include/classes/import/converters/C34ImportConverter.php
+www/zabbix/include/classes/import/converters/C40ImportConverter.php
+www/zabbix/include/classes/import/converters/C42ImportConverter.php
+www/zabbix/include/classes/import/converters/CArrayKeysImportConverter.php
+www/zabbix/include/classes/import/converters/CConstantImportConverter.php
+www/zabbix/include/classes/import/converters/CConverter.php
+www/zabbix/include/classes/import/converters/CDefaultValuesImportConverter.php
+www/zabbix/include/classes/import/converters/CImportConverterFactory.php
+www/zabbix/include/classes/import/importers/CAbstractScreenImporter.php
+www/zabbix/include/classes/import/importers/CHostImporter.php
+www/zabbix/include/classes/import/importers/CImporter.php
+www/zabbix/include/classes/import/importers/CMapImporter.php
+www/zabbix/include/classes/import/importers/CScreenImporter.php
+www/zabbix/include/classes/import/importers/CTemplateImporter.php
+www/zabbix/include/classes/import/importers/CTemplateScreenImporter.php
+www/zabbix/include/classes/import/readers/CImportReader.php
+www/zabbix/include/classes/import/readers/CImportReaderFactory.php
+www/zabbix/include/classes/import/readers/CJsonImportReader.php
+www/zabbix/include/classes/import/readers/CXmlImportReader.php
+www/zabbix/include/classes/import/validators/C10XmlValidator.php
+www/zabbix/include/classes/import/validators/C20XmlValidator.php
+www/zabbix/include/classes/import/validators/C30XmlValidator.php
+www/zabbix/include/classes/import/validators/C32XmlValidator.php
+www/zabbix/include/classes/import/validators/C34XmlValidator.php
+www/zabbix/include/classes/import/validators/C40XmlValidator.php
+www/zabbix/include/classes/import/validators/C42XmlValidator.php
+www/zabbix/include/classes/import/validators/C44XmlValidator.php
+www/zabbix/include/classes/import/validators/CImportValidatorFactory.php
+www/zabbix/include/classes/import/validators/CXmlValidator.php
+www/zabbix/include/classes/import/validators/CXmlValidatorGeneral.php
+www/zabbix/include/classes/items/CHelpItems.php
+www/zabbix/include/classes/json/CJson.php
+www/zabbix/include/classes/ldap/CLdap.php
+www/zabbix/include/classes/macros/CMacrosResolver.php
+www/zabbix/include/classes/macros/CMacrosResolverGeneral.php
+www/zabbix/include/classes/macros/CMacrosResolverHelper.php
+www/zabbix/include/classes/mvc/CController.php
+www/zabbix/include/classes/mvc/CControllerResponse.php
+www/zabbix/include/classes/mvc/CControllerResponseData.php
+www/zabbix/include/classes/mvc/CControllerResponseFatal.php
+www/zabbix/include/classes/mvc/CControllerResponseRedirect.php
+www/zabbix/include/classes/mvc/CRouter.php
+www/zabbix/include/classes/mvc/CView.php
+www/zabbix/include/classes/pagefilter/CPageFilter.php
+www/zabbix/include/classes/parsers/CAbsoluteTimeParser.php
+www/zabbix/include/classes/parsers/CADNameAttributeParser.php
+www/zabbix/include/classes/parsers/CConditionFormula.php
+www/zabbix/include/classes/parsers/CDnsParser.php
+www/zabbix/include/classes/parsers/CFlexibleIntervalParser.php
+www/zabbix/include/classes/parsers/CFunctionIdParser.php
+www/zabbix/include/classes/parsers/CFunctionMacroParser.php
+www/zabbix/include/classes/parsers/CFunctionParser.php
+www/zabbix/include/classes/parsers/CHostGroupNameParser.php
+www/zabbix/include/classes/parsers/CHostNameParser.php
+www/zabbix/include/classes/parsers/CIPParser.php
+www/zabbix/include/classes/parsers/CIPRangeParser.php
+www/zabbix/include/classes/parsers/CIPv4Parser.php
+www/zabbix/include/classes/parsers/CIPv6Parser.php
+www/zabbix/include/classes/parsers/CItemKey.php
+www/zabbix/include/classes/parsers/CLLDMacroFunctionParser.php
+www/zabbix/include/classes/parsers/CLLDMacroParser.php
+www/zabbix/include/classes/parsers/CMacroFunctionParser.php
+www/zabbix/include/classes/parsers/CMacroParser.php
+www/zabbix/include/classes/parsers/CParser.php
+www/zabbix/include/classes/parsers/CPrometheusOutputParser.php
+www/zabbix/include/classes/parsers/CPrometheusPatternParser.php
+www/zabbix/include/classes/parsers/CRangeParser.php
+www/zabbix/include/classes/parsers/CRangesParser.php
+www/zabbix/include/classes/parsers/CRangeTimeParser.php
+www/zabbix/include/classes/parsers/CReferenceParser.php
+www/zabbix/include/classes/parsers/CRelativeTimeParser.php
+www/zabbix/include/classes/parsers/CReplacementParser.php
+www/zabbix/include/classes/parsers/CSchedulingIntervalParser.php
+www/zabbix/include/classes/parsers/CSetParser.php
+www/zabbix/include/classes/parsers/CSimpleIntervalParser.php
+www/zabbix/include/classes/parsers/CTimePeriodParser.php
+www/zabbix/include/classes/parsers/CTimePeriodsParser.php
+www/zabbix/include/classes/parsers/CTriggerExpression.php
+www/zabbix/include/classes/parsers/CUpdateIntervalParser.php
+www/zabbix/include/classes/parsers/CUserMacroParser.php
+www/zabbix/include/classes/parsers/CValidationRule.php
+www/zabbix/include/classes/parsers/results/CParserResult.php
+www/zabbix/include/classes/parsers/results/CTriggerExpressionParserResult.php
+www/zabbix/include/classes/regexp/CGlobalRegexp.php
+www/zabbix/include/classes/routing/CUrl.php
+www/zabbix/include/classes/routing/CUrlFactory.php
+www/zabbix/include/classes/screens/CScreenActions.php
+www/zabbix/include/classes/screens/CScreenBase.php
+www/zabbix/include/classes/screens/CScreenBuilder.php
+www/zabbix/include/classes/screens/CScreenChart.php
+www/zabbix/include/classes/screens/CScreenClock.php
+www/zabbix/include/classes/screens/CScreenDataOverview.php
+www/zabbix/include/classes/screens/CScreenDiscovery.php
+www/zabbix/include/classes/screens/CScreenEvents.php
+www/zabbix/include/classes/screens/CScreenGraph.php
+www/zabbix/include/classes/screens/CScreenHistory.php
+www/zabbix/include/classes/screens/CScreenHostgroupTriggers.php
+www/zabbix/include/classes/screens/CScreenHostsInfo.php
+www/zabbix/include/classes/screens/CScreenHostTriggers.php
+www/zabbix/include/classes/screens/CScreenHttpTest.php
+www/zabbix/include/classes/screens/CScreenHttpTestDetails.php
+www/zabbix/include/classes/screens/CScreenLldGraph.php
+www/zabbix/include/classes/screens/CScreenLldGraphBase.php
+www/zabbix/include/classes/screens/CScreenLldSimpleGraph.php
+www/zabbix/include/classes/screens/CScreenMap.php
+www/zabbix/include/classes/screens/CScreenPlainText.php
+www/zabbix/include/classes/screens/CScreenProblem.php
+www/zabbix/include/classes/screens/CScreenServerInfo.php
+www/zabbix/include/classes/screens/CScreenSimpleGraph.php
+www/zabbix/include/classes/screens/CScreenSystemStatus.php
+www/zabbix/include/classes/screens/CScreenTriggersInfo.php
+www/zabbix/include/classes/screens/CScreenTriggersOverview.php
+www/zabbix/include/classes/screens/CScreenUrl.php
+www/zabbix/include/classes/server/CZabbixServer.php
+www/zabbix/include/classes/services/CServicesSlaCalculator.php
+www/zabbix/include/classes/setup/CFrontendSetup.php
+www/zabbix/include/classes/setup/CSetupWizard.php
+www/zabbix/include/classes/tree/CServiceTree.php
+www/zabbix/include/classes/tree/CTree.php
+www/zabbix/include/classes/triggers/CTextTriggerConstructor.php
+www/zabbix/include/classes/user/CFavorite.php
+www/zabbix/include/classes/user/CProfile.php
+www/zabbix/include/classes/user/CWebUser.php
+www/zabbix/include/classes/validators/CActionCondValidator.php
+www/zabbix/include/classes/validators/CApiInputValidator.php
+www/zabbix/include/classes/validators/CCollectionValidator.php
+www/zabbix/include/classes/validators/CColorValidator.php
+www/zabbix/include/classes/validators/CDecimalStringValidator.php
+www/zabbix/include/classes/validators/CDecimalValidator.php
+www/zabbix/include/classes/validators/CEmailValidator.php
+www/zabbix/include/classes/validators/CFunctionValidator.php
+www/zabbix/include/classes/validators/CHtmlUrlValidator.php
+www/zabbix/include/classes/validators/CIdValidator.php
+www/zabbix/include/classes/validators/CLdapAuthValidator.php
+www/zabbix/include/classes/validators/CLimitedSetValidator.php
+www/zabbix/include/classes/validators/CNewValidator.php
+www/zabbix/include/classes/validators/CPartialValidatorInterface.php
+www/zabbix/include/classes/validators/CRegexValidator.php
+www/zabbix/include/classes/validators/CStringValidator.php
+www/zabbix/include/classes/validators/CValidator.php
+www/zabbix/include/classes/validators/event/CEventSourceObjectValidator.php
+www/zabbix/include/classes/validators/host/CHostNormalValidator.php
+www/zabbix/include/classes/validators/object/CConditionValidator.php
+www/zabbix/include/classes/validators/object/CUpdateDiscoveredValidator.php
+www/zabbix/include/classes/validators/schema/CSchemaValidator.php
+www/zabbix/include/classes/widgets/CWidgetConfig.php
+www/zabbix/include/classes/widgets/CWidgetHelper.php
+www/zabbix/include/classes/widgets/fields/CWidgetField.php
+www/zabbix/include/classes/widgets/fields/CWidgetFieldApplication.php
+www/zabbix/include/classes/widgets/fields/CWidgetFieldCheckBox.php
+www/zabbix/include/classes/widgets/fields/CWidgetFieldCheckBoxList.php
+www/zabbix/include/classes/widgets/fields/CWidgetFieldComboBox.php
+www/zabbix/include/classes/widgets/fields/CWidgetFieldDatePicker.php
+www/zabbix/include/classes/widgets/fields/CWidgetFieldGraphDataSet.php
+www/zabbix/include/classes/widgets/fields/CWidgetFieldGraphOverride.php
+www/zabbix/include/classes/widgets/fields/CWidgetFieldHidden.php
+www/zabbix/include/classes/widgets/fields/CWidgetFieldHostPatternSelect.php
+www/zabbix/include/classes/widgets/fields/CWidgetFieldIntegerBox.php
+www/zabbix/include/classes/widgets/fields/CWidgetFieldMs.php
+www/zabbix/include/classes/widgets/fields/CWidgetFieldMsGraph.php
+www/zabbix/include/classes/widgets/fields/CWidgetFieldMsGraphPrototype.php
+www/zabbix/include/classes/widgets/fields/CWidgetFieldMsGroup.php
+www/zabbix/include/classes/widgets/fields/CWidgetFieldMsHost.php
+www/zabbix/include/classes/widgets/fields/CWidgetFieldMsItem.php
+www/zabbix/include/classes/widgets/fields/CWidgetFieldMsItemPrototype.php
+www/zabbix/include/classes/widgets/fields/CWidgetFieldNumericBox.php
+www/zabbix/include/classes/widgets/fields/CWidgetFieldRadioButtonList.php
+www/zabbix/include/classes/widgets/fields/CWidgetFieldRangeControl.php
+www/zabbix/include/classes/widgets/fields/CWidgetFieldReference.php
+www/zabbix/include/classes/widgets/fields/CWidgetFieldSelectResource.php
+www/zabbix/include/classes/widgets/fields/CWidgetFieldSeverities.php
+www/zabbix/include/classes/widgets/fields/CWidgetFieldTags.php
+www/zabbix/include/classes/widgets/fields/CWidgetFieldTextBox.php
+www/zabbix/include/classes/widgets/fields/CWidgetFieldUrl.php
+www/zabbix/include/classes/widgets/fields/CWidgetFieldWidgetListComboBox.php
+www/zabbix/include/classes/widgets/forms/CWidgetForm.php
+www/zabbix/include/classes/widgets/forms/CWidgetFormActionLog.php
+www/zabbix/include/classes/widgets/forms/CWidgetFormClock.php
+www/zabbix/include/classes/widgets/forms/CWidgetFormDataOver.php
+www/zabbix/include/classes/widgets/forms/CWidgetFormGraph.php
+www/zabbix/include/classes/widgets/forms/CWidgetFormGraphPrototype.php
+www/zabbix/include/classes/widgets/forms/CWidgetFormHostAvail.php
+www/zabbix/include/classes/widgets/forms/CWidgetFormMap.php
+www/zabbix/include/classes/widgets/forms/CWidgetFormNavTree.php
+www/zabbix/include/classes/widgets/forms/CWidgetFormPlainText.php
+www/zabbix/include/classes/widgets/forms/CWidgetFormProblemHosts.php
+www/zabbix/include/classes/widgets/forms/CWidgetFormProblems.php
+www/zabbix/include/classes/widgets/forms/CWidgetFormProblemsBySv.php
+www/zabbix/include/classes/widgets/forms/CWidgetFormSvgGraph.php
+www/zabbix/include/classes/widgets/forms/CWidgetFormTrigOver.php
+www/zabbix/include/classes/widgets/forms/CWidgetFormUrl.php
+www/zabbix/include/classes/widgets/forms/CWidgetFormWeb.php
+www/zabbix/include/classes/widgets/views/widget.actionlog.form.view.php
+www/zabbix/include/classes/widgets/views/widget.clock.form.view.php
+www/zabbix/include/classes/widgets/views/widget.dataover.form.view.php
+www/zabbix/include/classes/widgets/views/widget.discovery.form.view.php
+www/zabbix/include/classes/widgets/views/widget.favgraphs.form.view.php
+www/zabbix/include/classes/widgets/views/widget.favmaps.form.view.php
+www/zabbix/include/classes/widgets/views/widget.favscreens.form.view.php
+www/zabbix/include/classes/widgets/views/widget.graph.form.view.php
+www/zabbix/include/classes/widgets/views/widget.graphprototype.form.view.php
+www/zabbix/include/classes/widgets/views/widget.hostavail.form.view.php
+www/zabbix/include/classes/widgets/views/widget.map.form.view.php
+www/zabbix/include/classes/widgets/views/widget.navtree.form.view.php
+www/zabbix/include/classes/widgets/views/widget.plaintext.form.view.php
+www/zabbix/include/classes/widgets/views/widget.problemhosts.form.view.php
+www/zabbix/include/classes/widgets/views/widget.problems.form.view.php
+www/zabbix/include/classes/widgets/views/widget.problemsbysv.form.view.php
+www/zabbix/include/classes/widgets/views/widget.svggraph.form.view.php
+www/zabbix/include/classes/widgets/views/widget.systeminfo.form.view.php
+www/zabbix/include/classes/widgets/views/widget.trigover.form.view.php
+www/zabbix/include/classes/widgets/views/widget.url.form.view.php
+www/zabbix/include/classes/widgets/views/widget.web.form.view.php
+www/zabbix/include/classes/xml/CXmlConstantName.php
+www/zabbix/include/classes/xml/CXmlConstantValue.php
+www/zabbix/include/config.inc.php
+www/zabbix/include/correlation.inc.php
+www/zabbix/include/db.inc.php
+www/zabbix/include/debug.inc.php
+www/zabbix/include/defines.inc.php
+www/zabbix/include/discovery.inc.php
+www/zabbix/include/draw.inc.php
+www/zabbix/include/events.inc.php
+www/zabbix/include/forms.inc.php
+www/zabbix/include/func.inc.php
+www/zabbix/include/gettextwrapper.inc.php
+www/zabbix/include/graphs.inc.php
+www/zabbix/include/hostgroups.inc.php
+www/zabbix/include/hosts.inc.php
+www/zabbix/include/html.inc.php
+www/zabbix/include/httptest.inc.php
+www/zabbix/include/ident.inc.php
+www/zabbix/include/images.inc.php
+www/zabbix/include/items.inc.php
+www/zabbix/include/js.inc.php
+www/zabbix/include/locales.inc.php
+www/zabbix/include/maintenances.inc.php
+www/zabbix/include/maps.inc.php
+www/zabbix/include/media.inc.php
+www/zabbix/include/menu.inc.php
+www/zabbix/include/page_footer.php
+www/zabbix/include/page_header.php
+www/zabbix/include/perm.inc.php
+www/zabbix/include/profiles.inc.php
+www/zabbix/include/regexp.inc.php
+www/zabbix/include/schema.inc.php
+www/zabbix/include/screens.inc.php
+www/zabbix/include/services.inc.php
+www/zabbix/include/sounds.inc.php
+www/zabbix/include/translateDefines.inc.php
+www/zabbix/include/triggers.inc.php
+www/zabbix/include/users.inc.php
+www/zabbix/include/validate.inc.php
+www/zabbix/include/valuemap.inc.php
+www/zabbix/include/views/administration.auditacts.list.php
+www/zabbix/include/views/administration.auditlogs.list.php
+www/zabbix/include/views/administration.general.gui.edit.php
+www/zabbix/include/views/administration.general.housekeeper.edit.php
+www/zabbix/include/views/administration.general.iconmap.edit.php
+www/zabbix/include/views/administration.general.iconmap.list.php
+www/zabbix/include/views/administration.general.image.edit.php
+www/zabbix/include/views/administration.general.image.list.php
+www/zabbix/include/views/administration.general.macros.edit.php
+www/zabbix/include/views/administration.general.other.edit.php
+www/zabbix/include/views/administration.general.regularexpressions.edit.php
+www/zabbix/include/views/administration.general.regularexpressions.list.php
+www/zabbix/include/views/administration.general.trigger.options.edit.php
+www/zabbix/include/views/administration.general.triggerSeverity.edit.php
+www/zabbix/include/views/administration.general.valuemapping.edit.php
+www/zabbix/include/views/administration.general.valuemapping.list.php
+www/zabbix/include/views/administration.general.workingtime.edit.php
+www/zabbix/include/views/administration.usergroups.edit.php
+www/zabbix/include/views/administration.usergroups.list.php
+www/zabbix/include/views/common.filter.trigger.php
+www/zabbix/include/views/conf.import.php
+www/zabbix/include/views/configuration.action.edit.php
+www/zabbix/include/views/configuration.action.list.php
+www/zabbix/include/views/configuration.application.edit.php
+www/zabbix/include/views/configuration.application.list.php
+www/zabbix/include/views/configuration.copy.elements.php
+www/zabbix/include/views/configuration.correlation.edit.php
+www/zabbix/include/views/configuration.correlation.list.php
+www/zabbix/include/views/configuration.discovery.edit.php
+www/zabbix/include/views/configuration.discovery.list.php
+www/zabbix/include/views/configuration.graph.edit.php
+www/zabbix/include/views/configuration.graph.list.php
+www/zabbix/include/views/configuration.host.discovery.edit.php
+www/zabbix/include/views/configuration.host.discovery.list.php
+www/zabbix/include/views/configuration.host.edit.php
+www/zabbix/include/views/configuration.host.list.php
+www/zabbix/include/views/configuration.host.massupdate.php
+www/zabbix/include/views/configuration.host.prototype.edit.php
+www/zabbix/include/views/configuration.host.prototype.list.php
+www/zabbix/include/views/configuration.hostgroups.edit.php
+www/zabbix/include/views/configuration.hostgroups.list.php
+www/zabbix/include/views/configuration.httpconf.edit.php
+www/zabbix/include/views/configuration.httpconf.list.php
+www/zabbix/include/views/configuration.item.edit.php
+www/zabbix/include/views/configuration.item.list.php
+www/zabbix/include/views/configuration.item.massupdate.php
+www/zabbix/include/views/configuration.item.prototype.edit.php
+www/zabbix/include/views/configuration.item.prototype.list.php
+www/zabbix/include/views/configuration.item.prototype.massupdate.php
+www/zabbix/include/views/configuration.maintenance.edit.php
+www/zabbix/include/views/configuration.maintenance.list.php
+www/zabbix/include/views/configuration.services.edit.php
+www/zabbix/include/views/configuration.services.list.php
+www/zabbix/include/views/configuration.services.parent.list.php
+www/zabbix/include/views/configuration.tags.tab.php
+www/zabbix/include/views/configuration.template.edit.php
+www/zabbix/include/views/configuration.template.list.php
+www/zabbix/include/views/configuration.template.massupdate.php
+www/zabbix/include/views/configuration.trigger.prototype.edit.php
+www/zabbix/include/views/configuration.trigger.prototype.list.php
+www/zabbix/include/views/configuration.trigger.prototype.massupdate.php
+www/zabbix/include/views/configuration.triggers.edit.php
+www/zabbix/include/views/configuration.triggers.list.php
+www/zabbix/include/views/configuration.triggers.massupdate.php
+www/zabbix/include/views/general.browserwarning.php
+www/zabbix/include/views/general.login.php
+www/zabbix/include/views/general.warning.php
+www/zabbix/include/views/hostmacros.php
+www/zabbix/include/views/inventory.host.list.php
+www/zabbix/include/views/inventory.host.view.php
+www/zabbix/include/views/js/adm.regexprs.edit.js.php
+www/zabbix/include/views/js/administration.general.gui.php
+www/zabbix/include/views/js/administration.general.housekeeper.edit.js.php
+www/zabbix/include/views/js/administration.general.iconmap.js.php
+www/zabbix/include/views/js/administration.general.macros.edit.js.php
+www/zabbix/include/views/js/administration.general.trigger.options.js.php
+www/zabbix/include/views/js/administration.general.triggerSeverity.js.php
+www/zabbix/include/views/js/administration.general.valuemapping.edit.js.php
+www/zabbix/include/views/js/common.filter.trigger.js.php
+www/zabbix/include/views/js/common.init.js.php
+www/zabbix/include/views/js/common.item.edit.js.php
+www/zabbix/include/views/js/common.template.edit.js.php
+www/zabbix/include/views/js/conf.import.js.php
+www/zabbix/include/views/js/configuration.action.edit.js.php
+www/zabbix/include/views/js/configuration.copy.elements.js.php
+www/zabbix/include/views/js/configuration.correlation.edit.js.php
+www/zabbix/include/views/js/configuration.discovery.edit.js.php
+www/zabbix/include/views/js/configuration.graph.edit.js.php
+www/zabbix/include/views/js/configuration.host.discovery.edit.js.php
+www/zabbix/include/views/js/configuration.host.edit.js.php
+www/zabbix/include/views/js/configuration.host.list.js.php
+www/zabbix/include/views/js/configuration.host.massupdate.js.php
+www/zabbix/include/views/js/configuration.host.prototype.edit.js.php
+www/zabbix/include/views/js/configuration.httpconf.edit.js.php
+www/zabbix/include/views/js/configuration.item.edit.js.php
+www/zabbix/include/views/js/configuration.item.list.js.php
+www/zabbix/include/views/js/configuration.item.massupdate.js.php
+www/zabbix/include/views/js/configuration.item.prototype.edit.js.php
+www/zabbix/include/views/js/configuration.maintenance.edit.js.php
+www/zabbix/include/views/js/configuration.services.edit.js.php
+www/zabbix/include/views/js/configuration.tags.tab.js.php
+www/zabbix/include/views/js/configuration.template.list.js.php
+www/zabbix/include/views/js/configuration.template.massupdate.js.php
+www/zabbix/include/views/js/configuration.trigger.massupdate.js.php
+www/zabbix/include/views/js/configuration.triggers.edit.js.php
+www/zabbix/include/views/js/configuration.triggers.list.js.php
+www/zabbix/include/views/js/editabletable.js.php
+www/zabbix/include/views/js/hostmacros.js.php
+www/zabbix/include/views/js/item.preprocessing.js.php
+www/zabbix/include/views/js/monitoring.latest.js.php
+www/zabbix/include/views/js/monitoring.screen.edit.js.php
+www/zabbix/include/views/js/monitoring.slideconf.edit.js.php
+www/zabbix/include/views/js/monitoring.slides.js.php
+www/zabbix/include/views/js/monitoring.sysmap.edit.js.php
+www/zabbix/include/views/js/monitoring.sysmaps.js.php
+www/zabbix/include/views/monitoring.charts.php
+www/zabbix/include/views/monitoring.history.php
+www/zabbix/include/views/monitoring.hostscreen.php
+www/zabbix/include/views/monitoring.overview.items.php
+www/zabbix/include/views/monitoring.overview.triggers.php
+www/zabbix/include/views/monitoring.screen.constructor.edit.php
+www/zabbix/include/views/monitoring.screen.constructor.list.php
+www/zabbix/include/views/monitoring.screen.edit.php
+www/zabbix/include/views/monitoring.screen.list.php
+www/zabbix/include/views/monitoring.screen.php
+www/zabbix/include/views/monitoring.slideconf.edit.php
+www/zabbix/include/views/monitoring.slideconf.list.php
+www/zabbix/include/views/monitoring.slides.php
+www/zabbix/include/views/monitoring.sysmap.constructor.php
+www/zabbix/include/views/monitoring.sysmap.edit.php
+www/zabbix/include/views/monitoring.sysmap.list.php
+www/zabbix/include/views/reports.toptriggers.php
+www/zabbix/index_http.php
+www/zabbix/index.php
+www/zabbix/items.php
+www/zabbix/js/browsers.js
+www/zabbix/js/chkbxrange.js
+www/zabbix/js/class.bbcode.js
+www/zabbix/js/class.browsertab.js
+www/zabbix/js/class.calendar.js
+www/zabbix/js/class.cclock.js
+www/zabbix/js/class.cdate.js
+www/zabbix/js/class.cdebug.js
+www/zabbix/js/class.cmap.js
+www/zabbix/js/class.cnavtree.js
+www/zabbix/js/class.cookie.js
+www/zabbix/js/class.coverride.js
+www/zabbix/js/class.crangecontrol.js
+www/zabbix/js/class.cscreen.js
+www/zabbix/js/class.csuggest.js
+www/zabbix/js/class.csvggraph.js
+www/zabbix/js/class.ctree.js
+www/zabbix/js/class.curl.js
+www/zabbix/js/class.cverticalaccordion.js
+www/zabbix/js/class.cviewswitcher.js
+www/zabbix/js/class.localstorage.js
+www/zabbix/js/class.mapWidget.js
+www/zabbix/js/class.notification.collection.js
+www/zabbix/js/class.notification.js
+www/zabbix/js/class.notifications.audio.js
+www/zabbix/js/class.notifications.js
+www/zabbix/js/class.pmaster.js
+www/zabbix/js/class.promise.js
+www/zabbix/js/class.rpc.js
+www/zabbix/js/colorpicker.js
+www/zabbix/js/common.js
+www/zabbix/js/csvggraphwidget.js
+www/zabbix/js/dashboard.grid.js
+www/zabbix/js/flickerfreescreen.js
+www/zabbix/js/functions.js
+www/zabbix/js/gtlc.js
+www/zabbix/js/init.js
+www/zabbix/js/layout.mode.js
+www/zabbix/js/main.js
+www/zabbix/js/menupopup.js
+www/zabbix/js/multilineinput.js
+www/zabbix/js/multiselect.js
+www/zabbix/js/pages/items.js
+www/zabbix/js/servercheck.js
+www/zabbix/js/textareaflexible.js
+www/zabbix/js/vector/class.svg.canvas.js
+www/zabbix/js/vector/class.svg.map.js
+www/zabbix/js/vendors/jquery-ui.js
+www/zabbix/js/vendors/jquery.js
+www/zabbix/js/vendors/prototype.js
+www/zabbix/jsLoader.php
+www/zabbix/jsrpc.php
+www/zabbix/latest.php
+www/zabbix/local/.htaccess
+www/zabbix/local/README
+www/zabbix/locale/add_new_language.sh
+www/zabbix/locale/bg/LC_MESSAGES/frontend.mo
+www/zabbix/locale/bg/LC_MESSAGES/frontend.po
+www/zabbix/locale/ca/LC_MESSAGES/frontend.mo
+www/zabbix/locale/ca/LC_MESSAGES/frontend.po
+www/zabbix/locale/cs/LC_MESSAGES/frontend.mo
+www/zabbix/locale/cs/LC_MESSAGES/frontend.po
+www/zabbix/locale/de/LC_MESSAGES/frontend.mo
+www/zabbix/locale/de/LC_MESSAGES/frontend.po
+www/zabbix/locale/el/LC_MESSAGES/frontend.mo
+www/zabbix/locale/el/LC_MESSAGES/frontend.po
+www/zabbix/locale/en_US/LC_MESSAGES/frontend.mo
+www/zabbix/locale/en_US/LC_MESSAGES/frontend.po
+www/zabbix/locale/es/LC_MESSAGES/frontend.mo
+www/zabbix/locale/es/LC_MESSAGES/frontend.po
+www/zabbix/locale/fa/LC_MESSAGES/frontend.mo
+www/zabbix/locale/fa/LC_MESSAGES/frontend.po
+www/zabbix/locale/fi/LC_MESSAGES/frontend.mo
+www/zabbix/locale/fi/LC_MESSAGES/frontend.po
+www/zabbix/locale/fr/LC_MESSAGES/frontend.mo
+www/zabbix/locale/fr/LC_MESSAGES/frontend.po
+www/zabbix/locale/he/LC_MESSAGES/frontend.mo
+www/zabbix/locale/he/LC_MESSAGES/frontend.po
+www/zabbix/locale/hu/LC_MESSAGES/frontend.mo
+www/zabbix/locale/hu/LC_MESSAGES/frontend.po
+www/zabbix/locale/id/LC_MESSAGES/frontend.mo
+www/zabbix/locale/id/LC_MESSAGES/frontend.po
+www/zabbix/locale/it/LC_MESSAGES/frontend.mo
+www/zabbix/locale/it/LC_MESSAGES/frontend.po
+www/zabbix/locale/ja/LC_MESSAGES/frontend.mo
+www/zabbix/locale/ja/LC_MESSAGES/frontend.po
+www/zabbix/locale/ka/LC_MESSAGES/frontend.mo
+www/zabbix/locale/ka/LC_MESSAGES/frontend.po
+www/zabbix/locale/ko/LC_MESSAGES/frontend.mo
+www/zabbix/locale/ko/LC_MESSAGES/frontend.po
+www/zabbix/locale/lt/LC_MESSAGES/frontend.mo
+www/zabbix/locale/lt/LC_MESSAGES/frontend.po
+www/zabbix/locale/lv/LC_MESSAGES/frontend.mo
+www/zabbix/locale/lv/LC_MESSAGES/frontend.po
+www/zabbix/locale/make_mo.sh
+www/zabbix/locale/nb/LC_MESSAGES/frontend.mo
+www/zabbix/locale/nb/LC_MESSAGES/frontend.po
+www/zabbix/locale/nl/LC_MESSAGES/frontend.mo
+www/zabbix/locale/nl/LC_MESSAGES/frontend.po
+www/zabbix/locale/pl/LC_MESSAGES/frontend.mo
+www/zabbix/locale/pl/LC_MESSAGES/frontend.po
+www/zabbix/locale/pt_BR/LC_MESSAGES/frontend.mo
+www/zabbix/locale/pt_BR/LC_MESSAGES/frontend.po
+www/zabbix/locale/pt_PT/LC_MESSAGES/frontend.mo
+www/zabbix/locale/pt_PT/LC_MESSAGES/frontend.po
+www/zabbix/locale/README
+www/zabbix/locale/ro/LC_MESSAGES/frontend.mo
+www/zabbix/locale/ro/LC_MESSAGES/frontend.po
+www/zabbix/locale/ru/LC_MESSAGES/frontend.mo
+www/zabbix/locale/ru/LC_MESSAGES/frontend.po
+www/zabbix/locale/sk/LC_MESSAGES/frontend.mo
+www/zabbix/locale/sk/LC_MESSAGES/frontend.po
+www/zabbix/locale/sv/LC_MESSAGES/frontend.mo
+www/zabbix/locale/sv/LC_MESSAGES/frontend.po
+www/zabbix/locale/tr/LC_MESSAGES/frontend.mo
+www/zabbix/locale/tr/LC_MESSAGES/frontend.po
+www/zabbix/locale/uk/LC_MESSAGES/frontend.mo
+www/zabbix/locale/uk/LC_MESSAGES/frontend.po
+www/zabbix/locale/update_po.sh
+www/zabbix/locale/vi/LC_MESSAGES/frontend.mo
+www/zabbix/locale/vi/LC_MESSAGES/frontend.po
+www/zabbix/locale/zh_CN/LC_MESSAGES/frontend.mo
+www/zabbix/locale/zh_CN/LC_MESSAGES/frontend.po
+www/zabbix/locale/zh_TW/LC_MESSAGES/frontend.mo
+www/zabbix/locale/zh_TW/LC_MESSAGES/frontend.po
+www/zabbix/maintenance.php
+www/zabbix/map.import.php
+www/zabbix/map.php
+www/zabbix/overview.php
+www/zabbix/queue.php
+www/zabbix/report2.php
+www/zabbix/report4.php
+www/zabbix/robots.txt
+www/zabbix/screen.import.php
+www/zabbix/screenconf.php
+www/zabbix/screenedit.php
+www/zabbix/screens.php
+www/zabbix/services.php
+www/zabbix/setup.php
+www/zabbix/slideconf.php
+www/zabbix/slides.php
+www/zabbix/srv_status.php
+www/zabbix/sysmap.php
+www/zabbix/sysmaps.php
+www/zabbix/templates.php
+www/zabbix/toptriggers.php
+www/zabbix/tr_events.php
+www/zabbix/trigger_prototypes.php
+www/zabbix/triggers.php
+www/zabbix/usergrps.php
+www/zabbix/zabbix.php
+@dir share/zabbix/server/database/mysql
+@dir share/zabbix/server/database/postgresql
+@dir share/zabbix/server/database
+@dir share/zabbix/server
+@dir share/zabbix
+@dir www/zabbix/app/controllers
+@dir www/zabbix/app/views
+@dir www/zabbix/app
+@dir www/zabbix/assets/fonts
+@dir www/zabbix/assets/img
+@dir www/zabbix/assets/styles
+@dir www/zabbix/assets
+@dir www/zabbix/audio
+@dir www/zabbix/conf
+@dir www/zabbix/include/classes/api/clients
+@dir www/zabbix/include/classes/api/helpers
+@dir www/zabbix/include/classes/api/managers
+@dir www/zabbix/include/classes/api/services
+@dir www/zabbix/include/classes/api/wrappers
+@dir www/zabbix/include/classes/api
+@dir www/zabbix/include/classes/core
+@dir www/zabbix/include/classes/db
+@dir www/zabbix/include/classes/debug
+@dir www/zabbix/include/classes/export/writers
+@dir www/zabbix/include/classes/export
+@dir www/zabbix/include/classes/graph
+@dir www/zabbix/include/classes/graphdraw
+@dir www/zabbix/include/classes/helpers
+@dir www/zabbix/include/classes/html/interfaces
+@dir www/zabbix/include/classes/html/pageheader
+@dir www/zabbix/include/classes/html/svg
+@dir www/zabbix/include/classes/html/widget
+@dir www/zabbix/include/classes/html
+@dir www/zabbix/include/classes/import/converters
+@dir www/zabbix/include/classes/import/importers
+@dir www/zabbix/include/classes/import/readers
+@dir www/zabbix/include/classes/import/validators
+@dir www/zabbix/include/classes/import
+@dir www/zabbix/include/classes/items
+@dir www/zabbix/include/classes/json
+@dir www/zabbix/include/classes/ldap
+@dir www/zabbix/include/classes/macros
+@dir www/zabbix/include/classes/mvc
+@dir www/zabbix/include/classes/pagefilter
+@dir www/zabbix/include/classes/parsers/results
+@dir www/zabbix/include/classes/parsers
+@dir www/zabbix/include/classes/regexp
+@dir www/zabbix/include/classes/routing
+@dir www/zabbix/include/classes/screens
+@dir www/zabbix/include/classes/server
+@dir www/zabbix/include/classes/services
+@dir www/zabbix/include/classes/setup
+@dir www/zabbix/include/classes/tree
+@dir www/zabbix/include/classes/triggers
+@dir www/zabbix/include/classes/user
+@dir www/zabbix/include/classes/validators/event
+@dir www/zabbix/include/classes/validators/host
+@dir www/zabbix/include/classes/validators/object
+@dir www/zabbix/include/classes/validators/schema
+@dir www/zabbix/include/classes/validators
+@dir www/zabbix/include/classes/widgets/fields
+@dir www/zabbix/include/classes/widgets/forms
+@dir www/zabbix/include/classes/widgets/views
+@dir www/zabbix/include/classes/widgets
+@dir www/zabbix/include/classes/xml
+@dir www/zabbix/include/classes
+@dir www/zabbix/include/views/js
+@dir www/zabbix/include/views
+@dir www/zabbix/include
+@dir www/zabbix/js/pages
+@dir www/zabbix/js/vector
+@dir www/zabbix/js/vendors
+@dir www/zabbix/js
+@dir www/zabbix/local
+@dir www/zabbix/locale/bg/LC_MESSAGES
+@dir www/zabbix/locale/bg
+@dir www/zabbix/locale/ca/LC_MESSAGES
+@dir www/zabbix/locale/ca
+@dir www/zabbix/locale/cs/LC_MESSAGES
+@dir www/zabbix/locale/cs
+@dir www/zabbix/locale/de/LC_MESSAGES
+@dir www/zabbix/locale/de
+@dir www/zabbix/locale/el/LC_MESSAGES
+@dir www/zabbix/locale/el
+@dir www/zabbix/locale/en_US/LC_MESSAGES
+@dir www/zabbix/locale/en_US
+@dir www/zabbix/locale/es/LC_MESSAGES
+@dir www/zabbix/locale/es
+@dir www/zabbix/locale/fa/LC_MESSAGES
+@dir www/zabbix/locale/fa
+@dir www/zabbix/locale/fi/LC_MESSAGES
+@dir www/zabbix/locale/fi
+@dir www/zabbix/locale/fr/LC_MESSAGES
+@dir www/zabbix/locale/fr
+@dir www/zabbix/locale/he/LC_MESSAGES
+@dir www/zabbix/locale/he
+@dir www/zabbix/locale/hu/LC_MESSAGES
+@dir www/zabbix/locale/hu
+@dir www/zabbix/locale/id/LC_MESSAGES
+@dir www/zabbix/locale/id
+@dir www/zabbix/locale/it/LC_MESSAGES
+@dir www/zabbix/locale/it
+@dir www/zabbix/locale/ja/LC_MESSAGES
+@dir www/zabbix/locale/ja
+@dir www/zabbix/locale/ka/LC_MESSAGES
+@dir www/zabbix/locale/ka
+@dir www/zabbix/locale/ko/LC_MESSAGES
+@dir www/zabbix/locale/ko
+@dir www/zabbix/locale/lt/LC_MESSAGES
+@dir www/zabbix/locale/lt
+@dir www/zabbix/locale/lv/LC_MESSAGES
+@dir www/zabbix/locale/lv
+@dir www/zabbix/locale/nb/LC_MESSAGES
+@dir www/zabbix/locale/nb
+@dir www/zabbix/locale/nl/LC_MESSAGES
+@dir www/zabbix/locale/nl
+@dir www/zabbix/locale/pl/LC_MESSAGES
+@dir www/zabbix/locale/pl
+@dir www/zabbix/locale/pt_BR/LC_MESSAGES
+@dir www/zabbix/locale/pt_BR
+@dir www/zabbix/locale/pt_PT/LC_MESSAGES
+@dir www/zabbix/locale/pt_PT
+@dir www/zabbix/locale/ro/LC_MESSAGES
+@dir www/zabbix/locale/ro
+@dir www/zabbix/locale/ru/LC_MESSAGES
+@dir www/zabbix/locale/ru
+@dir www/zabbix/locale/sk/LC_MESSAGES
+@dir www/zabbix/locale/sk
+@dir www/zabbix/locale/sv/LC_MESSAGES
+@dir www/zabbix/locale/sv
+@dir www/zabbix/locale/tr/LC_MESSAGES
+@dir www/zabbix/locale/tr
+@dir www/zabbix/locale/uk/LC_MESSAGES
+@dir www/zabbix/locale/uk
+@dir www/zabbix/locale/vi/LC_MESSAGES
+@dir www/zabbix/locale/vi
+@dir www/zabbix/locale/zh_CN/LC_MESSAGES
+@dir www/zabbix/locale/zh_CN
+@dir www/zabbix/locale/zh_TW/LC_MESSAGES
+@dir www/zabbix/locale/zh_TW
+@dir www/zabbix/locale
+@dir www/zabbix
