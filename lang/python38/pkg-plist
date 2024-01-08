@@ -186,9 +186,9 @@ lib/python3.8/__pycache__/_sitebuiltins.cpython-38.pyc
 lib/python3.8/__pycache__/_strptime.cpython-38.opt-1.pyc
 lib/python3.8/__pycache__/_strptime.cpython-38.opt-2.pyc
 lib/python3.8/__pycache__/_strptime.cpython-38.pyc
-lib/python3.8/__pycache__/_sysconfigdata__freebsd12_.cpython-38.opt-1.pyc
-lib/python3.8/__pycache__/_sysconfigdata__freebsd12_.cpython-38.opt-2.pyc
-lib/python3.8/__pycache__/_sysconfigdata__freebsd12_.cpython-38.pyc
+lib/python3.8/__pycache__/_sysconfigdata__freebsd13_.cpython-38.opt-1.pyc
+lib/python3.8/__pycache__/_sysconfigdata__freebsd13_.cpython-38.opt-2.pyc
+lib/python3.8/__pycache__/_sysconfigdata__freebsd13_.cpython-38.pyc
 lib/python3.8/__pycache__/_threading_local.cpython-38.opt-1.pyc
 lib/python3.8/__pycache__/_threading_local.cpython-38.opt-2.pyc
 lib/python3.8/__pycache__/_threading_local.cpython-38.pyc
@@ -672,7 +672,7 @@ lib/python3.8/_pydecimal.py
 lib/python3.8/_pyio.py
 lib/python3.8/_sitebuiltins.py
 lib/python3.8/_strptime.py
-lib/python3.8/_sysconfigdata__freebsd12_.py
+lib/python3.8/_sysconfigdata__freebsd13_.py
 lib/python3.8/_threading_local.py
 lib/python3.8/_weakrefset.py
 lib/python3.8/abc.py

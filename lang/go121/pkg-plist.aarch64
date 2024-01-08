@@ -2311,6 +2311,7 @@ lib/go/src/cmd/go/testdata/script/mod_doc.txt
 lib/go/src/cmd/go/testdata/script/mod_domain_root.txt
 lib/go/src/cmd/go/testdata/script/mod_dot.txt
 lib/go/src/cmd/go/testdata/script/mod_download_concurrent_read.txt
+lib/go/src/cmd/go/testdata/script/mod_download_exec_toolchain.txt
 lib/go/src/cmd/go/testdata/script/mod_download_git_bareRepository.txt
 lib/go/src/cmd/go/testdata/script/mod_download_git_decorate_full.txt
 lib/go/src/cmd/go/testdata/script/mod_download_hash.txt
@@ -2439,6 +2440,7 @@ lib/go/src/cmd/go/testdata/script/mod_init_glide.txt
 lib/go/src/cmd/go/testdata/script/mod_init_invalid_major.txt
 lib/go/src/cmd/go/testdata/script/mod_init_path.txt
 lib/go/src/cmd/go/testdata/script/mod_init_tidy.txt
+lib/go/src/cmd/go/testdata/script/mod_insecure_issue63845.txt
 lib/go/src/cmd/go/testdata/script/mod_install_hint.txt
 lib/go/src/cmd/go/testdata/script/mod_install_pkg_version.txt
 lib/go/src/cmd/go/testdata/script/mod_install_versioned.txt
@@ -11591,6 +11593,8 @@ lib/go/test/fixedbugs/issue6295.dir/p1.go
 lib/go/test/fixedbugs/issue6295.dir/p2.go
 lib/go/test/fixedbugs/issue6295.go
 lib/go/test/fixedbugs/issue6298.go
+lib/go/test/fixedbugs/issue63657.go
+lib/go/test/fixedbugs/issue63955.go
 lib/go/test/fixedbugs/issue6399.go
 lib/go/test/fixedbugs/issue6402.go
 lib/go/test/fixedbugs/issue6403.go
@@ -12585,7 +12589,7 @@ lib/go/VERSION
 @dir lib/go/misc/wasm
 @dir lib/go/misc
 @dir lib/go/pkg/include
-@dir lib/go/pkg/tool/freebsd_arm64
+@dir lib/go/pkg/tool/freebsd_amd64
 @dir lib/go/pkg/tool
 @dir lib/go/pkg
 @dir lib/go/src/archive/tar/testdata

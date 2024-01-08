@@ -4,10 +4,10 @@ bin/emacs
 bin/emacsclient
 bin/etags
 include/emacs-module.h
-libexec/emacs/28.2/amd64-pc-freebsd12/emacs.pdmp
-libexec/emacs/28.2/amd64-pc-freebsd12/hexl
-libexec/emacs/28.2/amd64-pc-freebsd12/movemail
-libexec/emacs/28.2/amd64-pc-freebsd12/rcs2log
+libexec/emacs/28.2/amd64-pc-freebsd13/emacs.pdmp
+libexec/emacs/28.2/amd64-pc-freebsd13/hexl
+libexec/emacs/28.2/amd64-pc-freebsd13/movemail
+libexec/emacs/28.2/amd64-pc-freebsd13/rcs2log
 man/man1/ctags.1.gz
 man/man1/ebrowse.1.gz
 man/man1/emacs.1.gz
@@ -4024,7 +4024,6 @@ share/info/calc.info.gz
 share/info/ccmode.info.gz
 share/info/cl.info.gz
 share/info/dbus.info.gz
-share/info/dir
 share/info/dired-x.info.gz
 share/info/ebrowse.info.gz
 share/info/ede.info.gz
@@ -4081,7 +4080,7 @@ share/info/viper.info.gz
 share/info/widget.info.gz
 share/info/wisent.info.gz
 share/info/woman.info.gz
-@dir libexec/emacs/28.2/amd64-pc-freebsd12
+@dir libexec/emacs/28.2/amd64-pc-freebsd13
 @dir libexec/emacs/28.2
 @dir libexec/emacs
 @dir share/emacs/28.2/etc/charsets

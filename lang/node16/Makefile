@@ -16,7 +16,7 @@ LIB_DEPENDS+=	libuv.so:devel/libuv
 CONFLICTS_INSTALL=	node[4568]-[0-9]*
 ONLY_FOR_ARCHS=		aarch64 amd64 armv6 armv7 i386
 
-USES=		compiler:c++11-lib gmake python:2.7,build pkgconfig localbase shebangfix
+USES=		compiler:c++11-lib gmake python:build pkgconfig localbase shebangfix
 
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
@@ -34,10 +34,13 @@ CONFIGURE_ARGS+=--openssl-no-asm
 
 CONFIGURE_ENV+= PKG_CONFIG_PATH=/usr/libdata/pkgconfig:${LOCALBASE}/lib/pkgconfig
 
-SHEBANG_FILES=	deps/v8/tools/*.py \
-		deps/v8/third_party/inspector_protocol/*.py \
-		tools/*.py \
-		tools/inspector_protocol/*.py
+#SHEBANG_FILES=	deps/v8/tools/*.py \
+#		deps/v8/third_party/inspector_protocol/*.py \
+#		tools/*.py \
+#		tools/inspector_protocol/*.py
+
+SHEBANG_FILES=	deps/v8/third_party/inspector_protocol/*.py deps/v8/tools/*.py \
+		tools/*.py tools/inspector_protocol/*.py
 
 
 MAKE_ENV+=	CC.host=${CC} CXX.host=${CXX} LINK.host=${CXX} LINK.target=${CXX}
