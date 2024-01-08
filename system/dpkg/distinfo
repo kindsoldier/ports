@@ -1,2 +1,3 @@
-SHA256 (dpkg_1.19.6.tar.xz) = 4eb1a12d1f5bd55478d2eab530dd188733e425f301e3b8c030f645f48ef43768
-SIZE (dpkg_1.19.6.tar.xz) = 4802832
+TIMESTAMP = 1704653980
+SHA256 (dpkg_1.19.8.tar.xz) = 2632c00b0cf0ea19ed7bd6700e6ec5faca93f0045af629d356dc03ad74ae6f10
+SIZE (dpkg_1.19.8.tar.xz) = 4701260

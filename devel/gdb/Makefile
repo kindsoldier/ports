@@ -2,7 +2,7 @@
 # $FreeBSD: head/devel/gdb/Makefile 513464 2019-10-01 08:51:39Z pizzamig $
 
 PORTNAME=	gdb
-PORTVERSION=	8.3.1
+PORTVERSION=	13.2
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
@@ -23,18 +23,17 @@ USES=		compiler:c++11-lang cpe gmake libtool pkgconfig tar:xz
 EXCLUDE=	dejagnu expect sim texinfo intl
 EXTRACT_AFTER_ARGS=	${EXCLUDE:S/^/--exclude /}
 
-EXTRA_PATCHES=	${FILESDIR}/commit-1163a4b7a3 \
-		${FILESDIR}/commit-dd6876c91c \
-		${FILESDIR}/commit-6e056c8178 \
-		${FILESDIR}/commit-36c53a0262 \
-		${FILESDIR}/commit-ef0bd2046f \
-		${FILESDIR}/commit-945f3901b5 \
-		${FILESDIR}/commit-f5424cfa7e \
-		${FILESDIR}/commit-ce25aa57a3 \
-		${FILESDIR}/commit-8399425f5f
+#EXTRA_PATCHES=	${FILESDIR}/commit-1163a4b7a3 \
+#		${FILESDIR}/commit-dd6876c91c \
+#		${FILESDIR}/commit-6e056c8178 \
+#		${FILESDIR}/commit-36c53a0262 \
+#		${FILESDIR}/commit-ef0bd2046f \
+#		${FILESDIR}/commit-945f3901b5 \
+#		${FILESDIR}/commit-f5424cfa7e \
+#		${FILESDIR}/commit-ce25aa57a3 \
+#		${FILESDIR}/commit-8399425f5f
 
-
-USE_CSTD=	gnu89
+#USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CONFIGURED_M4=gm4 CONFIGURED_BISON=byacc
 CONFIGURE_ARGS+= --program-suffix=${PORTVERSION:S/.//g}
@@ -42,13 +41,13 @@ CONFIGURE_ARGS+= --enable-targets=all --enable-64-bit-bfd
 CONFIGURE_ARGS+= --with-separate-debug-dir=/usr/lib/debug
 CONFIGURE_ARGS+= --with-expat=yes --with-libexpat-prefix=${LOCALBASE}
 CONFIGURE_ARGS+= --without-libunwind-ia64 --with-system-zlib
+
 CFLAGS:=	${CFLAGS:C/ +$//}	# blanks at EOL creep in sometimes
 CFLAGS+=	-DRL_NO_COMPAT -Wno-unused-function -Wno-unused-variable
 CFLAGS+=	-Wno-unknown-warning-option
 
 
-
-CONFIGURE_ARGS+= --with-system-readline
+#CONFIGURE_ARGS+= --with-system-readline
 CONFIGURE_ARGS+= --with-system-zlib
 CONFIGURE_ARGS+= --without-python
 

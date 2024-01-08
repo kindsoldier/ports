@@ -9,6 +9,7 @@ share/gdb/syscalls/i386-linux.xml
 share/gdb/syscalls/mips-n32-linux.xml
 share/gdb/syscalls/mips-n64-linux.xml
 share/gdb/syscalls/mips-o32-linux.xml
+share/gdb/syscalls/netbsd.xml
 share/gdb/syscalls/ppc-linux.xml
 share/gdb/syscalls/ppc64-linux.xml
 share/gdb/syscalls/s390-linux.xml

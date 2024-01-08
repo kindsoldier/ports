@@ -15,6 +15,8 @@ COMMENT?=	Video4Linux library
 USES=		tar:bzip2
 WRKSRC=		${WRKDIR}/v4l-utils-${PORTVERSION}
 
+USES+=		compiler:c11
+
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include -I${WRKSRC}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -22,7 +24,7 @@ USES+=		gmake pkgconfig
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-libdvbv5 \
 		--disable-qv4l2 \
-		--without-libudev
+		--without-libudev --with-gnu-ld
 INSTALL_TARGET=	install-strip
 
 CONFIGURE_ARGS+=--disable-v4l-utils --enable-libv4l

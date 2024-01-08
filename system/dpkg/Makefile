@@ -2,7 +2,7 @@
 # #$id$
 #
 PORTNAME=	dpkg
-PORTVERSION=	1.19.6 #1.18.10
+PORTVERSION=	1.19.8 #1.18.10
 CATEGORIES=	archivers sysutils
 MASTER_SITES=	DEBIAN_POOL
 DISTNAME=	dpkg_${PORTVERSION}
@@ -14,6 +14,7 @@ COMMENT=	Debian package maintenance system
 RUN_DEPENDS+=	gtar:arch/gtar
 RUN_DEPENDS+=	gpatch:text/gpatch
 
+USE_CXXSTD=	c++14
 GNU_CONFIGURE=	yes
 USES=		gmake perl5 pkgconfig tar:xz shebangfix
 CPE_VENDOR=	debian
