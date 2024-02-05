@@ -1,32 +1,37 @@
-# $FreeBSD: head/security/mbedtls/Makefile 499363 2019-04-19 14:47:05Z tijl $
-
 PORTNAME=	mbedtls
-PORTVERSION=	2.16.1
+PORTVERSION=	2.28.6
 DISTVERSIONPREFIX=${PORTNAME}-
 CATEGORIES=	security devel
 PKGNAMEPREFIX=  lib
 
 MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	SSL/TLS and cryptography library
+WWW=		https://www.trustedfirmware.org/projects/mbed-tls/
+
+USES=		gmake python:test shebangfix
+SHEBANG_FILES=	scripts/*.py tests/scripts/*.py
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	ARMmbed
+GH_ACCOUNT=	Mbed-TLS
 
 ALL_TARGET=	no_test
 TEST_TARGET=	test
-MAKE_ENV=	SHARED=1
-USES=		gmake tar:tgz
+MAKE_ENV=	PYTHON=${PYTHON_CMD} SHARED=1
 USE_LDCONFIG=	yes
 
+PORTSCOUT=	limit:^${PORTVERSION:R:S/./\./g}\.
+
 post-patch:
-	${RM} ${WRKSRC}/include/mbedtls/*.orig
-	${REINPLACE_CMD} \
+	@${RM} ${WRKSRC}/include/mbedtls/*.orig
+	@${REINPLACE_CMD} \
 		-e 's/PREFIX/NAMEPREFIX/' \
 		-e 's/$$(DESTDIR)/&$$(PREFIX)/' \
 		${WRKSRC}/Makefile
-	${REINPLACE_CMD} 's/-fpic//' ${WRKSRC}/library/Makefile
+	@${REINPLACE_CMD} 's/-fpic//' ${WRKSRC}/library/Makefile
 
 post-install:
+	${FIND} ${STAGEDIR}${PREFIX}/bin -type f -not -name \*.sh \
+		-exec ${STRIP_CMD} {} +
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so
 
 .include <bsd.port.mk>
