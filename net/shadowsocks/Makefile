@@ -1,5 +1,4 @@
-PORTNAME=       shadowsocks
-DISTNAME=	shadowsocks-libev
+PORTNAME=	shadowsocks
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.3.5
 CATEGORIES=	net
@@ -10,7 +9,7 @@ WWW=		https://github.com/shadowsocks/shadowsocks-libev
 
 
 LIB_DEPENDS=	libev.so:devel/libev \
-		libmbedcrypto.so:security/mbedtls \
+		libmbedcrypto.so:crypto/libmbedtls \
 		libpcre.so:text/libpcre \
 		libsodium.so:crypto/libsodium \
 		libcares.so:net/libcares
@@ -19,6 +18,7 @@ USES=		autoreconf compiler:c11 gmake pathfix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared
 USE_GITHUB=	yes
+GH_PROJECT=	shadowsocks-libev
 GH_ACCOUNT=	shadowsocks
 GH_TUPLE=	shadowsocks:libbloom:437e1ad:libbloom/libbloom \
 		shadowsocks:libcork:074e074:libcork/libcork \

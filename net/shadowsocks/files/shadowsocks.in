@@ -13,19 +13,19 @@
 
 . /etc/rc.subr
 
-name="shadowsocks_libev"
-rcvar=shadowsocks_libev_enable
+name="shadowsocks"
+rcvar=shadowsocks_enable
 
 
 load_rc_config $name
 
-: ${shadowsocks_libev_enable:="NO"}
-: ${shadowsocks_libev_config="%%PREFIX%%/etc/shadowsocks-libev/config.json"}
+: ${shadowsocks_enable:="NO"}
+: ${shadowsocks_config="%%PREFIX%%/etc/shadowsocks/config.json"}
 
 command="%%PREFIX%%/bin/ss-server" 
-pidfile="/var/run/shadowsocks-libev.pid"
-required_files="${shadowsocks_libev_config}"
+pidfile="/var/run/shadowsocks.pid"
+required_files="${shadowsocks_config}"
 
-command_args="-f $pidfile -c $shadowsocks_libev_config"
+command_args="-f $pidfile -c $shadowsocks_config"
 
 run_rc_command "$1"
