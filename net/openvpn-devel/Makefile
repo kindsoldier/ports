@@ -2,7 +2,7 @@
 # $Id$
 #
 PORTNAME=	openvpn
-PORTVERSION=	2.6.8
+#PORTVERSION=	2.6.8
 CATEGORIES=	security net
 #MASTER_SITES=	http://openvpn.net/release/
 MASTER_SITES+=	http://swupdate.openvpn.net/community/releases/
@@ -13,9 +13,14 @@ COMMENT=	Secure IP/Ethernet tunnel daemon
 
 LIB_DEPENDS+=	liblzo2.so:arch/liblzo2
 
+DISTVERSION=	g20231109
+USE_GITLAB=	yes
+GL_COMMIT=	efad93d049c318a3bd9ea5956c6ac8237b8d6d70
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${GL_COMMIT}
 
 GNU_CONFIGURE=	yes
-USES+=		gmake
+USES+=		gmake autoreconf
 CONFIGURE_ARGS+= --enable-password-save
 #CONFIGURE_ARGS+= --with-crypto-library=openssl
 CONFIGURE_ARGS+= --mandir=${PREFIX}/man
@@ -39,8 +44,6 @@ SUB_LIST+=	OPENVPN_RUNDIR=${OPENVPN_RUNDIR}
 SUB_LIST+=	OPENVPN_LOGDIR=${OPENVPN_LOGDIR}
 SUB_LIST+=	OPENVPN_CONFDIR=${OPENVPN_CONFDIR}
 
-
-PLIST_FILES+=	man/man8/openvpn.8.gz
 
 USE_RC_SUBR=	openvpn.sh
 USE_LDCONFIG=	${PREFIX}/lib

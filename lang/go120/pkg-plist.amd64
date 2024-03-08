@@ -47,6 +47,7 @@ lib/go/misc/cgo/errors/ptr_test.go
 lib/go/misc/cgo/errors/testdata/err1.go
 lib/go/misc/cgo/errors/testdata/err2.go
 lib/go/misc/cgo/errors/testdata/err4.go
+lib/go/misc/cgo/errors/testdata/err5.go
 lib/go/misc/cgo/errors/testdata/issue11097a.go
 lib/go/misc/cgo/errors/testdata/issue11097b.go
 lib/go/misc/cgo/errors/testdata/issue14669.go
@@ -603,8 +604,8 @@ lib/go/src/clean.rc
 lib/go/src/cmd/addr2line/addr2line_test.go
 lib/go/src/cmd/addr2line/main.go
 lib/go/src/cmd/api/api_test.go
-lib/go/src/cmd/api/api.go
 lib/go/src/cmd/api/boring_test.go
+lib/go/src/cmd/api/main_test.go
 lib/go/src/cmd/api/testdata/src/issue21181/dep/p_amd64.go
 lib/go/src/cmd/api/testdata/src/issue21181/dep/p.go
 lib/go/src/cmd/api/testdata/src/issue21181/indirect/p.go
@@ -1892,6 +1893,7 @@ lib/go/src/cmd/go/testdata/script/build_dash_x.txt
 lib/go/src/cmd/go/testdata/script/build_exe.txt
 lib/go/src/cmd/go/testdata/script/build_gcflags_order.txt
 lib/go/src/cmd/go/testdata/script/build_gcflags.txt
+lib/go/src/cmd/go/testdata/script/build_go122.txt
 lib/go/src/cmd/go/testdata/script/build_gopath_order.txt
 lib/go/src/cmd/go/testdata/script/build_GOTMPDIR.txt
 lib/go/src/cmd/go/testdata/script/build_ignore_leading_bom.txt
@@ -6967,6 +6969,7 @@ lib/go/src/path/filepath/export_test.go
 lib/go/src/path/filepath/export_windows_test.go
 lib/go/src/path/filepath/match_test.go
 lib/go/src/path/filepath/match.go
+lib/go/src/path/filepath/path_nonwindows.go
 lib/go/src/path/filepath/path_plan9.go
 lib/go/src/path/filepath/path_test.go
 lib/go/src/path/filepath/path_unix.go
@@ -11044,6 +11047,7 @@ lib/go/test/fixedbugs/issue6055.go
 lib/go/test/fixedbugs/issue60601.go
 lib/go/test/fixedbugs/issue6131.go
 lib/go/test/fixedbugs/issue6140.go
+lib/go/test/fixedbugs/issue61992.go
 lib/go/test/fixedbugs/issue6247.go
 lib/go/test/fixedbugs/issue6269.go
 lib/go/test/fixedbugs/issue6295.dir/p0.go

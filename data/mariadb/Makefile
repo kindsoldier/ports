@@ -3,14 +3,14 @@
 PORTNAME?=	mariadb
 PORTVERSION=	10.2.15
 CATEGORIES=	databases
-MASTER_SITES+=	http://mirrors.supportex.net/${SITESDIR}/
-MASTER_SITES+=	http://mirror2.hs-esslingen.de/pub/Mirrors/${SITESDIR}/
-MASTER_SITES+=	http://gd.tuwien.ac.at/db/${SITESDIR}/
-MASTER_SITES+=	http://mirrors.fe.up.pt/pub/${SITESDIR}/
-MASTER_SITES+=	http://mirror.de.gsnw.de:56431/${SITESDIR}/
-MASTER_SITES+=	http://mirror.layerjet.com/${SITESDIR}/
-MASTER_SITES+=	http://mirror.switch.ch/mirror/${SITESDIR}/
-MASTER_SITES+=	http://ftp.osuosl.org/pub/${SITESDIR}/
+#MASTER_SITES+=	http://mirrors.supportex.net/${SITESDIR}/
+#MASTER_SITES+=	http://mirror2.hs-esslingen.de/pub/Mirrors/${SITESDIR}/
+#MASTER_SITES+=	http://gd.tuwien.ac.at/db/${SITESDIR}/
+#MASTER_SITES+=	http://mirrors.fe.up.pt/pub/${SITESDIR}/
+#MASTER_SITES+=	http://mirror.de.gsnw.de:56431/${SITESDIR}/
+#MASTER_SITES+=	http://mirror.layerjet.com/${SITESDIR}/
+#MASTER_SITES+=	http://mirror.switch.ch/mirror/${SITESDIR}/
+#MASTER_SITES+=	http://ftp.osuosl.org/pub/${SITESDIR}/
 SITESDIR=	mariadb/mariadb-${PORTVERSION}/source
 
 MAINTAINER=	brnrd@FreeBSD.org
@@ -30,6 +30,10 @@ USES=		bison:build cmake compiler:c++11-lib  shebangfix
 #USE_LDCONFIG=	${PREFIX}/lib/mysql
 SHEBANG_FILES=	scripts/*.sh storage/rocksdb/myrocks_hotbackup
 DOCSDIR=	${PREFIX}/share/doc/mysql
+
+CXXFLAGS+= -fcommon
+CFLAGS+= -fcommon
+
 
 # MySQL-Server options
 #OPTIONS_DEFAULT+=	CONNECT_EXTRA INNOBASE SPHINX SPIDER

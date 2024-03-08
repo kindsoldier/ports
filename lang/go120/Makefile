@@ -62,8 +62,8 @@ post-patch:
 
 PLIST= pkg-plist.${ARCH}
 
-#GOROOT_BOOTSTRAP=${WRKDIR}/go-${OPSYS:tl}-${GOARCH}${GOARM}-bootstrap
-GOROOT_BOOTSTRAP=${LOCALBASE}/lib/go
+GOROOT_BOOTSTRAP=${WRKDIR}/go-${OPSYS:tl}-${GOARCH}${GOARM}-bootstrap
+#GOROOT_BOOTSTRAP=${LOCALBASE}/lib/go
 
 do-build:
 #	cd ${WRKSRC}/src ; ${SETENV} \
