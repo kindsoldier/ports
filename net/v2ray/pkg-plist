@@ -1,0 +1,9 @@
+bin/v2ctl
+bin/v2ray
+share/examples/v2ray/config.json.sample
+share/examples/v2ray/vpoint_socks_vmess.json
+share/examples/v2ray/vpoint_vmess_freedom.json
+share/v2ray/geoip.dat
+share/v2ray/geosite.dat
+@dir share/examples/v2ray
+@dir share/v2ray
