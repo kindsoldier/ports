@@ -4,15 +4,20 @@ bin/emacs
 bin/emacsclient
 bin/etags
 include/emacs-module.h
-libexec/emacs/28.2/amd64-pc-freebsd13/emacs.pdmp
-libexec/emacs/28.2/amd64-pc-freebsd13/hexl
-libexec/emacs/28.2/amd64-pc-freebsd13/movemail
-libexec/emacs/28.2/amd64-pc-freebsd13/rcs2log
+lib/systemd/user/emacs.service
+libexec/emacs/28.2/amd64-pc-freebsd12/emacs.pdmp
+libexec/emacs/28.2/amd64-pc-freebsd12/hexl
+libexec/emacs/28.2/amd64-pc-freebsd12/movemail
+libexec/emacs/28.2/amd64-pc-freebsd12/rcs2log
 man/man1/ctags.1.gz
 man/man1/ebrowse.1.gz
 man/man1/emacs.1.gz
 man/man1/emacsclient.1.gz
 man/man1/etags.1.gz
+share/applications/emacs-mail.desktop
+share/applications/emacs.desktop
+share/applications/emacsclient-mail.desktop
+share/applications/emacsclient.desktop
 share/emacs/28.2/etc/AUTHORS
 share/emacs/28.2/etc/CALC-NEWS
 share/emacs/28.2/etc/charsets/8859-10.map
@@ -4080,9 +4085,11 @@ share/info/viper.info.gz
 share/info/widget.info.gz
 share/info/wisent.info.gz
 share/info/woman.info.gz
-@dir libexec/emacs/28.2/amd64-pc-freebsd13
+share/metainfo/emacs.metainfo.xml
+@dir libexec/emacs/28.2/amd64-pc-freebsd12
 @dir libexec/emacs/28.2
 @dir libexec/emacs
+@dir share/applications
 @dir share/emacs/28.2/etc/charsets
 @dir share/emacs/28.2/etc/e
 @dir share/emacs/28.2/etc/forms
@@ -4169,3 +4176,20 @@ share/info/woman.info.gz
 @dir share/emacs/28.2
 @dir share/emacs/site-lisp
 @dir share/emacs
+@dir share/icons/hicolor/128x128/apps
+@dir share/icons/hicolor/128x128
+@dir share/icons/hicolor/16x16/apps
+@dir share/icons/hicolor/16x16
+@dir share/icons/hicolor/24x24/apps
+@dir share/icons/hicolor/24x24
+@dir share/icons/hicolor/32x32/apps
+@dir share/icons/hicolor/32x32
+@dir share/icons/hicolor/48x48/apps
+@dir share/icons/hicolor/48x48
+@dir share/icons/hicolor/scalable/apps
+@dir share/icons/hicolor/scalable/mimetypes
+@dir share/icons/hicolor/scalable
+@dir share/icons/hicolor
+@dir share/icons
+@dir share/info
+@dir share/metainfo

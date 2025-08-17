@@ -21,7 +21,6 @@ libexec/gpg-pair-tool
 libexec/gpg-preset-passphrase
 libexec/gpg-protect-tool
 libexec/gpg-wks-client
-libexec/keyboxd
 libexec/scdaemon
 man/man1/dirmngr-client.1.gz
 man/man1/gpg-agent.1.gz
@@ -137,9 +136,6 @@ share/locale/zh_TW/LC_MESSAGES/gnupg2.mo
 @dir share/doc/gnupg/examples/systemd-user
 @dir share/doc/gnupg/examples
 @dir share/doc/gnupg
-@dir share/doc
-@dir share/gnupg
-@dir share/info
 @dir share/locale/ca/LC_MESSAGES
 @dir share/locale/ca
 @dir share/locale/cs/LC_MESSAGES
@@ -196,4 +192,3 @@ share/locale/zh_TW/LC_MESSAGES/gnupg2.mo
 @dir share/locale/zh_CN
 @dir share/locale/zh_TW/LC_MESSAGES
 @dir share/locale/zh_TW
-@dir share/locale

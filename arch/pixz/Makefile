@@ -2,10 +2,10 @@
 # $Id$
 #
 PORTNAME=	pixz
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.7
 CATEGORIES=	archivers
 MASTER_SITES=	SF/pixz
-EXTRACT_SUFX=	.tgz
+EXTRACT_SUFX=	.tar.gz
 
 MAINTAINER=	onborodin@gmail.com
 COMMENT=	Parallel, indexing version of XZ

@@ -2,7 +2,7 @@
 # $Id: Makefile 2697 2009-10-31 20:47:23Z root $
 #
 PORTNAME=	sed
-PORTVERSION=	4.2.2
+PORTVERSION=	4.9
 CATEGORIES=	textproc
 MASTER_SITES+=   ftp://alpha.gnu.org/gnu/
 MASTER_SITES+=	${MASTER_SITE_GNU}

@@ -4,7 +4,7 @@
 PORTNAME=	unbound
 PORTVERSION=	1.19.1
 CATEGORIES=	dns
-MASTER_SITES=	http://unbound.net/downloads/
+#MASTER_SITES=	http://unbound.net/downloads/
 
 MAINTAINER=	sem@FreeBSD.org
 COMMENT=	Validating, recursive, and caching DNS resolver

@@ -1,6 +1,9 @@
 bin/gsed
+man/man1/gsed.1.gz
+share/info/sed.info
 share/locale/af/LC_MESSAGES/sed.mo
 share/locale/ast/LC_MESSAGES/sed.mo
+share/locale/bg/LC_MESSAGES/sed.mo
 share/locale/ca/LC_MESSAGES/sed.mo
 share/locale/cs/LC_MESSAGES/sed.mo
 share/locale/da/LC_MESSAGES/sed.mo
@@ -20,12 +23,13 @@ share/locale/hu/LC_MESSAGES/sed.mo
 share/locale/id/LC_MESSAGES/sed.mo
 share/locale/it/LC_MESSAGES/sed.mo
 share/locale/ja/LC_MESSAGES/sed.mo
+share/locale/ka/LC_MESSAGES/sed.mo
 share/locale/ko/LC_MESSAGES/sed.mo
 share/locale/nb/LC_MESSAGES/sed.mo
 share/locale/nl/LC_MESSAGES/sed.mo
 share/locale/pl/LC_MESSAGES/sed.mo
-share/locale/pt/LC_MESSAGES/sed.mo
 share/locale/pt_BR/LC_MESSAGES/sed.mo
+share/locale/pt/LC_MESSAGES/sed.mo
 share/locale/ro/LC_MESSAGES/sed.mo
 share/locale/ru/LC_MESSAGES/sed.mo
 share/locale/sk/LC_MESSAGES/sed.mo
@@ -37,11 +41,12 @@ share/locale/uk/LC_MESSAGES/sed.mo
 share/locale/vi/LC_MESSAGES/sed.mo
 share/locale/zh_CN/LC_MESSAGES/sed.mo
 share/locale/zh_TW/LC_MESSAGES/sed.mo
-man/man1/gsed.1.gz
 @dir share/locale/af/LC_MESSAGES
 @dir share/locale/af
 @dir share/locale/ast/LC_MESSAGES
 @dir share/locale/ast
+@dir share/locale/bg/LC_MESSAGES
+@dir share/locale/bg
 @dir share/locale/ca/LC_MESSAGES
 @dir share/locale/ca
 @dir share/locale/cs/LC_MESSAGES
@@ -80,6 +85,8 @@ man/man1/gsed.1.gz
 @dir share/locale/it
 @dir share/locale/ja/LC_MESSAGES
 @dir share/locale/ja
+@dir share/locale/ka/LC_MESSAGES
+@dir share/locale/ka
 @dir share/locale/ko/LC_MESSAGES
 @dir share/locale/ko
 @dir share/locale/nb/LC_MESSAGES

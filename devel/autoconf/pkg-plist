@@ -60,7 +60,6 @@ share/autoconf/m4sugar/m4sugar.m4
 share/autoconf/m4sugar/m4sugar.m4f
 share/autoconf/m4sugar/version.m4
 share/info/autoconf.info
-share/info/dir
 @dir share/autoconf/autoconf
 @dir share/autoconf/Autom4te
 @dir share/autoconf/autoscan
