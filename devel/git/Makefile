@@ -2,7 +2,7 @@
 # $Id$
 #
 PORTNAME=	git
-DISTVERSION=	2.38.1
+DISTVERSION=	2.50.1 #2.38.1
 CATEGORIES=	devel
 MASTER_SITES=	KERNEL_ORG/software/scm/git
 DISTFILES+=	${DISTNAME}${EXTRACT_SUFX}
@@ -17,37 +17,34 @@ LIB_DEPENDS+=	libintl.so:devel/gettext
 LIB_DEPENDS+=	libcurl.so:net/libcurl
 LIB_DEPENDS+=	libexpat.so:text/libexpat
 
-PATCH_SITES=	https://gitlab.com/gitlab-org/gitaly/-/raw/master/_support/git-patches/v2.37.1.gl1/
-PATCHFILES=	0001-refs-extract-packed_refs_delete_refs-to-allow-contro.patch \
-		0002-refs-allow-passing-flags-when-beginning-transactions.patch \
-		0003-refs-allow-skipping-the-reference-transaction-hook.patch \
-		0004-refs-demonstrate-excessive-execution-of-the-referenc.patch \
-		0005-refs-do-not-execute-reference-transaction-hook-on-pa.patch \
-		0006-refs-skip-hooks-when-deleting-uncovered-packed-refs.patch
-PATCH_DIST_STRIP=	-p1
-
-
-
-GNU_CONFIGURE=	yes
-USES=		gmake shebangfix tar:xz perl5
-
-CPPFLAGS+=	-isystem${LOCALBASE}/include
+PATCH_SITES=	-isystem${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ENV+=	V=1
 
-SHEBANG_FILES=	*.perl */*.perl */*/*.perl */*.pl */*/*.pl */*/*/*.pl \
-		t/*/*/pre t/*/*/post t/Git-SVN/Utils/*.t \
-		git-p4.py \
-		contrib/hg-to-git/hg-to-git.py \
-		contrib/hooks/update-paranoid \
+GNU_CONFIGURE=	yes
+USES = gmake
+#SHEBANG_FILES=	*.perl */*.perl */*/*.perl */*.pl */*/*.pl */*/*/*.pl \
+#		t/*/*/pre t/*/*/post t/Git-SVN/Utils/*.t \
+#		git-p4.py \
+#		contrib/hg-to-git/hg-to-git.py \
+#		contrib/hooks/update-paranoid \
+#		contrib/fast-import/import-zips.py \
+#		contrib/remote-helpers/git-remote-bzr \
+#		contrib/remote-helpers/git-remote-hg \
+#		contrib/credential/netrc/git-credential-netrc.perl \
+#		contrib/buildsystems/generate contrib/contacts/git-contacts \
+#		templates/hooks--fsmonitor-watchman.sample
+
+SHEBANG_FILES=	Documentation/*.perl \
+		contrib/*/*.perl \
+		contrib/*/*.pl \
+		contrib/*/*/*.perl \
+		contrib/*/*/*.pl \
+		contrib/contacts/git-contacts \
 		contrib/fast-import/import-zips.py \
-		contrib/remote-helpers/git-remote-bzr \
-		contrib/remote-helpers/git-remote-hg \
-		contrib/credential/netrc/git-credential-netrc.perl \
-		contrib/buildsystems/generate contrib/contacts/git-contacts \
-		templates/hooks--fsmonitor-watchman.sample
-
-
+		contrib/hooks/update-paranoid \
+		git-p4.py \
+		templates/hooks/fsmonitor-watchman.sample
 
 CONFIGURE_ARGS+= --enable-pthreads=-pthread ac_cv_header_libcharset_h=no
 CONFIGURE_ARGS+= --with-editor="${LOCALBASE}/bin/vim"
@@ -93,15 +90,12 @@ PORTEXAMPLES= *
 
 post-patch:
 	${REINPLACE_CMD} -e "s,%%SITE_PERL%%,${SITE_PERL},g" ${WRKSRC}/Makefile
-
 	${REINPLACE_CMD} -e '/git-cvsexportcommit.perl/d; \
 		/git-cvsimport.perl/d; \
 		/git-cvsserver.perl/d; \
 		/documented,gitcvs-migration/d; \
 		s/git-cvsserver//' \
 		${WRKSRC}/Makefile
-
-#	${REINPLACE_CMD} -e "s,/usr/bin/perl,${PERL}," ${WRKSRC}/t/gitweb-lib.sh
 	${REINPLACE_CMD} -e '/^SCRIPT_PYTHON += git-p4.py$$/d' ${WRKSRC}/Makefile
 	${REINPLACE_CMD} -e 's|/bin/bash|/bin/sh|' ${WRKSRC}/contrib/subtree/git-subtree.sh
 
@@ -112,7 +106,6 @@ post-install:
 	cd ${WRKDIR}/man1 && ${COPYTREE_SHARE} . ${STAGEDIR}${MANPREFIX}/man/man1
 	cd ${WRKDIR}/man5 && ${COPYTREE_SHARE} . ${STAGEDIR}${MANPREFIX}/man/man5
 	cd ${WRKDIR}/man7 && ${COPYTREE_SHARE} . ${STAGEDIR}${MANPREFIX}/man/man7
-
 
 post-stage:
 
