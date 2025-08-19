@@ -2,7 +2,7 @@
 # $FreeBSD: head/devel/bison/Makefile 492390 2019-02-07 23:13:51Z sunpoet $
 
 PORTNAME=	bison
-PORTVERSION=	3.3.2
+PORTVERSION=	3.8.2
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
