@@ -1,0 +1,31 @@
+--- ./configure.orig	2023-07-14 15:06:29.000000000 +0200
++++ ./configure	2025-08-19 12:51:20.460141000 +0200
+@@ -567,6 +567,7 @@
+ sunos()     { test "$OS_LC" = "sunos"; }
+ wine()      { test "$OS_LC" = "wine"; }
+ win32()     { cygwin || mingw32 || mingw64 || msys || wine; }
++bsd()       { dragonfly || freebsd || netbsd || openbsd ; }
+ posix_make() { aix || bsdos || hpux || irix || qnx || sunos; }
+ 
+ #####################################################################
+@@ -713,9 +714,9 @@
+ elif darwin; then
+   SHARED_EXT=".${RHASH_VERSION_MAJOR}.dylib"
+   SOLINK_EXT=".dylib"
+-elif linux; then
++elif linux || bsd; then
+   # use the full library version for the library file extension
+-  SHARED_EXT=".so.${RHASH_VERSION}"
++  SHARED_EXT=".so.${RHASH_VERSION_MAJOR}"
+ fi
+ 
+ #####################################################################
+@@ -876,7 +877,7 @@
+   RHASH_TEST_OPTIONS=--shared
+   test "$INSTALL_LIB_SHARED" = "auto" && INSTALL_LIB_SHARED=yes
+   test "$INSTALL_LIB_STATIC" = "yes"  && RHASH_BUILD_TARGETS="$RHASH_BUILD_TARGETS \$(LIBRHASH_STATIC)"
+-  RHASH_LDFLAGS=$RHASH_LDFLAGS $GETTEXT_LDFLAGS
++  RHASH_LDFLAGS=$(join_params $RHASH_LDFLAGS $GETTEXT_LDFLAGS)
+ else
+   LIBRHASH_TYPE=static
+   LIBRHASH_PATH="\$(LIBRHASH_STATIC)"
