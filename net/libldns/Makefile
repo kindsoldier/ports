@@ -2,9 +2,9 @@
 # $Id$
 #
 PORTNAME=	ldns
-PORTVERSION=	1.7.0
+PORTVERSION=	1.8.4
 CATEGORIES=	dns
-MASTER_SITES=	http://www.nlnetlabs.nl/downloads/ldns/ LOCAL/ehaupt
+MASTER_SITES=	#http://www.nlnetlabs.nl/downloads/ldns/ LOCAL/ehaupt
 PKGNAMEPREFIX=	lib
 
 MAINTAINER=	jaap@NLnetLabs.nl

@@ -2,7 +2,7 @@
 # $Id: Makefile 2154 2009-07-28 20:55:06Z ziggi $
 #
 PORTNAME=	gawk
-PORTVERSION=	3.1.8
+PORTVERSION=	5.3.2
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DIST_SUBDIR=	gnu
@@ -19,6 +19,7 @@ CONFIGURE_ARGS+= --with-libiconv-prefix=${LOCALBASE}
 CONFIGURE_ARGS+= --with-libintl-prefix=${LOCALBASE}
 CONFIGURE_ARGS+= --infodir=${PREFIX}/info
 CONFIGURE_ARGS+= --mandir=${PREFIX}/man
+CONFIGURE_ARGS+= --without-gmp --without-mpfr
 STRIP=	#
 
 INFO+=	gawk

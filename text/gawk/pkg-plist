@@ -1,8 +1,33 @@
 bin/gawk
-bin/igawk
-bin/pgawk
+bin/gawkbug
+lib/gawk/filefuncs.so
+lib/gawk/fnmatch.so
+lib/gawk/fork.so
+lib/gawk/inplace.so
+lib/gawk/intdiv.so
+lib/gawk/ordchr.so
+lib/gawk/readdir.so
+lib/gawk/readfile.so
+lib/gawk/revoutput.so
+lib/gawk/revtwoway.so
+lib/gawk/rwarray.so
+lib/gawk/time.so
 libexec/awk/grcat
 libexec/awk/pwcat
+man/man1/gawk.1.gz
+man/man1/pgawk.1.gz
+man/man1/pm-gawk.1.gz
+man/man3/filefuncs.3am.gz
+man/man3/fnmatch.3am.gz
+man/man3/fork.3am.gz
+man/man3/inplace.3am.gz
+man/man3/ordchr.3am.gz
+man/man3/readdir.3am.gz
+man/man3/readfile.3am.gz
+man/man3/revoutput.3am.gz
+man/man3/revtwoway.3am.gz
+man/man3/rwarray.3am.gz
+man/man3/time.3am.gz
 share/awk/assert.awk
 share/awk/bits2str.awk
 share/awk/cliff_rand.awk
@@ -11,44 +36,67 @@ share/awk/ftrans.awk
 share/awk/getopt.awk
 share/awk/gettime.awk
 share/awk/group.awk
+share/awk/have_mpfr.awk
+share/awk/inplace.awk
+share/awk/intdiv0.awk
+share/awk/isnumeric.awk
 share/awk/join.awk
 share/awk/libintl.awk
-share/awk/nextfile.awk
 share/awk/noassign.awk
+share/awk/ns_passwd.awk
 share/awk/ord.awk
 share/awk/passwd.awk
+share/awk/processarray.awk
+share/awk/quicksort.awk
 share/awk/readable.awk
+share/awk/readfile.awk
 share/awk/rewind.awk
 share/awk/round.awk
+share/awk/shellquote.awk
 share/awk/strtonum.awk
+share/awk/tocsv.awk
+share/awk/walkarray.awk
 share/awk/zerofile.awk
-share/locale/ast/LC_MESSAGES/gawk.mo
+share/info/gawk_api-figure1.png
+share/info/gawk_api-figure2.png
+share/info/gawk_api-figure3.png
+share/info/gawk_array-elements.png
+share/info/gawk_general-program.png
+share/info/gawk_process-flow.png
+share/info/gawk_statist.jpg
+share/info/gawk.info
+share/info/gawkinet.info
+share/info/gawkworkflow.info
+share/info/pm-gawk.info
+share/locale/bg/LC_MESSAGES/gawk.mo
 share/locale/ca/LC_MESSAGES/gawk.mo
 share/locale/da/LC_MESSAGES/gawk.mo
 share/locale/de/LC_MESSAGES/gawk.mo
 share/locale/es/LC_MESSAGES/gawk.mo
+share/locale/fi/LC_MESSAGES/gawk.mo
 share/locale/fr/LC_MESSAGES/gawk.mo
-share/locale/ga/LC_MESSAGES/gawk.mo
-share/locale/he/LC_MESSAGES/gawk.mo
 share/locale/id/LC_MESSAGES/gawk.mo
 share/locale/it/LC_MESSAGES/gawk.mo
 share/locale/ja/LC_MESSAGES/gawk.mo
+share/locale/ka/LC_MESSAGES/gawk.mo
+share/locale/ko/LC_MESSAGES/gawk.mo
+share/locale/ms/LC_MESSAGES/gawk.mo
 share/locale/nl/LC_MESSAGES/gawk.mo
 share/locale/pl/LC_MESSAGES/gawk.mo
 share/locale/pt_BR/LC_MESSAGES/gawk.mo
+share/locale/pt/LC_MESSAGES/gawk.mo
 share/locale/ro/LC_MESSAGES/gawk.mo
-share/locale/rw/LC_MESSAGES/gawk.mo
+share/locale/sr/LC_MESSAGES/gawk.mo
 share/locale/sv/LC_MESSAGES/gawk.mo
 share/locale/tr/LC_MESSAGES/gawk.mo
+share/locale/uk/LC_MESSAGES/gawk.mo
 share/locale/vi/LC_MESSAGES/gawk.mo
 share/locale/zh_CN/LC_MESSAGES/gawk.mo
-man/man1/gawk.1.gz
-man/man1/igawk.1.gz
-man/man1/pgawk.1.gz
+@dir lib/gawk
 @dir libexec/awk
 @dir share/awk
-@dir share/locale/ast/LC_MESSAGES
-@dir share/locale/ast
+@dir share/locale/bg/LC_MESSAGES
+@dir share/locale/bg
 @dir share/locale/ca/LC_MESSAGES
 @dir share/locale/ca
 @dir share/locale/da/LC_MESSAGES
@@ -57,34 +105,41 @@ man/man1/pgawk.1.gz
 @dir share/locale/de
 @dir share/locale/es/LC_MESSAGES
 @dir share/locale/es
+@dir share/locale/fi/LC_MESSAGES
+@dir share/locale/fi
 @dir share/locale/fr/LC_MESSAGES
 @dir share/locale/fr
-@dir share/locale/ga/LC_MESSAGES
-@dir share/locale/ga
-@dir share/locale/he/LC_MESSAGES
-@dir share/locale/he
 @dir share/locale/id/LC_MESSAGES
 @dir share/locale/id
 @dir share/locale/it/LC_MESSAGES
 @dir share/locale/it
 @dir share/locale/ja/LC_MESSAGES
 @dir share/locale/ja
+@dir share/locale/ka/LC_MESSAGES
+@dir share/locale/ka
+@dir share/locale/ko/LC_MESSAGES
+@dir share/locale/ko
+@dir share/locale/ms/LC_MESSAGES
+@dir share/locale/ms
 @dir share/locale/nl/LC_MESSAGES
 @dir share/locale/nl
 @dir share/locale/pl/LC_MESSAGES
 @dir share/locale/pl
+@dir share/locale/pt/LC_MESSAGES
+@dir share/locale/pt
 @dir share/locale/pt_BR/LC_MESSAGES
 @dir share/locale/pt_BR
 @dir share/locale/ro/LC_MESSAGES
 @dir share/locale/ro
-@dir share/locale/rw/LC_MESSAGES
-@dir share/locale/rw
+@dir share/locale/sr/LC_MESSAGES
+@dir share/locale/sr
 @dir share/locale/sv/LC_MESSAGES
 @dir share/locale/sv
 @dir share/locale/tr/LC_MESSAGES
 @dir share/locale/tr
+@dir share/locale/uk/LC_MESSAGES
+@dir share/locale/uk
 @dir share/locale/vi/LC_MESSAGES
 @dir share/locale/vi
 @dir share/locale/zh_CN/LC_MESSAGES
 @dir share/locale/zh_CN
-@dir share/locale
