@@ -2,11 +2,11 @@
 # $Id$
 #
 PORTNAME=	openvpn
-PORTVERSION=	2.6.8
+PORTVERSION=	2.6.14
 CATEGORIES=	security net
 #MASTER_SITES=	http://openvpn.net/release/
-MASTER_SITES+=	http://swupdate.openvpn.net/community/releases/
-MASTER_SITES+=	http://build.openvpn.net/downloads/releases/
+#MASTER_SITES+=	http://swupdate.openvpn.net/community/releases/
+#MASTER_SITES+=	http://build.openvpn.net/downloads/releases/
 
 MAINTAINER= homeunix7@gmail.com
 COMMENT=	Secure IP/Ethernet tunnel daemon

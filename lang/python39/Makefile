@@ -10,7 +10,7 @@ MASTER_SITES=	PYTHON
 MASTER_SITE_SUBDIR=	ftp/python/${PORTVERSION}
 DISTNAME=	Python-${PORTVERSION}
 DIST_SUBDIR=	python
-PKGNAMESUFFIX=	38
+PKGNAMESUFFIX=	39
 
 MAINTAINER=	onborodin@gmail.com
 COMMENT=	An interpreted object-oriented programming language

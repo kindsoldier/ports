@@ -2,7 +2,7 @@
 # $Id: Makefile 1285 2007-10-25 11:42:14Z root $
 #
 PORTNAME=	gcc
-PORTVERSION=	12.4.0
+PORTVERSION=	10.4.0
 DIST_SUBDIR=	gnu
 MASTER_SITES+=	http://ftp.gnu.org/gnu/${PORTNAME}/${PORTNAME}-${PORTVERSION}/
 MASTER_SITES+=	ftp://ftp.fu-berlin.de/unix/languages/gcc/snapshots/9-20190504/

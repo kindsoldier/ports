@@ -45,9 +45,9 @@ misleading information in that bug.  CMake is not actually doing
 anything wrong.)
 
 --- UTC
---- gcc/fortran/gfortranspec.cc.orig	2022-01-23 22:32:06.000000000 +0000
-+++ gcc/fortran/gfortranspec.cc	2022-02-06 08:56:31.018286000 +0000
-@@ -406,7 +406,7 @@
+--- gcc/fortran/gfortranspec.c.orig	2015-06-26 17:47:23 UTC
++++ gcc/fortran/gfortranspec.c
+@@ -404,7 +404,7 @@ For more information about these matters
  	}
      }
  
@@ -56,12 +56,13 @@ anything wrong.)
    if (library)
      {
        unsigned int i;
---- libgfortran/Makefile.in.orig
-+++ libgfortran/Makefile.in
-@@ -736,7 +736,7 @@
+
+--- libgfortran/Makefile.in.orig	2019-02-22 14:22:13.000000000 +0000
++++ libgfortran/Makefile.in	2019-02-27 16:27:08.856408000 +0000
+@@ -625,7 +625,7 @@
  	$(LTLDFLAGS) $(LIBQUADLIB) ../libbacktrace/libbacktrace.la \
  	$(HWCAP_LDFLAGS) \
-	$(LIBM) $(extra_ldflags_libgfortran) \
+ 	-lm $(extra_ldflags_libgfortran) \
 -	$(version_arg) -Wc,-shared-libgcc
 +	$(version_arg)
  
