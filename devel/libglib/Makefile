@@ -38,6 +38,7 @@ CONFIGURE_ARGS+= --with-pcre=system
 CONFIGURE_ARGS+= --disable-gtk-doc
 CONFIGURE_ARGS+= --disable-silent-rules
 CONFIGURE_ARGS+= --disable-dependency-tracking
+CONFIGURE_ARGS+= --disable-compile-warnings
 
 CONFIGURE_ARGS+= --enable-fam
 CONFIGURE_ARGS+= --disable-dtrace
