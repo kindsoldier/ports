@@ -1,5 +1,0 @@
-#!/bin/sh
-
-lobase="/usr/local/lib/libreoffice"
-exec ${lobase}/program/soffice --base "$@"
-#EOF

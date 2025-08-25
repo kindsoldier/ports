@@ -1,8 +1,0 @@
---- ./Utilities/cmcompress/CMakeLists.txt.orig	2014-01-16 20:15:09.000000000 +0300
-+++ ./Utilities/cmcompress/CMakeLists.txt	2016-03-22 06:56:31.307501000 +0200
-@@ -2,4 +2,4 @@
- 
- ADD_LIBRARY(cmcompress cmcompress.c)
- 
--INSTALL(FILES Copyright.txt DESTINATION ${CMAKE_DOC_DIR}/cmcompress)
-+#INSTALL(FILES Copyright.txt DESTINATION ${CMake_DOC_DEST}/cmcompress)

@@ -1,9 +1,0 @@
-Utility for finding files with the same content and creating hard links
-to the first copy
-
-The utility is written to find duplicates in the archive of photos  and
-videos.   If  when  reading the next file the hash sum and size are the
-same as the previous one, it is considered  a  duplicate. File
-timestamps are not taken into account.
-
-WWW: https://github.com/kindsoldier/dedup

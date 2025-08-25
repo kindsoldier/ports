@@ -1,9 +1,0 @@
---- ./sdl.pc.in.orig	2009-10-13 02:07:20.000000000 +0300
-+++ ./sdl.pc.in	2010-09-06 16:51:41.000000000 +0300
-@@ -11,5 +11,4 @@
- Requires:
- Conflicts:
- Libs: -L${libdir} @SDL_RLD_FLAGS@ @SDL_LIBS@
--Libs.private: @SDL_STATIC_LIBS@
--Cflags: -I${includedir}/SDL @SDL_CFLAGS@
-+Cflags: -I${includedir}/SDL -I${includedir} @SDL_CFLAGS@

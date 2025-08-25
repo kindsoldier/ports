@@ -1,7 +1,0 @@
-include/hidapi/hidapi.h
-lib/libhidapi.a
-lib/libhidapi.la
-lib/libhidapi.so
-lib/libhidapi.so.0
-lib/pkgconfig/hidapi.pc
-@dir include/hidapi

@@ -1,8 +1,0 @@
---- ./libscgcmd/Targets.orig	2008-10-26 23:04:03.000000000 +0200
-+++ ./libscgcmd/Targets	2018-06-10 14:33:47.202787000 +0200
-@@ -2,4 +2,4 @@
- 
- CFILES=		buffer.c inquiry.c modes.c modesense.c read.c readcap.c ready.c
- 
--HFILES=		libscgcmd.h
-+#HFILES=	libscgcmd.h

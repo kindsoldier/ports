@@ -1,8 +1,0 @@
-*************************************************************************
-
-1 Install & edit config files from %%EXAMPLESDIR%%
-
-2 Check and create swap directories structure 
-%%PREFIX%%/squid -z
-
-*************************************************************************

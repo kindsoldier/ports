@@ -1,9 +1,0 @@
-lib/xorg/modules/drivers/ati_drv.la
-lib/xorg/modules/drivers/ati_drv.so
-lib/xorg/modules/drivers/radeon_drv.la
-lib/xorg/modules/drivers/radeon_drv.so
-man/man4/ati.4.gz
-man/man4/radeon.4.gz
-share/X11/xorg.conf.d/10-radeon.conf
-@dir lib/xorg/modules/drivers
-@dir lib/xorg/modules

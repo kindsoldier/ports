@@ -1,5 +1,0 @@
-lib/xorg/modules/drivers/scfb_drv.so
-man/man4/scfb.4x.gz
-@dir lib/xorg/modules/drivers
-@dir lib/xorg/modules
-@dir lib/xorg

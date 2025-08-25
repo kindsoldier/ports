@@ -1,6 +1,0 @@
-include/librelp.h
-lib/librelp.a
-lib/librelp.la
-lib/librelp.so
-lib/librelp.so.5
-lib/pkgconfig/relp.pc

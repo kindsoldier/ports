@@ -1,6 +1,0 @@
-include/X11/Xauth.h
-lib/libXau.a
-lib/libXau.la
-lib/libXau.so.6
-lib/libXau.so
-lib/pkgconfig/xau.pc

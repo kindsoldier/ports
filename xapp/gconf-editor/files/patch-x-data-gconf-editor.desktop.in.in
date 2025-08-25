@@ -1,9 +1,0 @@
---- ./data/gconf-editor.desktop.in.in.orig	2009-04-18 22:39:36.000000000 +0300
-+++ ./data/gconf-editor.desktop.in.in	2010-10-06 04:12:38.000000000 +0300
-@@ -1,5 +1,5 @@
- [Desktop Entry]
--_Name=Configuration Editor
-+Name=Gnome Configuration Editor
- _Comment=Directly edit your entire configuration database
- Exec=gconf-editor
- Terminal=false

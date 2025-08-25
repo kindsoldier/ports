@@ -1,8 +1,0 @@
---- ./launcher/launchers.in.orig	2016-02-03 15:47:43.236432000 +0200
-+++ ./launcher/launchers.in	2016-04-06 11:29:28.052068000 +0200
-@@ -1,4 +1,4 @@
--#!/bin/bash
-+#!/usr/local/bin/bash
- 
- JAVA=@JAVA@
- LAUNCHER_BOOTCLASSPATH=@LAUNCHER_BOOTCLASSPATH@

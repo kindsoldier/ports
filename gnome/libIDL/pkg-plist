@@ -1,9 +1,0 @@
-bin/libIDL-config
-include/libIDL/libIDL/IDL.h
-lib/libIDL.a
-lib/libIDL.la
-lib/libIDL.so
-lib/libIDL.so.0
-lib/pkgconfig/libIDL.pc
-@dir include/libIDL/libIDL
-@dir include/libIDL

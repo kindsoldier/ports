@@ -1,5 +1,0 @@
-include/keybinder.h
-lib/libkeybinder.a
-lib/libkeybinder.so
-lib/libkeybinder.so.1
-lib/pkgconfig/keybinder.pc

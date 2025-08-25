@@ -1,4 +1,0 @@
-bin/kubectl
-share/bash-completion/completions/kubectl
-@dir share/bash-completion/completions
-@dir share/bash-completion

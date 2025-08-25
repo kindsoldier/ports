@@ -1,8 +1,0 @@
-bin/influx
-bin/influx_inspect
-bin/influx_store
-bin/influx_stress
-bin/influx_tsm
-bin/influxd
-share/examples/influxdb/influxd.conf.sample
-@dir share/examples/influxdb
