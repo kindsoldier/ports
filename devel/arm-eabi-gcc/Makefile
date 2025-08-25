@@ -2,15 +2,16 @@
 # $Id: Makefile 1285 2007-10-25 11:42:14Z root $
 #
 PORTNAME=	gcc
-DIST_SUBDIR=	arm
+DIST_SUBDIR=	gnu
 PORTVERSION=	${GCC_VERSION}
 CATEGORIES=	devel
+MASTER_SITES+=	GCC 
 MASTER_SITES+=	http://ftp.gnu.org/gnu/${PORTNAME}/${PORTNAME}-${PORTVERSION}/
 
 CATEGORIES=	devel
 PKGNAMEPREFIX=	${TARGET}-
 
-GCC_VERSION=	10.4.0
+GCC_VERSION=	14.2.0
 
 MAINTAINER= homeunix7@gmail.com
 COMMENT=	GNU Compiler Collection for bare metal arm cross-development
@@ -45,13 +46,11 @@ CFLAGS=		-I${WRKSRC}/../include -I${LOCALBASE}/include -Os
 CPPFLAGS=	-I${WRKSRC}/../include -I${LOCALBASE}/include -Os
 
 
-CXXFLAGS+=	-fbracket-depth=512 -Os
-CXXFLAGS+=	-Wno-error -fbracket-depth=512 -Wno-deprecated-register
-CFLAGS+=	-Wno-error -fbracket-depth=512 -Wno-deprecated-register
+#CXXFLAGS+=	-fbracket-depth=512 -Os
+#CXXFLAGS+=	-Wno-error -fbracket-depth=512 -Wno-deprecated-register
+#CFLAGS+=	-Wno-error -fbracket-depth=512 -Wno-deprecated-register
 
-CONFIGURE_ARGS+= --without-headers
-
-CONFIGURE_ARGS+= --disable-bootstrap
+#CONFIGURE_ARGS+= --disable-bootstrap
 CONFIGURE_ARGS+= --without-nls
 CONFIGURE_ARGS+= --disable-nls
 CONFIGURE_ARGS+= --disable-shared
@@ -59,28 +58,31 @@ CONFIGURE_ARGS+= --infodir=${LOCALBASE}/info/${TARGET}
 CONFIGURE_ARGS+= --with-as=${LOCALBASE}/bin/${TARGET}-as
 CONFIGURE_ARGS+= --with-ld=${LOCALBASE}/bin/${TARGET}-ld
 
-MAKE_ARGS+=	AWK=${LOCALBASE}/bin/gawk
-MAKE_ARGS+=	INHIBIT_LIBC_CFLAGS="-DUSE_TM_CLONE_REGISTRY=0"
+#MAKE_ARGS+=	INHIBIT_LIBC_CFLAGS="-DUSE_TM_CLONE_REGISTRY=0"
 
+#CONFIGURE_ARGS+= --disable-decimal-float
+#CONFIGURE_ARGS+= --disable-libffi
+#CONFIGURE_ARGS+= --disable-libgomp
+#CONFIGURE_ARGS+= --disable-libmudflap
+#CONFIGURE_ARGS+= --disable-libquadmath
+#CONFIGURE_ARGS+= --disable-libssp
+#CONFIGURE_ARGS+= --disable-libstdcxx-pch
+#CONFIGURE_ARGS+= --disable-threads
+#CONFIGURE_ARGS+= --disable-tls
+CONFIGURE_ARGS+= --disable-libstdcxx --without-headers
+CONFIGURE_ARGS+= --disable-libstdcxx
+CONFIGURE_ARGS+= --enable-gnu-indirect-function
 
-CONFIGURE_ARGS+= --disable-decimal-float
-CONFIGURE_ARGS+= --disable-libffi
-CONFIGURE_ARGS+= --disable-libgomp
-CONFIGURE_ARGS+= --disable-libmudflap
-CONFIGURE_ARGS+= --disable-libquadmath
-CONFIGURE_ARGS+= --disable-libssp
-CONFIGURE_ARGS+= --disable-libstdcxx-pch
-CONFIGURE_ARGS+= --disable-threads
-CONFIGURE_ARGS+= --disable-tls
-
-CONFIGURE_ARGS+= --enable-multilib
-CONFIGURE_ARGS+= --with-multilib-list=rmprofile
+#CONFIGURE_ARGS+= --enable-multilib
+#CONFIGURE_ARGS+= --with-multilib-list=rmprofile
 
 CONFIGURE_ENV+= ac_cv_path_SED=${LOCALBASE}/bin/gsed
-CONFIGURE_ARGS+= --disable-libstdcxx
-CONFIGURE_ARGS+= --with-newlib
+#CONFIGURE_ARGS+= --with-newlib
 
-PATCH_STRIP= -p2
+PATCH_STRIP= -p0
+
+MAKE_ARGS+=	AWK=${LOCALBASE}/bin/gawk
+
 
 CONFIGURE_WRKSRC=  ${WRKSRC}/build
 BUILD_WRKSRC=	   ${WRKSRC}/build
@@ -108,12 +110,12 @@ COMPAT_TARGET1= arm-none-eabi
 COMPAT_TARGET2= arm-nuttx-eabi
 
 post-install:
-	for bin in ${BINS}; do \
-	    cd ${STAGEDIR}${PREFIX}/bin && ${LN} -sf ${TARGET}-$${bin} ${COMPAT_TARGET1}-$${bin}; \
-	done
-	for bin in ${BINS}; do \
-	    cd ${STAGEDIR}${PREFIX}/bin && ${LN} -sf ${TARGET}-$${bin} ${COMPAT_TARGET2}-$${bin}; \
-	done
+#	for bin in ${BINS}; do \
+#	    cd ${STAGEDIR}${PREFIX}/bin && ${LN} -sf ${TARGET}-$${bin} ${COMPAT_TARGET1}-$${bin}; \
+#	done
+#	for bin in ${BINS}; do \
+#	    cd ${STAGEDIR}${PREFIX}/bin && ${LN} -sf ${TARGET}-$${bin} ${COMPAT_TARGET2}-$${bin}; \
+#	done
 
 
 .include <bsd.port.pre.mk>

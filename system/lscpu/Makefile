@@ -2,7 +2,7 @@
 # $FreeBSD: head/sysutils/lscpu/Makefile 476951 2018-08-12 01:57:26Z zi $
 
 PORTNAME=	lscpu
-PORTVERSION=	1.2.0
+PORTVERSION=	1.3.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	zi@FreeBSD.org

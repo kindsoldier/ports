@@ -1,3 +1,3 @@
-TIMESTAMP = 1661760285
-SHA256 (arm/gcc-10.4.0.tar.xz) = c9297d5bcd7cb43f3dfc2fed5389e948c9312fd962ef6a4ce455cff963ebe4f1
-SIZE (arm/gcc-10.4.0.tar.xz) = 75018092
+TIMESTAMP = 1755770280
+SHA256 (gnu/gcc-14.2.0.tar.xz) = a7b39bc69cbf9e25826c5a60ab26477001f7c08d85cec04bc0e29cabed6f3cc9
+SIZE (gnu/gcc-14.2.0.tar.xz) = 92306460

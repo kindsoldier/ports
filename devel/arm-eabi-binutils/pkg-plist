@@ -55,15 +55,6 @@ bin/arm-none-eabi-objdump
 bin/arm-none-eabi-ranlib
 bin/arm-none-eabi-readelf
 bin/arm-none-eabi-strip
-bin/arm-nuttx-eabi-ar
-bin/arm-nuttx-eabi-as
-bin/arm-nuttx-eabi-ld
-bin/arm-nuttx-eabi-nm
-bin/arm-nuttx-eabi-objcopy
-bin/arm-nuttx-eabi-objdump
-bin/arm-nuttx-eabi-ranlib
-bin/arm-nuttx-eabi-readelf
-bin/arm-nuttx-eabi-strip
 man/man1/arm-eabi-addr2line.1.gz
 man/man1/arm-eabi-ar.1.gz
 man/man1/arm-eabi-as.1.gz

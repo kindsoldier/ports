@@ -2,7 +2,7 @@
 # $Id$
 #
 PORTNAME=	nmap
-PORTVERSION=	7.70
+PORTVERSION=	7.94
 CATEGORIES=	security
 MASTER_SITES+=	http://nmap.org/dist/
 MASTER_SITES+=	http://download.insecure.org/nmap/dist/ 

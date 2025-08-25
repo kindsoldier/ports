@@ -17,6 +17,8 @@ LIB_DEPENDS+=	libmpfr.so:math/libmpfr
 RUN_DEPENDS+=	${TARGET}-as:devel/${TARGET}-binutils
 BUILD_DEPENDS+=	${TARGET}-as:devel/${TARGET}-binutils
 
+USE_GCC = yes
+
 GNU_CONFIGURE=	yes
 USES+=		gmake tar:bz2
 

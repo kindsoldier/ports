@@ -41,17 +41,5 @@ BUILD_DEPENDS+= makeinfo:system/texinfo
 
 BINS= ar as ld nm objcopy objdump ranlib readelf strip
 
-COMPAT_TARGET1= arm-none-eabi
-COMPAT_TARGET2= arm-nuttx-eabi
-
-post-install:
-	for bin in ${BINS}; do \
-	    cd ${STAGEDIR}${PREFIX}/bin && ${LN} -sf ${TARGET}-$${bin} ${COMPAT_TARGET1}-$${bin}; \
-	done
-	for bin in ${BINS}; do \
-	    cd ${STAGEDIR}${PREFIX}/bin && ${LN} -sf ${TARGET}-$${bin} ${COMPAT_TARGET2}-$${bin}; \
-	done
-
-
 .include <bsd.port.post.mk>
 #EOF

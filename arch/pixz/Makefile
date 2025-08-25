@@ -2,39 +2,23 @@
 # $Id$
 #
 PORTNAME=	pixz
-PORTVERSION=	1.0.2
 CATEGORIES=	archivers
-MASTER_SITES=	SF/pixz
-EXTRACT_SUFX=	.tgz
+DISTVERSION=	1.0.7
+CATEGORIES=	archivers
+MASTER_SITES=	https://github.com/vasi/${PORTNAME}/releases/download/v${DISTVERSION}/
+
 
 MAINTAINER=	onborodin@gmail.com
 COMMENT=	Parallel, indexing version of XZ
 
-#LICENSE=	BSD
-#LICENSE_FILE=	${WRKSRC}/LICENSE
+USES=		pkgconfig tar:xz
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV += LIBARCHIVE_CFLAGS="-I/usr/include"
+CONFIGURE_ENV += LIBARCHIVE_LIBS="-larchive"
 
-SUB_FILES=	Makefile
-MAKE_ENV+=	PTHREAD_LIBS="-pthread"
-
-CFLAGS+=	-pthread
-
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800505 || (${OSVERSION} >= 900000 && ${OSVERSION} < 900012)
-LIB_DEPENDS+=	lzma:archivers/xz
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-.endif
-
-post-extract: apply-slist
-	${INSTALL_DATA} ${WRKDIR}/Makefile ${WRKSRC}
-	${INSTALL_DATA} ${FILESDIR}/${PORTNAME}.1 ${WRKSRC}
-
-pre-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/bin
+post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/src/pixz.1 ${STAGEDIR}${PREFIX}/man/man1
 
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
 #EOF
