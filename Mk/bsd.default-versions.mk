@@ -30,7 +30,7 @@ ${_l:tu}_DEFAULT=	${lang:C/.*=//g}
 .endfor
 
 # Possible values: 1.19 1.20
-GO_DEFAULT?=	1.20
+GO_DEFAULT?=	1.24
 
 
 # Possible values: 2.4
@@ -48,7 +48,7 @@ FORTRAN_DEFAULT?=	gfortran
 # Possible values: 3.0.4
 FPC_DEFAULT?=		3.0.4
 # Possible values: 7, 8, 9
-GCC_DEFAULT?=		8
+GCC_DEFAULT?=		14
 # Possible values: 7, 8, 9, agpl
 GHOSTSCRIPT_DEFAULT?=	agpl
 # Possible values: 0.6, 0.7, 1.0, 1.1
@@ -90,11 +90,11 @@ PGSQL_DEFAULT?=		9.5
 # Possible values: 7.1, 7.2, 7.3
 PHP_DEFAULT?=		7.2
 # Possible values: 2.7, 3.5, 3.6, 3.7
-PYTHON_DEFAULT?=	3.8
+PYTHON_DEFAULT?=	3.9
 # Possible values: 2.7
 PYTHON2_DEFAULT?=	2.7
 # Possible values: 3.5, 3.6, 3.7
-PYTHON3_DEFAULT?=	3.8
+PYTHON3_DEFAULT?=	3.9
 # Possible values: 2.4, 2.5, 2.6
 RUBY_DEFAULT?=		2.6
 # Possible values: rust, rust-nightly

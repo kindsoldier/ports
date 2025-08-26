@@ -2,9 +2,9 @@
 # $Id$
 #
 PORTNAME=	binutils
-PORTVERSION=	2.37
+PORTVERSION=	2.44
 CATEGORIES=	devel
-MASTER_SITES=	http://ftp.gnu.org/gnu/binutils/
+MASTER_SITES=	http://ftpmirror.gnu.org/gnu/binutils/
 PKGNAMEPREFIX=	${TARGET}-
 
 MAINTAINER= homeunix7@gmail.com

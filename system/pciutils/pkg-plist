@@ -1,0 +1,4 @@
+bin/lspci
+bin/setpci
+man/man8/lspci.8.gz
+man/man8/setpci.8.gz
