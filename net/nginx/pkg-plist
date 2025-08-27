@@ -1,3 +1,4 @@
+etc/rc.d/nginx
 man/man8/nginx.8.gz
 sbin/nginx
 share/examples/nginx/50x.html
@@ -12,4 +13,3 @@ share/examples/nginx/scgi_params
 share/examples/nginx/uwsgi_params
 share/examples/nginx/win-utf
 @dir share/examples/nginx
-@dir share/examples

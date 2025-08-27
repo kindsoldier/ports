@@ -30,7 +30,6 @@ COMMENT=	PHP Scripting Language (Apache Module and CLI)
 BUILD_DEPENDS+=	php:lang/php${PORTVERSION:R:S/.//g}
 #RUN_DEPENDS
 #BUILD_DEPENDS+= ${RUN_DEPENDS}
-LIB_DEPENDS+=	libonig.so:text/libonig
 
 
 EXTRACT_AFTER_ARGS=	${DISTNAME}/ext/${MODULE_NAME}
@@ -43,12 +42,10 @@ GNU_CONFIGURE= 	yes
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/php
 LDFLAGS=	-L${LOCALBASE}/lib
 
-MODULE_NAME=	mbstring
+MODULE_NAME=	hash
 DESTDIRNAME=	INSTALL_ROOT
 #EXTDIR
 #INCLUDEDIR
-
-CONFIGURE_ARGS+= --with-pcre-dir=${LOCALBASE}
 
 pre-configure:
 	cd ${WRKSRC} && ${CONFIGURE_ENV} phpize .

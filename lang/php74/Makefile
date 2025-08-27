@@ -67,6 +67,7 @@ CONFIGURE_ARGS+= --enable-libxml
 CONFIGURE_ARGS+= --enable-xml
 CONFIGURE_ARGS+= --with-libxml=${LOCALBASE}
 CONFIGURE_ARGS+= --enable-mysqlnd
+CONFIGURE_ARGS+= --enable-hash
 CONFIGURE_ARGS+= --with-libxml-dir=${LOCALBASE}
 CONFIGURE_ARGS+= --with-pcre-regex=${LOCALBASE}
 CONFIGURE_ARGS+= --program-prefix=""
