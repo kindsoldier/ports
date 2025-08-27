@@ -10,9 +10,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Manage Unix crypt-style password file
 
-BUILD_DEPENDS+=	p5-Crypt-PasswdMD5>=0:perl/p5-Crypt-PasswdMD5
-BUILD_DEPENDS+=	p5-Digest-SHA1>=2.0:perl/p5-Digest-SHA1
-BUILD_DEPENDS+=	p5-MIME-Base64>=0:perl/p5-MIME-Base64
+BUILD_DEPENDS+=	p5-Crypt-PasswdMD5>=0:perl5/p5-Crypt-PasswdMD5
+BUILD_DEPENDS+=	p5-Digest-SHA1>=2.0:perl5/p5-Digest-SHA1
+BUILD_DEPENDS+=	p5-MIME-Base64>=0:perl5/p5-MIME-Base64
 RUN_DEPENDS+=	${BUILD_DEPENDS}
 
 USES=		perl5

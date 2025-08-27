@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Drop-in replacement for IO::Socket::INET supporting IPv4 and IPv6
 
-BUILD_DEPENDS=	p5-Socket>=1.97:perl/p5-Socket
+BUILD_DEPENDS=	p5-Socket>=1.97:perl5/p5-Socket
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PERL5=	configure

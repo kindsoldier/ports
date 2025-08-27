@@ -12,11 +12,11 @@ MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Perl5 interface to SSL sockets
 
 
-BUILD_DEPENDS+=	p5-Net-SSLeay>=1.59:perl/p5-Net-SSLeay
-BUILD_DEPENDS+=	p5-Mozilla-CA>=20130114:perl/p5-Mozilla-CA
-BUILD_DEPENDS+=	p5-URI>=1.50:perl/p5-URI
-BUILD_DEPENDS+=	p5-IO-Socket-IP>=0.31:perl/p5-IO-Socket-IP
-BUILD_DEPENDS+=	p5-Socket>=1.95:perl/p5-Socket
+BUILD_DEPENDS+=	p5-Net-SSLeay>=1.59:perl5/p5-Net-SSLeay
+BUILD_DEPENDS+=	p5-Mozilla-CA>=20130114:perl5/p5-Mozilla-CA
+BUILD_DEPENDS+=	p5-URI>=1.50:perl5/p5-URI
+BUILD_DEPENDS+=	p5-IO-Socket-IP>=0.31:perl5/p5-IO-Socket-IP
+BUILD_DEPENDS+=	p5-Socket>=1.95:perl5/p5-Socket
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5 shebangfix

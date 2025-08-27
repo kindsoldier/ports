@@ -12,8 +12,8 @@ MAINTAINER=	vovkasm@gmail.com
 COMMENT=	Perl interface to libev, a high performance full-featured event loop
 
 RUN_DEPENDS=	p5-common-sense>=0:perl/p5-common-sense
-BUILD_DEPENDS+=	p5-common-sense>=0:perl/p5-common-sense
-BUILD_DEPENDS+=	p5-Canary-Stability>=0:perl/p5-Canary-Stability
+BUILD_DEPENDS+=	p5-common-sense>=0:perl5/p5-common-sense
+BUILD_DEPENDS+=	p5-Canary-Stability>=0:perl5/p5-Canary-Stability
 
 USES=		perl5
 USE_PERL5=	configure

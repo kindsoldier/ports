@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Provides access to SQLite3 databases through the DBI
 
-BUILD_DEPENDS=	p5-DBI>=1.57:perl/p5-DBI
+BUILD_DEPENDS=	p5-DBI>=1.57:perl5/p5-DBI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 LIB_DEPENDS=	libsqlite3.so:data/sqlite3
 

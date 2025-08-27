@@ -12,7 +12,7 @@ MASTER_SITES=	https://launchpad.net/intltool/trunk/${PORTVERSION}/+download/
 MAINTAINER=	onborodin@gmail.com
 COMMENT=	Tools to internationalize various kinds of data files
 
-BUILD_DEPENDS=	${SITE_ARCH}/XML/Parser.pm:perl/p5-XML-Parser
+BUILD_DEPENDS=	${SITE_ARCH}/XML/Parser.pm:perl5/p5-XML-Parser
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USES+=		gmake perl5

@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	SSL support for Net::SMTP
 
-BUILD_DEPENDS=	p5-IO-Socket-SSL>=0:perl/p5-IO-Socket-SSL
+BUILD_DEPENDS=	p5-IO-Socket-SSL>=0:perl5/p5-IO-Socket-SSL
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
