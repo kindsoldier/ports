@@ -1,0 +1,26 @@
+--- ./doc/Makefile.in.orig	2013-09-03 16:47:52.000000000 +0300
++++ ./doc/Makefile.in	2014-12-27 22:19:54.000000000 +0200
+@@ -400,16 +400,16 @@
+ 	uninstall uninstall-am
+ 
+ 
+-.xml.html:
+-	xmlto xhtml-nochunks $<
++#.xml.html:
++#	xmlto xhtml-nochunks $<
+ 
+-.xml.1:
+-	xmlto man $<
++#.xml.1:
++#	xmlto man $<
+ 
+-.xml.txt:
+-	xmlto txt $<
++#.xml.txt:
++#	xmlto txt $<
+ 
+-all: allhtml manpages
++all: manpages
+ 
+ allhtml: $(XMLALL:.xml=.html)
+ 

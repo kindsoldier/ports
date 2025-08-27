@@ -1,0 +1,14 @@
+#!/bin/sh -x
+
+MY_OWNER="%%MY_OWNER%%"
+MY_GROUP="%%MY_GROUP%%"
+MY_DB_DIR="%%MY_DB_DIR%%"
+
+
+case $2 in 
+    DEINSTALL)
+	;;
+    POST-DEINSTALL)
+	;;
+esac
+#EOF

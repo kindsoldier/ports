@@ -1,0 +1,22 @@
+--- ./doc/Makefile.in.orig	2007-04-04 13:56:28.000000000 +0300
++++ ./doc/Makefile.in	2014-12-31 00:41:07.000000000 +0200
+@@ -117,8 +117,8 @@
+ #	$(INSTALL_DATA) $(srcdir)/gperf.ps $(DESTDIR)$(psdir)/gperf.ps
+ #	$(MKINSTALLDIRS) $(DESTDIR)$(pdfdir)
+ #	$(INSTALL_DATA) $(srcdir)/gperf.pdf $(DESTDIR)$(pdfdir)/gperf.pdf
+-	$(MKINSTALLDIRS) $(DESTDIR)$(htmldir)
+-	$(INSTALL_DATA) $(srcdir)/gperf.html $(DESTDIR)$(htmldir)/gperf.html
++#	$(MKINSTALLDIRS) $(DESTDIR)$(htmldir)
++#	$(INSTALL_DATA) $(srcdir)/gperf.html $(DESTDIR)$(htmldir)/gperf.html
+ 
+ installdirs : force
+ 	$(MKINSTALLDIRS) $(DESTDIR)$(infodir)
+@@ -126,7 +126,7 @@
+ #	$(MKINSTALLDIRS) $(DESTDIR)$(dvidir)
+ #	$(MKINSTALLDIRS) $(DESTDIR)$(psdir)
+ #	$(MKINSTALLDIRS) $(DESTDIR)$(pdfdir)
+-	$(MKINSTALLDIRS) $(DESTDIR)$(htmldir)
++#	$(MKINSTALLDIRS) $(DESTDIR)$(htmldir)
+ 
+ uninstall : force
+ 	$(RM) $(DESTDIR)$(infodir)/gperf.info

@@ -1,0 +1,80 @@
+--- ./configure.orig	2014-06-02 12:22:28.000000000 +0300
++++ ./configure	2014-12-23 10:15:50.000000000 +0200
+@@ -9801,7 +9801,7 @@
+       hardcode_shlibpath_var=no
+       ;;
+ 
+-    freebsd1*)
++    freebsd1.*)
+       ld_shlibs=no
+       ;;
+ 
+@@ -10676,7 +10676,7 @@
+   shlibpath_var=LD_LIBRARY_PATH
+   ;;
+ 
+-freebsd1*)
++freebsd1.*)
+   dynamic_linker=no
+   ;;
+ 
+@@ -10687,7 +10687,7 @@
+     objformat=`/usr/bin/objformat`
+   else
+     case $host_os in
+-    freebsd[123]*) objformat=aout ;;
++    freebsd[123].*) objformat=aout ;;
+     *) objformat=elf ;;
+     esac
+   fi
+@@ -11897,6 +11897,7 @@
+ 
+   # Allow CC to be a program name with arguments.
+   lt_save_CC=$CC
++  lt_save_CFLAGS=$CFLAGS
+   lt_save_LD=$LD
+   lt_save_GCC=$GCC
+   GCC=$GXX
+@@ -11914,6 +11915,7 @@
+   fi
+   test -z "${LDCXX+set}" || LD=$LDCXX
+   CC=${CXX-"c++"}
++  CFLAGS=$CXXFLAGS
+   compiler=$CC
+   compiler_CXX=$CC
+   for cc_temp in $compiler""; do
+@@ -12374,7 +12376,7 @@
+         esac
+         ;;
+ 
+-      freebsd[12]*)
++      freebsd[12].*)
+         # C++ shared libraries reported to be fairly broken before
+ 	# switch to ELF
+         ld_shlibs_CXX=no
+@@ -14132,7 +14134,7 @@
+   shlibpath_var=LD_LIBRARY_PATH
+   ;;
+ 
+-freebsd1*)
++freebsd1.*)
+   dynamic_linker=no
+   ;;
+ 
+@@ -14143,7 +14145,7 @@
+     objformat=`/usr/bin/objformat`
+   else
+     case $host_os in
+-    freebsd[123]*) objformat=aout ;;
++    freebsd[123].*) objformat=aout ;;
+     *) objformat=elf ;;
+     esac
+   fi
+@@ -14635,6 +14637,7 @@
+   fi # test -n "$compiler"
+ 
+   CC=$lt_save_CC
++  CFLAGS=$lt_save_CFLAGS
+   LDCXX=$LD
+   LD=$lt_save_LD
+   GCC=$lt_save_GCC

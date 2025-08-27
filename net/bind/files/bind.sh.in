@@ -1,0 +1,47 @@
+#!/bin/sh
+#
+# PROVIDE: named bind
+# REQUIRE: NETWORKING
+# AFTER: NETWORKING
+# KEYWORD: shutdown
+
+. "/etc/rc.subr"
+
+name="bind"
+command="%%PREFIX%%/sbin/named"
+procname="${command}"
+rcvar=bind_enable
+
+load_rc_config "$name"
+
+: ${bind_enable="NO"}
+
+#: ${bind_changeroot="YES"}
+#: ${bind_root="%%BIND_CHROOTDIR%%"}
+
+: ${bind_changeowner="YES"}
+: ${bind_owner="%%BIND_OWNER%%"}
+
+: ${bind_conf="%%BIND_SYSCONFDIR%%/named.conf"}
+: ${bind_args=""}
+
+#if checkyesno bind_changeroot; then
+#    bind_args="${bind_args} -t ${bind_root}"
+#else
+#    bind_root="";
+#fi
+
+#if checkyesno bind_changeowner; then
+#    bind_args="${bind_args} -u ${bind_owner}"
+#fi
+
+bind_args="${bind_args} -u ${bind_owner}"
+#rcvar="${rcvar} bind_changeroot bind_root bind_changeowner bind_owner bind_conf"
+
+
+required_dirs="${bind_root}%%BIND_RUNDIR%%"
+required_files="${bind_root}/${bind_conf}"
+command_args="${bind_args} -c ${bind_conf}"
+
+run_rc_command "$1"
+#EOF

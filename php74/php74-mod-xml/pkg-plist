@@ -1,0 +1,5 @@
+include/php/ext/xml/config.h
+lib/php/20190902/xml.so
+@dir include/php/ext/xml
+@dir include/php/ext
+@dir include/php

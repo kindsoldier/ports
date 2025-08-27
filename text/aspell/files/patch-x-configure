@@ -1,0 +1,83 @@
+--- ./configure.orig	2011-07-04 11:58:50.000000000 +0300
++++ ./configure	2014-12-23 09:52:46.000000000 +0200
+@@ -3524,7 +3524,7 @@
+ fi
+ 
+ 
+-if test "$GXX" = "yes" && expr "$CXXFLAGS" : '.*-O' > /dev/null
++if test "$GXX" = "yes" && expr -- "$CXXFLAGS" : '.*-O' > /dev/null
+ then
+   CXXFLAGS="$CXXFLAGS -fno-exceptions"
+ fi
+@@ -9723,7 +9723,7 @@
+       hardcode_shlibpath_var=no
+       ;;
+ 
+-    freebsd1*)
++    freebsd1.*)
+       ld_shlibs=no
+       ;;
+ 
+@@ -10620,7 +10620,7 @@
+   shlibpath_var=LD_LIBRARY_PATH
+   ;;
+ 
+-freebsd1*)
++freebsd1.*)
+   dynamic_linker=no
+   ;;
+ 
+@@ -10631,7 +10631,7 @@
+     objformat=`/usr/bin/objformat`
+   else
+     case $host_os in
+-    freebsd[123]*) objformat=aout ;;
++    freebsd[123].*) objformat=aout ;;
+     *) objformat=elf ;;
+     esac
+   fi
+@@ -12687,7 +12687,7 @@
+         esac
+         ;;
+ 
+-      freebsd[12]*)
++      freebsd[12].*)
+         # C++ shared libraries reported to be fairly broken before
+ 	# switch to ELF
+         ld_shlibs_CXX=no
+@@ -14437,7 +14437,7 @@
+   shlibpath_var=LD_LIBRARY_PATH
+   ;;
+ 
+-freebsd1*)
++freebsd1.*)
+   dynamic_linker=no
+   ;;
+ 
+@@ -14448,7 +14448,7 @@
+     objformat=`/usr/bin/objformat`
+   else
+     case $host_os in
+-    freebsd[123]*) objformat=aout ;;
++    freebsd[123].*) objformat=aout ;;
+     *) objformat=elf ;;
+     esac
+   fi
+@@ -18243,7 +18243,7 @@
+   CURSES_LIB=-lncurses
+ 
+ cat >>confdefs.h <<\_ACEOF
+-#define CURSES_HEADER <ncurses/curses.h>
++#define CURSES_HEADER <ncurses/ncurses.h>
+ _ACEOF
+ 
+ 
+@@ -18437,7 +18437,7 @@
+ 
+ 
+ cat >>confdefs.h <<\_ACEOF
+-#define CURSES_HEADER <curses.h>
++#define CURSES_HEADER <ncurses/ncurses.h>
+ _ACEOF
+ 
+ 

@@ -1,0 +1,30 @@
+#!/bin/sh -x
+
+PG_OWNER="%%PG_OWNER%%"
+PG_GROUP="%%PG_GROUP%%"
+PG_OWNER_ID="%%PG_OWNER_ID%%"
+PG_GROUP_ID="%%PG_GROUP_ID%%"
+
+PG_DB_DIR="%%PG_DB_DIR%%"
+
+PKG__PPREFIX="/notexist"
+
+case $2 in 
+    PRE-INSTALL)
+	pw group add ${PG_GROUP} -g ${PG_GROUP_ID}
+	pw user add ${PG_OWNER} -u ${PG_OWNER_ID}  -g ${PG_GROUP} \
+	    -d ${PKG_PREFIX} -m -s "/bin/sh"   \
+	    -c "postgresql"
+	pw group mod ${PG_GROUP} -M ${PG_OWNER}
+
+	pw user show ${PG_OWNER}
+	pw group show ${PG_GROUP}
+
+	mkdir -p ${PG_DB_DIR}
+	chown ${PG_OWNER}:${PG_GROUP} ${PG_DB_DIR}
+	chmod 0700 ${PG_DB_DIR}
+	;;
+    POST-INSTALL)
+	;;
+esac
+#EOF
