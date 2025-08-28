@@ -3,14 +3,14 @@ bin/yangre
 include/libyang/config.h
 include/libyang/context.h
 include/libyang/dict.h
+include/libyang/hash_table.h
 include/libyang/in.h
 include/libyang/libyang.h
 include/libyang/log.h
+include/libyang/metadata.h
 include/libyang/out.h
 include/libyang/parser_data.h
 include/libyang/parser_schema.h
-include/libyang/plugins_exts_compile.h
-include/libyang/plugins_exts_print.h
 include/libyang/plugins_exts.h
 include/libyang/plugins_types.h
 include/libyang/plugins.h
@@ -27,4 +27,15 @@ lib/libyang.so.2
 lib/pkgconfig/libyang.pc
 man/man1/yanglint.1.gz
 man/man1/yangre.1.gz
+share/yang/modules/libyang/ietf-datastores@2018-02-14.yang
+share/yang/modules/libyang/ietf-inet-types@2013-07-15.yang
+share/yang/modules/libyang/ietf-yang-library@2019-01-04.yang
+share/yang/modules/libyang/ietf-yang-metadata@2016-08-05.yang
+share/yang/modules/libyang/ietf-yang-schema-mount@2019-01-14.yang
+share/yang/modules/libyang/ietf-yang-structure-ext@2020-06-17.yang
+share/yang/modules/libyang/ietf-yang-types@2013-07-15.yang
+share/yang/modules/libyang/yang@2022-06-16.yang
 @dir include/libyang
+@dir share/yang/modules/libyang
+@dir share/yang/modules
+@dir share/yang
