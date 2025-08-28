@@ -62,13 +62,11 @@ PERL_PORT=	perl530
 .    elif ${PERL5_DEFAULT} == 5.36
 #.include "${PORTSDIR}/lang/perl5.36/version.mk"
 PERL_PORT=	perl536
-PERL5_DEPEND=	perl>=5.30
-
+PERL5_DEPEND=	perl>=5.36
 .    elif ${PERL5_DEFAULT} == 5.40
 #.include "${PORTSDIR}/lang/perl5.40/version.mk"
 PERL_PORT=	perl540
 PERL5_DEPEND=	perl>=5.40
-
 .    elif ${PERL5_DEFAULT} == devel
 #.include "${PORTSDIR}/lang/perl5-devel/version.mk"
  Force PERL_PORT here in case two identical PERL_VERSION.

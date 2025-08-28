@@ -60,9 +60,9 @@ CONFIGURE_ARGS+= --with-openssl
 CONFIGURE_ARGS+= --without-tcltk
 CONFIGURE_ARGS+= --without-python
 
-RUN_DEPENDS+=	p5-Error>=0:perl/p5-Error
-RUN_DEPENDS+=	p5-Net-SMTP-SSL>=0:perl/p5-Net-SMTP-SSL
-RUN_DEPENDS+=	p5-Authen-SASL>=0:perl/p5-Authen-SASL
+RUN_DEPENDS+=	p5-Error>=0:perl5/p5-Error
+RUN_DEPENDS+=	p5-Net-SMTP-SSL>=0:perl5/p5-Net-SMTP-SSL
+RUN_DEPENDS+=	p5-Authen-SASL>=0:perl5/p5-Authen-SASL
 
 #BUILD_DEPENDS+= ${RUN_DEPENDS}
 
