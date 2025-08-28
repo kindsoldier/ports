@@ -162,6 +162,7 @@ include/python3.9/warnings.h
 include/python3.9/weakrefobject.h
 lib/libpython3.9.so
 lib/libpython3.9.so.1
+lib/libpython3.so
 lib/pkgconfig/python-3.9-embed.pc
 lib/pkgconfig/python-3.9.pc
 lib/python3.9/__future__.py
@@ -2187,7 +2188,7 @@ lib/python3.9/ensurepip/_bundled/__init__.py
 lib/python3.9/ensurepip/_bundled/__pycache__/__init__.cpython-39.opt-1.pyc
 lib/python3.9/ensurepip/_bundled/__pycache__/__init__.cpython-39.opt-2.pyc
 lib/python3.9/ensurepip/_bundled/__pycache__/__init__.cpython-39.pyc
-lib/python3.9/ensurepip/_bundled/pip-22.0.4-py3-none-any.whl
+lib/python3.9/ensurepip/_bundled/pip-23.0.1-py3-none-any.whl
 lib/python3.9/ensurepip/_bundled/setuptools-58.1.0-py3-none-any.whl
 lib/python3.9/ensurepip/_uninstall.py
 lib/python3.9/enum.py
@@ -3155,11 +3156,11 @@ lib/python3.9/lib2to3/fixes/fix_xrange.py
 lib/python3.9/lib2to3/fixes/fix_xreadlines.py
 lib/python3.9/lib2to3/fixes/fix_zip.py
 lib/python3.9/lib2to3/Grammar.txt
-lib/python3.9/lib2to3/Grammar3.9.14.final.0.pickle
+lib/python3.9/lib2to3/Grammar3.9.21.final.0.pickle
 lib/python3.9/lib2to3/main.py
 lib/python3.9/lib2to3/patcomp.py
 lib/python3.9/lib2to3/PatternGrammar.txt
-lib/python3.9/lib2to3/PatternGrammar3.9.14.final.0.pickle
+lib/python3.9/lib2to3/PatternGrammar3.9.21.final.0.pickle
 lib/python3.9/lib2to3/pgen2/__init__.py
 lib/python3.9/lib2to3/pgen2/__pycache__/__init__.cpython-39.opt-1.pyc
 lib/python3.9/lib2to3/pgen2/__pycache__/__init__.cpython-39.opt-2.pyc

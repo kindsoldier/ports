@@ -4,13 +4,13 @@
 #
 
 PORTNAME=	python
-PORTVERSION=	3.9.21
+PORTVERSION=	3.10.16
 CATEGORIES=	lang python
 MASTER_SITES=	PYTHON
 MASTER_SITE_SUBDIR=	ftp/python/${PORTVERSION}
 DISTNAME=	Python-${PORTVERSION}
 DIST_SUBDIR=	python
-PKGNAMESUFFIX=	39
+PKGNAMESUFFIX=	310
 
 MAINTAINER=	onborodin@gmail.com
 COMMENT=	An interpreted object-oriented programming language
