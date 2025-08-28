@@ -1,0 +1,13 @@
+bin/ftdi_eeprom
+bin/libftdi1-config
+include/libftdi1/ftdi.h
+lib/cmake/libftdi1/LibFTDI1Config.cmake
+lib/cmake/libftdi1/LibFTDI1ConfigVersion.cmake
+lib/cmake/libftdi1/UseLibFTDI1.cmake
+lib/libftdi1.a
+lib/libftdi1.so
+lib/libftdi1.so.2
+lib/pkgconfig/libftdi1.pc
+@dir include/libftdi1
+@dir lib/cmake/libftdi1
+@dir lib/cmake

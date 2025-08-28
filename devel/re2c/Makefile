@@ -2,16 +2,16 @@
 # $Id$
 #
 PORTNAME=	re2c
-PORTVERSION=	0.14.3
+PORTVERSION=	4.1
 CATEGORIES=	devel
-#MASTER_SITES=	SF
 
 MAINTAINER=	chalpin@cs.wisc.edu
 COMMENT=	Compile regular expression to C (much faster final code than flex)
 
-GNU_CONFIGURE=	yes
-USES+=		gmake
-PLIST_FILES=	bin/re2c man/man1/re2c.1.gz
+USES=		cmake gmake compiler:c++11-lib cpe python:test shebangfix tar:xz
+
+MANPREFIX= ${PREFIX}/share
+
 
 .include <bsd.port.mk>
 #EOF
