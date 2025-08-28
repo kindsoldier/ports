@@ -4,7 +4,7 @@
 PORTNAME=	frr
 CATEGORIES=	net
 
-PORTVERSION=	8.5.4
+PORTVERSION=	10.3 #8.5.4
 DISTVERSIONPREFIX=	frr-
 USE_GITHUB=	yes
 GH_ACCOUNT=	FRRouting
@@ -66,14 +66,6 @@ CONFIGURE_ARGS+= --enable-pbrd
 
 CONFIGURE_ARGS+= --enable-sharpd
 CONFIGURE_ARGS+= --enable-vtysh
-
-#CONFIGURE_ARGS+= --enable-config-rollbacks
-#LIB_DEPENDS+= libsqlite3.so:data/sqlite3
-
-#CONFIGURE_ARGS+= --disable-bgp-vnc
-#CONFIGURE_ARGS+= --enable-pcreposix
-#CONFIGURE_ARGS+= --disable-bgp-bmp
-
 
 CONFIGURE_ARGS+= --enable-rpki
 LIB_DEPENDS+= librtr.so:net/librtr

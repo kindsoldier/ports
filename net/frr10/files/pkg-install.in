@@ -11,7 +11,7 @@ RUN_DIR="%%RUN_DIR%%"
 LOG_DIR="%%LOG_DIR%%"
 CONF_DIR="%%CONF_DIR%%"
 
-PKG_PREFIX="/notexist"
+PKG_PREFIX="/var/lib/frr"
 
 case $2 in 
     PRE-INSTALL)
