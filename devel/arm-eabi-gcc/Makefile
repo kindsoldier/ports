@@ -25,7 +25,7 @@ BUILD_DEPENDS+= ${RUN_DEPENDS}
 
 USES+=		bison gmake perl5 tar:xz compiler:c++11-lang
 
-TARGET = avr
+TARGET = arm-eabi
 CONFIGURE_TARGET= ${TARGET}
 GNU_CONFIGURE=	yes
 PATCH_STRIP= -p0
@@ -50,26 +50,21 @@ CONFIGURE_ARGS+= --with-mpfr=${LOCALBASE}
 CONFIGURE_ARGS+= --with-gmp=${LOCALBASE}
 CONFIGURE_ARGS+= --without-zstd
 CONFIGURE_ARGS+= --disable-libssp
+CONFIGURE_ARGS+= --disable-shared
 
 CONFIGURE_ARGS+= --with-gxx-include-dir=${TARGLIB}/include/c++
 CONFIGURE_ARGS+= --infodir=${PREFIX}/info/${PKGNAMEPREFIX}-${PORTNAME}
 
 CONFIGURE_ARGS+= --disable-bootstrap
+CONFIGURE_ARGS+= --disable-libstdcxx
 CONFIGURE_ARGS+= --enable-multilib
+CONFIGURE_ARGS+= --with-multilib-list=rmprofile
+
 
 MAKE_ARGS+= infodir=${PREFIX}/info/${PORTNAME}
 
 PLIST_SUB+= TARGET=${CONFIGURE_TARGET}
 PLIST_SUB+= VERSION=${PORTVERSION}
-
-post-patch:
-	${FIND} ${WRKSRC} -type f \( -name '*.[ch]' -o -name '*.cc' \) | \
-		${XARGS} ${EGREP} -l '"(HOST_WIDE|PLUGIN_COND|PRId64)' | \
-		${XARGS} ${REINPLACE_CMD} -E -e 's/"(HOST_WIDE|PLUGIN_COND|PRId64)/" \1/g'
-
-#pre-configure:
-#	${MKDIR} ${BUILD_WRKSRC}
-#	${FIND} ${BUILD_WRKSRC} -name 'config.cache' -delete
 
 post-configure:
 	${MKDIR} ${WRKSRC}/gcc/include
