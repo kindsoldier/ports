@@ -12,13 +12,13 @@ OWNER="%%GITEA_OWNER%%"
 GROUP_ID="%%GITEA_GROUP_ID%%"
 OWNER_ID="%%GITEA_OWNER_ID%%"
 
-PKG_PREFIX="/notexist"
+PKG_HOME="/home/gitea"
 
 case $2 in 
     PRE-INSTALL)
 	pw group add ${GROUP} -g ${GROUP_ID}
 	pw user add ${OWNER} -u ${OWNER_ID} -g ${GROUP} \
-	  -d ${PKG_PREFIX} -s "/usr/sbin/nologin" -c "gitea"
+	  -d ${PKG_HOME} -s "/bin/sh" -c "gitea"
 	pw group mod ${GROUP} -M ${OWNER}
 	pw group show ${GROUP} 
 	pw user show ${OWNER}
