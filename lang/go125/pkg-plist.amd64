@@ -51,7 +51,8 @@ lib/go/lib/fips140/fips140.sum
 lib/go/lib/fips140/inprocess.txt
 lib/go/lib/fips140/Makefile
 lib/go/lib/fips140/README.md
-lib/go/lib/fips140/v1.0.0.zip
+lib/go/lib/fips140/v1.0.0-c2097c7c.zip
+lib/go/lib/fips140/v1.0.0.txt
 lib/go/lib/time/mkzip.go
 lib/go/lib/time/README
 lib/go/lib/time/update.bash
@@ -120,6 +121,7 @@ lib/go/src/archive/tar/testdata/gnu-nil-sparse-data.tar
 lib/go/src/archive/tar/testdata/gnu-nil-sparse-hole.tar
 lib/go/src/archive/tar/testdata/gnu-not-utf8.tar
 lib/go/src/archive/tar/testdata/gnu-sparse-big.tar
+lib/go/src/archive/tar/testdata/gnu-sparse-many-zeros.tar.bz2
 lib/go/src/archive/tar/testdata/gnu-utf8.tar
 lib/go/src/archive/tar/testdata/gnu.tar
 lib/go/src/archive/tar/testdata/hardlink.tar
@@ -9410,6 +9412,7 @@ lib/go/src/runtime/debuglog_off.go
 lib/go/src/runtime/debuglog_on.go
 lib/go/src/runtime/debuglog_test.go
 lib/go/src/runtime/debuglog.go
+lib/go/src/runtime/decoratemappings_test.go
 lib/go/src/runtime/defer_test.go
 lib/go/src/runtime/defs_aix_ppc64.go
 lib/go/src/runtime/defs_aix.go
@@ -13580,6 +13583,7 @@ lib/go/test/fixedbugs/issue7538a.go
 lib/go/test/fixedbugs/issue7538b.go
 lib/go/test/fixedbugs/issue7547.go
 lib/go/test/fixedbugs/issue7550.go
+lib/go/test/fixedbugs/issue75569.go
 lib/go/test/fixedbugs/issue7590.go
 lib/go/test/fixedbugs/issue7648.dir/a.go
 lib/go/test/fixedbugs/issue7648.dir/b.go
