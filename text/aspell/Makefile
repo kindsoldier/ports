@@ -16,6 +16,10 @@ COMMENT=	Spelling checker with better suggestion logic than ispell
 LIB_DEPENDS+=	libintl.so:devel/gettext
 LIB_DEPENDS+=	libiconv.so:text/libiconv
 
+#PATCH_SITES=	https://github.com/GNUAspell/${PORTNAME}/commit/
+#PATCHFILES+=	ee6cbb12ff36a1e6618d7388a78dd4e0a2b44041.patch:-p1
+
+
 GNU_CONFIGURE=	yes
 USES+=		gmake
 INSTALLS_SHLIB=	yes

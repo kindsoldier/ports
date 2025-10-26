@@ -11,5 +11,6 @@ share/examples/nginx/nginx.conf
 share/examples/nginx/scgi_params
 share/examples/nginx/uwsgi_params
 share/examples/nginx/win-utf
+%%SITE_PERL%%/mach/auto/nginx/nginx.so
+%%SITE_PERL%%/mach/nginx.pm
 @dir share/examples/nginx
-@dir share/examples

@@ -1,9 +1,0 @@
-include/zmq_addon.hpp
-include/zmq.hpp
-lib/cmake/cppzmq/cppzmqConfig.cmake
-lib/cmake/cppzmq/cppzmqConfigVersion.cmake
-lib/cmake/cppzmq/cppzmqTargets.cmake
-lib/cmake/cppzmq/libzmq-pkg-config/FindZeroMQ.cmake
-@dir lib/cmake/cppzmq/libzmq-pkg-config
-@dir lib/cmake/cppzmq
-@dir lib/cmake

@@ -1,8 +1,0 @@
---- ./jrunscript.in.orig	2016-02-03 15:47:43.235432000 +0200
-+++ ./jrunscript.in	2016-04-06 11:28:51.647834000 +0200
-@@ -1,4 +1,4 @@
--#!/bin/bash
-+#!/usr/local/bin/bash
- 
- if [ x"@RHINO_JAR@" = x ] ; then
-   echo "jrunscript requires rhino support"

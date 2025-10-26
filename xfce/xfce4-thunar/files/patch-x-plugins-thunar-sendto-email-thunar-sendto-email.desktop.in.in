@@ -1,9 +1,0 @@
---- ./plugins/thunar-sendto-email/thunar-sendto-email.desktop.in.in.orig	2013-05-05 19:37:23.000000000 +0300
-+++ ./plugins/thunar-sendto-email/thunar-sendto-email.desktop.in.in	2015-01-19 17:47:51.000000000 +0200
-@@ -2,5 +2,5 @@
- Type=Application
- Version=1.0
- _Name=Mail Recipient
--Icon=internet-mail
-+Icon=emblem-mail
- Exec=@HELPERDIR@/Thunar/thunar-sendto-email %F

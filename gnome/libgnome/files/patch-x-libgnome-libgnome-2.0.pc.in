@@ -1,9 +1,0 @@
---- ./libgnome/libgnome-2.0.pc.in.orig	2009-04-23 12:29:13.000000000 +0300
-+++ ./libgnome/libgnome-2.0.pc.in	2015-10-22 09:13:34.863860000 +0200
-@@ -10,5 +10,5 @@
- Requires: glib-2.0 libbonobo-2.0
- Requires.private: ORBit-2.0 gconf-2.0 gnome-vfs-2.0 @ESD_DEPS@
- Version: @VERSION@
--Libs: -L${libdir} -lgnome-2 -lpopt
-+Libs: -L${libdir} -L%%LOCALBASE%%/lib -lgnome-2 -lpopt
- Cflags: -I${includedir}/libgnome-2.0

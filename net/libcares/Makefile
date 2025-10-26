@@ -2,7 +2,7 @@
 # $Id$
 #
 PORTNAME=	libcares
-PORTVERSION=	1.17.1
+PORTVERSION=	1.34.4
 CATEGORIES=	dns
 DISTNAME=	c-ares-${PORTVERSION}
 
@@ -27,7 +27,7 @@ PROGRAMS=	acountry adig ahost
 MAKE_JOBS_UNSAFE=	yes
 
 post-patch:
-	${REINPLACE_CMD} -e 's,6:2:4,4:2:4,g' ${WRKSRC}/configure
+	${REINPLACE_CMD} -e 's,21:3:19,4:2:4,g' ${WRKSRC}/configure
 
 #post-install:
 #	${INSTALL_PROGRAM} ${PROGRAMS:S@^@${WRKSRC}/.libs/@} ${STAGEDIR}${PREFIX}/bin/

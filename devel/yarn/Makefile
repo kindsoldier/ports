@@ -9,7 +9,7 @@ MASTER_SITES=	https://yarnpkg.com/downloads/${PORTVERSION}/
 MAINTAINER=	pizzamig@FreeBSD.org
 COMMENT=	Package manager for node, alternative to npm
 
-RUN_DEPENDS=	node>=10.0:lang/node18
+RUN_DEPENDS=	node>=10.0:lang/node22
 
 NO_ARCH=	yes
 NO_BUILD=	yes

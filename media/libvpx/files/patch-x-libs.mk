@@ -1,17 +1,6 @@
---- ./libs.mk.orig	2017-01-12 22:27:27.000000000 +0200
-+++ ./libs.mk	2017-05-08 10:05:46.773672000 +0200
-@@ -232,8 +232,8 @@
- LIBS-$(if yes,$(CONFIG_STATIC)) += $(BUILD_PFX)libvpx.a $(BUILD_PFX)libvpx_g.a
- $(BUILD_PFX)libvpx_g.a: $(LIBVPX_OBJS)
- 
--SO_VERSION_MAJOR := 4
--SO_VERSION_MINOR := 1
-+SO_VERSION_MAJOR := 2
-+SO_VERSION_MINOR := 0
- SO_VERSION_PATCH := 0
- ifeq ($(filter darwin%,$(TGT_OS)),$(TGT_OS))
- LIBVPX_SO               := libvpx.$(SO_VERSION_MAJOR).dylib
-@@ -255,12 +255,10 @@
+--- ./libs.mk.orig	2024-10-23 20:24:57.000000000 +0200
++++ ./libs.mk	2025-08-26 09:45:52.826673000 +0200
+@@ -336,12 +336,10 @@
  LIBVPX_SO_SYMLINKS      :=
  LIBVPX_SO_IMPLIB        := libvpx_dll.a
  else
@@ -26,7 +15,7 @@
  endif
  endif
  endif
-@@ -300,19 +298,19 @@
+@@ -369,19 +367,19 @@
  
  define libvpx_symlink_template
  $(1): $(2)
@@ -50,7 +39,13 @@
  INSTALL-LIBS-$(CONFIG_SHARED) += $(LIBVPX_SO_SYMLINKS)
  INSTALL-LIBS-$(CONFIG_SHARED) += $(LIBSUBDIR)/$(LIBVPX_SO)
  INSTALL-LIBS-$(CONFIG_SHARED) += $(if $(LIBVPX_SO_IMPLIB),$(LIBSUBDIR)/$(LIBVPX_SO_IMPLIB))
-@@ -334,7 +332,7 @@
+@@ -398,12 +396,12 @@
+ 	$(qexec)echo '' >> $@
+ 	$(qexec)echo 'Name: vpx' >> $@
+ 	$(qexec)echo 'Description: WebM Project VPx codec implementation' >> $@
+-	$(qexec)echo 'Version: $(VERSION_MAJOR).$(VERSION_MINOR).$(VERSION_PATCH)' >> $@
++	$(qexec)echo 'Version: $(VERSION_MAJOR)' >> $@
+ 	$(qexec)echo 'Requires:' >> $@
  	$(qexec)echo 'Conflicts:' >> $@
  	$(qexec)echo 'Libs: -L$${libdir} -lvpx -lm' >> $@
  ifeq ($(HAVE_PTHREAD_H),yes)

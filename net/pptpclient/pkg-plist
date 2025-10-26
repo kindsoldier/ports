@@ -1,6 +1,0 @@
-etc/rc.d/pptp
-man/man8/pptp.8.gz
-sbin/pptp
-share/examples/pptpclient/ppp.conf
-share/examples/pptpclient/README
-@dir share/examples/pptpclient

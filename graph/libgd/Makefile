@@ -24,7 +24,7 @@ LIB_DEPENDS+=	libjpeg.so:graph/libjpeg
 LIB_DEPENDS+=	libpng.so:graph/libpng
 LIB_DEPENDS+=	libvpx.so:media/libvpx
 LIB_DEPENDS+=	libfreetype.so:graph/libfreetype2
-
+LIB_DEPENDS+=	libwebp.so:graph/libwebp
 
 
 USES+=		gmake tar:xz
@@ -39,6 +39,7 @@ CONFIGURE_ARGS+= --with-vpx=${LOCALBASE}
 CONFIGURE_ARGS+= --with-x=${LOCALBASE}
 CONFIGURE_ARGS+= --with-fontconfig=${LOCALBASE}
 CONFIGURE_ARGS+= --with-xpm=${LOCALBASE}
+#CONFIGURE_ARGS+= --without-xpm
 CONFIGURE_ARGS+= --with-tiff=${LOCALBASE}
 
 pre-configure:

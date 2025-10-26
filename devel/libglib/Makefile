@@ -38,6 +38,7 @@ CONFIGURE_ARGS+= --with-pcre=system
 CONFIGURE_ARGS+= --disable-gtk-doc
 CONFIGURE_ARGS+= --disable-silent-rules
 CONFIGURE_ARGS+= --disable-dependency-tracking
+CONFIGURE_ARGS+= --disable-compile-warnings
 
 CONFIGURE_ARGS+= --enable-fam
 CONFIGURE_ARGS+= --disable-dtrace
@@ -52,6 +53,9 @@ CONFIGURE_ARGS+= --with-xml-catalog=${LOCALBASE}/share/xml/catalog.xml
 CONFIGURE_ENV+=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" 
 CONFIGURE_ENV+= PTHREAD_LIBS="${PTHREAD_LIBS}"
 CFLAGS+=	-I${LOCALBASE}/include
+
+CONFIGURE_ENV+= CC="gcc"
+
 CONFIGURE_ENV+= LDFLAGS="-L${LOCALBASE}/lib"
 INSTALLS_SHLIB=	yes
 

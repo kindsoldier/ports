@@ -1,4 +1,0 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/GPIO/GPIO.so
-%%SITE_PERL%%/%%PERL_ARCH%%/GPIO.pm
-%%PERL5_MAN3%%/GPIO.3.gz
-@dir %%SITE_PERL%%/%%PERL_ARCH%%/auto/GPIO

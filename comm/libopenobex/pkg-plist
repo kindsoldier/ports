@@ -1,8 +1,0 @@
-include/openobex/obex_const.h
-include/openobex/obex.h
-include/openobex/version.h
-lib/libopenobex.so
-lib/libopenobex.so.1
-lib/pkgconfig/openobex.pc
-@dir include/openobex
-@dir lib/pkgconfig

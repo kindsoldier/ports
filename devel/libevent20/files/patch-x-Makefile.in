@@ -1,6 +1,6 @@
---- ./Makefile.in.orig	2011-10-12 04:44:09.000000000 +0000
-+++ ./Makefile.in	2011-10-25 10:36:02.000000000 +0000
-@@ -276,7 +276,7 @@
+--- ./Makefile.in.orig	2020-07-05 14:04:14.000000000 +0200
++++ ./Makefile.in	2025-08-19 19:08:52.547397000 +0200
+@@ -882,7 +882,7 @@
  AWK = @AWK@
  CC = @CC@
  CCDEPMODE = @CCDEPMODE@
@@ -9,30 +9,21 @@
  CPP = @CPP@
  CPPFLAGS = @CPPFLAGS@
  CYGPATH_W = @CYGPATH_W@
-@@ -328,7 +328,7 @@
- PACKAGE_VERSION = @PACKAGE_VERSION@
- PATH_SEPARATOR = @PATH_SEPARATOR@
- PTHREAD_CC = @PTHREAD_CC@
--PTHREAD_CFLAGS = @PTHREAD_CFLAGS@
-+PTHREAD_CFLAGS += @PTHREAD_CFLAGS@
- PTHREAD_LIBS = @PTHREAD_LIBS@
- RANLIB = @RANLIB@
- SED = @SED@
-@@ -404,7 +404,7 @@
+@@ -1038,7 +1038,7 @@
  # will increment for each series until we revise our interfaces enough
  # that we can seriously expect ABI compatibility between series.
  #
--RELEASE = -release 2.0
+-RELEASE = -release 2.1
 +RELEASE = -version 2:0:2
  
  # This is the version info for the libevent binary API.  It has three
  # numbers:
-@@ -1176,7 +1176,7 @@
+@@ -2949,7 +2949,7 @@
  
  install-dvi-am:
  
 -install-exec-am: install-dist_binSCRIPTS install-libLTLIBRARIES
 +install-exec-am: install-libLTLIBRARIES
  
- install-html: install-html-recursive
+ install-html: install-html-am
  

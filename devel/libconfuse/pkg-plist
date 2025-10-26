@@ -1,6 +1,0 @@
-include/confuse.h
-lib/libconfuse.a
-lib/libconfuse.la
-lib/libconfuse.so
-lib/libconfuse.so.0
-lib/pkgconfig/libconfuse.pc

@@ -1,5 +1,0 @@
-bin/xsm
-share/X11/app-defaults/XSm
-share/X11/xsm/system.xsm
-@dir share/X11/app-defaults
-@dir share/X11/xsm

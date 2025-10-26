@@ -1,7 +1,0 @@
-bin/mpg123
-include/mpg123.h
-lib/libmpg123.a
-lib/libmpg123.la
-lib/libmpg123.so
-lib/libmpg123.so.25
-lib/pkgconfig/libmpg123.pc

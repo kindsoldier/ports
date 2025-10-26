@@ -12,10 +12,11 @@ COMMENT=	Utilities for managing XFS filesystems
 
 USES=	 gmake #libtool:build
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	OPTIMIZER=" "
+CONFIGURE_ENV=	OPTIMIZER=-fcommon
 CONFIGURE_ARGS=	--disable-shared --enable-readline
 ALL_TARGET=	# empty
-LDFLAGS+= -lncurses 
+LDFLAGS+= -lncurses -s 
+MAKE_ARGS=	V=1
 
 post-patch:
 	${REINPLACE_CMD} -e '/utmp/d' \
@@ -27,11 +28,12 @@ post-patch:
 	${REINPLACE_CMD} -e '/#!/s|bash|sh|' \
 		${WRKSRC}/include/install-sh ${WRKSRC}/install-sh
 
-post-install:
-.for f in mkfs.xfs xfs_copy xfs_db xfs_estimate xfs_fsr xfs_growfs xfs_io \
-     xfs_logprint xfs_mdrestore xfs_quota xfs_repair xfs_rtcp
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/${f}
-.endfor
+
+#post-install:
+#.for f in mkfs.xfs xfs_copy xfs_db xfs_estimate xfs_fsr xfs_growfs xfs_io \
+#     xfs_logprint xfs_mdrestore xfs_quota xfs_repair xfs_rtcp
+#	${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/${f}
+#.endfor
 
 .include <bsd.port.mk>
 #EOF

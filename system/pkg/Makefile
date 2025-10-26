@@ -1,7 +1,7 @@
 # $FreeBSD: head/ports-mgmt/pkg/Makefile 562140 2021-01-20 14:35:40Z manu $
 
 PORTNAME=	pkg
-DISTVERSION=	1.17.5
+DISTVERSION=	2.2.2
 _PKG_VERSION=	${DISTVERSION}
 CATEGORIES=	ports-mgmt
 
@@ -26,7 +26,7 @@ PKG_DEPENDS=    #
 post-patch:
 #	${REINPLACE_CMD} -e "s|-llzma|${LIBLZMA_LIBS}|g" ${WRKSRC}/auto.def \
 #		${WRKSRC}/src/Makefile.autosetup ${WRKSRC}/tests/Makefile.autosetup
-	${REINPLACE_CMD} -e 's,libdata/pkgconfig,lib/pkgconfig,' ${WRKSRC}/auto.def
+##	${REINPLACE_CMD} -e 's,libdata/pkgconfig,lib/pkgconfig,' ${WRKSRC}/auto.def
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/compat/pkg

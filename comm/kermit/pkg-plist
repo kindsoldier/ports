@@ -1,8 +1,0 @@
-bin/kermit
-man/man1/kermit.1.gz
-share/doc/kermit/android.txt
-share/doc/kermit/READ.ME
-share/examples/kermit/dot.kermrc
-share/examples/kermit/dot.mykermrc
-@dir share/doc/kermit
-@dir share/examples/kermit

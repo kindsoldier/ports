@@ -32,7 +32,7 @@ post-install:
 		${STAGEDIR}${PREFIX}/etc/periodic/daily/310.smart
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.conf ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/smartd_warning.sh ${STAGEDIR}${EXAMPLESDIR}/smartd-warning.sh
+#	${INSTALL_DATA} ${WRKSRC}/smartd_warning.sh ${STAGEDIR}${EXAMPLESDIR}/smartd-warning.sh
 
 .include <bsd.port.mk>
 #EOF

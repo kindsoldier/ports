@@ -1,8 +1,0 @@
---- ./Makefile.am.orig	2015-11-06 17:08:46.000000000 +0200
-+++ ./Makefile.am	2017-05-26 17:52:41.479175000 +0200
-@@ -1,4 +1,4 @@
--SUBDIRS = libkeybinder docs
-+SUBDIRS = libkeybinder
- 
- if HAVE_PYTHON
- SUBDIRS += python-keybinder

@@ -1,8 +1,0 @@
---- ./Utilities/cmzlib/CMakeLists.txt.orig	2014-01-16 20:15:09.000000000 +0300
-+++ ./Utilities/cmzlib/CMakeLists.txt	2016-03-22 06:56:34.104845000 +0200
-@@ -40,4 +40,4 @@
- 
- ADD_LIBRARY(cmzlib ${ZLIB_SRCS})
- 
--INSTALL(FILES Copyright.txt DESTINATION ${CMAKE_DOC_DIR}/cmzlib)
-+#INSTALL(FILES Copyright.txt DESTINATION ${CMake_DOC_DEST}/cmzlib)

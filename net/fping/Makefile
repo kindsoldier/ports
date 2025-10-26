@@ -2,9 +2,11 @@
 # $Id$
 #
 PORTNAME=	fping
-PORTVERSION=	4.1
+PORTVERSION=	5.3
 CATEGORIES=	net
-MASTER_SITES=	http://fping.org/dist/ http://bitrote.org/distfiles/
+#MASTER_SITES=	https://fping.org/dist/ 
+MASTER_SITES+=	https://github.com/schweikert/${PORTNAME}/releases/download/v${DISTVERSION}/
+
 
 MAINTAINER=	jharris@widomaker.com
 COMMENT=	Quickly ping multiple hosts without flooding the network
@@ -16,8 +18,12 @@ CONFIGURE_ARGS+= --enable-ipv6
 INSTALL_TARGET=	install-strip
 
 USES=		autoreconf gmake
+
 #USE_GITHUB=	yes
 #GH_ACCOUNT=	schweikert
+
+post-install:
+	cd ${STAGEDIR}${PREFIX}/sbin && ${LN} -s fping fping6
 
 .include <bsd.port.mk>
 #EOF

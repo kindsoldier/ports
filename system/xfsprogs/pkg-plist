@@ -41,10 +41,6 @@ sbin/xfs_ncheck
 sbin/xfs_quota
 sbin/xfs_repair
 sbin/xfs_rtcp
-share/doc/xfsprogs/CHANGES.gz
-share/doc/xfsprogs/COPYING
-share/doc/xfsprogs/CREDITS
-share/doc/xfsprogs/README
 share/locale/de/LC_MESSAGES/xfsprogs.mo
 share/locale/pl/LC_MESSAGES/xfsprogs.mo
 @dir share/locale/de/LC_MESSAGES

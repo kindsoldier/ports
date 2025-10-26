@@ -1,6 +1,0 @@
-include/samplerate.h
-lib/libsamplerate.a
-lib/libsamplerate.la
-lib/libsamplerate.so
-lib/libsamplerate.so.1
-lib/pkgconfig/samplerate.pc

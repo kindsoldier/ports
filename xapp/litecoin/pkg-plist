@@ -1,9 +1,0 @@
-bin/bench_litecoin
-bin/litecoin-qt
-bin/litecoind
-bin/test_litecoin
-bin/test_litecoin-qt
-man/man1/litecoin-qt.1.gz
-man/man1/litecoind.1.gz
-share/applications/litecoin-qt.desktop
-share/pixmaps/litecoin128.png

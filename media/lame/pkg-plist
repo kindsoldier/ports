@@ -1,8 +1,0 @@
-bin/lame
-include/lame/lame.h
-lib/libmp3lame.a
-lib/libmp3lame.la
-lib/libmp3lame.so
-lib/libmp3lame.so.0
-man/man1/lame.1.gz
-@dir include/lame

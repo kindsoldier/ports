@@ -1,8 +1,0 @@
-include/snappy-c.h
-include/snappy-sinksource.h
-include/snappy-stubs-public.h
-include/snappy.h
-lib/libsnappy.a
-lib/libsnappy.so
-lib/libsnappy.so.2
-lib/pkgconfig/snappy.pc

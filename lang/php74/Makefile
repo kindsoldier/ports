@@ -2,7 +2,7 @@
 # $Id: Makefile 2636 2009-09-30 12:09:37Z root $
 #
 PORTNAME=	php
-PORTVERSION=	7.4.29
+PORTVERSION=	7.4.33
 CATEGORIES=	lang devel www
 MASTER_SITES=	${MASTER_SITE_PHP}
 MASTER_SITE_SUBDIR=	distributions
@@ -27,8 +27,8 @@ MASTER_SITE_SUBDIR=	distributions
 MAINTAINER=	onborodin@gmail.com
 COMMENT=	PHP Scripting Language (Apache Module and CLI)
 
-_APXS=		${LOCALBASE}/sbin/apxs
-BUILD_DEPENDS+=	${_APXS}:net/apache
+#_APXS=		${LOCALBASE}/sbin/apxs
+#BUILD_DEPENDS+=	${_APXS}:net/apache
 
 LIB_DEPENDS+=	libpcre.so:text/libpcre
 LIB_DEPENDS+=	libxml2.so:text/libxml2
@@ -51,7 +51,9 @@ CONFIGURE_ARGS+= --enable-cli
 CONFIGURE_ARGS+= --with-readline
 CONFIGURE_ARGS+= --without-pear
 
+CONFIGURE_ARGS+= --without-apxs2
 #CONFIGURE_ARGS+= --with-apxs2=${_APXS}
+
 CONFIGURE_ARGS+= --with-zlib-dir=/usr
 CONFIGURE_ARGS+= --enable-ipv6
 
@@ -60,13 +62,15 @@ CONFIGURE_ARGS+= --with-config-file-scan-dir=${PREFIX}/etc/php
 CONFIGURE_ARGS+= --with-config-file-path=${PREFIX}/etc:${LOCALBASE}/etc/apache
 CONFIGURE_ARGS+= --with-config-file-scan-dir=${PREFIX}/etc/php
 CONFIGURE_ARGS+= --disable-all
-###CONFIGURE_ARGS+= --enable-xml
+
+CONFIGURE_ARGS+= --enable-libxml
+CONFIGURE_ARGS+= --enable-xml
+CONFIGURE_ARGS+= --with-libxml=${LOCALBASE}
 CONFIGURE_ARGS+= --enable-mysqlnd
-CONFIGURE_ARGS+= --with-libxml
-#CONFIGURE_ARGS+= --with-libxml-dir=${LOCALBASE}
-#CONFIGURE_ARGS+= --with-pcre-regex=${LOCALBASE}
+CONFIGURE_ARGS+= --enable-hash
+CONFIGURE_ARGS+= --with-libxml-dir=${LOCALBASE}
+CONFIGURE_ARGS+= --with-pcre-regex=${LOCALBASE}
 CONFIGURE_ARGS+= --program-prefix=""
-CONFIGURE_ARGS+= --with-mhash
 
 #CONFIGURE_ARGS+= --enable-maintainer-zts
 CONFIGURE_ENV+= pthreads_working="yes"

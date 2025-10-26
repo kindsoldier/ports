@@ -2,10 +2,11 @@
 # $FreeBSD: head/archivers/unrar/Makefile 412751 2016-04-08 16:27:37Z sunpoet $
 
 PORTNAME=	unrar
-PORTVERSION=	5.7.3
+PORTVERSION=	7.11
 CATEGORIES+=	archivers
 MASTER_SITES=	http://www.rarlab.com/rar/ LOCAL/sunpoet
-DISTNAME=	unrarsrc-${PORTVERSION}
+#DISTNAME=	unrarsrc-${PORTVERSION}
+DISTNAME=	unrarsrc-7.1.6
 
 
 MAINTAINER?=	sunpoet@FreeBSD.org

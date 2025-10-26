@@ -2,6 +2,10 @@ include/nghttp2/nghttp2.h
 include/nghttp2/nghttp2ver.h
 lib/libnghttp2.a
 lib/libnghttp2.so
-lib/libnghttp2.so.31
+lib/libnghttp2.so.42
 lib/pkgconfig/libnghttp2.pc
+man/man1/h2load.1.gz
+man/man1/nghttp.1.gz
+man/man1/nghttpd.1.gz
+man/man1/nghttpx.1.gz
 @dir include/nghttp2

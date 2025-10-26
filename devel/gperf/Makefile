@@ -2,14 +2,15 @@
 # $ID$
 #
 PORTNAME=	gperf
-PORTVERSION=	3.0.3
+PORTVERSION=	3.1
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	gperf
+#MASTER_SITES=	${MASTER_SITE_GNU}
+#MASTER_SITE_SUBDIR=	gperf
 
 MAINTAINER=	onborodin@gmail.com
 COMMENT=	Generates perfect hash functions for sets of keywords
 
+USE_CXXSTD=	gnu++98
 GNU_CONFIGURE=	yes
 USES+=		gmake
 CONFIGURE_ARGS+= --docdir=${DOCSDIR}

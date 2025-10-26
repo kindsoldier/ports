@@ -1,9 +1,0 @@
-libexec/opensmtpd/queue-null
-libexec/opensmtpd/queue-ram
-libexec/opensmtpd/queue-stub
-libexec/opensmtpd/scheduler-ram
-libexec/opensmtpd/scheduler-stub
-libexec/opensmtpd/table-passwd
-libexec/opensmtpd/table-stub
-man/man5/table-passwd.5.gz
-@dir libexec/opensmtpd

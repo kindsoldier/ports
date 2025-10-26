@@ -1,9 +1,0 @@
---- ./data/desktop/parole.desktop.in.in.orig	2013-12-05 02:35:52.000000000 +0300
-+++ ./data/desktop/parole.desktop.in.in	2014-12-31 23:01:02.000000000 +0200
-@@ -1,5 +1,5 @@
- [Desktop Entry]
--_Name=Parole Media Player
-+_Name=Parole
- _Comment=Play your media
- Icon=parole
- Exec=parole %F

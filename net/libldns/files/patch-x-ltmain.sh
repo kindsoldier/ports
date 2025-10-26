@@ -1,11 +1,11 @@
---- ./ltmain.sh.orig	2016-12-20 10:48:23.000000000 +0000
-+++ ./ltmain.sh	2019-02-04 17:37:16.264986000 +0000
-@@ -8811,13 +8811,13 @@
+--- ltmain.sh.orig	2024-07-20 07:07:48.000000000 +0200
++++ ltmain.sh	2025-08-19 07:30:28.246440000 +0200
+@@ -9088,13 +9088,13 @@
  	  #
  	  case $version_type in
  	  # correct linux to gnu/linux during the next big refactor
--	  darwin|freebsd-elf|linux|osf|windows|none)
-+	  darwin|linux|osf|windows|none)
+-	  darwin|freebsd-elf|linux|midnightbsd-elf|osf|windows|none)
++	  darwin|linux|midnightbsd-elf|osf|windows|none)
  	    func_arith $number_major + $number_minor
  	    current=$func_arith_result
  	    age=$number_minor
@@ -16,7 +16,7 @@
  	    current=$number_major
  	    revision=$number_minor
  	    age=0
-@@ -8900,15 +8900,9 @@
+@@ -9177,15 +9177,9 @@
            esac
  	  ;;
  
@@ -26,7 +26,7 @@
 -	  versuffix=.$current.$revision
 -	  ;;
 -
--	freebsd-elf)
+-	freebsd-elf | midnightbsd-elf)
 -	  func_arith $current - $age
 -	  major=.$func_arith_result
 -	  versuffix=$major.$age.$revision

@@ -3,7 +3,7 @@
 #
 PORTNAME=	m4
 PKGNAMEPREFIX=	g
-PORTVERSION=	1.4.18
+PORTVERSION=	1.4.19
 MASTER_SITES+=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DIST_SUBDIR=	gnu
@@ -25,10 +25,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+= --infodir=${PREFIX}/info
 CONFIGURE_ARGS+= --mandir=${PREFIX}/man
 CONFIGURE_ARGS+= --program-prefix='g'
-
-INFO=		m4
-PLIST_FILES+=	man/man1/gm4.1.gz
-PLIST_FILES=	bin/gm4
 
 .include <bsd.port.mk>
 #EOF

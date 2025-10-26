@@ -1,5 +1,11 @@
 bin/gtar
 libexec/gtar/grmt
+man/man1/gtar.1.gz
+man/man8/grmt.8.gz
+share/info/tar.info
+share/info/tar.info-1
+share/info/tar.info-2
+share/info/tar.info-3
 share/locale/bg/LC_MESSAGES/tar.mo
 share/locale/ca/LC_MESSAGES/tar.mo
 share/locale/cs/LC_MESSAGES/tar.mo
@@ -19,6 +25,7 @@ share/locale/hu/LC_MESSAGES/tar.mo
 share/locale/id/LC_MESSAGES/tar.mo
 share/locale/it/LC_MESSAGES/tar.mo
 share/locale/ja/LC_MESSAGES/tar.mo
+share/locale/ka/LC_MESSAGES/tar.mo
 share/locale/ko/LC_MESSAGES/tar.mo
 share/locale/ky/LC_MESSAGES/tar.mo
 share/locale/ms/LC_MESSAGES/tar.mo
@@ -38,9 +45,8 @@ share/locale/uk/LC_MESSAGES/tar.mo
 share/locale/vi/LC_MESSAGES/tar.mo
 share/locale/zh_CN/LC_MESSAGES/tar.mo
 share/locale/zh_TW/LC_MESSAGES/tar.mo
-man/man1/gtar.1.gz
-man/man8/grmt.8.gz
 @dir libexec/gtar
+@dir share/info
 @dir share/locale/bg/LC_MESSAGES
 @dir share/locale/bg
 @dir share/locale/ca/LC_MESSAGES
@@ -79,6 +85,8 @@ man/man8/grmt.8.gz
 @dir share/locale/it
 @dir share/locale/ja/LC_MESSAGES
 @dir share/locale/ja
+@dir share/locale/ka/LC_MESSAGES
+@dir share/locale/ka
 @dir share/locale/ko/LC_MESSAGES
 @dir share/locale/ko
 @dir share/locale/ky/LC_MESSAGES

@@ -18,4 +18,8 @@ TEST_TARGET=	test
 
 CMAKE_OFF=	ENABLE_COMMONCRYPTO ENABLE_GNUTLS ENABLE_MBEDTLS
 
+post-install:
+	echo ${GZIP_CMD} ${STAGEDIR}${LOCALBASE}${MAN1_DIR}
+
+
 .include <bsd.port.mk>

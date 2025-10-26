@@ -669,6 +669,7 @@ MASTER_SITE_GIMP+= \
 
 .if !defined(IGNORE_MASTER_SITE_GNU)
 MASTER_SITE_GNU+= \
+	https://ftp.gnu.org/%SUBDIR%/ \
 	https://ftpmirror.gnu.org/%SUBDIR%/ \
 	https://mirrors.kernel.org/gnu/%SUBDIR%/ \
 	https://mirror.netcologne.de/gnu/%SUBDIR%/ \

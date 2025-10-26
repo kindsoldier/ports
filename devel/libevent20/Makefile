@@ -2,7 +2,7 @@
 # $Id$
 #
 PORTNAME=	libevent
-PORTVERSION=	2.0.21
+PORTVERSION=	2.1.12
 CATEGORIES=	devel
 MASTER_SITES+=	https://github.com/downloads/libevent/libevent/
 MASTER_SITES+=	http://cloud.github.com/downloads/libevent/libevent/

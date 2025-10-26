@@ -45,6 +45,8 @@ GCCVERSION_060000=	      0 6
 GCCVERSION_070000=	      0 7
 GCCVERSION_080000=	      0 8
 GCCVERSION_090000=	      0 9
+GCCVERSION_120000=	      0 9
+GCCVERSION_140000=	      0 9
 
 # No configurable parts below this. ####################################
 #

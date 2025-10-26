@@ -1,6 +1,6 @@
---- ./build/make/Makefile.orig	2017-01-12 22:27:27.000000000 +0200
-+++ ./build/make/Makefile	2017-05-08 10:05:46.772184000 +0200
-@@ -273,8 +273,8 @@
+--- ./build/make/Makefile.orig	2024-10-23 20:24:57.000000000 +0200
++++ ./build/make/Makefile	2025-08-26 09:44:23.222343000 +0200
+@@ -301,8 +301,8 @@
  define install_map_template
  $(DIST_DIR)/$(1): $(2)
  	$(if $(quiet),@echo "    [INSTALL] $$@")
@@ -11,7 +11,7 @@
  endef
  
  define archive_template
-@@ -380,7 +380,7 @@
+@@ -422,7 +422,7 @@
  .libs: $(LIBS)
  	@touch $@
  $(foreach lib,$(filter %_g.a,$(LIBS)),$(eval $(call archive_template,$(lib))))

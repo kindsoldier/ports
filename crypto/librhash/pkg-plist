@@ -10,12 +10,11 @@ bin/sfv-hash
 bin/tiger-hash
 bin/tth-hash
 bin/whirlpool-hash
-etc/rhashrc.sample
 include/rhash_torrent.h
 include/rhash.h
 lib/librhash.a
 lib/librhash.so
-lib/librhash.so.0
+lib/librhash.so.1
 lib/pkgconfig/librhash.pc
 man/man1/ed2k-link.1.gz
 man/man1/edonr256-hash.1.gz

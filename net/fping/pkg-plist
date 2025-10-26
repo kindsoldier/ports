@@ -1,2 +1,4 @@
 man/man8/fping.8.gz
 sbin/fping
+sbin/fping6
+

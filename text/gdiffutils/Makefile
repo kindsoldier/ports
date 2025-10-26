@@ -2,7 +2,7 @@
 # $Id: Makefile 2697 2009-10-31 20:47:23Z root $
 #
 PORTNAME=	diffutils
-PORTVERSION=	3.4
+PORTVERSION=	3.12
 MASTER_SITES=	http://ftp.gnu.org/gnu/diffutils/
 MASTER_SITES+=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}

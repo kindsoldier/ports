@@ -1,5 +1,0 @@
-include/argp.h
-lib/libargp.a
-lib/libargp.la
-lib/libargp.so
-lib/libargp.so.0

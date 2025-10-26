@@ -24,6 +24,7 @@ bin/ldns-version
 bin/ldns-walk
 bin/ldns-zcat
 bin/ldns-zsplit
+bin/ldnsd
 include/ldns/buffer.h
 include/ldns/common.h
 include/ldns/dane.h
@@ -33,6 +34,7 @@ include/ldns/dnssec_verify.h
 include/ldns/dnssec_zone.h
 include/ldns/dnssec.h
 include/ldns/duration.h
+include/ldns/edns.h
 include/ldns/error.h
 include/ldns/higher.h
 include/ldns/host2str.h
@@ -59,7 +61,8 @@ include/ldns/zone.h
 lib/libldns.a
 lib/libldns.la
 lib/libldns.so
-lib/libldns.so.2
+lib/libldns.so.9
+lib/pkgconfig/ldns.pc
 lib/pkgconfig/libldns.pc
 man/man1/drill.1.gz
 man/man1/ldns-chaos.1.gz

@@ -1,5 +1,0 @@
-@comment lib/dbd/libdbdmysql.la
-@comment lib/dbd/libdbdmysql.so
-lib/dbd/libdbdpgsql.la
-lib/dbd/libdbdpgsql.so
-@dir lib/dbd

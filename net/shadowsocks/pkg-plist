@@ -1,9 +1,0 @@
-bin/ss-local
-bin/ss-manager
-bin/ss-server
-bin/ss-tunnel
-include/shadowsocks.h
-lib/libshadowsocks-libev.la
-lib/libshadowsocks-libev.so
-lib/libshadowsocks-libev.so.2
-lib/pkgconfig/shadowsocks-libev.pc

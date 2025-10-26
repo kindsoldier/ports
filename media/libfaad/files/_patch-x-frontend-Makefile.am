@@ -1,9 +1,0 @@
---- ./frontend/Makefile.am.orig	2009-02-06 18:03:37.000000000 +0200
-+++ ./frontend/Makefile.am	2015-10-22 18:37:39.550905000 +0200
-@@ -1,5 +1,5 @@
- bin_PROGRAMS = faad
--man_MANS = faad.man
-+man1_MANS = faad.1
- 
- INCLUDES = -I$(top_srcdir)/include -I$(top_srcdir)/common/faad \
- 	   -I$(top_srcdir)/common/mp4ff

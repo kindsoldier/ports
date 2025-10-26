@@ -3,6 +3,8 @@ bin/php-cgi
 bin/php-config
 bin/phpdbg
 bin/phpize
+@config etc/php-fpm.conf.default
+@config etc/php-fpm.d/www.conf.default
 include/php/ext/date/lib/timelib_config.h
 include/php/ext/date/lib/timelib.h
 include/php/ext/date/php_date.h
@@ -135,6 +137,8 @@ include/php/ext/standard/uniqid.h
 include/php/ext/standard/url_scanner_ex.h
 include/php/ext/standard/url.h
 include/php/ext/standard/winver.h
+include/php/ext/xml/expat_compat.h
+include/php/ext/xml/php_xml.h
 include/php/main/build-defs.h
 include/php/main/fastcgi.h
 include/php/main/fopen_wrappers.h
@@ -273,6 +277,7 @@ man/man1/phpize.1.gz
 man/man8/php-fpm.8.gz
 sbin/php-fpm
 share/php/fpm/status.html
+@dir etc/php-fpm.d
 @dir include/php/ext/date/lib
 @dir include/php/ext/date
 @dir include/php/ext/hash
@@ -282,6 +287,7 @@ share/php/fpm/status.html
 @dir include/php/ext/pcre
 @dir include/php/ext/spl
 @dir include/php/ext/standard
+@dir include/php/ext/xml
 @dir include/php/ext
 @dir include/php/main/streams
 @dir include/php/main

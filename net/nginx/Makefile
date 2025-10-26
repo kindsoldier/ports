@@ -2,7 +2,7 @@
 # $FreeBSD: head/www/nginx/Makefile 403524 2015-12-11 13:01:22Z osa $
 
 PORTNAME=	nginx
-PORTVERSION=	1.20.2
+PORTVERSION=	1.26.3
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
 MASTER_SITES+=	LOCAL/osa
@@ -19,6 +19,8 @@ LIB_DEPENDS+=	libxslt.so:text/libxslt
 LIB_DEPENDS+=	libiconv.so:text/libiconv
 
 .include <bsd.port.options.mk>
+
+
 
 
 NGINX_VARDIR=	/var
@@ -46,7 +48,7 @@ SUB_LIST+=	NGINX_GROUP=${NGINX_GROUP}
 SUB_LIST+=	NGINX_RUNDIR=${NGINX_RUNDIR}
 SUB_LIST+=	NGINX_TMPDIR=${NGINX_TMPDIR}
 
-USES+= gmake
+USES+= gmake perl5
 HAS_CONFIGURE=	yes
 ALL_TARGET=	default
 
@@ -97,12 +99,22 @@ CONFIGURE_ARGS+= --with-stream
 CONFIGURE_ARGS+= --with-stream_ssl_module
 CONFIGURE_ARGS+= --with-stream_ssl_preread_module
 
+CONFIGURE_ARGS+= --with-http_perl_module
+
 post-install:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/conf/* ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/html/* ${STAGEDIR}${EXAMPLESDIR}
 	${MKDIR} ${STAGEDIR}${PREFIX}/man/man8
 	${INSTALL_DATA} ${WRKSRC}/objs/nginx.8 ${STAGEDIR}${PREFIX}/man/man8
+
+#do-install-HTTP_PERL-on:
+#	${MKDIR} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/nginx
+#	${INSTALL_PROGRAM} ${WRKSRC}/objs/src/http/modules/perl/blib/arch/auto/nginx/nginx.so \
+#		${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/nginx
+#	${INSTALL_DATA} ${WRKSRC}/objs/src/http/modules/perl/blib/lib/nginx.pm \
+#		${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/
+
 
 PORTEXAMPLES+= *
 

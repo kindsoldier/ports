@@ -1,5 +1,0 @@
-sbin/bird
-sbin/birdc
-sbin/birdcl
-share/examples/bird/bird.conf.example
-@dir share/examples/bird

@@ -1,9 +1,0 @@
---- ./liferea.desktop.in.orig	2012-03-01 21:38:11.000000000 +0300
-+++ ./liferea.desktop.in	2013-12-15 10:49:07.000000000 +0300
-@@ -1,5 +1,5 @@
- [Desktop Entry]
--_Name=Liferea
-+Name=Liferea
- _GenericName=Feed Reader
- _X-GNOME-FullName=Liferea Feed Reader
- _Comment=Download and view feeds

@@ -2,9 +2,9 @@
 # $Id$
 #
 PORTNAME=	binutils
-PORTVERSION=	2.37
+PORTVERSION=	2.44
 CATEGORIES=	devel
-MASTER_SITES=	http://ftp.gnu.org/gnu/binutils/
+MASTER_SITES=	http://ftpmirror.gnu.org/gnu/binutils/
 PKGNAMEPREFIX=	${TARGET}-
 
 MAINTAINER= homeunix7@gmail.com
@@ -40,18 +40,6 @@ BUILD_DEPENDS+= makeinfo:system/texinfo
 .endif
 
 BINS= ar as ld nm objcopy objdump ranlib readelf strip
-
-COMPAT_TARGET1= arm-none-eabi
-COMPAT_TARGET2= arm-nuttx-eabi
-
-post-install:
-	for bin in ${BINS}; do \
-	    cd ${STAGEDIR}${PREFIX}/bin && ${LN} -sf ${TARGET}-$${bin} ${COMPAT_TARGET1}-$${bin}; \
-	done
-	for bin in ${BINS}; do \
-	    cd ${STAGEDIR}${PREFIX}/bin && ${LN} -sf ${TARGET}-$${bin} ${COMPAT_TARGET2}-$${bin}; \
-	done
-
 
 .include <bsd.port.post.mk>
 #EOF

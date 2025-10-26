@@ -23,7 +23,7 @@ install_depends()
 	target=$2
 	depends_args=$3
 	if [ -z "${dp_USE_PACKAGE_DEPENDS}" -a -z "${dp_USE_PACKAGE_DEPENDS_ONLY}" ]; then
-		MAKEFLAGS="${dp_MAKEFLAGS}" ${dp_MAKE} -C ${origin} -DINSTALLS_DEPENDS ${target} ${depends_args}
+		MAKEFLAGS="${dp_MAKEFLAGS}" ${dp_MAKE} -C ${origin} install ${target} ${depends_args}
 		return 0
 	fi
 
