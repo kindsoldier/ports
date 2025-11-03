@@ -1,0 +1,4 @@
+etc/ca-bundle.crt
+etc/ssl/cert.pem
+share/certs/ca-root-nss.crt
+@dir share/certs
