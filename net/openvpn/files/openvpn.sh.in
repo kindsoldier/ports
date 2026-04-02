@@ -1,0 +1,71 @@
+#!/bin/sh
+#
+# $Id$
+#
+# PROVIDE: openvpn
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name="openvpn"
+rcvar="openvpn_enable"
+
+command="%%PREFIX%%/sbin/${name}"
+command_args=""
+
+load_rc_config ${name}
+
+extra_commands="list"
+
+start_cmd="openvpn_start"
+stop_cmd="openvpn_stop"
+restart_cmd="openvpn_restart"
+reload_cmd="openvpn_reload"
+list_cmd="openvpn_list"
+
+openvpn_list() {
+    echo -n "$1 "
+}
+
+openvpn_start() {
+    serv="$1"
+    conffile="%%PREFIX%%/etc/openvpn/${serv}.conf"
+    pidfile="/var/run/openvpn/${serv}.pid"
+    echo "Start openvpn $serv."
+    $command --config $conf --writepid $pidfile --daemon
+}
+
+openvpn_stop() { 
+    serv="$1"
+    pidfile="/var/run/openvpn/${serv}.pid"
+    pid=$(check_pidfile $pidfile $command)
+    test ! -z "$pid" && ( kill "$pid"; echo "Stopping openvpn $serv.")
+    wait_for_pids $pid && rm -f "$pidfile"
+}
+
+openvpn_restart() {
+    serv="$1"
+    openvpn_stop $serv
+    openvpn_start $serv
+}
+
+openvpn_reload() {
+    serv="$1"
+    pid=$(check_pidfile $pidfile $command)
+    test ! -z "$pid" && ( kill -HUP "$pid")
+}
+
+load_rc_config $name
+
+: ${openvpn_enable=NO}
+
+test -z "$2" && conflist=$(find %%PREFIX%%/etc/openvpn -maxdepth 1 -name '*.conf')
+test ! -z "$2" && test -r "%%PREFIX%%/etc/openvpn/${2}.conf" && conflist="%%PREFIX%%/etc/openvpn/${2}.conf"
+
+for conf in $conflist; do 
+        serv="$(basename $conf .conf)"
+        pidfile="/var/run/openvpn/${serv}.pid"
+        run_rc_command "$1" "$serv"
+done
+#EOF
