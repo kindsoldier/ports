@@ -19,7 +19,7 @@ case $2 in
 #	LOGDIR="%%LOCALSTATEDIR%%/log/apache"
 #	DATADIR="%%LOCALSTATEDIR%%/www/apache"
 
-	NAME="apache"
+	NAME="xray"
 	SHELL="/usr/sbin/nologin"
 
 

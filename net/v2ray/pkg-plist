@@ -1,4 +1,3 @@
-bin/v2ctl
 bin/v2ray
 share/examples/v2ray/config.json.sample
 share/examples/v2ray/vpoint_socks_vmess.json
