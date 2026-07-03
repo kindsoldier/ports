@@ -1,0 +1,20 @@
+#!/bin/sh
+#
+# PROVIDE: isc-dhcpd
+# BEFORE: LOGIN
+#
+. /etc/rc.subr
+
+name="isc_dhcpd"
+rcvar="isc_dhcpd_enable"
+command="%%PREFIX%%/sbin/isc-dhcpd"
+procname="${command}"
+required_files="%%PREFIX%%/etc/dhcpd.conf"
+command_args="-q -4 -cf %%PREFIX%%/etc/dhcpd.conf"
+
+load_rc_config $name
+
+: ${isc_dhcpd_enable="NO"}
+
+run_rc_command "$1"
+#EOF

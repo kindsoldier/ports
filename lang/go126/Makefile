@@ -2,19 +2,21 @@
 # $FreeBSD: head/lang/go/Makefile 470619 2018-05-22 14:32:09Z jlaffaye $
 
 PORTNAME=	go
-PORTVERSION=	1.26.1
+PORTVERSION=	1.26.2
 CATEGORIES=	lang
 MASTER_SITES=	https://golang.org/dl/
 MASTER_SITES+=	https://github.com/dmgk/go-bootstrap/releases/download/${BOOTSTRAP_TAG}/:bootstrap
 MASTER_SITES+=	LOCAL/dmgk:bootstrap
 DISTFILES=      go${PORTVERSION}.src.tar.gz
-DISTFILES+=     go-${OPSYS:tl}-${GOARCH}${GOARM}-${BOOTSTRAP_TAG}.tar.xz:bootstrap
+DISTFILES+=     ${BOOTSTRAP}
+EXTRACT_ONLY = go${PORTVERSION}.src.tar.gz
+
+BOOTSTRAP = ${BOOTSTRAP_TAG}.${OPSYS:tl}-${GOARCH}${GOARM}.tar.gz
 
 .include <bsd.port.pre.mk>
 
 DISTINFO_FILE = ${MASTERDIR}/distinfo.${ARCH}
-
-BOOTSTRAP_TAG=	go1.20
+BOOTSTRAP_TAG=	go1.25.7
 
 
 .if ${ARCH} == amd64
@@ -62,8 +64,15 @@ post-patch:
 
 PLIST= pkg-plist.${ARCH}
 
-#GOROOT_BOOTSTRAP=${WRKDIR}/go-${OPSYS:tl}-${GOARCH}${GOARM}-bootstrap
-GOROOT_BOOTSTRAP=${LOCALBASE}/lib/go
+GOROOT_BOOTSTRAP=${WRKDIR}/go-boostrap
+#GOROOT_BOOTSTRAP=${LOCALBASE}/lib/go
+
+post-extract:
+	${MKDIR} ${GOROOT_BOOTSTRAP}
+	cd ${GOROOT_BOOTSTRAP} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
+		${DISTDIR}/${DIST_SUBDIR}/${BOOTSTRAP} \
+		--strip-components 1 ${EXTRACT_AFTER_ARGS}
+
 
 do-build:
 #	cd ${WRKSRC}/src ; ${SETENV} \
@@ -90,10 +99,7 @@ do-build:
 		GO386=${GO386} \
 		GOARM=${GOARM} \
 		CC=${CC} \
-		GOMEMLIMIT=256KiB GOGC=20 \
 		${LOCALBASE}/bin/bash make.bash -v
-
-
 
 	${RM} -r ${WRKSRC}/pkg/obj \
 	    ${WRKSRC}/pkg/bootstrap \

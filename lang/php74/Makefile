@@ -47,6 +47,7 @@ LDFLAGS=	-L${LOCALBASE}/lib -lz
 #SUB_LIST+=	APACHE_LIBEXEC_DIR="${APACHE_LIBEXEC_DIR}"
 #SUB_LIST+=	APXS="${APXS}"
 
+CONFIGURE_ARGS+= --with-openssl
 CONFIGURE_ARGS+= --enable-cli
 CONFIGURE_ARGS+= --with-readline
 CONFIGURE_ARGS+= --without-pear
