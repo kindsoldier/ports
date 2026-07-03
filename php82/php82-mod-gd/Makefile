@@ -60,6 +60,8 @@ CONFIGURE_ARGS+= --with-png-dir=${LOCALBASE}
 CONFIGURE_ARGS+= --with-zlib-dir=/usr
 CONFIGURE_ARGS+= --with-xpm-dir=${LOCALBASE}
 CONFIGURE_ARGS+= --with-freetype-dir=${LOCALBASE}
+CONFIGURE_ARGS+= --with-external-gd
+
 
 MODULE_NAME=	gd
 DESTDIRNAME=	INSTALL_ROOT
