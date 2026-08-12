@@ -1,0 +1,10 @@
+include/ogg/config_types.h
+include/ogg/ogg.h
+include/ogg/os_types.h
+lib/libogg.a
+lib/libogg.la
+lib/libogg.so
+lib/libogg.so.8
+lib/pkgconfig/ogg.pc
+share/aclocal/ogg.m4
+@dir include/ogg

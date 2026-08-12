@@ -1,0 +1,20 @@
+--- ./doc/Makefile.in.orig	2011-11-03 20:19:37.000000000 +0300
++++ ./doc/Makefile.in	2011-11-03 20:20:48.000000000 +0300
+@@ -196,7 +196,7 @@
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-SUBDIRS = html
++SUBDIRS = 
+ man_MANS = twolame.1
+ MAINTAINERCLEANFILES = twolame.1 twolame.1.xml
+ pkgdocdir = @docdir@
+@@ -543,7 +543,7 @@
+ 
+ info-am:
+ 
+-install-data-am: install-man install-pkgdocDATA
++install-data-am: install-man
+ 
+ install-dvi: install-dvi-recursive
+ 
